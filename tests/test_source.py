@@ -241,7 +241,7 @@ class OrezSourceTests(unittest.TestCase):
         self.assertIn('/casper/zz-orez.squashfs', checker)
         self.assertIn('unsquashfs -cat "$tmp/live.squashfs" usr/bin/calamares', checker)
         self.assertIn("grep -Fq 'OREZ LIVE TEST'", checker)
-        self.assertIn("exit[[:space:]]+78", checker)
+        self.assertIn("grep -Fqx 'exit 78'", checker)
         self.assertIn('/casper/orez-install.squashfs', checker)
 
     def test_builder_has_no_raw_disk_writer(self):

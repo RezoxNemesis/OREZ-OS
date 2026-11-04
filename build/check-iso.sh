@@ -36,7 +36,6 @@ unsquashfs -cat "$tmp/live.squashfs" usr/bin/calamares > "$tmp/orez-installer-gu
   { echo 'Live installer guard missing inside ISO' >&2; exit 1; }
 grep -Fq 'OREZ LIVE TEST' "$tmp/orez-installer-guard" ||
   { echo 'OREZ live installer guard message missing' >&2; exit 1; }
-grep -Eq '^[[:space:]]*exit[[:space:]]+78[[:space:]]*
- "$tmp/orez-installer-guard" ||
+grep -Fqx 'exit 78' "$tmp/orez-installer-guard" ||
   { echo 'OREZ live installer guard must refuse installation' >&2; exit 1; }
 echo 'Static ISO structure, install-safe payload and live-only installer guard: PASS (boot/install execution NOT tested)'
