@@ -5,7 +5,7 @@ set -euo pipefail
 command -v xorriso >/dev/null || { echo 'xorriso missing' >&2; exit 2; }
 iso="$1"
 listing="$(xorriso -indev "$iso" -ls /casper 2>&1)"
-for name in filesystem.squashfs zz-orez.squashfs initrd vmlinuz; do
+for name in filesystem.squashfs zz-orez.squashfs orez-install.squashfs initrd vmlinuz; do
   grep -Fq "$name" <<<"$listing" || { echo "Missing /casper/$name" >&2; exit 1; }
 done
 # Boot record details must be present; an ISO structure check is not a boot test.

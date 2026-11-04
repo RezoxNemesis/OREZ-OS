@@ -76,10 +76,15 @@ log 'Creating small, original OREZ filesystem layer'
 mksquashfs "$REPO_ROOT/overlay" "$WORK_DIR/zz-orez.squashfs" -comp xz -all-root -noappend -no-progress > "$WORK_DIR/squashfs.log" 2>&1 || fail 'Failed to construct squashfs layer.'
 [[ -s "$WORK_DIR/zz-orez.squashfs" ]] || fail 'Empty OREZ layer.'
 
+log 'Creating separated OREZ installed-system payload (installer still disabled)'
+bash "$REPO_ROOT/build/build-install-payload.sh" "$WORK_DIR/orez-install.squashfs"
+[[ -s "$WORK_DIR/orez-install.squashfs" ]] || fail 'Missing installed-system candidate payload.'
+
 log 'Replaying upstream EFI/BIOS boot metadata while adding OREZ layer'
 rm -f -- "$OUTPUT.part"
 xorriso -indev "$SOURCE" -outdev "$OUTPUT.part" \
   -map "$WORK_DIR/zz-orez.squashfs" /casper/zz-orez.squashfs \
+  -map "$WORK_DIR/orez-install.squashfs" /casper/orez-install.squashfs \
   -boot_image any replay -commit > "$WORK_DIR/xorriso.log" 2>&1 \
   || fail "Remix failed. See $WORK_DIR/xorriso.log"
 [[ -s "$OUTPUT.part" ]] || fail 'No output ISO written.'

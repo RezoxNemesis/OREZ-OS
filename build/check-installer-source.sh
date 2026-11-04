@@ -15,10 +15,10 @@ xorriso -osirrox on -indev "$ISO" -extract /casper/filesystem.squashfs "$TEMP/ba
 unsquashfs -cat "$TEMP/base.squashfs" etc/calamares/modules/unpackfs.conf > "$OUT/upstream-unpackfs.conf" 2>/dev/null || {
   echo 'Cannot inspect original Calamares unpackfs.conf' >&2; exit 1;
 }
-if grep -Fq 'zz-orez.squashfs' "$OUT/upstream-unpackfs.conf"; then
-  install_source='NEEDS_MANUAL_REVIEW: OREZ overlay referenced'
+if grep -Fq 'orez-install.squashfs' "$OUT/upstream-unpackfs.conf"; then
+  install_source='NEEDS_MANUAL_REVIEW: OREZ install-only payload referenced'
 else
-  install_source='BLOCKED: Calamares is not proven to install the OREZ overlay'
+  install_source='BLOCKED: stock Calamares ignores the OREZ install-only payload'
 fi
 if unsquashfs -cat "$TEMP/base.squashfs" etc/sysctl.d/20-apparmor.conf > "$OUT/upstream-live-apparmor.conf" 2>/dev/null &&
    grep -Eq '^kernel\.apparmor_restrict_unprivileged_userns\s*=\s*0' "$OUT/upstream-live-apparmor.conf"; then
@@ -29,6 +29,7 @@ fi
 {
   echo 'OREZ — DEVELOPMENT INSTALLATION SAFETY AUDIT'
   echo "Install source: $install_source"
+  echo 'Candidate OREZ installation SquashFS is present for future disposable-VM installer development (not active).'
   echo "AppArmor: $apparmor_status"
   echo 'LUKS2/Btrfs installation and recovery: NOT TESTED'
   echo 'Non-target disk preservation: NOT TESTED'
