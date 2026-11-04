@@ -218,6 +218,15 @@ class OrezSourceTests(unittest.TestCase):
         self.assertIn('check-graphical-frame.py', source)
         self.assertIn('visual_ok=0', source)
 
+    def test_vm_video_adapter_is_test_only_and_allowlisted(self):
+        source = (ROOT / 'build/test-casper-vm.sh').read_text()
+        self.assertIn('case "$OREZ_VM_VGA" in std|virtio)', source)
+        self.assertIn('-vga "$OREZ_VM_VGA"', source)
+        self.assertIn('-net none', source)
+        self.assertIn('readonly=on', source)
+        workflow = (ROOT / '.github/workflows/orez-live.yml').read_text()
+        self.assertIn("OREZ_VM_VGA: 'virtio'", workflow)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

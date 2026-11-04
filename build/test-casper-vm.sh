@@ -25,6 +25,10 @@ else
   export OREZ_VM_ACCEL=tcg OREZ_VM_CPU=max
   echo 'OREZ VM accelerator: TCG fallback (can be very slow)'
 fi
+# Emulated video adapter selection is TEST-ONLY; it does not affect real hardware.
+OREZ_VM_VGA="${OREZ_VM_VGA:-std}"
+case "$OREZ_VM_VGA" in std|virtio) ;; *) echo "Invalid test VGA: $OREZ_VM_VGA" >&2; exit 2;; esac
+printf 'OREZ QEMU VGA backend: %s\n' "$OREZ_VM_VGA"
 # No writable hard disk, network interface, host port forwarding or external serial endpoints.
 # There is no KVM assumption: Github-hosted VMs commonly lack /dev/kvm.
 # Stop the VM as soon as the overlay witness appears; do not waste runner time.
@@ -35,7 +39,7 @@ timeout --signal=TERM --kill-after=10s "${OREZ_QEMU_TIMEOUT:-420}" \
     -initrd "$EVIDENCE_DIR/extracted/initrd" \
     -append 'boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1' \
     -drive "file=$ISO,if=ide,index=1,media=cdrom,format=raw,readonly=on" \
-    -net none -vga std -device qemu-xhci,id=orez-xhci -device usb-tablet,bus=orez-xhci.0 -display none \
+    -net none -vga "$OREZ_VM_VGA" -device qemu-xhci,id=orez-xhci -device usb-tablet,bus=orez-xhci.0 -display none \
     -monitor "unix:$MONITOR,server=on,wait=off" \
     -qmp "unix:$QMP,server=on,wait=off" \
     -serial "file:$LOG" -no-reboot &

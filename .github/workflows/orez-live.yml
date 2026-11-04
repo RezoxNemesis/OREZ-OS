@@ -83,6 +83,7 @@ jobs:
         env:
           OREZ_QEMU_TIMEOUT: '480'
           OREZ_REQUIRE_GUI: '1'
+          OREZ_VM_VGA: 'virtio'  # test-only VirtIO 2D adapter
         run: |
           bash build/test-casper-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
           echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
