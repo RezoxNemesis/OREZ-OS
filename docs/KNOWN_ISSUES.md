@@ -21,3 +21,5 @@
 14. **AppArmor hardening exposed:** the same ISO's `/etc/sysctl.d/20-apparmor.conf` sets `kernel.apparmor_restrict_unprivileged_userns = 0` for live sessions. Installed-system state remains unverified and release-blocked pending remediation and runtime testing.
 15. **Graphical VM gate still fails:** the strict guest test did not prove `plasmashell`. `display-manager` reported active but `graphical.target` and `multi-user.target` inactive at timed checks. Long-running `snapd.service` seen; cause unknown. UEFI early + late screenshots both remained at Kubuntu splash. Do not identify VM-only graphics behavior with physical NVIDIA failure or success.
 16. **Live-only Calamares guard** has passed native source/package tests in [run 41818841716](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41818841716); still must verify it in a rebuilt ISO. The .deb package deliberately excludes the override.
+
+18. Visual-proof run 41854833186 correctly failed: KDE process active, but two delayed std-VGA screenshots after Try are still black except cursor. CI now rejects process-only success. Next VirtIO VGA comparison is test-only and requires independent proof.
