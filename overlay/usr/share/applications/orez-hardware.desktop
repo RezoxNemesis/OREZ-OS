@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Hardware Check
+Comment=Read-only CPU, GPU and storage inventory
+Exec=konsole -e /usr/bin/orezctl hardware
+Icon=utilities-system-monitor
+Terminal=false
+Categories=System;Utility;

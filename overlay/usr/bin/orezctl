@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# OREZ OS v0.1: read-only status and hardware diagnostics; no root / remote access.
+set -euo pipefail
+usage() {
+  cat <<'USAGE'
+OREZ OS 0.1 — developer live image
+Usage: orezctl <status|hardware|help>
+ status      Version and safety information
+ hardware    Read-only graphics, network and storage inventory
+ help        This help
+No administrative operation or hidden automation is available in v0.1.
+USAGE
+}
+case "${1:-help}" in
+  status)
+    printf '%s\n' 'OREZ OS 0.1 — LIVE TEST ONLY'
+    printf '%s\n' 'Foundation: official Kubuntu 26.04.1 LTS; do not install from this experimental remix.'
+    printf '%s\n' 'Settings: use KDE System Settings. AI/remote access: NOT ENABLED.'
+    uname -srm
+    ;;
+  hardware)
+    printf '%s\n' '--- CPU ---'; lscpu | grep -E 'Architecture:|Model name:' || true
+    printf '%s\n' '--- Video / network (PCI) ---'; if command -v lspci >/dev/null; then lspci | grep -Ei 'vga|3d|network|ethernet' || true; fi
+    printf '%s\n' '--- Storage (read-only) ---'; lsblk -o NAME,TYPE,SIZE,MODEL,TRAN || true
+    printf '%s\n' '--- NVIDIA driver ---'; if command -v nvidia-smi >/dev/null; then nvidia-smi -L || true; else printf '%s\n' 'Driver not loaded or unavailable'; fi
+    ;;
+  help|-h|--help) usage ;;
+  *) usage >&2; exit 2 ;;
+esac

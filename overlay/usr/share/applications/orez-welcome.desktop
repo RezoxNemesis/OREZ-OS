@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Welcome
+GenericName=OREZ OS Developer Information
+Comment=About this experimental OREZ OS live image
+Exec=/usr/bin/orez-welcome
+Icon=computer
+Terminal=false
+Categories=System;Utility;

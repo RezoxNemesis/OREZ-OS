@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Applies the OREZ look once per user. The user can change it in KDE Settings.
+set -u
+state_dir="${XDG_CONFIG_HOME:-$HOME/.config}/orez"
+marker="$state_dir/wallpaper-v0.1-applied"
+wallpaper='/usr/share/backgrounds/orez/orez-ink.svg'
+[[ -f "$marker" ]] && exit 0
+[[ -f "$wallpaper" ]] || exit 0
+command -v plasma-apply-wallpaperimage >/dev/null 2>&1 || exit 0
+# KDE wallpaper daemon may not be ready on the first frame of login.
+for attempt in 1 2 3 4 5; do
+  if plasma-apply-wallpaperimage "$wallpaper" >/dev/null 2>&1; then
+    mkdir -p -- "$state_dir" || exit 0
+    printf '%s\n' 'OREZ 0.1 wallpaper set. Change it through System Settings > Wallpaper.' > "$marker"
+    exit 0
+  fi
+  sleep 2
+done
+exit 0

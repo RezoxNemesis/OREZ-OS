@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+ <defs>
+  <filter id="paper"><feTurbulence baseFrequency=".62" numOctaves="3" seed="7" result="n" type="fractalNoise"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".085"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+  <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eee9dd" stop-opacity="0"/><stop offset="1" stop-color="#c4c4be" stop-opacity=".4"/></linearGradient>
+  <linearGradient id="ink" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#101212"/><stop offset=".48" stop-color="#303232"/><stop offset=".65" stop-color="#131515"/><stop offset="1" stop-color="#444440"/></linearGradient>
+ </defs>
+ <rect width="1920" height="1080" fill="#f6f3ed"/><rect width="1920" height="1080" fill="#f8f6f1" filter="url(#paper)"/>
+ <!-- distant mountains painted with watery strokes -->
+ <path d="M0 880 Q130 745 250 814 Q405 634 585 821 Q720 705 870 784 Q1020 660 1200 813 Q1375 580 1530 787 Q1745 649 1920 800 L1920 1080 0 1080Z" fill="#c4c6c3" opacity=".3"/>
+ <path d="M0 922 Q210 802 390 871 Q535 715 720 879 Q905 745 1110 872 Q1330 695 1560 880 Q1725 805 1920 870 L1920 1080H0Z" fill="url(#fog)"/>
+ <path d="M0 985 Q225 925 375 957 Q615 914 788 974 Q1048 925 1215 969 Q1490 905 1920 957" stroke="#929692" stroke-width="2" fill="none" opacity=".3"/>
+ <circle cx="422" cy="243" r="96" fill="#5b5a57" opacity=".16"/><path d="M360 216 Q429 178 474 223 M340 243 Q405 200 491 245 M370 275 Q435 236 468 277" fill="none" stroke="#75716e" opacity=".12" stroke-width="12"/>
+ <!-- heavy ancient tree twisting from bottom right, painterly double strokes -->
+ <path d="M1440 1140 C1480 960 1520 795 1539 630 C1550 481 1540 393 1460 313 C1366 219 1167 166 1060 125 C875 54 815 54 665 59" stroke="#111413" stroke-width="125" fill="none" stroke-linecap="round"/>
+ <path d="M1452 1140 C1481 913 1560 682 1553 524 C1545 401 1486 317 1360 263 C1245 212 1100 173 944 135" stroke="#50504c" stroke-width="27" opacity=".8" fill="none" stroke-linecap="round"/>
+ <path d="M1510 572 C1640 475 1669 355 1668 234 C1668 151 1732 85 1820 -15" stroke="#202321" stroke-width="60" fill="none" stroke-linecap="round"/>
+ <path d="M1480 432 C1326 386 1195 405 1060 342 C914 272 770 256 640 255" stroke="#151918" stroke-width="39" fill="none" stroke-linecap="round"/>
+ <path d="M1205 212 C1132 164 1095 76 1128 -15 M1013 318 C889 318 790 346 682 300 C606 269 530 252 459 285 M843 106 C785 52 752 2 748 -25" stroke="#1b1d1a" stroke-width="25" fill="none" stroke-linecap="round"/>
+ <path d="M1644 216 C1753 210 1879 169 1990 84 M1715 89 C1764 55 1801 -5 1824 -30 M1090 356 C1030 407 1000 445 920 468" stroke="#232522" stroke-width="23" fill="none" stroke-linecap="round"/>
+ <g fill="none" stroke="#222421" stroke-linecap="round">
+ <path d="M1457 299 C1375 201 1345 137 1307 52" stroke-width="15"/><path d="M1365 260 Q1380 152 1478 100" stroke-width="11"/><path d="M1528 375 Q1621 314 1703 292" stroke-width="15"/><path d="M1261 222 Q1227 157 1209 102" stroke-width="11"/><path d="M899 283 Q854 233 831 174" stroke-width="12"/>
+ <path d="M675 255 L576 235 L517 204 M609 270 L548 305 L495 305 M1687 249 L1767 225 L1850 229" stroke-width="10"/>
+ </g>
+ <!-- clusters of ink leaves, irregular and widely spaced -->
+ <g fill="#222520" opacity=".82">
+ <path d="M486 202 q-54 -55 -90 -18 q52 44 90 18 M506 225 q-29 66 -69 48 q14 -42 69 -48 M563 225 q45 -57 85 -30 q-40 39 -85 30 M615 274 q27 55 64 31 q-26 -36 -64 -31 M721 232 q-43 -47 -70 -19 q43 38 70 19 M845 171 q-59 -37 -76 -3 q47 26 76 3 M1094 114 q-38 -55 -71 -25 q37 34 71 25 M1178 115 q23 -69 65 -36 q-22 42 -65 36 M1316 57 q-46 -42 -71 -6 q38 25 71 6 M1429 113 q29 -57 63 -29 q-19 38 -63 29 M1575 80 q38 -65 74 -33 q-29 36 -74 33 M1698 161 q-60 -44 -81 -7 q52 27 81 7 M1783 226 q30 -59 69 -22 q-24 36 -69 22 M1850 218 q40 -46 70 -6 q-35 25 -70 6 M1715 286 q31 43 66 10 q-33 -20 -66 -10 M1036 371 q-31 52 -67 23 q21 -40 67 -23 M977 461 q-41 -37 -64 -6 q33 20 64 6"/>
+ <circle cx="474" cy="196" r="8"/><circle cx="639" cy="227" r="7"/><circle cx="775" cy="232" r="6"/><circle cx="1265" cy="97" r="8"/><circle cx="1509" cy="81" r="9"/><circle cx="1897" cy="190" r="7"/>
+ </g>
+ <!-- sloped earth and man relaxing against the trunk -->
+ <path d="M995 988 Q1254 898 1393 863 Q1604 818 1920 895 L1920 1080 925 1080Z" fill="#60615c" opacity=".36"/>
+ <path d="M1051 974 Q1262 905 1422 889 Q1603 855 1890 913" fill="none" stroke="#222520" stroke-width="9" opacity=".6"/>
+ <g fill="#16191a" stroke="#22211e" stroke-linejoin="round">
+ <!-- coat back, bent legs -->
+ <path d="M1322 844 Q1300 785 1258 747 Q1216 721 1199 738 Q1173 761 1170 810 L1152 880 Q1180 925 1250 906 L1344 906 Z" stroke-width="4"/>
+ <path d="M1194 870 Q1129 877 1088 902 Q1058 920 1078 938 Q1128 935 1190 928 L1255 917Z" stroke-width="4"/>
+ <path d="M1253 864 Q1224 904 1174 945 L1135 969 Q1131 988 1167 982 Q1265 952 1326 912 L1344 879Z" stroke-width="4"/>
+ <path d="M1195 743 Q1182 721 1177 697 Q1188 654 1225 650 Q1257 663 1258 697 Q1245 727 1234 740Z" stroke-width="3"/>
+ <path d="M1222 653 Q1181 628 1178 654 Q1143 645 1142 623 Q1160 607 1175 629 Q1158 589 1190 601 Q1226 604 1232 639Z"/>
+ <path d="M1247 758 Q1268 795 1300 809 Q1323 803 1330 815 Q1320 832 1291 826 Q1263 811 1220 792Z"/>
+ <path d="M1325 861 L1336 941" stroke="#161616" stroke-width="9"/>
+ </g>
+ <path d="M1195 736 Q1205 771 1211 815 M1238 775 Q1244 843 1240 890" fill="none" stroke="#74736f" stroke-width="3" opacity=".7"/>
+ <g stroke="#494c47" fill="none" opacity=".6" stroke-linecap="round"><path d="M1032 993 l21 -51 m-12 53 l-1 -34 m65 26 l-19 -45 m31 46 l25 -32 m232 -53 l-4 -46 m14 45 l21 -48 m65 41 l-14 -33" stroke-width="2"/></g>
+</svg>

@@ -1,0 +1,65 @@
+name: OREZ OS — live candidate
+
+on:
+  pull_request:
+    paths:
+      - 'build/**'
+      - 'overlay/**'
+      - 'tests/**'
+      - '.github/workflows/orez-live.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orez-live-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-validation:
+    name: Validate OREZ code and Debian package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout (pinned action)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Source and shell checks
+        run: |
+          python3 -m unittest discover -s tests -v
+          bash build/package-shell.sh
+          dpkg-deb --contents dist/orez-shell_0.1.0-1_all.deb | tail -20
+      - name: Report exact status
+        run: |
+          echo '### OREZ source candidate' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Native shell package built and source tests passed.' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Bootable ISO, real UEFI/VM boot, drivers and installation: **not tested by this job**.' >> "$GITHUB_STEP_SUMMARY"
+
+  live-image:
+    name: Build full Kubuntu-derived live ISO (manual only)
+    needs: source-validation
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check available disk before downloads
+        run: |
+          df -h .
+          free_kib="$(df -Pk . | awk 'NR==2 {print $4}')"
+          if (( free_kib < 11534336 )); then
+            echo 'Insufficient space for 5.1 GB upstream + remixed ISO. Use a larger builder.' >&2
+            exit 1
+          fi
+      - name: Install image construction tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends curl gnupg xorriso squashfs-tools ca-certificates
+      - name: Produce and verify development ISO
+        run: |
+          bash build/build-live.sh
+          bash build/check-iso.sh dist/OREZ-OS-0.1-live-amd64.iso
+          cat dist/build-report.txt
+          echo '### ISO build produced — not hardware-certified' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/build-report.txt >> "$GITHUB_STEP_SUMMARY"
+          echo 'Full ISO is intentionally not uploaded to Actions artifacts: size and redistribution approvals remain unresolved.' >> "$GITHUB_STEP_SUMMARY"
