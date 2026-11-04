@@ -14,3 +14,5 @@
 10. **Encrypted installation (reported upstream):** [LP #2172138](https://bugs.launchpad.net/bugs/2172138) Calamares LUKS2 crypttab omission may cause an unbootable encrypted install. **Release blocker** until tested encrypted installation, unlock and rollback pass in disposable virtual machines.
 
 11. [Run 41816102051](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41816102051): stricter direct-kernel graphical gate failed although the OREZ live filesystem was present. The screenshot is black; serial reached login prompts but did not prove KDE graphical.target/display manager. Cause is **unverified** (the serial-console test kernel parameters are a candidate). Neither firmware/desktop readiness nor USB install is qualified.
+
+12. The OREZ development ISO intentionally replaces the live Calamares entry point with a visible non-destructive blocker until installer safety is qualified. This live-only override is explicitly excluded from the separate .deb package. Other root-capable partitioning tools remain available; this guard is not absolute drive-write isolation.

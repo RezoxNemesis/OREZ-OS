@@ -112,6 +112,18 @@ class OrezSourceTests(unittest.TestCase):
         for danger in ['sudo ', 'mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=']:
             self.assertNotIn(danger, src)
 
+    def test_live_installer_is_visibly_disabled_but_host_package_preserves_calamares(self):
+        stub = (OVERLAY / 'usr/bin/calamares').read_text()
+        self.assertIn('OREZ LIVE TEST', stub)
+        self.assertIn('exit 78', stub)
+        for forbidden in ['sudo ', 'mkfs', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'apt install']:
+            self.assertNotIn(forbidden, stub)
+        desktop = (OVERLAY / 'usr/share/applications/calamares.desktop').read_text()
+        self.assertIn('Exec=/usr/bin/calamares', desktop)
+        self.assertIn('Unavailable', desktop)
+        packaging = (ROOT / 'build/package-shell.sh').read_text()
+        self.assertIn('rm -f -- "$work/usr/bin/calamares" "$work/usr/share/applications/calamares.desktop"', packaging)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

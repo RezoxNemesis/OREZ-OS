@@ -6,6 +6,8 @@ command -v dpkg-deb >/dev/null || { echo 'dpkg-deb is required' >&2; exit 1; }
 work="$(mktemp -d)"
 trap 'rm -rf -- "$work"' EXIT
 cp -a "$root/overlay/." "$work/"
+# The live-only Calamares safety blocker must NEVER replace Calamares on a normal host.
+rm -f -- "$work/usr/bin/calamares" "$work/usr/share/applications/calamares.desktop"
 mkdir -p "$work/DEBIAN" "$root/dist"
 chmod 0755 "$work/DEBIAN"
 chmod g-s "$work/DEBIAN"
@@ -24,3 +26,8 @@ CONTROL
 # No maintainer scripts; installation never executes privileged arbitrary code.
 dpkg-deb --build --root-owner-group "$work" "$root/dist/orez-shell_0.1.0-1_all.deb"
 dpkg-deb --info "$root/dist/orez-shell_0.1.0-1_all.deb"
+if dpkg-deb --contents "$root/dist/orez-shell_0.1.0-1_all.deb" | grep -Eq '[[:space:]]\./usr/bin/calamares$|[[:space:]]\./usr/share/applications/calamares.desktop
+; then
+  echo "Unsafe package: live-only installer override leaked into normal .deb" >&2
+  exit 1
+fi
