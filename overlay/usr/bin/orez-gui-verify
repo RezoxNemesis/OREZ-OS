@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# VM-only, opt-in, no root authority, no network; checks KDE process health.
+set -euo pipefail
+args=" $(cat /proc/cmdline) "
+[[ "$args" == *' orez.verify=1 '* ]] || exit 0
+[[ "$args" == *' boot=casper '* ]] || exit 0
+for attempt in $(seq 1 150); do
+  if systemctl is-active --quiet display-manager.service && pgrep -x plasmashell >/dev/null 2>&1; then
+    msg='OREZ_GUI_PROOF=PLASMA_PROCESS_AND_DISPLAY_MANAGER_ACTIVE'
+    printf '%s\n' "$msg"
+    if [[ -c /dev/ttyS0 && -w /dev/ttyS0 ]]; then printf '\n%s\n' "$msg" > /dev/ttyS0; fi
+    exit 0
+  fi
+  sleep 2
+done
+echo 'OREZ_GUI_PROOF=NO_CONFIRMED_PLASMA_SESSION' >&2
+exit 1
