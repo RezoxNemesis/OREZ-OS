@@ -88,6 +88,7 @@ jobs:
           echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
           cat dist/boot-evidence/RESULT.txt >> "$GITHUB_STEP_SUMMARY"
           cat dist/boot-evidence/GUI_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/GUI_FRAME_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
           echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
       - name: Capture OVMF UEFI boot screen for visual review
         if: ${{ always() && steps.iso.outcome == 'success' }}
@@ -110,7 +111,9 @@ jobs:
             dist/boot-evidence/upstream-unpackfs.conf
             dist/boot-evidence/upstream-live-apparmor.conf
             dist/boot-evidence/GUI_RESULT.txt
-            dist/boot-evidence/gui-screen.ppm.gz
+            dist/boot-evidence/GUI_FRAME_RESULT.txt
+            dist/boot-evidence/gui-screen-22.ppm.gz
+            dist/boot-evidence/gui-screen-24.ppm.gz
             dist/boot-evidence/try-prompt-before.ppm.gz
             dist/boot-evidence/qmp-try-result.log
             dist/boot-evidence/UEFI_RESULT.txt

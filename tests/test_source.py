@@ -194,6 +194,30 @@ class OrezSourceTests(unittest.TestCase):
             frame.write_bytes(b'P6\n1280 800\n255\n' + data)
             self.assertFalse(module.check(frame)[0])
 
+    def test_graphical_frame_rejects_blank_even_with_plasma_process(self):
+        import importlib.util
+        checker = ROOT / 'build/check-graphical-frame.py'
+        spec = importlib.util.spec_from_file_location('orez_graphics_frame', checker)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as directory:
+            path = pathlib.Path(directory) / 'screen.ppm'
+            width, height = 640, 480
+            header = b'P6\n640 480\n255\n'
+            pixels = bytearray(width * height * 3)
+            path.write_bytes(header + pixels)
+            self.assertFalse(module.inspect(path)[0])
+            for y in range(height):
+                for x in range(width):
+                    index = (y * width + x) * 3
+                    pixels[index:index+3] = bytes(((x + y) % 220 + 30,
+                                                    (x * 3) % 255, (y * 2) % 255))
+            path.write_bytes(header + pixels)
+            self.assertTrue(module.inspect(path)[0])
+        source = (ROOT / 'build/test-casper-vm.sh').read_text()
+        self.assertIn('check-graphical-frame.py', source)
+        self.assertIn('visual_ok=0', source)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

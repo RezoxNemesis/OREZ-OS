@@ -3,7 +3,7 @@
 # This direct-kernel test does NOT verify UEFI/GRUB/graphics or installer.
 set -Eeuo pipefail
 [[ "$#" -eq 1 && -f "$1" ]] || { echo 'Usage: test-casper-vm.sh OREZ.iso' >&2; exit 2; }
-for tool in qemu-system-x86_64 xorriso timeout grep tail mktemp socat gzip; do command -v "$tool" >/dev/null || { echo "Missing $tool" >&2; exit 2; }; done
+for tool in qemu-system-x86_64 xorriso timeout grep tail mktemp socat gzip python3; do command -v "$tool" >/dev/null || { echo "Missing $tool" >&2; exit 2; }; done
 ISO="$(realpath "$1")"
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 EVIDENCE_DIR="${OREZ_BOOT_EVIDENCE_DIR:-$REPO_ROOT/dist/boot-evidence}"
@@ -70,10 +70,23 @@ for ((attempt=0;attempt<210;attempt++)); do
   if ! kill -0 "$qemu_timeout_pid" 2>/dev/null; then break; fi
   sleep 2
 done
-if [[ -S "$MONITOR" ]] && kill -0 "$qemu_timeout_pid" 2>/dev/null; then
-  if printf 'screendump %s\n' "$EVIDENCE_DIR/gui-screen.ppm" | socat -t 12 - UNIX-CONNECT:"$MONITOR" >/dev/null 2>&1 && [[ -s "$EVIDENCE_DIR/gui-screen.ppm" ]]; then
-    gzip -f -9 "$EVIDENCE_DIR/gui-screen.ppm"
+# A running plasmashell is insufficient: earlier QEMU image was solid black.
+# Give KWin time to render and preserve evidence from early and late frames.
+visual_ok=0
+for delay in 22 24; do
+  [[ -S "$MONITOR" ]] && kill -0 "$qemu_timeout_pid" 2>/dev/null || break
+  sleep "$delay"
+  frame="$EVIDENCE_DIR/gui-screen-$delay.ppm"
+  if printf 'screendump %s\n' "$frame" | socat -t 12 - UNIX-CONNECT:"$MONITOR" >/dev/null 2>&1 && [[ -s "$frame" ]]; then
+    if python3 "$REPO_ROOT/build/check-graphical-frame.py" "$frame" | tee "$EVIDENCE_DIR/GUI_FRAME_RESULT.txt"; then
+      visual_ok=1
+    fi
+    gzip -f -9 "$frame"
+    (( visual_ok == 1 )) && break
   fi
+done
+if (( visual_ok != 1 )); then
+  echo 'BLOCKED: Plasma process found, but no nonblank virtual display was rendered' | tee "$EVIDENCE_DIR/GUI_FRAME_RESULT.txt"
 fi
 if kill -0 "$qemu_timeout_pid" 2>/dev/null; then kill -TERM "$qemu_timeout_pid" 2>/dev/null || true; fi
 set +e
@@ -84,6 +97,10 @@ if grep -Fq 'OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT' "$LOG"; then
   echo "PASS: live casper guest booted and OREZ overlay was visible (QEMU exit=$qemu_exit)" | tee "$EVIDENCE_DIR/RESULT.txt"
   if grep -Fq 'OREZ_GUI_PROOF=PLASMA_PROCESS_AND_DISPLAY_MANAGER_ACTIVE' "$LOG"; then
     echo 'PASS: Plasma Shell and display manager active (visual review still needed)' | tee "$EVIDENCE_DIR/GUI_RESULT.txt"
+    if [[ "${OREZ_REQUIRE_GUI:-0}" == 1 && "$visual_ok" -ne 1 ]]; then
+      echo "FAIL: Plasma started but rendered a blank virtual framebuffer" >&2
+      exit 1
+    fi
   else
     echo 'BLOCKED: Plasma graphical session not proven' | tee "$EVIDENCE_DIR/GUI_RESULT.txt"
     [[ "${OREZ_REQUIRE_GUI:-0}" != 1 ]] || exit 1
