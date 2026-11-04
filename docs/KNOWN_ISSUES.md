@@ -23,3 +23,5 @@
 16. **Live-only Calamares guard** has passed native source/package tests in [run 41818841716](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41818841716); still must verify it in a rebuilt ISO. The .deb package deliberately excludes the override.
 
 18. Visual-proof run 41854833186 correctly failed: KDE process active, but two delayed std-VGA screenshots after Try are still black except cursor. CI now rejects process-only success. Next VirtIO VGA comparison is test-only and requires independent proof.
+
+19. [VirtIO retry run 41874348585](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41874348585): Try was successfully selected, KDE processes started, but TWO later framebuffer captures were completely black. M1 real desktop rendering **BLOCKED**, full job failed. The next test-only experiment conditionally tries KWin's QPainter compositor in the isolated VM without changing the installed OS or hardware graphics defaults; no results have been obtained yet.

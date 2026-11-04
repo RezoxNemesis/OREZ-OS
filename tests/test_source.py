@@ -244,6 +244,28 @@ class OrezSourceTests(unittest.TestCase):
         self.assertIn("grep -Fqx 'exit 78'", checker)
         self.assertIn('/casper/orez-install.squashfs', checker)
 
+    def test_vm_qpainter_experiment_is_visible_opt_in_only(self):
+        relative = 'etc/xdg/plasma-workspace/env/90-orez-vm-software.sh'
+        path = OVERLAY / relative
+        self.assertTrue(path.is_file())
+        contents = path.read_text()
+        self.assertIn('orez.verify=1', contents)
+        self.assertIn('export KWIN_COMPOSE=Q', contents)
+        self.assertIn('case ', contents)
+        self.assertNotIn('sudo ', contents)
+        self.assertNotIn('curl ', contents)
+        self.assertNotIn('mkfs', contents)
+        self.assertNotIn(relative, (ROOT / 'image/installer/installed-files.txt').read_text())
+        self.assertTrue((OVERLAY / 'usr/share/doc/orez/VM_COMPOSITOR_TEST.md').exists())
+        subprocess.run(['sh','-n',str(path)],check=True)
+        # In normal test/production sessions without the opt-in kernel flag
+        # this script must not overwrite KWIN_COMPOSE.
+        command = '. "$1"; printf "%s" "${KWIN_COMPOSE:-unset}"'
+        result = subprocess.run(['sh','-c',command,'sh',str(path)],
+                                env=dict(os.environ, KWIN_COMPOSE='inherit'),
+                                text=True, capture_output=True, check=True)
+        self.assertEqual(result.stdout, 'inherit')
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
