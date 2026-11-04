@@ -70,7 +70,7 @@ jobs:
         run: |
           rm -f -- .cache/orez/kubuntu-26.04.1-desktop-amd64.iso
           df -h .
-          sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf socat
       - name: Prove casper loaded OREZ layer inside a disposable VM
         timeout-minutes: 9
         env:
@@ -80,6 +80,13 @@ jobs:
           echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
           cat dist/boot-evidence/RESULT.txt >> "$GITHUB_STEP_SUMMARY"
           echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
+      - name: Capture OVMF UEFI boot screen for visual review
+        timeout-minutes: 4
+        env:
+          OREZ_UEFI_CAPTURE_AFTER: '90'
+        run: |
+          bash build/test-uefi-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo 'UEFI screenshot captured; **NOT yet reviewed or certified.**' >> "$GITHUB_STEP_SUMMARY"
       - name: Preserve small VM evidence (never upload the ISO)
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -88,6 +95,9 @@ jobs:
           path: |
             dist/boot-evidence/casper-serial.log
             dist/boot-evidence/RESULT.txt
+            dist/boot-evidence/UEFI_RESULT.txt
+            dist/boot-evidence/uefi-screen.ppm.gz
+            dist/boot-evidence/uefi-serial.log
             dist/build-report.txt
           if-no-files-found: warn
           retention-days: 2

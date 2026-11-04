@@ -16,14 +16,25 @@ xorriso -osirrox on -indev "$ISO" -extract /casper/vmlinuz "$EVIDENCE_DIR/extrac
 xorriso -osirrox on -indev "$ISO" -extract /casper/initrd "$EVIDENCE_DIR/extracted/initrd" >/dev/null 2>&1
 # No writable hard disk, network interface, host port forwarding or external serial endpoints.
 # There is no KVM assumption: Github-hosted VMs commonly lack /dev/kvm.
+# Stop the VM as soon as the overlay witness appears; do not waste runner time.
 set +e
-timeout --signal=TERM --kill-after=10s "${OREZ_QEMU_TIMEOUT:-330}" \
+timeout --signal=TERM --kill-after=10s "${OREZ_QEMU_TIMEOUT:-420}" \
   qemu-system-x86_64 -machine q35,accel=tcg -cpu max -m 4096 -smp 2 \
     -kernel "$EVIDENCE_DIR/extracted/vmlinuz" \
     -initrd "$EVIDENCE_DIR/extracted/initrd" \
     -append 'boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1' \
     -drive "file=$ISO,if=ide,index=1,media=cdrom,format=raw,readonly=on" \
-    -net none -display none -monitor none -serial "file:$LOG" -no-reboot
+    -net none -display none -monitor none -serial "file:$LOG" -no-reboot &
+qemu_timeout_pid=$!
+set -e
+for ((attempt=0;attempt<210;attempt++)); do
+  if [[ -s "$LOG" ]] && grep -Fq 'OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT' "$LOG"; then break; fi
+  if ! kill -0 "$qemu_timeout_pid" 2>/dev/null; then break; fi
+  sleep 2
+done
+if kill -0 "$qemu_timeout_pid" 2>/dev/null; then kill -TERM "$qemu_timeout_pid" 2>/dev/null || true; fi
+set +e
+wait "$qemu_timeout_pid"
 qemu_exit=$?
 set -e
 if grep -Fq 'OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT' "$LOG"; then
