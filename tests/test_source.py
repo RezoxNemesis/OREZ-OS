@@ -29,7 +29,7 @@ class OrezSourceTests(unittest.TestCase):
 
     def test_overlay_is_unprivileged_and_visible(self):
         services = sorted(p.name for p in (OVERLAY / 'usr/lib/systemd/system').glob('*.service'))
-        self.assertEqual(services, ['orez-live-verify.service'])
+        self.assertEqual(services, ['orez-gui-verify.service', 'orez-live-verify.service'])
         unit = (OVERLAY / 'usr/lib/systemd/system/orez-live-verify.service').read_text()
         for required in ['ConditionKernelCommandLine=orez.verify=1', 'ConditionKernelCommandLine=boot=casper', 'User=nobody', 'PrivateNetwork=yes', 'ProtectSystem=strict', 'NoNewPrivileges=yes']:
             self.assertIn(required, unit)
@@ -37,6 +37,16 @@ class OrezSourceTests(unittest.TestCase):
         self.assertFalse(list(OVERLAY.rglob('*authorized_keys*')))
         first_login = (OVERLAY / 'etc/xdg/autostart/orez-initialize.desktop').read_text()
         self.assertIn('Exec=/usr/bin/orez-session-init', first_login)
+
+    def test_graphical_witness_is_unprivileged_and_opt_in(self):
+        unit = (OVERLAY / 'usr/lib/systemd/system/orez-gui-verify.service').read_text()
+        for item in ['User=nobody', 'PrivateNetwork=yes', 'NoNewPrivileges=yes',
+                     'ProtectSystem=strict', 'ConditionKernelCommandLine=orez.verify=1']:
+            self.assertIn(item, unit)
+        script = (OVERLAY / 'usr/bin/orez-gui-verify').read_text()
+        self.assertIn('pgrep -x plasmashell', script)
+        for unsafe in ['sudo ', 'mkfs', 'wipefs', 'curl ', 'passwd', 'mount -o']:
+            self.assertNotIn(unsafe, script)
 
     def test_status_does_not_require_root(self):
         p = subprocess.run([str(OVERLAY / 'usr/bin/orezctl'), 'status'], capture_output=True, text=True)

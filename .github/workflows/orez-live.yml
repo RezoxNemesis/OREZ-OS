@@ -72,13 +72,15 @@ jobs:
           df -h .
           sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf socat
       - name: Prove casper loaded OREZ layer inside a disposable VM
-        timeout-minutes: 9
+        timeout-minutes: 11
         env:
-          OREZ_QEMU_TIMEOUT: '420'
+          OREZ_QEMU_TIMEOUT: '480'
+          OREZ_REQUIRE_GUI: '1'
         run: |
           bash build/test-casper-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
           echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
           cat dist/boot-evidence/RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/GUI_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
           echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
       - name: Capture OVMF UEFI boot screen for visual review
         timeout-minutes: 4
@@ -95,6 +97,8 @@ jobs:
           path: |
             dist/boot-evidence/casper-serial.log
             dist/boot-evidence/RESULT.txt
+            dist/boot-evidence/GUI_RESULT.txt
+            dist/boot-evidence/gui-screen.ppm.gz
             dist/boot-evidence/UEFI_RESULT.txt
             dist/boot-evidence/uefi-screen.ppm.gz
             dist/boot-evidence/uefi-serial.log
