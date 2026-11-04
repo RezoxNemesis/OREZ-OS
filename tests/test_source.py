@@ -227,6 +227,15 @@ class OrezSourceTests(unittest.TestCase):
         workflow = (ROOT / '.github/workflows/orez-live.yml').read_text()
         self.assertIn("OREZ_VM_VGA: 'virtio'", workflow)
 
+    def test_blank_try_frame_retries_without_input(self):
+        script = (ROOT / 'build/test-casper-vm.sh').read_text()
+        self.assertIn('check-graphical-frame.py', script)
+        self.assertIn('Try prompt not painted yet; safely retrying', script)
+        self.assertIn('NO mouse click sent', script)
+        self.assertIn('for ((attempt=0;attempt<305;attempt++))', script)
+        workflow = (ROOT / '.github/workflows/orez-live.yml').read_text()
+        self.assertIn("OREZ_QEMU_TIMEOUT: '700'", workflow)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

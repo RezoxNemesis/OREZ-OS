@@ -79,9 +79,9 @@ jobs:
           echo '### Installer source not certified' >> "$GITHUB_STEP_SUMMARY"
           cat dist/boot-evidence/INSTALLER_READINESS.txt >> "$GITHUB_STEP_SUMMARY"
       - name: Prove casper loaded OREZ layer inside a disposable VM
-        timeout-minutes: 11
+        timeout-minutes: 14
         env:
-          OREZ_QEMU_TIMEOUT: '480'
+          OREZ_QEMU_TIMEOUT: '700'
           OREZ_REQUIRE_GUI: '1'
           OREZ_VM_VGA: 'virtio'  # test-only VirtIO 2D adapter
         run: |

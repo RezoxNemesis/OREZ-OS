@@ -46,7 +46,7 @@ timeout --signal=TERM --kill-after=10s "${OREZ_QEMU_TIMEOUT:-420}" \
 qemu_timeout_pid=$!
 set -e
 try_sent=0
-for ((attempt=0;attempt<210;attempt++)); do
+for ((attempt=0;attempt<305;attempt++)); do
   # The Kubuntu live image launches a Try/Install welcome process BEFORE Plasma.
   # Only on a disposable guest (no disk/network), click the left-hand Try button.
   if [[ "${OREZ_REQUIRE_GUI:-0}" == 1 && "$try_sent" -eq 0 && -S "$QMP" && -s "$LOG" ]] &&
@@ -63,13 +63,19 @@ for ((attempt=0;attempt<210;attempt++)); do
         echo 'QMP Try transition failed; GUI gate remains mandatory' >&2
       }
     else
-      # Fail closed if the emulated VGA changes welcome layout. Keep ONE
-      # rejected frame for diagnosis; never guess/click a different screen.
+      # On TCG/VirtIO the process starts before the welcome screen is painted.
+      # Retry transient black frames; DO NOT click them. A nonblank but unknown
+      # screen remains a hard stop, with one captured diagnostic screenshot.
       if [[ -s "$EVIDENCE_DIR/try-prompt-before.ppm" ]]; then
-        mv -f -- "$EVIDENCE_DIR/try-prompt-before.ppm" "$EVIDENCE_DIR/try-unmatched.ppm"
-        gzip -f -9 "$EVIDENCE_DIR/try-unmatched.ppm"
-        try_sent=1
-        echo 'OREZ Try/Install layout unrecognized; no mouse click sent' >&2
+        if python3 "$REPO_ROOT/build/check-graphical-frame.py" "$EVIDENCE_DIR/try-prompt-before.ppm" >/dev/null 2>&1; then
+          mv -f -- "$EVIDENCE_DIR/try-prompt-before.ppm" "$EVIDENCE_DIR/try-unmatched.ppm"
+          gzip -f -9 "$EVIDENCE_DIR/try-unmatched.ppm"
+          try_sent=1
+          echo 'OREZ Try/Install layout unrecognized; NO mouse click sent' >&2
+        else
+          rm -f -- "$EVIDENCE_DIR/try-prompt-before.ppm"
+          if (( attempt % 20 == 0 )); then echo 'OREZ Try prompt not painted yet; safely retrying'; fi
+        fi
       fi
     fi
   fi
