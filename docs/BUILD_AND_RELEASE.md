@@ -38,3 +38,6 @@ After construction, the `live-image` GitHub job frees the upstream ISO and insta
 
 ## M2: Inspect live ISO installation inputs
 The full-image workflow reads Kubuntu's actual `filesystem.squashfs`, `unpackfs.conf` and reported live-only AppArmor sysctl setting, without touching disks. The report explicitly blocks SSD installation until OREZ's installed-system persistence, encryption and recovery are qualified. Expected blockers are displayed, not hidden by the green ISO construction status. No release is authorized by this diagnostic.
+
+## Graphical VM bottleneck diagnostics
+The source-visible, opt-in `orez-gui-verify` now reports job blockers, failed units and KDE/SDDM processes at bounded intervals when no Plasma session appears. This is only within a disposable test guest; it runs as `nobody`, has no network, and makes no system modifications. The QEMU test selects hardware KVM acceleration only if the hosted runner exposes it; otherwise it uses slower software emulation. A failing GUI gate stays a failure rather than being bypassed.

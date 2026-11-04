@@ -15,12 +15,21 @@ rm -f -- "$LOG" "$MONITOR" "$EVIDENCE_DIR/gui-screen.ppm.gz"
 # The ISO must contain the same kernel and initrd being tested.
 xorriso -osirrox on -indev "$ISO" -extract /casper/vmlinuz "$EVIDENCE_DIR/extracted/vmlinuz" >/dev/null 2>&1
 xorriso -osirrox on -indev "$ISO" -extract /casper/initrd "$EVIDENCE_DIR/extracted/initrd" >/dev/null 2>&1
+# Optional hardware acceleration on compatible CI runners; keep pure TCG fallback.
+# This changes ONLY test VM performance, never target PC boot or security.
+if [[ -c /dev/kvm && -r /dev/kvm && -w /dev/kvm ]] && command -v qemu-system-x86_64 >/dev/null; then
+  export OREZ_VM_ACCEL=kvm OREZ_VM_CPU=host
+  echo 'OREZ VM accelerator: KVM available'
+else
+  export OREZ_VM_ACCEL=tcg OREZ_VM_CPU=max
+  echo 'OREZ VM accelerator: TCG fallback (can be very slow)'
+fi
 # No writable hard disk, network interface, host port forwarding or external serial endpoints.
 # There is no KVM assumption: Github-hosted VMs commonly lack /dev/kvm.
 # Stop the VM as soon as the overlay witness appears; do not waste runner time.
 set +e
 timeout --signal=TERM --kill-after=10s "${OREZ_QEMU_TIMEOUT:-420}" \
-  qemu-system-x86_64 -machine q35,accel=tcg -cpu max -m 4096 -smp 2 \
+  qemu-system-x86_64 -machine "q35,accel=${OREZ_VM_ACCEL:-tcg}" -cpu "${OREZ_VM_CPU:-max}" -m 4096 -smp 2 \
     -kernel "$EVIDENCE_DIR/extracted/vmlinuz" \
     -initrd "$EVIDENCE_DIR/extracted/initrd" \
     -append 'boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1' \

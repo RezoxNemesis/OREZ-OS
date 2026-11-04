@@ -18,6 +18,14 @@ for attempt in $(seq 1 150); do
     graphical="$(systemctl is-active graphical.target 2>/dev/null || true)"
     multi="$(systemctl is-active multi-user.target 2>/dev/null || true)"
     emit "OREZ_GUI_DIAG attempt=$attempt display=$dm graphical=$graphical multiuser=$multi"
+    if (( attempt == 30 || attempt == 75 )); then
+      jobs="$(systemctl --no-pager --plain list-jobs --no-legend 2>/dev/null | head -18 | tr '\n' ';' || true)"
+      errors="$(systemctl --no-pager --plain --failed --no-legend 2>/dev/null | head -12 | tr '\n' ';' || true)"
+      process="$(ps -eo pid,comm,args 2>/dev/null | grep -E 'sddm|plasmashell|kwin_wayland|Xorg|Xwayland' | grep -v 'grep -E' | head -12 | tr '\n' ';' || true)"
+      emit "OREZ_GUI_JOBS=$jobs"
+      emit "OREZ_GUI_FAILED_UNITS=$errors"
+      emit "OREZ_GUI_PROCESSES=$process"
+    fi
   fi
   sleep 2
 done
