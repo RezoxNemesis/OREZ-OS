@@ -7,6 +7,11 @@ OREZ OS 0.1 — developer live image
 Usage: orezctl <status|hardware|security|connect|settings|appearance|ai|help>
  status      Version and safety information
  hardware    Read-only graphics, network and storage inventory
+ security    Read-only security facts (not certification)
+ connect     Open KDE Connect pairing or list devices
+ settings    Open native KDE System Settings
+ appearance  User-controlled wallpaper autostart on/off/status
+ ai          Report optional AI is disabled
  help        This help
 No administrative operation or hidden automation is available in v0.1.
 USAGE
