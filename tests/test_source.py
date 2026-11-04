@@ -124,6 +124,34 @@ class OrezSourceTests(unittest.TestCase):
         packaging = (ROOT / 'build/package-shell.sh').read_text()
         self.assertIn('rm -f -- "$work/usr/bin/calamares" "$work/usr/share/applications/calamares.desktop"', packaging)
 
+    def test_install_only_payload_has_strict_file_allowlist(self):
+        allowlist = (ROOT / 'image/installer/installed-files.txt').read_text().splitlines()
+        names = [row.strip() for row in allowlist if row.strip() and not row.lstrip().startswith('#')]
+        self.assertEqual(len(names), len(set(names)))
+        self.assertGreaterEqual(len(names), 12)
+        for path in names:
+            self.assertFalse(path.startswith('/'), path)
+            self.assertNotIn('..', path)
+            self.assertTrue((OVERLAY / path).is_file(), path)
+            self.assertFalse((OVERLAY / path).is_symlink(), path)
+        for forbidden in ['usr/bin/calamares', 'etc/sysctl.d/20-apparmor.conf',
+                          'usr/bin/orez-live-verify', 'usr/bin/orez-gui-verify']:
+            self.assertNotIn(forbidden, names)
+        packager = (ROOT / 'build/package-shell.sh').read_text()
+        builder = (ROOT / 'build/build-install-payload.sh').read_text()
+        self.assertIn('image/installer/installed-files.txt', packager)
+        self.assertIn('image/installer/installed-files.txt', builder)
+        self.assertIn('mksquashfs', builder)
+
+    def test_candidate_calamares_profile_is_not_active_and_excludes_live_apparmor(self):
+        profile = (ROOT / 'image/installer/orez-unpackfs-candidate.conf').read_text()
+        self.assertEqual(profile.count('sourcefs: "squashfs"'), 2)
+        self.assertIn('source: "/cdrom/casper/filesystem.squashfs"', profile)
+        self.assertIn('source: "/cdrom/casper/orez-install.squashfs"', profile)
+        self.assertIn('etc/sysctl.d/20-apparmor.conf', profile)
+        self.assertFalse((OVERLAY / 'etc/calamares/modules/unpackfs.conf').exists())
+        self.assertTrue((OVERLAY / 'usr/bin/calamares').is_file())
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

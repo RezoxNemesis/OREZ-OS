@@ -13,4 +13,19 @@ boot="$(xorriso -indev "$iso" -report_el_torito plain 2>&1)"
 grep -Eiq 'El Torito|boot image' <<<"$boot" || { echo 'No El Torito boot metadata' >&2; exit 1; }
 area="$(xorriso -indev "$iso" -report_system_area plain 2>&1)"
 [[ -n "$area" ]] || { echo 'No system area diagnostics' >&2; exit 1; }
-echo 'Static ISO structure: PASS (boot execution NOT tested)'
+# Installation-only OREZ layer must exist and carry NO live-only services or installer guards.
+# This is a static payload check, never an installer or filesystem mount.
+command -v unsquashfs >/dev/null || { echo 'unsquashfs missing' >&2; exit 2; }
+tmp="$(mktemp -d)"
+trap 'rm -rf -- "$tmp"' EXIT
+xorriso -osirrox on -indev "$iso" -extract /casper/orez-install.squashfs "$tmp/install.squashfs" >/dev/null 2>&1
+[[ -s "$tmp/install.squashfs" ]] || { echo 'OREZ install payload missing from ISO' >&2; exit 1; }
+files="$(unsquashfs -ll "$tmp/install.squashfs")"
+for expected in squashfs-root/etc/orez-release squashfs-root/usr/bin/orezctl squashfs-root/usr/share/backgrounds/orez/orez-ink.svg; do
+  grep -Fq "$expected" <<< "$files" || { echo "Missing install-safe OREZ component: $expected" >&2; exit 1; }
+done
+if grep -Eq 'squashfs-root/(usr/bin/calamares|etc/sysctl.d/20-apparmor.conf|usr/lib/systemd/system/orez-.*verify.service|etc/systemd/system)' <<< "$files"; then
+  echo 'Unsafe live-only component leaked into OREZ install payload' >&2
+  exit 1
+fi
+echo 'Static ISO structure and isolated OREZ install payload: PASS (boot/install execution NOT tested)'
