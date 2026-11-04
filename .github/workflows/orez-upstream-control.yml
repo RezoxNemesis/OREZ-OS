@@ -53,6 +53,7 @@ jobs:
             dist/upstream-baseline/guest-serial.log
             dist/upstream-baseline/qmp-try.log
             dist/upstream-baseline/try-before.ppm.gz
+            dist/upstream-baseline/last-screen.ppm.gz
             dist/upstream-baseline/frame-*.ppm.gz
           if-no-files-found: warn
           retention-days: 2

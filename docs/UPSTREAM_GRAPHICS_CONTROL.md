@@ -14,3 +14,6 @@ CPU-only QEMU VirtIO problem or something introduced in OREZ.
 To launch, use a single one-shot build/upstream-control-* branch or manual
 workflow dispatch. This is NOT an OREZ release or a physical PC test.
 Do not disable system security or modify real graphics drivers for this control.
+
+## 2026-11-05: First-run harness correction
+The original control run 41887435151 failed to select Try, NOT because Kubuntu's display was shown broken, but because the test waited for an OREZ-only serial diagnostic string. The fixed controller samples actual QEMU framebuffer pixels every ten seconds and will only click the left-hand Try button when the known 1280x800 welcome layout matches. Otherwise it retains the most recent screenshot as evidence and exits without input. Still no disk or network.

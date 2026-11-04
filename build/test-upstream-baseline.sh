@@ -36,18 +36,22 @@ cleanup() {
   wait "$pid" 2>/dev/null || true
 }
 trap cleanup EXIT
+# The pristine image has NO OREZ GUI diagnostic service, so its serial log
+# will never contain the OREZ_GUI_PROCESSES kubuntu-installer-prompt marker.
+# Inspect actual QEMU pixels instead. Do not click any unfamiliar frame.
 selected=0
 for attempt in $(seq 1 320); do
-  if [[ -s "$SERIAL" && -S "$MON" && -S "$QMP" ]] &&
-     grep -Fq 'kubuntu-installer-prompt' "$SERIAL"; then
+  if [[ -S "$MON" && -S "$QMP" ]] && (( attempt % 5 == 0 )); then
     frame="$OUT/try-before.ppm"
     if printf 'screendump %s\n' "$frame" | socat -t 10 - UNIX-CONNECT:"$MON" >/dev/null 2>&1 &&
        [[ -s "$frame" ]]; then
       if python3 "$ROOT/build/check-try-frame.py" "$frame" >/dev/null 2>&1; then
+        rm -f -- "$OUT/last-screen.ppm"
         gzip -f -9 "$frame"
         if bash "$ROOT/build/qmp-try-live.sh" "$QMP" "$OUT/qmp-try.log"; then selected=1; break; fi
       else
-        rm -f -- "$frame"
+        # Keep the most recent unmatched image for visual diagnosis.
+        mv -f -- "$frame" "$OUT/last-screen.ppm"
       fi
     fi
   fi
@@ -56,7 +60,8 @@ for attempt in $(seq 1 320); do
 done
 report="$OUT/BASELINE_RESULT.txt"
 if [[ "$selected" -ne 1 ]]; then
-  echo 'BASELINE NOT QUALIFIED: safe Try transition was never completed' | tee "$report"
+  if [[ -s "$OUT/last-screen.ppm" ]]; then gzip -f -9 "$OUT/last-screen.ppm"; fi
+  echo 'BASELINE NOT QUALIFIED: safe Try transition was never completed (see last-screen screenshot)' | tee "$report"
   exit 1
 fi
 visible=0

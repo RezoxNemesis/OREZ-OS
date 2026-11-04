@@ -298,6 +298,10 @@ class OrezSourceTests(unittest.TestCase):
             self.assertIn(expected, baseline)
         for forbidden in ['sudo ', 'mkfs', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'chroot ']:
             self.assertNotIn(forbidden, baseline)
+        self.assertNotIn("grep -Fq 'kubuntu-installer-prompt'", baseline)
+        self.assertIn('attempt % 5 == 0', baseline)
+        self.assertIn('check-try-frame.py', baseline)
+        self.assertIn('last-screen.ppm.gz', workflow)
         self.assertIn("'build/upstream-control-*'", workflow)
         self.assertIn('if: always()', workflow)
         self.assertNotIn('dist/upstream-baseline/original.iso\n          if-', workflow)
