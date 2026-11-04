@@ -111,6 +111,8 @@ jobs:
             dist/boot-evidence/upstream-live-apparmor.conf
             dist/boot-evidence/GUI_RESULT.txt
             dist/boot-evidence/gui-screen.ppm.gz
+            dist/boot-evidence/try-prompt-before.ppm.gz
+            dist/boot-evidence/qmp-try-result.log
             dist/boot-evidence/UEFI_RESULT.txt
             dist/boot-evidence/uefi-screen.ppm.gz
             dist/boot-evidence/uefi-screen-later.ppm.gz

@@ -152,6 +152,20 @@ class OrezSourceTests(unittest.TestCase):
         self.assertFalse((OVERLAY / 'etc/calamares/modules/unpackfs.conf').exists())
         self.assertTrue((OVERLAY / 'usr/bin/calamares').is_file())
 
+    def test_qmp_try_welcome_transition_is_disposable_only(self):
+        vm = (ROOT / 'build/test-casper-vm.sh').read_text()
+        qmp = (ROOT / 'build/qmp-try-live.sh').read_text()
+        self.assertIn('-net none', vm)
+        self.assertIn('-device usb-tablet', vm)
+        self.assertIn('if [[ "${OREZ_REQUIRE_GUI:-0}" == 1', vm)
+        self.assertIn('kubuntu-installer-prompt', vm)
+        self.assertIn('qmp-try-live.sh', vm)
+        self.assertIn('input-send-event', qmp)
+        self.assertIn('x","value":8959', qmp)
+        self.assertIn('y","value":26214', qmp)
+        for unsafe in ['sudo ', 'mkfs', 'wipefs', 'parted ', 'dd if=', 'curl ', 'apt install']:
+            self.assertNotIn(unsafe, qmp)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
