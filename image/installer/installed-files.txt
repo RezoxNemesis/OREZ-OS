@@ -1,0 +1,17 @@
+# Exact OREZ files permitted in an installed system. No live-only service or installer.
+etc/orez-release
+etc/xdg/autostart/orez-initialize.desktop
+usr/bin/orezctl
+usr/bin/orez-session-init
+usr/bin/orez-welcome
+usr/bin/orez-preflight
+usr/bin/orez-connect
+usr/bin/orez-settings
+usr/share/backgrounds/orez/orez-ink.svg
+usr/share/applications/orez-welcome.desktop
+usr/share/applications/orez-hardware.desktop
+usr/share/applications/orez-preflight.desktop
+usr/share/applications/orez-settings.desktop
+usr/share/applications/orez-connect.desktop
+usr/share/doc/orez/welcome.html
+usr/share/doc/orez/CONTROLS.md
