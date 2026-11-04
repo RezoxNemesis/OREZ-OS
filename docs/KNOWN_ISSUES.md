@@ -6,3 +6,6 @@
 4. LUKS2 encryption, Btrfs/Snapper root rollbacks, Restic backups, signed package repository and installation cancellation tests do not exist yet.
 5. KDE Connect must be confirmed in the ISO's installed package inventory; Android pairing and transfer have not been verified.
 6. AI capability broker and local model services are deliberately absent until threat-reviewed.
+
+7. OVMF evidence [run 41811624570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41811624570) reaches TianoCore/GRUB and Kubuntu boot splash, but NOT verified graphical OREZ/KDE session. Serial output contains `error: can't find command grub_platform`; investigate whether upstream or remixed boot configuration caused this. This may be non-fatal but must be qualified rather than ignored.
+8. Linux vendor splash and GRUB show upstream Kubuntu branding; OREZ boot/login experience still needs packaging and testing. Do not mistake wallpaper SVG for complete desktop design.

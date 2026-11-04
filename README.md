@@ -43,3 +43,6 @@ An explicit one-shot GitHub build [run #41809241570](https://github.com/RezoxNem
 
 ## Native settings entrypoints
 OREZ Welcome, Settings, and Phone Connect desktop app entries appear in KDE launcher. Standard KDE System Settings exposes real system preferences. `orezctl appearance disable` is a per-user, reversible off switch for OREZ first-login wallpaper. `orezctl ai` reports all AI automation disabled. KDE Connect requires upstream package installation and secure, explicit user pairing.
+
+## UEFI virtual-firmware evidence
+The [UEFI VM build/test run 41811624570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41811624570) passed. Inspection of its OVMF screenshot shows TianoCore/GRUB loading the remixed ISO and Kubuntu splash, **not** the OREZ graphical desktop. GRUB logged `can't find command grub_platform`; this requires qualification. The captured test is not an installer, Secure Boot or physical-PC validation.
