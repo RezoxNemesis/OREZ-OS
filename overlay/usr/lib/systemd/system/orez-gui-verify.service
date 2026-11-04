@@ -1,16 +1,15 @@
 [Unit]
-Description=OREZ opt-in graphical VM verification
+Description=OREZ opt-in graphical VM verification and boot diagnostics
 Documentation=file:/usr/share/doc/orez/GUI_VERIFICATION.md
 ConditionKernelCommandLine=orez.verify=1
 ConditionKernelCommandLine=boot=casper
-After=display-manager.service
+After=local-fs.target
 
 [Service]
-Type=oneshot
+Type=simple
 User=nobody
 SupplementaryGroups=dialout
 ExecStart=/usr/bin/orez-gui-verify
-TimeoutStartSec=330
 NoNewPrivileges=yes
 ProtectSystem=strict
 ProtectHome=yes
@@ -20,4 +19,4 @@ RestrictSUIDSGID=yes
 LockPersonality=yes
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target graphical.target
