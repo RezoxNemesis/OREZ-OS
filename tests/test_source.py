@@ -306,6 +306,18 @@ class OrezSourceTests(unittest.TestCase):
         self.assertIn('if: always()', workflow)
         self.assertNotIn('dist/upstream-baseline/original.iso\n          if-', workflow)
 
+    def test_collision_audit_workflow_is_one_shot_and_non_destructive(self):
+        flow = (ROOT / '.github/workflows/orez-install-collision.yml').read_text()
+        self.assertIn("'build/audit-collision-*'", flow)
+        self.assertIn('check-install-collisions.py', flow)
+        self.assertIn('INSTALL_LAYER_COLLISIONS.json', flow)
+        self.assertIn('sha256sum -c', flow)
+        self.assertNotIn('qemu-system-', flow)
+        self.assertNotIn('build/build-live.sh', flow)
+        self.assertNotIn('mkfs', flow)
+        self.assertNotIn('dd if=', flow)
+        self.assertNotIn('dist/audit/original.iso\n          if-no-files-found', flow)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

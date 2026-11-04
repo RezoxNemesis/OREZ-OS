@@ -1,0 +1,58 @@
+name: OREZ — Authentic Kubuntu vs installed-layer collision audit
+
+on:
+  push:
+    branches:
+      - 'build/audit-collision-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  overlay-collision-audit:
+    name: Read-only filesystem paths and installer payload compatibility
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - name: Checkout reviewed source (pinned)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check available space and install read-only image tools
+        run: |
+          available="$(df -Pk . | awk 'NR==2 {print $4}')"
+          if (( available < 10485760 )); then echo 'Need at least 10 GiB free for source + extracted squashfs' >&2; exit 1; fi
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends curl ca-certificates xorriso squashfs-tools
+      - name: Download pinned authentic unmodified Kubuntu ISO
+        run: |
+          mkdir -p dist/audit
+          curl -fL --retry 3 --retry-delay 4 \
+            https://cdimage.ubuntu.com/cdimage/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso \
+            -o dist/audit/original.iso
+          printf '%s  %s\n' 831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8 \
+            dist/audit/original.iso | sha256sum -c -
+      - name: Compare actual base vs whitelisted OREZ install files
+        run: |
+          xorriso -osirrox on -indev dist/audit/original.iso \
+            -extract /casper/filesystem.squashfs dist/audit/kubuntu-base.squashfs >/dev/null 2>&1
+          rm -f -- dist/audit/original.iso
+          bash build/build-install-payload.sh dist/audit/orez-install.squashfs
+          unsquashfs -ls dist/audit/kubuntu-base.squashfs > dist/audit/base-paths.txt
+          unsquashfs -ls dist/audit/orez-install.squashfs > dist/audit/orez-paths.txt
+          python3 build/check-install-collisions.py \
+            --base-list dist/audit/base-paths.txt \
+            --payload-list dist/audit/orez-paths.txt \
+            --manifest image/installer/installed-files.txt \
+            --report dist/audit/INSTALL_LAYER_COLLISIONS.json
+          cat dist/audit/INSTALL_LAYER_COLLISIONS.json
+          echo '### OREZ install-layer static file collision audit' >> "$GITHUB_STEP_SUMMARY"
+          echo 'This DOES NOT approve Calamares, hardware boot, recovery or SSD installation.' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/audit/INSTALL_LAYER_COLLISIONS.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain tiny audit report only (never upstream or OREZ image)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-install-collision-audit
+          path: dist/audit/INSTALL_LAYER_COLLISIONS.json
+          if-no-files-found: warn
+          retention-days: 3
