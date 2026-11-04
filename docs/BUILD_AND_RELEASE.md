@@ -41,3 +41,6 @@ The full-image workflow reads Kubuntu's actual `filesystem.squashfs`, `unpackfs.
 
 ## Graphical VM bottleneck diagnostics
 The source-visible, opt-in `orez-gui-verify` now reports job blockers, failed units and KDE/SDDM processes at bounded intervals when no Plasma session appears. This is only within a disposable test guest; it runs as `nobody`, has no network, and makes no system modifications. The QEMU test selects hardware KVM acceleration only if the hosted runner exposes it; otherwise it uses slower software emulation. A failing GUI gate stays a failure rather than being bypassed.
+
+## Separate OREZ installed-system payload
+`build/build-install-payload.sh` reads `image/installer/installed-files.txt` and composes `/casper/orez-install.squashfs` for the ISO. The exact same allowlist is used to assemble the native `orez-shell.deb`. Live-only test services, the Calamares disabled warning, and unsafe root overrides must not enter either installed payload. `build/check-iso.sh` inspects extracted SquashFS content and rejects forbidden files. An inactive Calamares two-source configuration is at `image/installer/orez-unpackfs-candidate.conf`, documented in `image/installer/README.md`; it is NOT used in an install and MUST be tested on isolated disposable disks before activation. Upstream Calamares supports multiple ordered unpack sources.
