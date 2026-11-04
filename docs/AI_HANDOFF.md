@@ -113,3 +113,11 @@ Never format the user's NVMe or overwrite the Windows recovery USB. Do not silen
 - Source-only follow-up: add explicitly documented `KWIN_COMPOSE=Q` experiment in `/etc/xdg/plasma-workspace/env/90-orez-vm-software.sh` **guarded** by `orez.verify=1`, which only the disposable VM test supplies. It must never enter install-only OREZ SquashFS or standalone .deb, and never change normal boot settings. The QPainter test has NOT yet been built or verified in an ISO. No unlimited retries or GPU paid infrastructure.
 - Additional **live-only Calamares guard verification** in `build/check-iso.sh` briefly failed shell syntax on commit `d0003c5`; corrected and source CI **passed** at [run 41875624369](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41875624369). This changed image check was NOT part of 418743's older source snapshot.
 - Latest next action: source validation for compositor experiment, one controlled full build, inspect guest framebuffer. Installer remains disabled and PR remains Draft. M1 graphical is NOT closed, M2 installer/rollback and NVIDIA/Secure Boot remain unverified.
+
+## 2026-11-04: Local compositor guard verification; GitHub runner queued
+- Development head before this test change: 6ca8878db6d50bcb5e168387f8a55ac52354756b; PR #1 remains draft/unmerged.
+- Source run https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41878113197 was queued on inspection. No CI pass or full ISO/Plasma visual success is claimed.
+- KDE Plasma 6 startup source supports scripts in system XDG config locations/plasma-workspace/env/*.sh (normal system directory /etc/xdg). KDE documents KWIN_COMPOSE=Q as a Wayland-only QPainter option; guest behavior on this Kubuntu build still needs a real test.
+- Relevant sources: https://sources.debian.org/src/plasma-workspace/4%3A6.3.6-2/startkde/startplasma.cpp/ ; https://community.kde.org/KWin/Environment_Variables
+- Local shell syntax and mock cmdline tests passed: the exact orez.verify=1 test flag selects Q; normal boots preserve an inherited backend. Permanent unit tests now cover both paths and nonmatching orez.verify=10.
+- This is test-only. The installer, physical RTX 3050 boot, security and encrypted recovery remain unqualified. Do not publish an installation ISO or merge PR.

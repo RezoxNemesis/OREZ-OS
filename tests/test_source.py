@@ -266,6 +266,29 @@ class OrezSourceTests(unittest.TestCase):
                                 text=True, capture_output=True, check=True)
         self.assertEqual(result.stdout, 'inherit')
 
+    def test_qpainter_kernel_flag_both_branches(self):
+        script = OVERLAY / 'etc/xdg/plasma-workspace/env/90-orez-vm-software.sh'
+        # Replace only the cat command via a throwaway mock in PATH.
+        # No real kernel argument or system setting is modified.
+        cases = [
+            ('BOOT_IMAGE=test boot=casper orez.verify=1 quiet', 'Q'),
+            ('BOOT_IMAGE=test boot=casper quiet', 'inherit'),
+            ('BOOT_IMAGE=test orez.verify=10 boot=casper quiet', 'inherit')
+        ]
+        for cmdline, expected in cases:
+            with self.subTest(cmdline=cmdline), tempfile.TemporaryDirectory() as directory:
+                mockcat = pathlib.Path(directory) / 'cat'
+                mockcat.write_text("#!/bin/sh\nprintf '%s\\n' " + repr(cmdline) + "\n")
+                mockcat.chmod(0o755)
+                env = dict(os.environ,
+                           PATH=directory + os.pathsep + os.environ.get('PATH', ''),
+                           KWIN_COMPOSE='inherit')
+                result = subprocess.run(
+                    ['sh', '-c', '. "$1"; printf "%s" "$KWIN_COMPOSE"', 'sh', str(script)],
+                    env=env, capture_output=True, text=True, check=True
+                )
+                self.assertEqual(result.stdout, expected)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
