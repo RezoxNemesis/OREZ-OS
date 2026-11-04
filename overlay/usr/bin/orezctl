@@ -4,7 +4,7 @@ set -euo pipefail
 usage() {
   cat <<'USAGE'
 OREZ OS 0.1 — developer live image
-Usage: orezctl <status|hardware|help>
+Usage: orezctl <status|hardware|security|connect|settings|appearance|ai|help>
  status      Version and safety information
  hardware    Read-only graphics, network and storage inventory
  help        This help
@@ -24,6 +24,29 @@ case "${1:-help}" in
     printf '%s\n' '--- Storage (read-only) ---'; lsblk -o NAME,TYPE,SIZE,MODEL,TRAN || true
     printf '%s\n' '--- NVIDIA driver ---'; if command -v nvidia-smi >/dev/null; then nvidia-smi -L || true; else printf '%s\n' 'Driver not loaded or unavailable'; fi
     ;;
+  security)
+    echo 'OREZ security: read-only report; NOT a security certification.'
+    echo 'OREZ remote administration and AI privileges: NOT ENABLED.'
+    if [[ -r /sys/module/apparmor/parameters/enabled ]]; then printf 'AppArmor: '; cat /sys/module/apparmor/parameters/enabled; fi
+    if command -v mokutil >/dev/null; then mokutil --sb-state 2>/dev/null || true; fi
+    ;;
+  connect)
+    case "${2:-devices}" in
+      devices) if command -v kdeconnect-cli >/dev/null; then kdeconnect-cli --list-devices; else echo 'KDE Connect not installed' >&2; exit 1; fi ;;
+      open) if command -v kdeconnect-app >/dev/null; then exec kdeconnect-app; elif command -v kdeconnect-settings >/dev/null; then exec kdeconnect-settings; else echo 'KDE Connect GUI not installed' >&2; exit 1; fi ;;
+      *) usage >&2; exit 2 ;;
+    esac ;;
+  settings) if command -v systemsettings >/dev/null; then exec systemsettings; else echo 'KDE Settings missing' >&2; exit 1; fi ;;
+  appearance)
+    dir="${XDG_CONFIG_HOME:-$HOME/.config}/autostart"
+    override="$dir/orez-initialize.desktop"
+    case "${2:-status}" in
+      status) if [[ -f "$override" ]] && grep -qx 'Hidden=true' "$override"; then echo 'OREZ wallpaper disabled'; else echo 'OREZ wallpaper enabled; change in KDE Settings'; fi ;;
+      disable) mkdir -p -- "$dir"; printf '[Desktop Entry]\nType=Application\nName=OREZ Wallpaper Setup\nHidden=true\n' > "$override"; echo 'Wallpaper autostart disabled; current wallpaper unchanged.' ;;
+      enable) mkdir -p -- "$dir"; rm -f -- "$override" "${XDG_CONFIG_HOME:-$HOME/.config}/orez/wallpaper-v0.1-applied"; echo 'Wallpaper autostart enabled for next login.' ;;
+      *) usage >&2; exit 2 ;;
+    esac ;;
+  ai) echo 'OREZ AI: NOT ENABLED. No AI/MCP root or remote action broker is installed.' ;;
   help|-h|--help) usage ;;
   *) usage >&2; exit 2 ;;
 esac
