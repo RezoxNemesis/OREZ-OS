@@ -12,3 +12,5 @@
 
 9. **Installer hardening (reported upstream):** [LP #2172113](https://bugs.launchpad.net/bugs/2172113) live-only AppArmor sysctl override may persist on Kubuntu 26.04.1 installed system. **Release blocker** until removed/qualified and effective policy tested.
 10. **Encrypted installation (reported upstream):** [LP #2172138](https://bugs.launchpad.net/bugs/2172138) Calamares LUKS2 crypttab omission may cause an unbootable encrypted install. **Release blocker** until tested encrypted installation, unlock and rollback pass in disposable virtual machines.
+
+11. [Run 41816102051](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41816102051): stricter direct-kernel graphical gate failed although the OREZ live filesystem was present. The screenshot is black; serial reached login prompts but did not prove KDE graphical.target/display manager. Cause is **unverified** (the serial-console test kernel parameters are a candidate). Neither firmware/desktop readiness nor USB install is qualified.

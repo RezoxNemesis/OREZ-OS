@@ -15,3 +15,5 @@
 **Next gates:** OVMF UEFI graphical boot, OREZ desktop witness, boot options and NVIDIA qualification, safe disposable-disk installer and recovery, legally compliant signed image distribution. Do not format the user's SSD or overwrite their Windows 11 recovery USB.
 
 - M2 preparation: read-only installed-root qualification code added; the M2 installer itself and full installed-system recovery remain **not implemented**. The two 26.04.1 upstream reports LP #2172113 and LP #2172138 are explicit release blockers pending proof.
+
+**M1 blocker confirmed:** run 41816102051 passed ISO/live root and failed graphical-process readiness. OREZ user desktop is not yet qualified. Source diagnostics have been improved, but must be tested in a new controlled run. Do not advance M1 or M2 installation milestones from structural-only results.

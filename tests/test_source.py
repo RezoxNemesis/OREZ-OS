@@ -45,6 +45,9 @@ class OrezSourceTests(unittest.TestCase):
             self.assertIn(item, unit)
         script = (OVERLAY / 'usr/bin/orez-gui-verify').read_text()
         self.assertIn('pgrep -x plasmashell', script)
+        self.assertIn('OREZ_GUI_DIAG', script)
+        self.assertIn('Type=simple', unit)
+        self.assertTrue((OVERLAY / 'etc/systemd/system/multi-user.target.wants/orez-gui-verify.service').is_symlink())
         for unsafe in ['sudo ', 'mkfs', 'wipefs', 'curl ', 'passwd', 'mount -o']:
             self.assertNotIn(unsafe, script)
 
