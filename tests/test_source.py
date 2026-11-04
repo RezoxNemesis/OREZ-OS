@@ -166,6 +166,34 @@ class OrezSourceTests(unittest.TestCase):
         for unsafe in ['sudo ', 'mkfs', 'wipefs', 'parted ', 'dd if=', 'curl ', 'apt install']:
             self.assertNotIn(unsafe, qmp)
 
+    def test_qemu_usb_controller_and_safe_welcome_click(self):
+        script = (ROOT / 'build/test-casper-vm.sh').read_text()
+        self.assertIn('-device qemu-xhci,id=orez-xhci', script)
+        self.assertIn('-device usb-tablet,bus=orez-xhci.0', script)
+        self.assertIn('check-try-frame.py', script)
+        self.assertIn('readonly=on', script)
+        self.assertIn('-net none', script)
+
+    def test_welcome_frame_check_accepts_pinned_layout_only(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('orez_frame_check', ROOT / 'build/check-try-frame.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as directory:
+            frame = pathlib.Path(directory) / 'screen.ppm'
+            width, height = 1280, 800
+            data = bytearray(width * height * 3)
+            for x, y, rgb in ((350, 638, (20, 45, 81)), (900, 639, (20, 45, 81)),
+                              (640, 740, (0, 24, 61)), (350, 585, (0, 24, 64))):
+                idx = (y * width + x) * 3
+                data[idx:idx+3] = bytes(rgb)
+            frame.write_bytes(b'P6\n1280 800\n255\n' + data)
+            self.assertTrue(module.check(frame)[0])
+            idx = (638 * width + 350) * 3
+            data[idx:idx+3] = b'\x00\x00\x00'
+            frame.write_bytes(b'P6\n1280 800\n255\n' + data)
+            self.assertFalse(module.check(frame)[0])
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
