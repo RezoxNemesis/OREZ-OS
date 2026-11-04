@@ -26,8 +26,7 @@ CONTROL
 # No maintainer scripts; installation never executes privileged arbitrary code.
 dpkg-deb --build --root-owner-group "$work" "$root/dist/orez-shell_0.1.0-1_all.deb"
 dpkg-deb --info "$root/dist/orez-shell_0.1.0-1_all.deb"
-if dpkg-deb --contents "$root/dist/orez-shell_0.1.0-1_all.deb" | grep -Eq '[[:space:]]\./usr/bin/calamares$|[[:space:]]\./usr/share/applications/calamares.desktop
-; then
+if dpkg-deb --contents "$root/dist/orez-shell_0.1.0-1_all.deb" | grep -E '([[:space:]])\./usr/(bin/calamares|share/applications/calamares.desktop)([[:space:]]|$)' ; then
   echo "Unsafe package: live-only installer override leaked into normal .deb" >&2
   exit 1
 fi
