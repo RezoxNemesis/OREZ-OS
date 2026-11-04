@@ -16,7 +16,7 @@ The ISO must pass both static `build/check-iso.sh` and real UEFI VM boot with th
 
 ## GitHub CI, storage and data safety
 - Pull requests run only small source tests and packaging.
-- Full ISO build is manual only (`Actions → OREZ OS — live candidate → Run workflow`). This avoids draining the GitHub Actions allocation.
+- Full ISO build runs only after manual `workflow_dispatch` or an intentionally created one-shot `build/live-*` branch. Ordinary PRs and pushes never download the ISO. This avoids draining the GitHub Actions allocation.
 - GitHub-hosted runners have limited free disk space. The script refuses to download the 5.1 GB image when available space is below 11 GiB.
 - The 5+ GB ISO is *not* uploaded by default. No download link will be claimed until a compliant, quota-safe delivery route exists.
 - Workflows have read-only GitHub permissions and receive no secrets.

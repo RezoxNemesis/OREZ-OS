@@ -1,6 +1,9 @@
 name: OREZ OS — live candidate
 
 on:
+  push:
+    branches:
+      - 'build/live-*'  # Explicit one-shot branches, not ordinary development pushes
   pull_request:
     paths:
       - 'build/**'
@@ -38,7 +41,7 @@ jobs:
   live-image:
     name: Build full Kubuntu-derived live ISO (manual only)
     needs: source-validation
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-24.04
     timeout-minutes: 100
     steps:

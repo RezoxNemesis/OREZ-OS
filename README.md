@@ -30,7 +30,7 @@ The build script can use a previously downloaded official image via `OREZ_UPSTRE
 
 ## Mobile-first workflow
 
-The repo contains a single manual GitHub Actions workflow for the ISO build. Hosted runner disk space is an explicit risk, and complete 5 GB ISO artifacts **are not uploaded** by default because GitHub's free storage quotas are much smaller. Build checks publish a lightweight SHA and result summary, not an imaginary download link. An authorized distribution path must be set up before users can download a full ISO.
+The repo contains one controlled GitHub Actions workflow for manual dispatch or explicit one-shot `build/live-*` branches. Hosted runner disk space is an explicit risk, and complete 5 GB ISO artifacts **are not uploaded** by default because GitHub's free storage quotas are much smaller. Build checks publish a lightweight SHA and result summary, not an imaginary download link. An authorized distribution path must be set up before users can download a full ISO.
 
 ### Project handoff
 
