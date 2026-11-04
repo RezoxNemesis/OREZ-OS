@@ -4,9 +4,10 @@ set -euo pipefail
 usage() {
   cat <<'USAGE'
 OREZ OS 0.1 — developer live image
-Usage: orezctl <status|hardware|security|connect|settings|appearance|ai|help>
+Usage: orezctl <status|hardware|preflight|security|connect|settings|appearance|ai|help>
  status      Version and safety information
  hardware    Read-only graphics, network and storage inventory
+ preflight   Show target-PC UEFI and driver readiness report (no writes)
  security    Read-only security facts (not certification)
  connect     Open KDE Connect pairing or list devices
  settings    Open native KDE System Settings
@@ -29,6 +30,7 @@ case "${1:-help}" in
     printf '%s\n' '--- Storage (read-only) ---'; lsblk -o NAME,TYPE,SIZE,MODEL,TRAN || true
     printf '%s\n' '--- NVIDIA driver ---'; if command -v nvidia-smi >/dev/null; then nvidia-smi -L || true; else printf '%s\n' 'Driver not loaded or unavailable'; fi
     ;;
+  preflight) exec /usr/bin/orez-preflight ;;
   security)
     echo 'OREZ security: read-only report; NOT a security certification.'
     echo 'OREZ remote administration and AI privileges: NOT ENABLED.'

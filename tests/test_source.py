@@ -76,6 +76,15 @@ class OrezSourceTests(unittest.TestCase):
             self.assertEqual(b.returncode, 0)
             self.assertFalse(item.exists())
 
+    def test_hardware_preflight_never_uses_disk_write_or_elevation(self):
+        script = (OVERLAY / 'usr/bin/orez-preflight').read_text()
+        for prohibited in ['sudo ', 'mkfs', 'wipefs', 'parted ', 'fdisk ', 'mount -o', 'dd if=', 'curl ', 'rm -rf', 'nvidia-installer']:
+            self.assertNotIn(prohibited, script)
+        p = subprocess.run([str(OVERLAY / 'usr/bin/orez-preflight')], capture_output=True, text=True)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn('read-only', p.stdout.lower())
+        self.assertIn('not', p.stdout.lower())
+
     def test_required_project_handoff_documents_exist(self):
         for doc in ['MASTER_BRIEF.md','MASTER_BLUEPRINT.md','AI_HANDOFF.md',
                     'ROADMAP.md','ARCHITECTURE.md','SECURITY.md','HARDWARE.md',

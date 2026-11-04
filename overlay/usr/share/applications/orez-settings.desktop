@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=OREZ Settings
-GenericName=System Preferences
-Comment=Full system settings using native KDE
-Exec=/usr/bin/orez-settings
-Icon=preferences-system
-Terminal=false
-Categories=Settings;System;

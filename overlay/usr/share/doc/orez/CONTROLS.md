@@ -11,3 +11,5 @@ The OS foundation uses native KDE System Settings and standard Linux security. T
 - `orezctl hardware`: read-only CPU, GPU and storage inventory.
 
 The opt-in VM boot verification service is separately documented in BOOT_VERIFICATION.md and only activates with a test kernel parameter. **No hidden administrator or AI controls are present in 0.1.**
+
+- Read-only target PC preflight: `orezctl preflight` or OREZ Hardware Preflight in the KDE launcher; never changes disks or firmware. Does not certify boot, encryption, graphics drivers or installation.
