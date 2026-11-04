@@ -9,3 +9,6 @@
 
 7. OVMF evidence [run 41811624570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41811624570) reaches TianoCore/GRUB and Kubuntu boot splash, but NOT verified graphical OREZ/KDE session. Serial output contains `error: can't find command grub_platform`; investigate whether upstream or remixed boot configuration caused this. This may be non-fatal but must be qualified rather than ignored.
 8. Linux vendor splash and GRUB show upstream Kubuntu branding; OREZ boot/login experience still needs packaging and testing. Do not mistake wallpaper SVG for complete desktop design.
+
+9. **Installer hardening (reported upstream):** [LP #2172113](https://bugs.launchpad.net/bugs/2172113) live-only AppArmor sysctl override may persist on Kubuntu 26.04.1 installed system. **Release blocker** until removed/qualified and effective policy tested.
+10. **Encrypted installation (reported upstream):** [LP #2172138](https://bugs.launchpad.net/bugs/2172138) Calamares LUKS2 crypttab omission may cause an unbootable encrypted install. **Release blocker** until tested encrypted installation, unlock and rollback pass in disposable virtual machines.
