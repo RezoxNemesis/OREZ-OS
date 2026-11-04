@@ -23,3 +23,6 @@ The Windows 11 installation/recovery USB is reserved and must not be overwritten
 
 ## Source-only synthetic installer replay
 Source suite test_install_manifest_replay.py validates the inactive two-stage Calamares candidate and copies the installed OREZ file allowlist into a fresh temporary directory with a synthetic vendor baseline. It verifies a known live-only AppArmor override would block release and that the candidate's exclusion removes this synthetic problem. A passing source test **does not** qualify a real installed system, encryption, boot, update or recovery. See docs/INSTALLER_SYNTHETIC_TEST.md.
+
+## File-level collision gate (development source)
+`build/check-install-collisions.py` compares the contents listed from the **real base filesystem.squashfs** and the separate allowlisted `orez-install.squashfs`. Any preexisting base file with the same OREZ payload pathname, unexpected extra payload path, or missing allowlisted path blocks the image audit. Shared parent directories are permitted. The output is `INSTALL_LAYER_COLLISIONS.json`, and `installation_approved` always remains false. This is a read-only check, not a real install, a filesystem permission review or package-ownership verification.
