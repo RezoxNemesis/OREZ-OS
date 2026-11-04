@@ -20,3 +20,6 @@ Do not assume either bug is resolved without updated tests. Do not patch setting
 
 ## Owner data and USB safety
 The Windows 11 installation/recovery USB is reserved and must not be overwritten. Only a separate, clearly identified USB drive may eventually be written with the verified OREZ ISO. In the installer, no SSD erase target is preselected; Windows/BitLocker/EFI partitions must be identified and preserved unless the user explicitly approves a destructive plan. Never make an AI prompt or remembered setting sufficient authorization to erase storage.
+
+## Source-only synthetic installer replay
+Source suite test_install_manifest_replay.py validates the inactive two-stage Calamares candidate and copies the installed OREZ file allowlist into a fresh temporary directory with a synthetic vendor baseline. It verifies a known live-only AppArmor override would block release and that the candidate's exclusion removes this synthetic problem. A passing source test **does not** qualify a real installed system, encryption, boot, update or recovery. See docs/INSTALLER_SYNTHETIC_TEST.md.

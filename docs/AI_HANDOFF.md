@@ -121,3 +121,7 @@ Never format the user's NVMe or overwrite the Windows recovery USB. Do not silen
 - Relevant sources: https://sources.debian.org/src/plasma-workspace/4%3A6.3.6-2/startkde/startplasma.cpp/ ; https://community.kde.org/KWin/Environment_Variables
 - Local shell syntax and mock cmdline tests passed: the exact orez.verify=1 test flag selects Q; normal boots preserve an inherited backend. Permanent unit tests now cover both paths and nonmatching orez.verify=10.
 - This is test-only. The installer, physical RTX 3050 boot, security and encrypted recovery remain unqualified. Do not publish an installation ISO or merge PR.
+
+## 2026-11-04: synthetic Calamares payload rehearsal (source change)
+- Added tests/test_install_manifest_replay.py with an exact candidate two-source configuration check, a real source allowlist copied to a disposable TemporaryDirectory, and positive/negative AppArmor policy fixture checks using the existing read-only offline auditor. The test explicitly asserts safe_to_install=false and excludes all VM-only services and compositor overrides. Does not execute Calamares, mount filesystems or touch actual block devices.
+- See docs/INSTALLER_SYNTHETIC_TEST.md. This is a source-test addition, NOT installed-system qualification. The full-image QPainter CI run #41882466089 was **in progress** when this note was drafted; verify its final status and retained visual artifact before claiming a result.
