@@ -83,9 +83,10 @@ jobs:
           cat dist/boot-evidence/GUI_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
           echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
       - name: Capture OVMF UEFI boot screen for visual review
-        timeout-minutes: 4
+        timeout-minutes: 7
         env:
           OREZ_UEFI_CAPTURE_AFTER: '90'
+          OREZ_UEFI_EXTRA_WAIT: '145'
         run: |
           bash build/test-uefi-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
           echo 'UEFI screenshot captured; **NOT yet reviewed or certified.**' >> "$GITHUB_STEP_SUMMARY"
@@ -101,6 +102,7 @@ jobs:
             dist/boot-evidence/gui-screen.ppm.gz
             dist/boot-evidence/UEFI_RESULT.txt
             dist/boot-evidence/uefi-screen.ppm.gz
+            dist/boot-evidence/uefi-screen-later.ppm.gz
             dist/boot-evidence/uefi-serial.log
             dist/build-report.txt
           if-no-files-found: warn

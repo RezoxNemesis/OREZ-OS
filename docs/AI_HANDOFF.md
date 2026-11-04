@@ -61,3 +61,6 @@ Never format the user's NVMe or overwrite the Windows recovery USB. Do not silen
 ## 2026-11-04 ongoing work — installer audit source
 - Added proposed `build/audit-installed-root.py` and `tests/test_installed_audit.py`, with 7 deterministic fixtures covering OREZ-installed identity, reported AppArmor issue, missing LUKS crypttab option, missing Btrfs root and escaping symlinks.
 - These are **static read-only tests, not an installer or a security certification**; no user disk or USB is accessed. Run full CI on this commit before treating them as integrated. Do not claim LUKS2, snapshots, Secure Boot, NVIDIA or physical PC are qualified.
+
+## 2026-11-04 readiness follow-up (source only)
+- The UEFI emulator captures the original ~90-second screen and a later (~235-second) screen; human review is mandatory before marking KDE visually correct. A separate opt-in guest process witness now checks a live Plasma Shell and display manager without network or disk access. Verify the latest one-shot ISO build before promoting any milestone.

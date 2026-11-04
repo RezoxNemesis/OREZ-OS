@@ -39,8 +39,14 @@ if ! kill -0 "$vm_pid" 2>/dev/null; then echo 'UEFI VM stopped unexpectedly' >&2
 printf 'screendump %s\n' "$EVIDENCE_DIR/uefi-screen.ppm" | socat -t 10 - UNIX-CONNECT:"$TMP/qemu-monitor.sock" >/dev/null
 [[ -s "$EVIDENCE_DIR/uefi-screen.ppm" ]] || { echo 'UEFI screenshot missing' >&2; exit 1; }
 gzip -f -9 "$EVIDENCE_DIR/uefi-screen.ppm"
+# Second screenshot to distinguish slow boot splash from a full desktop.
+sleep "${OREZ_UEFI_EXTRA_WAIT:-145}"
+if ! kill -0 "$vm_pid" 2>/dev/null; then echo 'UEFI guest exited before later frame' >&2; exit 1; fi
+printf 'screendump %s\n' "$EVIDENCE_DIR/uefi-screen-later.ppm" | socat -t 12 - UNIX-CONNECT:"$TMP/qemu-monitor.sock" >/dev/null
+[[ -s "$EVIDENCE_DIR/uefi-screen-later.ppm" ]] || { echo 'Second screenshot missing' >&2; exit 1; }
+gzip -f -9 "$EVIDENCE_DIR/uefi-screen-later.ppm"
 {
-  echo 'UEFI screenshot captured under OVMF (unmodified source ISO).'
+  echo 'Two UEFI screenshots captured under OVMF (unmodified source ISO).'
   echo 'Screen content NOT automatically verified; requires visual review.'
   echo 'No physical boot, Secure Boot certification, or installer proof.'
 } > "$EVIDENCE_DIR/UEFI_RESULT.txt"
