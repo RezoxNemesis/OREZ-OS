@@ -35,3 +35,6 @@ After construction, the `live-image` GitHub job frees the upstream ISO and insta
 
 ## First UEFI screenshot gate
 `build/test-uefi-vm.sh` launches **the unmodified ISO** through QEMU/OVMF with disposable NVRAM, no writable hard disk and no network, and captures a PPM screenshot for human visual inspection. This does not by itself prove UEFI reached KDE, Secure Boot is enforced, or the actual PC works. Those claims require reviewed screenshots and separate actual-hardware tests. The earlier direct-kernel test is a different gate and is now stopped as soon as it produces its verifiable marker.
+
+## M2: Inspect live ISO installation inputs
+The full-image workflow reads Kubuntu's actual `filesystem.squashfs`, `unpackfs.conf` and reported live-only AppArmor sysctl setting, without touching disks. The report explicitly blocks SSD installation until OREZ's installed-system persistence, encryption and recovery are qualified. Expected blockers are displayed, not hidden by the green ISO construction status. No release is authorized by this diagnostic.

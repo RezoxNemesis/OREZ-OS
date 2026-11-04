@@ -102,6 +102,13 @@ class OrezSourceTests(unittest.TestCase):
                     'DESIGN_SYSTEM.md','REQUIREMENTS_TO_TESTS.md']:
             self.assertTrue((ROOT / 'docs' / doc).is_file(), doc)
 
+    def test_installer_source_inspector_never_formats_disks(self):
+        src = (ROOT / 'build/check-installer-source.sh').read_text()
+        self.assertIn('unsquashfs -cat', src)
+        self.assertIn('Certified for SSD installation: NO', src)
+        for danger in ['sudo ', 'mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=']:
+            self.assertNotIn(danger, src)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

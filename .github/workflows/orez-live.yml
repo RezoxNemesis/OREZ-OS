@@ -71,6 +71,12 @@ jobs:
           rm -f -- .cache/orez/kubuntu-26.04.1-desktop-amd64.iso
           df -h .
           sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf socat
+      - name: Read-only Calamares installation source audit
+        timeout-minutes: 4
+        run: |
+          bash build/check-installer-source.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo '### Installer source not certified' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/INSTALLER_READINESS.txt >> "$GITHUB_STEP_SUMMARY"
       - name: Prove casper loaded OREZ layer inside a disposable VM
         timeout-minutes: 11
         env:
@@ -98,6 +104,9 @@ jobs:
           path: |
             dist/boot-evidence/casper-serial.log
             dist/boot-evidence/RESULT.txt
+            dist/boot-evidence/INSTALLER_READINESS.txt
+            dist/boot-evidence/upstream-unpackfs.conf
+            dist/boot-evidence/upstream-live-apparmor.conf
             dist/boot-evidence/GUI_RESULT.txt
             dist/boot-evidence/gui-screen.ppm.gz
             dist/boot-evidence/UEFI_RESULT.txt
