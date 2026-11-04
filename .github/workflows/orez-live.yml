@@ -116,6 +116,7 @@ jobs:
             dist/boot-evidence/gui-screen-22.ppm.gz
             dist/boot-evidence/gui-screen-24.ppm.gz
             dist/boot-evidence/try-prompt-before.ppm.gz
+            dist/boot-evidence/try-unmatched.ppm.gz
             dist/boot-evidence/qmp-try-result.log
             dist/boot-evidence/UEFI_RESULT.txt
             dist/boot-evidence/uefi-screen.ppm.gz

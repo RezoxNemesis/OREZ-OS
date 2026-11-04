@@ -63,7 +63,14 @@ for ((attempt=0;attempt<210;attempt++)); do
         echo 'QMP Try transition failed; GUI gate remains mandatory' >&2
       }
     else
-      rm -f -- "$EVIDENCE_DIR/try-prompt-before.ppm"
+      # Fail closed if the emulated VGA changes welcome layout. Keep ONE
+      # rejected frame for diagnosis; never guess/click a different screen.
+      if [[ -s "$EVIDENCE_DIR/try-prompt-before.ppm" ]]; then
+        mv -f -- "$EVIDENCE_DIR/try-prompt-before.ppm" "$EVIDENCE_DIR/try-unmatched.ppm"
+        gzip -f -9 "$EVIDENCE_DIR/try-unmatched.ppm"
+        try_sent=1
+        echo 'OREZ Try/Install layout unrecognized; no mouse click sent' >&2
+      fi
     fi
   fi
   if [[ -s "$LOG" ]] && grep -Fq 'OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT' "$LOG"; then
