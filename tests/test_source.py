@@ -236,6 +236,14 @@ class OrezSourceTests(unittest.TestCase):
         workflow = (ROOT / '.github/workflows/orez-live.yml').read_text()
         self.assertIn("OREZ_QEMU_TIMEOUT: '700'", workflow)
 
+    def test_iso_checker_requires_live_installer_safety_guard(self):
+        checker = (ROOT / 'build/check-iso.sh').read_text()
+        self.assertIn('/casper/zz-orez.squashfs', checker)
+        self.assertIn('unsquashfs -cat "$tmp/live.squashfs" usr/bin/calamares', checker)
+        self.assertIn("grep -Fq 'OREZ LIVE TEST'", checker)
+        self.assertIn("exit[[:space:]]+78", checker)
+        self.assertIn('/casper/orez-install.squashfs', checker)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:

@@ -28,4 +28,15 @@ if grep -Eq 'squashfs-root/(usr/bin/calamares|etc/sysctl.d/20-apparmor.conf|usr/
   echo 'Unsafe live-only component leaked into OREZ install payload' >&2
   exit 1
 fi
-echo 'Static ISO structure and isolated OREZ install payload: PASS (boot/install execution NOT tested)'
+# A missing live-only installer guard must fail image construction.
+# This does not prevent arbitrary root disk writes; it blocks the usual GUI install path.
+xorriso -osirrox on -indev "$iso" -extract /casper/zz-orez.squashfs "$tmp/live.squashfs" >/dev/null 2>&1
+[[ -s "$tmp/live.squashfs" ]] || { echo 'OREZ live layer absent' >&2; exit 1; }
+unsquashfs -cat "$tmp/live.squashfs" usr/bin/calamares > "$tmp/orez-installer-guard" 2>/dev/null ||
+  { echo 'Live installer guard missing inside ISO' >&2; exit 1; }
+grep -Fq 'OREZ LIVE TEST' "$tmp/orez-installer-guard" ||
+  { echo 'OREZ live installer guard message missing' >&2; exit 1; }
+grep -Eq '^[[:space:]]*exit[[:space:]]+78[[:space:]]*
+ "$tmp/orez-installer-guard" ||
+  { echo 'OREZ live installer guard must refuse installation' >&2; exit 1; }
+echo 'Static ISO structure, install-safe payload and live-only installer guard: PASS (boot/install execution NOT tested)'
