@@ -289,6 +289,19 @@ class OrezSourceTests(unittest.TestCase):
                 )
                 self.assertEqual(result.stdout, expected)
 
+    def test_pristine_kubuntu_control_is_offline_and_diskless(self):
+        baseline = (ROOT / 'build/test-upstream-baseline.sh').read_text()
+        workflow = (ROOT / '.github/workflows/orez-upstream-control.yml').read_text()
+        for expected in ['-net none', 'readonly=on', '-machine q35,accel=tcg',
+                         'check-try-frame.py', 'qmp-try-live.sh', 'check-graphical-frame.py',
+                         '831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8']:
+            self.assertIn(expected, baseline)
+        for forbidden in ['sudo ', 'mkfs', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'chroot ']:
+            self.assertNotIn(forbidden, baseline)
+        self.assertIn("'build/upstream-control-*'", workflow)
+        self.assertIn('if: always()', workflow)
+        self.assertNotIn('dist/upstream-baseline/original.iso\n          if-', workflow)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
