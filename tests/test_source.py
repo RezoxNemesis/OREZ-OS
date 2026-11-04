@@ -56,6 +56,33 @@ class OrezSourceTests(unittest.TestCase):
         for bad in ['mkfs', 'wipefs', 'curl', 'sudo ', 'passwd', 'systemctl start', 'mount -o']:
             self.assertNotIn(bad, script)
 
+    def test_orez_controls_and_transparency(self):
+        ctl = OVERLAY / 'usr/bin/orezctl'
+        for command, expected in [('security','security'),('ai','NOT ENABLED'),('appearance','wallpaper')]:
+            p = subprocess.run([str(ctl), command], capture_output=True, text=True)
+            self.assertEqual(p.returncode, 0)
+            self.assertIn(expected.lower(),p.stdout.lower())
+        self.assertTrue((OVERLAY / 'usr/share/doc/orez/CONTROLS.md').is_file())
+
+    def test_user_can_disable_and_restore_wallpaper_autostart(self):
+        ctl = OVERLAY / 'usr/bin/orezctl'
+        with tempfile.TemporaryDirectory() as directory:
+            env = dict(os.environ, XDG_CONFIG_HOME=directory)
+            a = subprocess.run([str(ctl),'appearance','disable'],env=env,capture_output=True,text=True)
+            self.assertEqual(a.returncode, 0)
+            item = pathlib.Path(directory) / 'autostart/orez-initialize.desktop'
+            self.assertIn('Hidden=true',item.read_text())
+            b = subprocess.run([str(ctl),'appearance','enable'],env=env,capture_output=True,text=True)
+            self.assertEqual(b.returncode, 0)
+            self.assertFalse(item.exists())
+
+    def test_required_project_handoff_documents_exist(self):
+        for doc in ['MASTER_BRIEF.md','MASTER_BLUEPRINT.md','AI_HANDOFF.md',
+                    'ROADMAP.md','ARCHITECTURE.md','SECURITY.md','HARDWARE.md',
+                    'DECISIONS.md','KNOWN_ISSUES.md','BUILD_AND_RELEASE.md',
+                    'DESIGN_SYSTEM.md','REQUIREMENTS_TO_TESTS.md']:
+            self.assertTrue((ROOT / 'docs' / doc).is_file(), doc)
+
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()
         for dangerous in ['mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=', 'sudo ']:
