@@ -1,0 +1,22 @@
+[Unit]
+Description=OREZ live-only boot verification (opt-in, no networking)
+Documentation=file:/usr/share/doc/orez/BOOT_VERIFICATION.md
+ConditionKernelCommandLine=orez.verify=1
+ConditionKernelCommandLine=boot=casper
+After=local-fs.target
+
+[Service]
+Type=oneshot
+User=nobody
+SupplementaryGroups=dialout
+ExecStart=/usr/bin/orez-live-verify
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateNetwork=yes
+RestrictAddressFamilies=AF_UNIX
+RestrictSUIDSGID=yes
+LockPersonality=yes
+
+[Install]
+WantedBy=multi-user.target

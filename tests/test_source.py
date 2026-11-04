@@ -28,7 +28,11 @@ class OrezSourceTests(unittest.TestCase):
             subprocess.run(['bash', '-n', str(script)], check=True)
 
     def test_overlay_is_unprivileged_and_visible(self):
-        self.assertFalse(list(OVERLAY.rglob('*.service')))
+        services = sorted(p.name for p in (OVERLAY / 'usr/lib/systemd/system').glob('*.service'))
+        self.assertEqual(services, ['orez-live-verify.service'])
+        unit = (OVERLAY / 'usr/lib/systemd/system/orez-live-verify.service').read_text()
+        for required in ['ConditionKernelCommandLine=orez.verify=1', 'ConditionKernelCommandLine=boot=casper', 'User=nobody', 'PrivateNetwork=yes', 'ProtectSystem=strict', 'NoNewPrivileges=yes']:
+            self.assertIn(required, unit)
         self.assertFalse(list(OVERLAY.rglob('sudoers*')))
         self.assertFalse(list(OVERLAY.rglob('*authorized_keys*')))
         first_login = (OVERLAY / 'etc/xdg/autostart/orez-initialize.desktop').read_text()
@@ -43,6 +47,14 @@ class OrezSourceTests(unittest.TestCase):
     def test_orezctl_denies_unknown_commands(self):
         p = subprocess.run([str(OVERLAY / 'usr/bin/orezctl'), 'set-root-password'], capture_output=True, text=True)
         self.assertEqual(p.returncode, 2)
+
+    def test_live_boot_witness_is_opt_in_and_read_only(self):
+        script = (OVERLAY / 'usr/bin/orez-live-verify').read_text()
+        self.assertIn("has_token 'orez.verify=1'", script)
+        self.assertIn("has_token 'boot=casper'", script)
+        self.assertIn('OREZ_BOOT_PROOF=', script)
+        for bad in ['mkfs', 'wipefs', 'curl', 'sudo ', 'passwd', 'systemctl start', 'mount -o']:
+            self.assertNotIn(bad, script)
 
     def test_builder_has_no_raw_disk_writer(self):
         build = (ROOT / 'build/build-live.sh').read_text()

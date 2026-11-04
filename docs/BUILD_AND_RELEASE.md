@@ -27,3 +27,8 @@ Ubuntu/Kubuntu, kernel, KDE, NVIDIA, fonts, codecs and trademarks each have obli
 
 ## Source status
 Built native package is a real `.deb`, but the ISO is an *unverified construction pipeline* until a successful run is recorded. Successful CI does not certify NVIDIA, Secure Boot, disk safety, phone integration or recovery.
+
+## Explicit VM live-root verification
+After construction, the `live-image` GitHub job frees the upstream ISO and installs `qemu-system-x86` and OVMF (the latter is reserved for a separate future UEFI acceptance test). It then boots the **actual OREZ ISO's own kernel and initrd** in a disposable, headless QEMU guest, with no hard disk and no network. Only the guest receives `orez.verify=1`, which activates the documented unprivileged `orez-live-verify.service`. A passing boot requires the guest to read OREZ identity assets and verify its overlay root, and then print an exact witness string to the local VM serial log. The job fails if that witness is absent. Small serial logs and results are retained for two days; no copyrighted multi-gigabyte ISO is uploaded.
+
+**Limit of proof:** this direct-kernel boot bypasses UEFI/GRUB and does not prove KDE graphical login. Full UEFI, secure-boot, installer, and hardware tests remain mandatory and independent.

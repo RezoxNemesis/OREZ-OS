@@ -43,7 +43,7 @@ jobs:
     needs: source-validation
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-24.04
-    timeout-minutes: 100
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Check available disk before downloads
@@ -66,3 +66,28 @@ jobs:
           echo '### ISO build produced — not hardware-certified' >> "$GITHUB_STEP_SUMMARY"
           cat dist/build-report.txt >> "$GITHUB_STEP_SUMMARY"
           echo 'Full ISO is intentionally not uploaded to Actions artifacts: size and redistribution approvals remain unresolved.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Free upstream download and install VM boot tools
+        run: |
+          rm -f -- .cache/orez/kubuntu-26.04.1-desktop-amd64.iso
+          df -h .
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf
+      - name: Prove casper loaded OREZ layer inside a disposable VM
+        timeout-minutes: 9
+        env:
+          OREZ_QEMU_TIMEOUT: '420'
+        run: |
+          bash build/test-casper-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve small VM evidence (never upload the ISO)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-casper-boot-evidence
+          path: |
+            dist/boot-evidence/casper-serial.log
+            dist/boot-evidence/RESULT.txt
+            dist/build-report.txt
+          if-no-files-found: warn
+          retention-days: 2

@@ -1,6 +1,6 @@
 # OREZ OS — Real Linux Build (0.1 Live Candidate)
 
-**State: source implemented, boot compatibility NOT YET VERIFIED.** This repository builds a *real* Ubuntu/Kubuntu-based bootable ISO by adding an OREZ desktop filesystem layer to the official, signed Kubuntu 26.04.1 LTS image. This is not the earlier HTML simulation and it does not run Android directly.
+**State: first ISO built, live boot compatibility NOT YET VERIFIED.** This repository builds a *real* Ubuntu/Kubuntu-based bootable ISO by adding an OREZ desktop filesystem layer to the official, signed Kubuntu 26.04.1 LTS image. This is not the earlier HTML simulation and it does not run Android directly.
 
 ## What works in the source
 
@@ -37,3 +37,6 @@ The repo contains one controlled GitHub Actions workflow for manual dispatch or 
 See [`docs/AI_HANDOFF.md`](docs/AI_HANDOFF.md) for verified progress and the next steps. Never treat this candidate as a released or safe-to-install operating system until boot and recovery tests are recorded.
 
 **Licensing:** OREZ-authored source and wallpaper reserved to the project owner; no blanket public reuse license has been granted. The upstream Kubuntu, Linux, KDE and other components keep their own licenses and attribution/redistribution obligations. Do not publish a modified binary image without confirming those obligations.
+
+## First full-image construction result
+An explicit one-shot GitHub build [run #41809241570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41809241570) successfully authenticated Kubuntu 26.04.1 and constructed a live ISO from commit `fa7c59f`, with digest `9cc63144be546d7fcc1b1c3edd091f70b404e7c1c7e080bd4fa4287234bc0137`. This ISO was **not uploaded** and has **not** passed boot tests. A subsequent development change adds a VM-only direct-kernel casper witness to prove that the OREZ overlay is actually accessible at boot, without changing any installed disks or allowing network access.

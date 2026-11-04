@@ -32,3 +32,13 @@ M1 — Real bootable live foundation (candidate source, **not yet built or boot 
 
 ## Persistent safety rules
 Never format the user's NVMe or overwrite the Windows recovery USB. Do not silently disable Secure Boot, elevate AI permissions, enable remote access, or install proprietary NVIDIA drivers without appropriate user control and tests. Do not claim built, booted, installed, or released status without recorded evidence.
+
+## 2026-11-04: First actual ISO build (new evidence)
+- GitHub run: https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41809241570
+- Source commit: `fa7c59f63e03f97a418be7d1fa4725c382209c0e`
+- CI source validation: **PASS**; full 5.1 GB upstream authenticated, OREZ live image constructed, ISO structure: **PASS**.
+- ISO SHA-256 in ephemeral runner: `9cc63144be546d7fcc1b1c3edd091f70b404e7c1c7e080bd4fa4287234bc0137`
+- **NOT** retained as download. VM boot and hardware boot at that commit: **NOT TESTED**.
+
+### Next verification change
+- Add only-if-explicitly-enabled unprivileged live-boot witness and a read-only/diskless QEMU casper smoke test. Source is implemented and locally unit tested; run success must be independently verified before claiming anything else.
