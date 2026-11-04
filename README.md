@@ -46,3 +46,8 @@ OREZ Welcome, Settings, and Phone Connect desktop app entries appear in KDE laun
 
 ## UEFI virtual-firmware evidence
 The [UEFI VM build/test run 41811624570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41811624570) passed. Inspection of its OVMF screenshot shows TianoCore/GRUB loading the remixed ISO and Kubuntu splash, **not** the OREZ graphical desktop. GRUB logged `can't find command grub_platform`; this requires qualification. The captured test is not an installer, Secure Boot or physical-PC validation.
+
+## Latest release gate results (2026-11-04)
+The [full diagnostic run 41817833118](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41817833118) built a real ISO and started Linux with the OREZ live layer, but **failed** the required Plasma graphical session test. Two OVMF screenshots still show the upstream Kubuntu boot splash. Read-only installer inspection confirmed that the stock Calamares source only copies the original `filesystem.squashfs` (not OREZ), and its live AppArmor configuration disables a user-namespace restriction. **This is not a safe, installable release.**
+
+The new live-only Calamares warning stub is source/package-tested ([run 41818841716](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41818841716)) but must still be checked in a freshly built ISO. The separate native Debian package intentionally excludes that installer override. Development remains on [Draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), not merged to main.

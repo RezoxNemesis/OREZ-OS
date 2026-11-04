@@ -13,3 +13,10 @@
 | Installer/backup/recovery | Read-only installed-root audit and real ISO Calamares-source inspector implemented | Calamares installed-layer persistence, actual Btrfs/LUKS2 tests, backup restore and non-target disk safety NOT implemented; current ISO remains blocked |
 | Hardware/NVIDIA | Read-only `orezctl hardware` | MSI/RTX 3050 real device test required |
 | Cross-chat project memory | `docs/AI_HANDOFF.md` | Update only after verifying commits and evidence |
+
+### New evidence 2026-11-04
+- ISO build/live-root: PASS in 41817833118, but full CI concluded failure because graphical gate is mandatory.
+- UEFI/Plasma: FAIL to reach desktop in two screenshots; `display-manager` active, `graphical.target` not active during observed window. Cause unverified.
+- Calamares: `unpackfs.conf` copies base SquashFS only. Persistence of OREZ overlay fails readiness. No real SSD installation allowed.
+- AppArmor: live-only `kernel.apparmor_restrict_unprivileged_userns=0` present. Installed configuration and effective policy must be verified before release.
+- Safety: unqualified Calamares live wrapper source/pkg tests PASS 41818841716, new ISO image test outstanding.

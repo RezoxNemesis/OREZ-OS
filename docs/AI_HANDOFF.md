@@ -6,7 +6,7 @@ Foundation: Kubuntu 26.04.1 LTS amd64, KDE Plasma 6
 Target: AMD Ryzen 5 5600 / MSI B550M PRO-VDH WIFI / NVIDIA RTX 3050 6 GB / 16 GB DDR4 / 500 GB NVMe
 
 ## Current milestone
-M1 — Real bootable live foundation (candidate source, **not yet built or boot tested**).
+M1 — Real ISO generated and casper guest boot verified; graphical desktop validation FAILED; installation remains NOT QUALIFIED. Read the latest evidence below.
 
 ## Implemented source
 - `build/build-live.sh`: authenticates official Ubuntu ISO SHA256SUMS with pinned CD image signing key, validates the locked upstream SHA-256, creates an original OREZ layer, and preserves upstream BIOS/UEFI boot metadata with xorriso replay.
@@ -74,3 +74,14 @@ Never format the user's NVMe or overwrite the Windows recovery USB. Do not silen
 
 ## 2026-11-04 live-only installer guard (source change)
 - Added an explicit visible Calamares block for the **experimental ISO only**, returning 78 without launching the unqualified installer; added an `OREZ Installer — Unavailable` launcher and documentation. The native `orez-shell` Debian package intentionally **excludes** this override to preserve an existing host's Calamares program. Source tests and CI must pass before treating the guard as verified in a built ISO. This is not a disk-writing sandbox.
+
+## 2026-11-04: Latest complete multi-gate VM results (authoritative)
+- **Full controlled run:** [GitHub Actions #41817833118](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41817833118), source commit `ffea0796ad68315c175969db5d7469b172eeabea`, scratch branch `build/live-orez-20261104-diagnostics-2`.
+- Native Debian package/source validation: **PASS**. Locked signed upstream Kubuntu 26.04.1 ISO, constructed OREZ overlay and ISO: **PASS**. Direct-kernel, offline/diskless casper OREZ filesystem witness: **PASS**. **Strict GUI gate: FAIL** — no verified Plasma shell process, and UEFI early/later screenshots both show only Kubuntu's splash. The overall full ISO job correctly returned FAILURE. No ISO published.
+- Guest `OREZ_GUI_DIAG` at attempts 15 and 30: `display=active graphical=inactive multiuser=inactive`. Serial log contains a long `snapd.service` startup job, but **root cause of graphical failure remains unknown**; QEMU TCG, no network, virtual VGA and software rendering may contribute. Do not silently mask security/services just to get green CI.
+- **Actual read-only Calamares source inspection:** `/etc/calamares/modules/unpackfs.conf` contains only `/cdrom/casper/filesystem.squashfs`, NOT OREZ `zz-orez.squashfs`: an install is **not** proven to retain OREZ. The upstream live image contains `/etc/sysctl.d/20-apparmor.conf` with `kernel.apparmor_restrict_unprivileged_userns = 0`. This is a reported live-only hardening override and must not silently persist in any installed system. Both were flagged **BLOCKED**.
+- OVMF serial additionally logs `error: can't find command grub_platform`; firmware boots past menu to splash but must not be certified. UEFI screenshots captured around 90 and 235 seconds; **no graphical login** shown.
+- Small boot evidence is GitHub Actions artifact `orez-casper-boot-evidence`, artifact ID `13315134427` (short retention). The findings above are preserved beyond artifact expiry.
+- **Later feature source:** `b61f379bd5287c2dcc3ffcafefbf6d2897044ee2` adds a clearly visible *live-only* Calamares safety stub and excludes it from standalone `orez-shell` Debian package. First source run failed due an unmatched shell quote; fixed and [run #41818841716](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41818841716) **PASSED** tests/package. **The guard has not yet been ISO/VM validated.**
+- Current development branch: `feature/orez-live-foundation-20261104`, [Draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1). Keep **unmerged**, don't publish a user-installable ISO, don't touch owner's SSD or Windows 11 USB.
+- **Next engineering actions:** investigate guest systemd/snapd/Wayland/virtual graphics and compare original Kubuntu behavior, qualify active Plasma/OVMF GUI without bypassing security, devise Calamares source layers that explicitly install OREZ and remove only live-only overrides, then disposable-virtual-disk installation/restore tests; only after those, MSI/RTX hardware Try mode and release distribution.
