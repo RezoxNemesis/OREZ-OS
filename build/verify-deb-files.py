@@ -91,11 +91,15 @@ def main():
         def run(*argv):
             return subprocess.check_output(["dpkg-deb", *argv, str(args.package)])
         contents = run("--contents").decode()
-        meta_name = run("-f", "Package").decode().strip()
-        meta_arch = run("-f", "Architecture").decode().strip()
+        meta_name = subprocess.check_output(
+            ["dpkg-deb", "--field", str(args.package), "Package"]
+        ).decode().strip()
+        meta_arch = subprocess.check_output(
+            ["dpkg-deb", "--field", str(args.package), "Architecture"]
+        ).decode().strip()
         ctrl = run("--ctrl-tarfile")
         with tarfile.open(fileobj=io.BytesIO(ctrl), mode="r:*") as tar:
-            members = [m.name for m in tar.getmembers() if m.isfile()]
+            members = [m.name for m in tar.getmembers() if m.isfile() or m.issym() or m.islnk()]
         result = inspect(contents, args.manifest.read_text(), members, meta_name, meta_arch)
     except (OSError, ValueError, subprocess.CalledProcessError, tarfile.TarError) as exc:
         print("OREZ .deb audit refused: " + str(exc), file=sys.stderr)
