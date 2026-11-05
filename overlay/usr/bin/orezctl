@@ -4,7 +4,7 @@ set -euo pipefail
 usage() {
   cat <<'USAGE'
 OREZ OS 0.1 — developer live image
-Usage: orezctl <status|version|hardware|preflight|performance|power|network|network-status|bluetooth|files|security|connect|settings|appearance|ai|help>
+Usage: orezctl <status|version|hardware|preflight|performance|power|network|network-status|bluetooth|files|security|connect|settings|store|appearance|ai|help>
  status      Version and safety information
  version     Show installed OREZ component package version
  hardware    Read-only graphics, network and storage inventory
@@ -18,6 +18,7 @@ Usage: orezctl <status|version|hardware|preflight|performance|power|network|netw
  security    Read-only security facts (not certification)
  connect     Open KDE Connect pairing or list devices
  settings    Open native KDE System Settings
+ store       Open OREZ Store: Android app targets, native apps and visible permissions
  appearance  User-controlled wallpaper autostart on/off/status
  ai          Report optional AI is disabled
  help        This help
@@ -89,6 +90,7 @@ case "${1:-help}" in
       open) if command -v kdeconnect-app >/dev/null; then exec kdeconnect-app; elif command -v kdeconnect-settings >/dev/null; then exec kdeconnect-settings; else echo 'KDE Connect GUI not installed' >&2; exit 1; fi ;;
       *) usage >&2; exit 2 ;;
     esac ;;
+  store) exec /usr/bin/orez-store gui ;;
   settings) if command -v systemsettings >/dev/null; then exec systemsettings; else echo 'KDE Settings missing' >&2; exit 1; fi ;;
   appearance)
     dir="${XDG_CONFIG_HOME:-$HOME/.config}/autostart"

@@ -48,3 +48,11 @@
   checksum list without confusing MD5 with authenticity. Keep administrator-policy
   hardening as an explicit failed gate; this cache patch does not authorize it
   implicitly or certify the live session. See OFFLINE_BOOT_QA.md.
+
+- ADR-018 (2026-11-05): OREZ Store is a native, ordinary-user Qt Widgets catalog
+  and launcher; share validated catalog data with the labelled phone/browser
+  preview. Real Android YouTube/Instagram/games are required, with no website
+  fallback. Prefer official Linux desktop editions unchanged. Do not install
+  custom key mapping; test and disclose each app's native keyboard/mouse support.
+  The SDK adapter remains development-only, consumer provider/licensing pending.
+  Free base downloads do not imply free paid extras. See OREZ_STORE.md.

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import { Store } from './Store';
 
-type Screen = 'Workspace' | 'Settings' | 'Connect' | 'Installation';
+type Screen = 'Workspace' | 'Settings' | 'Connect' | 'Installation' | 'Store';
 type Preferences = { glass: boolean; motion: boolean; contrast: boolean };
 const defaults: Preferences = { glass: true, motion: !matchMedia('(prefers-reduced-motion: reduce)').matches, contrast: false };
 function readPreferences(): Preferences {
@@ -18,11 +19,12 @@ function Icon({ name }: { name: Screen | 'Arrow' | 'Folder' }) {
     Connect: 'M8 8V4h8v16H8v-4 M4 12h8 M10 10l2 2-2 2',
     Installation: 'M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5',
     Arrow: 'M5 19 19 5 M6 5h13v13',
+    Store: 'M4 8h16v13H4z M8 8V6a4 4 0 018 0v2',
     Folder: 'M3 6h7l2 3h9v11H3z'
   };
   return <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]} /></svg>;
 }
-const icons: Record<Screen, React.ReactNode> = { Workspace: <Icon name="Workspace" />, Settings: <Icon name="Settings" />, Connect: <Icon name="Connect" />, Installation: <Icon name="Installation" /> };
+const icons: Record<Screen, React.ReactNode> = { Workspace: <Icon name="Workspace" />, Settings: <Icon name="Settings" />, Connect: <Icon name="Connect" />, Installation: <Icon name="Installation" />, Store: <Icon name="Store" /> };
 
 function App() {
   const [screen, setScreen] = useState<Screen>('Workspace');
@@ -80,6 +82,7 @@ function App() {
         </div>
         <span className="wallpaper-caption">PAPER / INK / STILLNESS</span>
       </section>}
+      {screen === 'Store' && <Store />}
       {screen === 'Settings' && <section className="panel glass"><div className="section-heading"><div><span className="eyebrow">MAKE IT YOURS</span><h1>Settings</h1></div><span className="section-icon"><Icon name="Settings" /></span></div><p>These preferences only affect this browser preview.</p><label className="search-label" htmlFor="settings-search">Search preview settings</label><input id="settings-search" type="search" value={filter} onChange={e => setFilter(e.target.value)} placeholder="Appearance, motion, contrast…" />
         <div className="settings-list">{([
           ['glass', 'Frosted panels', 'Translucency and soft blur. Disable for solid, lighter panels.'],

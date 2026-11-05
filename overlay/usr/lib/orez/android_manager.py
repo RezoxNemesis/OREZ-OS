@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import re
 import shutil
 import signal
 import stat
@@ -27,6 +28,14 @@ TOOLS_URL = 'https://dl.google.com/android/repository/commandlinetools-linux-158
 TOOLS_SHA256 = '4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583'
 TERMS_URL = 'https://developer.android.com/studio/terms'
 DELETE_CONFIRMATION = 'DELETE OREZ ANDROID DATA'
+
+# Reviewed aliases only. No arbitrary shell commands, APK URLs or attached phones.
+APP_PACKAGES = {
+    'youtube': 'com.google.android.youtube', 'instagram': 'com.instagram.android',
+    'brave': 'com.brave.browser', 'chrome': 'com.android.chrome',
+    'subway-surfers': 'com.kiloo.subwaysurf', 'free-fire': 'com.dts.freefireth',
+    'asphalt-legends': 'com.gameloft.android.ANMP.GloftA9HM', 'play-store': 'com.android.vending',
+}
 
 
 def memory_budget():
@@ -264,6 +273,56 @@ class Manager:
         self.state_file.unlink(missing_ok=True)
         self.audit('stop', {'owned_process_was_running': bool(pid)})
 
+    def app_command(self, app, action, development_test=False):
+        """Build a narrowly scoped guest request; never target a phone or host shell.
+
+        The existing SDK provider remains development/testing only. An explicit
+        flag is an operation acknowledgement, not a consumer-use licence grant.
+        """
+        if os.getuid() == 0 or os.geteuid() == 0:
+            raise ValueError('Android app operations must run as the ordinary user.')
+        if app not in APP_PACKAGES or action not in ['app-status','open-app','store-page','app-settings']:
+            raise ValueError('Unknown Android app or operation.')
+        if not development_test:
+            raise ValueError('Consumer runtime is not qualified. The existing SDK provider is development/testing only.')
+        if not self.owned_process():
+            raise ValueError('Start the owned OREZ Android development emulator first; no other device will be contacted.')
+        self.prepare()
+        adb=self.sdk/'platform-tools/adb'
+        if not adb.is_file() or adb.is_symlink():
+            raise ValueError('Managed SDK ADB is missing or aliased.')
+        base=[str(adb),'-H','127.0.0.1','-P','5038','-s','emulator-5556']
+        name=subprocess.run(base+['emu','avd','name'],env=self.environment(),capture_output=True,text=True,timeout=15,check=True).stdout.splitlines()
+        if not name or name[0].strip()!=AVD:
+            raise ValueError('The selected emulator does not match the owned OREZ profile.')
+        package=APP_PACKAGES[app]
+        if action=='app-status': return base+['shell','pm','path',package]
+        if action=='store-page':
+            return base+['shell','am','start','-W','-a','android.intent.action.VIEW','-d',
+                         'market://details?id='+package,'-p','com.android.vending']
+        if action=='app-settings':
+            return base+['shell','am','start','-W','-a','android.settings.APPLICATION_DETAILS_SETTINGS','-d','package:'+package]
+        component=subprocess.run(base+['shell','cmd','package','resolve-activity','--brief','-a',
+                   'android.intent.action.MAIN','-c','android.intent.category.LAUNCHER',package],
+                   env=self.environment(),capture_output=True,text=True,timeout=15,check=True).stdout.strip().splitlines()
+        candidate=component[-1] if component else ''
+        if not re.fullmatch(re.escape(package)+r'/[A-Za-z0-9_.$]+',candidate):
+            raise ValueError('App is not installed or its launcher did not match the requested package.')
+        return base+['shell','am','start','-W','-n',candidate]
+
+    def app_action(self, app, action, development_test=False):
+        command=self.app_command(app,action,development_test)
+        result=subprocess.run(command,env=self.environment(),capture_output=True,text=True,timeout=30,check=True)
+        if action=='app-status':
+            return {'app':app,'package':APP_PACKAGES[app],
+                    'installed':any(line.startswith('package:') for line in result.stdout.splitlines()),
+                    'provider':'development/testing SDK', 'compatibility_verified':False}
+        if 'Error:' in result.stdout or 'Error:' in result.stderr or 'Exception' in result.stdout+result.stderr:
+            raise ValueError('Android rejected the request. Check its installation, Play Store and permissions inside the guest.')
+        self.audit(action,{'app':app,'package':APP_PACKAGES[app]})
+        return {'app':app,'action':action,'request_delivered':True,'compatibility_verified':False,
+                'purchase_authorized':False,'installation_claimed':False}
+
     def destroy(self, all_runtime, confirmation):
         if confirmation != DELETE_CONFIRMATION:
             raise ValueError('Destructive action requires the exact confirmation phrase.')
@@ -322,11 +381,16 @@ def gui(manager):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', nargs='?', default='gui', choices=['gui', 'status', 'setup', 'create', 'start', 'stop', 'launch-plan', 'reset', 'remove'])
+    parser.add_argument('action', nargs='?', default='gui', choices=['gui', 'status', 'setup', 'create', 'start', 'stop', 'launch-plan', 'reset', 'remove', 'app-status', 'open-app', 'store-page', 'app-settings'])
     parser.add_argument('--confirm', default='')
+    parser.add_argument('--app', choices=sorted(APP_PACKAGES))
+    parser.add_argument('--development-test', action='store_true')
     args = parser.parse_args(); manager = Manager()
     try:
-        if args.action == 'gui': gui(manager)
+        if args.action in ['app-status','open-app','store-page','app-settings']:
+            if not args.app: parser.error('--app is required')
+            print(json.dumps(manager.app_action(args.app,args.action,args.development_test),indent=2))
+        elif args.action == 'gui': gui(manager)
         elif args.action == 'status': print(json.dumps(manager.status(), indent=2))
         elif args.action == 'launch-plan': print(json.dumps(manager.launch_plan(), indent=2))
         elif args.action in ['reset', 'remove']: manager.destroy(args.action == 'remove', args.confirm)

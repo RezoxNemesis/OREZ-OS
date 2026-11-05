@@ -1,5 +1,10 @@
 # OREZ OS — Real Linux Build (0.1 Live Candidate)
 
+Latest Store work: [native Store and actual Android direction](docs/OREZ_STORE.md).
+Official Linux apps are preferred unchanged. Android consumer runtime and app
+compatibility remain pending; no browser shortcut substitutes for YouTube.
+Read [the latest verified handoff](docs/AI_HANDOFF.md) before continuing.
+
 Latest boot work: [offline cache correction and actual initrd audit](docs/OFFLINE_BOOT_QA.md). The new VM run reaches systemd but still has no usable desktop; owner authentication remains a release blocker.
 
 Latest component validation: [native controls, real-version upgrades and gameplay](docs/CONTINUED_QA.md). OREZ remains pre-alpha; no physical installation is approved.

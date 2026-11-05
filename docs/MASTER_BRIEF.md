@@ -139,3 +139,12 @@ Produce a **full technical master plan, not merely inspirational ideas**. In ord
 12. An explicit list of assumptions and facts requiring verification; link official current sources for technical decisions.
 
 Use professional engineering judgment; make reasonable assumptions when information is missing and mark them. **Do not ask repetitive questions or claim impossible guarantees.** If any plan element is unrealistic, replace it with a safe, technically feasible approach and explain the trade-off. Preserve the user's ownership, control, transparency, security, professional capability, and chosen design aesthetic.
+
+## Owner clarification: real Android applications and native preference
+
+YouTube, Instagram and Android-only requested games must run as actual Android
+apps, not websites/PWAs/browser wrappers. Prefer official Linux desktop versions
+where available, unchanged. Require evidence from real opened apps and test
+direct keyboard/mouse without custom key mapping. Do not claim universal
+compatibility or free paid content. Preserve screenshots of every test, including
+failures; distinguish app functionality from catalog/preview work.

@@ -92,3 +92,15 @@ through a visible owner/admin action; the manager never performs those changes.
 - [Command-line tools and published checksum](https://developer.android.com/studio)
 - [Android SDK terms](https://developer.android.com/studio/terms)
 - [Official Play system-image metadata](https://dl.google.com/android/repository/sys-img/google_apis_playstore/sys-img2-1.xml)
+
+## Store integration follow-up — 5 November 2026
+
+Read [OREZ_STORE.md](OREZ_STORE.md). The Store now targets actual Android apps;
+web shortcuts are removed. Official Linux editions are preferred unchanged.
+The source adapter adds `app-status`, `open-app`, `store-page`, `app-settings`
+with reviewed `--app` aliases and `--development-test`. It validates the owned
+AVD and targets only dedicated loopback ADB/serial; no host browser substitution,
+phone command, APK mirror or automatic purchase. Its controlled source tests
+are not a real Android run. Consumer installation stays blocked. Direct keyboard
+and mouse support without custom mapping is a per-app acceptance gate; it is
+not guaranteed merely by running Android in an emulator.

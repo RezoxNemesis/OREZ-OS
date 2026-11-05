@@ -126,3 +126,19 @@ component gates only. See [follow-up evidence](CONTINUED_QA.md).
 Owner update/monitor requirement: signed OREZ channel, owner-policy migration
 guards and local security detection are not implemented. Follow UPDATES_AND_GUARD.md;
 do not present existing read-only status as protection against all attacks.
+
+## Store integration (5 November 2026)
+
+- Android YouTube/Instagram/games have not run; catalog and mocked ADB tests do
+  not establish a consumer emulator, Play Store or game/input compatibility.
+- Official Linux apps are preferred without modification. No custom key mapper.
+  Touch-only Android controls may prevent the requested direct desktop input.
+- `orez-shell` 0.1.0-3 requires `python3-pyside6.qtwidgets`. The pinned base and
+  retained ISOs lack this dependency/the new Store; image provisioning and new
+  live/installed-root checks are pending.
+- Native Brave is installed in the QA container but its Chromium sandbox cannot
+  create required namespaces here. Do not disable it to force a pass. No new
+  successful Brave browsing claim follows from this session.
+- Native packages run as the ordinary user and may read user-owned files; no
+  blanket data isolation is implemented by Store launch. Live auth blockers
+  remain unchanged. See OREZ_STORE.md and the latest AI_HANDOFF.md.

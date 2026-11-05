@@ -33,3 +33,31 @@ state without saved passwords or network changes. These native modules must
 be installed and need actual services/devices. Pair/connect/allow transfers
 through their visible controls; forget networks and unpair devices there.
 No automatic pairing, firewall opening, USB formatting or remote admin is added.
+
+## OREZ Store
+
+Launcher → OREZ Store or `orezctl store`. Search app names/categories, filter
+Android/native formats, review privacy and launch existing native apps.
+Official Linux desktop versions (including Brave and Chrome) are preferred
+unchanged. YouTube, Instagram and the requested games are actual Android
+app targets, not websites. Consumer runtime/download/playback is pending.
+Direct keyboard/mouse support needs per-app verification.
+Android runtime controls expose the existing development SDK manager after a
+visible acknowledgement. They do not accept licences or install apps silently.
+`orez-android app-status|open-app|store-page|app-settings --app youtube
+--development-test` operates only on the owned, verified development emulator;
+it cannot target the phone. Store-page opens a page inside Android Google Play,
+leaving app installation/permissions to the user; no automatic purchase occurs.
+
+Activity and controls shows local logs and explains update/removal locations.
+Android app permissions, updates and removals belong inside the guest. Runtime
+stop/reset/removal remain in OREZ Android Apps. No web fallback, root helper,
+background store service, APK mirror or automatic purchases exist. GUI needs
+`python3-pyside6.qtwidgets`; the existing live ISO does not yet include this new
+Store or its GUI dependency. CLI list/status work without Qt bindings.
+
+Native Linux apps run as the ordinary user and can access that user's files;
+this is not filesystem isolation. Full live owner authentication and Android
+isolation are still release blockers. Paid publisher features cannot be made
+free by OREZ. Store logs: `~/.local/share/orez/store/`; Android state:
+`~/.local/share/orez/android/`. No real account credentials are captured by tests.

@@ -24,9 +24,9 @@ Section: x11
 Priority: optional
 Architecture: all
 Maintainer: OREZ OS Project <orez@invalid.example>
-Depends: plasma-workspace, systemsettings, kdeconnect, xdg-utils, python3, kdialog, konsole
+Depends: plasma-workspace, systemsettings, kdeconnect, xdg-utils, python3, python3-pyside6.qtwidgets, kdialog, konsole
 Suggests: default-jre-headless, plasma-nm, bluedevil, bluez-obexd, kio-extras, scrcpy
-Description: OREZ desktop assets, diagnostics and optional Android development manager
+Description: OREZ desktop assets, diagnostics, Store and optional Android development manager
  Experimental OREZ shell assets for Kubuntu 26.04.1 and KDE Plasma 6.
  This package does not change the bootloader, disk partitions or security settings.
 CONTROL

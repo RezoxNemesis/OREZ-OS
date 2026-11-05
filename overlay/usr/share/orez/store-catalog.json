@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-05",
+  "apps": [
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "kind": "android",
+      "category": "Video",
+      "publisher": "Google",
+      "summary": "The actual Android YouTube app, inside the OREZ Android runtime.",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube",
+      "compatibility": "Android runtime pending. This is an Android app request, not a website shortcut. Playback, input and performance are untested. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "Runs inside Android when a consumer runtime is qualified. Permissions and sign-in are managed inside Android. No default host-home sharing or administrator credentials. Data you submit can still reach the publisher."
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "kind": "android",
+      "category": "Social",
+      "publisher": "Meta",
+      "summary": "The actual Android Instagram app, inside the OREZ Android runtime.",
+      "url": "https://play.google.com/store/apps/details?id=com.instagram.android",
+      "compatibility": "Android runtime pending. This is an Android app request, not a website shortcut. Playback, input and performance are untested. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "Runs inside Android when a consumer runtime is qualified. Permissions and sign-in are managed inside Android. No default host-home sharing or administrator credentials. Data you submit can still reach the publisher."
+    },
+    {
+      "id": "brave-linux",
+      "name": "Brave Browser (Linux)",
+      "kind": "native",
+      "category": "Browsers",
+      "publisher": "Brave Software",
+      "summary": "Preferred official Linux desktop edition. OREZ launches the existing app unchanged; no Android wrapper or custom key mapping.",
+      "url": "https://brave.com/linux/",
+      "compatibility": "Native Linux build available; this store does not install vendor packages.",
+      "privacy": "Runs as your ordinary account, not administrator. Native software can access your user files; browser site permissions are not an OS sandbox."
+    },
+    {
+      "id": "chrome-linux",
+      "name": "Google Chrome (Linux)",
+      "kind": "native",
+      "category": "Browsers",
+      "publisher": "Google",
+      "summary": "Preferred official Linux desktop edition. OREZ launches the existing app unchanged; no Android wrapper or custom key mapping.",
+      "url": "https://www.google.com/chrome/",
+      "compatibility": "Native Linux build available; redistribution and installation require review.",
+      "privacy": "Runs as your ordinary account. Native software may access user files; sign-in and sync send selected information to Google."
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "kind": "native",
+      "category": "Video",
+      "publisher": "VideoLAN",
+      "summary": "Local video and music playback with desktop controls.",
+      "url": "https://www.videolan.org/vlc/",
+      "compatibility": "Launch an existing installation; install through your trusted system package manager.",
+      "privacy": "Native VLC runs without administrator privileges but can read files accessible to your account. Open only trusted media."
+    },
+    {
+      "id": "supertux",
+      "name": "SuperTux",
+      "kind": "native",
+      "category": "Games",
+      "publisher": "SuperTux Team",
+      "summary": "A free native platform game for the first casual-game checks.",
+      "url": "https://www.supertux.org/",
+      "compatibility": "Native container gameplay was tested earlier; ISO and hardware performance are unqualified.",
+      "privacy": "Runs as an ordinary user. This entry starts an existing installation and grants no additional permissions."
+    },
+    {
+      "id": "subway-surfers",
+      "name": "Subway Surfers",
+      "kind": "android",
+      "category": "Games",
+      "publisher": "SYBO Games",
+      "summary": "A requested casual Android game.",
+      "url": "https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf",
+      "compatibility": "Android runtime pending. Desktop controls and gameplay are not tested. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "Install only through a qualified Android provider after reviewing its permissions. Ads, account services and in-app purchases may send data to the publisher."
+    },
+    {
+      "id": "free-fire",
+      "name": "Free Fire",
+      "kind": "android",
+      "category": "Games",
+      "publisher": "Garena",
+      "summary": "A requested Android action game.",
+      "url": "https://play.google.com/store/apps/details?id=com.dts.freefireth",
+      "compatibility": "Android runtime pending. Region, ARM support, emulator policy and anti-cheat can prevent play. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "No game APK or account is bundled. Never bypass anti-cheat or device certification. Host-admin access is not an app requirement."
+    },
+    {
+      "id": "asphalt-legends",
+      "name": "Asphalt Legends",
+      "kind": "android",
+      "category": "Games",
+      "publisher": "Gameloft",
+      "summary": "A requested Android racing game.",
+      "url": "https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA9HM",
+      "compatibility": "Android runtime pending. GPU, memory, input and account requirements need testing. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "No APK is downloaded. Heavy Android games need measured performance; a store listing is not proof of compatibility."
+    },
+    {
+      "id": "play-store",
+      "name": "Google Play Store",
+      "kind": "android",
+      "category": "Android",
+      "publisher": "Google",
+      "summary": "A possible future source inside a qualified Android guest.",
+      "url": "https://support.google.com/googleplay/",
+      "compatibility": "Not bundled. Consumer runtime and Google Play availability/licensing are unresolved. Direct keyboard and mouse support without custom key mapping is unverified; unsupported touch controls will be disclosed.",
+      "privacy": "Google sign-in belongs inside the Android guest, never Linux login or administrator authentication. No hidden ADB or host folders are enabled."
+    }
+  ]
+}

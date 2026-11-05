@@ -155,3 +155,58 @@ class WallpaperTests(unittest.TestCase):
     def test_preview_uses_same_unmodified_wallpaper(self):
         native = ROOT / 'overlay/usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg'
         self.assertEqual(native.read_bytes(), (ROOT / 'preview/public/orez-rest.jpg').read_bytes())
+
+class AndroidAppRoutingTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        self.manager=android.Manager(Path(self.temp.name)/'android')
+        self.manager.prepare();(self.manager.sdk/'platform-tools').mkdir()
+        (self.manager.sdk/'platform-tools/adb').write_text('fixture; never executed')
+    def reply(self,text):
+        import subprocess
+        return subprocess.CompletedProcess([],0,text,'')
+    def test_consumer_gate_blocks_without_contacting_devices(self):
+        with patch.object(android.subprocess,'run') as run:
+            with self.assertRaisesRegex(ValueError,'Consumer runtime'):self.manager.app_command('youtube','open-app')
+            run.assert_not_called()
+    def test_owned_runtime_required_before_any_adb_command(self):
+        with patch.object(android.subprocess,'run') as run:
+            with self.assertRaisesRegex(ValueError,'owned OREZ'):self.manager.app_command('youtube','app-status',True)
+            run.assert_not_called()
+    def test_unknown_package_or_operation_is_rejected(self):
+        for app,action in [('youtube;id','open-app'),('youtube','root'),('com.example.other','store-page')]:
+            with self.assertRaises(ValueError):self.manager.app_command(app,action,True)
+    def test_adb_targets_only_private_loopback_and_owned_serial(self):
+        with patch.object(self.manager,'owned_process',return_value=123),patch.object(android.subprocess,'run',return_value=self.reply(android.AVD+'\nOK\n')):
+            command=self.manager.app_command('youtube','store-page',True)
+            self.assertEqual(command[1:7],['-H','127.0.0.1','-P','5038','-s','emulator-5556'])
+            self.assertIn('market://details?id=com.google.android.youtube',command)
+            self.assertEqual(command[-2:],['-p','com.android.vending'])
+            self.assertNotIn('install',command);self.assertNotIn('root',command)
+    def test_wrong_avd_and_foreign_activity_fail_closed(self):
+        with patch.object(self.manager,'owned_process',return_value=123):
+            with patch.object(android.subprocess,'run',return_value=self.reply('Another_AVD\nOK\n')):
+                with self.assertRaisesRegex(ValueError,'does not match'):self.manager.app_command('youtube','store-page',True)
+            for component in ['evil.pkg/.Main','com.google.android.youtube/.Main;id','No activity found']:
+                with patch.object(android.subprocess,'run',side_effect=[self.reply(android.AVD+'\nOK\n'),self.reply(component)]):
+                    with self.assertRaises(ValueError):self.manager.app_command('youtube','open-app',True)
+    def test_resolved_android_launcher_is_not_a_website(self):
+        component='com.google.android.youtube/com.google.android.apps.youtube.app.WatchWhileActivity'
+        with patch.object(self.manager,'owned_process',return_value=123),patch.object(android.subprocess,'run',side_effect=[self.reply(android.AVD+'\nOK\n'),self.reply(component)]):
+            command=self.manager.app_command('youtube','open-app',True)
+            self.assertEqual(command[-4:],['start','-W','-n',component])
+            self.assertFalse(any(item.startswith('http') for item in command))
+    def test_app_settings_target_guest_package_only(self):
+        with patch.object(self.manager,'owned_process',return_value=123),patch.object(android.subprocess,'run',return_value=self.reply(android.AVD+'\nOK\n')):
+            command=self.manager.app_command('instagram','app-settings',True)
+            self.assertIn('android.settings.APPLICATION_DETAILS_SETTINGS',command)
+            self.assertEqual(command[-1],'package:com.instagram.android')
+    def test_android_error_never_becomes_success_or_install_claim(self):
+        with patch.object(self.manager,'app_command',return_value=['fixture']),patch.object(android.subprocess,'run',return_value=self.reply('Error: Activity not found')):
+            with self.assertRaises(ValueError):self.manager.app_action('youtube','open-app',True)
+        with patch.object(self.manager,'app_command',return_value=['fixture']),patch.object(android.subprocess,'run',return_value=self.reply('Status: ok')):
+            result=self.manager.app_action('youtube','open-app',True)
+            self.assertFalse(result['installation_claimed']);self.assertFalse(result['purchase_authorized']);self.assertFalse(result['compatibility_verified'])
+
+if __name__ == '__main__':
+    unittest.main()

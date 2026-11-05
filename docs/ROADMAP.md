@@ -70,3 +70,12 @@ Next: qualify a booted Plasma desktop on a suitable VM; validate real Calamares 
 **Verification strategy:** Following QPainter's still-black VirtIO result, run a once-only, checksum-pinned pristine Kubuntu baseline under identical software-only VirtIO conditions to isolate upstream from OREZ changes. Source tests passed #41887319606; control #41887435151 was in progress at last verification. M1 release remains blocked until actual desktop can be visually confirmed.
 
 **Latest Nov 5, 2026 evidence:** pristine Kubuntu also produced a black software-only VirtIO desktop [run 41889832695](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41889832695), which establishes an inadequate graphical control environment rather than an OREZ-specific KWin fault. M1 still requires a real visible GPU-backed/physical desktop proof. M2 installation payload passed actual signed Kubuntu collision check with 16/16 files and zero conflicts [run 41937702881](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41937702881), and native Debian package audit passed 16/16 files with no maintainer scripts [run 41938238699](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41938238699). These are static gates; installer remains disabled pending real installed-disk and recovery tests.
+
+## Store and actual application follow-up
+
+Implemented: native Qt catalog/search/filter/launch, clear Android pending state,
+unchanged official Linux preference, constrained development guest app routing.
+Pending: consumer runtime/licensing, actual Android apps, per-app desktop
+windows, direct keyboard/mouse without mapping, authenticated install/update UI,
+and PySide6 provisioning in both live/installed ISO roots. Finish owner-auth and
+visible desktop gates before installation. Details: [OREZ_STORE.md](OREZ_STORE.md).

@@ -22,3 +22,8 @@ usr/share/applications/orez-settings.desktop
 usr/share/applications/orez-connect.desktop
 usr/share/doc/orez/welcome.html
 usr/share/doc/orez/CONTROLS.md
+usr/bin/orez-store
+usr/lib/orez/store_manager.py
+usr/lib/orez/store_ui.py
+usr/share/orez/store-catalog.json
+usr/share/applications/orez-store.desktop
