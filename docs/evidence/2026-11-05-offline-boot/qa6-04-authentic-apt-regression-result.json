@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Verify local-only APT cache using the actual ISO inline signing key",
+  "kind": "package-container",
+  "started_at": "2026-11-05T14:53:46.113747+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-apt-regression-v2-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.72,
+  "finished_at": "2026-11-05T14:53:46.885740+00:00",
+  "log_sha256": "c3d5890f0c5c99bc9482a98dd4467cab48156fce74af5e8a925c9f1fe41bc2c2"
+}

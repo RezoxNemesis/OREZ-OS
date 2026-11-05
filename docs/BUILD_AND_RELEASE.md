@@ -5,7 +5,7 @@ now require zstd, a pinned single-hook repack and refreshed media checksums.
 This changes the initrd; signed EFI/kernel files and the base filesystem remain
 unchanged. Secure Boot and owner authentication still require qualification.
 
-Latest: a local development ISO was rebuilt from source `82183ea`, exact size
+Previous canonical build: a local development ISO was rebuilt from source `82183ea`, exact size
 5,073,338,368 bytes. Signed upstream digest and static guards pass; usable desktop
 and installation do not. [VM diagnostics](VM_GRAPHICS_QA.md) records the new
 normal-user software OpenGL harness and current limits. Interrupted downloads

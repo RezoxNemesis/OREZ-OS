@@ -40,3 +40,11 @@
 - ADR-016 (2026-11-05): Use a direct pinned-base, single filesystem-layer QA
   recipe on VFS hosts. Dependency tools cannot supply missing KVM/GPU/cgroup or
   network permissions. Keep the smaller opt-in CI images explicitly selected.
+
+- ADR-017 (2026-11-05): Correct offline cache startup using a GPL-derived,
+  local-source-only hook with a bounded optional operation. Pin the full upstream
+  initrd, preserve early microcode archives, replace one hook in the final CPIO,
+  and verify reversibility against its original digest. Refresh the legacy media
+  checksum list without confusing MD5 with authenticity. Keep administrator-policy
+  hardening as an explicit failed gate; this cache patch does not authorize it
+  implicitly or certify the live session. See OFFLINE_BOOT_QA.md.

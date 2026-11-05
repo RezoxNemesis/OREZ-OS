@@ -80,3 +80,29 @@ password to get a boot test working.
 
 The actual pinned ISO/initrd bytes, independent extraction and recorded runtime
 results take precedence over assumptions inferred only from documentation.
+
+## Executed follow-up result — 5 November 2026
+
+Implementation `d01cc72f3b8fda4889144e823f1b0710fd5a7b71` passes exact-commit
+CI 42052822272: 100 source cases, the 23-path native package audit, preview
+production build and 60 browser cases. The full ISO CI job was skipped.
+The local derivative is 5,070,782,464 bytes, SHA-256
+`31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705`.
+
+In the 600-second offline/diskless direct boot, serial output confirms only
+`file:/cdrom` indexes during the corrected hook. It warns that cache generation
+failed or timed out, returns, and reaches systemd. This establishes the bounded
+fallback/progress path, not successful in-guest cache generation. The separate
+rootless APT fixture did complete authenticated index generation.
+
+The VM never displayed a usable desktop. Last serial activity included long
+`ldconfig.service` and `snapd.apparmor.service` jobs; reviewed final frames still
+show firmware text. The capture script exits successfully because it captured
+evidence, not because an OS acceptance gate passed. The host has no KVM or GPU,
+and this cannot be used as an actual-PC speed benchmark. UEFI, Secure Boot,
+owner authentication, installation/recovery and real hardware remain unqualified.
+
+The ledger in `docs/evidence/2026-11-05-offline-boot/` includes failed signing-key
+fixture setup, rejected appended-archive approaches, one missing lab-directory
+failure, and the intentional authentication-gate failure. All screenshots are
+preserved; AI_HANDOFF.md carries the verified PNG download and current checkpoint.

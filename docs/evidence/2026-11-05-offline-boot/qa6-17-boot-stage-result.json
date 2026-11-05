@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Actual offline cache-stage progress verification",
+  "kind": "vm",
+  "started_at": "2026-11-05T15:24:35.861728+00:00",
+  "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+  "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+  "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+  "command": [
+    "python3",
+    "/tmp/orez-qa6-review-boot.py"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.25,
+  "finished_at": "2026-11-05T15:24:36.238610+00:00",
+  "log_sha256": "c6e70e17a48c9d6ad7f8ae964dcfb7dd7243179127488a0db0407df2e4b30e4d"
+}

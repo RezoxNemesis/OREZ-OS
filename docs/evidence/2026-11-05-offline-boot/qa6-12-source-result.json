@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Full source regression and builder syntax",
+  "kind": "source",
+  "started_at": "2026-11-05T15:11:21.054647+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "8f4e6b747a462ce7794b4d4cd9cc8dddc6edd94be6fd1baf55982b8f02cbe658",
+  "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? build/update-media-checksums.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-source.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.22,
+  "finished_at": "2026-11-05T15:11:22.337066+00:00",
+  "log_sha256": "4f9ec7cd9062268f7196cf16120e214e37c0732abf5372790722f2030270ab01"
+}

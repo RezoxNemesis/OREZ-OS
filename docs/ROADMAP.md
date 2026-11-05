@@ -1,5 +1,9 @@
 # OREZ OS — evidence-based engineering roadmap
 
+Latest: [the offline initrd fix](OFFLINE_BOOT_QA.md) now passes its boot-stage
+progress gate. M1 remains open: no usable desktop in the new 600s VM run, and
+the actual live authentication hooks require hardening before sensitive use.
+
 Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
 owner-authorized upgrades, protection-policy invariants and local detection that
 preserves legitimate work. Security software receives fixes; no AI/vendor may

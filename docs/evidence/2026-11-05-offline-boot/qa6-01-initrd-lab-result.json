@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Provision isolated initrd lab and extract verified candidate boot scripts",
+  "kind": "package-container",
+  "started_at": "2026-11-05T14:37:05.020435+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "62c46e1f9a60af1319b82456e6cb88870f7803ebd5073be1522dfc32a3a203ee",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-lab-start.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 195.94,
+  "finished_at": "2026-11-05T14:40:21.058570+00:00",
+  "log_sha256": "eecab950cfab7ad14fd547841707409089d48780cf8ddc039dffeea26af46126"
+}

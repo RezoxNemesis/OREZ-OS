@@ -1,6 +1,26 @@
 # OREZ OS — unresolved blockers
 
-## Live boot follow-up — 5 November 2026, latest
+## Offline startup follow-up — 5 November 2026, latest
+
+- The actual initrd cache hook left legacy Internet repositories active. A pinned
+  one-hook repack now selects local CD sources only, preserves authentication
+  checks and bounds optional cache generation. Rootless authenticated local APT
+  and independent initrd extraction pass. The new 5,070,782,464-byte derivative
+  ISO passes static checks; both original and derivative hashes are recorded.
+- The actual 600-second offline/diskless VM passes that cache stage with a
+  warning/fallback and reaches systemd. It still does not show a usable desktop:
+  last serial jobs include `ldconfig.service` and `snapd.apparmor.service`, while
+  graphical captures retain the firmware text. Capture success is not desktop
+  acceptance. No UEFI or hardware qualification follows from this direct boot.
+- Actual initrd audit confirms **three owner-control blockers**: blank live-user
+  password, passwordless full sudo and wildcard Polkit grants. The cache fix
+  changes none of these. A reviewed owner setup/authentication flow and effective
+  runtime allow/deny tests are still required before sensitive live use.
+- See [offline startup evidence](OFFLINE_BOOT_QA.md) and the latest AI_HANDOFF.md.
+  Keep AppArmor enabled; investigate service timing on a supported KVM/GPU host
+  instead of disabling protections or repeating identical TCG boots.
+
+## Earlier live boot follow-up — 5 November 2026
 
 - A new 5,073,338,368-byte ISO was built and its static structure/installer guard
   passed. Software-backed VirGL starts as a normal user, but live desktop

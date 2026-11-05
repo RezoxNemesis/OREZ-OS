@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Pinned initrd repack and standard extraction",
+  "kind": "package-container",
+  "started_at": "2026-11-05T15:08:46.375334+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "a29c06983387df3a94f861c980bf0e191712553deade48d59fd169bd5149fb88",
+  "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-repack-validation.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 0.22,
+  "finished_at": "2026-11-05T15:08:46.644602+00:00",
+  "log_sha256": "7599ab1e658c94a45baee251b46b8a5ecb50cfd3dc0c709bebc672e6463489ce"
+}

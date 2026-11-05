@@ -1,5 +1,109 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest verified offline-startup work — 5 November 2026
+
+- Last confirmed implementation: **`d01cc72f3b8fda4889144e823f1b0710fd5a7b71`**,
+  branch `feature/orez-live-foundation-20261104`, PR #1 draft/open/unmerged.
+  Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. This subsequent
+  checkpoint changes documentation/evidence only with `[skip ci]`; verify HEAD.
+  Repository remains public until all owner-requested PC-readiness gates pass.
+- Exact implementation [CI 42052822272](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42052822272)
+  **passed**. Decoded job `127333161464` verifies **100 source tests**, the
+  **23-path package audit** at unchanged component version 0.1.0-2, preview
+  production build and **60 browser tests**. Full ISO CI job skipped. Artifact
+  [13427758567](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42052822272/artifacts/13427758567)
+  is 201,246,564 bytes; GitHub SHA-256
+  `7c113712736ea46a2f71a6343a327b71eecea7e9b8f6a4d135ca2e8557a88e78`,
+  expires **19 November 2026, 15:17:09 UTC**. Metadata/logs verified; the CI ZIP
+  was not independently downloaded. Its browser screenshots are separate.
+- **New downloadable PNG evidence: 55 original images / 133 captures / 18 local
+  attempts, including all six failed checks:**
+  https://github.com/RezoxNemesis/OREZ-OS/archive/9617f39aa6887f5790e5c14118141c4768ef9734.zip
+  Orphan branch `downloads/screenshots-2026-11-05-offline-boot`. The public ZIP
+  was downloaded (7,167,733 bytes); all 55 PNG hashes match the local bundle.
+  Repeated identical frames are stored once, with every capture mapped in the
+  manifest. Reports and actual VM frames are labelled. Raw logs/fixture scripts
+  remain local. Delivery verification: `docs/evidence/2026-11-05-offline-boot/github-download.json`.
+- **Fixed actual offline boot cause:** the original initrd hook removed source
+  fragments but left legacy Internet `sources.list` active. The GPL-derived
+  replacement selects only `cdrom.sources`, retains signatures and normal repo
+  files, and bounds optional cache work to 90s + 5s grace. A rootless fixture
+  using the actual ISO's embedded one-time public signing key passes genuine
+  local APT index verification. The first fixture's wrong key correctly failed.
+- **Pinned initrd transformation verified:** preserve the first 67,781,012 bytes
+  (three early archives/microcode), replace exactly one hook in the final CPIO,
+  recompress with zstd. Restoring the original hook must reconstruct the pinned
+  archive hash. Independent `unmkinitramfs` extraction passes. Earlier appended
+  CPIO experiments failed standard extraction and were rejected/preserved.
+  GPL notices, original hook and COPYING are in `third_party/casper/`.
+- Canonical builder and static checker now enforce that patch and refresh/check
+  four legacy media-error checksums. MD5 is only casper's corruption-detection
+  format; authenticated upstream SHA-256 and output SHA-256 remain required.
+- **New locally tested derivative ISO retained:**
+  `dist/vm-candidate/OREZ-OS-0.1-offline-cache-amd64.iso`, **5,070,782,464 bytes**
+  (5.071 GB / 4.723 GiB), SHA-256
+  `31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705`.
+  It derives from the retained `82183ea` ISO with SHA
+  `8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9`;
+  only initrd, patch metadata and media checksums change. The full canonical
+  builder was not rerun. Static patch/payload/installer-guard checks pass.
+  Both old and new ISO hashes passed retention checks. No public ISO release.
+- **Actual 600s offline/diskless VM now passes the formerly blocking hook and
+  reaches systemd.** It reads only local indexes, then warns that optional cache
+  work failed or timed out and continues. This proves bounded fallback, not
+  successful in-guest cache generation. The separate rootless APT fixture did
+  complete. Guest: 4096 MiB, TCG, software llvmpipe/VirGL, no NIC/writable disk.
+- **Desktop remains unqualified.** Final captures still show firmware text;
+  serial waits on `ldconfig.service` and `snapd.apparmor.service`. The capture
+  command exits zero because recording completed, not because desktop acceptance
+  passed. No Try click occurred. This direct boot does not test UEFI/Secure Boot,
+  physical speed or native app usability in the ISO. Do not disable AppArmor to
+  force a pass, or diagnose this solely as a confirmed Plasma graphics fault.
+- **Actual initrd owner-control gate fails:** blank live-user password, full
+  `NOPASSWD: ALL` in `25adduser`, and wildcard Polkit grants in
+  `44pk_allow_ubuntu`. Both auth hooks remain byte-identical after the cache fix.
+  The read-only auditor deliberately reports BLOCKED; effective allow/deny tests
+  and a secure local owner-setup flow remain unimplemented. The installer blocker
+  does not establish owner-only administration. No PC access policy changed.
+- The QA recipe adds `initramfs-tools-core`; GUI/OpenGL dependencies from the
+  previous session remain required. No new environment image was published.
+  The temporary rootless lab was removed after preserving evidence and both
+  ISOs; approximately **11 GiB** workspace space remains. The original compact
+  image is still available but lacks these newly added dependencies until rebuilt.
+  Host KVM, physical GPU and enforced Docker cgroups are still absent.
+- Durable report: [OFFLINE_BOOT_QA.md](OFFLINE_BOOT_QA.md) and
+  `docs/evidence/2026-11-05-offline-boot/` with all 18 attempt records, actual
+  archive/auth/boot findings, CI and delivery metadata. Local bundle:
+  `dist/OREZ-offline-boot-screenshots.zip`, 7,076,602 bytes, SHA-256
+  `ac02434cf26fd7c54e85fc989dd43889f62bb733a6f8f15ab0d774fb27f2e6ac`.
+  Earlier 80-, 534- and 340-image downloads remain in the historical entries below.
+
+Exact next actions:
+1. Verify HEAD, draft PR, implementation `d01cc72`, exact CI and both local ISO
+   hashes. Read the new ledger before changing boot or security settings.
+2. Rebuild/publish the documented QA environment on a supported host with actual
+   KVM, usable graphics and enforced resource controls. Compare original versus
+   patched offline startup through UEFI, record cache/service timings and obtain
+   a visible, interactive desktop. Avoid another identical CPU-emulated retry.
+3. Implement a reviewed local owner setup/authentication flow for live use;
+   remove the inherited blank/passwordless/wildcard grants and exercise explicit
+   authentication, deny, cancel, revocation and recovery paths. Use dummy test
+   credentials; never capture owner passwords. No vendor/AI bypass is acceptable.
+4. Only after those gates, qualify Calamares on disposable virtual disks:
+   exact package registration, non-target disk preservation, AppArmor, LUKS,
+   reboot, signed update/rollback and independent backup restore. Installer stays
+   disabled and the real SSD/Windows USB remain untouched.
+5. Continue actual MSI/RTX/Realme hardware, native identity, 6/16 GiB workload/
+   power and licensed consumer Android runtime gates. Play Store downloads,
+   Android gaming and device links are not established by browser previews.
+
+Next-chat prompt: "Continue RezoxNemesis/OREZ-OS. Read AGENTS.md and the newest
+AI_HANDOFF.md, then verify actual branch/PR/CI and artifacts. The offline APT
+boot-stage fix is implemented at d01cc72 and tested, but the 600s TCG run has no
+usable desktop; actual initrd owner authentication is BLOCKED. Use the next
+unclosed gate, preserve all screenshots/failures and owner control, and do not
+claim PC readiness, secure elevation or Play Store from static/preview checks."
+
 ## Latest verified live-boot follow-up — 5 November 2026
 
 - Last confirmed implementation: **`d8193b7ef1c45b088e96241745776d68484768da`**,

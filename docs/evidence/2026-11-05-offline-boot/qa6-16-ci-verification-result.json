@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Exact-commit remote CI evidence verification (not a CI rerun)",
+  "kind": "source",
+  "started_at": "2026-11-05T15:23:38.643108+00:00",
+  "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+  "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+  "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+  "command": [
+    "python3",
+    "/tmp/orez-qa6-ci-summary.py"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.12,
+  "finished_at": "2026-11-05T15:23:38.921788+00:00",
+  "log_sha256": "aeec037b52563ae022df9f981ed21b675df436a0d01b0208b679838af1385ac1"
+}
