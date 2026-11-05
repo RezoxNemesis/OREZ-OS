@@ -1,10 +1,21 @@
 # OREZ OS — Verified Development Handoff
 
+## FINAL VERIFIED EXPANDED-QA COMMIT / CI — 2026-11-05
+
+- Implementation commit: **`ba8b86adf979e553ad3bfefae6ff6856dd4afa0f`**, branch `feature/orez-live-foundation-20261104`, [draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), still unmerged. Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`.
+- **GitHub CI SUCCESS:** [41988662713](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41988662713), source job `127115379957`. Verified logs: **52 source tests**, package build and **16-file audit**, production preview build, **60/60 browser cases in one run**. Full ISO job skipped as intended. Native container checks ran locally, not in this GitHub job.
+- [Download the CI preview and screenshots](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41988662713/artifacts/13397520627): artifact `13397520627`, 139,649,053 bytes, SHA-256 `2c9372dde9e5bc092a1e5973b9b171ad36be104844818265727a5da53780ca38`, expires **19 November 2026 at 07:41 UTC**. Do not claim continued download availability after expiry without checking.
+- **All local test screenshots, including failures:** `dist/OREZ-expanded-QA-screenshots.zip`, 46,186,436 bytes, SHA-256 `bb542c3eab9c51a058e36b4b2cec845449a0503637e65270a06ec497b48d84cb`. Extract and open `index.html`. It contains **152 unique unedited PNGs covering 381 original capture references**, all 16 local attempt records and raw logs/results. Exact duplicates are stored once, with original paths mapped in `manifest.json`; hash-set comparison confirmed every unique saved PNG is included. Local gallery: `dist/expanded-QA-gallery/index.html`. Full Playwright viewers/traces remain in `dist/evidence/qa2-*` and are omitted from the compact screenshot bundle.
+- Durable local-run ledger, four images and scenario assertions: `docs/evidence/2026-11-05-expanded-qa/`. The ZIP is a supplied workspace artifact, not a permanent GitHub release/download. The CI artifact covers GitHub source/browser checks, not local native screenshots; distinguish them.
+- This checkpoint is a **documentation-only follow-up**, marked `[skip ci]`, to the tested implementation above. Verify actual HEAD and its code diff at the next session. No second source/ISO run is needed merely for recording these results.
+- **Still not an installable release:** native container graphics do not prove ISO/UEFI boot, target NVIDIA/Secure Boot, Android pairing, Calamares, encrypted installation or full-system recovery. All physical disks/USB/firmware remain untouched.
+
+
 ## EXPANDED QA CHECKPOINT — 2026-11-05
 
 This section supersedes earlier component-testing claims. The whole OS remains incomplete.
 
-- Starting verified HEAD: `e4846c0babafcdfd9081519a76bd2db7e892faad`; branch `feature/orez-live-foundation-20261104`; [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) remains draft/unmerged; main `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. Publication/CI annotation follows once the new commit is verified. Do not infer a CI pass from these local results.
+- Starting verified HEAD: `e4846c0babafcdfd9081519a76bd2db7e892faad`; branch `feature/orez-live-foundation-20261104`; [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) remains draft/unmerged; main `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. The final implementation/CI annotation above is now verified; local native results remain separate from CI.
 - **Real native desktop achieved in the workspace:** KWin Wayland/Plasma 6.6.6 nested in Xvfb on isolated Ubuntu 26.04.1, actual OREZ wallpaper, Settings, Dolphin, Konsole and launcher. Five native interaction/restart scenarios passed in both 4 GiB/2 CPU (`qa2-15`) and 2 GiB/1 CPU (`qa2-16`) profiles. Frames manually reviewed. Window tests use the KWin API; launcher uses actual mouse input. Desktop/panel/wallpaper state and open application windows survive Plasma restart.
 - Fixture constraints: software Mesa llvmpipe, no KVM/DRI/GPU, host devices, bind mounts, privileged container or runtime network. KWin's scheduling file capability was **removed only inside the disposable test layer**, code hash unchanged, no-new-privileges enabled. Full system bus, audio, portals, authentication/login and hardware behavior are not tested. This is **not an ISO boot**, and does not close M1.
 - **60/60 preview cases passed locally** (`qa2-12`): two viewport profiles; malformed/blocked/full storage, offline/reload, real consented worker update, navigation/search, demonstrative permission reset, sensitive browser API non-use, responsive layouts and eight automated WCAG scans. Fixed genuine sessionStorage update bug using in-memory consent. Physical Android remains untested.
@@ -17,7 +28,7 @@ This section supersedes earlier component-testing claims. The whole OS remains i
 
 ### Exact next actions
 
-1. Verify actual PR HEAD and the new source/browser CI's head SHA. Record run/artifact URL and conclusion; preserve failures if any. The older green run `41982877782` tests older implementation `d496601e443ed3a525ac22b7d9736391b3e256f2` only.
+1. Verify actual PR HEAD against the final checkpoint above. CI `41988662713` passed for implementation `ba8b86adf979e553ad3bfefae6ff6856dd4afa0f`; preserve/download its evidence before expiry. Repeat checks only after relevant changes or a new unresolved concern.
 2. Obtain an environment capable of a real UEFI boot and usable guest graphics; compare upstream and the rebuilt OREZ image with identical firmware/device settings. The successful nested container is a useful component control, not a replacement for that gate. Avoid blind repeats of the known all-black CPU-only QEMU setup.
 3. Test the inactive Calamares candidate only on disposable virtual disks: installed dpkg registration and OREZ persistence, reboot, correct AppArmor policy, LUKS2/Btrfs, cancellation, non-target disk preservation, snapshots and independent restore. Keep the public installer blocked until demonstrated.
 4. Fix/qualify remaining native visual details (wallpaper SVG texture warning, contrast/blur fallback, launcher/session assets), full desktop audio/portals/authentication, and move runtime welcome HTML out of documentation with a renewed upstream collision audit.

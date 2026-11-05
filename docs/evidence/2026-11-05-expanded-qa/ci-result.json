@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "implementation_commit": "ba8b86adf979e553ad3bfefae6ff6856dd4afa0f",
+  "run_id": 41988662713,
+  "source_job_id": 127115379957,
+  "conclusion": "success",
+  "verified_log_results": {
+    "source_tests": 52,
+    "package_files": 16,
+    "browser_cases": 60,
+    "preview_build": "passed",
+    "live_iso_job": "skipped",
+    "native_container_scenarios": "local only"
+  },
+  "artifact": {
+    "id": 13397520627,
+    "bytes": 139649053,
+    "sha256": "2c9372dde9e5bc092a1e5973b9b171ad36be104844818265727a5da53780ca38",
+    "expires_at": "2026-11-19T07:41:56Z"
+  },
+  "local_bundle": {
+    "path": "dist/OREZ-expanded-QA-screenshots.zip",
+    "bytes": 46186436,
+    "sha256": "bb542c3eab9c51a058e36b4b2cec845449a0503637e65270a06ec497b48d84cb",
+    "unique_pngs": 152,
+    "original_capture_references": 381,
+    "all_local_attempts": 16
+  },
+  "installation_approved": false
+}

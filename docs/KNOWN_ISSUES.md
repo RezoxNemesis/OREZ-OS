@@ -2,6 +2,8 @@
 
 ## Current additions — 5 November 2026
 
+- The successful latest CI warns that pinned checkout/setup-node/upload-artifact actions target deprecated Node 20 and are being run on Node 24 by GitHub. Follow up with verified upstream action updates and full validation; this run passed, but the pins need maintenance.
+
 - Expanded QA now has a visible native KWin/Plasma container desktop, application windows, real launcher input and window/workspace interaction. This does not resolve the earlier ISO/UEFI black-frame gate. Full results and failure history: [QA scenarios](QA_SCENARIOS.md).
 - The desktop fixture lacks a full system bus/login stack, portals, PipeWire audio and hardware devices. Logs report those omissions; successful Settings rendering does not prove administrator dialogs, sound, capture or device settings work. Qt also warns about an unsupported SVG child in the wallpaper; final paper texture/rendering and native accessibility/contrast need design qualification.
 - Preview update handling no longer accesses sessionStorage after the blocked-storage regression. All 60 desktop/mobile browser cases now pass locally, including offline operation, actual consented worker updates and automated accessibility checks. This is not physical Android validation.
