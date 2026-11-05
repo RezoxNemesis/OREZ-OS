@@ -32,6 +32,11 @@ jobs:
           python3 -m unittest discover -s tests -v
           bash build/package-shell.sh
           dpkg-deb --contents dist/orez-shell_0.1.0-1_all.deb | tail -20
+          python3 build/verify-deb-files.py \
+            --package dist/orez-shell_0.1.0-1_all.deb \
+            --manifest image/installer/installed-files.txt \
+            --report dist/OREZ_DEB_CONTENTS.json
+          cat dist/OREZ_DEB_CONTENTS.json
       - name: Report exact status
         run: |
           echo '### OREZ source candidate' >> "$GITHUB_STEP_SUMMARY"
