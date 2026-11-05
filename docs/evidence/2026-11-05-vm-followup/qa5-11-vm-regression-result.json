@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "name": "VM control regression after transient modeset readback fix",
+  "kind": "source",
+  "started_at": "2026-11-05T12:23:40.230550+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "6046893569dd182f4f1d68785a2491c3f5acbd520a723f4c799f2fe11804d756",
+  "working_tree": "M build/probe-virgl-vm.py\n M tests/test_vm_probe.py",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_vm_probe.py",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.68,
+  "finished_at": "2026-11-05T12:23:41.134421+00:00",
+  "log_sha256": "421c079a091f2c0f2e5be4df62b2e9bd0da412ecb44a2cd1059f8d6bb3f1eaf3"
+}

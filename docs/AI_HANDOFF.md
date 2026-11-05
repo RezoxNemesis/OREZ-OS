@@ -1,5 +1,99 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest verified live-boot follow-up — 5 November 2026
+
+- Last confirmed implementation: **`d8193b7ef1c45b088e96241745776d68484768da`**,
+  branch `feature/orez-live-foundation-20261104`, PR #1 draft/open/unmerged.
+  Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`; repository is public
+  per the owner's instruction until all PC-readiness gates pass. This final
+  checkpoint is documentation/evidence only with `[skip ci]`; read actual HEAD.
+- Exact implementation [CI 42027937005](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42027937005)
+  **passed**. Decoded job `127246748045` confirms **87 source tests**, the
+  **23-path package audit at 0.1.0-2**, preview production build and **60 browser
+  tests**. Full ISO job skipped; actual ISO/VM work below was local.
+  [CI screenshots artifact](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42027937005/artifacts/13415300743)
+  is 200,884,515 bytes, GitHub digest
+  `1b2d79ee01373b563d927c9d571c038988d08086bc73dbd62a1dcfa272d3741d`,
+  expires **19 November 2026, 12:34:46 UTC**. Metadata/logs verified; artifact
+  ZIP not independently downloaded here. The earlier implementation `82183ea`
+  also passed CI 42026148407; it is not the final harness revision.
+- **New screenshot ZIP: 80 original PNGs / 200 captures / 19 local attempts**:
+  https://github.com/RezoxNemesis/OREZ-OS/archive/a98c92f105bb00a7b4ecc6ffce2bf5a9db0bdbd6.zip
+  Orphan branch `downloads/screenshots-2026-11-05-live-boot`; includes all six
+  failed executions. Repeated identical frames are stored once. Gallery/manifest
+  distinguish reports and actual VM windows. The public ZIP omits raw logs;
+  local evidence retains logs and frozen fixture inputs. Delivery verification
+  metadata is `docs/evidence/2026-11-05-vm-followup/github-download.json`.
+- **New real development ISO built and retained locally**:
+  `dist/vm-candidate/OREZ-OS-0.1-live-amd64.iso`, **5,073,338,368 bytes**
+  (5.073 GB / 4.725 GiB), SHA-256
+  `8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9`.
+  Built from **`82183ea8fbc5c1a759576a5ff0b814b936402bed`**; later changes affect
+  diagnostics/docs, not ISO payload. Official signing-key/digest verification,
+  static ISO structure, installation payload and disabled installer guard pass
+  (qa5-08). Exported ISO checksum passes again (qa5-19). No public ISO release,
+  no usable live-desktop qualification and **no installation approval**.
+- Implemented normal-user, offline, diskless software OpenGL VM diagnostics,
+  real QMP/SDL captures, private controls, input/digest/root rejection and bounded
+  cleanup. Added QEMU GUI/OpenGL dependencies to the QA recipe. Added safe HTTP
+  download resume and disk preflight credit for existing allocated input bytes;
+  full signature/digest checks remain mandatory. Two interrupted downloads were
+  retained as failures and successfully resumed before building.
+- **Live desktop remains blocked.** Initial qa5-09/10 stopped at QMP's
+  `no surface` during graphics modesetting. Corrected qa5-12 completed a
+  600-second pristine control with no recognized Try screen or usable desktop;
+  serial logs show offline APT/DNS retries during startup. Its successful exit
+  means capture completed, not a desktop pass. OREZ UEFI qa5-13 reached
+  OVMF/GRUB, then black frames; SDL capture timed out around 390 seconds.
+  qa5-15 moved only host SDL windows to (0,0), fixing clipped captures; later
+  frames are full 1280×800. No guest input or security setting changed by that
+  correction. The final harness automates this tested host-window adjustment.
+- **New owner-control blocker:** qa5-18 reads the actual upstream base's casper
+  `25adduser` hook, which writes passwordless full sudo for the live account.
+  Effective initrd/runtime/installed behavior remains untested. Audit/harden
+  live sudo and Polkit with owner authentication before sensitive live use.
+  No such rule was added or executed by this work. The installer blocker does
+  not certify administrator isolation. See OWNER_CONTROL.md.
+- GRUB warning attribution is now verified: qa5-14 extracts byte-identical
+  configs from both actual ISOs, each containing bare `grub_platform` at line 23.
+  It is inherited upstream; missing-desktop causation is not established.
+- The normal-user host GL preflight passes with **software llvmpipe**, not a GPU.
+  No KVM, `/dev/dri`, NVIDIA or enforced Docker resource budgets exist here.
+  QA recipe was edited but no new dependency image/environment was published.
+  The old compact image still needs rebuilding to include the new GUI modules.
+  Temporary rootless lab was removed after preserving evidence/ISO; approximately
+  16 GiB workspace space remains. Only its regenerable original-ISO cache was
+  removed. No PC disk, Windows USB, firmware, credentials or access policy changed.
+- Durable report: VM_GRAPHICS_QA.md and
+  `docs/evidence/2026-11-05-vm-followup/` (19-attempt ledger, VM outcomes,
+  image provenance, CI metadata, boot-config comparison and live-policy finding).
+  Local bundle `dist/OREZ-live-boot-followup-screenshots.zip` is 5,495,085 bytes,
+  SHA-256 `ae8e87d64742f5964125bd53f26c69b40ef52ad67082fbb0bd4e54df8494a94b`.
+  The previous 534- and 340-image downloads remain below.
+
+Exact next actions:
+1. Verify branch/PR/HEAD and the exact passing implementation above. Read the
+   latest evidence before changing boot/graphics settings. Preserve all failures.
+2. Diagnose offline live startup from qa5-12's serial log and audit the actual
+   initrd/live auth rules. Avoid treating its unfinished startup as a confirmed
+   Plasma/VirGL failure or enabling network/security bypasses to hide the issue.
+3. Publish the updated QA recipe on a supported host with actual KVM, usable
+   graphics, enforced resource controls and sufficient disk. Recheck pristine
+   and OREZ UEFI/desktop behavior there; no identical blind TCG reruns.
+4. Qualify owner-authenticated live elevation, then actual installation only on
+   disposable virtual disks: dpkg registration, non-target disk preservation,
+   AppArmor, LUKS boot, signed updates, independent backup and restore.
+5. Test MSI/RTX/Realme hardware, 6/16 GiB workloads and power; complete native
+   identity, phone integration and consumer Android licensing/runtime gates.
+   None is established by screenshots of the separate browser preview.
+
+Next-chat prompt: "Continue RezoxNemesis/OREZ-OS. Read AGENTS.md and the latest
+docs/AI_HANDOFF.md, verify GitHub branch/PR/CI and actual workspace artifacts,
+then work on the next unclosed release gate. Preserve owner-only control,
+public-until-PC-ready visibility, SSD/Windows USB and every failed test capture.
+Do not claim a working live desktop, safe installer or Android Play Store from
+processes, previews, static audits or this session's software-GL preflight."
+
 ## VERIFIED implementation, CI and 534-image download — 5 November 2026
 
 - Last confirmed implementation commit: **`bcbaae4e88b56a3d3fd3ea10031bbde7c5ca62c3`**,

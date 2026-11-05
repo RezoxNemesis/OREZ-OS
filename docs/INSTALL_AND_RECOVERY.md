@@ -2,6 +2,12 @@
 
 **DO NOT INSTALL THE CURRENT DEVELOPMENT ISO ON YOUR REAL SSD.** This is a Linux live-boot candidate, not a qualified installer. Upstream Kubuntu's install button may be present, but it has not been adapted to persist OREZ components. No safe USB-installable OREZ release is published yet.
 
+Latest rebuild: 5,073,338,368 bytes, locally retained development image only.
+Actual OVMF/GRUB screens were captured, but no usable live desktop was qualified.
+The upstream live-user hook's passwordless sudo policy also needs explicit
+owner-authentication review; see OWNER_CONTROL.md. The disabled Calamares entry
+point is not protection against every possible privileged disk write.
+
 ## Required qualification sequence
 1. Build a verified ISO from pinned, signed Kubuntu sources. Record exact SHA-256, source commit and licence provenance.
 2. Confirm EFI boot, Linux live root, graphical Plasma desktop and correct wallpaper under disposable virtual firmware.

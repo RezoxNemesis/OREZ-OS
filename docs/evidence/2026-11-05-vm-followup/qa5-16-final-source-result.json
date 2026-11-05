@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Final source regression with QMP capture fallback and isolated window handling",
+  "kind": "source",
+  "started_at": "2026-11-05T12:31:04.974831+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+  "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 2.27,
+  "finished_at": "2026-11-05T12:31:07.381028+00:00",
+  "log_sha256": "9c3d51f222170bdf1e31954834282752d6a90df13b4694a795612a5e3490a4b6"
+}

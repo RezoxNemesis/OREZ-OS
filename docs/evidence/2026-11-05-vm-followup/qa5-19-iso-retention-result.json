@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Verify retained development ISO and safely remove completed temporary VM lab",
+  "kind": "source",
+  "started_at": "2026-11-05T12:36:43.673997+00:00",
+  "commit": "d8193b7ef1c45b088e96241745776d68484768da",
+  "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-retain-lab-artifacts.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 120.78,
+  "finished_at": "2026-11-05T12:38:44.510589+00:00",
+  "log_sha256": "fad31095c2362bdeea2504c026ab4ebb705e713dd362f0957989a7cf1bdb23bb"
+}

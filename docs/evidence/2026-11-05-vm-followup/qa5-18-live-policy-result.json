@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Inspect inherited live-session privilege policy without executing it",
+  "kind": "source",
+  "started_at": "2026-11-05T12:35:46.762282+00:00",
+  "commit": "d8193b7ef1c45b088e96241745776d68484768da",
+  "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-live-policy-audit-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.47,
+  "finished_at": "2026-11-05T12:35:47.305805+00:00",
+  "log_sha256": "34af676a6c3393c9f53f3e2aa553130b116003b636ce4b7f98910a4aa10c4b0e"
+}

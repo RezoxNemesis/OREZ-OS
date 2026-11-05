@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Resume remaining ISO bytes after second truncated transfer, retain checksum gate",
+  "kind": "source",
+  "started_at": "2026-11-05T12:20:14.570876+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-vm-build-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 111.15,
+  "finished_at": "2026-11-05T12:22:05.760135+00:00",
+  "log_sha256": "966d72489c8e3ecea9663487f8ad0aa8981315dd8eff6ff31226c7b90be3fdba"
+}

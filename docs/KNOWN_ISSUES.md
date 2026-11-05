@@ -1,5 +1,28 @@
 # OREZ OS — unresolved blockers
 
+## Live boot follow-up — 5 November 2026, latest
+
+- A new 5,073,338,368-byte ISO was built and its static structure/installer guard
+  passed. Software-backed VirGL starts as a normal user, but live desktop
+  qualification remains blocked. Corrected pristine control qa5-12 did not reach
+  Try/Plasma within 600 seconds and logged offline APT/DNS retries. OREZ UEFI
+  qa5-13 reached firmware/GRUB, then black frames; SDL capture timed out around
+  390 seconds. No root cause for the missing desktop is established. See
+  [VM graphics evidence](VM_GRAPHICS_QA.md). Do not repeat identical probes blindly.
+- **Live privilege-policy gate:** the actual upstream base contains casper's
+  `25adduser` hook writing `NOPASSWD: ALL` for the live user. This is a static
+  source finding (qa5-18), not a tested effective runtime policy. Audit the actual
+  initrd and all live sudo/Polkit grants, then implement owner-authenticated
+  elevation before qualifying sensitive live use. The Calamares blocker does
+  not enforce owner-only administrator access. OREZ has added no such grant.
+- The GRUB `grub_platform` warning is now attributed: qa5-14 finds byte-identical
+  configurations in both actual ISOs with the stray bare command at line 23.
+  Address it in the reviewed OREZ boot-menu work; it does not prove the cause of
+  missing graphics. No firmware signature was modified in this session.
+- QEMU GUI/OpenGL modules are now explicit QA recipe dependencies. The existing
+  compact image needs rebuilding to include them; the test lab installed them
+  temporarily. Host KVM, physical GPU and enforced Docker cgroups remain absent.
+
 ## Native follow-up — 5 November 2026
 
 Native network/Bluetooth open-close, Settings search/clear and the dummy-password

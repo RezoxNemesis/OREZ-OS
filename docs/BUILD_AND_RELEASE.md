@@ -1,5 +1,13 @@
 # First real live ISO build — operating rules
 
+Latest: a local development ISO was rebuilt from source `82183ea`, exact size
+5,073,338,368 bytes. Signed upstream digest and static guards pass; usable desktop
+and installation do not. [VM diagnostics](VM_GRAPHICS_QA.md) records the new
+normal-user software OpenGL harness and current limits. Interrupted downloads
+now resume, with full digest verification mandatory. The starting 11 GiB space
+reserve credits already allocated input bytes on the same filesystem, capped
+at 5 GiB; it never removes user files or trusts a partial download.
+
 ## Daily-use QA environment — 5 November 2026
 
 See [environment publishing instructions](../environment/README.md) for the
@@ -35,7 +43,9 @@ Use Node 24 with the committed npm lockfile. The small PR job builds the native 
 
 Actual APT ownership/reinstall/purge and an Xvfb-native KDE window are exercised in a separate manual-only Docker workflow. Provisioning the Ubuntu dependency image is relatively expensive; do not run it on every docs or preview change. Its base image digest is pinned, but APT versions float until a repository snapshot is adopted. No byte-identical-reproducibility claim follows from this fixture.
 
-No new ISO is built or released by this work. Existing live/installer blockers remain below. The consolidated plan is `MASTER_BLUEPRINT.md`; the current verified implementation is in `AI_HANDOFF.md`.
+A new ISO was built locally in the latest VM follow-up; no public ISO is released.
+Existing live/installer blockers remain below. The consolidated plan is
+`MASTER_BLUEPRINT.md`; the current verified implementation is in `AI_HANDOFF.md`.
 
 ## Verified upstream
 - Official source: https://cdimage.ubuntu.com/cdimage/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso
@@ -54,7 +64,7 @@ The ISO must pass both static `build/check-iso.sh` and real UEFI VM boot with th
 ## GitHub CI, storage and data safety
 - Pull requests run only small source tests and packaging.
 - Full ISO build runs only after manual `workflow_dispatch` or an intentionally created one-shot `build/live-*` branch. Ordinary PRs and pushes never download the ISO. This avoids draining the GitHub Actions allocation.
-- GitHub-hosted runners have limited free disk space. The script refuses to download the 5.1 GB image when available space is below 11 GiB.
+- GitHub-hosted runners have limited free disk space. A fresh build reserves 11 GiB; resumptions use the conservative cached-input credit described above.
 - The 5+ GB ISO is *not* uploaded by default. No download link will be claimed until a compliant, quota-safe delivery route exists.
 - Workflows have read-only GitHub permissions and receive no secrets.
 - No build steps access physical block devices, flash USB drives, modify PC firmware, or install operating systems.

@@ -40,6 +40,15 @@ No absolute protection against vulnerabilities, a compromised approved package,
 stolen owner credentials or physical attack can be promised. Release testing
 must verify actual effective permissions and recovery, not merely source text.
 
+**Unresolved live-session exception discovered in qa5-18:** the pinned upstream
+base ships a casper live-user hook that writes passwordless full sudo. OREZ did
+not add this rule, but inheriting it is not sufficient for the owner's security
+contract. Its actual initrd/effective runtime behavior and live Polkit grants
+must be audited and hardened before sensitive live use is qualified. The
+development ISO is not an owner-policy-certified system. Do not infer security
+from the installer blocker or the unprivileged OREZ component tests. No root
+grant or credential change was executed by this read-only source audit.
+
 ## Public now; private when PC-ready
 
 The owner explicitly chose **public during development** and **private when OREZ

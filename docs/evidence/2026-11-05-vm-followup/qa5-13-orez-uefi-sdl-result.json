@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "OREZ actual UEFI boot retaining SDL frames across graphics modesetting",
+  "kind": "vm",
+  "started_at": "2026-11-05T12:25:11.717439+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "f6960cff4699e4af136e1461d8858964eb5c59600aa5f1be84788793918005a2",
+  "working_tree": "M build/probe-virgl-vm.py\n M tests/test_vm_probe.py",
+  "command": [
+    "bash",
+    "/tmp/orez-run-virgl-host.sh",
+    "orez-uefi-sdl",
+    "uefi",
+    "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+    "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+    "660"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 438.37,
+  "finished_at": "2026-11-05T12:32:30.195369+00:00",
+  "log_sha256": "96e77b483a044cb6fad244aa44a954b38b0c7e247841138321d2421907da0892"
+}

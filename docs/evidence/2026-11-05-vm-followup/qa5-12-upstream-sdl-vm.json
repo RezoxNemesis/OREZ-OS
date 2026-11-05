@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "boot": "direct",
+  "iso": "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+  "expected_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "guest_ram_mib": 4096,
+  "cpu_accelerator": "tcg",
+  "host_renderer": "llvmpipe",
+  "device": "virtio-vga-gl",
+  "network": "none",
+  "writable_disks": [],
+  "installation_approved": false,
+  "desktop_qualified": false,
+  "secure_boot_tested": false,
+  "frames": [
+    {
+      "seconds": 10,
+      "file": "guest-0010.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution",
+      "origin": "qmp-readback"
+    },
+    {
+      "seconds": 30,
+      "file": "host-window-0030.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 30,
+      "file": "guest-0030.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.21% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 50,
+      "file": "host-window-0050.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 50,
+      "file": "guest-0050.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 70,
+      "file": "host-window-0070.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 70,
+      "file": "guest-0070.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 90,
+      "file": "host-window-0090.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 90,
+      "file": "guest-0090.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 110,
+      "file": "host-window-0110.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 110,
+      "file": "guest-0110.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 130,
+      "file": "host-window-0130.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 130,
+      "file": "guest-0130.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 150,
+      "file": "host-window-0150.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 150,
+      "file": "guest-0150.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 170,
+      "file": "host-window-0170.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 170,
+      "file": "guest-0170.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 190,
+      "file": "host-window-0190.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 190,
+      "file": "guest-0190.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 210,
+      "file": "host-window-0210.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 210,
+      "file": "guest-0210.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 230,
+      "file": "host-window-0230.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 230,
+      "file": "guest-0230.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 250,
+      "file": "host-window-0250.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 250,
+      "file": "guest-0250.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 270,
+      "file": "host-window-0270.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 270,
+      "file": "guest-0270.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 290,
+      "file": "host-window-0290.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 290,
+      "file": "guest-0290.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 310,
+      "file": "host-window-0310.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 310,
+      "file": "guest-0310.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 330,
+      "file": "host-window-0330.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 330,
+      "file": "guest-0330.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 350,
+      "file": "host-window-0350.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 350,
+      "file": "guest-0350.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 370,
+      "file": "host-window-0370.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 370,
+      "file": "guest-0370.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 390,
+      "file": "host-window-0390.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 390,
+      "file": "guest-0390.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 411,
+      "file": "host-window-0411.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 411,
+      "file": "guest-0411.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 431,
+      "file": "host-window-0431.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 431,
+      "file": "guest-0431.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 451,
+      "file": "host-window-0451.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 451,
+      "file": "guest-0451.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 471,
+      "file": "host-window-0471.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 471,
+      "file": "guest-0471.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 491,
+      "file": "host-window-0491.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 491,
+      "file": "guest-0491.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 511,
+      "file": "host-window-0511.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 511,
+      "file": "guest-0511.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 531,
+      "file": "host-window-0531.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 531,
+      "file": "guest-0531.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 551,
+      "file": "host-window-0551.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 551,
+      "file": "guest-0551.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 571,
+      "file": "host-window-0571.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 571,
+      "file": "guest-0571.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 591,
+      "file": "host-window-0591.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 591,
+      "file": "guest-0591.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    }
+  ],
+  "actual_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "q35,accel=tcg",
+    "-cpu",
+    "max",
+    "-m",
+    "4096",
+    "-smp",
+    "2",
+    "-vga",
+    "none",
+    "-device",
+    "virtio-vga-gl",
+    "-display",
+    "sdl,gl=on",
+    "-nic",
+    "none",
+    "-monitor",
+    "none",
+    "-qmp",
+    "unix:/tmp/orez-virgl-zlmxbj4l/qmp.sock,server=on,wait=off",
+    "-serial",
+    "file:/tmp/orez-upstream-sdl/serial.log",
+    "-no-reboot",
+    "-device",
+    "qemu-xhci,id=orez-xhci",
+    "-device",
+    "usb-tablet,bus=orez-xhci.0",
+    "-drive",
+    "file=/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+    "-kernel",
+    "/tmp/orez-upstream-sdl/vmlinuz",
+    "-initrd",
+    "/tmp/orez-upstream-sdl/initrd",
+    "-append",
+    "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+  ],
+  "qemu": {
+    "QMP": {
+      "version": {
+        "qemu": {
+          "micro": 1,
+          "minor": 2,
+          "major": 10
+        },
+        "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+      },
+      "capabilities": [
+        "oob"
+      ]
+    }
+  },
+  "status": "captured_requires_visual_review",
+  "try_clicked": false
+}

@@ -83,6 +83,31 @@ the stray bare command at line 23. This warning is inherited from upstream;
 it is not proof of the cause of the graphics problem. Corrected SDL capture runs and their reviewed outcomes
 are recorded in the handoff; do not interpret the initial runs as desktop proof.
 
+## Reviewed outcomes and next gate
+
+- qa5-12 completed its 600-second capture window, but **desktop acceptance is
+  blocked**: no recognized Try screen, no click and no usable desktop. Its
+  serial log contains live-startup APT/DNS retries with no guest network. The
+  diagnostic's zero exit status means capture completed, not that OREZ passed.
+- qa5-13 preserved OVMF/GRUB and later black frames. SDL capture timed out at
+  approximately 390 seconds. A usable OREZ desktop was not reached or verified.
+  The original software-rendering preflight only establishes a working host GL
+  context; it does not establish guest 3D rendering.
+- qa5-15 corrected clipped host-window captures in those running diagnostics;
+  later frames are full 1280×800. This is recorded manual test-fixture adjustment,
+  not a guest configuration change. Both runs retain their original frozen harness.
+- qa5-17 actually rejects a wrong ISO digest before extraction/VM launch and a
+  root invocation before output creation. Final source regression: **87 passed**.
+- qa5-18 reads the actual upstream casper live-user hook and finds passwordless
+  full sudo creation. Effective runtime and installed policy are untested. This
+  is a mandatory owner-control review gate, not a passed security qualification.
+
+Next work should investigate offline live startup using the preserved logs and
+qualify pristine/OREZ boot on a supported KVM/graphics host. Keep snapshots,
+installation, physical NVIDIA, Secure Boot and live authentication as separate
+gates. Do not spend CI on identical TCG reruns or remove security controls to
+make a test appear successful. No physical SSD/USB/firmware was accessed.
+
 ## Engineering reference
 
 [QEMU's official VirtIO GPU documentation](https://www.qemu.org/docs/master/system/devices/virtio/virtio-gpu.html)

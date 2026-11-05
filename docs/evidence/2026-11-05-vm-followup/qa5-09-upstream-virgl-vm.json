@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "boot": "direct",
+  "iso": "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+  "expected_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "guest_ram_mib": 4096,
+  "cpu_accelerator": "tcg",
+  "host_renderer": "llvmpipe",
+  "device": "virtio-vga-gl",
+  "network": "none",
+  "writable_disks": [],
+  "installation_approved": false,
+  "desktop_qualified": false,
+  "secure_boot_tested": false,
+  "frames": [
+    {
+      "seconds": 10,
+      "file": "guest-0010.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution"
+    },
+    {
+      "seconds": 30,
+      "file": "guest-0030.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution"
+    },
+    {
+      "seconds": 50,
+      "file": "guest-0050.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution"
+    }
+  ],
+  "actual_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "q35,accel=tcg",
+    "-cpu",
+    "max",
+    "-m",
+    "4096",
+    "-smp",
+    "2",
+    "-vga",
+    "none",
+    "-device",
+    "virtio-vga-gl",
+    "-display",
+    "sdl,gl=on",
+    "-nic",
+    "none",
+    "-monitor",
+    "none",
+    "-qmp",
+    "unix:/tmp/orez-virgl-z2kjrg_c/qmp.sock,server=on,wait=off",
+    "-serial",
+    "file:/tmp/orez-upstream-virgl/serial.log",
+    "-no-reboot",
+    "-device",
+    "qemu-xhci,id=orez-xhci",
+    "-device",
+    "usb-tablet,bus=orez-xhci.0",
+    "-drive",
+    "file=/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+    "-kernel",
+    "/tmp/orez-upstream-virgl/vmlinuz",
+    "-initrd",
+    "/tmp/orez-upstream-virgl/initrd",
+    "-append",
+    "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+  ],
+  "qemu": {
+    "QMP": {
+      "version": {
+        "qemu": {
+          "micro": 1,
+          "minor": 2,
+          "major": 10
+        },
+        "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+      },
+      "capabilities": [
+        "oob"
+      ]
+    }
+  },
+  "status": "failed",
+  "error": "{'class': 'GenericError', 'desc': 'no surface'}"
+}

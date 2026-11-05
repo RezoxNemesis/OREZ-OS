@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Install signed Ubuntu QEMU GUI and OpenGL dependencies in temporary lab",
+  "kind": "package-container",
+  "started_at": "2026-11-05T12:12:38.447693+00:00",
+  "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+  "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-vm-lab-provision.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 40.97,
+  "finished_at": "2026-11-05T12:13:19.514790+00:00",
+  "log_sha256": "4eb0fb3642454e41eb3ac7719426eee2b2e70651be5fcd737cdada05726c9fdb"
+}
