@@ -1,0 +1,8 @@
+{
+  "memory.max": "17179869184",
+  "memory.current": "17030164480",
+  "memory.peak": "17180053504",
+  "memory.events": "low 0\nhigh 0\nmax 178819\noom 0\noom_kill 0\noom_group_kill 0",
+  "cpu.max": "400000 100000",
+  "cpu.stat": "usage_usec 5281602179\nuser_usec 2374006375\nsystem_usec 2907595803\nnice_usec 0\nnr_periods 55019\nnr_throttled 2972\nthrottled_usec 235615896\nnr_bursts 0\nburst_usec 0"
+}

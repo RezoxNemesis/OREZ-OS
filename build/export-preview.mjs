@@ -14,12 +14,12 @@ const script=html.match(/<script[^>]*src="([^"]+)"[^>]*><\/script>/);
 const stylesheet=html.match(/<link[^>]*rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/);
 if(!script || !stylesheet) throw new Error('Built JS and CSS entrypoints were not found');
 let css=await readFile(path.join(root,stylesheet[1]),'utf8');
-const matches=[...css.matchAll(/url\(([^)]+\.svg)\)/g)];
+const matches=[...css.matchAll(/url\(([^)]+\.(?:svg|jpg))\)/g)];
 for(const match of matches){
   const file=match[1].replace(/^['"]|['"]$/g,'');
   const resolved=path.resolve(root,path.dirname(stylesheet[1]),file);
   const data=(await readFile(resolved)).toString('base64');
-  css=css.replace(match[0],`url(data:image/svg+xml;base64,${data})`);
+  css=css.replace(match[0],`url(data:${file.endsWith('.jpg') ? 'image/jpeg' : 'image/svg+xml'};base64,${data})`);
 }
 const js=await readFile(path.join(root,script[1]),'utf8');
 html=html.replace(script[0],()=>`<script type="module">${js.replace(/<\/script/gi,'<\\/script')}</script>`)

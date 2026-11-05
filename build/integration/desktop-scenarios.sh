@@ -6,12 +6,12 @@ mkdir -p /evidence
 install -d -m 1777 /tmp/.X11-unix
 printf 'NATIVE DESKTOP TEST: isolated Ubuntu container, not an ISO boot or hardware certification.\n'
 cat /etc/os-release
-apt-get -y -o 'Dpkg::Options::=--path-include=/usr/share/doc/orez/*' install /input/orez-shell.deb > /evidence/package-install.log 2>&1
+apt-get -y --no-install-recommends -o 'Dpkg::Options::=--path-include=/usr/share/doc/orez/*' install /input/orez-shell.deb > /evidence/package-install.log 2>&1
 dpkg-query -W -f='${Package} ${Version}\n' orez-shell kwin-wayland plasma-workspace dolphin konsole blender ffmpeg > /evidence/versions.txt
 cat /evidence/versions.txt
 getcap /usr/bin/kwin_wayland > /evidence/kwin-file-capabilities.txt
 cat /evidence/kwin-file-capabilities.txt
-if [[ "${OREZ_SCENARIO:-desktop}" == desktop ]]; then
+if [[ "${OREZ_SCENARIO:-desktop}" != capabilities ]]; then
   # Drop a privilege from this private test container. Do NOT grant SYS_NICE,
   # alter host policy, or put this change in the OREZ image/package.
   sha256sum /usr/bin/kwin_wayland > /evidence/kwin-code-before.sha256

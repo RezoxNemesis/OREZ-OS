@@ -1,0 +1,1 @@
+{"memory_limits_supported":false,"cgroup_driver":"none","warnings":["WARNING: Running in rootless-mode without cgroups. Systemd is required to enable cgroups in rootless-mode."]}

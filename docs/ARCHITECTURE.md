@@ -1,5 +1,29 @@
 # OREZ OS architecture — implemented vs planned
 
+Connectivity follow-up: native Wi-Fi/internet/Bluetooth controls, Realme hotspot/
+USB tethering, consented phone mirroring, LAN/Bluetooth/USB file transfer and
+safe eject are required. See [CONNECTIVITY.md](CONNECTIVITY.md) for providers,
+visible controls and the still-pending physical test matrix.
+
+## Daily-use additions — 5 November 2026
+
+The native package now includes the owner's Rest/Horizon wallpaper packs and an
+unprivileged Android development/testing manager. Guest state is private to the
+user, with explicit setup/start/stop/resource controls/reset/remove and no
+startup daemon. Google SDK/image software is not bundled. Consumer Play Store
+licensing/runtime qualification is unresolved; see ANDROID_APPS.md.
+
+Performance policy is demand-driven: no resident OREZ performance service,
+automatic AI load or automatic Android guest. `orezctl performance` reads memory
+and pressure once; `orezctl power` opens native KDE controls. Resource admission
+checks guard Android starts. Budgets and unverified targets: PERFORMANCE.md.
+
+The daily QA fixture tests native wallpaper changes, KDE settings, VLC and a
+Linux game independently from the browser preview. Resource enforcement must
+be checked: this workspace's rootless daemon does not enforce requested limits.
+The publishable test-tool image and provider requirements are in
+../environment/README.md. These dependencies are never the desktop release.
+
 **Foundation:** official Kubuntu 26.04.1 LTS / KDE Plasma 6 / amd64 Linux, Ubuntu packaging, normal desktop apps, UEFI-capable image. No new kernel fork.
 
 **Implemented 0.1:** `build/build-live.sh` signature-checks upstream and remixes an original SquashFS overlay; `build/check-iso.sh` validates media structure; `build/test-casper-vm.sh` tests live overlay presence in a diskless VM. `overlay/` includes KDE styling and original ink wallpaper, welcome/diagnostics, visible `orezctl` and normal KDE Settings/KDE Connect bridges. GitHub CI verifies small packages and source.

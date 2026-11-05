@@ -1,5 +1,70 @@
 # OREZ OS — Verified Development Handoff
 
+## DAILY-USE IMPLEMENTATION CHECKPOINT — 5 November 2026
+
+This section supersedes older counts/resource-profile wording below.
+
+- Starting verified HEAD: `3aef3fe12965cf11bb3b5895afc5ac228eac9124`, branch
+  `feature/orez-live-foundation-20261104`; PR #1 draft/unmerged; main unchanged.
+  This checkpoint is prepared before the new implementation commit. Exact
+  committed-source CI and final commit are recorded in the follow-up above it.
+- Implemented: original owner wallpaper packs (Rest default/Horizon optional),
+  experimental normal-user Android development manager, bounded guest settings,
+  memory admission check, one-shot performance diagnostics, native power/network/
+  Bluetooth/files shortcuts and read-only connection status. No privileged helper,
+  automatic Android/AI load or consumer Play certification claim.
+- Local source checks: 74 passed (qa3-23); package 23-file audit passed (qa3-24);
+  preview 60/60 passed with owner wallpaper (qa3-08). Native Settings and actual
+  VLC play/pause/seek/decoded virtual audio passed (qa3-09). See DAILY_USE_QA.md
+  for failures and the limited SuperTux process/input result (intro frames only).
+- Working Play Store/Android games are **not delivered**. Google SDK use is for
+  permitted development/testing; no SDK or guest installed, KVM absent, consumer
+  provider/licensing/isolation still unresolved. Free casual games are the first
+  requested Android targets. Google never gains a host administrator identity.
+- QA image built: `orez-qa:20261105`, ID
+  `sha256:3d500a65817e2d44d70a90d63ffab2db8fb0d3688a7c0bb66eae7af4c5215308`.
+  Native apps, Java, QEMU/OVMF and network/Bluetooth tools installed; normal-user
+  preflight/QEMU/Java ran. Environment not published. Its documentation gives
+  exact build steps and provider requirements. Final build qa3-25 passed after
+  failed trust/mode/storage attempts, all retained.
+- Rootless Docker does **not enforce** configured RAM/CPU profiles. Historical
+  2/4 GiB and new 6 GiB labels are not performance certification. New runner
+  enforcement guard passes its rejection test. No KVM/GPU; Brave sandbox and
+  YouTube proxy blocks remain. Test storage is nearly full; no blind retries.
+- Network/phone requirement: standard visible Wi-Fi, internet, Bluetooth,
+  Realme hotspot/USB tethering, LAN/Bluetooth/USB transfers and scrcpy mirroring.
+  Native page open/close/search/dummy-password screenshots still pending due
+  disk-limited container startup. CONNECTIVITY.md specifies actual hardware tests
+  and safe controls; latest protocol versions depend on the radio hardware.
+- RAM channels: CPU/firmware configure dual-channel, Linux uses it. Owner DIMM
+  count/placement remains unknown; do not claim verified mode or silently tune
+  XMP/voltage. See HARDWARE.md.
+- Ownership: owner admin verified, full collaborator/app/key audit incomplete;
+  no access settings changed. Public now; private only after PC-readiness gates.
+- No new ISO, physical-device access, installer approval or recovery proof.
+  The expanded 23-path payload needs a fresh signed-base collision audit.
+
+### Exact next actions
+
+1. Verify new branch head and source CI, then preserve final evidence metadata.
+2. Publish documented QA environment on ≥80 GiB host with supported KVM, graphics,
+   cgroup enforcement and browser sandbox. No policy bypass or fake devices.
+3. Capture real NetworkManager/Bluetooth Settings open/close/search/password-mask
+   dialogs with dummy data. Test SuperTux's active starting level, not just intro.
+   Then qualify visible upstream/OREZ ISO boot and disposable-disk installation.
+4. Test actual Realme/MSI radio/tethering/mirroring/file-transfer matrix and target
+   NVIDIA/Secure Boot, 6/16 GiB performance, energy/stability and RAM layout.
+5. Complete consumer Android provider review and real Play Store/game validation.
+   Preserve owner-only administration and finish actual GitHub access audit.
+6. Keep PR draft, main/physical disks untouched. Update this handoff with evidence,
+   not inferred successes; private repository transition waits for PC readiness.
+
+> Correction, 5 November 2026: Docker reports `MemoryLimit=false` and
+> `CgroupDriver=none`. Earlier 2/4 GiB and current 6 GiB profiles were requested
+> configurations, not enforced limits. Native successes remain component
+> evidence; no low-RAM full-OS performance was established.
+
+
 ## FINAL VERIFIED EXPANDED-QA COMMIT / CI — 2026-11-05
 
 - Implementation commit: **`ba8b86adf979e553ad3bfefae6ff6856dd4afa0f`**, branch `feature/orez-live-foundation-20261104`, [draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), still unmerged. Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`.

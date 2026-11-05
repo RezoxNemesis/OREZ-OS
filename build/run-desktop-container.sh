@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
-# Isolated desktop/capability tests; no device access, bind mounts, or network.
+# Isolated tests; no device access or bind mounts. Outbound network is opt-in.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 out="${1:?Fresh evidence output directory required}"
 mkdir "$out"
 image="${OREZ_DESKTOP_IMAGE:-orez-desktop-test:20261105}"
 docker image inspect "$image" --format '{{.Id}}' > "$out/container-image.txt"
+docker info --format '{"memory_limits_supported":{{.MemoryLimit}},"cgroup_driver":"{{.CgroupDriver}}","warnings":{{json .Warnings}}}' > "$out/resource-enforcement.json"
+if [[ "${OREZ_REQUIRE_RESOURCE_LIMITS:-0}" == 1 ]] && ! python3 -c 'import json,sys;sys.exit(not json.load(open(sys.argv[1]))["memory_limits_supported"])' "$out/resource-enforcement.json"; then
+  echo 'BLOCKED: Docker cannot enforce memory limits. This environment cannot qualify a RAM profile.'
+  exit 2
+fi
 input="$(mktemp -d)"
 container=''
 cleanup() {
@@ -18,13 +23,19 @@ cp build/integration/desktop-scenarios.sh "$input/"
 cp build/integration/desktop-session.sh "$input/"
 cp build/integration/desktop-interactions.py "$input/"
 cp build/integration/capabilities.py "$input/"
+cp build/integration/everyday.py "$input/"
+cp build/integration/everyday-browser.mjs "$input/"
+network="${OREZ_TEST_NETWORK:-none}"
+[[ "$network" == none || "$network" == bridge ]] || { echo 'Test network must be none or bridge'; exit 2; }
 sha256sum "$input"/* > "$out/test-inputs.sha256"
-container="$(docker create --network none --pids-limit 512 --memory "${OREZ_TEST_MEMORY:-4g}" \
+container="$(docker create --network "$network" --pids-limit 512 --memory "${OREZ_TEST_MEMORY:-4g}" \
   --cpus "${OREZ_TEST_CPUS:-2}" --shm-size 256m \
   --tmpfs /scratch:rw,nosuid,nodev,noexec,size=16m,mode=1777 \
   -e OREZ_DISPOSABLE_TEST=1 -e OREZ_SCENARIO="${OREZ_SCENARIO:-desktop}" \
   -e OREZ_RENDERER="${OREZ_RENDERER:-software}" \
   -e OREZ_CAPABILITY_FILTER="${OREZ_CAPABILITY_FILTER:-}" \
+  -e OREZ_PRESSURE_MB="${OREZ_PRESSURE_MB:-0}" \
+  -e OREZ_EVERYDAY_FILTER="${OREZ_EVERYDAY_FILTER:-}" \
   "$image" bash /input/desktop-scenarios.sh)"
 docker cp "$input/." "$container:/input"
 docker inspect "$container" --format '{{json .HostConfig}}' > "$out/container-runtime-config.json"

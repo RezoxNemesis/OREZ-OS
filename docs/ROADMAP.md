@@ -1,5 +1,26 @@
 # OREZ OS — evidence-based engineering roadmap
 
+Connectivity follow-up: native Wi-Fi/internet/Bluetooth controls, Realme hotspot/
+USB tethering, consented phone mirroring, LAN/Bluetooth/USB file transfer and
+safe eject are required. See [CONNECTIVITY.md](CONNECTIVITY.md) for providers,
+visible controls and the still-pending physical test matrix.
+
+## New owner priorities and next implementation sequence
+
+1. Publish/qualify the documented QA environment with actual KVM, usable graphics,
+   enforced resource limits and a supported browser sandbox. Native successful
+   component tests do not close the graphical ISO boot milestone.
+2. Qualify visible upstream and OREZ ISO boot, then disposable-disk installation,
+   reboot, encrypted recovery and preservation of non-target disks.
+3. Measure 6/16 GiB full-system workloads and energy/thermals; optimize from
+   profiles, preserving security and responsiveness. See PERFORMANCE.md.
+4. Complete consumer Android/Play provider licensing and isolation review, then
+   actual YouTube/free casual-game install/play/restart/remove tests. Current
+   Android manager source is not a working consumer Play Store.
+5. Complete target MSI/NVIDIA/Realme tests and owner-only access audit. After all
+   agreed PC-readiness gates pass, apply and verify the requested private repo
+   visibility; keep public until then. No install release is approved now.
+
 ## 5 November implementation checkpoint
 
 The full master blueprint exists. Expanded QA now verifies a visible native KWin/Plasma desktop in a disposable software-rendered Ubuntu container, actual application windows, launcher input, window management and workspaces. This advances component testing, while ISO/UEFI graphical boot remains open. A separate responsive browser preview passes all 60 local desktop/mobile cases; it does not qualify phone hardware or the installer.

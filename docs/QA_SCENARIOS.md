@@ -1,5 +1,11 @@
 # Expanded QA — 5 November 2026
 
+> Correction, 5 November 2026: Docker reports `MemoryLimit=false` and
+> `CgroupDriver=none`. Earlier 2/4 GiB and current 6 GiB profiles were requested
+> configurations, not enforced limits. Native successes remain component
+> evidence; no low-RAM full-OS performance was established.
+
+
 This records executed checks, not the full release acceptance matrix. Read the
 latest handoff for the exact published commit and CI result. All local attempts
 use fresh `dist/evidence/qa2-*` folders; earlier failed attempts remain intact.

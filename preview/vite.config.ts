@@ -9,7 +9,7 @@ export default defineConfig({
     name: 'orez-offline-preview',
     generateBundle(_options, bundle) {
       // Include hashed assets and public assets. No remote fonts, telemetry or APIs.
-      const files = ['index.html', 'manifest.webmanifest', 'icon.svg', 'orez-ink.svg', ...Object.keys(bundle).filter(k => k !== 'index.html')];
+      const files = ['index.html', 'manifest.webmanifest', 'icon.svg', 'orez-ink.svg', 'orez-rest.jpg', ...Object.keys(bundle).filter(k => k !== 'index.html')];
       this.emitFile({ type: 'asset', fileName: 'sw.js', source: `
 const NAMESPACE = 'orez-preview:' + self.registration.scope + ':';
 const CACHE = NAMESPACE + 'v2-' + ${JSON.stringify(Object.keys(bundle).join('-'))};

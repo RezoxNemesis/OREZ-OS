@@ -47,6 +47,10 @@ sleep 3
 DISPLAY=:99 scrot /evidence/01-plasma-desktop.png
 qdbus6 org.kde.KWin /KWin org.kde.KWin.supportInformation > /evidence/kwin-support.txt
 printf 'PASS: native KWin and Plasma desktop objects exist; screenshot requires review.\n'
+if [[ "${OREZ_SCENARIO:-desktop}" == everyday ]]; then
+  python3 /input/everyday.py
+  exit
+fi
 systemsettings > /evidence/settings.log 2>&1 &
 dolphin /home/orez-test > /evidence/dolphin.log 2>&1 &
 konsole --separate -e bash -c 'orezctl status; printf "\nNative terminal: uname and Python\n"; uname -sr; python3 --version; read -r -t 240' > /evidence/konsole.log 2>&1 &

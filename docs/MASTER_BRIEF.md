@@ -1,5 +1,27 @@
 # OREZ OS — MASTER PROJECT BRIEF AND ARCHITECTURE DIRECTIVE
 
+Connectivity follow-up: native Wi-Fi/internet/Bluetooth controls, Realme hotspot/
+USB tethering, consented phone mirroring, LAN/Bluetooth/USB file transfer and
+safe eject are required. See [CONNECTIVITY.md](CONNECTIVITY.md) for providers,
+visible controls and the still-pending physical test matrix.
+
+## Owner additions — 5 November 2026
+
+- Built-in Android application support must eventually download actual YouTube
+  and free casual games through a qualified Play Store provider. The current
+  SDK-based developer tool is experimental, not delivered consumer support.
+- Use the two owner-supplied 1280×720 wallpapers unchanged: Rest default,
+  Horizon optional. Provenance and SHA-256: WALLPAPER_SOURCES.json.
+- Owner remains sole human administrator/development authority; no vendor,
+  Google or AI host-admin identity. Public repository now; private only after
+  PC-readiness gates pass. See OWNER_CONTROL.md for actual audit limitations.
+- Engineer responsive ordinary use at 6 GiB and excellent measured performance
+  on the actual 16 GiB PC, with low idle overhead and appropriate power use.
+  Preserve functionality/security. No unsafe hardware-unlock or zero-lag claim.
+- Install needed QA tools and provide a publishable environment definition;
+  provider-owned KVM/GPU/cgroups/sandbox access must be verified separately.
+- Preserve screenshots of every executed test, including failures and blocks.
+
 You are the lead operating-system architect, Linux distribution engineer, desktop UX designer, cybersecurity engineer, AI-systems engineer, and release/QA lead for **OREZ OS**. Prepare a rigorous, executable master plan for a real, installable, professional desktop operating system—not just a theme, prototype, wallpaper, mockup, or Android-style launcher. The plan must be safe, realistic, hardware-specific, maintainable, and resumable by other ChatGPT conversations or agents.
 
 ## 1. Vision and non-negotiable principles

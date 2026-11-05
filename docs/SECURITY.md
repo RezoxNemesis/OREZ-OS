@@ -1,5 +1,24 @@
 # OREZ OS security — defence in depth
 
+## Owner control and Android boundary — 5 November 2026
+
+OWNER_CONTROL.md defines the owner's sole human administration policy and the
+still-incomplete GitHub collaborator/access audit. Repository visibility remains
+public until the owner's PC-ready condition is met. Public readers do not gain
+host administrator rights; later privacy cannot recall public copies.
+
+The Android development manager never runs as root or grants groups/firmware
+permissions. It rejects unsafe managed paths and foreign process identities;
+reset/removal needs explicit confirmation. A guest is not a proven security
+boundary until runtime socket, camera, microphone, clipboard, filesystem and
+escape exposure have been tested. Unprivileged host execution alone is not
+proof of sandbox isolation. Google login stays inside the guest; no credentials
+are requested by OREZ. No Play certification/Integrity spoofing is planned.
+
+Brave QA keeps its browser sandbox enabled. This workspace denies nested
+namespace creation; record BLOCKED rather than disabling sandbox, seccomp or
+AppArmor. TLS and APT signature verification remain enabled when provisioning.
+
 **Security is a release gate, not an absolute immunity guarantee.** Upstream Ubuntu/KDE updates, AppArmor, authenticated packages, least privilege, firewall, no auto-run, backups, signed releases, and user-controlled settings are required.
 
 **Implemented in 0.1:** genuine upstream signed-image verification; no OREZ network listener, hidden root access, remote command runner or AI privileged broker; user-controlled one-time wallpaper; native read-only status; opt-in unprivileged VM-only boot verification (see BOOT_VERIFICATION.md). KDE Connect uses established pairing, never untrusted automatic remote commands.

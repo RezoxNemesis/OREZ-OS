@@ -1,0 +1,21 @@
+{
+  "supplied_by": "Project owner, 5 November 2026",
+  "default": "Rest",
+  "assets": [
+    {
+      "name": "Rest",
+      "source_attachment": "1-1000076216.jpg",
+      "sha256": "59d62e85721f08c8b91683fbce7648487301998235ea869c5b2ab79ccc54c511",
+      "resolution": "1280x720",
+      "modified": false
+    },
+    {
+      "name": "Horizon",
+      "source_attachment": "2-1000076217.jpg",
+      "sha256": "43172fb9b7d1dae7846e9206727917fa821d8818ff904a6edd282db398c870f8",
+      "resolution": "1280x720",
+      "modified": false
+    }
+  ],
+  "rights": "User supplied for OREZ inclusion. Do not assert third-party authorship or a blanket reuse licence; public release provenance review remains required."
+}

@@ -18,3 +18,5 @@ report page and UI screenshot, including failures, in the separately supplied
 All native images come from a software-rendered isolated container, not an ISO
 boot or NVIDIA hardware. The test-only scheduling-capability removal and all
 remaining limits are described in [QA_SCENARIOS.md](../../QA_SCENARIOS.md).
+
+Resource correction: the daemon does not enforce the configured RAM/CPU profiles. Screenshot filenames preserve original attempt labels, not certified limits.

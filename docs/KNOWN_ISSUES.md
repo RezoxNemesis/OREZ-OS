@@ -1,5 +1,23 @@
 # OREZ OS — unresolved blockers
 
+## Daily-use blockers — 5 November 2026
+
+- Consumer Play Store runtime/licensing, guest boot and Android game/YouTube
+  downloads remain unqualified. Only the development manager exists in source.
+- Brave is installed but its required sandbox cannot create namespaces here.
+  YouTube separately returns a proxy 403; do not weaken policy to force a pass.
+- Rootless Docker lacks cgroup enforcement. No 2/4/6 GiB performance proof;
+  visible counters belong to the shared environment. No KVM/GPU access.
+- 32 GiB storage and Docker's VFS copies constrain tests. Publish on a supported
+  host with at least 80 GiB. Dependency images can be rebuilt from recorded files.
+- Owner is verified repository admin; collaborator/deploy-key/app access audit
+  is incomplete. No access settings or visibility have been changed.
+- New 23-file package allowlist needs a fresh signed-base collision audit; the
+  historical 16-file result does not qualify the additional paths.
+- VLC passed software playback with a virtual audio sink; physical speakers,
+  PipeWire, GPU decoding and long-duration frame-drop targets remain untested.
+
+
 ## Current additions — 5 November 2026
 
 - The successful latest CI warns that pinned checkout/setup-node/upload-artifact actions target deprecated Node 20 and are being run on Node 24 by GitHub. Follow up with verified upstream action updates and full validation; this run passed, but the pins need maintenance.

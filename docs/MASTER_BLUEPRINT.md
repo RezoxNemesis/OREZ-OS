@@ -1,10 +1,39 @@
 # OREZ OS — Master Engineering Blueprint
 
+Connectivity follow-up: native Wi-Fi/internet/Bluetooth controls, Realme hotspot/
+USB tethering, consented phone mirroring, LAN/Bluetooth/USB file transfer and
+safe eject are required. See [CONNECTIVITY.md](CONNECTIVITY.md) for providers,
+visible controls and the still-pending physical test matrix.
+
 **Planning baseline:** 4 November 2026  
 **Recommended foundation:** Kubuntu 26.04 LTS, initially qualified against its 26.04.1 amd64 image  
 **Primary target:** Your Ryzen 5 5600 / RTX 3050 6 GB desktop  
 **Mobile scope:** Android browser preview and native companion, as you selected  
 **Current status (5 November 2026):** This is the single engineering blueprint. Source, native packaging, live-ISO construction and a separate phone/browser design preview now exist. Expanded QA has demonstrated a visible native KWin/Plasma desktop in a disposable container, package version transitions, creative/development tools, and 60 passing preview cases. Graphical ISO boot, safe installation, system recovery and physical compatibility remain unqualified. See `QA_SCENARIOS.md` and the current checkpoint in `AI_HANDOFF.md`; do not interpret planned capabilities below as implemented.
+
+## Current owner requirements and implementation delta — 5 November 2026
+
+This blueprint incorporates the follow-up requirements for real Android Play
+apps/games, owner-only administration, eventual repository privacy, supplied
+wallpapers, efficient 6/16 GiB use and a publishable testing environment.
+
+| Area | Implementation and remaining proof |
+|---|---|
+| Visual identity | Original Rest default and Horizon alternative packaged; actual native selection verified; full shell/accessibility polish remains |
+| Everyday apps | Native KDE settings and VLC playback/pause/seek/virtual audio verified; Brave sandbox and YouTube network access blocked in this host |
+| Android | Optional normal-user development manager with lifecycle/resource controls; consumer Play Store, downloads and gameplay **not delivered** |
+| Performance | No Android/AI autostart; guest admission checks; read-only RAM/pressure report and native power controls; no measured FPS/energy/6 GiB OS guarantee |
+| Ownership | Owner-only administration policy; public now/private at PC-ready; full collaborator/app/key access audit still incomplete |
+| Test environment | Version-recorded QA dependency recipe; KVM/GPU/enforced cgroups/browser sandbox still require provider support |
+
+Technical details and official Android references: ANDROID_APPS.md. Owner
+permissions and privacy condition: OWNER_CONTROL.md. Resource/energy budgets:
+PERFORMANCE.md. Rebuild/publish instructions: ../environment/README.md. Latest
+verified evidence and exact next actions: AI_HANDOFF.md and DAILY_USE_QA.md.
+
+**Correction to earlier resource-profile wording:** Docker accepted 2/4/6 GiB
+configuration requests but its rootless daemon reports no cgroup enforcement.
+Native desktop interactions are real; these are not low-memory certification.
 
 ## 1. Direction, verified starting point, and release priorities
 

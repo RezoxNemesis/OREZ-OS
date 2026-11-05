@@ -1,5 +1,19 @@
 # First real live ISO build — operating rules
 
+## Daily-use QA environment — 5 November 2026
+
+See [environment publishing instructions](../environment/README.md) for the
+layered dependency images, trust-preserving builds, normal-user runtime and
+provider requirements. Tools installed include VLC, SuperTux, Brave, Java,
+QEMU/OVMF and diagnostics. Android SDK/Google images are not included. APT
+versions float and builds are traceable, not yet byte-identical.
+
+The installed payload now has **23 paths**. Its package audit is separate from
+the prior signed-base **16-path** collision result. Repeat the actual upstream
+collision audit for the expanded allowlist before any new installation claim.
+Avoid full-ISO CI until the graphics environment provides a testable hypothesis.
+The latest durable run ledger is docs/evidence/2026-11-05-daily-use/.
+
 Expanded local QA instructions and exact environment limits are in
 [QA_SCENARIOS.md](QA_SCENARIOS.md). The manual package workflow now tests local
 version transitions and accepts optional `desktop_capabilities` (default false)

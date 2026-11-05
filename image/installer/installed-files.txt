@@ -7,7 +7,14 @@ usr/bin/orez-welcome
 usr/bin/orez-preflight
 usr/bin/orez-connect
 usr/bin/orez-settings
+usr/bin/orez-android
+usr/lib/orez/android_manager.py
+usr/share/applications/orez-android.desktop
 usr/share/backgrounds/orez/orez-ink.svg
+usr/share/wallpapers/OREZ-Rest/metadata.json
+usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg
+usr/share/wallpapers/OREZ-Horizon/metadata.json
+usr/share/wallpapers/OREZ-Horizon/contents/images/1280x720.jpg
 usr/share/applications/orez-welcome.desktop
 usr/share/applications/orez-hardware.desktop
 usr/share/applications/orez-preflight.desktop
