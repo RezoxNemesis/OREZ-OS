@@ -1,5 +1,7 @@
 # OREZ OS — unresolved blockers
 
+Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
+
 ## Offline startup follow-up — 5 November 2026, latest
 
 - The actual initrd cache hook left legacy Internet repositories active. A pinned

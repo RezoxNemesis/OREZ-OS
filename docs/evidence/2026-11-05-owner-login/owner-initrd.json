@@ -1,0 +1,32 @@
+{
+  "schema_version": 3,
+  "original_sha256": "0d34300a307d5dd3fbb0ff61e5b43ee3887bcc2d0f6523d600714767f6df4092",
+  "original_bytes": 95100336,
+  "patched_sha256": "72c70f424fb7f3f006e07949d3af08c1b4c91fa130ef58f5bc8e8cc25eb01de7",
+  "patched_bytes": 92512905,
+  "early_prefix_bytes": 67781012,
+  "early_prefix_sha256": "13b059f89af0ef4ca98d61cdead9dc37d7b766bcde1bc1e62b929d9737b0b993",
+  "original_archive_sha256": "305d97687a6f10426c718e6fb637b81be4a8424e07d87141353d68dcce6d19c6",
+  "patched_archive_sha256": "9c75fad78dd502a408af56d62c900d230db47a6627e455020c425e2eb56aa91a",
+  "replacement": "scripts/casper-bottom/41apt_build_cache_cdrom",
+  "hook_sha256": "69952083c106fba70ac431f6915f4ae7669d039b04999122605c083287a7172e",
+  "compression": "zstd",
+  "compressor_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "owner": "0:0",
+  "mode": "0755",
+  "licence": "GPL-2.0-or-later",
+  "runtime_tested": false,
+  "secure_boot_qualified": false,
+  "administrator_policy_changed": true,
+  "installation_approved": false,
+  "owner_setup": {
+    "profile": "local-console-volatile-live-v1",
+    "hooks": {
+      "scripts/casper-bottom/15autologin": "e07bfb68ab1fc32d8ae5e099a9f5123118a01b74c7e96e656e21fa23942c2f7b",
+      "scripts/casper-bottom/25adduser": "755e5587473019f064d5fe53271f5eec1416a88ec4e714720d3101629142f47a",
+      "scripts/casper-bottom/44pk_allow_ubuntu": "1b2fb467bad0811753b1f0fb4435b94d92b13a992d3d0bdec0cf7287ae4ff750"
+    },
+    "requires_live_payload": true,
+    "effective_policy_tested": false
+  }
+}

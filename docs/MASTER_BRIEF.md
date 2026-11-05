@@ -1,5 +1,7 @@
 # OREZ OS — MASTER PROJECT BRIEF AND ARCHITECTURE DIRECTIVE
 
+Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
+
 Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
 owner-authorized upgrades, protection-policy invariants and local detection that
 preserves legitimate work. Security software receives fixes; no AI/vendor may

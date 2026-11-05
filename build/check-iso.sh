@@ -22,13 +22,19 @@ repo="$(cd -- "$(dirname -- "$0")/.." && pwd -P)"
 xorriso -osirrox on -indev "$iso" -extract /casper/initrd "$tmp/initrd" >/dev/null 2>&1
 xorriso -osirrox on -indev "$iso" -extract /casper/orez-initrd.json "$tmp/orez-initrd.json" >/dev/null 2>&1
 python3 "$repo/build/patch-live-initrd.py" --verify --input "$tmp/initrd" --report "$tmp/orez-initrd.json"
+python3 - "$tmp/orez-initrd.json" <<'PY_OWNER_PROFILE'
+import json,sys
+value=json.load(open(sys.argv[1]))
+if value.get('schema_version') != 3 or not value.get('administrator_policy_changed'):
+    raise SystemExit('Missing reviewed live-owner setup profile; legacy passwordless images are not current candidates.')
+PY_OWNER_PROFILE
 xorriso -osirrox on -indev "$iso" -extract /casper/orez-install.squashfs "$tmp/install.squashfs" >/dev/null 2>&1
 [[ -s "$tmp/install.squashfs" ]] || { echo 'OREZ install payload missing from ISO' >&2; exit 1; }
 files="$(unsquashfs -ll "$tmp/install.squashfs")"
 for expected in squashfs-root/etc/orez-release squashfs-root/usr/bin/orezctl squashfs-root/usr/share/backgrounds/orez/orez-ink.svg; do
   grep -Fq "$expected" <<< "$files" || { echo "Missing install-safe OREZ component: $expected" >&2; exit 1; }
 done
-if grep -Eq 'squashfs-root/(usr/bin/calamares|etc/sysctl.d/20-apparmor.conf|usr/lib/systemd/system/orez-.*verify.service|etc/systemd/system)' <<< "$files"; then
+if grep -Eq 'squashfs-root/(usr/bin/calamares|etc/sysctl.d/20-apparmor.conf|usr/lib/orez/owner_setup.py|usr/lib/systemd/system/orez-owner-setup.service|usr/lib/systemd/system/orez-.*verify.service|etc/systemd/system)' <<< "$files"; then
   echo 'Unsafe live-only component leaked into OREZ install payload' >&2
   exit 1
 fi
@@ -36,6 +42,7 @@ fi
 # This does not prevent arbitrary root disk writes; it blocks the usual GUI install path.
 xorriso -osirrox on -indev "$iso" -extract /casper/zz-orez.squashfs "$tmp/live.squashfs" >/dev/null 2>&1
 [[ -s "$tmp/live.squashfs" ]] || { echo 'OREZ live layer absent' >&2; exit 1; }
+python3 "$repo/build/verify-live-owner.py" --source "$repo/image/live-owner" --squashfs "$tmp/live.squashfs"
 unsquashfs -cat "$tmp/live.squashfs" usr/bin/calamares > "$tmp/orez-installer-guard" 2>/dev/null ||
   { echo 'Live installer guard missing inside ISO' >&2; exit 1; }
 grep -Fq 'OREZ LIVE TEST' "$tmp/orez-installer-guard" ||

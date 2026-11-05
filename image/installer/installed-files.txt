@@ -27,3 +27,13 @@ usr/lib/orez/store_manager.py
 usr/lib/orez/store_ui.py
 usr/share/orez/store-catalog.json
 usr/share/applications/orez-store.desktop
+usr/bin/orez-youtube
+usr/share/applications/orez-youtube.desktop
+usr/bin/orez-calendar
+usr/bin/reuz-time
+usr/lib/orez/daily_models.py
+usr/lib/orez/daily_ui.py
+usr/share/applications/orez-calendar.desktop
+usr/share/applications/reuz-time.desktop
+usr/share/color-schemes/OREZPaper.colors
+usr/share/color-schemes/OREZInk.colors

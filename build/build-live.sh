@@ -89,7 +89,7 @@ grep -Fq 'filesystem.squashfs' "$WORK_DIR/upstream-casper-list.txt" || fail 'Exp
 
 log 'Creating small, original OREZ filesystem layer'
 stage_dir="$(mktemp -d "$WORK_DIR/overlay-stage.XXXXXX")"
-python3 "$REPO_ROOT/build/stage-overlay.py" --source "$REPO_ROOT/overlay" --output "$stage_dir/root"
+python3 "$REPO_ROOT/build/stage-overlay.py" --source "$REPO_ROOT/overlay" --output "$stage_dir/root" --live-owner
 mksquashfs "$stage_dir/root" "$WORK_DIR/zz-orez.squashfs" -comp xz -all-root -noappend -no-progress > "$WORK_DIR/squashfs.log" 2>&1 || fail 'Failed to construct squashfs layer.'
 rm -rf -- "$stage_dir"
 [[ -s "$WORK_DIR/zz-orez.squashfs" ]] || fail 'Empty OREZ layer.'
@@ -98,11 +98,11 @@ log 'Creating separated OREZ installed-system payload (installer still disabled)
 bash "$REPO_ROOT/build/build-install-payload.sh" "$WORK_DIR/orez-install.squashfs"
 [[ -s "$WORK_DIR/orez-install.squashfs" ]] || fail 'Missing installed-system candidate payload.'
 
-log 'Applying pinned initrd fix for local-only live APT cache generation'
+log 'Applying pinned local APT cache and explicit live-owner enrollment hooks'
 initrd_stage="$(mktemp -d "$WORK_DIR/initrd-stage.XXXXXX")"
 xorriso -osirrox on -indev "$SOURCE" -extract /casper/initrd "$initrd_stage/original" >/dev/null 2>&1
 python3 "$REPO_ROOT/build/patch-live-initrd.py" --input "$initrd_stage/original" \
-  --output "$initrd_stage/patched" --report "$initrd_stage/orez-initrd.json"
+  --output "$initrd_stage/patched" --report "$initrd_stage/orez-initrd.json" --owner-setup
 
 xorriso -osirrox on -indev "$SOURCE" -extract /md5sum.txt "$initrd_stage/original-md5sum.txt" >/dev/null 2>&1
 python3 "$REPO_ROOT/build/update-media-checksums.py" --source "$initrd_stage/original-md5sum.txt" \

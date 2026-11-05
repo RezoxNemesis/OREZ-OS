@@ -9,10 +9,12 @@ from pathlib import Path, PurePosixPath
 import shutil
 
 
-def stage(source, output, manifest=None):
+def stage(source, output, manifest=None, live_owner=False):
     source, output = Path(source), Path(output)
     if output.exists() or output.is_symlink():
         raise ValueError('staging output must not already exist')
+    if live_owner and manifest is not None:
+        raise ValueError('Live owner setup must never enter an installed-system payload.')
     if manifest is None:
         shutil.copytree(source, output, symlinks=True)
     else:
@@ -31,6 +33,17 @@ def stage(source, output, manifest=None):
             target = output / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source / relative, target)
+    if live_owner:
+        owner = Path(__file__).resolve().parents[1] / 'image/live-owner'
+        for item in owner.rglob('*'):
+            if item.is_symlink():
+                raise ValueError('No symlinks in the live owner payload.')
+            if item.is_file():
+                target = output / item.relative_to(owner)
+                if target.exists() or any(p.is_symlink() for p in target.parents):
+                    raise ValueError('Live owner payload collision or aliased staging path.')
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(item, target)
     for item in [output, *output.rglob('*')]:
         if item.is_symlink():
             continue
@@ -45,5 +58,6 @@ if __name__ == '__main__':
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--manifest', type=Path)
+    p.add_argument('--live-owner', action='store_true')
     a = p.parse_args()
-    stage(a.source, a.output, a.manifest)
+    stage(a.source, a.output, a.manifest, a.live_owner)

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=YouTube (Web)
+Comment=Open the official YouTube website in native Brave
+Exec=/usr/bin/orez-youtube
+Icon=internet-web-browser
+Terminal=false
+Categories=AudioVideo;Network;

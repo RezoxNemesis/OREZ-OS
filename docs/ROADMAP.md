@@ -1,5 +1,7 @@
 # OREZ OS — evidence-based engineering roadmap
 
+Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
+
 Latest: [the offline initrd fix](OFFLINE_BOOT_QA.md) now passes its boot-stage
 progress gate. M1 remains open: no usable desktop in the new 600s VM run, and
 the actual live authentication hooks require hardening before sensitive use.
@@ -24,9 +26,9 @@ visible controls and the still-pending physical test matrix.
    reboot, encrypted recovery and preservation of non-target disks.
 3. Measure 6/16 GiB full-system workloads and energy/thermals; optimize from
    profiles, preserving security and responsiveness. See PERFORMANCE.md.
-4. Complete consumer Android/Play provider licensing and isolation review, then
-   actual YouTube/free casual-game install/play/restart/remove tests. Current
-   Android manager source is not a working consumer Play Store.
+4. Complete the first-release native applications, explicit web YouTube, Calendar,
+   Reuz, themes and permission-controlled AI. Consumer Android/Play, presets and
+   actual Android app/game acceptance move to a later upgrade.
 5. Complete target MSI/NVIDIA/Realme tests and owner-only access audit. After all
    agreed PC-readiness gates pass, apply and verify the requested private repo
    visibility; keep public until then. No install release is approved now.

@@ -1,5 +1,7 @@
 # OREZ OS — Installation and Recovery (development hold)
 
+Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
+
 **DO NOT INSTALL THE CURRENT DEVELOPMENT ISO ON YOUR REAL SSD.** This is a Linux live-boot candidate, not a qualified installer. Upstream Kubuntu's install button may be present, but it has not been adapted to persist OREZ components. No safe USB-installable OREZ release is published yet.
 
 Latest rebuild: 5,073,338,368 bytes, locally retained development image only.

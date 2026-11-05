@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Calendar
+Comment=Private local all-day events and notes
+Exec=/usr/bin/orez-calendar
+Icon=view-calendar
+Terminal=false
+Categories=Office;Calendar;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Reuz Time
+Comment=Local clock, countdown and stopwatch for OREZ
+Exec=/usr/bin/reuz-time
+Icon=clock
+Terminal=false
+Categories=Utility;Clock;

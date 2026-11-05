@@ -1,0 +1,10 @@
+[SddmGreeterTheme]
+Name=OREZ Paper
+Description=OREZ local login with owner-provided ink artwork
+Type=sddm-theme
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=orez
+Theme-API=2.0
+QtVersion=6

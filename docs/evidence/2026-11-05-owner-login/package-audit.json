@@ -1,0 +1,15 @@
+{
+  "architecture": "all",
+  "installation_approved": false,
+  "invalid_permissions_or_owners": [],
+  "limitations": "No installation, apt dependency resolution, dpkg ownership on target, boot or recovery test performed.",
+  "maintainer_scripts": [],
+  "manifest_paths": 38,
+  "missing_files": [],
+  "nonregular_payload_files": [],
+  "package": "orez-shell",
+  "status": "PACKAGE_CONTENTS_PASS",
+  "unexpected_control_members": [],
+  "unexpected_files": [],
+  "version": "0.1.0-4"
+}

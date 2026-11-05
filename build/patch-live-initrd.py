@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Replace one reviewed hook in the pinned initrd's last compressed CPIO archive.
+"""Replace reviewed cache/optional owner hooks in the pinned final CPIO archive.
 
 Early archives (including microcode) remain byte-identical. Restoring the old
-hook must reconstruct the exact original final archive. Nothing is executed,
+hooks must reconstruct the exact original final archive. Nothing is executed,
 mounted or installed; changed upstream inputs require a new explicit review.
 """
 import argparse
@@ -24,6 +24,11 @@ ORIGINAL_HOOK_SHA256 = 'fd3768b7b303b61cefe52fb00c9452738f7f83e98ebe4834f9dc6109
 HOOK = 'scripts/casper-bottom/41apt_build_cache_cdrom'
 MAX_INITRD_BYTES = 128 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 72 * 1024 * 1024
+OWNER_HOOKS = {
+    '15autologin': 'd0e16be3af7de4fc8731fa6f46444a83c1869dda41b36ba3de1edac250ca647e',
+    '25adduser': '59a8ca5cd3fc469a892148a7b69562cff2c3b23d82ea2552278fffa48fc96ae3',
+    '44pk_allow_ubuntu': '603fb48837b36aa25679ab9cc1bf88b50680d331610e6d18fb43bd9e53b3f9d0',
+}
 
 
 def sha(data):
@@ -50,10 +55,12 @@ def unpack(data):
 
 
 def pack(data):
-    return subprocess.check_output(['zstd', '-q', '-3', '-T1', '-c'], input=data, timeout=30)
+    # The bounded, pinned archive can exceed 30s under contention on small QA
+    # hosts. Keep a finite deadline; do not change decoder limits or integrity.
+    return subprocess.check_output(['zstd', '-q', '-3', '-T1', '-c'], input=data, timeout=120)
 
 
-def replace_hook(data, expected, replacement):
+def replace_hook(data, expected, replacement, member=HOOK):
     """Keep every unrelated newc byte/metadata field, including any padding."""
     pos, matches, result = 0, 0, []
     while pos < len(data):
@@ -72,7 +79,7 @@ def replace_hook(data, expected, replacement):
         end = (payload + size + 3) & ~3
         if end > len(data):
             raise ValueError('truncated newc member')
-        if name == HOOK.encode() + b'\0':
+        if name == member.encode() + b'\0':
             matches += 1
             if (fields[1] != stat.S_IFREG | 0o755 or fields[2:5] != [0, 0, 1]
                     or data[payload:payload + size] != expected):
@@ -100,7 +107,18 @@ def sources():
     return old, (ROOT / 'image/initramfs' / HOOK).read_bytes()
 
 
-def patch(source, output, report):
+def owner_sources():
+    changes = []
+    for name, digest in OWNER_HOOKS.items():
+        old = (ROOT / 'third_party/casper' / name).read_bytes()
+        if sha(old) != digest:
+            raise ValueError('original owner hook digest mismatch: ' + name)
+        member = 'scripts/casper-bottom/' + name
+        changes.append((member, old, (ROOT / 'image/initramfs' / member).read_bytes()))
+    return changes
+
+
+def patch(source, output, report, owner_setup=False):
     source, output, report = map(Path, (source, output, report))
     if output.exists() or output.is_symlink() or report.exists() or report.is_symlink():
         raise ValueError('require new output/report paths')
@@ -118,8 +136,14 @@ def patch(source, output, report):
     changed = replace_hook(plain, old, new)
     if replace_hook(changed, new, old) != plain:
         raise ValueError('archive change is not exactly reversible')
+    owner_changes = owner_sources() if owner_setup else []
+    for member, previous, replacement in owner_changes:
+        before = changed
+        changed = replace_hook(changed, previous, replacement, member)
+        if replace_hook(changed, replacement, previous, member) != before:
+            raise ValueError('owner hook change is not exactly reversible')
     patched = original[:PREFIX_BYTES] + pack(changed)
-    metadata = {'schema_version': 2, 'original_sha256': sha(original), 'original_bytes': len(original),
+    metadata = {'schema_version': 3 if owner_setup else 2, 'original_sha256': sha(original), 'original_bytes': len(original),
                 'patched_sha256': sha(patched), 'patched_bytes': len(patched),
                 'early_prefix_bytes': PREFIX_BYTES, 'early_prefix_sha256': PREFIX_SHA256,
                 'original_archive_sha256': ARCHIVE_SHA256, 'patched_archive_sha256': sha(changed),
@@ -127,7 +151,13 @@ def patch(source, output, report):
                 'compressor_version': subprocess.check_output(['zstd', '--version'], text=True).strip(),
                 'owner': '0:0', 'mode': '0755', 'licence': 'GPL-2.0-or-later',
                 'runtime_tested': False, 'secure_boot_qualified': False,
-                'administrator_policy_changed': False, 'installation_approved': False}
+                'administrator_policy_changed': owner_setup, 'installation_approved': False}
+    if owner_setup:
+        metadata['owner_setup'] = {
+            'profile': 'local-console-volatile-live-v1',
+            'hooks': {member: sha(replacement) for member, previous, replacement in owner_changes},
+            'requires_live_payload': True, 'effective_policy_tested': False,
+        }
     with output.open('xb') as stream:
         stream.write(patched)
     output.chmod(0o644)
@@ -142,22 +172,31 @@ def verify(source, report):
     metadata = json.loads(Path(report).read_text())
     if not isinstance(metadata, dict):
         raise ValueError('manifest must be an object')
-    if (metadata.get('schema_version') != 2 or metadata.get('early_prefix_bytes') != PREFIX_BYTES
+    if (metadata.get('schema_version') not in [2, 3] or metadata.get('early_prefix_bytes') != PREFIX_BYTES
             or sha(data[:PREFIX_BYTES]) != PREFIX_SHA256):
         raise ValueError('early initrd prefix/manifest mismatch')
     plain = unpack(data[PREFIX_BYTES:])
     old, new = sources()
     restored = replace_hook(plain, new, old)
+    owner_setup = metadata['schema_version'] == 3
+    if owner_setup:
+        expected_owner = {'profile': 'local-console-volatile-live-v1',
+                          'hooks': {member: sha(replacement) for member, previous, replacement in owner_sources()},
+                          'requires_live_payload': True, 'effective_policy_tested': False}
+        if metadata.get('owner_setup') != expected_owner:
+            raise ValueError('owner setup manifest differs from reviewed sources')
+        for member, previous, replacement in owner_sources():
+            restored = replace_hook(restored, replacement, previous, member)
     if sha(restored) != ARCHIVE_SHA256:
         raise ValueError('unexpected unrelated changes to final archive')
     expected = {'original_sha256': EXPECTED_INITRD_SHA256, 'early_prefix_sha256': PREFIX_SHA256,
                 'original_archive_sha256': ARCHIVE_SHA256, 'patched_archive_sha256': sha(plain),
                 'patched_sha256': sha(data), 'patched_bytes': len(data), 'replacement': HOOK,
-                'hook_sha256': sha(new), 'administrator_policy_changed': False,
+                'hook_sha256': sha(new), 'administrator_policy_changed': owner_setup,
                 'installation_approved': False, 'secure_boot_qualified': False, 'runtime_tested': False}
     if any(metadata.get(key) != value for key, value in expected.items()):
         raise ValueError('patched initrd manifest differs from verified content')
-    print('PASS: early archives unchanged; exactly one reviewed hook replacement; authentication/runtime unqualified')
+    print('PASS: early archives unchanged; reviewed hook replacements reversible; effective authentication/runtime unqualified')
 
 
 if __name__ == '__main__':
@@ -166,14 +205,17 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path)
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--verify', action='store_true')
+    parser.add_argument('--owner-setup', action='store_true', help='Include reviewed owner/authentication hooks; live payload required')
     args = parser.parse_args()
     if args.verify == bool(args.output):
         parser.error('choose either --verify or --output')
+    if args.verify and args.owner_setup:
+        parser.error('verification reads the profile from the manifest')
     try:
         if args.verify:
             verify(args.input, args.report)
         else:
-            patch(args.input, args.output, args.report)
+            patch(args.input, args.output, args.report, args.owner_setup)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         print(f'Initrd patch refused: {error}', file=sys.stderr)
         sys.exit(1)

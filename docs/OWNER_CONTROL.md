@@ -18,7 +18,7 @@ recovery bypass, vendor master key or control over system configuration.
   users; any later administrator grant requires the owner's explicit action and
   authentication. This installer policy is still a release acceptance gate,
   not an implemented/verified installation claim.
-- Google sign-in is confined to the chosen Android guest. No Google account is
+- Google sign-in is confined to the chosen browser profile or future Android guest. No Google account is
   used for Linux login, sudo, Polkit, disk unlock, signing keys or recovery.
 - AI, MCP tools, websites, downloaded applications and remote service responses
   cannot authorize elevation. No vendor/admin credentials, passwordless sudo
@@ -40,14 +40,17 @@ No absolute protection against vulnerabilities, a compromised approved package,
 stolen owner credentials or physical attack can be promised. Release testing
 must verify actual effective permissions and recovery, not merely source text.
 
-**Unresolved live-session exception discovered in qa5-18:** the pinned upstream
+**Historical live-session exception discovered in qa5-18:** the pinned upstream
 base ships a casper live-user hook that writes passwordless full sudo. OREZ did
 not add this rule, but inheriting it is not sufficient for the owner's security
 contract. The follow-up actual initrd audit confirms a blank live password, full
 passwordless sudo and wildcard Polkit grants. Effective runtime behavior still
 requires testing, and these grants must be hardened before sensitive live use is
 qualified. See [the initrd audit](OFFLINE_BOOT_QA.md). The
-development ISO is not an owner-policy-certified system. Do not infer security
+development ISO is not an owner-policy-certified system. New owner-enrollment
+source and isolated authentication tests now pass, but the retained ISOs predate
+that fix and full boot/effective-policy acceptance remains open. See
+[FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md). Do not infer security
 from the installer blocker or the unprivileged OREZ component tests. No root
 grant or credential change was executed by this read-only source audit.
 
@@ -62,7 +65,7 @@ existing copies, and does not remove upstream open-source source-offer obligatio
 The privacy transition is a required release task after all PC readiness gates
 pass: visible UEFI/live boot, safe install/reboot, independent recovery, actual
 MSI/RTX/Secure Boot/network/audio/USB checks, functional owner controls and the
-agreed Android compatibility gate. Verify the evidence, save an owner-held backup,
+agreed first-PC-release gates (Android emulation is deferred). Verify the evidence, save an owner-held backup,
 then apply and verify the requested private visibility using owner-authorized
 repository administration access. Do not mark it done before the setting changes.
 

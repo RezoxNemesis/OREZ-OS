@@ -1,5 +1,54 @@
 # OREZ OS — Verified Development Handoff
 
+## First-PC release scope and local checkpoint — 5 November 2026
+
+**This supersedes the older Android-first scope below.** The owner now requests
+proper PC boot/install/login/desktop first, native Brave/VLC/Linux games, explicit
+web YouTube, themes, Calendar, Reuz, AI permissions and networking/security.
+Android emulation/Play/presets are a later upgrade. Keep the repo public until
+first-PC readiness passes; Android compatibility is no longer that release gate.
+
+Implementation prepared from verified HEAD `84d913d2713e05b44f306a1b9022e1a5d285c62a`
+on `feature/orez-live-foundation-20261104`; PR #1 remains draft/open/unmerged.
+Final implementation commit, exact CI and gallery are recorded in the next
+checkpoint after publication. Do not infer a CI pass from these local results.
+
+- New live-only owner enrollment, SDDM theme and removal of three inherited
+  insecure casper authentication behaviors. Root stays locked; console password
+  required; no autologin or root helper in the normal component package.
+- Actual pinned initrd patch and independent extraction pass; five actual
+  isolated account/PAM/sudo scenarios pass. Production helper rejects non-live
+  execution. Full boot/service ordering/graphical authentication are NOT tested.
+- Native Calendar/Reuz and Paper/Ink palette refresh: eight final UI scenarios
+  pass. SDDM test mode shows masked passwords and correctly blocks a missing
+  session. This host lacks `/dev/dri`, so SDDM hides Wayland sessions; installing
+  the session package did not provide graphics. Do not fake devices or claim login.
+- Final local source regression: 148 tests; component 0.1.0-4: 38 paths;
+  real 0.1.0-3→0.1.0-4 offline upgrade preserves dummy user data and denies a
+  non-admin install. Signed update repository/system recovery remain unfinished.
+- `docs/FIRST_PC_RELEASE.md` is the authoritative new scope, feature limits,
+  failure ledger, controls/data locations, references and blocking next steps.
+  Detailed JSON: `docs/evidence/2026-11-05-owner-login/`.
+- No new full ISO. Both retained older 5.07 GB artifacts predate these changes,
+  retain the old live-auth policy and are not safe install releases. The image
+  builder does not yet supply the full new application dependency layer. Do not
+  report lab package availability as ISO preinstallation.
+- Updated publishable QA recipe includes QtWidgets/QtTest, SDDM, Wayland session,
+  Plymouth/initramfs tools. New dependencies were installed only in task-owned
+  lab, not the retained compact image. Still need actual KVM/render/browser
+  sandbox, enforced cgroups and 80 GiB storage. Never bypass host security.
+- AI is still NOT ENABLED; no OREZ AI source repository identified. Autonomous
+  malware detection, signed updates, installer, target hardware and performance
+  qualification are unfinished. No no-lag/no-hack guarantee.
+
+Next actions: use the updated environment recipe and actual supported host;
+build the dependency-complete image; qualify local enrollment→SDDM→Plasma and
+effective permissions; finish disposable-disk install/recovery; then integrate
+permission-controlled AI, signing and target PC tests. Read FIRST_PC_RELEASE.md
+before adapting old test harnesses that expected automatic live login. Preserve
+installer blocker, Windows USB and NVMe. No Android guest work for this milestone.
+
+
 ## Latest verified Store and native input work — 5 November 2026
 
 - Last confirmed implementation **`7fafddf4764528278e6c095e2e52a0c44c5f109d`**,

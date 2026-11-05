@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ "$EUID" == 0 ]]; then echo "Open this desktop app as your ordinary user." >&2; exit 2; fi
+exec /usr/bin/python3 /usr/lib/orez/daily_ui.py time

@@ -12,7 +12,7 @@ RUN --mount=type=secret,id=qa_ca_bundle,mode=0444 \
     fi; \
     apt-get -o APT::Update::Error-Mode=any update -qq; \
     apt-get install -y --no-install-recommends \
-      plasma-workspace plasma-desktop systemsettings kdeconnect xdg-utils kdialog konsole \
+      plasma-workspace plasma-desktop plasma-session-wayland sddm plymouth systemsettings kdeconnect xdg-utils kdialog konsole \
       dbus-x11 xvfb x11-utils xdotool scrot python3 sudo \
       dolphin kate kcalc xwayland wmctrl mesa-utils mesa-utils-extra mesa-vulkan-drivers \
       breeze breeze-icon-theme fonts-noto-core blender ffmpeg g++ make git sqlite3 unzip zip \

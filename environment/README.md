@@ -128,3 +128,18 @@ The older final QA image can be rebuilt from its committed recipe; it was remove
 to recover space. Screenshots, source and owner data were retained. The compact
 replacement recovered enough disk for native container tests. Full ISO/Android
 work still needs the larger supported host described above.
+
+## Owner-login and daily-app test dependencies
+
+The recipe now includes PySide6 QtWidgets/QtTest, SDDM,
+`plasma-session-wayland`, Plymouth and initramfs tools. These additions were
+installed from signed Ubuntu repositories only in the disposable qa8 lab. The
+retained compact dependency image has not been rebuilt or published. SDDM does
+not list Wayland sessions without its render-device prerequisite; installing the
+session package is insufficient. Do not create fake render devices.
+
+Always use `build/stage-overlay.py` and root-owned archive/package metadata for
+a disposable root overlay. Directly copying the checkout preserves its restrictive
+umask and workspace UID, causing unreadable files or untrusted root directories.
+The live ISO audit now checks metadata as well as file bytes. Never copy the live
+overlay onto the real workstation.

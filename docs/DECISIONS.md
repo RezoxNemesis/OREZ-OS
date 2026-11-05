@@ -65,3 +65,20 @@
   apps remain unchanged. Preset engine/profiles are pending real guest testing;
   require visible controls, focus-only guest input, version validation and
   release on focus loss/stop. No hidden global hooks, macros or admin grants.
+
+## 2026-11-05: First-PC scope, explicit owner enrollment and local daily apps
+
+- The latest owner instruction defers Android emulation/Play/presets until after
+  the PC release and explicitly permits web YouTube. Native Linux apps remain
+  preferred. Prior Android requirements are retained for that later upgrade.
+- Replace inherited casper blank credentials, full passwordless sudo, wildcard
+  Polkit and autologin with visible local-console volatile owner enrollment and
+  authenticated SDDM. Keep setup outside the normal package/installed payload;
+  installer owner creation is a separate unfinished workflow. Root stays locked.
+- Ship basic native Qt Calendar and Reuz desktop components with private local
+  data and visible controls. No network, MCP server, microphone, remote admin
+  or background alarm is added. These are not complete replacements for all
+  Reuz Android features. Register OREZ Paper/Ink without forcing existing choices.
+- Component tests and static initrd/image metadata checks are not full boot,
+  installation, hardware, signed-update or AI-security acceptance. The installer
+  guard and draft PR remain until release gates in FIRST_PC_RELEASE.md pass.
