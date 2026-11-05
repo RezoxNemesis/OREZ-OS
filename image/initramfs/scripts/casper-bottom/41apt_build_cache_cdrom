@@ -1,0 +1,44 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Modified for OREZ, 2026-11-05, from Ubuntu casper 41apt_build_cache_cdrom.
+# Upstream authors/copyright and full licence: third_party/casper/.
+# Only this optional boot-time cache operation uses the local signed CD source.
+# Normal user repository settings, keys and authentication are unchanged.
+
+PREREQ=""
+DESCRIPTION="Generating APT cache for cdrom (OREZ local sources only)"
+
+case $1 in
+    prereqs) echo "$PREREQ"; exit 0 ;;
+esac
+
+. /scripts/casper-functions
+log_begin_msg "$DESCRIPTION"
+
+if [ ! -s /root/etc/apt/sources.list.d/cdrom.sources ]; then
+    log_warning_msg "OREZ: no CD-ROM APT source; optional cache generation skipped"
+    log_end_msg
+    exit 0
+fi
+
+# Preserve the upstream temporary binds needed by APT/signature verification.
+# No nested overlay mount, deletion or rewriting of repository files is needed.
+mount -n -o bind /sys /root/sys
+mount -n -o bind /proc /root/proc
+mount -n -o bind /dev /root/dev
+
+# Debian-style .sources fragments AND the legacy sources.list can contain remote
+# repositories. Select the CD source explicitly and disable fragment discovery
+# for this command alone. Retain normal apt-secure checks. This optional cache
+# must not indefinitely delay live startup if the medium is damaged/unavailable.
+if ! chroot /root /usr/bin/timeout --kill-after=5s 90s /usr/bin/apt-get \
+    -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/cdrom.sources \
+    -o Dir::Etc::sourceparts=- \
+    -o Acquire::Retries=0 update --no-list-cleanup; then
+    log_warning_msg "OREZ: CD-ROM cache generation failed or timed out; normal APT settings retained"
+fi
+
+umount /root/dev
+umount /root/proc
+umount /root/sys
+log_end_msg

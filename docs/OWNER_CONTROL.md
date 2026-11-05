@@ -43,8 +43,10 @@ must verify actual effective permissions and recovery, not merely source text.
 **Unresolved live-session exception discovered in qa5-18:** the pinned upstream
 base ships a casper live-user hook that writes passwordless full sudo. OREZ did
 not add this rule, but inheriting it is not sufficient for the owner's security
-contract. Its actual initrd/effective runtime behavior and live Polkit grants
-must be audited and hardened before sensitive live use is qualified. The
+contract. The follow-up actual initrd audit confirms a blank live password, full
+passwordless sudo and wildcard Polkit grants. Effective runtime behavior still
+requires testing, and these grants must be hardened before sensitive live use is
+qualified. See [the initrd audit](OFFLINE_BOOT_QA.md). The
 development ISO is not an owner-policy-certified system. Do not infer security
 from the installer blocker or the unprivileged OREZ component tests. No root
 grant or credential change was executed by this read-only source audit.

@@ -79,6 +79,10 @@ would not grant network access and is not part of setup.
 
 ## Software-backed VM display diagnostics
 
+The recipe also includes `initramfs-tools-core` for independent initrd
+extraction and archive inspection. This is a QA dependency, not a host boot
+configuration change. The existing compact image must be rebuilt to include it.
+
 The recipe now explicitly installs `qemu-system-gui` and
 `qemu-system-modules-opengl`. `qemu-system-x86` with no recommended packages had
 only `none`/`curses` display backends in the original compact image. Adding those

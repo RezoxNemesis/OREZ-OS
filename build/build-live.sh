@@ -20,7 +20,7 @@ fail() { printf '[OREZ ERROR] %s\n' "$*" >&2; exit 1; }
 need() { command -v "$1" >/dev/null 2>&1 || fail "Missing tool: $1"; }
 
 [[ "$(uname -s)" = 'Linux' && "$(uname -m)" = 'x86_64' ]] || fail 'This builder requires x86-64 Linux.'
-for c in curl gpg gpgv sha256sum awk grep xorriso mksquashfs df stat; do need "$c"; done
+for c in curl gpg gpgv sha256sum awk grep xorriso mksquashfs zstd df stat; do need "$c"; done
 [[ "$OUTPUT_DIR" != "$CACHE_DIR" && "$WORK_DIR" != "$OUTPUT_DIR" ]] || fail 'Output, cache and work directories must be separate.'
 mkdir -p -- "$OUTPUT_DIR" "$CACHE_DIR" "$WORK_DIR"
 
@@ -98,15 +98,32 @@ log 'Creating separated OREZ installed-system payload (installer still disabled)
 bash "$REPO_ROOT/build/build-install-payload.sh" "$WORK_DIR/orez-install.squashfs"
 [[ -s "$WORK_DIR/orez-install.squashfs" ]] || fail 'Missing installed-system candidate payload.'
 
+log 'Applying pinned initrd fix for local-only live APT cache generation'
+initrd_stage="$(mktemp -d "$WORK_DIR/initrd-stage.XXXXXX")"
+xorriso -osirrox on -indev "$SOURCE" -extract /casper/initrd "$initrd_stage/original" >/dev/null 2>&1
+python3 "$REPO_ROOT/build/patch-live-initrd.py" --input "$initrd_stage/original" \
+  --output "$initrd_stage/patched" --report "$initrd_stage/orez-initrd.json"
+
+xorriso -osirrox on -indev "$SOURCE" -extract /md5sum.txt "$initrd_stage/original-md5sum.txt" >/dev/null 2>&1
+python3 "$REPO_ROOT/build/update-media-checksums.py" --source "$initrd_stage/original-md5sum.txt" \
+  --output "$initrd_stage/md5sum.txt" --initrd "$initrd_stage/patched" \
+  --metadata "$initrd_stage/orez-initrd.json" --live "$WORK_DIR/zz-orez.squashfs" \
+  --install "$WORK_DIR/orez-install.squashfs"
+
 log 'Replaying upstream EFI/BIOS boot metadata while adding OREZ layer'
 rm -f -- "$OUTPUT.part"
 xorriso -indev "$SOURCE" -outdev "$OUTPUT.part" \
   -map "$WORK_DIR/zz-orez.squashfs" /casper/zz-orez.squashfs \
   -map "$WORK_DIR/orez-install.squashfs" /casper/orez-install.squashfs \
+  -map "$initrd_stage/md5sum.txt" /md5sum.txt \
+  -map "$initrd_stage/patched" /casper/initrd \
+  -map "$initrd_stage/orez-initrd.json" /casper/orez-initrd.json \
   -boot_image any replay -commit > "$WORK_DIR/xorriso.log" 2>&1 \
   || fail "Remix failed. See $WORK_DIR/xorriso.log"
 [[ -s "$OUTPUT.part" ]] || fail 'No output ISO written.'
 mv -f -- "$OUTPUT.part" "$OUTPUT"
+cp -- "$initrd_stage/orez-initrd.json" "$OUTPUT_DIR/orez-initrd.json"
+rm -rf -- "$initrd_stage"
 
 log 'Checking ISO structure and computing digest'
 bash "$REPO_ROOT/build/check-iso.sh" "$OUTPUT"

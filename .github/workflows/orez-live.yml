@@ -10,6 +10,8 @@ on:
       - 'packaging/**'
       - 'environment/**'
       - 'overlay/**'
+      - 'image/**'
+      - 'third_party/**'
       - 'tests/**'
       - 'preview/**'
       - 'package.json'
@@ -43,6 +45,7 @@ jobs:
         run: |
           npm ci --ignore-scripts
           npx playwright install --with-deps chromium
+          sudo apt-get install -y --no-install-recommends zstd
           python3 build/run-with-evidence.py --name 'Source regression' --kind source --output dist/evidence/source -- python3 -m unittest discover -s tests -v
           python3 build/run-with-evidence.py --name 'Native package build' --kind source --output dist/evidence/package-build -- bash build/package-shell.sh
           python3 build/run-with-evidence.py --name 'Package allowlist audit' --kind source --output dist/evidence/package-audit -- python3 build/verify-deb-files.py \
@@ -96,7 +99,7 @@ jobs:
       - name: Install image construction tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends curl gnupg xorriso squashfs-tools ca-certificates
+          sudo apt-get install -y --no-install-recommends curl gnupg xorriso squashfs-tools zstd ca-certificates
       - name: Produce and verify development ISO
         id: iso
         run: |

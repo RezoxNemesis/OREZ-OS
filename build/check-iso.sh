@@ -5,7 +5,7 @@ set -euo pipefail
 command -v xorriso >/dev/null || { echo 'xorriso missing' >&2; exit 2; }
 iso="$1"
 listing="$(xorriso -indev "$iso" -ls /casper 2>&1)"
-for name in filesystem.squashfs zz-orez.squashfs orez-install.squashfs initrd vmlinuz; do
+for name in filesystem.squashfs zz-orez.squashfs orez-install.squashfs initrd vmlinuz orez-initrd.json; do
   grep -Fq "$name" <<<"$listing" || { echo "Missing /casper/$name" >&2; exit 1; }
 done
 # Boot record details must be present; an ISO structure check is not a boot test.
@@ -18,6 +18,10 @@ area="$(xorriso -indev "$iso" -report_system_area plain 2>&1)"
 command -v unsquashfs >/dev/null || { echo 'unsquashfs missing' >&2; exit 2; }
 tmp="$(mktemp -d)"
 trap 'rm -rf -- "$tmp"' EXIT
+repo="$(cd -- "$(dirname -- "$0")/.." && pwd -P)"
+xorriso -osirrox on -indev "$iso" -extract /casper/initrd "$tmp/initrd" >/dev/null 2>&1
+xorriso -osirrox on -indev "$iso" -extract /casper/orez-initrd.json "$tmp/orez-initrd.json" >/dev/null 2>&1
+python3 "$repo/build/patch-live-initrd.py" --verify --input "$tmp/initrd" --report "$tmp/orez-initrd.json"
 xorriso -osirrox on -indev "$iso" -extract /casper/orez-install.squashfs "$tmp/install.squashfs" >/dev/null 2>&1
 [[ -s "$tmp/install.squashfs" ]] || { echo 'OREZ install payload missing from ISO' >&2; exit 1; }
 files="$(unsquashfs -ll "$tmp/install.squashfs")"
@@ -38,4 +42,19 @@ grep -Fq 'OREZ LIVE TEST' "$tmp/orez-installer-guard" ||
   { echo 'OREZ live installer guard message missing' >&2; exit 1; }
 grep -Fqx 'exit 78' "$tmp/orez-installer-guard" ||
   { echo 'OREZ live installer guard must refuse installation' >&2; exit 1; }
+# Check the four changed/added files against the upstream media-error list.
+xorriso -osirrox on -indev "$iso" -extract /md5sum.txt "$tmp/md5sum.txt" >/dev/null 2>&1
+python3 - "$repo" "$tmp" <<'PY_CHECK'
+import importlib.util
+from pathlib import Path
+import sys
+repo, root = map(Path, sys.argv[1:])
+spec = importlib.util.spec_from_file_location('media', repo / 'build/update-media-checksums.py')
+media = importlib.util.module_from_spec(spec); spec.loader.exec_module(media)
+entries = media.parse((root / 'md5sum.txt').read_text())
+for name, local in zip(media.NAMES, ['initrd', 'orez-initrd.json', 'live.squashfs', 'install.squashfs']):
+    if entries.get(name) != media.md5(root / local):
+        raise SystemExit(f'Media checksum mismatch: {name}')
+print('PASS: four OREZ media-error checksums match extracted bytes (not an authenticity proof)')
+PY_CHECK
 echo 'Static ISO structure, install-safe payload and live-only installer guard: PASS (boot/install execution NOT tested)'
