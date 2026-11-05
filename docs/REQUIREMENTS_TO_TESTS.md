@@ -20,3 +20,9 @@
 - Calamares: `unpackfs.conf` copies base SquashFS only. Persistence of OREZ overlay fails readiness. No real SSD installation allowed.
 - AppArmor: live-only `kernel.apparmor_restrict_unprivileged_userns=0` present. Installed configuration and effective policy must be verified before release.
 - Safety: unqualified Calamares live wrapper source/pkg tests PASS 41818841716, new ISO image test outstanding.
+
+### Verified 2026-11-05 test evidence
+- Authentic Kubuntu 26.04.1 checksum + **live VM graphical control**: the upstream distro also renders a completely black desktop after Try in this TCG/VirtIO environment (41889832695). OREZ-specific visual failure **not isolated**. Real target RTX 3050 and GUI remain unverified.
+- Installed OREZ file allowlist: 16/16 present, zero path collisions with actual pinned Kubuntu root, zero extras (41937702881). **Static** only; does not run Calamares.
+- Native Debian archive: 16/16 manifest files, no unexpected files, nonregular links or maintainer scripts (41938238699). **Not** installed or update-certified.
+- Calamares execution and AppArmor/LUKS2/Btrfs/backup recovery: **STILL BLOCKED**.
