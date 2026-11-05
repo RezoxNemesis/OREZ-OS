@@ -1,0 +1,3560 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa4-",
+  "unique_images": 534,
+  "capture_references": 557,
+  "references": [
+    {
+      "source": "qa4-01-backup-integrity/report-001.png",
+      "sha256": "9dea97302d3104014f7c91cf4e10e114b2329d643387bbdbfde75d2544ff29c4",
+      "bytes": 95377
+    },
+    {
+      "source": "qa4-02-source/report-001.png",
+      "sha256": "bcd739eb3460e493e71c6ad9574387f745df5483bbc9e3fd2ab1e8c960beec2a",
+      "bytes": 233704
+    },
+    {
+      "source": "qa4-02-source/report-002.png",
+      "sha256": "e1289e20cf8a79e78a5feea94da5557bdb76905c393dbd7b26dcc353b37f154a",
+      "bytes": 235956
+    },
+    {
+      "source": "qa4-02-source/report-003.png",
+      "sha256": "76f6590ed00a54292f52d578d0fb14e0db54791421e5e9d5bf4bd3786d2c0328",
+      "bytes": 230077
+    },
+    {
+      "source": "qa4-02-source/report-004.png",
+      "sha256": "e29f16fbd9fe9873d58520e25d1b3c928a24411dff88bf4f0df1706c45de3abf",
+      "bytes": 128478
+    },
+    {
+      "source": "qa4-03-package/report-001.png",
+      "sha256": "9919153f4fbd4655e01ca7a09295e757dcc03e26cdadaad125130bcbf21fbe6a",
+      "bytes": 124086
+    },
+    {
+      "source": "qa4-04-compact-environment/report-001.png",
+      "sha256": "223f1acffdab278c5ee84e243f82fd8e2c3d0af4c8970a826b5dd6d4a427608e",
+      "bytes": 240764
+    },
+    {
+      "source": "qa4-04-compact-environment/report-002.png",
+      "sha256": "d0244c7bed8da4b6c367afe1fbc7719a6e550fbdb0ba3e9644627c9ad8bd524a",
+      "bytes": 271838
+    },
+    {
+      "source": "qa4-04-compact-environment/report-003.png",
+      "sha256": "016b962cf5d1270cb7fb2940340ccbef38072aecb47cc6cb159eb2ea837176ec",
+      "bytes": 281168
+    },
+    {
+      "source": "qa4-04-compact-environment/report-004.png",
+      "sha256": "e3e223fda7ec19b410c6c0dea8a7c41eb0c5c9fdcce51a5ed7199bf02be372c6",
+      "bytes": 281854
+    },
+    {
+      "source": "qa4-04-compact-environment/report-005.png",
+      "sha256": "13e9a80b16da914e71cb2d8cce197b54b081e952a02e056e5016c65fce392f83",
+      "bytes": 282685
+    },
+    {
+      "source": "qa4-04-compact-environment/report-006.png",
+      "sha256": "475110366bd639a78cd2e85544b52bcbe1e71e7b2c170a37d14b992c844f3f21",
+      "bytes": 279978
+    },
+    {
+      "source": "qa4-04-compact-environment/report-007.png",
+      "sha256": "1273c716a190646b4a930dad71d4f2e0642511b0dc7479f642a0720b964c4f1e",
+      "bytes": 268084
+    },
+    {
+      "source": "qa4-04-compact-environment/report-008.png",
+      "sha256": "8a805864811af058f0682c099395f88aa6d3f5d2ef56d5a435450d4b2eb542b5",
+      "bytes": 266194
+    },
+    {
+      "source": "qa4-04-compact-environment/report-009.png",
+      "sha256": "ab02720595622cd302f1b20feb2121153723b5461d49bb102b43381d37043012",
+      "bytes": 271813
+    },
+    {
+      "source": "qa4-04-compact-environment/report-010.png",
+      "sha256": "c4fd573a18553f74bab28295c3d24c2a30f5340c5ed64e3e1938dbee1d5691ce",
+      "bytes": 276477
+    },
+    {
+      "source": "qa4-04-compact-environment/report-011.png",
+      "sha256": "5ee0eb936c389dbb4de8434f1ef1a88bd7d0509c1f7f8752a5a5581c35bb94c9",
+      "bytes": 275493
+    },
+    {
+      "source": "qa4-04-compact-environment/report-012.png",
+      "sha256": "06054af66aac8f5d3c0f5dfaaab9f0f11252843664c78ad9033769f62440dc94",
+      "bytes": 275866
+    },
+    {
+      "source": "qa4-04-compact-environment/report-013.png",
+      "sha256": "813315cb1a1e65bdbdfc13816ee4af9e07330f3f5269e183a93a59c3f8778e9d",
+      "bytes": 280898
+    },
+    {
+      "source": "qa4-04-compact-environment/report-014.png",
+      "sha256": "df073a01f6954b94f43049dd94a8aa53c098ec72a8da36f42b64e7a5c06e85de",
+      "bytes": 282713
+    },
+    {
+      "source": "qa4-04-compact-environment/report-015.png",
+      "sha256": "21a9afaf1634cfa9de95309ad2ac0fc621d509cce9a0be2c5bfc35f5122e49e2",
+      "bytes": 282653
+    },
+    {
+      "source": "qa4-04-compact-environment/report-016.png",
+      "sha256": "3f44a4c7377cb2be7f7bae0e54e36ddca1b8a81000775789aa866c5de0050329",
+      "bytes": 279217
+    },
+    {
+      "source": "qa4-04-compact-environment/report-017.png",
+      "sha256": "b8c4138cbd028fcab971cb2cb0077f79349d6e6f577b143dbc7c15aae92df67a",
+      "bytes": 274324
+    },
+    {
+      "source": "qa4-04-compact-environment/report-018.png",
+      "sha256": "f0c38e1b59eadaff73a1adff93a5c02488c041bb6f9b4bf564628a165d46c336",
+      "bytes": 264584
+    },
+    {
+      "source": "qa4-04-compact-environment/report-019.png",
+      "sha256": "1557eedb394bb58df8d43509fbbf21adb1ecc9f4056a90b7a66fff0364ada47b",
+      "bytes": 271207
+    },
+    {
+      "source": "qa4-04-compact-environment/report-020.png",
+      "sha256": "34300ff2f162a581d0399778399ee2f40091c4e9cebc943fed6b959f3c58feb5",
+      "bytes": 267140
+    },
+    {
+      "source": "qa4-04-compact-environment/report-021.png",
+      "sha256": "cde7d7cd46754e3e7d39c6120394a879bfde57bb8de67bd0a6bd6687d021ce94",
+      "bytes": 287397
+    },
+    {
+      "source": "qa4-04-compact-environment/report-022.png",
+      "sha256": "fb6f03afcf46a5ad0f4a7d8745b261833970b1a2b3e071b0863ab22ae3d92437",
+      "bytes": 306759
+    },
+    {
+      "source": "qa4-04-compact-environment/report-023.png",
+      "sha256": "e870223d7ed0563305a5ce3e3bfa636c0b234b536a253eda0daac9fb8130416a",
+      "bytes": 306495
+    },
+    {
+      "source": "qa4-04-compact-environment/report-024.png",
+      "sha256": "cb6a2a5701ba5b18672dd22e1aefea69c55e3208254fe29440e93bbc219f0569",
+      "bytes": 292716
+    },
+    {
+      "source": "qa4-04-compact-environment/report-025.png",
+      "sha256": "d4fca27d51ae7f09445ca34f851cb72bb46934aee29cdfc8ca3b653636593f69",
+      "bytes": 285536
+    },
+    {
+      "source": "qa4-04-compact-environment/report-026.png",
+      "sha256": "7082fbd84a5e29cb63509fce193ddeaa88cdacfaf4c1b6ccedd855b43d63704e",
+      "bytes": 287590
+    },
+    {
+      "source": "qa4-04-compact-environment/report-027.png",
+      "sha256": "ec41d6a19dcb29a15199c1c072def47d05fb96171a9a38b398c4828a3b18f4cb",
+      "bytes": 258491
+    },
+    {
+      "source": "qa4-04-compact-environment/report-028.png",
+      "sha256": "8fc07010913dc0cc7d235f753000ad6579c469681f87d5507a6e43eed31f89b0",
+      "bytes": 255370
+    },
+    {
+      "source": "qa4-04-compact-environment/report-029.png",
+      "sha256": "0a99ea237b7d08e4e72aaffb4d6439a5e43771d36799c542d758c6549566aeab",
+      "bytes": 242976
+    },
+    {
+      "source": "qa4-04-compact-environment/report-030.png",
+      "sha256": "dec608a1f5efa1cecea1beb1273cbf48ff8ae65c6137c1d82bd169f1b945865e",
+      "bytes": 286255
+    },
+    {
+      "source": "qa4-04-compact-environment/report-031.png",
+      "sha256": "9e5e8addfa1f798ed503cbb88376386765303d196915ac98528a07b1dbfe285a",
+      "bytes": 316621
+    },
+    {
+      "source": "qa4-04-compact-environment/report-032.png",
+      "sha256": "a7f9e9308c9bf906ae828734e32d6c3d0e53d39e84b27cc75358af7efa73d325",
+      "bytes": 286500
+    },
+    {
+      "source": "qa4-04-compact-environment/report-033.png",
+      "sha256": "86e40fef42b075587d9f32c81fa53a60920a558187bda88505dc7f30952215ea",
+      "bytes": 316293
+    },
+    {
+      "source": "qa4-04-compact-environment/report-034.png",
+      "sha256": "0a96fe6b82a863d7cf2f4dad66cb50b4806c138bcfb0c5f9983094de6144a7c5",
+      "bytes": 290057
+    },
+    {
+      "source": "qa4-04-compact-environment/report-035.png",
+      "sha256": "f1c8b0bbe1c8ca270433a2ae3f09ec8e17680ce66ee6c59e3a71f8f2fe2d579d",
+      "bytes": 313382
+    },
+    {
+      "source": "qa4-04-compact-environment/report-036.png",
+      "sha256": "5259b2e14cd31efcd31e9c8ed74da650db7b026c335634bd023ea72c2b70f62c",
+      "bytes": 296689
+    },
+    {
+      "source": "qa4-04-compact-environment/report-037.png",
+      "sha256": "1c26df429f69d0120174b9335cfb760d65b718e3eb92e2519394b984d7dca16b",
+      "bytes": 285205
+    },
+    {
+      "source": "qa4-04-compact-environment/report-038.png",
+      "sha256": "3662e404efc827f215389836c91b2382657f4073346222204faa51c9717ec64d",
+      "bytes": 318833
+    },
+    {
+      "source": "qa4-04-compact-environment/report-039.png",
+      "sha256": "94abc04ca8d184f50eb60a844f47cfb2481623df5031abcff7bc61c7930ea60e",
+      "bytes": 264178
+    },
+    {
+      "source": "qa4-04-compact-environment/report-040.png",
+      "sha256": "3937ebefc830290ab6249a5eaa36e8c8b33798a3673b725250af3ac6029d5f56",
+      "bytes": 289883
+    },
+    {
+      "source": "qa4-04-compact-environment/report-041.png",
+      "sha256": "67ac84c333d183f5991a6854ca9211a7e216ff25bf053dda835a1a8ca0666b11",
+      "bytes": 239695
+    },
+    {
+      "source": "qa4-04-compact-environment/report-042.png",
+      "sha256": "b437278a5e6e4ebca86b8a5797d30e5246bb415973a6fa467fcf072652c36666",
+      "bytes": 247711
+    },
+    {
+      "source": "qa4-04-compact-environment/report-043.png",
+      "sha256": "821bb0111290c83049c9742651a90fe336c06c59bf4bbd997b0da57e46872e16",
+      "bytes": 280430
+    },
+    {
+      "source": "qa4-04-compact-environment/report-044.png",
+      "sha256": "b3b414497ce92a06606c9929a9bdb68c3575924cff0188e40f163be4adae2b97",
+      "bytes": 250965
+    },
+    {
+      "source": "qa4-04-compact-environment/report-045.png",
+      "sha256": "54a442fb8ed0e6ba841e0d0f97679fd5cd406bd280de77b4a3ba8f00a8e64e70",
+      "bytes": 277302
+    },
+    {
+      "source": "qa4-04-compact-environment/report-046.png",
+      "sha256": "1b107e04549ef57bc58061750a2adc587dd8bda76c6f9bf1b87d77982099afa3",
+      "bytes": 284765
+    },
+    {
+      "source": "qa4-04-compact-environment/report-047.png",
+      "sha256": "68289c63a31f8020a3fe52aa047f8e7ae41291f200c48d9fc8f563bd81983a37",
+      "bytes": 301182
+    },
+    {
+      "source": "qa4-04-compact-environment/report-048.png",
+      "sha256": "3be59cf82ed6e70fe65419f8f0a9b11d2e7c05072d67f8a65dd6d65773d0074e",
+      "bytes": 305490
+    },
+    {
+      "source": "qa4-04-compact-environment/report-049.png",
+      "sha256": "075a6ebca7eed3812606fb1c26e267b34763f78ed596ad489ba9df557eb371dc",
+      "bytes": 287744
+    },
+    {
+      "source": "qa4-04-compact-environment/report-050.png",
+      "sha256": "fdb921e43a8539031913a536de6aabb57e2265a5615723ef5d2a4c3de0a2943b",
+      "bytes": 265490
+    },
+    {
+      "source": "qa4-04-compact-environment/report-051.png",
+      "sha256": "e65d2d95e20d9b81f70df1160c6d0092838c68d4d9e4446fef92a090e7fcb77b",
+      "bytes": 259222
+    },
+    {
+      "source": "qa4-04-compact-environment/report-052.png",
+      "sha256": "e7001d470e3e5665d6795ad5866468adf5b8316966adb95eb68ed380133d951b",
+      "bytes": 246918
+    },
+    {
+      "source": "qa4-04-compact-environment/report-053.png",
+      "sha256": "f02fd5b4653cce69f86df7345fbd0995c4eb28461eca7ac609352389ed02b297",
+      "bytes": 280679
+    },
+    {
+      "source": "qa4-04-compact-environment/report-054.png",
+      "sha256": "24fc1bc9cff105d00d8b6e936e1bfb4aecfe7270e11bd0cffc54d81e3404d0d2",
+      "bytes": 307260
+    },
+    {
+      "source": "qa4-04-compact-environment/report-055.png",
+      "sha256": "cb7f2f918d528fde82f31eae7fe2b1c50846ca289673624073c66746b9e347b3",
+      "bytes": 290849
+    },
+    {
+      "source": "qa4-04-compact-environment/report-056.png",
+      "sha256": "edc36ba23550ae46a00162500e8744829a3daa23fbb508e72a2c44f69ac565a4",
+      "bytes": 276458
+    },
+    {
+      "source": "qa4-04-compact-environment/report-057.png",
+      "sha256": "89031636e8ac8070447e7cb7fb5178d8e89064b348842573a5cb9116f73df23f",
+      "bytes": 278442
+    },
+    {
+      "source": "qa4-04-compact-environment/report-058.png",
+      "sha256": "7e6e9644d38ed518d0bdcb27867f8d75ddbc649364bf5bd05ec1f675d6e5cb61",
+      "bytes": 282059
+    },
+    {
+      "source": "qa4-04-compact-environment/report-059.png",
+      "sha256": "50b0fb4f88ac0f38ab2e3cb64b06ce5ebc56b2e2fb970825b0511b46263556bf",
+      "bytes": 282310
+    },
+    {
+      "source": "qa4-04-compact-environment/report-060.png",
+      "sha256": "05f0492c4b9b1ac1dc79a5a6d7fc4cc45dcbe59a141e50d55e9670e5081c87c4",
+      "bytes": 265438
+    },
+    {
+      "source": "qa4-04-compact-environment/report-061.png",
+      "sha256": "15d5582371aa705c4250cd832112653f242d55a516d14ac7857cb854cabe4e17",
+      "bytes": 259896
+    },
+    {
+      "source": "qa4-04-compact-environment/report-062.png",
+      "sha256": "26882743734598b3c717e577e7678b2767cb7e92c689da5097f922d8579ab6e0",
+      "bytes": 244828
+    },
+    {
+      "source": "qa4-04-compact-environment/report-063.png",
+      "sha256": "5f8fb5d51ec8b5a28c622d671c75bcadace9a2c8907e7f0fe9f0bd1dac5a1a01",
+      "bytes": 274352
+    },
+    {
+      "source": "qa4-04-compact-environment/report-064.png",
+      "sha256": "24546c2fa5b1ffae79c67fb99c101dc4f0b1bd1c9b06aad392093bd1acba1455",
+      "bytes": 289995
+    },
+    {
+      "source": "qa4-04-compact-environment/report-065.png",
+      "sha256": "227be4a73ec0be3ed6965e8a42816f96d5287c9c82856a48a57a97498e64c778",
+      "bytes": 267340
+    },
+    {
+      "source": "qa4-04-compact-environment/report-066.png",
+      "sha256": "04a6053c6d16be62dd9c2fc7a1fae8d642b6d9a0327e052e6662ec0be369f25f",
+      "bytes": 294193
+    },
+    {
+      "source": "qa4-04-compact-environment/report-067.png",
+      "sha256": "b745b29c7f04db871883fcd1dbf2776bb2398c07964b06ed6b718a478fbbfafa",
+      "bytes": 277704
+    },
+    {
+      "source": "qa4-04-compact-environment/report-068.png",
+      "sha256": "9a5456a3ce8229d92acd1fe74eee5d546008140a3d692bc9a0065da59060004d",
+      "bytes": 270849
+    },
+    {
+      "source": "qa4-04-compact-environment/report-069.png",
+      "sha256": "5dec4700311840540cb13e131f7cd287ca510e28687dfbe5bfc42af32cd199ca",
+      "bytes": 282697
+    },
+    {
+      "source": "qa4-04-compact-environment/report-070.png",
+      "sha256": "afa6f298afb534bcc3a57a0ac9e10ceb9837f933a719042b355c0da67e1f2658",
+      "bytes": 272382
+    },
+    {
+      "source": "qa4-04-compact-environment/report-071.png",
+      "sha256": "483dc9d65db0b8810f4af3be2988a231dd70d98e7dbf09fabc988cc0447f45b2",
+      "bytes": 249117
+    },
+    {
+      "source": "qa4-04-compact-environment/report-072.png",
+      "sha256": "17e77dfb6652b4acbe077843dad221e34dd99296b39b01c1bb1a42a3ec06fc04",
+      "bytes": 264028
+    },
+    {
+      "source": "qa4-04-compact-environment/report-073.png",
+      "sha256": "7a027f7b6caca142f6e08ca2144c6d0f8a674c87ad33c4c1d4d251f48b999b5f",
+      "bytes": 287689
+    },
+    {
+      "source": "qa4-04-compact-environment/report-074.png",
+      "sha256": "ef91bc19b4cf0148af1209730217ed3987a975531e6c78439bc304ffd1b0d76c",
+      "bytes": 254051
+    },
+    {
+      "source": "qa4-04-compact-environment/report-075.png",
+      "sha256": "d8be554d6adfdd35dd3044902a3fb12fc1653bd5f5d0554fb84393207b2eaae4",
+      "bytes": 164577
+    },
+    {
+      "source": "qa4-04-compact-environment/report-076.png",
+      "sha256": "2cd41854d402ec3981478182b3156e1350a0bfcaebcbf52a7fc8b41993d64986",
+      "bytes": 163383
+    },
+    {
+      "source": "qa4-04-compact-environment/report-077.png",
+      "sha256": "f66475903ee5fd00ed1711a1740125f637fdd6adc0dfd3bcd74123c077693777",
+      "bytes": 176072
+    },
+    {
+      "source": "qa4-04-compact-environment/report-078.png",
+      "sha256": "c5332eb418c725c1b81eaac77c2287e0575c1a214362b439251c41908691bfb6",
+      "bytes": 162310
+    },
+    {
+      "source": "qa4-04-compact-environment/report-079.png",
+      "sha256": "04777a75e542c14184f1f01dd77562d3f755aff508501ddf7c4b10a4550067fb",
+      "bytes": 160858
+    },
+    {
+      "source": "qa4-04-compact-environment/report-080.png",
+      "sha256": "0a79b837e4dfcdc404ebab734a7d73a5092200e116304260de2422156af9a785",
+      "bytes": 163685
+    },
+    {
+      "source": "qa4-04-compact-environment/report-081.png",
+      "sha256": "17867d69965dff43fd76fd7ef90251ed7e57bbc9613ce67970c1fedeb8dba2a4",
+      "bytes": 166697
+    },
+    {
+      "source": "qa4-04-compact-environment/report-082.png",
+      "sha256": "66376e80fb5f30f893086a7aa57c7bbf8d901b49c4c92856263b246edbf59b2f",
+      "bytes": 166231
+    },
+    {
+      "source": "qa4-04-compact-environment/report-083.png",
+      "sha256": "e3d5a41ed34622cd4b1bd082e4c94f62c94075c5110ad2751282834fc0d66a24",
+      "bytes": 170240
+    },
+    {
+      "source": "qa4-04-compact-environment/report-084.png",
+      "sha256": "0ca61a372edec9c7b1c561e5cca4b9f04e1f7469b413af3b28c0247b24e479d3",
+      "bytes": 172545
+    },
+    {
+      "source": "qa4-04-compact-environment/report-085.png",
+      "sha256": "11ec72c0a0c390467185139a4bd10df55fa7bf32daa458c8170319915c420db9",
+      "bytes": 176439
+    },
+    {
+      "source": "qa4-04-compact-environment/report-086.png",
+      "sha256": "49c45cbb5ee3b5e7cb40ee0e75ae00bb4bf6d9f29c7ee9eec939db475ec886e0",
+      "bytes": 173522
+    },
+    {
+      "source": "qa4-04-compact-environment/report-087.png",
+      "sha256": "d0565c649e4900da2c39e4697356fc23f80bc10a2bdbb03d6c16ac8725874332",
+      "bytes": 171123
+    },
+    {
+      "source": "qa4-04-compact-environment/report-088.png",
+      "sha256": "e16f6ee95f67df18cafeefea492c46a9168612bcb3fbc39bd61072daa2debc62",
+      "bytes": 167461
+    },
+    {
+      "source": "qa4-04-compact-environment/report-089.png",
+      "sha256": "68a10d5b18762a55af003a4fda4377c5c23fc8732e48eecdf82c3e5b36095f8c",
+      "bytes": 172772
+    },
+    {
+      "source": "qa4-04-compact-environment/report-090.png",
+      "sha256": "b12bcab6c8f0d2cf1a19078500c8f5438efb537b095e351342d83ab0cddf9b3b",
+      "bytes": 172663
+    },
+    {
+      "source": "qa4-04-compact-environment/report-091.png",
+      "sha256": "9e3c26e32afcad70ee28c2c340b75483e4c85e341adf6ab77a3606286820b5ea",
+      "bytes": 173703
+    },
+    {
+      "source": "qa4-04-compact-environment/report-092.png",
+      "sha256": "a5b32787801c13695c3d0c70e3536ec8b0bea6ff69c15835ec0386e9650ca460",
+      "bytes": 172243
+    },
+    {
+      "source": "qa4-04-compact-environment/report-093.png",
+      "sha256": "4d7cabc785f0407eb0b3730842f551657a6451e0944766979b752170c4461fa3",
+      "bytes": 172080
+    },
+    {
+      "source": "qa4-04-compact-environment/report-094.png",
+      "sha256": "71ee37dd5e616d077a035ba2637974add73722c8d2a3f21f1963f61564f9525a",
+      "bytes": 168713
+    },
+    {
+      "source": "qa4-04-compact-environment/report-095.png",
+      "sha256": "5b34964fc3965ebec48fcf5978f8bb1938a93541ca7846d8a8b67e945e98e269",
+      "bytes": 171614
+    },
+    {
+      "source": "qa4-04-compact-environment/report-096.png",
+      "sha256": "d7b42aa67f381858f48a6421b78c76ceacef23a8fe0efa27d7de27ce0eaf7a71",
+      "bytes": 171227
+    },
+    {
+      "source": "qa4-04-compact-environment/report-097.png",
+      "sha256": "7e33a0828ccc8783dd76e4ba395c41c95df89f9214f45c49451c4827d55299dd",
+      "bytes": 172906
+    },
+    {
+      "source": "qa4-04-compact-environment/report-098.png",
+      "sha256": "0d519d36a4419d30d1a73e44b235e02f4a059113d02cb60aee0f881e36ca9db9",
+      "bytes": 174059
+    },
+    {
+      "source": "qa4-04-compact-environment/report-099.png",
+      "sha256": "42be5a9cffa59b7c762ebc10eceda37221b6d71a63f13cebf0ec5be9be408baa",
+      "bytes": 172948
+    },
+    {
+      "source": "qa4-04-compact-environment/report-100.png",
+      "sha256": "3e1d8d676fcad02d63c4e4e615f938be146f47bb3ef2032cd369bc94983db31f",
+      "bytes": 173794
+    },
+    {
+      "source": "qa4-04-compact-environment/report-101.png",
+      "sha256": "5056e04e5179ab3b575eba62c36359d2962bfb79a6787166a010f49027c9d50f",
+      "bytes": 175270
+    },
+    {
+      "source": "qa4-04-compact-environment/report-102.png",
+      "sha256": "961b57c7f444d0fce9ba0bc77969851122836bcb92f7028c7ea8a67b2c6ba8a5",
+      "bytes": 170486
+    },
+    {
+      "source": "qa4-04-compact-environment/report-103.png",
+      "sha256": "46d94b8689c8037f36900a0fe09bd63dba564c58f72d58a205ecec7ccb7f9ff1",
+      "bytes": 161762
+    },
+    {
+      "source": "qa4-04-compact-environment/report-104.png",
+      "sha256": "fbfd5a0d36c0c4c2b0a61ffd433e7582545d87c3f1ea8dd35ac853552c69ce2d",
+      "bytes": 165064
+    },
+    {
+      "source": "qa4-04-compact-environment/report-105.png",
+      "sha256": "272b134d9476e724a1c04a6d905370cbd3416c9d8999bbb1d9a60d8c046fb9f5",
+      "bytes": 171672
+    },
+    {
+      "source": "qa4-04-compact-environment/report-106.png",
+      "sha256": "6684e593dead6c16c49f2da5dfabf1dca577487786433d64bc925799ad7780ac",
+      "bytes": 174577
+    },
+    {
+      "source": "qa4-04-compact-environment/report-107.png",
+      "sha256": "1592103b04e0547139935cb13b84afea667051870e7f8d018d475f90f3df31fc",
+      "bytes": 176757
+    },
+    {
+      "source": "qa4-04-compact-environment/report-108.png",
+      "sha256": "db9b372f9562bf2a594b36f5cf841cd6e3ab5be086bff16b602a8d05ec33e7fc",
+      "bytes": 174832
+    },
+    {
+      "source": "qa4-04-compact-environment/report-109.png",
+      "sha256": "3fd06973a74c8c829c222553c6b2512e31adbbc478cdc5069dba8a7319177750",
+      "bytes": 173597
+    },
+    {
+      "source": "qa4-04-compact-environment/report-110.png",
+      "sha256": "193e3f655fcaf0cf44e827b4634589c878da8e0e7188d1dea1a3133234494e5b",
+      "bytes": 176351
+    },
+    {
+      "source": "qa4-04-compact-environment/report-111.png",
+      "sha256": "e291cfaa89c7df3dcc24b8324720622f446383b65c430ac893258f41aabac51c",
+      "bytes": 177233
+    },
+    {
+      "source": "qa4-04-compact-environment/report-112.png",
+      "sha256": "933defb399e5aa9eaaf1f9f7758d0b1001073bc33506c74539eb1c019db8c4bf",
+      "bytes": 180847
+    },
+    {
+      "source": "qa4-04-compact-environment/report-113.png",
+      "sha256": "cb686e0e5ba39aad709bf1685669bf10c8241017a45575a176c5f3d554ebe1ff",
+      "bytes": 177427
+    },
+    {
+      "source": "qa4-04-compact-environment/report-114.png",
+      "sha256": "12a184e10bdcd3e763a5dbd9fa95396fed586303de5f1a8d9b5378d55456ec46",
+      "bytes": 176602
+    },
+    {
+      "source": "qa4-04-compact-environment/report-115.png",
+      "sha256": "0518386678e34627c08a00c5f6e5736eb41f19668e68f14622b6a0772ab375bf",
+      "bytes": 173910
+    },
+    {
+      "source": "qa4-04-compact-environment/report-116.png",
+      "sha256": "616fb68fdfe90b185aa69f647c9fb54cf820c91b368efb98af98e11c36612295",
+      "bytes": 177914
+    },
+    {
+      "source": "qa4-04-compact-environment/report-117.png",
+      "sha256": "7c6232bd17dd9f28e9837d560b0dea487e0ac15190727e5189bba4dd8521e2a6",
+      "bytes": 178103
+    },
+    {
+      "source": "qa4-04-compact-environment/report-118.png",
+      "sha256": "35c0ccfa86bb75a941b101ad2eb0d79019be54e22e3f45e574cf6f9c9bd2e3b9",
+      "bytes": 171730
+    },
+    {
+      "source": "qa4-04-compact-environment/report-119.png",
+      "sha256": "e6e5f3738c8ea0a4d966343da2e7c41d99807e78b17024c3d527b37ea1ce0fb4",
+      "bytes": 165751
+    },
+    {
+      "source": "qa4-04-compact-environment/report-120.png",
+      "sha256": "8f513bc61943ef04f63a579a7e8158c4effd70369ff8aa8bd5b88d1043166725",
+      "bytes": 161343
+    },
+    {
+      "source": "qa4-04-compact-environment/report-121.png",
+      "sha256": "bad742e2f0aa9cd1649ad5e43228ce64b3b0a235bb246dbfc17b22928b62f403",
+      "bytes": 165736
+    },
+    {
+      "source": "qa4-04-compact-environment/report-122.png",
+      "sha256": "02e8c8e0c2e336f3dd1b6ae64172e3f828c1ab43cb25af66d0113fe89d900363",
+      "bytes": 178241
+    },
+    {
+      "source": "qa4-04-compact-environment/report-123.png",
+      "sha256": "4bdcdffff48d70f998ff469f7c4049076fcc72a99c8cb124052f2b4e53973aa9",
+      "bytes": 165942
+    },
+    {
+      "source": "qa4-04-compact-environment/report-124.png",
+      "sha256": "fa0a8053ac8c58ab93efe5e2978df859f23aa150350245db2be8d9d079ba042d",
+      "bytes": 174831
+    },
+    {
+      "source": "qa4-04-compact-environment/report-125.png",
+      "sha256": "6a6ba1f0547c0ba98a5a84c54e115a28414a3ff39feb68b3f5fc347626d36fdd",
+      "bytes": 179474
+    },
+    {
+      "source": "qa4-04-compact-environment/report-126.png",
+      "sha256": "de42889f9aa679886eb88294596944c48a446b36d556d7453dc117d7e5349a30",
+      "bytes": 165231
+    },
+    {
+      "source": "qa4-04-compact-environment/report-127.png",
+      "sha256": "147c257650472b1b854189ee8b4e8e171effd8730f47615dc07555eaf5ad6de5",
+      "bytes": 172103
+    },
+    {
+      "source": "qa4-04-compact-environment/report-128.png",
+      "sha256": "dde5d6368c221e60bef586af61f4fd6fefa66a711c0c9a740945f84020cd7e59",
+      "bytes": 172612
+    },
+    {
+      "source": "qa4-04-compact-environment/report-129.png",
+      "sha256": "716f1b5507feea4969dfca8f2a0aa1817e6d808edaf15a16626e626d40bc1b51",
+      "bytes": 171553
+    },
+    {
+      "source": "qa4-04-compact-environment/report-130.png",
+      "sha256": "46fcd0d9510ede1eb4471f10b0339757185a41e49f4fe873b7e8cef1aa9c9bf1",
+      "bytes": 169103
+    },
+    {
+      "source": "qa4-04-compact-environment/report-131.png",
+      "sha256": "0507cb40bb772905b16abbb5b486d543834084d6b2792e5ce9a378acc3c0ec36",
+      "bytes": 172360
+    },
+    {
+      "source": "qa4-04-compact-environment/report-132.png",
+      "sha256": "3aa37428f6e48c9f5746ccbaa6a503de04b135b7567c7413e8ca9b7e2b7fef68",
+      "bytes": 175122
+    },
+    {
+      "source": "qa4-04-compact-environment/report-133.png",
+      "sha256": "ef1960d40ead68434c306bc2c9deadb1861627b7e5c60cd078a4a32fe0272d0c",
+      "bytes": 172632
+    },
+    {
+      "source": "qa4-04-compact-environment/report-134.png",
+      "sha256": "f8d43dfa2c30b6a9782342ee154a28638e6741a112d800f36c55d82b8ac49353",
+      "bytes": 170390
+    },
+    {
+      "source": "qa4-04-compact-environment/report-135.png",
+      "sha256": "3d5030e21323288c118d4204a3b3f7d4b3c4cf74affc9c09234a20230571a104",
+      "bytes": 166442
+    },
+    {
+      "source": "qa4-04-compact-environment/report-136.png",
+      "sha256": "dba6fe09df8e42a95dabf97ed7d6950779a7152f44b173476e8aa2f4faf9c1c2",
+      "bytes": 168055
+    },
+    {
+      "source": "qa4-04-compact-environment/report-137.png",
+      "sha256": "12910b8ffb0eb849e076c462e19fb780139728960a38b54ca413999d8676231b",
+      "bytes": 171281
+    },
+    {
+      "source": "qa4-04-compact-environment/report-138.png",
+      "sha256": "c7bac99bbe044f1893bd2ec1ba9698df044ef29efdafa1cc8797922a4f7c375a",
+      "bytes": 172779
+    },
+    {
+      "source": "qa4-04-compact-environment/report-139.png",
+      "sha256": "eae13b5843dc8678d069a37ac33ecd6c4980d43116aa3f67a56f91f17a6770ba",
+      "bytes": 173195
+    },
+    {
+      "source": "qa4-04-compact-environment/report-140.png",
+      "sha256": "1382bfb275516107fb4291dd8be3fa4bf9f277a859a3be797650849502072b9c",
+      "bytes": 171375
+    },
+    {
+      "source": "qa4-04-compact-environment/report-141.png",
+      "sha256": "79d1842b1913f095e52b02cc1fb88ee4d49b5e864355191bdf189bb4980d696c",
+      "bytes": 174580
+    },
+    {
+      "source": "qa4-04-compact-environment/report-142.png",
+      "sha256": "5a4353c4c817ae1a54c8d98ff7160560f0fde7e1f158f11f8a399da8cd2bc654",
+      "bytes": 174575
+    },
+    {
+      "source": "qa4-04-compact-environment/report-143.png",
+      "sha256": "e50a152eec52150f65a8bb4baed85a643c14c95631ca14cb953bb5d1753b68d7",
+      "bytes": 172317
+    },
+    {
+      "source": "qa4-04-compact-environment/report-144.png",
+      "sha256": "cab4ca32f52743634926ad954cd0067a155f1759b45487a8cc736cd274e8e5e4",
+      "bytes": 170232
+    },
+    {
+      "source": "qa4-04-compact-environment/report-145.png",
+      "sha256": "c9a00830b8254b8146e397e2347504ca650d98d4a33edb397b13144a04907c6b",
+      "bytes": 173450
+    },
+    {
+      "source": "qa4-04-compact-environment/report-146.png",
+      "sha256": "ffde3816b8445567604b57372db7476bafafcf334060657fad53e1caa78f1cd5",
+      "bytes": 170982
+    },
+    {
+      "source": "qa4-04-compact-environment/report-147.png",
+      "sha256": "6c0eb284e037eedae59a0a164b528b2dce4e7e584e74746296f6c1266a2ca6ab",
+      "bytes": 172848
+    },
+    {
+      "source": "qa4-04-compact-environment/report-148.png",
+      "sha256": "01a53a2951f6d72716d2f3db50f3efeba3ab0c2ac4b3bff57c05fa602bafe471",
+      "bytes": 173689
+    },
+    {
+      "source": "qa4-04-compact-environment/report-149.png",
+      "sha256": "6f2eeb30af82511d6e5ff59dbc41c6f08c8466e5caa743cc59c4de3de03ed6b9",
+      "bytes": 172285
+    },
+    {
+      "source": "qa4-04-compact-environment/report-150.png",
+      "sha256": "84222b9e88ef451bc29eb2eb8ddea0b6a74711fb04064a8b93fb3db837e0eca0",
+      "bytes": 170758
+    },
+    {
+      "source": "qa4-04-compact-environment/report-151.png",
+      "sha256": "b644534bd94b794250f00ad4f1435dd47dc17ff6630348e280f3f019877223ef",
+      "bytes": 175594
+    },
+    {
+      "source": "qa4-04-compact-environment/report-152.png",
+      "sha256": "8db62fa042cf7fb83f89902db30e64200bcc741bf03240ee0b694ae62bae6dac",
+      "bytes": 176628
+    },
+    {
+      "source": "qa4-04-compact-environment/report-153.png",
+      "sha256": "76674d018c5efee230fba1fb60b1e7d283c10340634b5e4be7f6e7056f030b15",
+      "bytes": 173479
+    },
+    {
+      "source": "qa4-04-compact-environment/report-154.png",
+      "sha256": "692c41da3983921bc1b91f3dfff1bb5ba02194b6099886c7dd1aeaa7ad3ac77a",
+      "bytes": 179101
+    },
+    {
+      "source": "qa4-04-compact-environment/report-155.png",
+      "sha256": "7c24486e1ee52b3ca5c6145f2f68b34c30eb1582e34c93c4fb90d63548becc14",
+      "bytes": 178632
+    },
+    {
+      "source": "qa4-04-compact-environment/report-156.png",
+      "sha256": "2dd00beff91646a8ae974ba8396defc0b386e95c1e76d4a07ca13778a760543c",
+      "bytes": 174466
+    },
+    {
+      "source": "qa4-04-compact-environment/report-157.png",
+      "sha256": "bf0062dedf66fe927f1c0cc317a6205966024694e3ba0446b013d76938c4ae19",
+      "bytes": 174145
+    },
+    {
+      "source": "qa4-04-compact-environment/report-158.png",
+      "sha256": "c90ca5b945d015adf030f99282e59793974a2c3d0233257484c6a9877b8a8677",
+      "bytes": 172854
+    },
+    {
+      "source": "qa4-04-compact-environment/report-159.png",
+      "sha256": "3829a16778fd91102d4c1da39be5584b45094d452fc2d94da836238da84c98da",
+      "bytes": 170948
+    },
+    {
+      "source": "qa4-04-compact-environment/report-160.png",
+      "sha256": "e01785044eb56113854ed09041a80763abfbad1738fd42a76d1e740b8ae01cc7",
+      "bytes": 176313
+    },
+    {
+      "source": "qa4-04-compact-environment/report-161.png",
+      "sha256": "508a46ba1edb9fc8aa49f5bab5ea7788fdecb045574545161af2ec74024add84",
+      "bytes": 171359
+    },
+    {
+      "source": "qa4-04-compact-environment/report-162.png",
+      "sha256": "963b27288efa156559b21a94f5817b7b343d6f90abd5e8fb3a79ed414c18411e",
+      "bytes": 179120
+    },
+    {
+      "source": "qa4-04-compact-environment/report-163.png",
+      "sha256": "06a85d82a9ea41a12a5b8e3237a26f23fa1bbef79ab8a779f877085ba14cf441",
+      "bytes": 182778
+    },
+    {
+      "source": "qa4-04-compact-environment/report-164.png",
+      "sha256": "4b1929f32cb9271471bcde8f3c06df94851cd4c0797f92d08864a38e969be9f3",
+      "bytes": 177387
+    },
+    {
+      "source": "qa4-04-compact-environment/report-165.png",
+      "sha256": "a82516d5c5d22bf023bd6facb9c96e6a598914affd64a1df3abd9fd383129b63",
+      "bytes": 168663
+    },
+    {
+      "source": "qa4-04-compact-environment/report-166.png",
+      "sha256": "810906b01623547833ec463a82d1a6b4866bd1cee8bcdc8f4c8e913aefdbd231",
+      "bytes": 177270
+    },
+    {
+      "source": "qa4-04-compact-environment/report-167.png",
+      "sha256": "d0f79fce5b59542dfadbd9c470bd49441de6f7742e62481c971d77d819a83f70",
+      "bytes": 179325
+    },
+    {
+      "source": "qa4-04-compact-environment/report-168.png",
+      "sha256": "fa96c9abd42f2fffdf3d5b3d03c0f2c02590fcec9b59f46f69f2b8d0c43a1b5e",
+      "bytes": 179620
+    },
+    {
+      "source": "qa4-04-compact-environment/report-169.png",
+      "sha256": "e4c6f824306c4f3b88c735cb8953c117273ee48dd6fb7618ef2b6ddbee80b745",
+      "bytes": 184289
+    },
+    {
+      "source": "qa4-04-compact-environment/report-170.png",
+      "sha256": "4cf08e1153c98ceb987d22c68039881d2e60145c99b7dcaa2eb3aad44ac2f038",
+      "bytes": 187910
+    },
+    {
+      "source": "qa4-04-compact-environment/report-171.png",
+      "sha256": "2335c63364b6c526abe7b906eee71ab01f0e1856daf73503070923e77815280a",
+      "bytes": 183138
+    },
+    {
+      "source": "qa4-04-compact-environment/report-172.png",
+      "sha256": "a5d7e0dabc0347cfe1a4f78d44a81c0e5cfd5edc2d6cc79f854a73f2925fb685",
+      "bytes": 186445
+    },
+    {
+      "source": "qa4-04-compact-environment/report-173.png",
+      "sha256": "1773bea35eb18631e854c5f8fc9fcd8e7665b6d54f2010728fd38814adafb0ae",
+      "bytes": 182489
+    },
+    {
+      "source": "qa4-04-compact-environment/report-174.png",
+      "sha256": "55e09256729b57a85a519d4f39e2d5869de3c10768da13721b699a22ddc8cc8c",
+      "bytes": 188880
+    },
+    {
+      "source": "qa4-04-compact-environment/report-175.png",
+      "sha256": "3ad0c0898e54f835b208a6b3384fc011bb8c66bcdedfe853511ed23ad7fe5cd3",
+      "bytes": 173031
+    },
+    {
+      "source": "qa4-04-compact-environment/report-176.png",
+      "sha256": "2994e1c19f8709a27dc3362e4c197a294a098b802943ceefe0e5146b6be12e9e",
+      "bytes": 173991
+    },
+    {
+      "source": "qa4-04-compact-environment/report-177.png",
+      "sha256": "e843152df2e69a43c6ac1b56fa6cae56ef7d89d3bfcbc8616feaec3891e6045b",
+      "bytes": 177085
+    },
+    {
+      "source": "qa4-04-compact-environment/report-178.png",
+      "sha256": "627061a43307d475f0d9ea64c985f6e264f3b5ee923aefbdd35925399363d2c3",
+      "bytes": 173298
+    },
+    {
+      "source": "qa4-04-compact-environment/report-179.png",
+      "sha256": "99bc2686d0a9e029f0344081c14dc59b1852aaea85968f76afa280c7701f4777",
+      "bytes": 178700
+    },
+    {
+      "source": "qa4-04-compact-environment/report-180.png",
+      "sha256": "5a43a8db38f02fdc1cf2764f40ca35835b5cf9e62942c942e95da242b072958a",
+      "bytes": 176633
+    },
+    {
+      "source": "qa4-04-compact-environment/report-181.png",
+      "sha256": "60f25cfeb9444206339eb585c1e6d3dd7f9586cc72ba8c5352a76deedb505e67",
+      "bytes": 177063
+    },
+    {
+      "source": "qa4-04-compact-environment/report-182.png",
+      "sha256": "75e56f4f1aa52ad78c122e39201a6878a4a08e8a5d656b9778086b54fa7e8bb1",
+      "bytes": 181970
+    },
+    {
+      "source": "qa4-04-compact-environment/report-183.png",
+      "sha256": "18da48f1975d9b89a686578d9bb5f89c7c73f6216d0ab7db7575b17c67f8e9fc",
+      "bytes": 175046
+    },
+    {
+      "source": "qa4-04-compact-environment/report-184.png",
+      "sha256": "7efcb2c81ef07a0f2828c24f937542321c379a8d57f8b20efa749345647cd81a",
+      "bytes": 172701
+    },
+    {
+      "source": "qa4-04-compact-environment/report-185.png",
+      "sha256": "6feb14ace224e8b0fbf5fc8bd2f6d16fcc01864129c40b6cca4a4f4fc6cb1e98",
+      "bytes": 169188
+    },
+    {
+      "source": "qa4-04-compact-environment/report-186.png",
+      "sha256": "1de46ec1284ae0d129c4a0b0a5512a585eb195c041f41ed4fb2b361810eec4f7",
+      "bytes": 170229
+    },
+    {
+      "source": "qa4-04-compact-environment/report-187.png",
+      "sha256": "8d2bf9d996482dbddc9af2145be6fd86832b3170fcc346ee61c6e4d0de2e50ba",
+      "bytes": 169323
+    },
+    {
+      "source": "qa4-04-compact-environment/report-188.png",
+      "sha256": "1b5e2b2e56ba821ee937d4ef0894c1ff2a5f18c382cd82f2a706a9bb0db1979c",
+      "bytes": 169481
+    },
+    {
+      "source": "qa4-04-compact-environment/report-189.png",
+      "sha256": "5db4839197bf4da889715707a3ae907d9a1ac44eac0399436473fb0d6db3130a",
+      "bytes": 165077
+    },
+    {
+      "source": "qa4-04-compact-environment/report-190.png",
+      "sha256": "8e0106fdad3cf4ef5a44ce358dd42351722597758c0e9d19a4c461da51fa2301",
+      "bytes": 168864
+    },
+    {
+      "source": "qa4-04-compact-environment/report-191.png",
+      "sha256": "f856ad6ca6a0153658eda0b1350159be9c3761d3246e39714120a15f4311f4fd",
+      "bytes": 174008
+    },
+    {
+      "source": "qa4-04-compact-environment/report-192.png",
+      "sha256": "3e23a7722675d6c81350db5e974489ca7a58fb000be3c6aa18c16d9994a24028",
+      "bytes": 166874
+    },
+    {
+      "source": "qa4-04-compact-environment/report-193.png",
+      "sha256": "06026827e35c1505d01cc65de90c16581af634c36b20e1d6ac7bcaefdd78b509",
+      "bytes": 165957
+    },
+    {
+      "source": "qa4-04-compact-environment/report-194.png",
+      "sha256": "cc6509d3486b8088595756f866e406fbdaa8a7c671c560957f2ef1656b298ca1",
+      "bytes": 170574
+    },
+    {
+      "source": "qa4-04-compact-environment/report-195.png",
+      "sha256": "ee07dc92a280ccb02cdb7f3d8d51dfc7b640411b55cea367212d7b71679ecbc1",
+      "bytes": 171763
+    },
+    {
+      "source": "qa4-04-compact-environment/report-196.png",
+      "sha256": "cfd6ba0121fda91feda84690bd912c721e5dc6449e28f6c7ce1f3833678bf97e",
+      "bytes": 174050
+    },
+    {
+      "source": "qa4-04-compact-environment/report-197.png",
+      "sha256": "815d13d47c0cc5ded274526cac7249fd7011348aeee9ca9a180d316ae55f3d63",
+      "bytes": 177128
+    },
+    {
+      "source": "qa4-04-compact-environment/report-198.png",
+      "sha256": "7ca2131740f1d2bb8c90a6cdd0c1ed25cd77442077f5ec9f8f45e22308fa88b9",
+      "bytes": 172206
+    },
+    {
+      "source": "qa4-04-compact-environment/report-199.png",
+      "sha256": "cfbb5d3abd1274110d6344422fbb78860ad614f9443732cf08741efffb40c9b7",
+      "bytes": 171668
+    },
+    {
+      "source": "qa4-04-compact-environment/report-200.png",
+      "sha256": "3f7c679f26720e58bbd78d2a1574613d9fa68ea4c56771e6b5a1070dec160de2",
+      "bytes": 170505
+    },
+    {
+      "source": "qa4-04-compact-environment/report-201.png",
+      "sha256": "0555873c410b4289f4c91bffbc1415341df1b962d488fe41447aa97dd5a64a3e",
+      "bytes": 172635
+    },
+    {
+      "source": "qa4-04-compact-environment/report-202.png",
+      "sha256": "bcf43e9dc2579a37f28157e24dd8f19937655a4bd030ece6affeec8a31f85008",
+      "bytes": 166232
+    },
+    {
+      "source": "qa4-04-compact-environment/report-203.png",
+      "sha256": "5ca8d8b91c34b9a078e155c8b68e9d3180e82291b81b36cae3f688b1b0da3228",
+      "bytes": 165733
+    },
+    {
+      "source": "qa4-04-compact-environment/report-204.png",
+      "sha256": "39a25197622262f1b020fc47f2046b524e48e4a5525df4e7157a87ab91e036fa",
+      "bytes": 169273
+    },
+    {
+      "source": "qa4-04-compact-environment/report-205.png",
+      "sha256": "48426466281c13e8d925141349a22bc3b7c41587879e5a7469b50ec7655ac632",
+      "bytes": 171899
+    },
+    {
+      "source": "qa4-04-compact-environment/report-206.png",
+      "sha256": "626b2ce382ca9aefb06f2160b90a076233b2c83c9af8e3c088e17062aa71c0b9",
+      "bytes": 174971
+    },
+    {
+      "source": "qa4-04-compact-environment/report-207.png",
+      "sha256": "759eab40d7a37114c004919ee96a8e1827a0d6b6b31d49d7494b8c2cd07ac3cf",
+      "bytes": 176046
+    },
+    {
+      "source": "qa4-04-compact-environment/report-208.png",
+      "sha256": "c6521b6afbf79c08d7db69014a88eeff9c7b8b6d3a53735c6062dd7c29572fcf",
+      "bytes": 168785
+    },
+    {
+      "source": "qa4-04-compact-environment/report-209.png",
+      "sha256": "1131fae6aaf23f028de8aa4befec012e189b420c4314b5fa388e930016901eea",
+      "bytes": 176733
+    },
+    {
+      "source": "qa4-04-compact-environment/report-210.png",
+      "sha256": "7f4c242a53c39fb78a843f215abe83230665c0a036c68449b039a3318688184d",
+      "bytes": 192641
+    },
+    {
+      "source": "qa4-04-compact-environment/report-211.png",
+      "sha256": "fc2dfe1980bbcf27016dc5c36600d4990c0647f283946f582df3617adfceb306",
+      "bytes": 183087
+    },
+    {
+      "source": "qa4-04-compact-environment/report-212.png",
+      "sha256": "c8d7de5d11a7702a3f0d2746c204a407a8ed736b9e921ced024293a4f5f96e2e",
+      "bytes": 177557
+    },
+    {
+      "source": "qa4-04-compact-environment/report-213.png",
+      "sha256": "f8e88895a2641bcef963c861d510fd7d54cff81a17f7e1e0e04dc8158fbdf5e3",
+      "bytes": 177135
+    },
+    {
+      "source": "qa4-04-compact-environment/report-214.png",
+      "sha256": "c0c56ecc321a0f0cbbbf0edc6876eb290b9c57359c8f41df07e38d058c3f9f12",
+      "bytes": 173850
+    },
+    {
+      "source": "qa4-04-compact-environment/report-215.png",
+      "sha256": "79c8cf5a105c84fb548cdf926a684475defe5516a7ed0c226de4cefcd03e1a43",
+      "bytes": 173306
+    },
+    {
+      "source": "qa4-04-compact-environment/report-216.png",
+      "sha256": "4454f2499cf3a216f3ca90cb55c58818dd91c2fd9ed41508af32acd1f71f2443",
+      "bytes": 173365
+    },
+    {
+      "source": "qa4-04-compact-environment/report-217.png",
+      "sha256": "34220ac6b9db07c05bc088ec197fa5e83ac5a94c6a664fc82c369bee6ae9efc3",
+      "bytes": 172023
+    },
+    {
+      "source": "qa4-04-compact-environment/report-218.png",
+      "sha256": "2b0c61fec9212e276f9a2fc25cfda947eb0c88bb1b7b5755441a7b2fdeec8a9d",
+      "bytes": 166994
+    },
+    {
+      "source": "qa4-04-compact-environment/report-219.png",
+      "sha256": "f4bca640b0ccb5bb0c5ef5030dc4d61827c6f45496c4269b1974c81d42a3f8ee",
+      "bytes": 171962
+    },
+    {
+      "source": "qa4-04-compact-environment/report-220.png",
+      "sha256": "57b7363f6a475e940c6420f01e4eace1f94934487daedf50fe58069d442cee23",
+      "bytes": 174297
+    },
+    {
+      "source": "qa4-04-compact-environment/report-221.png",
+      "sha256": "431d25d90c306be554e4d1490ea1a049d2e21a150a2438dccab2636eb9e431d7",
+      "bytes": 175285
+    },
+    {
+      "source": "qa4-04-compact-environment/report-222.png",
+      "sha256": "e33088a42d8661b10480702c02d2c8508a75a309f775df89175c258fa6c80a93",
+      "bytes": 171723
+    },
+    {
+      "source": "qa4-04-compact-environment/report-223.png",
+      "sha256": "74d86fff768ecc3e31bffe50e2caf2093780650ff92c4f4bfccd07c6b56c35b2",
+      "bytes": 169561
+    },
+    {
+      "source": "qa4-04-compact-environment/report-224.png",
+      "sha256": "7a7b98809d1f1a9cfa0ce64f8aee51bd2fac0b439f1da165c4c02d18b74d55d5",
+      "bytes": 168720
+    },
+    {
+      "source": "qa4-04-compact-environment/report-225.png",
+      "sha256": "863103c6b44aa12e57b0035f34b3c854c937c46c63aa9b8942e80b616eab4a6d",
+      "bytes": 172730
+    },
+    {
+      "source": "qa4-04-compact-environment/report-226.png",
+      "sha256": "9258add1977d764bb7d6c30e64c358b9d5ba1aac01adc6d6ace5e21a058ba84d",
+      "bytes": 169776
+    },
+    {
+      "source": "qa4-04-compact-environment/report-227.png",
+      "sha256": "3e8b61c8b48cf53a093ac17b4586666879073b8a525220a3ba0c8faa68e8cce1",
+      "bytes": 172052
+    },
+    {
+      "source": "qa4-04-compact-environment/report-228.png",
+      "sha256": "cd900ded4a477d4d69440dc97aca5e3d0dd9884f4d32b42e3551c59cb28e9451",
+      "bytes": 171732
+    },
+    {
+      "source": "qa4-04-compact-environment/report-229.png",
+      "sha256": "d09631c539a6862bb9fff95b4f8bc17193c647133dff7f2ad2b7eb18073582b5",
+      "bytes": 164912
+    },
+    {
+      "source": "qa4-04-compact-environment/report-230.png",
+      "sha256": "6f0c7034290821ebd7a1f2505b6ed08d96b3100bc6b6f639daf2dcb1bd5dc030",
+      "bytes": 162873
+    },
+    {
+      "source": "qa4-04-compact-environment/report-231.png",
+      "sha256": "14555eb833dc9463a33ddc7d1fd8cb3d5b46fe7f75eaf4b03561f96fcf7378de",
+      "bytes": 164914
+    },
+    {
+      "source": "qa4-04-compact-environment/report-232.png",
+      "sha256": "576aec18b13dd70930109e66b1ebeb7591d8963fdd164e5246252296fb96a593",
+      "bytes": 164496
+    },
+    {
+      "source": "qa4-04-compact-environment/report-233.png",
+      "sha256": "1ae5317e964a663c077c34eb5760c3ef39b7e9116b227d1bca1f400a9e190999",
+      "bytes": 166475
+    },
+    {
+      "source": "qa4-04-compact-environment/report-234.png",
+      "sha256": "83b2d52566b8b683be8de7ba49bb93d8b41787fff5a6bbb1eb1c249246a1eb5e",
+      "bytes": 160946
+    },
+    {
+      "source": "qa4-04-compact-environment/report-235.png",
+      "sha256": "d6b0d03a361a99d6fc9f8005578144536f69182793f401fd521f8693dab773ca",
+      "bytes": 168517
+    },
+    {
+      "source": "qa4-04-compact-environment/report-236.png",
+      "sha256": "5edd884f51f07f08ab2e2503ad8eff5e5dc809e88cc191f55fb3d0f0bff7f6a7",
+      "bytes": 162898
+    },
+    {
+      "source": "qa4-04-compact-environment/report-237.png",
+      "sha256": "6616d37b7362eb2a9b32ac4644602c833481c2a6038a0ba1039bccf0928937ff",
+      "bytes": 168743
+    },
+    {
+      "source": "qa4-04-compact-environment/report-238.png",
+      "sha256": "30f6d4adbf8ac3af2c4c65f4305427f00ac962b86ec022f2daf80bd8f3c5881c",
+      "bytes": 182125
+    },
+    {
+      "source": "qa4-04-compact-environment/report-239.png",
+      "sha256": "17ea52d2f50044632e378a4c2f2e74e32c8a2a2a29b3bdeecd0bd4f6c8df86bd",
+      "bytes": 177502
+    },
+    {
+      "source": "qa4-04-compact-environment/report-240.png",
+      "sha256": "1adbc1642cb279a02307114f8bab84e485c8eba61792062621c9b5eb344dcb9d",
+      "bytes": 164084
+    },
+    {
+      "source": "qa4-04-compact-environment/report-241.png",
+      "sha256": "8b45c38526b0143335230979ac4476c6268da16fdc8be356fc58f17aef1b3d1d",
+      "bytes": 167901
+    },
+    {
+      "source": "qa4-04-compact-environment/report-242.png",
+      "sha256": "29d8dd4b84cff65845ee1731d6fa08bbeae2e70cc32cebefb2dde4413ebc3b06",
+      "bytes": 181504
+    },
+    {
+      "source": "qa4-04-compact-environment/report-243.png",
+      "sha256": "15c1761e56e05f347b914acc0e214c4866308f246d0cddaaabedcb493a3116a5",
+      "bytes": 171430
+    },
+    {
+      "source": "qa4-04-compact-environment/report-244.png",
+      "sha256": "dcd9309958fff09fe247185caeda0e2a823e780518a2c9216b855a79092b3abb",
+      "bytes": 171792
+    },
+    {
+      "source": "qa4-04-compact-environment/report-245.png",
+      "sha256": "bb754128645cfdbc000ab21f4b140b9db95507bd27269b96e2e5e4a50b538aeb",
+      "bytes": 167067
+    },
+    {
+      "source": "qa4-04-compact-environment/report-246.png",
+      "sha256": "adc47ac88f504a04b44368bc30102403dfb7a1aefce0d3c0159bff52310e843e",
+      "bytes": 165933
+    },
+    {
+      "source": "qa4-04-compact-environment/report-247.png",
+      "sha256": "f415d33752ef4242ab5718b1037e4560653171ee5c26a0ede38281aa545547b6",
+      "bytes": 167584
+    },
+    {
+      "source": "qa4-04-compact-environment/report-248.png",
+      "sha256": "42d093ffc218b6a47df47dc316389ef3a5a1b6060686d5d00cb117007be1fc8e",
+      "bytes": 169278
+    },
+    {
+      "source": "qa4-04-compact-environment/report-249.png",
+      "sha256": "8cb896aaef620b1410e4f947455973c4420de0f5e41ea31bbf53443ce1e4d65f",
+      "bytes": 180427
+    },
+    {
+      "source": "qa4-04-compact-environment/report-250.png",
+      "sha256": "ceb58713982c5c21e08bf7ecbb0e16d17f124e6b159d55fa145456404f86dcb9",
+      "bytes": 175227
+    },
+    {
+      "source": "qa4-04-compact-environment/report-251.png",
+      "sha256": "51d161cc43ffc09ac6f19ecd8ea991d322f24bb3f13589071f386a9266e1fd61",
+      "bytes": 172717
+    },
+    {
+      "source": "qa4-04-compact-environment/report-252.png",
+      "sha256": "84316dd962f7014f4bd983cd5d2ae7a0ef9320761daf0af9b600385dd08d1bce",
+      "bytes": 170114
+    },
+    {
+      "source": "qa4-04-compact-environment/report-253.png",
+      "sha256": "53e16d3a77603dc14fdec5aa536c91fa8c05c389a98703ab23ba5bc3a68834b8",
+      "bytes": 182594
+    },
+    {
+      "source": "qa4-04-compact-environment/report-254.png",
+      "sha256": "610dbf30f90ef5007dcd53de53bf51f102ae2e14aef5f4d683edee7d335949a5",
+      "bytes": 184920
+    },
+    {
+      "source": "qa4-04-compact-environment/report-255.png",
+      "sha256": "830679a47ff892c86db4af80c860cb663f14c314d85c50a70a9dcea7d2a174e3",
+      "bytes": 173277
+    },
+    {
+      "source": "qa4-04-compact-environment/report-256.png",
+      "sha256": "4d80778b0a39e4e638d2277049377f801abe88f8b779594731121a86a6a5fc37",
+      "bytes": 167178
+    },
+    {
+      "source": "qa4-04-compact-environment/report-257.png",
+      "sha256": "288e54741a7165a6c19c5864e44061e8b96530300d24b5807679772364dbc7a5",
+      "bytes": 174011
+    },
+    {
+      "source": "qa4-04-compact-environment/report-258.png",
+      "sha256": "5058de0115cb35769c40affca9259f93a45e1b9d2ce4f1c39905225c9a5fc69c",
+      "bytes": 171403
+    },
+    {
+      "source": "qa4-04-compact-environment/report-259.png",
+      "sha256": "4dc63637e6b377eff87c792569e04a7cccee6943549d1dc3ff3e85a40b4f88b3",
+      "bytes": 176622
+    },
+    {
+      "source": "qa4-04-compact-environment/report-260.png",
+      "sha256": "81091524c8b6ee9cf2439362fb254714085e99c090e52d84b5ddd185581e66f5",
+      "bytes": 179511
+    },
+    {
+      "source": "qa4-04-compact-environment/report-261.png",
+      "sha256": "73b4ea50f27d93aa1e7d5769b4d548d9d5233bc767f50dc51a63d1f78f63906b",
+      "bytes": 178323
+    },
+    {
+      "source": "qa4-04-compact-environment/report-262.png",
+      "sha256": "30255ef967dcecd27e59492907a9bd5160e4c4b7d7494fd5c24f28cb6dcb5b15",
+      "bytes": 176790
+    },
+    {
+      "source": "qa4-04-compact-environment/report-263.png",
+      "sha256": "33218540043f26b4d62239e8d7eb696cf3cfa4b07cb6cc7ea13eabe1b7923cbe",
+      "bytes": 177363
+    },
+    {
+      "source": "qa4-04-compact-environment/report-264.png",
+      "sha256": "33076f855828d0181476d3d0dad567f68e14463ce8d52db8add833383f94b4c9",
+      "bytes": 176020
+    },
+    {
+      "source": "qa4-04-compact-environment/report-265.png",
+      "sha256": "4e9afe2ab56a037ddcf054a31585bfbe974bef68d5b41d66fb16d7dc5ad3628a",
+      "bytes": 176979
+    },
+    {
+      "source": "qa4-04-compact-environment/report-266.png",
+      "sha256": "584225b2760eec8592f4fe7efac09fb229de17ec767545cd93cf52d25174df7e",
+      "bytes": 173888
+    },
+    {
+      "source": "qa4-04-compact-environment/report-267.png",
+      "sha256": "96e7de40efabd6596afa0016bc30f34654e7c7e768a0335b75134d55c933338f",
+      "bytes": 174650
+    },
+    {
+      "source": "qa4-04-compact-environment/report-268.png",
+      "sha256": "824947ea61a5c1e23042f7c53605f03f582705e59db5ca301912ef030ce8c80e",
+      "bytes": 169348
+    },
+    {
+      "source": "qa4-04-compact-environment/report-269.png",
+      "sha256": "7999eed91626e9b50bf7519fd41cfcd640fff0abb4c56c64c1bf7aefb50b4926",
+      "bytes": 167219
+    },
+    {
+      "source": "qa4-04-compact-environment/report-270.png",
+      "sha256": "266cbcadecb3df0938b35b6ba148c5a6704730ada70c252e8ee09dd43fdf9af4",
+      "bytes": 173010
+    },
+    {
+      "source": "qa4-04-compact-environment/report-271.png",
+      "sha256": "70ec9b131a457c0a37e57aa040790084ebbb6dc31c0efb17d59585f5178d3336",
+      "bytes": 168313
+    },
+    {
+      "source": "qa4-04-compact-environment/report-272.png",
+      "sha256": "afac6124282bc293e105c54c2b29a837ee0610c15b6e8f5b5ae504e85939be1e",
+      "bytes": 164101
+    },
+    {
+      "source": "qa4-04-compact-environment/report-273.png",
+      "sha256": "ca26f584def89ac265b6c6f40b79ba04863b395ef8994ff475f68f0c99935f8e",
+      "bytes": 166509
+    },
+    {
+      "source": "qa4-04-compact-environment/report-274.png",
+      "sha256": "9e84241b9a666bbb18e96ac6095bb62ab2071bc4f3ec21c6916dee65c3e742af",
+      "bytes": 167664
+    },
+    {
+      "source": "qa4-04-compact-environment/report-275.png",
+      "sha256": "81f228cf7acf1e26be48a663ab481c361177ff66f3fe0cd7b206b5aa61fa3ed2",
+      "bytes": 167893
+    },
+    {
+      "source": "qa4-04-compact-environment/report-276.png",
+      "sha256": "7a9dedb44f12ac22b13fa3857afd96b75dcb60c883aca2f530a8b8c40d580ea7",
+      "bytes": 168878
+    },
+    {
+      "source": "qa4-04-compact-environment/report-277.png",
+      "sha256": "ab9487028ed66885c67aed0e5959904f8a9f5451062555d2a551f35f74296a7a",
+      "bytes": 167438
+    },
+    {
+      "source": "qa4-04-compact-environment/report-278.png",
+      "sha256": "b4c37cdc43a5302f927ba31dd62b92955ea56891bcdf2d8a9f26fc64b3ae8b24",
+      "bytes": 167872
+    },
+    {
+      "source": "qa4-04-compact-environment/report-279.png",
+      "sha256": "6de811331b61bcfd82223590fcccd4177e20ced79c09f07aa2b1ead1c8ec28cd",
+      "bytes": 162889
+    },
+    {
+      "source": "qa4-04-compact-environment/report-280.png",
+      "sha256": "4aedde000ce339b530008613943e6772e15563b5ee588b39f9eef7db761fbcfa",
+      "bytes": 172284
+    },
+    {
+      "source": "qa4-04-compact-environment/report-281.png",
+      "sha256": "4511c9aefbbeae87f543e79b586ba4776b3ce7a5c30b126fcdf1bd6d7840e05d",
+      "bytes": 163513
+    },
+    {
+      "source": "qa4-04-compact-environment/report-282.png",
+      "sha256": "408372240504edbb0972ca4bd351101c6545dd3a4ffa5caf1ec3897952870bf2",
+      "bytes": 173673
+    },
+    {
+      "source": "qa4-04-compact-environment/report-283.png",
+      "sha256": "c82e473e26836a5d9eb2e7b9fea1470f45be50422a1470f5bda1bdcdc0be9534",
+      "bytes": 169343
+    },
+    {
+      "source": "qa4-04-compact-environment/report-284.png",
+      "sha256": "7589b1e0f408835a071b4bd26d6115cd56c8684353844c71d15d8c54a7e0ef1c",
+      "bytes": 164730
+    },
+    {
+      "source": "qa4-04-compact-environment/report-285.png",
+      "sha256": "7b5166808aee208731a609a55600127aea34367f837cfa71c12e755eb84580b3",
+      "bytes": 172209
+    },
+    {
+      "source": "qa4-04-compact-environment/report-286.png",
+      "sha256": "a5f32ae185a7990644fb7490a4fccfcd2c054112273e1a015143a2d8a7183651",
+      "bytes": 173147
+    },
+    {
+      "source": "qa4-04-compact-environment/report-287.png",
+      "sha256": "7344249fbcbc30fc9f8e4bf594c90f4a289613c1885ee42e919df19c55a7278d",
+      "bytes": 176115
+    },
+    {
+      "source": "qa4-04-compact-environment/report-288.png",
+      "sha256": "07ea87b0766ac414ace9691468849c5af6e504e2e34a292d5964135d4324b04c",
+      "bytes": 192291
+    },
+    {
+      "source": "qa4-04-compact-environment/report-289.png",
+      "sha256": "336621f5cb090e09aec09870d86f460b342fea4efb3d333f23f241a674bbe804",
+      "bytes": 191931
+    },
+    {
+      "source": "qa4-04-compact-environment/report-290.png",
+      "sha256": "c9a2d1c54501d418e8d025af7127232c5716278117dec1e90b159d0ff70afaf1",
+      "bytes": 169103
+    },
+    {
+      "source": "qa4-04-compact-environment/report-291.png",
+      "sha256": "eba8d3926d8c87735d2ce1048816bb2470752c8d5b2e050fe01ef292bfda53bd",
+      "bytes": 181101
+    },
+    {
+      "source": "qa4-04-compact-environment/report-292.png",
+      "sha256": "48e81694b85f5da5d110ddb78f48772029d8df2bf7cb0f980a60bf61a9def519",
+      "bytes": 174737
+    },
+    {
+      "source": "qa4-04-compact-environment/report-293.png",
+      "sha256": "6735869ec7e7a0e9bcdb4bfddf6114ae88f856ecf9db6dd1ff7ab776535bae8e",
+      "bytes": 170285
+    },
+    {
+      "source": "qa4-04-compact-environment/report-294.png",
+      "sha256": "ef6bc59baf32fd8b53f42dbe418ad3133bd59fec061e228b90fcbb0239278da9",
+      "bytes": 165221
+    },
+    {
+      "source": "qa4-04-compact-environment/report-295.png",
+      "sha256": "f91d967495fc73bb89a17be1fc473f8fe56dc0732853251656a97ceef14828b1",
+      "bytes": 165041
+    },
+    {
+      "source": "qa4-04-compact-environment/report-296.png",
+      "sha256": "bf9609761214dc8fa7870f0910c619221424ed4a8bca07019bb5c87759a47918",
+      "bytes": 163592
+    },
+    {
+      "source": "qa4-04-compact-environment/report-297.png",
+      "sha256": "33aa4e0d9c442f2b1b63e269ecd256744ee4c81e38c2403c97b8ef9b7220fe64",
+      "bytes": 172313
+    },
+    {
+      "source": "qa4-04-compact-environment/report-298.png",
+      "sha256": "f72705d608d497f118701792ea0f1b00d6bc78fe6dafbe37852286a482bed254",
+      "bytes": 160478
+    },
+    {
+      "source": "qa4-04-compact-environment/report-299.png",
+      "sha256": "6744c757ca2f3df378dc51c4b3cb1612ff51bb8b730cc324c0cc9342fb848387",
+      "bytes": 160936
+    },
+    {
+      "source": "qa4-04-compact-environment/report-300.png",
+      "sha256": "f7a04f41f5081b8e13985a11e53b3d16f2e02370aad647b611c16b560189a58e",
+      "bytes": 160462
+    },
+    {
+      "source": "qa4-04-compact-environment/report-301.png",
+      "sha256": "4861880947f62af1bb1e2acf6f95db636bcb0f441410897958810c3cf81cf2f1",
+      "bytes": 158642
+    },
+    {
+      "source": "qa4-04-compact-environment/report-302.png",
+      "sha256": "2397aa722a7a06ede5458eaccbe8a495f8b0f0e7d0d40107eed6dd7c654d2de1",
+      "bytes": 157390
+    },
+    {
+      "source": "qa4-04-compact-environment/report-303.png",
+      "sha256": "e9171eca94560e3055e634070e7c954dad26b51b79ae8f64fddd88b8be50b2ba",
+      "bytes": 157812
+    },
+    {
+      "source": "qa4-04-compact-environment/report-304.png",
+      "sha256": "4d968920e9ae5a739c42333b494b2c7bd3fb38a3154cc19a287f30ab7c8f63a7",
+      "bytes": 158919
+    },
+    {
+      "source": "qa4-04-compact-environment/report-305.png",
+      "sha256": "cf52d174760e44cc8669d85d73fd377ff10722a730f953e7b587c7d30e572b0c",
+      "bytes": 156599
+    },
+    {
+      "source": "qa4-04-compact-environment/report-306.png",
+      "sha256": "b65750147807459a8462cc85c17a4ddad846afa550e57f81e9a98f73fcc9f200",
+      "bytes": 162991
+    },
+    {
+      "source": "qa4-04-compact-environment/report-307.png",
+      "sha256": "fa05cd58383b63705db28987f28adecd66e838c0c9fc334837e19296d10c0f49",
+      "bytes": 155481
+    },
+    {
+      "source": "qa4-04-compact-environment/report-308.png",
+      "sha256": "262ecb0baa5d495acb04e032f12afa38dfd0cba22eb7191518847530cb8d8b05",
+      "bytes": 158797
+    },
+    {
+      "source": "qa4-04-compact-environment/report-309.png",
+      "sha256": "593606f853ab8c9826e2ce333bdf7f7d0cc99abe04ca8086ffcee2e20dfd66d5",
+      "bytes": 162854
+    },
+    {
+      "source": "qa4-04-compact-environment/report-310.png",
+      "sha256": "cb4797e0797aab6148694ced4edb4be499de55b1f82bf024357b56cef3546d2d",
+      "bytes": 154734
+    },
+    {
+      "source": "qa4-04-compact-environment/report-311.png",
+      "sha256": "9bb21d01ff52062a962c49d5f0482798629f436b9ffefad29abe2655a0456583",
+      "bytes": 148123
+    },
+    {
+      "source": "qa4-04-compact-environment/report-312.png",
+      "sha256": "7750d7fe02fd3474ddf0003fab9cf74b70fa788c4f7c3b24dad0c9574b8bb0cb",
+      "bytes": 155208
+    },
+    {
+      "source": "qa4-04-compact-environment/report-313.png",
+      "sha256": "97afc3fef489b2c9e842c8f405a61da5de1cb6e681440a6afb89cdb6333d96b2",
+      "bytes": 161447
+    },
+    {
+      "source": "qa4-04-compact-environment/report-314.png",
+      "sha256": "ee8f7f0807fa28e20295ceafcccdd4a271ba0752bac47d804854d06f404a707d",
+      "bytes": 155655
+    },
+    {
+      "source": "qa4-04-compact-environment/report-315.png",
+      "sha256": "684e0c578dec369f6f47d94fbccf906b066678569d3eb4054d9181ddedecd843",
+      "bytes": 158112
+    },
+    {
+      "source": "qa4-04-compact-environment/report-316.png",
+      "sha256": "5be4f9f27cf999a6f793e2b29c849a4217e63edc42dc512293a6a0985dbe9cec",
+      "bytes": 156586
+    },
+    {
+      "source": "qa4-04-compact-environment/report-317.png",
+      "sha256": "382aff6e446fa4d3f483a9a81860e6d58c49981e921593fa17893e2ca8dc5735",
+      "bytes": 176064
+    },
+    {
+      "source": "qa4-04-compact-environment/report-318.png",
+      "sha256": "8e190c7484f8cbf2fe66368de3df24bbc442b13beee42ffc410dea06be4988d4",
+      "bytes": 161778
+    },
+    {
+      "source": "qa4-04-compact-environment/report-319.png",
+      "sha256": "55fc73de1984f8d693d946367c4e35f2e44257a7195d259d7941a68ec2cf0a2b",
+      "bytes": 157743
+    },
+    {
+      "source": "qa4-04-compact-environment/report-320.png",
+      "sha256": "358a009820c5c66acf84964bbcd389954a4d10a7af5e0c783da4106d69a846f4",
+      "bytes": 162373
+    },
+    {
+      "source": "qa4-04-compact-environment/report-321.png",
+      "sha256": "53fa34c1e8d131ac17fbc68353202429545208040a9ad702d2c1f4a0563d55ef",
+      "bytes": 161214
+    },
+    {
+      "source": "qa4-04-compact-environment/report-322.png",
+      "sha256": "56fcf63cce75a13c2fc9b10129c36838929fc84f80005669f6182b53cc7ef757",
+      "bytes": 162785
+    },
+    {
+      "source": "qa4-04-compact-environment/report-323.png",
+      "sha256": "570a8d0c15c37efbb16796a65c4d468bbfc5e3e8e74e45f482ef9fd9a879b422",
+      "bytes": 152021
+    },
+    {
+      "source": "qa4-04-compact-environment/report-324.png",
+      "sha256": "041e283779c6f1af22e649d06967e09102cf952fa768a2b078d07951e2a199c3",
+      "bytes": 156723
+    },
+    {
+      "source": "qa4-04-compact-environment/report-325.png",
+      "sha256": "3c70121cc8f77df67cbf22ca60c9cea990b8862630a3fff296ca7f8a1a334e95",
+      "bytes": 162103
+    },
+    {
+      "source": "qa4-04-compact-environment/report-326.png",
+      "sha256": "6e19d4044b984499a012e40655d090473b48c34e826ca9d7eb411235a452c2df",
+      "bytes": 157889
+    },
+    {
+      "source": "qa4-04-compact-environment/report-327.png",
+      "sha256": "cf972ea2a7aa7a3e2a6c7a6b2e7b2c5f59e4b909474020eb58d6bd11380ad5e0",
+      "bytes": 160877
+    },
+    {
+      "source": "qa4-04-compact-environment/report-328.png",
+      "sha256": "70f66fd8c89cf570d335108d6d66986e3722cf42101a9d8cb887acc62a671641",
+      "bytes": 165464
+    },
+    {
+      "source": "qa4-04-compact-environment/report-329.png",
+      "sha256": "a074c15b1e39f3006daf9a3dacd4a0ed12f645128423dd5d2dd81f33ec16eaf0",
+      "bytes": 156079
+    },
+    {
+      "source": "qa4-04-compact-environment/report-330.png",
+      "sha256": "1f37508312d7249d312607f47b46d9f2afe8b875b7d19e426ae15d4b4ef00bc9",
+      "bytes": 160365
+    },
+    {
+      "source": "qa4-04-compact-environment/report-331.png",
+      "sha256": "0bb6619394be3f8b89966fcba250bc3e5b025e3011cba9510a99662a8d267dc8",
+      "bytes": 166836
+    },
+    {
+      "source": "qa4-04-compact-environment/report-332.png",
+      "sha256": "193ec43c39a3ddf79337c95d506a7870d7d9f2ca3dfee861b9c084b55c489751",
+      "bytes": 176180
+    },
+    {
+      "source": "qa4-04-compact-environment/report-333.png",
+      "sha256": "8eb116dfa5a20ed90077a224e6e3a9b0a7d422780756976ac3fcedf5bcae330f",
+      "bytes": 157461
+    },
+    {
+      "source": "qa4-04-compact-environment/report-334.png",
+      "sha256": "031ba7b286571fc2bab316fd8d3cf22151366f4dfe65f6a7e2cedb4b77fafc7b",
+      "bytes": 157230
+    },
+    {
+      "source": "qa4-04-compact-environment/report-335.png",
+      "sha256": "eefebdda993eb6579811c24eae1447203565048dca8f1a4de5126467e0a2c244",
+      "bytes": 156534
+    },
+    {
+      "source": "qa4-04-compact-environment/report-336.png",
+      "sha256": "a522a350e85ec3ae033584d1938deaa04115cd09b8228636ed36f88856156a75",
+      "bytes": 154714
+    },
+    {
+      "source": "qa4-04-compact-environment/report-337.png",
+      "sha256": "79ba076a670e8c224c69a711e573488b4ac9e3bd9e7b144a63ceab8eec0dd97d",
+      "bytes": 158214
+    },
+    {
+      "source": "qa4-04-compact-environment/report-338.png",
+      "sha256": "19e88bd75557e74780e4dfefa789b58e9b713040fdbad39e087de6462eb09f55",
+      "bytes": 152764
+    },
+    {
+      "source": "qa4-04-compact-environment/report-339.png",
+      "sha256": "14bf2cbbf8e7e6ef6a7915edb5bd943da5a5c6ce1f1795bdd4e1d92dcfdbeaa2",
+      "bytes": 160198
+    },
+    {
+      "source": "qa4-04-compact-environment/report-340.png",
+      "sha256": "3d37b9c33cd8a8e259bf1dfcd992deccc880c5ee4c20a0bb2e71671d8d24e74c",
+      "bytes": 159440
+    },
+    {
+      "source": "qa4-04-compact-environment/report-341.png",
+      "sha256": "b8894058c4f192a4ff3b583e342c11174a5ea7263989d19edeead14a9a7868f4",
+      "bytes": 171009
+    },
+    {
+      "source": "qa4-04-compact-environment/report-342.png",
+      "sha256": "9fbec68241838c2027ed2ad82694a80d9247020daba340703eaf8ea4616a0f35",
+      "bytes": 168465
+    },
+    {
+      "source": "qa4-04-compact-environment/report-343.png",
+      "sha256": "7af9aca328031b2ed3ea680a1cc948347b2262dbde1e7a860dc0ac6af916e042",
+      "bytes": 163187
+    },
+    {
+      "source": "qa4-04-compact-environment/report-344.png",
+      "sha256": "f7fbcf31fb7a183a9a1166029560e3cf50c142562295e7610a52a9898cb26c23",
+      "bytes": 156201
+    },
+    {
+      "source": "qa4-04-compact-environment/report-345.png",
+      "sha256": "e46fa73e1adbbbeaa16b0d79178443fcbe7e879ac01cdf306a8a5b1780fa8478",
+      "bytes": 152871
+    },
+    {
+      "source": "qa4-04-compact-environment/report-346.png",
+      "sha256": "e212ca4f354ca8337ce54f72ad119c44104b6c49af91f7e3eece8582dfe55c00",
+      "bytes": 165653
+    },
+    {
+      "source": "qa4-04-compact-environment/report-347.png",
+      "sha256": "a9fe20fab584eb5a8ac457441225a2d0b9b57666d60a1a46ffda0f037026b5b0",
+      "bytes": 160807
+    },
+    {
+      "source": "qa4-04-compact-environment/report-348.png",
+      "sha256": "999ca63a18029cf3e7d0f5ca88c3761f0f0ba21604ed825014fb523a2dc05c75",
+      "bytes": 172164
+    },
+    {
+      "source": "qa4-04-compact-environment/report-349.png",
+      "sha256": "77132310a9657d076a9cf98b79e5ee99eb26386bfaa9e0ad4b9b9b42e6136bb7",
+      "bytes": 162184
+    },
+    {
+      "source": "qa4-04-compact-environment/report-350.png",
+      "sha256": "8b0522bc6373e11a2e8c9807adac3db6b7bb4a18b2e16b34f63dc9fbd645481d",
+      "bytes": 161934
+    },
+    {
+      "source": "qa4-04-compact-environment/report-351.png",
+      "sha256": "a1e5bcb02fd9508c2e6eeda11242041b129928d0632a906784b184980043aefa",
+      "bytes": 156634
+    },
+    {
+      "source": "qa4-04-compact-environment/report-352.png",
+      "sha256": "6d76f74512bcd708004bcd420515fbc7019bc6f4316715b162a408a3c4a3e08f",
+      "bytes": 160899
+    },
+    {
+      "source": "qa4-04-compact-environment/report-353.png",
+      "sha256": "3f5253151ef55284900cbfb73f2c66d6985cd1723ae059feb3d3642fd38229c3",
+      "bytes": 165036
+    },
+    {
+      "source": "qa4-04-compact-environment/report-354.png",
+      "sha256": "3feef4a0a1f46e595aebdc104b12ffb4e9674c987b06d8998e45cbfe2c8f2f2b",
+      "bytes": 163576
+    },
+    {
+      "source": "qa4-04-compact-environment/report-355.png",
+      "sha256": "ac45ed3f0857634116a973f10560a68bb727b79ad0c51eac182613e0a5fdf628",
+      "bytes": 165422
+    },
+    {
+      "source": "qa4-04-compact-environment/report-356.png",
+      "sha256": "d73bb55465e648f03688ae924f04e77af7754e251d0fed083c892054cc93b4c1",
+      "bytes": 166583
+    },
+    {
+      "source": "qa4-04-compact-environment/report-357.png",
+      "sha256": "a5c95a60091d577b05cfa09d6278ef6d464e9bdd09aded3c5ac5fe9f01db4356",
+      "bytes": 165795
+    },
+    {
+      "source": "qa4-04-compact-environment/report-358.png",
+      "sha256": "47fec2e4cb0ee959c150ba9111425f715dcdf6a025f70bc67f202ba122e8231e",
+      "bytes": 169058
+    },
+    {
+      "source": "qa4-04-compact-environment/report-359.png",
+      "sha256": "78eebe1906e1ecfa3502e212b82a5d5551a26673560928fb92775cf4ac456ee4",
+      "bytes": 183527
+    },
+    {
+      "source": "qa4-04-compact-environment/report-360.png",
+      "sha256": "a983cae05fa70083db04ba54d77c8fbf8b120df763ffc367c3d82cfdc37c5e28",
+      "bytes": 166391
+    },
+    {
+      "source": "qa4-04-compact-environment/report-361.png",
+      "sha256": "e9b9adcd0d08d2c8d083753066081d73e8137dfcbb9f00d8629a8917867b116e",
+      "bytes": 175595
+    },
+    {
+      "source": "qa4-04-compact-environment/report-362.png",
+      "sha256": "bfb50ae344a3b07a955f8f84c04f0e52e853081c7e4ad820f7e38966439b7101",
+      "bytes": 174607
+    },
+    {
+      "source": "qa4-04-compact-environment/report-363.png",
+      "sha256": "0a95b065ce0516e3bf2b9134070e3a21267172acefdabba5adabe2f38c892b3e",
+      "bytes": 172400
+    },
+    {
+      "source": "qa4-04-compact-environment/report-364.png",
+      "sha256": "8c0042a9155bccb899f167c277396aacf15a7c508f6f7509f21e2871006b481e",
+      "bytes": 174127
+    },
+    {
+      "source": "qa4-04-compact-environment/report-365.png",
+      "sha256": "8419795e8bba334c1b2d7397b9821d68b30e1df4c8e6de63c87bcf130beb3371",
+      "bytes": 172205
+    },
+    {
+      "source": "qa4-04-compact-environment/report-366.png",
+      "sha256": "7323ea090b8e0a51bbc34e26c7080a3d4573510d260d451d189e9a87648aa668",
+      "bytes": 165046
+    },
+    {
+      "source": "qa4-04-compact-environment/report-367.png",
+      "sha256": "a454c35b363b4b84a77fa6b963bffaaa122e67d89b9051937267d331f5166236",
+      "bytes": 166404
+    },
+    {
+      "source": "qa4-04-compact-environment/report-368.png",
+      "sha256": "34b52653cfd199960c360b9e8ab62bc2aa0c6de9514222acb389998f5c604326",
+      "bytes": 180131
+    },
+    {
+      "source": "qa4-04-compact-environment/report-369.png",
+      "sha256": "35f43f7a11f807afb70f681e47d6cd717b6e50dc3da4d3aecd313d13fdca0877",
+      "bytes": 155907
+    },
+    {
+      "source": "qa4-04-compact-environment/report-370.png",
+      "sha256": "b75949e941432aa40bf4f6096cfda90aa3b0541d354efdd57d70f826582a7dd6",
+      "bytes": 155427
+    },
+    {
+      "source": "qa4-04-compact-environment/report-371.png",
+      "sha256": "d09140bc6a791697e54b73629fb13e5016fca72554f14292f1424ef68a4e7320",
+      "bytes": 161070
+    },
+    {
+      "source": "qa4-04-compact-environment/report-372.png",
+      "sha256": "c65c90d64747932692f1b51a5761fb440a8901ebe23790a95d8a70dcd29fbb50",
+      "bytes": 157901
+    },
+    {
+      "source": "qa4-04-compact-environment/report-373.png",
+      "sha256": "5bc3f1fa86fb19072cdf67ebc8efb68415c2d83ef770f7bdc841b00cb3400af8",
+      "bytes": 170170
+    },
+    {
+      "source": "qa4-04-compact-environment/report-374.png",
+      "sha256": "a1fdcf8e4d558af928ff6c2bacc3789d941901c9334a116cf0e83760e6f8abec",
+      "bytes": 164155
+    },
+    {
+      "source": "qa4-04-compact-environment/report-375.png",
+      "sha256": "fe41860e09285b42a93418ac488c007a2aa1e7b2f65c9eb4202cdcbc9d6597f5",
+      "bytes": 163925
+    },
+    {
+      "source": "qa4-04-compact-environment/report-376.png",
+      "sha256": "7dee1303db1c509475fc7b7f8da71ac3c798efc72674ee1252e7df6f8241bae8",
+      "bytes": 167139
+    },
+    {
+      "source": "qa4-04-compact-environment/report-377.png",
+      "sha256": "2c8ecb3ab51dbcb079b07b4de78311d9519f187360a5681a183742c7161c9721",
+      "bytes": 174264
+    },
+    {
+      "source": "qa4-04-compact-environment/report-378.png",
+      "sha256": "3b0f23194dddc3a964ad0bdfa1e4015fe3cedb09f41007794a95251440ea9aa4",
+      "bytes": 157612
+    },
+    {
+      "source": "qa4-04-compact-environment/report-379.png",
+      "sha256": "6c7efd58582e082e441a28e4e803efd8d619fe37bad4518b7f4c1e69f6422c05",
+      "bytes": 159783
+    },
+    {
+      "source": "qa4-04-compact-environment/report-380.png",
+      "sha256": "a9537ec817c0897b8f59f535006bd6cfbb17a900d40e481ed30b54c58419ca3f",
+      "bytes": 160922
+    },
+    {
+      "source": "qa4-04-compact-environment/report-381.png",
+      "sha256": "67218a36ab161639189cfb388984f7cb44a348157795e5827eeb8b9cb3be1317",
+      "bytes": 169594
+    },
+    {
+      "source": "qa4-04-compact-environment/report-382.png",
+      "sha256": "cfb2fb2e32524bda39c5314db2e9ae990f41d70dc831f6bd0ce347d0e2b88d98",
+      "bytes": 167099
+    },
+    {
+      "source": "qa4-04-compact-environment/report-383.png",
+      "sha256": "e1ff8260973a287c16a851e5bd9c90a3514fd99296b271b0021d3c6d04d0986c",
+      "bytes": 154322
+    },
+    {
+      "source": "qa4-04-compact-environment/report-384.png",
+      "sha256": "403a66924ace671a704e544f47070f1d8e646dc33bb712797bd658c455e03763",
+      "bytes": 233144
+    },
+    {
+      "source": "qa4-04-compact-environment/report-385.png",
+      "sha256": "f6113893a076d1fd055387702ba0b6aae0e6f7490d03f4fe9d63bb7ae5304aa0",
+      "bytes": 170351
+    },
+    {
+      "source": "qa4-04-compact-environment/report-386.png",
+      "sha256": "1eed398e6cb559aace01537a3c2de2acc236e4f340ea9fa42c95d2685d995d47",
+      "bytes": 165888
+    },
+    {
+      "source": "qa4-04-compact-environment/report-387.png",
+      "sha256": "3cb248a0063329811f98cd54ad755789b3d868801f957dc8ea11c26eaf628144",
+      "bytes": 178190
+    },
+    {
+      "source": "qa4-04-compact-environment/report-388.png",
+      "sha256": "118fb31d55727c3b7b042d004191d64c8811cf712ce09bed256770fccfcc9bc8",
+      "bytes": 166122
+    },
+    {
+      "source": "qa4-05-current-package/report-001.png",
+      "sha256": "7f4c6b4f1e12983cb9e9ea0b80541de3c1f062aef2ff24ae63ae6149fefc9df4",
+      "bytes": 128696
+    },
+    {
+      "source": "qa4-06-stale-artifact/report-001.png",
+      "sha256": "cbd479889863e608d06f1dcd72cf228eea92b64ead750f6eeb790392a40724db",
+      "bytes": 84826
+    },
+    {
+      "source": "qa4-07-helper-syntax/report-001.png",
+      "sha256": "3fab5816db91d2c54e4274321efc609d122a7fbcae434ad20b2df9d99e9346a7",
+      "bytes": 62919
+    },
+    {
+      "source": "qa4-08-collision-proof/report-001.png",
+      "sha256": "c27aaf8f0a1babb18714f6c6d243d8bd8b301feddf798b775eeb0079c6692d7b",
+      "bytes": 122794
+    },
+    {
+      "source": "qa4-09-final-package/report-001.png",
+      "sha256": "fde806ed21f69ec52d0fc82480b55ed75726718bc798352f877a429c535846ef",
+      "bytes": 129041
+    },
+    {
+      "source": "qa4-10-final-package-audit/report-001.png",
+      "sha256": "b0665ff04f1e155d83ffbe36c803ee018847d1a8f2f08aa2ffa5e9d47f4a8bf1",
+      "bytes": 70850
+    },
+    {
+      "source": "qa4-11-source-regression/report-001.png",
+      "sha256": "81a69f6e4edc39414a19bbc6655344379e5ce72c56afb82ae8a9caf54ca22630",
+      "bytes": 232685
+    },
+    {
+      "source": "qa4-11-source-regression/report-002.png",
+      "sha256": "392e0c5380251d437e044f65f808cda59dccc1be2cb558e32590fddfbc657c12",
+      "bytes": 234946
+    },
+    {
+      "source": "qa4-11-source-regression/report-003.png",
+      "sha256": "a4af892e15618a273523b3c0f7144dbfc497c32899e26ee813dd0a7ad161e383",
+      "bytes": 229219
+    },
+    {
+      "source": "qa4-11-source-regression/report-004.png",
+      "sha256": "dfdaa1c73c7b11017368a747393c357a5d35fec3a14476dc5179560d12c1b9a9",
+      "bytes": 127799
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-001.png",
+      "sha256": "9bdb9fab92136c72d4d4a1e6121aa6ea7d0b69c4aa2b077118e5c57034309796",
+      "bytes": 176584
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-002.png",
+      "sha256": "5d1bdb64144bbea8621229768603850f2e1ba1afc4af2513417bb70f50327c9e",
+      "bytes": 240069
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-003.png",
+      "sha256": "b5a250fe8eedbc001e3f835139bdf61f77a9a568a3998ff3c17af9c7f25a5cb0",
+      "bytes": 230264
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-004.png",
+      "sha256": "a20d633ef4be332bcd7919cad48ffead056b146e0e89b204486339f28c0d7cf4",
+      "bytes": 190112
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-005.png",
+      "sha256": "b71b4e587837a09eddb54af775544095e8d5af6e9ff9361219729d536239a0ab",
+      "bytes": 209920
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-006.png",
+      "sha256": "69006260cd1265bba50d5993d4421532d55041f47bf0fe8b247ee5b3af84cae7",
+      "bytes": 157534
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-007.png",
+      "sha256": "13beb51932107f13dbe33cbf6467e6a36e4ce26e7a66880d80e0c28661028554",
+      "bytes": 229380
+    },
+    {
+      "source": "qa4-12-native-connectivity/report-008.png",
+      "sha256": "0b7d7d288f5a9d7094f1f5e9e3ff39d11149c5f6b6b9dbd4fe3393e7c84d68c0",
+      "bytes": 81350
+    },
+    {
+      "source": "qa4-12-native-details/01-native-network-settings.png",
+      "sha256": "84669fded01ef3ba80ecccf12ab44b76dae7e20f57bcf19051db86e84d21fe8f",
+      "bytes": 559092
+    },
+    {
+      "source": "qa4-12-native-details/01-network-open.png",
+      "sha256": "84669fded01ef3ba80ecccf12ab44b76dae7e20f57bcf19051db86e84d21fe8f",
+      "bytes": 559092
+    },
+    {
+      "source": "qa4-12-native-details/01-plasma-desktop.png",
+      "sha256": "da993c7f4e8a3ad9a18a695c0111b506f09325801151750d8b31a08558aab5da",
+      "bytes": 1122726
+    },
+    {
+      "source": "qa4-12-native-details/02-native-bluetooth-settings.png",
+      "sha256": "a72d0d2ecae54fddb46e0a5c4ce66eca110c555151bdc7bc425aeaee007d8a6a",
+      "bytes": 595201
+    },
+    {
+      "source": "qa4-12-native-details/03-native-settings-search.png",
+      "sha256": "a72d0d2ecae54fddb46e0a5c4ce66eca110c555151bdc7bc425aeaee007d8a6a",
+      "bytes": 595201
+    },
+    {
+      "source": "qa4-12-native-details/last-frame.png",
+      "sha256": "5c18b6ee95b2c13eacdf3fe7994210dd3e6c8c1ea78dad4a032557019b548de4",
+      "bytes": 1124671
+    },
+    {
+      "source": "qa4-13-native-upgrade/report-001.png",
+      "sha256": "07a82795ab3f71c119b63de68feefe8d05fa5c379cdfebb53d4d6df97d073504",
+      "bytes": 154026
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-001.png",
+      "sha256": "cbd5347cbcb8d8a0b3a3559e6082f6fec424ce7f5172eb23ace4c8ed969db067",
+      "bytes": 177369
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-002.png",
+      "sha256": "56ed32003c27e9d3b5f9f44764501b3dd2c1af14490dedbf9c0afe2262362cbb",
+      "bytes": 241824
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-003.png",
+      "sha256": "b40dacd006dc504a212f9f59bd37c3eec74eaa209f809ad2b61f7cf7f8b1f2ba",
+      "bytes": 264632
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-004.png",
+      "sha256": "45264baab2e760974147bf31f22c80ab9fa9438263c9a431112bec77aecd93f2",
+      "bytes": 188107
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-005.png",
+      "sha256": "aabfc74a641192e186c523b38de07e2aa9c2d94cd4ebf6447426738bff4f4791",
+      "bytes": 224207
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-006.png",
+      "sha256": "6e8ce522906260fade92cb26a217f735a82d1ddaa05f1ffa890aec7060a2bae0",
+      "bytes": 213088
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-007.png",
+      "sha256": "08efcc9658a9d19b8752ac395b1642f699f403cfc7688664ba8930eb44b98a3f",
+      "bytes": 164616
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-008.png",
+      "sha256": "194777e7c04260791f754156bf8b14be512610791a435e4bce428842e3bdf784",
+      "bytes": 228386
+    },
+    {
+      "source": "qa4-14-native-connectivity/report-009.png",
+      "sha256": "2136aa28785e63424de40942f6f6deb73564f01daca35791d7c17ffcca3514bd",
+      "bytes": 61919
+    },
+    {
+      "source": "qa4-14-native-details/01-native-network-settings.png",
+      "sha256": "38b41754caad02949005f5a7c7206da4ac9211561340b34692dfe82f19a52d11",
+      "bytes": 1122523
+    },
+    {
+      "source": "qa4-14-native-details/01-network-closed.png",
+      "sha256": "38b41754caad02949005f5a7c7206da4ac9211561340b34692dfe82f19a52d11",
+      "bytes": 1122523
+    },
+    {
+      "source": "qa4-14-native-details/01-network-open.png",
+      "sha256": "0f2d062ef04106fff7289e984fcf31cf1d555114259bc865204bca252deb9279",
+      "bytes": 556344
+    },
+    {
+      "source": "qa4-14-native-details/01-plasma-desktop.png",
+      "sha256": "665cf80f06e73cd9df1d6d9e5cd55f1eacc40429c2dee578c30b1bd645903307",
+      "bytes": 1126978
+    },
+    {
+      "source": "qa4-14-native-details/02-bluetooth-closed.png",
+      "sha256": "38b41754caad02949005f5a7c7206da4ac9211561340b34692dfe82f19a52d11",
+      "bytes": 1122523
+    },
+    {
+      "source": "qa4-14-native-details/02-bluetooth-open.png",
+      "sha256": "e14a363b594006ff2b95ad104615af3ccaed209a9e3cae0d4a6a4052293dd7e2",
+      "bytes": 592076
+    },
+    {
+      "source": "qa4-14-native-details/02-native-bluetooth-settings.png",
+      "sha256": "38b41754caad02949005f5a7c7206da4ac9211561340b34692dfe82f19a52d11",
+      "bytes": 1122523
+    },
+    {
+      "source": "qa4-14-native-details/03-native-settings-search.png",
+      "sha256": "ca67ac67f0159821e9ff872c2f980b3286b44941afa9414b6a95ed9c937f3a40",
+      "bytes": 657258
+    },
+    {
+      "source": "qa4-14-native-details/04-network-inspection.png",
+      "sha256": "093211fab0529878969ef15e12e553f312a0fdff5198d7d0929a7ae81477ee96",
+      "bytes": 556098
+    },
+    {
+      "source": "qa4-14-native-details/05-add-connection-types.png",
+      "sha256": "123938033b0168b9114fcc34947ae5b01b645022aa8928df8e96f422217c691a",
+      "bytes": 595644
+    },
+    {
+      "source": "qa4-14-native-details/06-wifi-editor.png",
+      "sha256": "a759aa4ab8894cedc0368558fffb69cd2aa4de9d65844cf35afeb4c3a678ef4b",
+      "bytes": 595770
+    },
+    {
+      "source": "qa4-14-native-details/07-wifi-editor-after-pointer.png",
+      "sha256": "3c6f6e9fac75ce1f3088af37c1e5db1893757247b554618c6b013995ec1d393a",
+      "bytes": 577325
+    },
+    {
+      "source": "qa4-14-native-details/08-wifi-security.png",
+      "sha256": "a81fd0a6f13f3b05a7c613e3c5ac31da4cd89cc6760676c0cd0d5de8b2a7a75e",
+      "bytes": 561136
+    },
+    {
+      "source": "qa4-14-native-details/09-security-options.png",
+      "sha256": "ceb4bbf8820199a7164acff35d5176a3468a0cbad0ddeefcf0880a417b252755",
+      "bytes": 586930
+    },
+    {
+      "source": "qa4-14-native-details/10-wpa2-fields.png",
+      "sha256": "411fc987c5092a9cd858218cb402dc9f9b444e8b4b96660407870ac6824ad72f",
+      "bytes": 570019
+    },
+    {
+      "source": "qa4-14-native-details/11-dummy-password-masked.png",
+      "sha256": "62838f308deb035304e4b681819ce2eaf29921e07e32826c0eb94dfd49baa7d6",
+      "bytes": 571872
+    },
+    {
+      "source": "qa4-14-native-details/last-frame.png",
+      "sha256": "1496f3c5011046e67c4ec6744c685309dccb87b9a4da563f0f148d8e0960350d",
+      "bytes": 1122444
+    },
+    {
+      "source": "qa4-15-apt-transitions/report-001.png",
+      "sha256": "2eeb815a218602edca8b8aeba632fd417406273c7b76f54994f0984a1db4e1b4",
+      "bytes": 150022
+    },
+    {
+      "source": "qa4-16-media-game/report-001.png",
+      "sha256": "8338be84c3f316fb23e3ff46064dcd0ad3e44559b015e244775a4762cbe3a22b",
+      "bytes": 177383
+    },
+    {
+      "source": "qa4-16-media-game/report-002.png",
+      "sha256": "6c124aff8a8f82f8d4796e87d9a9325d7345113525890e56fa6ef208fe9ee75a",
+      "bytes": 236368
+    },
+    {
+      "source": "qa4-16-media-game/report-003.png",
+      "sha256": "64354320e81d982a6f4227cc68bd8c920d1ba0fc6b958eda9448eab95c5bdd80",
+      "bytes": 192865
+    },
+    {
+      "source": "qa4-16-media-game/report-004.png",
+      "sha256": "947e9769b9bb3aa7432aea8876fed71028406080b803f086aadf38506cfbe15a",
+      "bytes": 89540
+    },
+    {
+      "source": "qa4-16-native-details/01-plasma-desktop.png",
+      "sha256": "b73191e6918b840960f91d0b476742fe75a477b88d8811f7d4db761374d28fe6",
+      "bytes": 1122521
+    },
+    {
+      "source": "qa4-16-native-details/06-vlc-playing.png",
+      "sha256": "ad9c00df9757c17f73ad86abb79f93a3243ea9b04a883c4ba8af0e73df737a26",
+      "bytes": 975099
+    },
+    {
+      "source": "qa4-16-native-details/07-vlc-paused.png",
+      "sha256": "d0b443eae60076ed6f91269198148907c9d12ecbd062511b0cc1f58a972dfd20",
+      "bytes": 962806
+    },
+    {
+      "source": "qa4-16-native-details/08-vlc-resumed-after-seek.png",
+      "sha256": "9a1185c38cda36953a2621e68536a3e9ea2644adb17340915f29c11cd3bc1e14",
+      "bytes": 969730
+    },
+    {
+      "source": "qa4-16-native-details/09-supertux-introduction.png",
+      "sha256": "97f671e0b0ef2dc6c3bc356c73ad03e68f7a71cc6fbba66285e89fc4000004e0",
+      "bytes": 541579
+    },
+    {
+      "source": "qa4-16-native-details/10-supertux-active-level-before-input.png",
+      "sha256": "d4daf6d582d5f49bb6e5bdda7cca8f36ae13eba5b17dc846c50398b44d87121c",
+      "bytes": 543300
+    },
+    {
+      "source": "qa4-16-native-details/12-supertux-after-input.png",
+      "sha256": "ac1fcba220ab048bd76254f9aa6445e75747ec2f8c7ea16d2e907952bde42cbd",
+      "bytes": 543001
+    },
+    {
+      "source": "qa4-16-native-details/last-frame.png",
+      "sha256": "0cdc7f5179d7c3c9fdf6e8eab86d3082c9d782595175770824c1aa8d63b64b0e",
+      "bytes": 1122492
+    },
+    {
+      "source": "qa4-16-native-details/native-game-input.png",
+      "sha256": "2c5db9dbe7c429769b72427e9ec22e98c9d3530e0e60bc2f1ceebd95b1ae0c85",
+      "bytes": 543275
+    },
+    {
+      "source": "qa4-16-native-details/vlc-playback-audio-pause-seek.png",
+      "sha256": "534e6b3ce29f366d14929ea5a42de6fb2259384797d3f967787b64599d501270",
+      "bytes": 965618
+    },
+    {
+      "source": "qa4-17-dialog-discovery/report-001.png",
+      "sha256": "0be4dd590347953107c858956923147ce50c96bd442bfd8f5b956382047b82bb",
+      "bytes": 141204
+    },
+    {
+      "source": "qa4-18-wifi-editor/report-001.png",
+      "sha256": "34d0c8f70b7bf4b5566c321794970e705122ce69646208a99e238adf09c74676",
+      "bytes": 93944
+    },
+    {
+      "source": "qa4-19-wifi-state/report-001.png",
+      "sha256": "c43dd5dfac2f3582b342213657ca2e4856a21fbc406827a7e3528340b2e8e74d",
+      "bytes": 295027
+    },
+    {
+      "source": "qa4-19-wifi-state/report-002.png",
+      "sha256": "0a38149e7eab29020bf6d8eca240be9ed176ae8e5db61b051b813462f51edef1",
+      "bytes": 323700
+    },
+    {
+      "source": "qa4-19-wifi-state/report-003.png",
+      "sha256": "508d05279b46c781e93e81dfc57c4729110f6d72070b179fe76c2fbff9e04ee8",
+      "bytes": 161621
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-001.png",
+      "sha256": "fdadafe2c3ebc2c885ab21bcdc822af9a1eda26a18b6c2e3ee5fb20686744589",
+      "bytes": 319297
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-002.png",
+      "sha256": "e27c2633ff22d8d3c107669a72fba4f87d66598db95e201a71da4b89d1a6752e",
+      "bytes": 311267
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-003.png",
+      "sha256": "ad78b7c66caaf59bcdab09142da904082c2ea2494ceae87bc27492507ead681a",
+      "bytes": 312233
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-004.png",
+      "sha256": "69c7848952e9a5a809e50b765a2e1a7c2a416fffaaa66531980a93a748875cb8",
+      "bytes": 325995
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-005.png",
+      "sha256": "bd26b5df6708302feb8b89353b7a31eef8c8bf3d12e6ded70a040fd965cb1909",
+      "bytes": 318325
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-006.png",
+      "sha256": "940641b752b55b3c37d634e5eca5b18a88e3584500fe93679ff57b7c263bd340",
+      "bytes": 314822
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-007.png",
+      "sha256": "fae1f4da6dec68e3591f50ecfb076a915d90d6c20ff40075593baa64896ef336",
+      "bytes": 320636
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-008.png",
+      "sha256": "f38321f66b3899ec6b60a48d49525eb3fdd0fc80129d7612b735b42751380751",
+      "bytes": 317087
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-009.png",
+      "sha256": "c55ca2674f35e952352fc9cf793e9df004b194eec8d0e75162c8e80d2704af59",
+      "bytes": 317183
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-010.png",
+      "sha256": "94a3dbd6dd8014cc6878fa455bb7c65dcf8bae04cea320d00a083cfbf1005bfb",
+      "bytes": 323880
+    },
+    {
+      "source": "qa4-20-wifi-pointer/report-011.png",
+      "sha256": "1024652baea617642b666a6173cb98441f0337451f75e96fc8be61b867e2f4bf",
+      "bytes": 210698
+    },
+    {
+      "source": "qa4-21-security-tab/report-001.png",
+      "sha256": "6f6cb87e6a73cb389f6c3b195659c0dac7902cd46dc9e90e109e98594e9ed121",
+      "bytes": 64711
+    },
+    {
+      "source": "qa4-22-native-controls/report-001.png",
+      "sha256": "5eab10caea5334b577da1613b3f21ffbe183c579f44a0feeb2628facc09712df",
+      "bytes": 63406
+    },
+    {
+      "source": "qa4-23-game-scene/report-001.png",
+      "sha256": "28c4cb4213e0632698706ee9f253086a52cb9247917489e1bd04e737b32049e2",
+      "bytes": 62369
+    },
+    {
+      "source": "qa4-24-repository-access/report-001.png",
+      "sha256": "1493b4f59d164fc9fb2015f278678f1008cdf9196e84ce4e024b0d509f45624c",
+      "bytes": 111071
+    },
+    {
+      "source": "qa4-25-harness-syntax/report-001.png",
+      "sha256": "8a65d4453f1febb8e25612a435c36e4962a7dd6d6c531a0d5be3e1ce12c17cd4",
+      "bytes": 73167
+    },
+    {
+      "source": "qa4-26-native-controls/report-001.png",
+      "sha256": "fe59a2f7754ee25b7d30f40a2b3210b4a9f84b9102475c8c88a0a59be33fac9c",
+      "bytes": 177823
+    },
+    {
+      "source": "qa4-26-native-controls/report-002.png",
+      "sha256": "1006f4d7424386ac4077e197db3342e4d7eda12f8347671d7681abeb06ad51bc",
+      "bytes": 242165
+    },
+    {
+      "source": "qa4-26-native-controls/report-003.png",
+      "sha256": "ef335c668fb5b110a4aa25d1ce9f729b6e684d9a130c0a36737cacaa68ca7172",
+      "bytes": 264720
+    },
+    {
+      "source": "qa4-26-native-controls/report-004.png",
+      "sha256": "d5faad824d455c4b26df0920259d64a08f9bb29a14616b8d28a98e26df0021e5",
+      "bytes": 214045
+    },
+    {
+      "source": "qa4-26-native-controls/report-005.png",
+      "sha256": "3b67f1ef8050ac0490bbf5789454858b5baa69c0338031fa350e858eeab7951a",
+      "bytes": 203273
+    },
+    {
+      "source": "qa4-26-native-controls/report-006.png",
+      "sha256": "122236bb0b0e0b165ca96986dc50e3963c77b9a55598e91fd784966f9c56211e",
+      "bytes": 212776
+    },
+    {
+      "source": "qa4-26-native-controls/report-007.png",
+      "sha256": "a387baad7a7264ee85c98a7be4233c8207b2be9ae8144ee96f900d8829b761a0",
+      "bytes": 160379
+    },
+    {
+      "source": "qa4-26-native-controls/report-008.png",
+      "sha256": "b288eda20532e8175495647cd35676acf4bbb78ccbd4056da247de52de7fbd87",
+      "bytes": 244006
+    },
+    {
+      "source": "qa4-26-native-controls/report-009.png",
+      "sha256": "748152e8588a267763f18a51f3464ee64b324629bfeb99c25221a188935ac830",
+      "bytes": 91559
+    },
+    {
+      "source": "qa4-26-native-details/01-native-network-settings.png",
+      "sha256": "f546a34728a4ad3aba1ee29fbe1d8141699bf262f3a43921fe65d6753dd7dd22",
+      "bytes": 1122808
+    },
+    {
+      "source": "qa4-26-native-details/01-network-closed.png",
+      "sha256": "f546a34728a4ad3aba1ee29fbe1d8141699bf262f3a43921fe65d6753dd7dd22",
+      "bytes": 1122808
+    },
+    {
+      "source": "qa4-26-native-details/01-network-open.png",
+      "sha256": "69fd853cecb8712bff913795906cbccc3e9c6e650420c346a73b4c29ebf8545a",
+      "bytes": 556396
+    },
+    {
+      "source": "qa4-26-native-details/01-plasma-desktop.png",
+      "sha256": "665cf80f06e73cd9df1d6d9e5cd55f1eacc40429c2dee578c30b1bd645903307",
+      "bytes": 1126978
+    },
+    {
+      "source": "qa4-26-native-details/02-bluetooth-closed.png",
+      "sha256": "f546a34728a4ad3aba1ee29fbe1d8141699bf262f3a43921fe65d6753dd7dd22",
+      "bytes": 1122808
+    },
+    {
+      "source": "qa4-26-native-details/02-bluetooth-open.png",
+      "sha256": "bda085dace5da2d9308ecaddf6198816c6fd1c1949f3acc60c7d643a01a056c8",
+      "bytes": 592336
+    },
+    {
+      "source": "qa4-26-native-details/02-native-bluetooth-settings.png",
+      "sha256": "f546a34728a4ad3aba1ee29fbe1d8141699bf262f3a43921fe65d6753dd7dd22",
+      "bytes": 1122808
+    },
+    {
+      "source": "qa4-26-native-details/03-native-settings-search.png",
+      "sha256": "ffc1575e33e05fedc2ebd977ecc40dc5655049c2c68ad8380419b13efe75acbb",
+      "bytes": 600661
+    },
+    {
+      "source": "qa4-26-native-details/04-connection-types.png",
+      "sha256": "243730f2239d284e76d997e587a0920c0f7d4ab704e13e03f915a7933397d682",
+      "bytes": 552536
+    },
+    {
+      "source": "qa4-26-native-details/04-native-dummy-password.png",
+      "sha256": "305c25dd899427dee8b3a4fa28dddacbd9ba319b2e14e858012a2035dd70e279",
+      "bytes": 520459
+    },
+    {
+      "source": "qa4-26-native-details/05-wifi-security.png",
+      "sha256": "305c25dd899427dee8b3a4fa28dddacbd9ba319b2e14e858012a2035dd70e279",
+      "bytes": 520459
+    },
+    {
+      "source": "qa4-26-native-details/last-frame.png",
+      "sha256": "6ce69239b9d36630eab0a3125564040e3b42845e88bd355ebb621e374c4b327b",
+      "bytes": 1079334
+    },
+    {
+      "source": "qa4-27-game-scene/report-001.png",
+      "sha256": "4c7a0b6410f96a93f2e72b6d1e7d4bf3bbde2e8862238fd47ce2bb30a56f9191",
+      "bytes": 178035
+    },
+    {
+      "source": "qa4-27-game-scene/report-002.png",
+      "sha256": "3e9f4b50d6882bde2c3fc7e2213489db0cf5496c73e29884fe0bd77ff312b322",
+      "bytes": 236196
+    },
+    {
+      "source": "qa4-27-game-scene/report-003.png",
+      "sha256": "532bee57760110d093b0478e5d66ef6864c1e123bf6666b0840eca898b24c5ca",
+      "bytes": 190136
+    },
+    {
+      "source": "qa4-27-native-details/01-plasma-desktop.png",
+      "sha256": "8bf37f82d529e003e1fb9bd67c2b08f5b8f8ef1059287fb8e38d4d8cd5322978",
+      "bytes": 1122724
+    },
+    {
+      "source": "qa4-27-native-details/09-supertux-introduction.png",
+      "sha256": "d222624c2ee9ebfb9666a60f5c8c9120552a293c158bb29f8e84e37c5f853e65",
+      "bytes": 543329
+    },
+    {
+      "source": "qa4-27-native-details/10-supertux-active-level-before-input.png",
+      "sha256": "1da519665ef0608c797dcb4f1572707f2c371b5e229b9d860ad885fe205b047a",
+      "bytes": 679363
+    },
+    {
+      "source": "qa4-27-native-details/12-supertux-after-input.png",
+      "sha256": "68ede3ba126419a696809d4b07b188b9ffe330d1c480eb6dea7e8ec156267d7c",
+      "bytes": 628338
+    },
+    {
+      "source": "qa4-27-native-details/last-frame.png",
+      "sha256": "8bf37f82d529e003e1fb9bd67c2b08f5b8f8ef1059287fb8e38d4d8cd5322978",
+      "bytes": 1122724
+    },
+    {
+      "source": "qa4-27-native-details/native-game-input.png",
+      "sha256": "8e04cd2dbd7ea2f0fff03f68589021c1b2bc4c4e59370f4bcdffe6af87b7418e",
+      "bytes": 581529
+    },
+    {
+      "source": "qa4-28-native-controls/report-001.png",
+      "sha256": "68c65129a3d194e278a61a6d4279a6aa41be1aca415aa78a1dc497817836beec",
+      "bytes": 178384
+    },
+    {
+      "source": "qa4-28-native-controls/report-002.png",
+      "sha256": "a4a32de875cb5a67cc8d60cd202d6bff4177d6b0d6bd29987533d239b50c3249",
+      "bytes": 243148
+    },
+    {
+      "source": "qa4-28-native-controls/report-003.png",
+      "sha256": "5bed87c4b213f58d4ccee4c1de5ee43557ef40c1db7626c52c537486bfd5d4e2",
+      "bytes": 268064
+    },
+    {
+      "source": "qa4-28-native-controls/report-004.png",
+      "sha256": "11b657834ea81407a98fffcb699c45d5d663bde9d1dc5878d1a11c4dcebc88af",
+      "bytes": 194652
+    },
+    {
+      "source": "qa4-28-native-controls/report-005.png",
+      "sha256": "cbf1f3886b47ff1d841a5f95ee5c243cd6e3b3a5de268d6e68aa98ae8e0e8d39",
+      "bytes": 224588
+    },
+    {
+      "source": "qa4-28-native-controls/report-006.png",
+      "sha256": "8dd3737305b2d187f881e909b6ed8a12cd26ebfc6bdef8ca5c09343063e76bb5",
+      "bytes": 186167
+    },
+    {
+      "source": "qa4-28-native-controls/report-007.png",
+      "sha256": "3c1df323228c109f7eb9465f50b6a399646dded90d65ddc5c163d1cff2a360e1",
+      "bytes": 202194
+    },
+    {
+      "source": "qa4-28-native-controls/report-008.png",
+      "sha256": "0b95039c1a5489cb8d38c029b39249044c577b1be24aa24217f0a6ce44b27cf8",
+      "bytes": 186104
+    },
+    {
+      "source": "qa4-28-native-details/01-native-network-settings.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-28-native-details/01-network-closed.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-28-native-details/01-network-open.png",
+      "sha256": "651bac672eb2f76cecae74cab9f78e7855863ebb398b7652a92a4ba3125da51f",
+      "bytes": 556251
+    },
+    {
+      "source": "qa4-28-native-details/01-plasma-desktop.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-28-native-details/02-bluetooth-closed.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-28-native-details/02-bluetooth-open.png",
+      "sha256": "d26a372abfed32bf19672128d3271b11f198e5ff36fc5113e34107869aaba1df",
+      "bytes": 592205
+    },
+    {
+      "source": "qa4-28-native-details/02-native-bluetooth-settings.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-28-native-details/03-native-settings-search.png",
+      "sha256": "8ed6475d42da4f6b48dabed414610270fcee12cc1925928aa537ecee4582eeaf",
+      "bytes": 586059
+    },
+    {
+      "source": "qa4-28-native-details/04-connection-types.png",
+      "sha256": "b905bfe73cc2b5f71111bced52c0280e4ce9abac5f54ecc79758d3fca395afdc",
+      "bytes": 595969
+    },
+    {
+      "source": "qa4-28-native-details/04-native-dummy-password.png",
+      "sha256": "09406067bc7d8292fe3482cc97f4ff868961cb43fb5f1daa919961e1ae10eff6",
+      "bytes": 570247
+    },
+    {
+      "source": "qa4-28-native-details/05-wifi-security.png",
+      "sha256": "20d8cd215d291e73ef4fe00cc3a9d49aa539c4cc6919c3c99e7b5f6b1f5e78cf",
+      "bytes": 561250
+    },
+    {
+      "source": "qa4-28-native-details/last-frame.png",
+      "sha256": "76655f1b42188ab502f94d88ef412920235bd67d7dc04084f496ec506479cb2a",
+      "bytes": 1122673
+    },
+    {
+      "source": "qa4-29-native-controls/report-001.png",
+      "sha256": "bce2c2b23f075fd6cef7a518b82be6bae75ed9053a6d7f2e60e4c7460987fb47",
+      "bytes": 181026
+    },
+    {
+      "source": "qa4-29-native-controls/report-002.png",
+      "sha256": "52d1a4ed678d2d30843574c353f064f7b4d0cc439065d714ff0218119bb13376",
+      "bytes": 244146
+    },
+    {
+      "source": "qa4-29-native-controls/report-003.png",
+      "sha256": "378253fcd8b7aefdd5ed74e926e77c62e68d88b52e5c1083b112d1685687b904",
+      "bytes": 186821
+    },
+    {
+      "source": "qa4-29-native-details/01-native-network-settings.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/01-network-closed.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/01-network-open.png",
+      "sha256": "9820306992ce458c1fd72d4300ea65eb5f1d89ce564fe7e385370d2f638621d7",
+      "bytes": 556219
+    },
+    {
+      "source": "qa4-29-native-details/01-plasma-desktop.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/02-bluetooth-closed.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/02-bluetooth-open.png",
+      "sha256": "9d7854b18d98a2fe4db3be86c495502b0b730d0377157ca9265eed805619acf4",
+      "bytes": 592213
+    },
+    {
+      "source": "qa4-29-native-details/02-native-bluetooth-settings.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/03-native-settings-search.png",
+      "sha256": "ad657fa4391cd82f5355b8e9b400b037d0b7e77ea90a06bc270dba32b3454395",
+      "bytes": 1122642
+    },
+    {
+      "source": "qa4-29-native-details/03-settings-search-cleared.png",
+      "sha256": "ad6b77e94d02855abe4917c06a13807704ef7bd03de6c43bfa0b1cde04473bca",
+      "bytes": 657379
+    },
+    {
+      "source": "qa4-29-native-details/03-settings-search-results.png",
+      "sha256": "de98cbbadc9cd4c1478e4485d71905a79ceafd95be3a60afa9dcbccd98ca89bf",
+      "bytes": 624308
+    },
+    {
+      "source": "qa4-29-native-details/04-connection-types.png",
+      "sha256": "7cebd2a20be4919a640e02d5517639cb1165803fc143c7d2e44b6848695c62e0",
+      "bytes": 595942
+    },
+    {
+      "source": "qa4-29-native-details/04-native-dummy-password.png",
+      "sha256": "cfde606a67886e374a3b60f26f466374c6e1f5c83e31a4bfd28bf13488df1e17",
+      "bytes": 1122414
+    },
+    {
+      "source": "qa4-29-native-details/05-wifi-security.png",
+      "sha256": "183f6dc2655b8fda393b1cfeade22983f5f7267f30fade75514a2ef83cdeaf7c",
+      "bytes": 561243
+    },
+    {
+      "source": "qa4-29-native-details/06-dummy-password-masked.png",
+      "sha256": "fb66f25b979aef321a586b2ac56c01c15a62a673a3de30696657d4cf78a790b8",
+      "bytes": 572079
+    },
+    {
+      "source": "qa4-29-native-details/07-dummy-password-revealed.png",
+      "sha256": "ace4f08ec29af854a2ac085fcb44b82756c53bfb3fce0588706a780d397f50eb",
+      "bytes": 573216
+    },
+    {
+      "source": "qa4-29-native-details/08-dummy-password-cleared.png",
+      "sha256": "fa06685dac5b82e4857f8a0430dec05fc4ba7ccba2a433af24f19be38f932389",
+      "bytes": 571612
+    },
+    {
+      "source": "qa4-29-native-details/09-connection-cancelled.png",
+      "sha256": "9820306992ce458c1fd72d4300ea65eb5f1d89ce564fe7e385370d2f638621d7",
+      "bytes": 556219
+    },
+    {
+      "source": "qa4-29-native-details/last-frame.png",
+      "sha256": "cfde606a67886e374a3b60f26f466374c6e1f5c83e31a4bfd28bf13488df1e17",
+      "bytes": 1122414
+    },
+    {
+      "source": "qa4-30-final-source/report-001.png",
+      "sha256": "6dc64b18015d66bd3ffef881d2c992d5d9bc8246e5fe0a2798136a8e1a17bc5d",
+      "bytes": 234182
+    },
+    {
+      "source": "qa4-30-final-source/report-002.png",
+      "sha256": "d9cbc6c87c2f3ebbbd0a2716b741914da0a92a10afdd056aba2bd5364b1b9530",
+      "bytes": 236430
+    },
+    {
+      "source": "qa4-30-final-source/report-003.png",
+      "sha256": "d09a56244d885845aa228dbb660890c0858c16868e3c79699fdf451c7122b3e4",
+      "bytes": 230585
+    },
+    {
+      "source": "qa4-30-final-source/report-004.png",
+      "sha256": "323de73dfc99590c2e6adc07ed51567ec25d43b056e4f332512a63cdc1d93cad",
+      "bytes": 129172
+    },
+    {
+      "source": "qa4-31-final-syntax/report-001.png",
+      "sha256": "3a04e0d686bc0f770066ad33cdae36234fa503d2be5a392cfb67bfdbd6683dcd",
+      "bytes": 71817
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "QA dependency backup integrity before storage compaction",
+      "kind": "source",
+      "started_at": "2026-11-05T10:35:26.125934+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "74202cb5086cc5ce05956803b25af7535134e09b7ee27521a7a1cb9684b279bf",
+      "working_tree": "M build/run-desktop-container.sh\n M environment/orez-qa.Dockerfile\n?? environment/check-image-backup.py",
+      "command": [
+        "python3",
+        "environment/check-image-backup.py",
+        "/dev/shm/orez-qa-work/desktop-images.tar.gz",
+        "--required-tag",
+        "orez-everyday-test:20261105",
+        "--required-tag",
+        "orez-desktop-test:20261105",
+        "--required-tag",
+        "orez-package-test:20261105",
+        "--required-tag",
+        "ubuntu:26.04"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 38.33,
+      "finished_at": "2026-11-05T10:36:04.543812+00:00",
+      "log_sha256": "e1fe561674614d563ae83f294b5b9cb749f95dc11127061cfb35f4638d72aaa3",
+      "directory": "qa4-01-backup-integrity"
+    },
+    {
+      "schema_version": 1,
+      "name": "Source regression with versioned upgrade artifacts",
+      "kind": "source",
+      "started_at": "2026-11-05T10:36:46.247687+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "c6d4dbe3db04889e2de2e078f81a2d3f235a62aa29f81d68db8c542593b681de",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M environment/orez-qa.Dockerfile\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.57,
+      "finished_at": "2026-11-05T10:36:47.860612+00:00",
+      "log_sha256": "b67de761b6a788451502aab45593e584f3ef416d66513e041c88ad1ff486a34a",
+      "directory": "qa4-02-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Build and audit OREZ native revision 0.1.0-2",
+      "kind": "source",
+      "started_at": "2026-11-05T10:36:53.880630+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "c6d4dbe3db04889e2de2e078f81a2d3f235a62aa29f81d68db8c542593b681de",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M environment/orez-qa.Dockerfile\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "-c",
+        "bash build/package-shell.sh && python3 build/verify-deb-files.py --package \"$(python3 build/package-info.py path)\" --manifest image/installer/installed-files.txt --report dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.72,
+      "finished_at": "2026-11-05T10:36:54.632196+00:00",
+      "log_sha256": "d71189f88ce99587ad4732fe837af35849e0b816eda1af8b85da1ce5a4884a03",
+      "directory": "qa4-03-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Build compact QA environment from verified Ubuntu base",
+      "kind": "package-container",
+      "started_at": "2026-11-05T10:38:22.192182+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "c6d4dbe3db04889e2de2e078f81a2d3f235a62aa29f81d68db8c542593b681de",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M environment/orez-qa.Dockerfile\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "environment/orez-qa.Dockerfile",
+        "-t",
+        "orez-qa:20261105-compact",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1319.69,
+      "finished_at": "2026-11-05T11:00:21.919869+00:00",
+      "log_sha256": "45cd836ffc505bfca388e56517dc33b2f850130aec4615b71bea3231d6f1255a",
+      "directory": "qa4-04-compact-environment"
+    },
+    {
+      "schema_version": 1,
+      "name": "Build current revision and verify expected package version",
+      "kind": "source",
+      "started_at": "2026-11-05T10:49:51.767939+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "03452340e1ed3b1333a8179c3227b8e0bd5f125e1af33fd9fb2241bb41d0bd15",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "-c",
+        "bash build/package-shell.sh && python3 build/verify-deb-files.py --package \"$(python3 build/package-info.py path)\" --version \"$(python3 build/package-info.py version)\" --manifest image/installer/installed-files.txt --report dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.77,
+      "finished_at": "2026-11-05T10:49:52.591688+00:00",
+      "log_sha256": "ecd61761d5d8710757b13b36b9973d758fe8afbca57cbd9bf4033b43ad2df3e1",
+      "directory": "qa4-05-current-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Reject a stale otherwise-valid package revision",
+      "kind": "source",
+      "started_at": "2026-11-05T10:49:56.005964+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "03452340e1ed3b1333a8179c3227b8e0bd5f125e1af33fd9fb2241bb41d0bd15",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-c",
+        "import subprocess,json; p=subprocess.run([\"python3\",\"build/verify-deb-files.py\",\"--package\",\"dist/orez-shell_0.1.0-1_all.deb\",\"--version\",\"0.1.0-2\",\"--manifest\",\"image/installer/installed-files.txt\",\"--report\",\"dist/OREZ_OLD_VERSION_REJECTION.json\"]); r=json.load(open(\"dist/OREZ_OLD_VERSION_REJECTION.json\")); assert p.returncode==1 and r[\"status\"]==\"BLOCKED\" and r[\"version\"]==\"0.1.0-1\" and r[\"expected_version\"]==\"0.1.0-2\"; print(\"PASS: valid old payload rejected because its version is stale\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.22,
+      "finished_at": "2026-11-05T10:49:56.264678+00:00",
+      "log_sha256": "eb07645e3c36789c6149568129bbfa5b28360f6e655de3c9e89bd7fc346c65a6",
+      "directory": "qa4-06-stale-artifact"
+    },
+    {
+      "schema_version": 1,
+      "name": "Parse all Python test and environment helpers",
+      "kind": "source",
+      "started_at": "2026-11-05T10:53:29.764040+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "38027d1b24755428eaffca4d431bde6d26b8880e79f877142bfdbe8e8ee4cb4d",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-c",
+        "from pathlib import Path; files=[*Path(\"build\").rglob(\"*.py\"),*Path(\"environment\").rglob(\"*.py\")]; [compile(p.read_text(),str(p),\"exec\") for p in files];print(\"PASS:\",len(files),\"Python files parsed\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.12,
+      "finished_at": "2026-11-05T10:53:29.925192+00:00",
+      "log_sha256": "a34bca00a9cde5ced7d7d033c11f5b4440bbc71cf0e8d57de9a29be5afdbc9e5",
+      "directory": "qa4-07-helper-syntax"
+    },
+    {
+      "schema_version": 1,
+      "name": "Verify 23-path collision report from successful GitHub job logs",
+      "kind": "source",
+      "started_at": "2026-11-05T10:58:45.444855+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "02845df706c362fcf18717c9160f8f83623787c6d07684c8e61fb68fa83a5067",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-c",
+        "import json; r=json.load(open(\"dist/evidence-inputs/collision-23-from-ci-log.json\")); p=r[\"report\"]; assert r[\"iso_checksum_passed\"] and p[\"paths_in_manifest\"]==23 and p[\"status\"]==\"STATIC_FILE_PATHS_PASS\"; assert not any(p[k] for k in [\"overwrites_existing_base_paths\",\"unexpected_payload_paths\",\"missing_manifest_paths\"]); assert not p[\"installation_approved\"]; print(json.dumps(r,indent=2))"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.07,
+      "finished_at": "2026-11-05T10:58:45.548656+00:00",
+      "log_sha256": "a4db805826ae879e7388526fab8f1011562f8e7548c47cf57d1f9250a4e85bb8",
+      "directory": "qa4-08-collision-proof"
+    },
+    {
+      "schema_version": 1,
+      "name": "Build and audit final revision 0.1.0-2 package",
+      "kind": "source",
+      "started_at": "2026-11-05T10:58:48.142963+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "02845df706c362fcf18717c9160f8f83623787c6d07684c8e61fb68fa83a5067",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "-c",
+        "bash build/package-shell.sh && python3 build/verify-deb-files.py \"$(python3 build/package-info.py path)\" --version \"$(python3 build/package-info.py version)\""
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": 0.62,
+      "finished_at": "2026-11-05T10:58:48.794733+00:00",
+      "log_sha256": "2c2099fdfe1ae9fd93b2cafd4df921e9fa9e6f675f19a40ab772ed840af5be0a",
+      "directory": "qa4-09-final-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Audit final 0.1.0-2 package with required manifest and report arguments",
+      "kind": "source",
+      "started_at": "2026-11-05T10:59:04.147587+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "02845df706c362fcf18717c9160f8f83623787c6d07684c8e61fb68fa83a5067",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "build/verify-deb-files.py",
+        "--package",
+        "/workspace/OREZ-OS/dist/orez-shell_0.1.0-2_all.deb",
+        "--version",
+        "0.1.0-2",
+        "--manifest",
+        "image/installer/installed-files.txt",
+        "--report",
+        "dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.16,
+      "finished_at": "2026-11-05T10:59:04.362585+00:00",
+      "log_sha256": "a057836ba8bfb8ebdbbde77bdbda5172a769dcc6c2d44af3b18ad0b3ed503a08",
+      "directory": "qa4-10-final-package-audit"
+    },
+    {
+      "schema_version": 1,
+      "name": "Regression after package version and native harness changes",
+      "kind": "source",
+      "started_at": "2026-11-05T10:59:46.029985+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "d864f4ba802ca921b1daedaf29235427a13a2bbed6ddd1b0f70ee4f970e8e104",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.77,
+      "finished_at": "2026-11-05T10:59:46.833939+00:00",
+      "log_sha256": "62d29e79a98606ad43c77a646cbecb4e90ab7d131e1ce0a63fc93c02a2eb50c6",
+      "directory": "qa4-11-source-regression"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native network Bluetooth settings and search discovery",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:00:51.774207+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "e8517c689408cb8a30508499a73da6e41322459269019bc5cb730daeb481e392",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-12-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 216.42,
+      "finished_at": "2026-11-05T11:04:28.214737+00:00",
+      "log_sha256": "85e81f73124d35ce5e64e939410d23e7e51a1f5dffbc16bcac9286400d84ca87",
+      "directory": "qa4-12-native-connectivity"
+    },
+    {
+      "schema_version": 1,
+      "name": "Upgrade actual OREZ 0.1.0-1 to 0.1.0-2 with user state preservation",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:00:51.748857+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "e8517c689408cb8a30508499a73da6e41322459269019bc5cb730daeb481e392",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-13-upgrade-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 156.86,
+      "finished_at": "2026-11-05T11:03:28.649371+00:00",
+      "log_sha256": "068aa79017d18edc2ca6b05a76b2ae7e46699016b19c16ccc54629b12cfaed5c",
+      "directory": "qa4-13-native-upgrade"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native connection UI with compositor-level keyboard input",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:05:48.010365+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "cd619d3cedc96f357ff4f756e69e503b4d6be4cf651b078b0e927be14f6e6010",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-14-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 618.54,
+      "finished_at": "2026-11-05T11:16:06.759538+00:00",
+      "log_sha256": "30418ccb5952d124eac59edfd9ac59d3c418d546de6bf6eea7dbf22d05916e63",
+      "directory": "qa4-14-native-connectivity"
+    },
+    {
+      "schema_version": 1,
+      "name": "Ten offline APT failure upgrade downgrade purge scenarios with current revision",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:06:09.206631+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "cd619d3cedc96f357ff4f756e69e503b4d6be4cf651b078b0e927be14f6e6010",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/test-package-scenarios.sh",
+        "dist/evidence/qa4-15-apt-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 212.99,
+      "finished_at": "2026-11-05T11:09:42.248893+00:00",
+      "log_sha256": "503e647628e8cd95b034a5af7fe66dd5d472465f70b69a3830641d3ee4e6da6f",
+      "directory": "qa4-15-apt-transitions"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native VLC playback controls and playable SuperTux level",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:10:10.183288+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-16-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 296.76,
+      "finished_at": "2026-11-05T11:15:07.300930+00:00",
+      "log_sha256": "886cd33a9ea902259f6f0948216db7fe0c6de2ee8dbf54a7a5df2b2ac6504dbb",
+      "directory": "qa4-16-media-game"
+    },
+    {
+      "schema_version": 1,
+      "name": "Inspect native connection type selector through accessibility",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:11:08.916424+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "1500",
+        "a413482818726aaeb3eb27163facce4ce652c3434713437eebbc36a39284b489",
+        "python3",
+        "/tmp/orez-connection-probe.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 7.09,
+      "finished_at": "2026-11-05T11:11:16.069294+00:00",
+      "log_sha256": "fad381dfcf82a5593275a2e9d97ea096e637a7480602fa333954fec6e387ded0",
+      "directory": "qa4-17-dialog-discovery"
+    },
+    {
+      "schema_version": 1,
+      "name": "Inspect native unsaved Wi-Fi connection editor",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:12:00.735016+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "1500",
+        "a413482818726aaeb3eb27163facce4ce652c3434713437eebbc36a39284b489",
+        "python3",
+        "/tmp/orez-wifi-probe.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 2.09,
+      "finished_at": "2026-11-05T11:12:02.921604+00:00",
+      "log_sha256": "bd165796eb298932a556f36aeafb6b2463080ca1301952efa8df6e76678e030d",
+      "directory": "qa4-18-wifi-editor"
+    },
+    {
+      "schema_version": 1,
+      "name": "Inspect connection editor after selector destroyed its accessible object",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:12:37.651733+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "1500",
+        "a413482818726aaeb3eb27163facce4ce652c3434713437eebbc36a39284b489",
+        "python3",
+        "/tmp/orez-wifi-state.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 11.13,
+      "finished_at": "2026-11-05T11:12:48.859244+00:00",
+      "log_sha256": "9bb32b4deaa892631078faef18720b79762a32c1eea155dc1ed03dc684f32328",
+      "directory": "qa4-19-wifi-state"
+    },
+    {
+      "schema_version": 1,
+      "name": "Select Wi-Fi using real pointer input",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:13:11.788602+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "1500",
+        "a413482818726aaeb3eb27163facce4ce652c3434713437eebbc36a39284b489",
+        "python3",
+        "/tmp/orez-wifi-pointer.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 17.27,
+      "finished_at": "2026-11-05T11:13:29.141146+00:00",
+      "log_sha256": "574cd620d91e62e496a8e1f7fe896c5734abea6b9975cc8aa83da18519607148",
+      "directory": "qa4-20-wifi-pointer"
+    },
+    {
+      "schema_version": 1,
+      "name": "Open native Wi-Fi Security tab without saving",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:14:10.378142+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "30841dbd08a4d6448491986d1d9ca65aa5f010b738b3630016c2fb042bd74bcc",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "1500",
+        "a413482818726aaeb3eb27163facce4ce652c3434713437eebbc36a39284b489",
+        "python3",
+        "/tmp/orez-security-tab.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 26.77,
+      "finished_at": "2026-11-05T11:14:37.474154+00:00",
+      "log_sha256": "d6311081650d7bdaf09c6cdb401556de5d53a895b4559b73f56d14f11ea736a3",
+      "directory": "qa4-21-security-tab"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native settings search and dummy password lifecycle",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:20:31.965030+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "5a562afe444836914b39c816ad3cbf795ca94aced1c02e8684d5d3073f3d411c",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-22-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": 239.66,
+      "finished_at": "2026-11-05T11:24:31.700020+00:00",
+      "log_sha256": "b6bb2d806bf3d4954228b7134e94aa01a38b85daba655b5895c360d5abe6f6d8",
+      "directory": "qa4-22-native-controls"
+    },
+    {
+      "schema_version": 1,
+      "name": "SuperTux sustained key input with actual scene gate",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:20:47.353000+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "5a562afe444836914b39c816ad3cbf795ca94aced1c02e8684d5d3073f3d411c",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-23-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 2,
+      "status": "failed",
+      "duration_seconds": 224.03,
+      "finished_at": "2026-11-05T11:24:31.546887+00:00",
+      "log_sha256": "b6bb2d806bf3d4954228b7134e94aa01a38b85daba655b5895c360d5abe6f6d8",
+      "directory": "qa4-23-game-scene"
+    },
+    {
+      "schema_version": 1,
+      "name": "Read-only repository collaborator key and workflow permission audit",
+      "kind": "source",
+      "started_at": "2026-11-05T11:21:49.118533+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "5a562afe444836914b39c816ad3cbf795ca94aced1c02e8684d5d3073f3d411c",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/KNOWN_ISSUES.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "/tmp/orez-repository-audit.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 24.8,
+      "finished_at": "2026-11-05T11:22:15.034129+00:00",
+      "log_sha256": "46657ae68c4ab85993538f7a2376edebd4a7e15eea8c6c46d6789488f40b3192",
+      "directory": "qa4-24-repository-access"
+    },
+    {
+      "schema_version": 1,
+      "name": "Syntax verification before frozen native reruns",
+      "kind": "source",
+      "started_at": "2026-11-05T11:25:19.595094+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "d02a91966c6f44b036e6216505e05e3832abf3a211fccb853d15f958fb6e72fb",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-c",
+        "import ast,pathlib,subprocess; files=list(pathlib.Path(\"build\").rglob(\"*.py\"))+list(pathlib.Path(\"environment\").glob(\"*.py\")); [ast.parse(p.read_text(),filename=str(p)) for p in files]; [subprocess.run([\"bash\",\"-n\",str(p)],check=True) for p in pathlib.Path(\"build\").rglob(\"*.sh\")]; print(\"PASS\",len(files),\"Python files and all build shell scripts\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.17,
+      "finished_at": "2026-11-05T11:25:19.842573+00:00",
+      "log_sha256": "8a9ad0d2f4ff70d2f662a1fec3a400aa51e40b79a40563b88991ac424be67385",
+      "directory": "qa4-25-harness-syntax"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native settings search and password lifecycle after harness correction",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:25:29.674447+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "d02a91966c6f44b036e6216505e05e3832abf3a211fccb853d15f958fb6e72fb",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-26-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 287.6,
+      "finished_at": "2026-11-05T11:30:17.316832+00:00",
+      "log_sha256": "e07eff2219770423aaf71bdce7bf1902b7106e7f10af17a56cb44be39d3ed4db",
+      "directory": "qa4-26-native-controls"
+    },
+    {
+      "schema_version": 1,
+      "name": "Sustained game input and visible scene after harness correction",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:25:29.358300+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "d02a91966c6f44b036e6216505e05e3832abf3a211fccb853d15f958fb6e72fb",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-27-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 245.6,
+      "finished_at": "2026-11-05T11:29:35.024056+00:00",
+      "log_sha256": "5e3c8e3707aa61596f11deb1d03bc7bebe03e3fea21828ff9f8743cfc74de6ed",
+      "directory": "qa4-27-game-scene"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native visible-window search and password reveal clear cancel verification",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:31:43.519547+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "0ba7bbcb0af6f39a0babe3038016d744527dbf2cbc2d4eeaa5a047a5f3bc1fed",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-28-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 254.2,
+      "finished_at": "2026-11-05T11:35:58.852000+00:00",
+      "log_sha256": "2d6eb4a6d7a1e92b2d25c38ea8055cb3669223a6d4b2ce7c16f5cdb3d4cf6706",
+      "directory": "qa4-28-native-controls"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native Settings search and dummy password with corrected control targeting",
+      "kind": "package-container",
+      "started_at": "2026-11-05T11:38:05.757608+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "f68c4180dd7e1b856d13c1b670aad28d7d0dd917bce8867fd01265801e1e5946",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/CONNECTIVITY.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/OWNER_CONTROL.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? docs/CONTINUED_QA.md\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa4-29-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 189.14,
+      "finished_at": "2026-11-05T11:41:14.984149+00:00",
+      "log_sha256": "d2b414a0476b00903374380505f5913679b15533b2ff50db6441d8f3895e63c7",
+      "directory": "qa4-29-native-controls"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final source regression for versioned native upgrade and QA changes",
+      "kind": "source",
+      "started_at": "2026-11-05T11:41:05.803203+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "f68c4180dd7e1b856d13c1b670aad28d7d0dd917bce8867fd01265801e1e5946",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/CONNECTIVITY.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/OWNER_CONTROL.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? docs/CONTINUED_QA.md\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.1,
+      "finished_at": "2026-11-05T11:41:07.013008+00:00",
+      "log_sha256": "d6006cdd7b20b451260e44ff9633219e7308c5bd22b226eac433d9fc47da4118",
+      "directory": "qa4-30-final-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final native harness Python and shell parsing",
+      "kind": "source",
+      "started_at": "2026-11-05T11:41:15.056537+00:00",
+      "commit": "cb8db4e8337fd0b19e8126de2a023b942aff000d",
+      "source_digest": "f68c4180dd7e1b856d13c1b670aad28d7d0dd917bce8867fd01265801e1e5946",
+      "working_tree": "M .github/workflows/orez-live.yml\n M .github/workflows/orez-package-integration.yml\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/integration/everyday.py\n M build/integration/package-scenarios.py\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M build/test-package-container.sh\n M build/test-package-scenarios.sh\n M build/verify-deb-files.py\n M docs/BUILD_AND_RELEASE.md\n M docs/CONNECTIVITY.md\n M docs/DECISIONS.md\n M docs/KNOWN_ISSUES.md\n M docs/OWNER_CONTROL.md\n M docs/QA_SCENARIOS.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M environment/orez-qa.Dockerfile\n M overlay/usr/bin/orezctl\n?? build/integration/connectivity.py\n?? build/integration/native-upgrade.py\n?? build/package-info.py\n?? docs/CONTINUED_QA.md\n?? environment/check-image-backup.py\n?? packaging/\n?? tests/test_package_version.py",
+      "command": [
+        "python3",
+        "-c",
+        "import ast,pathlib,subprocess; files=list(pathlib.Path(\"build\").rglob(\"*.py\"))+list(pathlib.Path(\"environment\").glob(\"*.py\")); [ast.parse(p.read_text(),filename=str(p)) for p in files]; [subprocess.run([\"bash\",\"-n\",str(p)],check=True) for p in pathlib.Path(\"build\").rglob(\"*.sh\")]; print(\"PASS\",len(files),\"Python files and all build shell scripts\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.39,
+      "finished_at": "2026-11-05T11:41:15.481673+00:00",
+      "log_sha256": "8a9ad0d2f4ff70d2f662a1fec3a400aa51e40b79a40563b88991ac424be67385",
+      "directory": "qa4-31-final-syntax"
+    }
+  ]
+}
