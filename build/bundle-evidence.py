@@ -14,7 +14,7 @@ parser.add_argument('--output',type=Path,required=True)
 args=parser.parse_args()
 if args.output.exists(): raise SystemExit('Refusing to overwrite previous evidence')
 folders=sorted(p for p in args.root.glob(args.prefix+'*') if p.is_dir())
-images={}; references=[]; records=[]
+images={}; references=[]; records=[]; run_kinds={}
 for folder in folders:
  for path in sorted(folder.rglob('*.png')):
   digest=hashlib.sha256(path.read_bytes()).hexdigest()
@@ -22,6 +22,9 @@ for folder in folders:
   references.append({'source':str(path.relative_to(args.root)),'sha256':digest,'bytes':path.stat().st_size})
  for path in sorted(folder.glob('result.json')):
   value=json.loads(path.read_text());value['directory']=folder.name;records.append(value)
+  run_kinds[folder.name]=value.get('kind')
+  diagnostic=folder/'vm-result.json'
+  if diagnostic.exists():value['vm_diagnostic']=json.loads(diagnostic.read_text())
 manifest={'scope':'All saved PNG files for the selected run prefix, including failed attempts.',
           'prefix':args.prefix,'unique_images':len(images),'capture_references':len(references),
           'references':references,'runs':records}
@@ -30,7 +33,7 @@ for record in records:
  body.append('<p>'+html.escape(record['directory']+': '+record['status']+' — '+record['name'])+'</p>')
 for digest,path in images.items():
  source=str(path.relative_to(args.root))
- kind='Test report screenshot' if path.name.startswith('report-') else 'Native container capture' if 'native-details/' in source else 'Browser preview or captured test image — consult run metadata'
+ kind='Test report screenshot' if path.name.startswith('report-') else 'Actual VM/display capture — not automatic desktop qualification' if run_kinds.get(Path(source).parts[0])=='vm' else 'Native container capture' if 'native-details/' in source else 'Browser preview or captured test image — consult run metadata'
  body.append(f'<figure><figcaption>{html.escape(kind+": "+source)}</figcaption><a href="images/{digest}.png"><img loading="lazy" src="images/{digest}.png" alt="{html.escape(kind)}"></a></figure>')
 body.append('</html>')
 with zipfile.ZipFile(args.output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as archive:

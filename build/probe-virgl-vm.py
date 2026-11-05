@@ -31,6 +31,12 @@ def load_helper(name):
     return module
 
 
+class QMPCommandError(RuntimeError):
+    def __init__(self, error):
+        self.error = error
+        super().__init__(str(error))
+
+
 class QMP:
     def __init__(self, path):
         self.socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
@@ -52,7 +58,7 @@ class QMP:
                 raise RuntimeError('QMP disconnected')
             result = json.loads(line)
             if 'error' in result:
-                raise RuntimeError(result['error'])
+                raise QMPCommandError(result['error'])
             if 'return' in result:
                 return result['return']
 
@@ -91,6 +97,23 @@ def stop(process):
             process.wait()
 
 
+def own_window(pid, environment):
+    found = subprocess.run(['xdotool', 'search', '--onlyvisible', '--pid', str(pid)],
+                           env=environment, capture_output=True, text=True, timeout=10)
+    windows = found.stdout.split()
+    if found.returncode != 0 or len(windows) != 1:
+        return None
+    name = subprocess.run(['xdotool', 'getwindowname', windows[0]], env=environment,
+                          capture_output=True, text=True, timeout=10)
+    if name.returncode != 0 or not name.stdout.startswith('QEMU'):
+        return None
+    # An initially centered SDL window can grow beyond Xvfb's edge at modeset.
+    # Moving it, without scaling, preserves the actual full guest pixels.
+    subprocess.run(['xdotool', 'windowmove', windows[0], '0', '0'],
+                   env=environment, check=True, timeout=10)
+    return windows[0]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--iso', type=Path, required=True)
@@ -111,7 +134,7 @@ def main():
         parser.error('output path must not contain commas')
     if len(args.sha256) != 64 or any(c not in '0123456789abcdef' for c in args.sha256):
         parser.error('provide the expected lowercase SHA-256')
-    for tool in ['qemu-system-x86_64', 'Xvfb', 'glxinfo', 'scrot', 'xorriso']:
+    for tool in ['qemu-system-x86_64', 'Xvfb', 'glxinfo', 'scrot', 'xdotool', 'xorriso']:
         if not shutil.which(tool):
             parser.error(f'missing dependency: {tool}')
     from PIL import Image
@@ -183,6 +206,9 @@ def main():
                 next_frame = 10
                 clicked = False
                 while time.monotonic() - started < args.seconds:
+                    if (output / 'stop-requested').exists():
+                        report['stop_reason'] = 'operator requested end of diagnostic'
+                        break
                     if qemu.poll() is not None:
                         raise RuntimeError(f'QEMU exited unexpectedly: {qemu.returncode}')
                     elapsed = int(time.monotonic() - started)
@@ -191,13 +217,37 @@ def main():
                         continue
                     next_frame = elapsed + 20
                     ppm = output / f'guest-{elapsed:04d}.ppm'
-                    qmp.call('screendump', {'filename': str(ppm)})
-                    Image.open(ppm).save(ppm.with_suffix('.png'))
+                    # Modesetting can temporarily remove the QMP readback
+                    # surface. Preserve the real SDL window before attempting
+                    # readback; never click or qualify a missing guest frame.
+                    window_id = own_window(qemu.pid, environment)
                     subprocess.run(['scrot', str(output / f'host-window-{elapsed:04d}.png')],
                                    env=environment, check=True, timeout=15)
+                    frame_origin = 'qmp-readback'
+                    try:
+                        qmp.call('screendump', {'filename': str(ppm)})
+                    except QMPCommandError as error:
+                        if error.error != {'class': 'GenericError', 'desc': 'no surface'}:
+                            raise
+                        frame = {'seconds': elapsed, 'file': f'host-window-{elapsed:04d}.png',
+                                 'nonblank': None, 'readback': 'no surface', 'action': 'none'}
+                        report['frames'].append(frame)
+                        print(json.dumps(frame), flush=True)
+                        # GL scanout need not expose a CPU readback surface.
+                        # Capture the one visible window owned by OUR QEMU PID.
+                        # Never substitute a resized/composited mock frame.
+                        if window_id is None:
+                            continue
+                        sdl = output / f'guest-sdl-{elapsed:04d}.png'
+                        subprocess.run(['scrot', '--window', window_id, str(sdl)],
+                                       env=environment, check=True, timeout=15)
+                        with Image.open(sdl) as window:
+                            window.convert('RGB').save(ppm, format='PPM')
+                        frame_origin = 'actual-sdl-window'
+                    Image.open(ppm).save(ppm.with_suffix('.png'))
                     visible, details = frame_helper.inspect(ppm)
                     frame = {'seconds': elapsed, 'file': ppm.with_suffix('.png').name,
-                             'nonblank': visible, 'details': details}
+                             'nonblank': visible, 'details': details, 'origin': frame_origin}
                     if not clicked:
                         prompt = subprocess.run([sys.executable, str(ROOT / 'build/check-try-frame.py'), str(ppm)],
                                                 capture_output=True, text=True, timeout=10)
@@ -217,9 +267,6 @@ def main():
                     report['frames'].append(frame)
                     print(json.dumps(frame), flush=True)
                     ppm.unlink()
-                    if (output / 'stop-requested').exists():
-                        report['stop_reason'] = 'operator requested end of diagnostic'
-                        break
                 report['status'] = 'captured_requires_visual_review'
                 report['try_clicked'] = clicked
     except (OSError, RuntimeError, ValueError, subprocess.SubprocessError) as error:

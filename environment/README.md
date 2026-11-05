@@ -77,6 +77,22 @@ The current environment plugin reports runtime context only. It cannot edit
 the environment draft or publish it. Editing `/etc/codex/network-policy.json`
 would not grant network access and is not part of setup.
 
+## Software-backed VM display diagnostics
+
+The recipe now explicitly installs `qemu-system-gui` and
+`qemu-system-modules-opengl`. `qemu-system-x86` with no recommended packages had
+only `none`/`curses` display backends in the original compact image. Adding those
+signed Ubuntu modules in a disposable lab exposes SDL/GTK/OpenGL; it does not
+upgrade the already-built compact image automatically.
+
+Normal-user Xvfb + Mesa llvmpipe + QEMU SDL `gl=on` with `virtio-vga-gl` successfully
+initialized in qa5-04. Host `glxinfo` explicitly says **Accelerated: no**. This is
+a different rendering path from the earlier headless 2D tests, suitable for
+functional diagnostics only. It neither creates a render device nor qualifies
+RTX, CUDA, Vulkan, game performance, 6 GiB workloads or power consumption.
+Use the opt-in harness in [VM diagnostics](../docs/VM_GRAPHICS_QA.md); no security
+policy change, privileged container, public display port or physical disk is needed.
+
 ## Run and preserve proof
 
 Run `python3 environment/preflight.py` as the actual test user. Feed that through

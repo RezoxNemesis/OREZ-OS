@@ -8,6 +8,7 @@ import sys
 import tempfile
 import threading
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('vm_probe', ROOT / 'build/probe-virgl-vm.py')
@@ -87,10 +88,31 @@ class VMProbeTests(unittest.TestCase):
     def test_qmp_disconnect_is_not_a_pass(self):
         self.qmp_exchange(None, 'disconnected')
 
+    def test_missing_surface_error_keeps_structured_cause(self):
+        error = probe.QMPCommandError({'class': 'GenericError', 'desc': 'no surface'})
+        self.assertEqual(error.error['desc'], 'no surface')
+        # The exception remains fatal to general callers. Only the screenshot
+        # loop handles this exact transient case, without sending input.
+        self.assertIsInstance(error, RuntimeError)
+
     def test_cleanup_terminates_child(self):
         child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'])
         probe.stop(child)
         self.assertIsNotNone(child.poll())
+
+    def test_ambiguous_windows_are_never_moved_or_used_for_input(self):
+        for output in ['', '100\n101\n']:
+            with patch.object(probe.subprocess, 'run', return_value=
+                              subprocess.CompletedProcess([], 0, stdout=output)) as run:
+                self.assertIsNone(probe.own_window(1234, {}))
+                self.assertEqual(run.call_count, 1)
+
+    def test_other_application_window_is_never_moved(self):
+        with patch.object(probe.subprocess, 'run', side_effect=[
+                subprocess.CompletedProcess([], 0, stdout='100\n'),
+                subprocess.CompletedProcess([], 0, stdout='Unrelated app\n')]) as run:
+            self.assertIsNone(probe.own_window(1234, {}))
+            self.assertEqual(run.call_count, 2)
 
 
 if __name__ == '__main__':
