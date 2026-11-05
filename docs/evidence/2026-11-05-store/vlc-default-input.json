@@ -1,0 +1,21 @@
+[
+  {
+    "name": "vlc-default-keyboard-mouse",
+    "status": "passed",
+    "detail": {
+      "version": "3.0.23-1",
+      "positions_us": [
+        901778,
+        1902485
+      ],
+      "space_pause_resume": true,
+      "mouse_context_menu": true,
+      "fullscreen_f": true,
+      "quit_ctrl_q": true,
+      "custom_key_mapping": false,
+      "hardware_acceleration_tested": false,
+      "audio_tested": false,
+      "scope": "generated local video, native Linux application"
+    }
+  }
+]

@@ -1,5 +1,96 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest verified Store and native input work — 5 November 2026
+
+- Last confirmed implementation **`7fafddf4764528278e6c095e2e52a0c44c5f109d`**,
+  branch `feature/orez-live-foundation-20261104`, PR #1 draft/open/unmerged.
+  Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. This following
+  documentation/evidence checkpoint uses `[skip ci]`; verify actual HEAD.
+  Repository remains public until all PC-readiness gates pass.
+- **User correction is binding:** actual Android YouTube/Instagram/games,
+  never web shortcuts. Prefer official Linux desktop versions unchanged (Brave,
+  Chrome, VLC, SuperTux). Require actual app screenshots and keyboard/mouse
+  functionality; catalog cards do not establish it. BlueStacks/Free Fire is the
+  latest experience reference. BlueStacks uses preset input translation. An
+  optional clarification on automatic presets versus only built-in app controls
+  is pending; no custom mapper is implemented or authorized by assumption.
+- Implemented normal-user native PySide6 Store: ten-entry shared validated
+  catalog, search/filter, native installed-library detection and fixed-binary
+  launch, explicit publisher-info/runtime acknowledgments, private local logs.
+  Six Android entries visibly remain pending; no browser fallback, APK mirrors,
+  payment automation, privileged helper, autostart or remote daemon.
+- Added gated development SDK app adapter: reviewed aliases, owned emulator/AVD
+  validation, private loopback ADB port 5038 and emulator-5556, package-specific
+  status/launcher/Play-page/settings intents. Source tests are controlled mocks.
+  Actual CLI refuses YouTube with no consumer provider/no owned guest. No SDK
+  terms accepted, guest installed, Google sign-in or Android apps run this turn.
+- Exact implementation [CI 42067954280](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42067954280)
+  **passed**: decoded job 127387318281 verifies **119 source tests, 28 payload
+  paths, preview build and 68 browser cases**. Full ISO job skipped. Artifact
+  13434794412: 210,517,939 bytes, GitHub SHA-256
+  `bda9b7e8ec65e107b723e6ade0ab9cbf3a288225c851480863e19fe08dd88934`,
+  expires **19 November 2026 16:49:19 UTC**. Logs/metadata verified; artifact ZIP
+  not independently downloaded. Its CI screenshots are separate from local ZIP.
+- Final native container tests: nine Store scenarios pass. Real native VLC
+  3.0.23-1 plays a generated local video, accepts default Space pause/resume,
+  actual mouse-menu Pause, F fullscreen and Ctrl+Q. No key mapper. Actual
+  native Brave 1.98.63 is **blocked by sandbox namespace permissions**; its
+  wrapper's exit zero does not establish a working browser. No bypass applied.
+- Final component package **orez-shell 0.1.0-3**, **278,796 bytes**, SHA-256
+  `5613fe2cd8a235183697274ffd0d69acdccc40052166f7f056cb40a09f17b0bd`.
+  Actual offline 0.1.0-2→0.1.0-3 upgrade preserves dummy project/preferences/
+  Android settings, denies ordinary-user dpkg, passes installed-file verification.
+  GUI depends on `python3-pyside6.qtwidgets`; QA also requires QtTest. Dynamic
+  upstream Qt/PySide licence obligations are documented, not waived.
+- **232 downloadable original PNGs / 1,000 capture references / 20 local attempts**:
+  https://github.com/RezoxNemesis/OREZ-OS/archive/adf0e375b95a18e16813c57046a443ac25dc0952.zip
+  Orphan branch `downloads/screenshots-2026-11-05-store`; public ZIP downloaded,
+  **83,148,334 bytes**, SHA `8876aad72144cf8838cf3d0ba21e2e8e9be74f53be3b258f5b73f82028ce1cdc`,
+  every PNG hash matched. Four failed attempts retained. Runs 01–10 include
+  superseded web proposal; 11–14 actual Android direction; 15 onward prefer
+  unchanged native Linux browsers. Read captions before interpreting screenshots.
+  Public gallery includes no raw logs or credentials. Local complete bundle:
+  `dist/OREZ-store-development-screenshots.zip`, 82,952,924 bytes, SHA
+  `597dbf1b0638e84a6e7abf0575492290c916f0d5c04ef39562c57cff77524241`.
+- Ledger: [STORE_QA.md](STORE_QA.md), [OREZ_STORE.md](OREZ_STORE.md), and
+  `docs/evidence/2026-11-05-store/`. Failures: unreadable fixture, APT same-version
+  reinstall, wrong VLC popup assertion, minimized-image documentation exclusion.
+  Corrected checks pass; Brave/Android environment blockers remain separate.
+- **No new ISO.** Retained ISOs still predate Store; pinned base lacks PySide6.
+  File-path collision pass uses the same 28 paths but earlier content. Live
+  authentication issues (blank password, NOPASSWD ALL, wildcard Polkit), visible
+  ISO desktop, Calamares/recovery, hardware and consumer Android remain release
+  blockers. No installation approval, PC/admin policy, SSD, USB or firmware change.
+- QA recipe updated, but no image published. Temporary Store lab removed after
+  preserving evidence; about 9.9 GiB free. No KVM, physical GPU, enforced Docker
+  RAM ceilings or functioning Brave sandbox namespaces available in this host.
+
+Exact next actions:
+1. Verify HEAD/PR/exact implementation CI and read STORE_QA/OREZ_STORE. Keep prior
+   ISO identity and auth findings below; never infer Store exists in the ISO.
+2. Resolve the optional input clarification if the owner replies. If automatic
+   presets are allowed, design visible, reversible, focused-guest-only controls,
+   not global input injection, hidden hooks, macros or anti-cheat bypass.
+3. Obtain a supported KVM/graphics/sandbox QA host using the updated environment
+   recipe. Select/review a maintained consumer Android provider and Google Play
+   licensing path; the SDK provider remains development/testing only.
+4. Actually boot the guest, qualify isolation and per-app launch/install/update/
+   removal/input; capture real YouTube/free-casual-game windows. Do not substitute
+   browser pages. Native Linux apps need actual sandboxed browsing/input checks.
+5. Provision signed PySide6 dependencies in live/installed roots, implement
+   reviewed local owner authentication, obtain interactive ISO desktop proof,
+   then qualify disabled installer only on disposable virtual disks. Retain all
+   NVIDIA/Secure Boot/network/6–16 GiB/performance/hardware gates.
+
+Next-chat prompt: "Continue RezoxNemesis/OREZ-OS. Read AGENTS.md, the newest
+AI_HANDOFF, OREZ_STORE.md and STORE_QA.md; verify branch/PR/CI and artifacts.
+Real Android apps are required, with official Linux versions preferred unchanged.
+Do not claim a working emulator, app download, hardware result or ready ISO from
+catalog/source tests. Preserve owner-only administration and all disks. Capture
+actual screenshots and retain failures. Continue the exact next unresolved gate."
+
+---
+
 ## Latest verified offline-startup work — 5 November 2026
 
 - Last confirmed implementation: **`d01cc72f3b8fda4889144e823f1b0710fd5a7b71`**,

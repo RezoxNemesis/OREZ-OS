@@ -1,5 +1,12 @@
 # OREZ OS — Master Engineering Blueprint
 
+Latest application requirement: use actual Android apps for YouTube, Instagram
+and requested Android games; prefer official Linux versions unchanged. The
+BlueStacks example is an experience reference, not a supported OREZ runtime.
+See [OREZ Store architecture](OREZ_STORE.md), [actual test evidence](STORE_QA.md)
+and [the current verified handoff](AI_HANDOFF.md). Android consumer operation
+and direct keyboard/mouse compatibility remain unresolved gates.
+
 Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
 owner-authorized upgrades, protection-policy invariants and local detection that
 preserves legitimate work. Security software receives fixes; no AI/vendor may

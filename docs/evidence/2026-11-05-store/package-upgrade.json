@@ -1,0 +1,17 @@
+{
+  "scope": "Actual offline component upgrade in disposable container; no ISO/consumer Android proof",
+  "from": "0.1.0-2",
+  "to": "0.1.0-3",
+  "old_sha256": "623f88bcafebd878fd64d557e10047e1b0688e42c2b5ca0f5f53d64e8b378eba",
+  "new_sha256": "5613fe2cd8a235183697274ffd0d69acdccc40052166f7f056cb40a09f17b0bd",
+  "user_state_sha256": {
+    "/home/orez-test/QA project/\u65e5\u672c\u8a9e.txt": "d0f4baea908121e4839b7e9d9bac1f3d4e3e5d3058e3470f14a35688416ed005",
+    "/home/orez-test/.config/autostart/orez-initialize.desktop": "60e54d127d06d3bab96cf13941b134ec605b6504455c6d96018448faffa60096",
+    "/home/orez-test/.local/share/orez/android/config.json": "efd37cc738b278deed5381ad34a31187dc77b30dbac8e485d75e3ec95c02e6e5"
+  },
+  "state_preserved": true,
+  "ordinary_user_upgrade_denied": true,
+  "dpkg_verified": true,
+  "android_runtime_available": false,
+  "youtube_launched": false
+}
