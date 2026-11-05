@@ -1,5 +1,15 @@
 # OREZ OS — Verified Development Handoff
 
+## FINAL VERIFIED COMMIT / CI CHECKPOINT — 2026-11-05
+
+- Published implementation: **`d496601e443ed3a525ac22b7d9736391b3e256f2`**, branch `feature/orez-live-foundation-20261104`, [draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), unmerged. Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`.
+- **GitHub CI SUCCESS:** [41982877782](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41982877782), source job `127096789431`. Verified logs report **52 source tests passed**, package build and 16-file path/mode/owner audit passed, production preview build passed, and **all 14 desktop/mobile browser tests passed in one run**. The expensive ISO job was skipped as intended.
+- [Download the verified preview and screenshots](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41982877782/artifacts/13395230363): artifact `orez-source-and-preview-evidence`, 30,745,743 bytes, SHA-256 `322fd2210d85ada3aa83a18d5a164808543a4e2f21f4ad0c61b438646166cc10`, 14-day retention. It includes `OREZ-Preview.html`, production assets and all CI test screenshots/logs. Download before expiration.
+- All local attempts, including failures: `dist/OREZ-test-evidence.zip`; gallery `dist/evidence/index.html`. This is a workspace artifact, not committed Git data. The durable ledger and four representative genuine captures are committed under `docs/evidence/2026-11-05-session/`. The portable file is `dist/OREZ-Preview.html`; it is a browser design preview, not an APK or OS.
+- This final checkpoint is a **documentation-only follow-up** to the tested implementation, marked `[skip ci]` to avoid repeating expensive setup for a result annotation. Do not claim the follow-up itself ran CI. Always inspect actual HEAD, the code diff and the run's head SHA before continuing.
+- Native package lifecycle passed locally (run 19); it was not rerun in GitHub. Its manual workflow is defined on the development branch; GitHub's dispatch UI may require that workflow to exist on the default branch. Use the documented local command while the PR remains draft; do not merge merely to expose a dispatch button.
+- **OS release remains incomplete:** no new ISO after the builder fix, no visible booted Plasma qualification, no safe installer/recovery or physical NVIDIA/Secure Boot/Android validation. Next actions below remain binding. No user's disk, USB or firmware was touched.
+
 ## CURRENT SESSION CHECKPOINT — 2026-11-05, implementation resumed
 
 ### Repository and mode

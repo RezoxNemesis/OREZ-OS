@@ -7,3 +7,5 @@ The ledger records original local test results, including failures. Parent commi
 - `package-report.png`: captured first page of the passing APT lifecycle report; full log and second page are in the downloadable bundle.
 
 No screenshot in this folder certifies installation, recovery, NVIDIA or Secure Boot.
+
+Subsequent committed-source verification: [CI 41982877782](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41982877782) passed at implementation `d496601e443ed3a525ac22b7d9736391b3e256f2`: 52 source tests, exact package audit, production preview build and all 14 browser tests. [CI preview/screenshot artifact](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41982877782/artifacts/13395230363) expires after 14 days. Artifact SHA-256: `322fd2210d85ada3aa83a18d5a164808543a4e2f21f4ad0c61b438646166cc10`.
