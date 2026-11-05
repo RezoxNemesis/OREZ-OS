@@ -1,0 +1,3392 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa3-",
+  "unique_images": 340,
+  "capture_references": 551,
+  "references": [
+    {
+      "source": "qa3-01-provision/report-001.png",
+      "sha256": "5971e947b4587a4ae9e16e6a1f39cc68c5b2a8ec5e199b80c2c804f914e961b6",
+      "bytes": 220468
+    },
+    {
+      "source": "qa3-01-provision/report-002.png",
+      "sha256": "6bc96c5ffa944f428ea5140f3ac76dbaf53f1dbe10f13b0f3ca2d39dfa695438",
+      "bytes": 259966
+    },
+    {
+      "source": "qa3-01-provision/report-003.png",
+      "sha256": "5c4d440c31c6f4ffc80d1ff8957169d0f733d481dc17aed5713d9bdb2e6d9616",
+      "bytes": 260055
+    },
+    {
+      "source": "qa3-01-provision/report-004.png",
+      "sha256": "a4f623d333a778f6cbca7037aba91d3ac4907fa2068c1bfe819ef5f74b9a3f7e",
+      "bytes": 265083
+    },
+    {
+      "source": "qa3-01-provision/report-005.png",
+      "sha256": "427fed95858d5c1a1094beaab1e000fab4bb64b1a08a4f730c527f331c102ca6",
+      "bytes": 257490
+    },
+    {
+      "source": "qa3-01-provision/report-006.png",
+      "sha256": "017e7858ec925f79fe5e00f7183d3e6043f917b246c4418edcf76007abfa3a08",
+      "bytes": 266680
+    },
+    {
+      "source": "qa3-01-provision/report-007.png",
+      "sha256": "65e8b6622cd3d99ff9f749718266132aa0eaf527dbdb1a791431b5129f992efd",
+      "bytes": 278436
+    },
+    {
+      "source": "qa3-01-provision/report-008.png",
+      "sha256": "1797b75a60efa3006fe665a48e0be2b2d2e76678f80431dc179a701b62a3d1f1",
+      "bytes": 273323
+    },
+    {
+      "source": "qa3-01-provision/report-009.png",
+      "sha256": "aa583fe815b7beddca0fb524a5e630577ffea94e9179a57e70ec846744df3cf9",
+      "bytes": 307627
+    },
+    {
+      "source": "qa3-01-provision/report-010.png",
+      "sha256": "0d69c36b2d9e81758924da35deb4ac2af2944c5f4da496227825f56e9974b549",
+      "bytes": 275332
+    },
+    {
+      "source": "qa3-01-provision/report-011.png",
+      "sha256": "6253bdd1866b71fdba7a5de8ab090026101d20e0d0e36c7c55bb4fa2694b36b6",
+      "bytes": 284901
+    },
+    {
+      "source": "qa3-01-provision/report-012.png",
+      "sha256": "f7c20b202215ac7acc9bd98830eb20882c77d7c9ac35e81271543360301ab983",
+      "bytes": 287334
+    },
+    {
+      "source": "qa3-01-provision/report-013.png",
+      "sha256": "d8624dc4ae84a8dc52752007bc83062f440c025a0abff0c3dbfde02e09369053",
+      "bytes": 269560
+    },
+    {
+      "source": "qa3-01-provision/report-014.png",
+      "sha256": "28e3ef8b74afa6468c974741e29748e35a65e69639e92c6d99e1042d51010d0d",
+      "bytes": 260142
+    },
+    {
+      "source": "qa3-01-provision/report-015.png",
+      "sha256": "ccba07d417eadc3c7b93dbb6151d7053ed3de75318b0d99ce3fe21c068fe09d7",
+      "bytes": 275483
+    },
+    {
+      "source": "qa3-01-provision/report-016.png",
+      "sha256": "10b44cf596aae7bea1640ac0206844b9c42e4d0f4ed8fe6c2d7594296bbafea7",
+      "bytes": 281792
+    },
+    {
+      "source": "qa3-01-provision/report-017.png",
+      "sha256": "23318847d3234c53ffc74ecf32dca397b9b6c17f200a7e3a63f3f4937d56611a",
+      "bytes": 288198
+    },
+    {
+      "source": "qa3-01-provision/report-018.png",
+      "sha256": "320d327db9a4c1a8ed22eb0398e0765fb30a06b41b2c4281d331e6b0efe54026",
+      "bytes": 281114
+    },
+    {
+      "source": "qa3-01-provision/report-019.png",
+      "sha256": "a753b40e9004b9c0240e8daa0413251097c7c9555b941e83517d4b0ea9e6fbce",
+      "bytes": 287429
+    },
+    {
+      "source": "qa3-01-provision/report-020.png",
+      "sha256": "c22c48c7addea8586f9bc29019b77df97f1f611d89aa2e3331345c6e3aebb726",
+      "bytes": 289430
+    },
+    {
+      "source": "qa3-01-provision/report-021.png",
+      "sha256": "1aea6eb39952452898ddd39ce524cf6a4959e778b895c322426c21e06f2898c7",
+      "bytes": 174121
+    },
+    {
+      "source": "qa3-01-provision/report-022.png",
+      "sha256": "446c8fff2bb004f2092dd87530eb78011d8009aa54afc5016a661d839eb47ccd",
+      "bytes": 163740
+    },
+    {
+      "source": "qa3-01-provision/report-023.png",
+      "sha256": "5b5c334f6fe4ee2dc1693a8822d410c59e26130e6f7e45cce151de4fec3bee0c",
+      "bytes": 168271
+    },
+    {
+      "source": "qa3-01-provision/report-024.png",
+      "sha256": "6881cda9f2e442ad4c77b3e2495c692ff20f5ac47a4000ef18cc5c6be0374a4f",
+      "bytes": 162271
+    },
+    {
+      "source": "qa3-01-provision/report-025.png",
+      "sha256": "cfe9f5faa3cf4e61398e60f80d9464b9da5d97a0ab5116db9b5d24a17ffa5852",
+      "bytes": 167456
+    },
+    {
+      "source": "qa3-01-provision/report-026.png",
+      "sha256": "514209418255d924d8c56731f15d628d42a472edb5ee3771430742ade14b5028",
+      "bytes": 160028
+    },
+    {
+      "source": "qa3-01-provision/report-027.png",
+      "sha256": "db868ef4bdadba20eccd6318840bf79edd31a048012cb5b49a3f851ace2c8784",
+      "bytes": 160208
+    },
+    {
+      "source": "qa3-01-provision/report-028.png",
+      "sha256": "b41af2d11e0e81ca7a81be87d3718d91e4672f6399b4c59a46e5f728ab7cacf5",
+      "bytes": 160648
+    },
+    {
+      "source": "qa3-01-provision/report-029.png",
+      "sha256": "0e7da341e629d0f1b89ec223e76c9f169e8675bb259aa7756b5482485fe25dda",
+      "bytes": 156867
+    },
+    {
+      "source": "qa3-01-provision/report-030.png",
+      "sha256": "873c253a4a3487be97f9ada214b7ba8ae0156ebe4643bd1d0eb311eb283a7c5e",
+      "bytes": 165598
+    },
+    {
+      "source": "qa3-01-provision/report-031.png",
+      "sha256": "6ef88790727a9d5ca82934b6b683ccf1c5c50b59f6effc4e48fe2b19f840cd89",
+      "bytes": 162235
+    },
+    {
+      "source": "qa3-01-provision/report-032.png",
+      "sha256": "6752a1e83750ebae2bb2bed7853610b7edbde70444f35853260121afcdbdf110",
+      "bytes": 161132
+    },
+    {
+      "source": "qa3-01-provision/report-033.png",
+      "sha256": "f3b590324168325934a330c28560ac2544ce5b93306a66d31f7578e56611b9d6",
+      "bytes": 162110
+    },
+    {
+      "source": "qa3-01-provision/report-034.png",
+      "sha256": "b54b132389128aeef5d2576050d821e11207225e28587ebe93e17cec52515355",
+      "bytes": 163764
+    },
+    {
+      "source": "qa3-01-provision/report-035.png",
+      "sha256": "0f93bb217d5191ca0e8310bbbbc1dc620cd28ebb67aec00b441f5b6189852c55",
+      "bytes": 160774
+    },
+    {
+      "source": "qa3-01-provision/report-036.png",
+      "sha256": "604b12f8b173fb09126ec04f6fb02ad2d69dc737a238e149928a81b676ea9fbf",
+      "bytes": 162947
+    },
+    {
+      "source": "qa3-01-provision/report-037.png",
+      "sha256": "cccdf45fd4d4cf7de00eac44426f3775371a22b9225fbd2dcf995db797793948",
+      "bytes": 164167
+    },
+    {
+      "source": "qa3-01-provision/report-038.png",
+      "sha256": "4343e16f8441f99c78ad64c666df595980f3eb9df750a0e1ae021d3cadd8dba0",
+      "bytes": 166147
+    },
+    {
+      "source": "qa3-01-provision/report-039.png",
+      "sha256": "5d5a13aa830f68a79be394dc80efd9051b181625922a46d15ae101b11c930b76",
+      "bytes": 168665
+    },
+    {
+      "source": "qa3-01-provision/report-040.png",
+      "sha256": "a8bc23d898079df19768ff2f2dd358a9afbc0a018e10887a82b1ebe97272032c",
+      "bytes": 161386
+    },
+    {
+      "source": "qa3-01-provision/report-041.png",
+      "sha256": "26e9ce5fa033988c9689796c8960d8aabb5072340d865c60ad001929cd3de495",
+      "bytes": 159652
+    },
+    {
+      "source": "qa3-01-provision/report-042.png",
+      "sha256": "ee69e628310dcb6a3a33e3f767728c54196e594dcf948496ca5ea9c7c01a69ff",
+      "bytes": 160621
+    },
+    {
+      "source": "qa3-01-provision/report-043.png",
+      "sha256": "cdd5b2e89718aa1eb187966a0d6cb21697e84271800f456ddbf4004949d0acd9",
+      "bytes": 156698
+    },
+    {
+      "source": "qa3-01-provision/report-044.png",
+      "sha256": "81e659cd830140b01e816e4c69a41935a2c256f0d1e111c1b07d6822ebc85581",
+      "bytes": 159009
+    },
+    {
+      "source": "qa3-01-provision/report-045.png",
+      "sha256": "b9561f4292b0c30957fcf080fa9c8edbec87176caf070be7985b07de1100e010",
+      "bytes": 156606
+    },
+    {
+      "source": "qa3-01-provision/report-046.png",
+      "sha256": "df9dadf17841f28e3d571293b165bb73e70729654b594d055290a20aa545502c",
+      "bytes": 162352
+    },
+    {
+      "source": "qa3-01-provision/report-047.png",
+      "sha256": "ed0a53f7a3c115072aed73494163e4eaf54ad223d77c60e6068366b138983cc0",
+      "bytes": 156010
+    },
+    {
+      "source": "qa3-01-provision/report-048.png",
+      "sha256": "5f0f25ed8c548168e7a4e27232551b4265043a31a8c3fcc58ff300d54610e6db",
+      "bytes": 164038
+    },
+    {
+      "source": "qa3-01-provision/report-049.png",
+      "sha256": "ad5a2a7cce207dbf6064e1f134e2e7d6e532922b7f125a09a0a586197ca00853",
+      "bytes": 177222
+    },
+    {
+      "source": "qa3-01-provision/report-050.png",
+      "sha256": "08a7ae262085dea118fae7e420cfefd9a04e3786229ca49d7b974ae307bd2564",
+      "bytes": 169167
+    },
+    {
+      "source": "qa3-01-provision/report-051.png",
+      "sha256": "8488e0b9f0d124943e49c02ffacf5400f2a823b8378ebe9a8623d9d109318dc2",
+      "bytes": 160411
+    },
+    {
+      "source": "qa3-01-provision/report-052.png",
+      "sha256": "f00a525287f6dfa0a403fdafba8475971339172826bf7469509b3a0921a5f539",
+      "bytes": 160630
+    },
+    {
+      "source": "qa3-01-provision/report-053.png",
+      "sha256": "52a88eb14dd24b459f605d02c21fdd00495c44db9fbc75976df0a26340c07faa",
+      "bytes": 177015
+    },
+    {
+      "source": "qa3-01-provision/report-054.png",
+      "sha256": "f2afd8fefe6af4474393babf2225588f08449d1f9c72204d6c0500b34588140f",
+      "bytes": 166575
+    },
+    {
+      "source": "qa3-01-provision/report-055.png",
+      "sha256": "965127a728c0b708aedd27eb34df22db36313fe4db5b88d622be80b5c4ad6ee2",
+      "bytes": 169968
+    },
+    {
+      "source": "qa3-01-provision/report-056.png",
+      "sha256": "e7551538ed7f90ca02c6e42ee174ec5e2c33c0ee8440b6ad85969f0f547ba70b",
+      "bytes": 163027
+    },
+    {
+      "source": "qa3-01-provision/report-057.png",
+      "sha256": "e2ee9dd93195ebd1f7b54b25cb021d34e4659c916f99f5525238b2624b9039ee",
+      "bytes": 160168
+    },
+    {
+      "source": "qa3-01-provision/report-058.png",
+      "sha256": "c50c679f6286c04a77cd48da3f046dffd3972419224b3ee57a0da770cf0aa2f4",
+      "bytes": 162542
+    },
+    {
+      "source": "qa3-01-provision/report-059.png",
+      "sha256": "1a42d2f6bb3f49521572d0f16b3d24fe57577e72e2672c790d1863467054d202",
+      "bytes": 161843
+    },
+    {
+      "source": "qa3-01-provision/report-060.png",
+      "sha256": "5e9c354c6f4eb7ae8c389325ad85ef74375afb2d0558d946102455c59e5e025c",
+      "bytes": 161924
+    },
+    {
+      "source": "qa3-01-provision/report-061.png",
+      "sha256": "5b0347cc28b8d92d43cf9e672b1f5d9bc16efad1e2b98a669495f78486e95e13",
+      "bytes": 171423
+    },
+    {
+      "source": "qa3-01-provision/report-062.png",
+      "sha256": "24a467ae5f847148ce39bbb8561d6881dcfe42e6c3aa466535cdbd842a41c480",
+      "bytes": 172966
+    },
+    {
+      "source": "qa3-01-provision/report-063.png",
+      "sha256": "aa26cf2766fe281d8d9dfc73aad2461a174c1d6afaaf6798750c0a4c2b982312",
+      "bytes": 164211
+    },
+    {
+      "source": "qa3-01-provision/report-064.png",
+      "sha256": "0fa4af13e1bcf72be6b522efbe7fea11b7658a60218835f2b44166a79d17edc4",
+      "bytes": 167553
+    },
+    {
+      "source": "qa3-01-provision/report-065.png",
+      "sha256": "2ee609b0dd4a9609a51ca538dbc37f5f1e63ee0ac48a92648e7ae641646b4d59",
+      "bytes": 160844
+    },
+    {
+      "source": "qa3-01-provision/report-066.png",
+      "sha256": "0971625df8ce15abf2bb59ce3e2272a061b3401b762d1020bacd7b58238ade5a",
+      "bytes": 160758
+    },
+    {
+      "source": "qa3-01-provision/report-067.png",
+      "sha256": "9427a1109104745bb6bd701d8df229f584028733dafe3ace8461f70b9c6c84a4",
+      "bytes": 159256
+    },
+    {
+      "source": "qa3-01-provision/report-068.png",
+      "sha256": "1e7d365928c94c6a3ffb02c94ec3480937c4b167d7c1584fbde246dd09e81f81",
+      "bytes": 159595
+    },
+    {
+      "source": "qa3-01-provision/report-069.png",
+      "sha256": "b0f38f196db4c765c5ed73eda5081203c17b396d7b868c06697fdfa5b5884b22",
+      "bytes": 165725
+    },
+    {
+      "source": "qa3-01-provision/report-070.png",
+      "sha256": "31306d382165c703daf0559bcb955a3ceb9734307af4ecfde830c05c3b201aa3",
+      "bytes": 161048
+    },
+    {
+      "source": "qa3-01-provision/report-071.png",
+      "sha256": "24f50122ae1acd995c087e336f187910bf3ef7c40dc6c8ce9dce1e2dac08d609",
+      "bytes": 164626
+    },
+    {
+      "source": "qa3-01-provision/report-072.png",
+      "sha256": "9ae0ec12be56442b9da3514ed4fc2bb62c8dcd0d7683d307a28ac93f42391455",
+      "bytes": 162583
+    },
+    {
+      "source": "qa3-01-provision/report-073.png",
+      "sha256": "4e1bfead80d6cc0580d4a0bd4cf58e35111478aa33d05c0a5a7c6b8a93c9f3e1",
+      "bytes": 163780
+    },
+    {
+      "source": "qa3-01-provision/report-074.png",
+      "sha256": "e010cfde2b844dae160f1e8660fbc6e30cec22424563466ea5008c1309a85d1a",
+      "bytes": 159659
+    },
+    {
+      "source": "qa3-01-provision/report-075.png",
+      "sha256": "01d9aa83e634fbccb52ff77cefde4c9aa486d30ecfba482f3e0b7e8c13deafc5",
+      "bytes": 166727
+    },
+    {
+      "source": "qa3-01-provision/report-076.png",
+      "sha256": "e57f14926f40939784866d516a18433eb40f6b3e9cbd8f4e058a2a4a28b02a32",
+      "bytes": 159231
+    },
+    {
+      "source": "qa3-01-provision/report-077.png",
+      "sha256": "52b47ced61dbd3ca02eb16405dade8b3335acb19871047012a67ccb8b7a1b35c",
+      "bytes": 167495
+    },
+    {
+      "source": "qa3-01-provision/report-078.png",
+      "sha256": "eef8173729f21c251e71639c0b183dc4d96e058490074034593e6ea6f87d3085",
+      "bytes": 163296
+    },
+    {
+      "source": "qa3-01-provision/report-079.png",
+      "sha256": "c5abec9ca53262d8f928859670c82f485a790fa32b1a03e9bf055d16bae9dd46",
+      "bytes": 161420
+    },
+    {
+      "source": "qa3-01-provision/report-080.png",
+      "sha256": "460172e94487ac856ac394cc475e0054d1f8523bd6e464b9bd596dead48b27eb",
+      "bytes": 157241
+    },
+    {
+      "source": "qa3-01-provision/report-081.png",
+      "sha256": "2b436c1fa78abc2e49f2847175f49dbeac1880f2fc549eae8a1733dc94144847",
+      "bytes": 155379
+    },
+    {
+      "source": "qa3-01-provision/report-082.png",
+      "sha256": "e5acf15175473867374fe88b7ea46413352c251b6b494bf627d91430310661a6",
+      "bytes": 151258
+    },
+    {
+      "source": "qa3-01-provision/report-083.png",
+      "sha256": "bbc8e8cbe6405923253280e61a54c8feb35065330315cf3c5e738f0ec5be773d",
+      "bytes": 150970
+    },
+    {
+      "source": "qa3-01-provision/report-084.png",
+      "sha256": "591f0a1500dd4e57c2d1130f54bb50d493f331aeb34d5e55c0fa4ed583336ed1",
+      "bytes": 150639
+    },
+    {
+      "source": "qa3-01-provision/report-085.png",
+      "sha256": "6968e844cdcb566b58e546171763f2bbc1fd2526029b0e2146881f5a927591e1",
+      "bytes": 148417
+    },
+    {
+      "source": "qa3-01-provision/report-086.png",
+      "sha256": "bfe1ea49ea5c0a9a00c54ca65b51b4ef7b97349b624cbb4775df95e5a78913a1",
+      "bytes": 151275
+    },
+    {
+      "source": "qa3-01-provision/report-087.png",
+      "sha256": "09b0c356f266df837702208ea68e12033044fe7e98cd06e5c572322f0648d85c",
+      "bytes": 152447
+    },
+    {
+      "source": "qa3-01-provision/report-088.png",
+      "sha256": "aa49ff64201d04a451d7289f54bb833c452d3ca5e766f5245202a5d8bbad9681",
+      "bytes": 150325
+    },
+    {
+      "source": "qa3-01-provision/report-089.png",
+      "sha256": "458b1d1d18da146b7d5f175ce62dfb343c05b8b51dc55c7fdb3577a6a267415d",
+      "bytes": 150728
+    },
+    {
+      "source": "qa3-01-provision/report-090.png",
+      "sha256": "eedd6827694795fe7ad754e25325834c96cbbeb59afd423a440a1e57f564e5f4",
+      "bytes": 151348
+    },
+    {
+      "source": "qa3-01-provision/report-091.png",
+      "sha256": "b84fe875bc3851eecb6f74af25f9290c44f0c5e8f4c1ad34058194282e921257",
+      "bytes": 149593
+    },
+    {
+      "source": "qa3-01-provision/report-092.png",
+      "sha256": "14c3060ba6b4d39b7b2589bff4a640280ed459710517ab0640656d258a0e23dd",
+      "bytes": 152427
+    },
+    {
+      "source": "qa3-01-provision/report-093.png",
+      "sha256": "e4f2e336a947b2f821582479d0ee5ecdba28d34558c185a704d4d41ced9d67d7",
+      "bytes": 152159
+    },
+    {
+      "source": "qa3-01-provision/report-094.png",
+      "sha256": "7d49f0afa338287b3975bab277fcf919d48022cfc05dc4e1264ddc02c1dc0c8d",
+      "bytes": 152710
+    },
+    {
+      "source": "qa3-01-provision/report-095.png",
+      "sha256": "1189787b80fa3f85bb0944f8f9855850aba8a011080c78b93996865ff0e750b0",
+      "bytes": 153325
+    },
+    {
+      "source": "qa3-01-provision/report-096.png",
+      "sha256": "3f6c86b15ff683853f96ac389a2c3e77019b8b1ddc599cf7bef97ae36f3771ef",
+      "bytes": 151164
+    },
+    {
+      "source": "qa3-01-provision/report-097.png",
+      "sha256": "26f7092196703660065ccf9a8e262651d9ed6743d2c5ae6d6fce00c10759301d",
+      "bytes": 167702
+    },
+    {
+      "source": "qa3-01-provision/report-098.png",
+      "sha256": "ec991278d7a03f8b1abffda6deff8eed044d31b0df74369cb3be4a5dd202e3cb",
+      "bytes": 155581
+    },
+    {
+      "source": "qa3-01-provision/report-099.png",
+      "sha256": "73ce6726d9ca71a7dee9e8fe38bd9e7de36044411516226b2058337217111953",
+      "bytes": 148829
+    },
+    {
+      "source": "qa3-01-provision/report-100.png",
+      "sha256": "d5295a41145ccc05c639f5901b63ad21e0383c2833adbbed48b39103a0b2d54c",
+      "bytes": 154344
+    },
+    {
+      "source": "qa3-01-provision/report-101.png",
+      "sha256": "1d58214eac6a55dc44588fe638bd1a49da28f39a5670ab2d616e699e7baf4497",
+      "bytes": 160429
+    },
+    {
+      "source": "qa3-01-provision/report-102.png",
+      "sha256": "c1d72a7ba752d633014b494417353b626ac9c9d7f740cdd8010d5cc095625acc",
+      "bytes": 164135
+    },
+    {
+      "source": "qa3-01-provision/report-103.png",
+      "sha256": "7311e775fb83ecd4594a1629e27dd21be4bb3d732956315945c48b7adea18636",
+      "bytes": 161093
+    },
+    {
+      "source": "qa3-01-provision/report-104.png",
+      "sha256": "1d28a410844ce4048db0eba1c43bcdb2f414f7c6e7e42c1ec726459db609eb70",
+      "bytes": 265570
+    },
+    {
+      "source": "qa3-01-provision/report-105.png",
+      "sha256": "6b9734980541872027cb722c24f4d4e9abad39f114931a641bf34e7e236f899e",
+      "bytes": 143461
+    },
+    {
+      "source": "qa3-02-provision/report-001.png",
+      "sha256": "0607de4fb6cd6065b828af70bcaffb4c35c1752d4fa8beb912daaa5f03c0ed70",
+      "bytes": 240823
+    },
+    {
+      "source": "qa3-02-provision/report-002.png",
+      "sha256": "e46c01a299a165167ca998d27f4c1fff3eb67db683f563bef07795c815692b16",
+      "bytes": 254598
+    },
+    {
+      "source": "qa3-02-provision/report-003.png",
+      "sha256": "e58148d049271c604f03c39632ef9b6374b5274bab0da58e9f8ff15f7f88b9a9",
+      "bytes": 98026
+    },
+    {
+      "source": "qa3-03-source/report-001.png",
+      "sha256": "800716c836350245a3c2103bb635b02ca53010b8dfc3245820017f3da39ee1ee",
+      "bytes": 238560
+    },
+    {
+      "source": "qa3-03-source/report-002.png",
+      "sha256": "27386526ebc75605faeaffff66deac582933c9841ea8278c31276f5282bceaad",
+      "bytes": 235601
+    },
+    {
+      "source": "qa3-03-source/report-003.png",
+      "sha256": "3608694d89d16cb424cb7aff79224cd6ce1dfad37dc8cc8c155691cb058f550c",
+      "bytes": 231440
+    },
+    {
+      "source": "qa3-03-source/report-004.png",
+      "sha256": "588a1e5506e8c5047c6b3dd4d58f31a0cce55b9e5d9e56254d069df1c949aa8e",
+      "bytes": 69996
+    },
+    {
+      "source": "qa3-04-provision/report-001.png",
+      "sha256": "b352250b4c9bb7123ccf04e3e14f6c3699be80cf7a1f1e5104e50b0a01b1c2e1",
+      "bytes": 247055
+    },
+    {
+      "source": "qa3-04-provision/report-002.png",
+      "sha256": "f92ec991665c113033159f88f8ebd80e00ab46706076f01e644c1dc6ea3ed8a5",
+      "bytes": 267461
+    },
+    {
+      "source": "qa3-04-provision/report-003.png",
+      "sha256": "b634d1f0e84dea94bbc109614b048d6e5267a26c84b0e588eeb0a141bd06b55c",
+      "bytes": 196281
+    },
+    {
+      "source": "qa3-04-provision/report-004.png",
+      "sha256": "fe8edc49f3f5f31a7eadde208db7a0e775c7772bbb973d93d77010b831040f0c",
+      "bytes": 175629
+    },
+    {
+      "source": "qa3-04-provision/report-005.png",
+      "sha256": "a80c6828dac38d5b25ebb4c3d18c71861aac9e280344b86f85a7bd179e6e87e5",
+      "bytes": 166160
+    },
+    {
+      "source": "qa3-04-provision/report-006.png",
+      "sha256": "e89433b781ca2a81199c47fc2d56b53f4c61765252d61835c94acfa28840b389",
+      "bytes": 164955
+    },
+    {
+      "source": "qa3-04-provision/report-007.png",
+      "sha256": "0d1c4ae51d95392d007a555fcec6650d0ed8098930653f5aef8062d216c722c4",
+      "bytes": 141729
+    },
+    {
+      "source": "qa3-05-package/report-001.png",
+      "sha256": "5c57da2c36ef555cbb95c0fb9273ca6d1224f9f5c3a7b3aeacacc1ed0f29ebb5",
+      "bytes": 106042
+    },
+    {
+      "source": "qa3-06-preview-build/report-001.png",
+      "sha256": "af06d3ef22fe944313660fe6e9f482e72058ae48929643d426b3ec5eace10f5e",
+      "bytes": 104292
+    },
+    {
+      "source": "qa3-07-everyday/report-001.png",
+      "sha256": "9d75aaf0648529ec9c3c513a1f03a1b9699940e9830fa9fd7428e4547ed6c3c9",
+      "bytes": 177116
+    },
+    {
+      "source": "qa3-07-everyday/report-002.png",
+      "sha256": "4704fdccee94d27cbe6a3cb37764e620f89fc323024198032994fedd1fe7578b",
+      "bytes": 237225
+    },
+    {
+      "source": "qa3-07-everyday/report-003.png",
+      "sha256": "823036b0cc1b9ab4c06a30821a86b01c0d2f44f396543f74c58844f66a533803",
+      "bytes": 214175
+    },
+    {
+      "source": "qa3-07-everyday/report-004.png",
+      "sha256": "942b1d40ec6261c5ca772ca1092f86bd26723ea526b5c5b07b21ef27c31f0d66",
+      "bytes": 232806
+    },
+    {
+      "source": "qa3-07-everyday/report-005.png",
+      "sha256": "c654152648e703f87cce8e7fb79ff839ed9011be6d98685243d2630307e20571",
+      "bytes": 307401
+    },
+    {
+      "source": "qa3-07-everyday/report-006.png",
+      "sha256": "a6e26f506a4e4e972fb997d539cf83a0017c7df57fea3d9e960837a0d4eb6b3b",
+      "bytes": 191660
+    },
+    {
+      "source": "qa3-07-everyday/report-007.png",
+      "sha256": "a8b577cce6836fa37ad0857629259ee73d4fcc63db28a21007677862e87f9815",
+      "bytes": 302467
+    },
+    {
+      "source": "qa3-07-everyday/report-008.png",
+      "sha256": "b1bd6cd2028cf27ad2a380827d7a9c949016005c34f6148a0b905e988039a584",
+      "bytes": 253606
+    },
+    {
+      "source": "qa3-07-everyday/report-009.png",
+      "sha256": "f2a4b486d6f615cb6a761f2707fce5c65035a37e63badb24f6c32bfd0480c547",
+      "bytes": 170876
+    },
+    {
+      "source": "qa3-07-everyday/report-010.png",
+      "sha256": "2325c3bafa76eacdab649e9fed9d9404c56411367557dfec6de3b44e109d542e",
+      "bytes": 235791
+    },
+    {
+      "source": "qa3-07-everyday/report-011.png",
+      "sha256": "b23d13374b48c10ea3b3a76947f8ab1ddc1083c45641cc807a099773e2ca0ecb",
+      "bytes": 220277
+    },
+    {
+      "source": "qa3-07-everyday/report-012.png",
+      "sha256": "44b177ba36b1fd956754741d70b1c122e8a695a8f1ec066d51d5caf93f9bb5fa",
+      "bytes": 129039
+    },
+    {
+      "source": "qa3-07-native-details/01-owner-default-wallpaper.png",
+      "sha256": "e5e81fb2d010868f3339df48bde5e08a45ff6e532b79eaf2057ba991e4e47718",
+      "bytes": 1123005
+    },
+    {
+      "source": "qa3-07-native-details/01-plasma-desktop.png",
+      "sha256": "e5e81fb2d010868f3339df48bde5e08a45ff6e532b79eaf2057ba991e4e47718",
+      "bytes": 1123005
+    },
+    {
+      "source": "qa3-07-native-details/02-owner-alternative-wallpaper.png",
+      "sha256": "1b260d01158226f510337e5a290b0d31303ab07634dd3234467bcfea41dbcdfb",
+      "bytes": 1062464
+    },
+    {
+      "source": "qa3-07-native-details/03-settings-dark-applied.png",
+      "sha256": "e33d0859cc6e791bb3dc0591f54e7b6282a77b06f7251e251f03b576d71d5092",
+      "bytes": 621071
+    },
+    {
+      "source": "qa3-07-native-details/05-android-manager-controls.png",
+      "sha256": "9eac75e59622ecfd313640c2320409261759f96ab1311e8d85c0aec716bae99a",
+      "bytes": 630946
+    },
+    {
+      "source": "qa3-07-native-details/android-controls-and-kvm-denial.png",
+      "sha256": "9eac75e59622ecfd313640c2320409261759f96ab1311e8d85c0aec716bae99a",
+      "bytes": 630946
+    },
+    {
+      "source": "qa3-07-native-details/last-frame.png",
+      "sha256": "a1b3531771b470faa3967d6b95ad6d6c64d501951613ab70f1637c025a256979",
+      "bytes": 620423
+    },
+    {
+      "source": "qa3-07-native-details/native-game-input.png",
+      "sha256": "a1b3531771b470faa3967d6b95ad6d6c64d501951613ab70f1637c025a256979",
+      "bytes": 620423
+    },
+    {
+      "source": "qa3-07-native-details/native-settings-apply-restore.png",
+      "sha256": "a1b3531771b470faa3967d6b95ad6d6c64d501951613ab70f1637c025a256979",
+      "bytes": 620423
+    },
+    {
+      "source": "qa3-07-native-details/owner-wallpaper-selection.png",
+      "sha256": "1b260d01158226f510337e5a290b0d31303ab07634dd3234467bcfea41dbcdfb",
+      "bytes": 1062464
+    },
+    {
+      "source": "qa3-07-native-details/vlc-playback-audio-pause-seek.png",
+      "sha256": "a1b3531771b470faa3967d6b95ad6d6c64d501951613ab70f1637c025a256979",
+      "bytes": 620423
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/02b69af7c5f2f98436b92038cf4146f02c86087b.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/0b30e16c08954ea4425c5080e2b34c2830d4415e.png",
+      "sha256": "064bc88978f018e504aecf62248a32a742a2effd0ce38771878ee67054bfd14b",
+      "bytes": 802004
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/0c71556cd26d64c2db68ecd78f5140a078f09ff7.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/0d1c95401809bfe26df46790941c81456af1d794.png",
+      "sha256": "50058ca496198222aa5f30f80738cdf5950e5eee2e10086f5186fcaea7731fa8",
+      "bytes": 193825
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/0eeec8a9e52dfb889e33ef97ad02f9e1d8d48a7e.png",
+      "sha256": "93681cfd65d1866d97972481903415f86ca674ab8d00266f53181b8264a16c31",
+      "bytes": 118848
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/10077c869d7fa9d95f37ea8bd70ce1425b682a90.png",
+      "sha256": "4eb4cb5b2511893a4e9829a65e973f20574c80d6cdd7bf6055ee21e86a63f655",
+      "bytes": 1571837
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/147be0fd4c50a621f34ef67f2c6b4f4ef2dc30a1.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/1b7246e8bb83c135144fb3bf8b7aa4a29d076ee4.png",
+      "sha256": "3ab7ddf383b71e3ff8a8600b6a3d471ba3e7b65f61198d07b4e57400a9f3f6b5",
+      "bytes": 178192
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/237190e4e8c49b2c6f4092bb4fca485b01449ff6.png",
+      "sha256": "21c2323301ecff4bd3eaa2b9274529e0554aede262752d9267a7c6e5e81a487b",
+      "bytes": 180915
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/284daf84e65a096a251549323c9539793a344973.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/29940f3ded8da2d7b8a5f6313b23c98af6c695e4.png",
+      "sha256": "21bd10836fadec5e0dfa250739c2261c61132c1f10fb352b2ca83238ed12e36c",
+      "bytes": 901868
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/2a9c148a66e31564a010fd9a715f6011a21afba3.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/37af70dcb898e80c5c959a3dc1d55c8362c2ace4.png",
+      "sha256": "bcd5c51d7c24d8591e262d81ec33a9a0022eea172785118a473e52db363529da",
+      "bytes": 173402
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/37b9e81a17f1aaae1448591de47e803de6184726.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/3a71dd1e8c021185e35c535a7c39a5626374f143.png",
+      "sha256": "73c147026c1a9145b3ee9855ef3a28775b7803787b30d7675663ad3c969c7d68",
+      "bytes": 273955
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/3ab8fc1d3e951bb147e8f3ad375124c5664d94b8.png",
+      "sha256": "cd3cc9a9967a46afed2755f4564e38b82f441eb1f1249691d322bb68858de3f9",
+      "bytes": 904582
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/3d845aa8b115311784c379fe4ddf80b4c407edf4.png",
+      "sha256": "9cef31de412554e1e560bf994d93fc59d1727d43312a77b2c2d6bc30d8685ba8",
+      "bytes": 805081
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/42cded879d19ad691745342d57bd30594d4163ba.png",
+      "sha256": "fa3fb734c59f55386a6408025f68922eff2928f9355e5a3d7823960c2a3ec128",
+      "bytes": 180408
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/4e5207970fc5f148354c89e0f0b3b8056d457cbc.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/5513e37983516a66d8ff48e8032d0ab534348bc2.png",
+      "sha256": "20c88c0efec152850f4a1abf619961c7ea56c4b1587fb65fd7865e4e80366c7c",
+      "bytes": 191357
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/58ef6991c051fbd1c545a097c292288ea0ea693f.png",
+      "sha256": "1acdac2c9d1d20e0108d558829fce471333320f926ddddc6d2e54b97d9f9a98b",
+      "bytes": 123405
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/5997132eec05a4f9cfa4bb0f329877270a928521.png",
+      "sha256": "f29d4a976f18ddd5c8b7e0b21d5372b6be721b90bd78ac2ea16d2e421882dffe",
+      "bytes": 254810
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/5db101002591e51752bd9aa8c09b94d03efb53ff.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/62210b208a06ccbf8bbfa8fa16e2efc7884abd0f.png",
+      "sha256": "7ba87319ff8036bef1833aa2934ba24d25336244d3943c4d7c320330a61acf17",
+      "bytes": 185056
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/7129b759ff7b7211f338f53e9ca9705a8f44303f.png",
+      "sha256": "528a5c471ec8ce8a3fff3b64c9d9a99f6358774fb741c334a70b262fdb49a360",
+      "bytes": 111253
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/74de9a9e05794dbecdf67d989e28353af754fcbb.png",
+      "sha256": "e18528d01129f42911fddfc58f4c67bbd4084614f4b0d29312445e5d997f626b",
+      "bytes": 907051
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/78e9a13275bbba6e5c312f484e69f715016c238f.png",
+      "sha256": "ba83578ba2358d27499309d679bebe004952bfdaf6c0070c68657da2eb17d9a7",
+      "bytes": 909279
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/7d8ddf17c1269a7b1276f84635723fb0d7760dee.png",
+      "sha256": "bc31c40039e3651c461776167f584914e576bd432b3d836cce6e77b5bd629ced",
+      "bytes": 900964
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/80187abc8bf8db267fc059ac94618a095335bc1a.png",
+      "sha256": "df3b45af17ebb4e362012b6ca89e049675972c229f22782fbe66b1d351d67fd7",
+      "bytes": 119517
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/8ddcbf775aabe5bca12595601e6d6b354995914d.png",
+      "sha256": "b95ceae10aa36174c77d1ef5fd08e698a8515cd78dcb1e2bd981ca0c65a5937d",
+      "bytes": 988478
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/915be46d4d285b58b6b8ee09377cbdfdcd0bf08a.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/9f9a4336cb3f43b4e77afccedc65450b2b44647e.png",
+      "sha256": "a55afb69687c834121d1ade7b05559022f0f356ced1ab6ee07dc25d29c9958b0",
+      "bytes": 1002995
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/ae8a94309fd37c37aa3c1c62025384683f68301d.png",
+      "sha256": "2fdf128e51357f4d9186989a2a04e63fccf865d706508efea1bcb13e7aec6522",
+      "bytes": 776097
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/b220afdbeafe7b959ba4b1cb199accc1a58a2fa1.png",
+      "sha256": "f0983a88dbf758ba8587a4dcd3d77f709f5b21957742ebc31693db959038327e",
+      "bytes": 96144
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/b51a44fc6e123bdc235b296014a69fa9b4adbb1b.png",
+      "sha256": "1b10944513adbbed6a35263d658f8ef110fff358f965ef5668159907135cd6d2",
+      "bytes": 768918
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/b7ce3a49152141a6131f07aa5acbc6b7c2d0af59.png",
+      "sha256": "89e00677a70b009d50a3e0160b92dfc99b9510db5a42e3c7b3524d6f1197b6d4",
+      "bytes": 127994
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/bc0944e2c485b0823931005b786cd04037a52b1f.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/bea2ce06752225a2c934beb03fac6b4b57a3367e.png",
+      "sha256": "fc011fd5c31803378b61cbaf2d7162161afc503a1abd9e1989645089dcbbe93a",
+      "bytes": 776738
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/bef99c4469ae8b61f421c4898d49c30f9cb40c2c.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/bf62fd77deba55fed827830d79f6b11c8e7438dc.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/c0135243c2e465bb9f7d88489284f5e52c9d5fc1.png",
+      "sha256": "f80fe491b07f6e82cb23097b3d1b0cedfc584cc09e777e9d93f92b486b891f0f",
+      "bytes": 988468
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/c0fc32dd47567bebe25087adf028383588f8ef33.png",
+      "sha256": "8058b3cd2223c622729d4fe92583605403e844ee26bd74e99c2a50a2957d121f",
+      "bytes": 1256973
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/c5b6e83ddf5793cfef8eb6e6a4e979d4aca13bd8.png",
+      "sha256": "e9b0352f0c21ca9f093ecaa93f182ae7356db87e18e6947dedbbd8915c5e3e9e",
+      "bytes": 768717
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/c673a841a49b80304ae892e9f7f852030bc36e27.png",
+      "sha256": "c3aceeab1bf515691063044154bbd520d4f0a08fe03d7add66294c6e725dba97",
+      "bytes": 132221
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/e5c45ab9d7f380118fc7f63bbda65513e23a4eee.png",
+      "sha256": "eabd0f25850c1ad22ab53bd679646be2643ca71111c84136db69284e476d86f4",
+      "bytes": 111446
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/eba4a15769f4d183c1d1038bc48eb9d842637a39.png",
+      "sha256": "f87c33ae629aefbcfc01c415835ab2a341f0edd5da83c6709a7842369a18947c",
+      "bytes": 193862
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/ec7a7deb83b525c53c3bcf1a69187006ac0a1d0d.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/f31e7a690329f1f4c7657acf64ce9f8c573a162a.png",
+      "sha256": "15420bc48cd10b826d545dd23f87b0ae49c57473767e5409ca6cd4398254f486",
+      "bytes": 902084
+    },
+    {
+      "source": "qa3-08-browser/playwright-report/data/f90377335207e09f883ea1156a2730b29501afc4.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/report-001.png",
+      "sha256": "f05648db6af9e2ac94c2671a5636acf769e98f11b0abd7daa10bf6e772fbf7ae",
+      "bytes": 230290
+    },
+    {
+      "source": "qa3-08-browser/report-002.png",
+      "sha256": "bc9bde1062638cba1dcf61cecce1e2354a8a3e28af53e7df2f284275bdbf55e6",
+      "bytes": 273074
+    },
+    {
+      "source": "qa3-08-browser/report-003.png",
+      "sha256": "4931d95456336ac49000b4e67ed7d087609cc8905e2779be5c6c1867961b381d",
+      "bytes": 120179
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-desktop/attachments/full-page-cc0e4b3e809dd6f84ef168bfaf50eba4eacf03ce.png",
+      "sha256": "e18528d01129f42911fddfc58f4c67bbd4084614f4b0d29312445e5d997f626b",
+      "bytes": 907051
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-desktop/full-page.png",
+      "sha256": "e18528d01129f42911fddfc58f4c67bbd4084614f4b0d29312445e5d997f626b",
+      "bytes": 907051
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-desktop/high-contrast.png",
+      "sha256": "bb18e0e5bc1f51d6f3df76415c1e0ffd8afc1cfcffb54a04c371b1386ac24d56",
+      "bytes": 772908
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-desktop/test-finished-1.png",
+      "sha256": "bc31c40039e3651c461776167f584914e576bd432b3d836cce6e77b5bd629ced",
+      "bytes": 900964
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-mobile/attachments/full-page-2e2b0f9ed19e9101c98e9b65785f550919a48940.png",
+      "sha256": "7ba87319ff8036bef1833aa2934ba24d25336244d3943c4d7c320330a61acf17",
+      "bytes": 185056
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-mobile/full-page.png",
+      "sha256": "7ba87319ff8036bef1833aa2934ba24d25336244d3943c4d7c320330a61acf17",
+      "bytes": 185056
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-mobile/high-contrast.png",
+      "sha256": "cca4f90ff18d2f4cc24455d4fa3cd7fe707c3c1e151cf95b9230029af9ece2b0",
+      "bytes": 115981
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-appearance-prefere-57de9-eset-without-OS-permissions-mobile/test-finished-1.png",
+      "sha256": "c3aceeab1bf515691063044154bbd520d4f0a08fe03d7add66294c6e725dba97",
+      "bytes": 132221
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-desktop/attachments/full-page-abd277bb3e5ebaa58bdbfbccb257774d427afc4b.png",
+      "sha256": "ba83578ba2358d27499309d679bebe004952bfdaf6c0070c68657da2eb17d9a7",
+      "bytes": 909279
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-desktop/full-page.png",
+      "sha256": "ba83578ba2358d27499309d679bebe004952bfdaf6c0070c68657da2eb17d9a7",
+      "bytes": 909279
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-desktop/test-finished-1.png",
+      "sha256": "15420bc48cd10b826d545dd23f87b0ae49c57473767e5409ca6cd4398254f486",
+      "bytes": 902084
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-mobile/attachments/full-page-75f44fd4ded93f707b922b3a129b692992bfd860.png",
+      "sha256": "20c88c0efec152850f4a1abf619961c7ea56c4b1587fb65fd7865e4e80366c7c",
+      "bytes": 191357
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-mobile/full-page.png",
+      "sha256": "20c88c0efec152850f4a1abf619961c7ea56c4b1587fb65fd7865e4e80366c7c",
+      "bytes": 191357
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-demo-device-consent-is-revoked-with-pairing-mobile/test-finished-1.png",
+      "sha256": "21c2323301ecff4bd3eaa2b9274529e0554aede262752d9267a7c6e5e81a487b",
+      "bytes": 180915
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-desktop/attachments/full-page-c39d8666422c12ac6282459ca5d5e3376c5b2e37.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-desktop/full-page.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-desktop/test-finished-1.png",
+      "sha256": "a55afb69687c834121d1ade7b05559022f0f356ced1ab6ee07dc25d29c9958b0",
+      "bytes": 1002995
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-mobile/attachments/full-page-753feab658cbbb3ed721f193091c20324fccf8c3.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-mobile/full-page.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installation-is-vi-4ab31-cked-and-has-no-disk-action-mobile/test-finished-1.png",
+      "sha256": "fa3fb734c59f55386a6408025f68922eff2928f9355e5a3d7823960c2a3ec128",
+      "bytes": 180408
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-desktop/attachments/full-page-a8ab4566fc90102588547b083f940810c9bf205c.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-mobile/attachments/full-page-e2a48981080cb4e30839a7afb59808e2f87e356a.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-installed-service-worker-serves-preview-offline-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-desktop/attachments/full-page-eae28cd615470887ffcd4e94ad04474f035166be.png",
+      "sha256": "f80fe491b07f6e82cb23097b3d1b0cedfc584cc09e777e9d93f92b486b891f0f",
+      "bytes": 988468
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-desktop/full-page.png",
+      "sha256": "f80fe491b07f6e82cb23097b3d1b0cedfc584cc09e777e9d93f92b486b891f0f",
+      "bytes": 988468
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-desktop/test-finished-1.png",
+      "sha256": "b95ceae10aa36174c77d1ef5fd08e698a8515cd78dcb1e2bd981ca0c65a5937d",
+      "bytes": 988478
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-mobile/attachments/full-page-4808adf456c6bf3e938e9c5cd54cbd81c179c1ea.png",
+      "sha256": "f87c33ae629aefbcfc01c415835ab2a341f0edd5da83c6709a7842369a18947c",
+      "bytes": 193862
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-mobile/full-page.png",
+      "sha256": "f87c33ae629aefbcfc01c415835ab2a341f0edd5da83c6709a7842369a18947c",
+      "bytes": 193862
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-keyboard-access-and-reduced-motion-work-mobile/test-finished-1.png",
+      "sha256": "50058ca496198222aa5f30f80738cdf5950e5eee2e10086f5186fcaea7731fa8",
+      "bytes": 193825
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-desktop/attachments/full-page-b836305fa08720f62f3c4931ae663f96b4d051f7.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-mobile/attachments/full-page-a7773c82d171eef84544e4c35238a701106ea69c.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-portable-export-has-no-companion-asset-requests-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-desktop/attachments/full-page-2efc9b6961d487dd02823238610332f33572c8f0.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-desktop/full-page.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-desktop/test-finished-1.png",
+      "sha256": "8058b3cd2223c622729d4fe92583605403e844ee26bd74e99c2a50a2957d121f",
+      "bytes": 1256973
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-mobile/attachments/full-page-de7250ae04694ddf1f5d495cd5c0d96ce09278a5.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-mobile/full-page.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/preview-workspace-loads-wi-84428-ests-or-horizontal-overflow-mobile/test-finished-1.png",
+      "sha256": "73c147026c1a9145b3ee9855ef3a28775b7803787b30d7675663ad3c969c7d68",
+      "bytes": 273955
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-desktop/attachments/full-page-d589b41135a661bbf6714284d875aba73dd41e6c.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-desktop/full-page.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-desktop/test-finished-1.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-mobile/attachments/full-page-83f005f567759da1ca08c07e72f51d1fcab468bb.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-mobile/full-page.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Connect-mobile/test-finished-1.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-desktop/attachments/full-page-23cd64c2d9c1cc0c870feac2cb4371c33b4e4839.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-desktop/full-page.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-desktop/test-finished-1.png",
+      "sha256": "a55afb69687c834121d1ade7b05559022f0f356ced1ab6ee07dc25d29c9958b0",
+      "bytes": 1002995
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-mobile/attachments/full-page-353e083069a73c4de071c4ea9bc4eca218386e01.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-mobile/full-page.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Installation-mobile/test-finished-1.png",
+      "sha256": "fa3fb734c59f55386a6408025f68922eff2928f9355e5a3d7823960c2a3ec128",
+      "bytes": 180408
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-desktop/attachments/full-page-3df8e749292c6b6527a73e7e27b1ea4ec8da36f9.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-mobile/attachments/full-page-126f4554636433e8e5af2fca629f67e3447b2dfc.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Settings-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-desktop/attachments/full-page-b7e15c1104ff444279c598e6116a64640ecf8d6e.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-desktop/full-page.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-desktop/test-finished-1.png",
+      "sha256": "8058b3cd2223c622729d4fe92583605403e844ee26bd74e99c2a50a2957d121f",
+      "bytes": 1256973
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-mobile/attachments/full-page-f24616ad57bceea33a7077756d87b7a805c7ff5f.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-mobile/full-page.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-automated-WCAG-A-AA-checks-Workspace-mobile/test-finished-1.png",
+      "sha256": "73c147026c1a9145b3ee9855ef3a28775b7803787b30d7675663ad3c969c7d68",
+      "bytes": 273955
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-desktop/attachments/full-page-f94992ab785164fa2f68081d065d8c11b4dae12f.png",
+      "sha256": "fc011fd5c31803378b61cbaf2d7162161afc503a1abd9e1989645089dcbbe93a",
+      "bytes": 776738
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-desktop/full-page.png",
+      "sha256": "fc011fd5c31803378b61cbaf2d7162161afc503a1abd9e1989645089dcbbe93a",
+      "bytes": 776738
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-desktop/test-finished-1.png",
+      "sha256": "e9b0352f0c21ca9f093ecaa93f182ae7356db87e18e6947dedbbd8915c5e3e9e",
+      "bytes": 768717
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-mobile/attachments/full-page-ac535fd313758ec17e77a4820a5bcc5917ec2192.png",
+      "sha256": "df3b45af17ebb4e362012b6ca89e049675972c229f22782fbe66b1d351d67fd7",
+      "bytes": 119517
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-mobile/full-page.png",
+      "sha256": "df3b45af17ebb4e362012b6ca89e049675972c229f22782fbe66b1d351d67fd7",
+      "bytes": 119517
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-blocked-browser--0e32b-ble-without-uncaught-errors-mobile/test-finished-1.png",
+      "sha256": "528a5c471ec8ce8a3fff3b64c9d9a99f6358774fb741c334a70b262fdb49a360",
+      "bytes": 111253
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-desktop/attachments/full-page-db271425e6413c013aaf403a04a9b8eed2e3625c.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-desktop/full-page.png",
+      "sha256": "63ec956acaa7eebd1be9f5abe53aaab3a95c942a927d58c01d18070f919fe798",
+      "bytes": 1082784
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-desktop/test-finished-1.png",
+      "sha256": "a55afb69687c834121d1ade7b05559022f0f356ced1ab6ee07dc25d29c9958b0",
+      "bytes": 1002995
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-mobile/attachments/full-page-cae44a711e820b19db0d80f97eea24fdb7c52c5c.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-mobile/full-page.png",
+      "sha256": "cbac79ea113327af43ec90807ba56625b6207e1dcbbbf483977bd160bc696d29",
+      "bytes": 182860
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-controls-never-call-privileged-browser-APIs-mobile/test-finished-1.png",
+      "sha256": "fa3fb734c59f55386a6408025f68922eff2928f9355e5a3d7823960c2a3ec128",
+      "bytes": 180408
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-desktop/attachments/full-page-2d2285edc3227a2e0fb47bb1a82dba77f59c32f3.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-desktop/full-page.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-desktop/test-finished-1.png",
+      "sha256": "6a00fce7eba6e07068c80c3edb2ba8afa0625ea38e0bd7de579408ad27448b19",
+      "bytes": 1002927
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-mobile/attachments/full-page-875170f7a1e83eeb78c9406848c0053a13dfeaed.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-mobile/full-page.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-demo-pairing-and-67bdb-disappear-on-browser-reload-mobile/test-finished-1.png",
+      "sha256": "64c3cc049a1b14ebeaf7f134d45ba597e006dcb04b3b5ddad010d88930658657",
+      "bytes": 199048
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-desktop/attachments/full-page-b645a52d6d62bde39ce9f3b6e4a51d853c918404.png",
+      "sha256": "cd3cc9a9967a46afed2755f4564e38b82f441eb1f1249691d322bb68858de3f9",
+      "bytes": 904582
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-desktop/full-page.png",
+      "sha256": "cd3cc9a9967a46afed2755f4564e38b82f441eb1f1249691d322bb68858de3f9",
+      "bytes": 904582
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-desktop/test-finished-1.png",
+      "sha256": "21bd10836fadec5e0dfa250739c2261c61132c1f10fb352b2ca83238ed12e36c",
+      "bytes": 901868
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-mobile/attachments/full-page-a672adcaad61d2218f7ee1e661c1c5d1d9c5a5c6.png",
+      "sha256": "3ab7ddf383b71e3ff8a8600b6a3d471ba3e7b65f61198d07b4e57400a9f3f6b5",
+      "bytes": 178192
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-mobile/full-page.png",
+      "sha256": "3ab7ddf383b71e3ff8a8600b6a3d471ba3e7b65f61198d07b4e57400a9f3f6b5",
+      "bytes": 178192
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-empty-search-rec-adc9c-stile-looking-literal-input-mobile/test-finished-1.png",
+      "sha256": "bcd5c51d7c24d8591e262d81ec33a9a0022eea172785118a473e52db363529da",
+      "bytes": 173402
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-desktop/attachments/full-page-68c2141765974682719f62742385b6685ed1467f.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-mobile/attachments/full-page-95b01e4e78218100bf21500db086215a441aadf2.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-injected-worker--9009d-ordinary-navigation-working-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--desktop/attachments/full-page-edb9065cc6c8248ade02756e42455fb14e4c663f.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--mobile/attachments/full-page-7ad809a32e0d5b962f8711133aa085bd9bae93e7.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved--ab7a1-lse-contrast-1-motion-null--mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--desktop/attachments/full-page-7d7aebd00140338880c1a1ef94ebfe2a0c3892e1.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--mobile/attachments/full-page-7824c89e762faea5a9d277813e0f1db2a9e16158.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover--mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-desktop/attachments/full-page-3f6ed2dbab456648202a02e39da99e612500c3c4.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-mobile/attachments/full-page-876fdb2c9e47d599016044e9c8af613f64d26009.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-42-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-desktop/attachments/full-page-0dd16966fd302da56a34578f08cdc276c433c82a.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-mobile/attachments/full-page-ad5d048bfd275b6e55de3666e6ea3af4787c4f48.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-invalid-JSON-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-desktop/attachments/full-page-71e587bd314801fb8ff5486fd008cafd86f90155.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-mobile/attachments/full-page-5bb71104038577fc22067919cfceec9babb39621.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-malformed-saved-preferences-recover-null-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-desktop/attachments/full-page-d86b81bfc98ccdf21f16a34f5523a0f1621ed09a.png",
+      "sha256": "2fdf128e51357f4d9186989a2a04e63fccf865d706508efea1bcb13e7aec6522",
+      "bytes": 776097
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-desktop/full-page.png",
+      "sha256": "2fdf128e51357f4d9186989a2a04e63fccf865d706508efea1bcb13e7aec6522",
+      "bytes": 776097
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-desktop/test-finished-1.png",
+      "sha256": "1b10944513adbbed6a35263d658f8ef110fff358f965ef5668159907135cd6d2",
+      "bytes": 768918
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-mobile/attachments/full-page-22ae2356d25bdf53869a065227b657a11243bb13.png",
+      "sha256": "93681cfd65d1866d97972481903415f86ca674ab8d00266f53181b8264a16c31",
+      "bytes": 118848
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-mobile/full-page.png",
+      "sha256": "93681cfd65d1866d97972481903415f86ca674ab8d00266f53181b8264a16c31",
+      "bytes": 118848
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-offline-reload-retains-local-settings-mobile/test-finished-1.png",
+      "sha256": "eabd0f25850c1ad22ab53bd679646be2643ca71111c84136db69284e476d86f4",
+      "bytes": 111446
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-desktop/attachments/full-page-504d3f9521a5d7b9e6faa13ebcef65b880755e95.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-desktop/full-page.png",
+      "sha256": "3f3bcd6cc7a305288f1c98fce80433db096784f5ae45c7798257e10b42f862b5",
+      "bytes": 1301118
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-desktop/test-finished-1.png",
+      "sha256": "8058b3cd2223c622729d4fe92583605403e844ee26bd74e99c2a50a2957d121f",
+      "bytes": 1256973
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-desktop/update-awaiting-consent.png",
+      "sha256": "875c525e0aceede8ac7e8397868805bc95ed0f3e5ccb159ffe3280fc1ee1654e",
+      "bytes": 1023788
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-mobile/attachments/full-page-2849274c675665f2b7b7d153c225f80e19b3a5e4.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-mobile/full-page.png",
+      "sha256": "461b578b1e5dc849c2bfcde7e72c21a200791fc175cb44dd814eaa37f86b2f46",
+      "bytes": 298139
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-mobile/test-finished-1.png",
+      "sha256": "73c147026c1a9145b3ee9855ef3a28775b7803787b30d7675663ad3c969c7d68",
+      "bytes": 273955
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-real-service-wor-9b5a3-ith-browser-storage-blocked-mobile/update-awaiting-consent.png",
+      "sha256": "e794a070c527c4423e871213d78447672f532c74aea5f8aae9c85dfb64c220ed",
+      "bytes": 285967
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-desktop/attachments/full-page-e42114784291a435810ad14039fcc3aa15e5ac3c.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-mobile/attachments/full-page-f4b5c2eff2474073a3ce9dc99e42d175f85a0308.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-repeated-toggles-099bb--effective-preference-state-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/attachments/full-page-f36c5cefc4475b0d3584150e208dfc2b58048a42.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/connect.png",
+      "sha256": "68962d8fad078e4a8fd9831dadd1c2ccf31c5af1774ec5211b0cf2c0be1c8386",
+      "bytes": 1547049
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/full-page.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/installation.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/settings.png",
+      "sha256": "d29112c40abce84f595b8f5a362019a758e58b3d64c9d3edc2e48a42cd9e3658",
+      "bytes": 1393068
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/test-finished-1.png",
+      "sha256": "4eb4cb5b2511893a4e9829a65e973f20574c80d6cdd7bf6055ee21e86a63f655",
+      "bytes": 1571837
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-desktop/workspace.png",
+      "sha256": "18b8fdfe6d70d83e4901510d60df6048a15bb14815ac31955e186c81dc6459ab",
+      "bytes": 1676626
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/attachments/full-page-673a7d8c0aa70679d20b8535225feff3e2279c7e.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/connect.png",
+      "sha256": "68962d8fad078e4a8fd9831dadd1c2ccf31c5af1774ec5211b0cf2c0be1c8386",
+      "bytes": 1547049
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/full-page.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/installation.png",
+      "sha256": "7274096f3ee690159f43860bbb630ce13175cec8ff8e527b552c1737c85a4337",
+      "bytes": 1615650
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/settings.png",
+      "sha256": "d29112c40abce84f595b8f5a362019a758e58b3d64c9d3edc2e48a42cd9e3658",
+      "bytes": 1393068
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/test-finished-1.png",
+      "sha256": "4eb4cb5b2511893a4e9829a65e973f20574c80d6cdd7bf6055ee21e86a63f655",
+      "bytes": 1571837
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-1920x1080-mobile/workspace.png",
+      "sha256": "18b8fdfe6d70d83e4901510d60df6048a15bb14815ac31955e186c81dc6459ab",
+      "bytes": 1676626
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/attachments/full-page-bb1d4f8e8b9e7affbdb515137e06410a57ebc529.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/connect.png",
+      "sha256": "45fb672fd49964a38b0be34d2731c833c31ba94221d458775f148314b995cd80",
+      "bytes": 2726954
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/full-page.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/installation.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/settings.png",
+      "sha256": "20b22a137a030809a45e6edf047a7fb40839ee694d2f4c24d57dfd8829144d60",
+      "bytes": 2625255
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/test-finished-1.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-desktop/workspace.png",
+      "sha256": "d2a39e1b49e8bdc888540a242203f09fa9e024a5e9ae2679f48702afb3b84e27",
+      "bytes": 2879257
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/attachments/full-page-7df9e476f41a910b1d56440f4d458118a0545819.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/connect.png",
+      "sha256": "45fb672fd49964a38b0be34d2731c833c31ba94221d458775f148314b995cd80",
+      "bytes": 2726954
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/full-page.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/installation.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/settings.png",
+      "sha256": "20b22a137a030809a45e6edf047a7fb40839ee694d2f4c24d57dfd8829144d60",
+      "bytes": 2625255
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/test-finished-1.png",
+      "sha256": "0b4d014d82b47ac5c5a0ef828eb96c86504503700bf3d4e045c426e695cf99bc",
+      "bytes": 2635742
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-2560x1440-mobile/workspace.png",
+      "sha256": "d2a39e1b49e8bdc888540a242203f09fa9e024a5e9ae2679f48702afb3b84e27",
+      "bytes": 2879257
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/attachments/full-page-e6fe67815885a88a038d6e13f5e828ba98050ac4.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/connect.png",
+      "sha256": "994ebad74b7934a7718a2c2d4900d686d1506a616e9dddd7b953bb5aeaca9e8a",
+      "bytes": 159766
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/full-page.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/installation.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/settings.png",
+      "sha256": "5d6d8ca63de70719ad4a407514a4b841ce1eb98d0fbb1ea78b52a97515cb9211",
+      "bytes": 154685
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/test-finished-1.png",
+      "sha256": "f0983a88dbf758ba8587a4dcd3d77f709f5b21957742ebc31693db959038327e",
+      "bytes": 96144
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-desktop/workspace.png",
+      "sha256": "f57fdbb2dd6dc2f259a81d36280c46d08c0b0ae1590d3ae4a32bdbd6499dee8e",
+      "bytes": 244283
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/attachments/full-page-49d5c07cd32c49aa5f99ff13c7a70c24e738bd55.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/connect.png",
+      "sha256": "994ebad74b7934a7718a2c2d4900d686d1506a616e9dddd7b953bb5aeaca9e8a",
+      "bytes": 159766
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/full-page.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/installation.png",
+      "sha256": "cb4ef4ee2d865bc5666b10311a18b97f7ae948069c540934ea765b0138929322",
+      "bytes": 156653
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/settings.png",
+      "sha256": "5d6d8ca63de70719ad4a407514a4b841ce1eb98d0fbb1ea78b52a97515cb9211",
+      "bytes": 154685
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/test-finished-1.png",
+      "sha256": "f0983a88dbf758ba8587a4dcd3d77f709f5b21957742ebc31693db959038327e",
+      "bytes": 96144
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-320x568-mobile/workspace.png",
+      "sha256": "f57fdbb2dd6dc2f259a81d36280c46d08c0b0ae1590d3ae4a32bdbd6499dee8e",
+      "bytes": 244283
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/attachments/full-page-de9bc5e23590d8c826f09b48aaffc0af4dc8284b.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/connect.png",
+      "sha256": "2584d55b891144c2bf2d936060f0f323eccb3efe215db8f069ad1fca62b19bed",
+      "bytes": 264879
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/full-page.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/installation.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/settings.png",
+      "sha256": "bbe890b755e11ff2d3632d04eca6a8aebbdbb97f57807aeb53eb20e6d71c47e7",
+      "bytes": 279699
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/test-finished-1.png",
+      "sha256": "f29d4a976f18ddd5c8b7e0b21d5372b6be721b90bd78ac2ea16d2e421882dffe",
+      "bytes": 254810
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-desktop/workspace.png",
+      "sha256": "999b4b6ac335603e10fe61191003f1eafbf53bf1d16f07a61601dec2a5132bb7",
+      "bytes": 577509
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/attachments/full-page-f55263b0d4dde50d0a4a3245ac8a03a3b1dc6a4f.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/connect.png",
+      "sha256": "2584d55b891144c2bf2d936060f0f323eccb3efe215db8f069ad1fca62b19bed",
+      "bytes": 264879
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/full-page.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/installation.png",
+      "sha256": "f74923237e3011c5b470d649ec372c76c00125891a65f91aa9b2a4450dd99786",
+      "bytes": 361782
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/settings.png",
+      "sha256": "bbe890b755e11ff2d3632d04eca6a8aebbdbb97f57807aeb53eb20e6d71c47e7",
+      "bytes": 279699
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/test-finished-1.png",
+      "sha256": "f29d4a976f18ddd5c8b7e0b21d5372b6be721b90bd78ac2ea16d2e421882dffe",
+      "bytes": 254810
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-responsive-layout-915x412-mobile/workspace.png",
+      "sha256": "999b4b6ac335603e10fe61191003f1eafbf53bf1d16f07a61601dec2a5132bb7",
+      "bytes": 577509
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-desktop/attachments/full-page-fb3caa3b9c27109d9612f2bfc2ff03708228bf36.png",
+      "sha256": "9cef31de412554e1e560bf994d93fc59d1727d43312a77b2c2d6bc30d8685ba8",
+      "bytes": 805081
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-desktop/full-page.png",
+      "sha256": "9cef31de412554e1e560bf994d93fc59d1727d43312a77b2c2d6bc30d8685ba8",
+      "bytes": 805081
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-desktop/test-finished-1.png",
+      "sha256": "064bc88978f018e504aecf62248a32a742a2effd0ce38771878ee67054bfd14b",
+      "bytes": 802004
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-mobile/attachments/full-page-1d48b0285556de3c4a116c60c2e967d843f2e57a.png",
+      "sha256": "89e00677a70b009d50a3e0160b92dfc99b9510db5a42e3c7b3524d6f1197b6d4",
+      "bytes": 127994
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-mobile/full-page.png",
+      "sha256": "89e00677a70b009d50a3e0160b92dfc99b9510db5a42e3c7b3524d6f1197b6d4",
+      "bytes": 127994
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-solid-panels-dis-bb4e9-r-and-persist-after-restart-mobile/test-finished-1.png",
+      "sha256": "1acdac2c9d1d20e0108d558829fce471333320f926ddddc6d2e54b97d9f9a98b",
+      "bytes": 123405
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-desktop/attachments/full-page-be8fe5c162ba1892aad2e71829e700988c570a77.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-desktop/full-page.png",
+      "sha256": "5cc0af6fecd65dbf377d6e08a789f7f4d7de371596cc0c2407779993e1846fef",
+      "bytes": 903618
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-desktop/test-finished-1.png",
+      "sha256": "121320fb90c042e5064b88e1397e912209734f350f2f3dac48edec81713a9ada",
+      "bytes": 900969
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-mobile/attachments/full-page-e37611cc1868ddecb20924f85f8ff6ef76035cf8.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-mobile/full-page.png",
+      "sha256": "1367a624626b1cacca17bd103b6a8e645e464a0376e627c63041001afecca7b6",
+      "bytes": 177321
+    },
+    {
+      "source": "qa3-08-browser/ui/scenarios-storage-quota-fa-e88d2-ts-session-only-preferences-mobile/test-finished-1.png",
+      "sha256": "0fa630aabd07da05d848276b76732adb13eb05be94a5ac9e5d32165810af9f9e",
+      "bytes": 172594
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-001.png",
+      "sha256": "a21903d16a5296d97dc6ebcb8187ace0748e9b14e890ea65bc33e8ca2d73e6e2",
+      "bytes": 179964
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-002.png",
+      "sha256": "8eb6abcee652270d476a4b40729a46471cc4ef6137460ea2f9125993ebbf731e",
+      "bytes": 239705
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-003.png",
+      "sha256": "87e4e4bdee416de75a0a218d8e8bcc6be248f29d5a4df4e6d59f7563b7b961bd",
+      "bytes": 245973
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-004.png",
+      "sha256": "e2583125f961a3e1003e9cc35eea0b463a385a683ba10ea648b4db4a3f7e342f",
+      "bytes": 131779
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-005.png",
+      "sha256": "d8b178d4ce1e1dc11425e80c6136b99523b352b15a29d33822ddc4ebd1db79bb",
+      "bytes": 195219
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-006.png",
+      "sha256": "5fb41483daa5e3b289bac3aaa19db84cd1a8060e0bfa3505ae94a95967e7aca8",
+      "bytes": 315574
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-007.png",
+      "sha256": "ccd9ae4e176922764c9ac55ac607e93762573133e9fba2c31db4a9016d3ad5e1",
+      "bytes": 200519
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-008.png",
+      "sha256": "2f57f9b107d32fc137748dfd58d2a2f936fbb2d178916d4d2e58b100d75aa5d3",
+      "bytes": 292251
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-009.png",
+      "sha256": "7657450d667973d496a8ebe8fc0c9397ee281633ef259d85b0f646ef565ee756",
+      "bytes": 274087
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-010.png",
+      "sha256": "d0fcaabb78e348a2f3583eb8bcc1d79a247bb40500ee7a7a0ddcdfae9b7b6c9f",
+      "bytes": 182341
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-011.png",
+      "sha256": "cc6542149d5cb0d26fb0bc6d247f0e04e22aef9b3a73e630a36e12ec5bce53e7",
+      "bytes": 205545
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-012.png",
+      "sha256": "28d5ee59969cfe621d8740a43e01c888e14bcc076d6ee7805f343cb0a2705751",
+      "bytes": 228294
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-013.png",
+      "sha256": "6cf9492b665ec5c5058bc973edcf1de43983b11cca49f5b175515147bd66c258",
+      "bytes": 212659
+    },
+    {
+      "source": "qa3-09-everyday-6g/report-014.png",
+      "sha256": "3c0b3f516744956fb70d964c1d157336ba808ff40841f2bb4d7f3a411b62ffd3",
+      "bytes": 64725
+    },
+    {
+      "source": "qa3-09-native-details/01-owner-default-wallpaper.png",
+      "sha256": "ae2f61edd3f569c71131f26809e343bd4a9e6f34c28f651c73f781bb61d2d1e2",
+      "bytes": 1122884
+    },
+    {
+      "source": "qa3-09-native-details/01-plasma-desktop.png",
+      "sha256": "665cf80f06e73cd9df1d6d9e5cd55f1eacc40429c2dee578c30b1bd645903307",
+      "bytes": 1126978
+    },
+    {
+      "source": "qa3-09-native-details/02-owner-alternative-wallpaper.png",
+      "sha256": "5b9586d289ad475c9e8a54eb6d2990866719fc61d08b19c0ee29d6ec6b4bf001",
+      "bytes": 1062498
+    },
+    {
+      "source": "qa3-09-native-details/03-settings-dark-applied.png",
+      "sha256": "8f3a42e31562a37cca67bf223eac14f9cd369982a5812623ad1e4d4c4f6a8110",
+      "bytes": 621091
+    },
+    {
+      "source": "qa3-09-native-details/04-settings-restored.png",
+      "sha256": "14ab37d31218b4e40891012d8fe0a57dc4937f9eb6013dad1c01222739306ff6",
+      "bytes": 620420
+    },
+    {
+      "source": "qa3-09-native-details/05-android-manager-controls.png",
+      "sha256": "6e6b74518f747af4c336012ec489f29921e50f95cd66b6023186793c7b532633",
+      "bytes": 1018619
+    },
+    {
+      "source": "qa3-09-native-details/06-vlc-playing.png",
+      "sha256": "5f885a2255feacd08d18ca9aaf8bca1f9cf26b94ab2129ff5f9a2d37214245ef",
+      "bytes": 974348
+    },
+    {
+      "source": "qa3-09-native-details/07-vlc-paused.png",
+      "sha256": "16bb2c54ab38f9f4f95fbe4c0d10cb348e821dafa789aacc119b133bc6a91004",
+      "bytes": 963115
+    },
+    {
+      "source": "qa3-09-native-details/08-vlc-resumed-after-seek.png",
+      "sha256": "2a737151bdf5adb42525c1fee63624e956dd396bb2c1d3dd8c05f6c3f62a1f0a",
+      "bytes": 969071
+    },
+    {
+      "source": "qa3-09-native-details/android-controls-and-kvm-denial.png",
+      "sha256": "6e6b74518f747af4c336012ec489f29921e50f95cd66b6023186793c7b532633",
+      "bytes": 1018619
+    },
+    {
+      "source": "qa3-09-native-details/desktop-responsiveness-under-load.png",
+      "sha256": "b8824c0f172ed9dbaea3cf292b3e9528a69d62819cef152217aab20c633d11ff",
+      "bytes": 1122860
+    },
+    {
+      "source": "qa3-09-native-details/last-frame.png",
+      "sha256": "b8824c0f172ed9dbaea3cf292b3e9528a69d62819cef152217aab20c633d11ff",
+      "bytes": 1122860
+    },
+    {
+      "source": "qa3-09-native-details/native-game-input.png",
+      "sha256": "b8824c0f172ed9dbaea3cf292b3e9528a69d62819cef152217aab20c633d11ff",
+      "bytes": 1122860
+    },
+    {
+      "source": "qa3-09-native-details/native-settings-apply-restore.png",
+      "sha256": "14ab37d31218b4e40891012d8fe0a57dc4937f9eb6013dad1c01222739306ff6",
+      "bytes": 620420
+    },
+    {
+      "source": "qa3-09-native-details/owner-wallpaper-selection.png",
+      "sha256": "5b9586d289ad475c9e8a54eb6d2990866719fc61d08b19c0ee29d6ec6b4bf001",
+      "bytes": 1062498
+    },
+    {
+      "source": "qa3-09-native-details/vlc-playback-audio-pause-seek.png",
+      "sha256": "277655173f23be3f23b1a9d0c5a0acf3c4267449395d9f3384f5e669d22bba95",
+      "bytes": 969762
+    },
+    {
+      "source": "qa3-10-environment/report-001.png",
+      "sha256": "405e42367fad580edca9287139a2b891e7f54b7def31617c30a02c0c8e8e2fad",
+      "bytes": 216997
+    },
+    {
+      "source": "qa3-10-environment/report-002.png",
+      "sha256": "58b218844e2ae5f1f5183ea60d64dacd14d7b9f1f07157558d4a82c7aab0cd4c",
+      "bytes": 310024
+    },
+    {
+      "source": "qa3-10-environment/report-003.png",
+      "sha256": "f34ad8259d148bc21ee1bf4bedcf6dd0fa153477bb5ea3a383677bd946e44146",
+      "bytes": 253692
+    },
+    {
+      "source": "qa3-10-environment/report-004.png",
+      "sha256": "77be66d6f6d49454c2bfa07ce3c68d42d89a1a6185e2a15cb4b2e7172c8e98aa",
+      "bytes": 159320
+    },
+    {
+      "source": "qa3-10-environment/report-005.png",
+      "sha256": "b5af2f33e31868432c95496f0362d8fff9a9a83f66ec4620a6b6ea76787b4703",
+      "bytes": 161342
+    },
+    {
+      "source": "qa3-10-environment/report-006.png",
+      "sha256": "1d0aeb1d7b86487986f6d9614c311e2e91de7917dcccd7fde75dbba24caf86c8",
+      "bytes": 165274
+    },
+    {
+      "source": "qa3-10-environment/report-007.png",
+      "sha256": "f033e0c71bfee88e21f0ed469009f2606d0452f61d65aa9506f5b3a5e7ab3d89",
+      "bytes": 163487
+    },
+    {
+      "source": "qa3-10-environment/report-008.png",
+      "sha256": "325837bd76944e2149e270b06bda36ce502905e159bcd17d409d949295ac7bc6",
+      "bytes": 161414
+    },
+    {
+      "source": "qa3-10-environment/report-009.png",
+      "sha256": "1e1239edf59dae20a7414d060abc4f5fe6a29c62e0cff6be6707a5f943ece1aa",
+      "bytes": 167778
+    },
+    {
+      "source": "qa3-10-environment/report-010.png",
+      "sha256": "965fd4eec3390a5faf074599b5a07a8b68f17bdfc6160ceb71d5f0b8864dac76",
+      "bytes": 163449
+    },
+    {
+      "source": "qa3-10-environment/report-011.png",
+      "sha256": "6098432246d7801423dddf3243121cf562614dd1f4119d2b86db03d4e9b89fe6",
+      "bytes": 153197
+    },
+    {
+      "source": "qa3-10-environment/report-012.png",
+      "sha256": "e6e4f24f53d79e3ea92dd062b7a4e31567f67ebc2642edc7c7b9bf715c489f12",
+      "bytes": 152900
+    },
+    {
+      "source": "qa3-10-environment/report-013.png",
+      "sha256": "a86956f568a5023dabcda52a01115f12796ff4d0d3b117b6ad7c0cd000ff7556",
+      "bytes": 157535
+    },
+    {
+      "source": "qa3-10-environment/report-014.png",
+      "sha256": "27aac2c069c9e8044d9683135d1c44bb24fb9f4f88791e42be6ab742c88814e1",
+      "bytes": 157275
+    },
+    {
+      "source": "qa3-10-environment/report-015.png",
+      "sha256": "29b8b4e0cc1d1cef4ace5c02ee9466b68afd9fff49e979359a655857fd9041e9",
+      "bytes": 151506
+    },
+    {
+      "source": "qa3-10-environment/report-016.png",
+      "sha256": "17217532616d94a9edf17172c40b9305cef47e5f6f522f982c6d17f2c7560378",
+      "bytes": 153530
+    },
+    {
+      "source": "qa3-10-environment/report-017.png",
+      "sha256": "bd66885bee4954ec8ab57d16ce369650160c87c1997b9bcb862d45afbe8e0db5",
+      "bytes": 159880
+    },
+    {
+      "source": "qa3-10-environment/report-018.png",
+      "sha256": "0976616b157e90f90337a8f7c5c83ee8b050c5f9b7f6b199426d581e3e37e3cb",
+      "bytes": 160911
+    },
+    {
+      "source": "qa3-10-environment/report-019.png",
+      "sha256": "a05ce13cde8de98c35f36d85f23e0e1f8f96918fa51a624a4ac1af8414c03aac",
+      "bytes": 155696
+    },
+    {
+      "source": "qa3-10-environment/report-020.png",
+      "sha256": "8e785c99a20871f10358cc90241db1561a6bb6c1d217ad1084e8bf5b90cee73d",
+      "bytes": 129637
+    },
+    {
+      "source": "qa3-11-source/report-001.png",
+      "sha256": "7b2c894ec2fa118cd515e3d7806b7ab248d5a02f8c434660a9a958794f42d5e5",
+      "bytes": 231507
+    },
+    {
+      "source": "qa3-11-source/report-002.png",
+      "sha256": "bf06c77846892da362082de1ef4c2363149c5e27c832787e3ea32f7dac86ca7c",
+      "bytes": 238184
+    },
+    {
+      "source": "qa3-11-source/report-003.png",
+      "sha256": "877433972ba5428d04fec4c5b1041aea809f17651fdef0f36b62d33f8fefd858",
+      "bytes": 225393
+    },
+    {
+      "source": "qa3-11-source/report-004.png",
+      "sha256": "5b98ac8a83c677a1992ebecdd94e196ef9fe13159bfaa3730ae2ad4bf9350248",
+      "bytes": 94819
+    },
+    {
+      "source": "qa3-12-package/report-001.png",
+      "sha256": "254c1276201607637a6bc5bbc51ead2fc661f673a94548142b50484c9e3eb063",
+      "bytes": 102428
+    },
+    {
+      "source": "qa3-13-environment-preflight/report-001.png",
+      "sha256": "5b6ebb61f24d74fafd35bc65bb81ed5d1cbac73511a3819b037d4db5040e5998",
+      "bytes": 141694
+    },
+    {
+      "source": "qa3-14-performance-status/report-001.png",
+      "sha256": "00679c5a53397161d39a75ad5537aeb33c4cc382de0df147a33eb3094792d15e",
+      "bytes": 81335
+    },
+    {
+      "source": "qa3-15-native-details/01-plasma-desktop.png",
+      "sha256": "7ae2d832ed6e1932c29275daa459f972c22f3c93d4d7ee8e1040859544d14030",
+      "bytes": 1122911
+    },
+    {
+      "source": "qa3-15-native-details/09-supertux-level-start.png",
+      "sha256": "65dcdff50a5be446d31f4c0ad01485d6e0f16e198aeddd901cecff17743a93c7",
+      "bytes": 544189
+    },
+    {
+      "source": "qa3-15-native-details/12-supertux-after-input.png",
+      "sha256": "1a8e4ecc46a49fbb67ea20415e2dd60f7f04431f2b5e2b7792662484260615e1",
+      "bytes": 544444
+    },
+    {
+      "source": "qa3-15-native-details/last-frame.png",
+      "sha256": "765cc1897bebe6c285a1580760fcf9eef9a6936fe6cf2f8da00cc9cfec432568",
+      "bytes": 1122786
+    },
+    {
+      "source": "qa3-15-native-details/native-game-input.png",
+      "sha256": "c9c9fc1f9295cda1ace6f0d106a647f9cc5ebceb51bc8a4fcbf81e11a9f67dfb",
+      "bytes": 543985
+    },
+    {
+      "source": "qa3-15-native-game/report-001.png",
+      "sha256": "d8762b6e582d25eeff6eef80579db4af81fb43ac54c6d9eb232cafbff3bed4d6",
+      "bytes": 177210
+    },
+    {
+      "source": "qa3-15-native-game/report-002.png",
+      "sha256": "a586fa24c767378b5b62b5741bb1846fcf898a5543363de50e05d7e65ad67384",
+      "bytes": 235634
+    },
+    {
+      "source": "qa3-15-native-game/report-003.png",
+      "sha256": "daf8d7e1cf3590464697c0d25ba59dbfc39f549af023c947017a65197f081352",
+      "bytes": 128982
+    },
+    {
+      "source": "qa3-16-package-audit/report-001.png",
+      "sha256": "d845a5dfad6e3a92008965a4ebd53736bf9fd55e2cb31a39a46c25d284f5c375",
+      "bytes": 63962
+    },
+    {
+      "source": "qa3-17-environment-final/report-001.png",
+      "sha256": "4188aea623664fdab52213a6788a63cd45f18ca7f58c4606a9953966a22d0c83",
+      "bytes": 218482
+    },
+    {
+      "source": "qa3-17-environment-final/report-002.png",
+      "sha256": "a3b0ac94fa0c0aaa3047e831636dc8a4fe78b93f5e141d3dbe627d2a9029152a",
+      "bytes": 302277
+    },
+    {
+      "source": "qa3-17-environment-final/report-003.png",
+      "sha256": "d628b2d6f9ce2b0336f7dac05f68dbf4ac9a4167d4bbccab17cc357f1dcc3fa8",
+      "bytes": 282237
+    },
+    {
+      "source": "qa3-17-environment-final/report-004.png",
+      "sha256": "8229e8facf37935a0044841c72f2e217a10aa2ecc8f36234788f3cf1831a1265",
+      "bytes": 168987
+    },
+    {
+      "source": "qa3-17-environment-final/report-005.png",
+      "sha256": "07d553f93b4b6ee30dce6b285100cfe20b36f28278f20204534863aaa9cea5da",
+      "bytes": 166850
+    },
+    {
+      "source": "qa3-17-environment-final/report-006.png",
+      "sha256": "1196c82c059b8c9e43930ce131dc4a78b97945cbce681709c09c3b61366987b6",
+      "bytes": 169940
+    },
+    {
+      "source": "qa3-17-environment-final/report-007.png",
+      "sha256": "23cbcce3ef8df037018f17fcacb7a51ce35f0478e4919b0a05f9e184aabd710b",
+      "bytes": 167894
+    },
+    {
+      "source": "qa3-17-environment-final/report-008.png",
+      "sha256": "649b93d81b4f177a63fe6309a4961f63f591859f464277a9741c0581f3eb61ec",
+      "bytes": 166146
+    },
+    {
+      "source": "qa3-17-environment-final/report-009.png",
+      "sha256": "81c711cac3d0f867df179ab7f61e4817a25b383873596239c0f2c54a3e4fa6de",
+      "bytes": 173379
+    },
+    {
+      "source": "qa3-17-environment-final/report-010.png",
+      "sha256": "9b4e4d3068ade793c66b75ed567125e959ed4ba9f714b2a1b350ff0a79240717",
+      "bytes": 171653
+    },
+    {
+      "source": "qa3-17-environment-final/report-011.png",
+      "sha256": "795dae210d7ee9c3366091ab34c12709ac1dc734a7d244c7142e444e7cbbcffe",
+      "bytes": 159437
+    },
+    {
+      "source": "qa3-17-environment-final/report-012.png",
+      "sha256": "6202b6ff510c9a97690a11dae76fddc4e81ae61912e3069b3587f42014e1a6f2",
+      "bytes": 156863
+    },
+    {
+      "source": "qa3-17-environment-final/report-013.png",
+      "sha256": "4e6b4795ac40b0cd872057088a75bde0616d080a7110468f3f3f610f974e1ca5",
+      "bytes": 161905
+    },
+    {
+      "source": "qa3-17-environment-final/report-014.png",
+      "sha256": "07edb73a88037c855f067bfefd54b93672d242951d613775cb0d0c3c289a7776",
+      "bytes": 161355
+    },
+    {
+      "source": "qa3-17-environment-final/report-015.png",
+      "sha256": "0575cf4f4bc189794de38a1a18f1390ea73e2e2f4b90aba931ec771c78972ccf",
+      "bytes": 157666
+    },
+    {
+      "source": "qa3-17-environment-final/report-016.png",
+      "sha256": "1da00794bfffac92baacbb6f798d4975e4e5fb90da55c7184e3219b91bbafa4c",
+      "bytes": 157589
+    },
+    {
+      "source": "qa3-17-environment-final/report-017.png",
+      "sha256": "90cab413065856fe6fb3b9e47dbbf0600c552d39a3ebdb885691cb2769e6642a",
+      "bytes": 161593
+    },
+    {
+      "source": "qa3-17-environment-final/report-018.png",
+      "sha256": "80c116dbae5a8575aa3ccc6efb76f14c4f11042243e7504acdaa4cbb73602c4e",
+      "bytes": 167216
+    },
+    {
+      "source": "qa3-17-environment-final/report-019.png",
+      "sha256": "e8fc324d60bfc830373294c1c8065386dc010c309ebe1d0017fc708d94820fd3",
+      "bytes": 163053
+    },
+    {
+      "source": "qa3-17-environment-final/report-020.png",
+      "sha256": "cb426964687e8290cf75a90bf938b16e295c45e2c17110e7cbc46756b38695f8",
+      "bytes": 193976
+    },
+    {
+      "source": "qa3-17-environment-final/report-021.png",
+      "sha256": "0e007e75c65420f53cadd5460e3c8b147f7476912095719cf1f25fa3ec111bdf",
+      "bytes": 198061
+    },
+    {
+      "source": "qa3-17-environment-final/report-022.png",
+      "sha256": "376920591e999a4b05e325a125920bd7fa8d3f95371464f289955e071396fcad",
+      "bytes": 119471
+    },
+    {
+      "source": "qa3-18-final-package/report-001.png",
+      "sha256": "d7d87e39e74544ee23e06ee75a30a58bb2e114bbf17ad09a8fd09589dbade29b",
+      "bytes": 120152
+    },
+    {
+      "source": "qa3-19-resource-guard/report-001.png",
+      "sha256": "62dccf70cb67e0c279bdfa44fb345df8d8dc618bd8d8158994df86f9a4062432",
+      "bytes": 77326
+    },
+    {
+      "source": "qa3-20-python-syntax/report-001.png",
+      "sha256": "ae0e4187bbf9c80a384bef00ad4599c76542599f6e3a92ab5c7d494c78a7b719",
+      "bytes": 65181
+    },
+    {
+      "source": "qa3-21-environment-retry/report-001.png",
+      "sha256": "e99c806068332d6963fdeda276a0273b39238b075e90b408bb2619dfb26ef55b",
+      "bytes": 220153
+    },
+    {
+      "source": "qa3-21-environment-retry/report-002.png",
+      "sha256": "65ed307d29496737606d06be5930520a179d3732a533321e1449ba19a30d3ffd",
+      "bytes": 268581
+    },
+    {
+      "source": "qa3-21-environment-retry/report-003.png",
+      "sha256": "135973ccb531d478f9e58db95e7550ed0f9269ecf37afa0d28e2eafe34ac18d7",
+      "bytes": 290574
+    },
+    {
+      "source": "qa3-21-environment-retry/report-004.png",
+      "sha256": "f2f5b90d0820a968eec13631aa5d0db4c72fc1d719440795a1c0d5e2f97f4a68",
+      "bytes": 305894
+    },
+    {
+      "source": "qa3-21-environment-retry/report-005.png",
+      "sha256": "8e4bf2bb6eadfa2cf16cdbb61dfe3b194dabc84b89e24645b94e5bf72b73efa4",
+      "bytes": 308817
+    },
+    {
+      "source": "qa3-21-environment-retry/report-006.png",
+      "sha256": "f2319ca7d71cecf13bec869ed863c6497327007d669e61d1eda953f2be5cef86",
+      "bytes": 252646
+    },
+    {
+      "source": "qa3-21-environment-retry/report-007.png",
+      "sha256": "f54ccc373c89fbe4781577a1263574f2f5caa01ee249c505d62b39ed083ad3b3",
+      "bytes": 226424
+    },
+    {
+      "source": "qa3-21-environment-retry/report-008.png",
+      "sha256": "6dee9aa3b42a47ba8b902eba560a48b569ed55940b98e9f3484ffa45956050b7",
+      "bytes": 160935
+    },
+    {
+      "source": "qa3-21-environment-retry/report-009.png",
+      "sha256": "649dbb2cfe9b5fc41bfa03be6f5ac058798b849782f5688398216dbab33ae8be",
+      "bytes": 162231
+    },
+    {
+      "source": "qa3-21-environment-retry/report-010.png",
+      "sha256": "93b1ff3a4bebbbe1034a9a6a7d93a55cb338bd046e6b0d5ea673ef0826800c10",
+      "bytes": 166831
+    },
+    {
+      "source": "qa3-21-environment-retry/report-011.png",
+      "sha256": "61070ef48047d488d003f69d0947f8bee0ed07ce929711981dc0a0dadb584af4",
+      "bytes": 164272
+    },
+    {
+      "source": "qa3-21-environment-retry/report-012.png",
+      "sha256": "9bb5c00a8401786300c5426a1a2274c5bbe74afa1fcef68c7aa39190765c5397",
+      "bytes": 170011
+    },
+    {
+      "source": "qa3-21-environment-retry/report-013.png",
+      "sha256": "a112b360725086249910621e5884d67df16656a812aa204d7a5b0147fc6cd32e",
+      "bytes": 174640
+    },
+    {
+      "source": "qa3-21-environment-retry/report-014.png",
+      "sha256": "11be5d43326315f831cbe852e9040fe835ebbc0491e65a8a3a46fa944f48d34d",
+      "bytes": 171386
+    },
+    {
+      "source": "qa3-21-environment-retry/report-015.png",
+      "sha256": "9f302a5271c1292a3350ff327eda0f7ac2865827bed1b6c794100d7ab7ddd1eb",
+      "bytes": 166080
+    },
+    {
+      "source": "qa3-21-environment-retry/report-016.png",
+      "sha256": "804a76ff2d6e0952a40efcd94486c475c344311d5e4bbd71665f7c3e1804683e",
+      "bytes": 179565
+    },
+    {
+      "source": "qa3-21-environment-retry/report-017.png",
+      "sha256": "ef4a76241e06455224a3465eab477d8ae0bc656043d4fecd081398e5a59b7de3",
+      "bytes": 167348
+    },
+    {
+      "source": "qa3-21-environment-retry/report-018.png",
+      "sha256": "4db04c5746559086248bd5eddb73711fd565cd33e2f6a66fb8be9b69d2b514e0",
+      "bytes": 167225
+    },
+    {
+      "source": "qa3-21-environment-retry/report-019.png",
+      "sha256": "dc92fa91873d740f40f096d8efb347afb47971982ebb1a220e8f59cf3395cb5b",
+      "bytes": 175838
+    },
+    {
+      "source": "qa3-21-environment-retry/report-020.png",
+      "sha256": "b6a9439afbee9debc7b1702b5f7c9b26ae04c0cb5e4a7023031a47e3efe93bc9",
+      "bytes": 175181
+    },
+    {
+      "source": "qa3-21-environment-retry/report-021.png",
+      "sha256": "86d056f057eb2f64a97bc0d1286683d93b2e37271795bf435c6e63cdbc8631e5",
+      "bytes": 176310
+    },
+    {
+      "source": "qa3-21-environment-retry/report-022.png",
+      "sha256": "f874eb42fb19fa69419620351b02d6e1fcbc0e99e3795f2dfcf9da2ff519ebae",
+      "bytes": 171163
+    },
+    {
+      "source": "qa3-21-environment-retry/report-023.png",
+      "sha256": "a0280e076fd611dbe1d39a5dffbca9149c725356dde31479d003c726a8ccfb3e",
+      "bytes": 173668
+    },
+    {
+      "source": "qa3-21-environment-retry/report-024.png",
+      "sha256": "7a0a5811047ebbb138db709f6fde4ee548f55d53911bc0330b8eed4265b71df2",
+      "bytes": 171370
+    },
+    {
+      "source": "qa3-21-environment-retry/report-025.png",
+      "sha256": "fdfa891f1f9584c1b62d52cab1e2c2a4fc65529bf57daf5f80f77d123da489c8",
+      "bytes": 167410
+    },
+    {
+      "source": "qa3-21-environment-retry/report-026.png",
+      "sha256": "69f41aeaabf639ef898483a8d56b4a6683cf69d36f8f8b9f950cc645703c13ef",
+      "bytes": 168736
+    },
+    {
+      "source": "qa3-21-environment-retry/report-027.png",
+      "sha256": "4426c8802a90e6f8a811bb98ccca2fe2f77ca0a1ef4778c9de256ae1dc37b154",
+      "bytes": 156592
+    },
+    {
+      "source": "qa3-21-environment-retry/report-028.png",
+      "sha256": "9bfb83627244f43c9f62be204d43bb22723d5b61009237324f38357ded6f18e3",
+      "bytes": 162281
+    },
+    {
+      "source": "qa3-21-environment-retry/report-029.png",
+      "sha256": "0451cd896dd45b231d2b2d192760684be97bc9c30fdde5f1da6c030b37bb8900",
+      "bytes": 163063
+    },
+    {
+      "source": "qa3-21-environment-retry/report-030.png",
+      "sha256": "7235e8b767bb77f87e9ed5c012114abab059481f08a47e9218005eaee1ebbf35",
+      "bytes": 162541
+    },
+    {
+      "source": "qa3-21-environment-retry/report-031.png",
+      "sha256": "7db503dbcc65c87b752498b35168bf3eff98605a2831cb8bf8f42af1cf0832e8",
+      "bytes": 165096
+    },
+    {
+      "source": "qa3-21-environment-retry/report-032.png",
+      "sha256": "4ee4b9583164959efd6ca86ed32d64751edf0dad2e8a9e4bec3ae3e2e3a5836c",
+      "bytes": 163986
+    },
+    {
+      "source": "qa3-21-environment-retry/report-033.png",
+      "sha256": "255cbda907ffa46dbbdfa53bae19586221b3a975e4f80be74bd557c50b51af59",
+      "bytes": 172497
+    },
+    {
+      "source": "qa3-21-environment-retry/report-034.png",
+      "sha256": "a9981f8923189ce65de8ff823182bc1875a25914c7944c07de433d5ad3ae9a40",
+      "bytes": 160801
+    },
+    {
+      "source": "qa3-21-environment-retry/report-035.png",
+      "sha256": "01116131203a70ebca0b0616454c3a6017f6c11969ce08f32303e3e84a4f85fa",
+      "bytes": 157809
+    },
+    {
+      "source": "qa3-21-environment-retry/report-036.png",
+      "sha256": "77e4934c5da4c989f0a0dcc3a29ce6536f40b50bdf03801c376144869598a11c",
+      "bytes": 160692
+    },
+    {
+      "source": "qa3-21-environment-retry/report-037.png",
+      "sha256": "7cf0ba48e23fc97731aa2c2848467cc72e25eaa78973d370e8b3c469f6333a1e",
+      "bytes": 163962
+    },
+    {
+      "source": "qa3-21-environment-retry/report-038.png",
+      "sha256": "c30a66c97dd500010ec4965dda72f19b832336945317b85b4828592915b4f019",
+      "bytes": 165846
+    },
+    {
+      "source": "qa3-21-environment-retry/report-039.png",
+      "sha256": "86278b038ebd6e053db6b888d335a6537a9bc9b52addd0f55225540932a4dfd2",
+      "bytes": 156220
+    },
+    {
+      "source": "qa3-21-environment-retry/report-040.png",
+      "sha256": "a21f7073f8f5a4110c6e9cece5f3a704ada8aeb52bc332b11cb52311e78d448a",
+      "bytes": 209681
+    },
+    {
+      "source": "qa3-21-environment-retry/report-041.png",
+      "sha256": "69ff50433337c1bbfe29fe32867edaedff1ed940f8fb0723274088bd877602f5",
+      "bytes": 96335
+    },
+    {
+      "source": "qa3-22-network-status/report-001.png",
+      "sha256": "d907c9960f99c7258b261194b327eb69434b5b7347c10618904c7428745fdc41",
+      "bytes": 68374
+    },
+    {
+      "source": "qa3-23-source-final/report-001.png",
+      "sha256": "8743750f2c226952f76547bb3b9536e627852f71c0f7bad30258d6ba8b07b66b",
+      "bytes": 229782
+    },
+    {
+      "source": "qa3-23-source-final/report-002.png",
+      "sha256": "531b3d63afe36edb42e0712b63aa9f7df20b3bb31fa1e8d145e513908bfe261c",
+      "bytes": 236515
+    },
+    {
+      "source": "qa3-23-source-final/report-003.png",
+      "sha256": "22d4a086b5e03fb3c6a99ae47f9aa242d735da6a76b181303787760498010af5",
+      "bytes": 223776
+    },
+    {
+      "source": "qa3-23-source-final/report-004.png",
+      "sha256": "14ee68c63b65e93d1ab60231716b6e9feb1a8b1e5d3761359763e5257c453d64",
+      "bytes": 93221
+    },
+    {
+      "source": "qa3-24-package-final/report-001.png",
+      "sha256": "c92c47acdfd3025da7c907eda1fda7de428861cc9bab3509791414dc35137b4b",
+      "bytes": 123130
+    },
+    {
+      "source": "qa3-25-environment-export/report-001.png",
+      "sha256": "9f9e2c37e51a580f999265fc5048b0969b96ec360682943ef77c633930dfe0ce",
+      "bytes": 184415
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Provision VLC, game and official Brave test image",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:59:01.081001+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "58baeb810c67b3ecc181cc63d6532fb19b4aee145a7e95ba861a5cac4a46768b",
+      "working_tree": "?? build/integration/Everyday.Dockerfile",
+      "command": [
+        "docker",
+        "build",
+        "-f",
+        "build/integration/Everyday.Dockerfile",
+        "-t",
+        "orez-everyday-test:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 409.48,
+      "finished_at": "2026-11-05T08:05:50.609153+00:00",
+      "log_sha256": "b8b6d94389afa7a5ad78f7d4d8bbc7ee6fda509f7fa7a331b8d43f4cd199109c",
+      "directory": "qa3-01-provision"
+    },
+    {
+      "schema_version": 1,
+      "name": "Provision official Brave using existing workspace CA trust",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:09:19.454601+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "c53750714923ff1891e2635b5049bdfeab7af8b8d95fa8278e664243997233f9",
+      "working_tree": "M build/export-preview.mjs\n M build/package-shell.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "build/integration/Everyday.Dockerfile",
+        "-t",
+        "orez-everyday-test:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 73.8,
+      "finished_at": "2026-11-05T08:10:33.302533+00:00",
+      "log_sha256": "c9fcc01333fb86fd5172767ec81694b8e97b40fc0c140fd2807445d55b45a39c",
+      "directory": "qa3-02-provision"
+    },
+    {
+      "schema_version": 1,
+      "name": "Android manager boundaries, supplied wallpapers and source regressions",
+      "kind": "source",
+      "started_at": "2026-11-05T08:11:42.547619+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "8fabb16e8a204a675db24a3b5c5c98a4d4c9a5ba745c440a2026a4dcff992ef8",
+      "working_tree": "M build/export-preview.mjs\n M build/package-shell.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.82,
+      "finished_at": "2026-11-05T08:11:44.447652+00:00",
+      "log_sha256": "61e72b22ae3558d738bf3fe9bfed215d5418009a5a688c3f8c77d27eaccc19a4",
+      "directory": "qa3-03-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Official Brave repository with readable test CA bundle",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:14:04.929559+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "6774f6e223e7e3a19c24468b477f692762285c1e9e1bf0b269183907d64c59b6",
+      "working_tree": "M build/export-preview.mjs\n M build/package-shell.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "build/integration/Everyday.Dockerfile",
+        "-t",
+        "orez-everyday-test:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 156.92,
+      "finished_at": "2026-11-05T08:16:41.887848+00:00",
+      "log_sha256": "7308c81c60961538cdc498a6503d80ac3e96a1fb5eda450f4b2b40dc0410889f",
+      "directory": "qa3-04-provision"
+    },
+    {
+      "schema_version": 1,
+      "name": "Package Android manager and original owner wallpapers",
+      "kind": "source",
+      "started_at": "2026-11-05T08:21:53.243284+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "3a93116893df3450ad743bb1db809a04c704a1e0eb15e5ff067c483b78dca556",
+      "working_tree": "M build/export-preview.mjs\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "build/package-shell.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.67,
+      "finished_at": "2026-11-05T08:21:53.936190+00:00",
+      "log_sha256": "1deff05e989ae2434820414d421175c4c297561e07fee92001cca094011bd7be",
+      "directory": "qa3-05-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Updated wallpaper preview build",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T08:21:53.156635+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "3a93116893df3450ad743bb1db809a04c704a1e0eb15e5ff067c483b78dca556",
+      "working_tree": "M build/export-preview.mjs\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "npm",
+        "run",
+        "preview:build"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 7.24,
+      "finished_at": "2026-11-05T08:22:00.456122+00:00",
+      "log_sha256": "3fbbf2de31e190c36b5530ad8f3fbfcf4f42ec189504d1e09d55b2bf7d0ea68e",
+      "directory": "qa3-06-preview-build"
+    },
+    {
+      "schema_version": 1,
+      "name": "Real desktop settings, VLC, native game, Android controls and Brave",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:22:50.350818+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "3a93116893df3450ad743bb1db809a04c704a1e0eb15e5ff067c483b78dca556",
+      "working_tree": "M build/export-preview.mjs\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa3-07-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 117.12,
+      "finished_at": "2026-11-05T08:24:47.564573+00:00",
+      "log_sha256": "e21dd096a8a93166b4ffecdac2a78ff122d5f18633f0159a226d40c61cb9b079",
+      "directory": "qa3-07-everyday"
+    },
+    {
+      "schema_version": 1,
+      "name": "Desktop/mobile preview with supplied wallpaper",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T08:22:50.360055+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "3a93116893df3450ad743bb1db809a04c704a1e0eb15e5ff067c483b78dca556",
+      "working_tree": "M build/export-preview.mjs\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "npm",
+        "run",
+        "preview:test"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 299.1,
+      "finished_at": "2026-11-05T08:27:49.548459+00:00",
+      "log_sha256": "931e1a7d657a46263d3d88fbbc488612a19f58893f3195cd13747637b250b407",
+      "directory": "qa3-08-browser"
+    },
+    {
+      "schema_version": 1,
+      "name": "6 GiB desktop with 2 GiB background allocation: VLC, game and settings",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:33:34.476176+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "bc5046d261af84ffe1ce293ea8f728ba101c3cc7a2d6b4f0cbe5a6f4b2c1aee4",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/WALLPAPER_SOURCES.json\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa3-09-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 273.4,
+      "finished_at": "2026-11-05T08:38:07.947523+00:00",
+      "log_sha256": "ceabf4b30ffdc5a52d6408059e62b468353eef2fff8e2d73c93e9b7d4ce38f5f",
+      "directory": "qa3-09-everyday-6g"
+    },
+    {
+      "schema_version": 1,
+      "name": "Prepare publishable QA environment with VM tools and Java",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:40:06.057467+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "25d691eb9d80bf14f3114edefd6edcbec129e48b0a950f477b78ba2ed87b2416",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "docker",
+        "build",
+        "-f",
+        "environment/orez-qa.Dockerfile",
+        "-t",
+        "orez-qa:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 247.96,
+      "finished_at": "2026-11-05T08:44:14.086457+00:00",
+      "log_sha256": "9cfa0465807e66707a7202ef107d326103c656ef3652287e28d1253922c0069e",
+      "directory": "qa3-10-environment"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final source regressions including Android resource guards",
+      "kind": "source",
+      "started_at": "2026-11-05T08:53:42.253917+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.25,
+      "finished_at": "2026-11-05T08:53:43.534447+00:00",
+      "log_sha256": "037f88bf80598b0f2fb8ccc19687953b6e37edabbb10b119e64c341eb5234c7d",
+      "directory": "qa3-11-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final 23-file native package build",
+      "kind": "source",
+      "started_at": "2026-11-05T08:53:42.136591+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "build/package-shell.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.69,
+      "finished_at": "2026-11-05T08:53:42.952042+00:00",
+      "log_sha256": "f02e394439b88a036cb37545fd5255e0c4c195d6eeb7dd95c5df8fe677d943ed",
+      "directory": "qa3-12-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual environment preflight and enforcement limitations",
+      "kind": "source",
+      "started_at": "2026-11-05T08:53:42.271127+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "environment/preflight.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.5,
+      "finished_at": "2026-11-05T08:53:42.798112+00:00",
+      "log_sha256": "71e93ea7bc236d5c2525314c407438b35681a7a289292277825c65697c93361f",
+      "directory": "qa3-13-environment-preflight"
+    },
+    {
+      "schema_version": 1,
+      "name": "Read-only performance diagnostics as ordinary user",
+      "kind": "source",
+      "started_at": "2026-11-05T08:53:42.232251+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "overlay/usr/bin/orezctl",
+        "performance"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.03,
+      "finished_at": "2026-11-05T08:53:42.308530+00:00",
+      "log_sha256": "a2983e93981c2fd7801c039f5c00590b9b19ce89d69d033fa802a6e2af742686",
+      "directory": "qa3-14-performance-status"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native SuperTux gameplay with actual keyboard input",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:53:52.330441+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa3-15-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 207.33,
+      "finished_at": "2026-11-05T08:57:19.690628+00:00",
+      "log_sha256": "00263d0c20502deca134bb0f1e2504e5b76a5c208459428a12ff2859907cc83d",
+      "directory": "qa3-15-native-game"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native package file ownership and mode audit",
+      "kind": "source",
+      "started_at": "2026-11-05T08:54:33.294638+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "51cf7f110f4c314675fddd28fa6dc0d1c76ae799903382c5bf1da86740d941a9",
+      "working_tree": "M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "build/verify-deb-files.py",
+        "--package",
+        "dist/orez-shell_0.1.0-1_all.deb",
+        "--manifest",
+        "image/installer/installed-files.txt",
+        "--report",
+        "dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.22,
+      "finished_at": "2026-11-05T08:54:33.578598+00:00",
+      "log_sha256": "a057836ba8bfb8ebdbbde77bdbda5172a769dcc6c2d44af3b18ad0b3ed503a08",
+      "directory": "qa3-16-package-audit"
+    },
+    {
+      "schema_version": 1,
+      "name": "QA image with verified HTTPS repositories and normal-user tool preflight",
+      "kind": "package-container",
+      "started_at": "2026-11-05T08:59:06.272861+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "dec6e26f238693fb08cb0b1a30d5af1c4b9555507b5be9e3b2b8eab373dbff86",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "environment/orez-qa.Dockerfile",
+        "-t",
+        "orez-qa:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 195.68,
+      "finished_at": "2026-11-05T09:02:22.011724+00:00",
+      "log_sha256": "e37b4432589af18fc0f7ef36445a350618d7905f9c8206011eeab0c5f72eeec8",
+      "directory": "qa3-17-environment-final"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final package rebuild and 23-file audit after control documentation",
+      "kind": "source",
+      "started_at": "2026-11-05T09:01:46.260113+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "91b1a11f9989551092b3aa423a2209c91b7f68ea41c088b81adf2c7cb9242352",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "-c",
+        "bash build/package-shell.sh && python3 build/verify-deb-files.py --package dist/orez-shell_0.1.0-1_all.deb --manifest image/installer/installed-files.txt --report dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.47,
+      "finished_at": "2026-11-05T09:01:46.765004+00:00",
+      "log_sha256": "09c67f80ee7f19f42c73e696529388b4c0093090943ef2821092d8c66f603664",
+      "directory": "qa3-18-final-package"
+    },
+    {
+      "schema_version": 1,
+      "name": "Resource qualification correctly refuses unenforced limits",
+      "kind": "source",
+      "started_at": "2026-11-05T09:03:07.676366+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "e883a8eb27a54c1f81af6f6147cc0c051e4f0318e4638e15ee82825a2d585cf7",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "-c",
+        "import os,subprocess; p=subprocess.run([\"bash\",\"build/run-desktop-container.sh\",\"dist/evidence/qa3-19-resource-details\"],env={**os.environ,\"OREZ_REQUIRE_RESOURCE_LIMITS\":\"1\"}); assert p.returncode==2,p.returncode; print(\"PASS: unsupported memory enforcement blocked before container creation\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 3.18,
+      "finished_at": "2026-11-05T09:03:11.896986+00:00",
+      "log_sha256": "6edbac0546ab449225628a71578864e1a47f80e3e1ddc092f2eb46ae2cd0b4ca",
+      "directory": "qa3-19-resource-guard"
+    },
+    {
+      "schema_version": 1,
+      "name": "Compile all Python sources without executing tools",
+      "kind": "source",
+      "started_at": "2026-11-05T09:03:20.504302+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "e883a8eb27a54c1f81af6f6147cc0c051e4f0318e4638e15ee82825a2d585cf7",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "-c",
+        "from pathlib import Path; roots=[Path(\"build\"),Path(\"environment\"),Path(\"overlay/usr/lib/orez\")]; files=[p for root in roots for p in root.rglob(\"*.py\")]; [compile(p.read_text(),str(p),\"exec\") for p in files]; print(\"PASS:\",len(files),\"Python files\")"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.17,
+      "finished_at": "2026-11-05T09:03:20.741070+00:00",
+      "log_sha256": "91df85201ab88064b00ec13f151877b391fe1d28c41a14a83b58b5bcb3aca697",
+      "directory": "qa3-20-python-syntax"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final QA tool image including network and Bluetooth settings",
+      "kind": "package-container",
+      "started_at": "2026-11-05T09:05:42.697638+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "3a44f46edc85489694689c01d57f75ead2bea95ec818c0f4bba2cec22a538100",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "environment/orez-qa.Dockerfile",
+        "-t",
+        "orez-qa:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 102,
+      "status": "failed",
+      "duration_seconds": 354.43,
+      "finished_at": "2026-11-05T09:11:37.276961+00:00",
+      "log_sha256": "35a69fe081955ae6f68c994d64e46fd867a4e9cfdb7d40af1c4c0999c7e568dd",
+      "directory": "qa3-21-environment-retry"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native connection status command without device changes",
+      "kind": "source",
+      "started_at": "2026-11-05T09:07:32.199361+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "26ba0806d4821d0dfc9316e7c51fbc93f9b738f7ad22726acdc7181e0aadc551",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/CONNECTIVITY.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "overlay/usr/bin/orezctl",
+        "network-status"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "finished_at": "2026-11-05T09:07:32.259313+00:00",
+      "log_sha256": "51c11f36763376f43d1aabc835fc231ff6a2cbc4ee02833201fafda14df66d72",
+      "directory": "qa3-22-network-status"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final source checks after connection controls",
+      "kind": "source",
+      "started_at": "2026-11-05T09:07:35.438185+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "26ba0806d4821d0dfc9316e7c51fbc93f9b738f7ad22726acdc7181e0aadc551",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/CONNECTIVITY.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.88,
+      "finished_at": "2026-11-05T09:07:36.348583+00:00",
+      "log_sha256": "0ddc1cc8e58298a522174d71ac394f8d61550f6f847e1fa2567215a3f9e2ef9b",
+      "directory": "qa3-23-source-final"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final native package and content audit with connection controls",
+      "kind": "source",
+      "started_at": "2026-11-05T09:07:39.525127+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "26ba0806d4821d0dfc9316e7c51fbc93f9b738f7ad22726acdc7181e0aadc551",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/CONNECTIVITY.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "bash",
+        "-c",
+        "bash build/package-shell.sh && python3 build/verify-deb-files.py --package dist/orez-shell_0.1.0-1_all.deb --manifest image/installer/installed-files.txt --report dist/OREZ_DEB_CONTENTS.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.47,
+      "finished_at": "2026-11-05T09:07:40.026824+00:00",
+      "log_sha256": "46e03028a48a7656ecccc22d810e4f839be76646618b5d3d6847efdcc67339a1",
+      "directory": "qa3-24-package-final"
+    },
+    {
+      "schema_version": 1,
+      "name": "QA environment export without redundant VFS working-directory copy",
+      "kind": "package-container",
+      "started_at": "2026-11-05T09:13:27.463497+00:00",
+      "commit": "3aef3fe12965cf11bb3b5895afc5ac228eac9124",
+      "source_digest": "1d5cf760ab5037aaf6b21022f80fafe9e2c6b12587a436487b02ecb3b3ad8082",
+      "working_tree": "M .github/workflows/orez-live.yml\n M AGENTS.md\n M build/export-preview.mjs\n M build/integration/Dockerfile\n M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/package-shell.sh\n M build/run-desktop-container.sh\n M docs/AI_HANDOFF.md\n M docs/ARCHITECTURE.md\n M docs/BUILD_AND_RELEASE.md\n M docs/DECISIONS.md\n M docs/DESIGN_SYSTEM.md\n M docs/HARDWARE.md\n M docs/KNOWN_ISSUES.md\n M docs/MASTER_BLUEPRINT.md\n M docs/MASTER_BRIEF.md\n M docs/QA_SCENARIOS.md\n M docs/ROADMAP.md\n M docs/SECURITY.md\n M docs/evidence/2026-11-05-expanded-qa/README.md\n M image/installer/installed-files.txt\n M overlay/usr/bin/orez-session-init\n M overlay/usr/bin/orezctl\n M overlay/usr/share/doc/orez/CONTROLS.md\n M preview/src/style.css\n M preview/vite.config.ts\n?? build/integration/Everyday.Dockerfile\n?? build/integration/everyday-browser.mjs\n?? build/integration/everyday.py\n?? docs/ANDROID_APPS.md\n?? docs/CONNECTIVITY.md\n?? docs/DAILY_USE_QA.md\n?? docs/OWNER_CONTROL.md\n?? docs/PERFORMANCE.md\n?? docs/WALLPAPER_SOURCES.json\n?? docs/evidence/2026-11-05-daily-use/\n?? environment/\n?? overlay/usr/bin/orez-android\n?? overlay/usr/lib/orez/\n?? overlay/usr/share/applications/orez-android.desktop\n?? overlay/usr/share/wallpapers/\n?? preview/public/orez-rest.jpg\n?? tests/test_android_manager.py",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "environment/orez-qa.Dockerfile",
+        "-t",
+        "orez-qa:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 8.83,
+      "finished_at": "2026-11-05T09:13:36.376205+00:00",
+      "log_sha256": "5b9abf8f6c553513ae5eb551d1251927975977ba53d78682eb99a3b0111137c5",
+      "directory": "qa3-25-environment-export"
+    }
+  ]
+}
