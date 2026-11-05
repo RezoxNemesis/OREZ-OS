@@ -26,3 +26,10 @@ SHA-256 dff73929ec712251d79c6dd93215c28f1493472520d4e693cf1ffb750468b6a9.
 capture hash is verified in the bundle. Failed qa3-21 report capture was
 recovered from its original result/log after storage was reclaimed; 41 report
 images are now present. It remains a failed build attempt.
+
+## Direct GitHub download
+
+[Download all 340 original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/7dbd3dbd9ded644c644b1af7bce0a8835a2c94a9.zip).
+The isolated evidence snapshot includes PNGs, gallery and manifest, without raw
+logs. The downloaded ZIP was verified against every original image SHA-256.
+See github-download.json for the exact snapshot and observed download details.

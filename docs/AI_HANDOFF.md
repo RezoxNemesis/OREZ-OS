@@ -1,5 +1,23 @@
 # OREZ OS — Verified Development Handoff
 
+## Direct GitHub screenshot download — 5 November 2026
+
+- Owner requested a direct GitHub ZIP containing all 340 PNG screenshots.
+- Published an isolated evidence branch `downloads/screenshots-2026-11-05`,
+  snapshot `7dbd3dbd9ded644c644b1af7bce0a8835a2c94a9`, containing 340 original
+  PNGs, gallery, manifest and README. This is not an OS or installer release.
+- Download: https://github.com/RezoxNemesis/OREZ-OS/archive/7dbd3dbd9ded644c644b1af7bce0a8835a2c94a9.zip
+- Downloaded that URL successfully and verified all 340 PNG SHA-256 hashes
+  against the original local bundle. Archive details: the adjacent evidence
+  github-download.json. GitHub may regenerate ZIP bytes; image hashes are the
+  stable proof. This ZIP omits raw log files; the original local ZIP retains them.
+- The release-asset endpoint rejected upload authentication (401); no release
+  was visible afterward. Used the supported Git data API and standard GitHub
+  source archive instead. No credentials, security settings or policy bypasses.
+- Main and implementation are unchanged; this source-branch follow-up changes
+  documentation only and uses [skip ci]. Prior implementation CI remains
+  42001391558 on 4bb77b1. PR #1 remains draft/unmerged.
+
 ## VERIFIED DAILY-USE COMMIT AND CI — 5 November 2026
 
 - Tested implementation: **`4bb77b1149461b3dc1a72b29432970d91f92324b`**, branch
