@@ -5,7 +5,9 @@ and requested Android games; prefer official Linux versions unchanged. The
 BlueStacks example is an experience reference, not a supported OREZ runtime.
 See [OREZ Store architecture](OREZ_STORE.md), [actual test evidence](STORE_QA.md)
 and [the current verified handoff](AI_HANDOFF.md). Android consumer operation
-and direct keyboard/mouse compatibility remain unresolved gates.
+and keyboard/mouse compatibility remain unresolved gates. The owner accepts
+automatic visible Android game presets without manual setup; preserve native
+Linux controls. See OREZ_STORE.md for profile and input safety requirements.
 
 Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
 owner-authorized upgrades, protection-policy invariants and local detection that

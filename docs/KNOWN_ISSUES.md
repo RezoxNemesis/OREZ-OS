@@ -131,8 +131,8 @@ do not present existing read-only status as protection against all attacks.
 
 - Android YouTube/Instagram/games have not run; catalog and mocked ADB tests do
   not establish a consumer emulator, Play Store or game/input compatibility.
-- Official Linux apps are preferred without modification. No custom key mapper.
-  Touch-only Android controls may prevent the requested direct desktop input.
+- Official Linux apps are preferred without modification. Automatic Android game presets are approved but unimplemented.
+  Touch-only controls require real preset qualification before claiming support.
 - `orez-shell` 0.1.0-3 requires `python3-pyside6.qtwidgets`. The pinned base and
   retained ISOs lack this dependency/the new Store; image provisioning and new
   live/installed-root checks are pending.

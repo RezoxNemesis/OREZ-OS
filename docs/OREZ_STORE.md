@@ -7,7 +7,8 @@ Instagram, Subway Surfers, Free Fire and Asphalt Legends. A website shortcut,
 PWA or browser app window does not satisfy this requirement. Where an official
 Linux desktop version exists, prefer that version unchanged: Brave, Chrome, VLC
 and SuperTux are native entries. Do not repackage them as Android apps, modify
-upstream binaries or install custom keyboard mappings. The earlier web-shortcut
+upstream binaries or install mappings for native Linux apps. Android games may use automatic,
+visible presets without manual setup, as the owner explicitly confirmed. The earlier web-shortcut
 proposal was rejected and removed before this implementation was committed.
 
 The Store itself is free. Use official free base downloads where offered, with
@@ -62,26 +63,52 @@ path are unresolved. Do not bundle unreviewed Google services, spoof certificati
 or bypass Play Integrity/anti-cheat. Accounts must be entered privately in the
 qualified guest by the owner; no credentials in OREZ settings or screenshots.
 
-## Keyboard and mouse: direct controls and the BlueStacks reference
+## Keyboard and mouse: automatic presets, no manual setup
 
-The owner supplied a BlueStacks/Free Fire example. BlueStacks documents preset
-Smart Controls and keyboard-to-touch mapping; this is different from an app
-supporting keyboard input itself. A clarification about automatic presets versus
-built-in controls is pending. Until answered, retain the explicit no-custom-mapping
-constraint. Do not silently install touch-to-key
-mapping or declare Android games compatible because a mouse can emulate a tap.
-Test each app's actual default keyboard focus, typing, pointer clicks, scrolling,
-selection, shortcuts, window resizing, fullscreen and suspend/resume. For games,
-verify movement, menus and all essential gameplay controls using the built-in
-input support. If an app only supports touch/controller for an essential action,
-report that limitation and retain its pending/unsupported status. Universal
-keyboard compatibility cannot be manufactured without changing the app or
-translating input, neither of which is authorized by this requirement.
+The owner explicitly confirmed **automatic presets; no manual setup** after
+providing the BlueStacks/Free Fire example. This replaces the earlier literal
+interpretation that no input translation was allowed. Prefer an app's own
+keyboard/mouse support; for Android games that need it, use visible, maintained
+presets that translate controls inside the active game. Native Linux apps retain
+their existing controls unchanged.
 
-A successful launch, a frame capture and fully functional use are separate gates.
-Record exact upstream app/runtime versions, package identity and input result.
-Capture real app windows; never present a Store card as an opened Android app.
-Use free, offline/native casual games first and then actual Android free games.
+Product flow: install through the qualified provider, choose Play, and load a
+compatible preset automatically. Show a dismissible controls overlay and a
+per-game Controls entry with effective preset/version, sensitivity, reset,
+disable and optional editing. Initial setup must not require drawing touch
+zones or manually assigning keys. OREZ must not claim that preset support exists
+until it works with an actual game and runtime.
+
+Engineering requirements for the future input adapter:
+
+- Profiles identify Android package, tested app/runtime versions, orientation,
+  resolution/layout assumptions, supported actions and provenance. Use a
+  declarative schema and reviewed release integrity; never execute downloaded
+  scripts or copy proprietary BlueStacks profiles.
+- Capture events only in the focused, visible OREZ guest/game window. Send them
+  through the runtime's narrow guest-input API. No root helper, host `/dev/uinput`
+  writer, global keyboard logger or cross-application input injection.
+- Release every held key/touch immediately on focus loss, lock, pause, close,
+  runtime failure, device revocation or emergency stop. An always-visible
+  release-pointer/stop control remains available; do not trap owner input.
+- Show a known-compatible preset automatically. Detect app/runtime/layout
+  changes; never silently reuse stale touch coordinates as verified controls.
+  If compatibility is unknown, explain the limitation and preserve native
+  guest input. Native controls may still be usable; do not invent a game pass.
+- No macros, automated play, anti-cheat evasion or certification spoofing. Respect
+  publisher emulator/input policy. Profile changes are visible and reversible,
+  with data-only logs that never capture chat, passwords or typed content.
+
+Acceptance: actual app launch; default typing/pointer/scrolling; automatically
+loaded game movement, aim and essential actions; resize/orientation; simultaneous
+input; focus loss and emergency release; pause/resume; update and stale-profile
+handling; disabled/revoked mode. Record exact app/runtime/preset versions and
+screenshots. Test native Linux controls separately without any preset adapter.
+A successful launch, a frame capture and full functionality are distinct gates.
+
+**Status:** automatic presets are now an approved requirement and planned work.
+No preset engine or tested Android game profile is implemented by this session.
+The existing developer app-launch adapter is not an input-mapping engine.
 
 ## Permissions, transparency and updates
 
@@ -140,7 +167,7 @@ performance, real speakers, Android downloads or target-PC compatibility.
    install progress/cancel/retry, installed-library state and per-app launchers.
 3. Test actual YouTube/Instagram and chosen free casual games. Capture launch,
    playback/input, close/reopen, offline/error, permission revocation and update
-   scenarios. Record direct keyboard/mouse limitations honestly; no key mapper.
+   scenarios. Record direct keyboard/mouse limitations honestly; use automatic presets only after actual guest/game qualification.
 4. Implement authenticated native-app installation/update UI through the system
    package broker with owner-visible package plans and cancellation. Current
    native install buttons only open official information.
@@ -170,5 +197,5 @@ performance, real speakers, Android downloads or target-PC compatibility.
 
 BlueStacks is an experience reference, not an OREZ dependency or proof of a
 working Linux provider. No BlueStacks binary, proprietary preset or game asset
-is copied. Automatic presets, if requested later, must be visible, reversible,
+is copied. The approved automatic presets must be visible, reversible,
 limited to the focused guest, version-tested and compatible with game policy.

@@ -76,6 +76,7 @@ Next: qualify a booted Plasma desktop on a suitable VM; validate real Calamares 
 Implemented: native Qt catalog/search/filter/launch, clear Android pending state,
 unchanged official Linux preference, constrained development guest app routing.
 Pending: consumer runtime/licensing, actual Android apps, per-app desktop
-windows, direct keyboard/mouse without mapping, authenticated install/update UI,
+windows, automatic version-tested Android game controls without manual setup,
+authenticated install/update UI,
 and PySide6 provisioning in both live/installed ISO roots. Finish owner-auth and
 visible desktop gates before installation. Details: [OREZ_STORE.md](OREZ_STORE.md).

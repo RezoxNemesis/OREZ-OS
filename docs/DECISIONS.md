@@ -53,6 +53,15 @@
   and launcher; share validated catalog data with the labelled phone/browser
   preview. Real Android YouTube/Instagram/games are required, with no website
   fallback. Prefer official Linux desktop editions unchanged. Do not install
-  custom key mapping; test and disclose each app's native keyboard/mouse support.
+  custom key mapping for native Linux apps; test and disclose input support.
+  Owner clarification permits automatic visible Android game presets without
+  manual setup, subject to actual runtime/game/version testing.
   The SDK adapter remains development-only, consumer provider/licensing pending.
   Free base downloads do not imply free paid extras. See OREZ_STORE.md.
+
+- ADR-018 amendment (2026-11-05): Owner explicitly accepts automatic presets
+  without manual setup for Android games, matching the BlueStacks experience.
+  This supersedes the earlier blanket no-mapping interpretation. Native Linux
+  apps remain unchanged. Preset engine/profiles are pending real guest testing;
+  require visible controls, focus-only guest input, version validation and
+  release on focus loss/stop. No hidden global hooks, macros or admin grants.

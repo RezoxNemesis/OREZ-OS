@@ -12,8 +12,9 @@
   Chrome, VLC, SuperTux). Require actual app screenshots and keyboard/mouse
   functionality; catalog cards do not establish it. BlueStacks/Free Fire is the
   latest experience reference. BlueStacks uses preset input translation. An
-  optional clarification on automatic presets versus only built-in app controls
-  is pending; no custom mapper is implemented or authorized by assumption.
+  clarification is now answered: **automatic presets; no manual setup**. This
+  supersedes the earlier no-mapping interpretation for Android games. Native
+  Linux controls stay unchanged. Preset engine/profiles remain unimplemented.
 - Implemented normal-user native PySide6 Store: ten-entry shared validated
   catalog, search/filter, native installed-library detection and fixed-binary
   launch, explicit publisher-info/runtime acknowledgments, private local logs.
@@ -68,9 +69,10 @@
 Exact next actions:
 1. Verify HEAD/PR/exact implementation CI and read STORE_QA/OREZ_STORE. Keep prior
    ISO identity and auth findings below; never infer Store exists in the ISO.
-2. Resolve the optional input clarification if the owner replies. If automatic
-   presets are allowed, design visible, reversible, focused-guest-only controls,
-   not global input injection, hidden hooks, macros or anti-cheat bypass.
+2. Implement the approved automatic presets after the real guest is available:
+   visible/reversible controls, tested app-version matching and focus-loss/stop
+   release. No manual setup required, global input injection, hidden hooks,
+   macros or anti-cheat bypass. See the concrete OREZ_STORE input specification.
 3. Obtain a supported KVM/graphics/sandbox QA host using the updated environment
    recipe. Select/review a maintained consumer Android provider and Google Play
    licensing path; the SDK provider remains development/testing only.
@@ -85,6 +87,7 @@ Exact next actions:
 Next-chat prompt: "Continue RezoxNemesis/OREZ-OS. Read AGENTS.md, the newest
 AI_HANDOFF, OREZ_STORE.md and STORE_QA.md; verify branch/PR/CI and artifacts.
 Real Android apps are required, with official Linux versions preferred unchanged.
+Android games should use automatic visible presets with no manual setup.
 Do not claim a working emulator, app download, hardware result or ready ISO from
 catalog/source tests. Preserve owner-only administration and all disks. Capture
 actual screenshots and retain failures. Continue the exact next unresolved gate."

@@ -86,6 +86,6 @@ remain host requirements. No physical SSD, USB, firmware or owner account used.
 
 The owner later supplied a BlueStacks/Free Fire example. Its documented preset
 input translation explains the expected convenience, but does not qualify a
-Linux runtime. Clarification about automatic presets versus strictly app-native
-controls is pending; preserve the explicit no-custom-mapping constraint until
-answered. See [OREZ_STORE.md](OREZ_STORE.md) for architecture and next gates.
+Linux runtime. The owner has now confirmed automatic, visible presets with no manual setup
+for Android games. These are planned, not implemented or tested. Native Linux
+apps keep their existing controls. See [OREZ_STORE.md](OREZ_STORE.md) for architecture and next gates.

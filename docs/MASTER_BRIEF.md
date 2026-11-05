@@ -145,6 +145,8 @@ Use professional engineering judgment; make reasonable assumptions when informat
 YouTube, Instagram and Android-only requested games must run as actual Android
 apps, not websites/PWAs/browser wrappers. Prefer official Linux desktop versions
 where available, unchanged. Require evidence from real opened apps and test
-direct keyboard/mouse without custom key mapping. Do not claim universal
+direct keyboard/mouse input. Subsequent clarification explicitly permits
+automatic visible Android game presets, with no manual setup; native Linux
+apps keep their default controls. Do not claim universal
 compatibility or free paid content. Preserve screenshots of every test, including
 failures; distinguish app functionality from catalog/preview work.
