@@ -93,6 +93,7 @@ def main():
     p.add_argument("--package", type=pathlib.Path, required=True)
     p.add_argument("--manifest", type=pathlib.Path, required=True)
     p.add_argument("--report", type=pathlib.Path, required=True)
+    p.add_argument("--version", help="Expected declared version; reject stale package artifacts")
     args = p.parse_args()
     try:
         if not args.package.is_file():
@@ -110,6 +111,9 @@ def main():
         with tarfile.open(fileobj=io.BytesIO(ctrl), mode="r:*") as tar:
             members = [m.name for m in tar.getmembers() if m.isfile() or m.issym() or m.islnk()]
         result = inspect(contents, args.manifest.read_text(), members, meta_name, meta_arch)
+        result['version'] = subprocess.check_output(['dpkg-deb', '--field', str(args.package), 'Version']).decode().strip()
+        if args.version and result['version'] != args.version:
+            result.update(status='BLOCKED', expected_version=args.version)
     except (OSError, ValueError, subprocess.CalledProcessError, tarfile.TarError) as exc:
         print("OREZ .deb audit refused: " + str(exc), file=sys.stderr)
         return 2

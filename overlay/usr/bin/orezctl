@@ -4,8 +4,9 @@ set -euo pipefail
 usage() {
   cat <<'USAGE'
 OREZ OS 0.1 — developer live image
-Usage: orezctl <status|hardware|preflight|performance|power|network|network-status|bluetooth|files|security|connect|settings|appearance|ai|help>
+Usage: orezctl <status|version|hardware|preflight|performance|power|network|network-status|bluetooth|files|security|connect|settings|appearance|ai|help>
  status      Version and safety information
+ version     Show installed OREZ component package version
  hardware    Read-only graphics, network and storage inventory
  preflight   Show target-PC UEFI and driver readiness report (no writes)
  performance Read memory, pressure and available power-profile status once
@@ -24,6 +25,13 @@ No administrative operation or hidden automation is available in v0.1.
 USAGE
 }
 case "${1:-help}" in
+  version)
+    if installed_record="$(dpkg-query -W -f='${db:Status-Status} ${Version}' orez-shell 2>/dev/null)" && [[ "$installed_record" == installed\ * ]]; then
+      printf 'OREZ native components: %s\n' "${installed_record#installed }"
+    else
+      echo 'OREZ package version unavailable; this may be an unpackaged source/live overlay.'
+    fi
+    ;;
   status)
     printf '%s\n' 'OREZ OS 0.1 — LIVE TEST ONLY'
     printf '%s\n' 'Foundation: official Kubuntu 26.04.1 LTS; do not install from this experimental remix.'

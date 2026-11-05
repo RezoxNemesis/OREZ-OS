@@ -1,5 +1,64 @@
 # OREZ OS — Verified Development Handoff
 
+## Native upgrade and controls checkpoint — 5 November 2026
+
+- Starting confirmed source HEAD: `cb8db4e8337fd0b19e8126de2a023b942aff000d`,
+  branch `feature/orez-live-foundation-20261104`; PR #1 remains draft/unmerged.
+  Main is `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`; repository remains public.
+  This checkpoint precedes the new implementation commit. Its exact SHA and CI
+  are added in the verified follow-up above this section; recheck actual GitHub HEAD.
+- Native component revision is `0.1.0-2`, with one version source, exact artifact
+  selection/stale-package rejection, and installed-version diagnostics. Actual
+  previous-artifact upgrade passes 5 checks, preserving project data, appearance
+  opt-out and private Android settings. All 10 synthetic APT recovery/error cases pass.
+- Final local source: 78 tests passed (qa4-30); all 18 Python helpers and build
+  shell scripts parse (qa4-31). Package audit passes all 23 paths and expected revision.
+- All 4 native controls scenarios pass (qa4-29): network/Bluetooth open-close,
+  Settings search/clear, dummy password mask/reveal/re-mask/clear/cancel. No
+  connection is saved. No radio, pairing, password authentication or encryption
+  of a saved credential was tested. Bluetooth explicitly reports no adapter.
+- VLC playback/pause/seek/resume and virtual audio pass again (qa4-16). Reviewed
+  qa4-27 captures establish a real SuperTux level, movement/scrolling and death
+  response; no Android game, physical GPU or sustained FPS qualification.
+- Expanded actual Kubuntu collision audit passes all 23 paths: run 42014023573,
+  job 127199879972 on 4bb77b1, manifest identical to this revision. Original ISO
+  checksum passes in CI. Report recovered from logs; artifact download was HTTP
+  403. This closes static path collision only, not installation/recovery.
+- Compact QA image built: `orez-qa:20261105-compact`,
+  `sha256:e6427926838b638347acca36ea9ba9a168f4f0e95059391c17c1f94d4e73da3d`,
+  4,173,178,310 logical bytes. Old disposable VFS images were removed after a
+  verified 31-blob desktop-image backup to temporary RAM storage; source and
+  screenshots remain. Environment is not published. Canonical build instructions
+  and host requirements are in environment/README.md.
+- New local bundle: `dist/OREZ-native-followup-screenshots.zip`, 122,584,231 bytes,
+  SHA-256 `b2cc7660b7c9315916b559891d7a6f8518c7730e99008f51b0cbddaf2c7601c9`.
+  Contains 534 original PNGs, 557 capture references and 31 attempt records,
+  including failures. Native desktop screenshots are separate from report pages.
+  The older 340-image download remains available below.
+- Read-only collaborator/invitation/key/workflow-permission audit remains
+  unverified (qa4-24). Available credentials cannot read those settings. No
+  admin/visibility policy changed; no access-control workaround was used.
+- Durable results: CONTINUED_QA.md and docs/evidence/2026-11-05-native-followup/.
+  Important failed attempts and manual visual qualifications are recorded there;
+  do not count qa4-16's earlier intro screen or qa4-24's audit-script exit as
+  gameplay/security proof. Failed test runs were not overwritten.
+- No safe installation release; approximately 5.1 GB is the historical development
+  ISO size, not a newly qualified build. No SSD/USB/firmware changes.
+
+Exact next actions:
+1. Verify actual branch/PR/CI and read the latest verified checkpoint above.
+2. Publish the supplied QA environment on a supported host with actual KVM,
+   graphics, enforced cgroups and enough disk; do not weaken sandbox/proxy policy.
+3. Reproduce visible pristine-Kubuntu and OREZ UEFI/live desktop boot on that host.
+4. Qualify installation only on disposable virtual disks: registered native package,
+   non-target disk preservation, effective AppArmor, LUKS boot/unlock, updates,
+   independent backup and restore. Installer remains disabled until these pass.
+5. Test actual MSI/RTX/Realme hardware, 6/16 GiB workloads and power behavior;
+   finish consumer Android provider/licensing, browser/YouTube and phone-transfer
+   gates. Signed OREZ update infrastructure and local security monitoring remain
+   planned, not implemented. Keep owner-only control and public-until-PC-ready policy.
+
+
 ## Direct GitHub screenshot download — 5 November 2026
 
 - Owner requested a direct GitHub ZIP containing all 340 PNG screenshots.

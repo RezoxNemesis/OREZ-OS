@@ -32,3 +32,11 @@
 - ADR-007 (2026-11-04): Keep an independent install-only `orez-install.squashfs` with a reviewed file allowlist, instead of installing live-only Calamares stubs, verification services or diagnostic grants into an installed root. Stage an *inactive* Calamares `unpackfs` two-source profile for later disposable-disk validation. Exclude the known live AppArmor override from the candidate first-source copy. Do not activate installation without actual rollback, encryption, data-preservation and target-device tests.
 
 - ADR-008 (2026-11-04): Because default KWin Wayland on CPU-only QEMU with standard VGA and VirtIO 2D can report running Plasma but still produce black framebuffer, test an explicitly gated `KWIN_COMPOSE=Q` software backend **only** under the QEMU-provided `orez.verify=1` kernel argument. This is a diagnostic, not a default OS policy; do not include the script in installed packages or enable it on the physical PC.
+
+- ADR-015 (2026-11-05): Native component revisions come from one version file;
+  builds and audits select that exact artifact. Test a real previous-artifact
+  upgrade as well as synthetic rollback/error cases. No new privileged service,
+  updater trust key or silent owner-policy migration is introduced.
+- ADR-016 (2026-11-05): Use a direct pinned-base, single filesystem-layer QA
+  recipe on VFS hosts. Dependency tools cannot supply missing KVM/GPU/cgroup or
+  network permissions. Keep the smaller opt-in CI images explicitly selected.

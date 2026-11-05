@@ -75,3 +75,11 @@ References: [NetworkManager](https://networkmanager.dev/docs/),
 [BlueZ](https://www.bluez.org/), [scrcpy](https://github.com/Genymobile/scrcpy).
 These provider references are implementation starting points; no new physical
 compatibility verification is implied by linking their documentation.
+
+
+Follow-up native evidence: network and Bluetooth pages now render and close in
+an actual KWin/Plasma container session. Bluetooth explicitly reports no adapter.
+The Wi-Fi editor exposes WPA2/WPA3 choices and user-only encrypted password
+storage as a UI option; merely displaying that option does not prove credential
+storage encryption or authenticate to an access point. The dummy-password and
+settings-search test outcomes are recorded in CONTINUED_QA.md and AI_HANDOFF.md.

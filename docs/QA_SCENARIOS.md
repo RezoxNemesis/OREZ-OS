@@ -113,17 +113,17 @@ npx playwright install chromium
 python3 build/run-with-evidence.py --name 'Preview build' --kind browser-preview --output dist/evidence/new-preview-build -- npm run preview:build
 python3 build/run-with-evidence.py --name 'Preview scenarios' --kind browser-preview --output dist/evidence/new-browser --timeout 600 -- npm run preview:test
 python3 build/run-with-evidence.py --name 'Package build' --kind source --output dist/evidence/new-package-build -- bash build/package-shell.sh
-docker build -f build/integration/Dockerfile -t orez-package-test:20261105 .
+docker build --secret id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt -f environment/orez-qa.Dockerfile -t orez-qa:20261105-compact .
 python3 build/run-with-evidence.py --name 'Package transitions' --kind package-container --output dist/evidence/new-package --timeout 420 -- bash build/test-package-scenarios.sh dist/evidence/new-package-details
-docker build -f build/integration/Desktop.Dockerfile -t orez-desktop-test:20261105 .
 python3 build/run-with-evidence.py --name 'Native desktop' --kind package-container --output dist/evidence/new-desktop --timeout 420 -- bash build/run-desktop-container.sh dist/evidence/new-native-details
 OREZ_SCENARIO=capabilities python3 build/run-with-evidence.py --name 'Native capabilities' --kind package-container --output dist/evidence/new-capabilities --timeout 420 -- bash build/run-desktop-container.sh dist/evidence/new-capabilities-native-details
 python3 build/collect-evidence.py dist/evidence
 ```
 
-Constrained profile: set `OREZ_TEST_MEMORY=2g OREZ_TEST_CPUS=1` on the desktop
-invocation. This passed in `qa2-16`; it is a brief scenario test, not a minimum
-system-requirements or sustained-performance certification.
+For an enforced constrained profile, set `OREZ_REQUIRE_RESOURCE_LIMITS=1` plus
+`OREZ_TEST_MEMORY` and `OREZ_TEST_CPUS`. This workspace correctly rejects that
+qualification: its rootless Docker cannot enforce cgroup limits. Historical
+qa2-16 passed component checks but did not establish a 2 GiB memory ceiling.
 `OREZ_CAPABILITY_FILTER` can select a scenario substring for a targeted rerun.
 All images/scripts/package input hashes, renderer details, container exit
 state and test results are retained. Source report screenshots are actual
@@ -149,3 +149,22 @@ multi-monitor and suspend/resume, power-loss recovery, Steam/Proton/anti-cheat,
 CUDA/VRAM/model workloads, VM acceleration, signed updates, malicious USB and
 AI broker abuse tests remain **not run or not implemented**. No AI broker is
 enabled. No installed-system or public-release readiness follows from this QA.
+
+## Continue native controls and real-version upgrade checks
+
+Build the current package first. Use the compact image above, fresh evidence
+paths, and one UI scenario at a time on a small VFS host. Container creation
+copies gigabytes before the desktop starts; allow for that in the timeout.
+
+```bash
+OREZ_SCENARIO=connectivity python3 build/run-with-evidence.py --name 'Native network controls' --kind package-container --timeout 600 --output dist/evidence/new-network -- bash build/run-desktop-container.sh dist/evidence/new-network-native-details
+OREZ_SCENARIO=native-upgrade OREZ_PREVIOUS_PACKAGE=/absolute/path/to/previous-verified.deb python3 build/run-with-evidence.py --name 'Actual component upgrade' --kind package-container --timeout 600 --output dist/evidence/new-upgrade -- bash build/run-desktop-container.sh dist/evidence/new-upgrade-details
+OREZ_SCENARIO=everyday OREZ_EVERYDAY_FILTER=vlc-playback-audio-pause-seek,native-game-input python3 build/run-with-evidence.py --name 'VLC and game' --kind package-container --timeout 600 --output dist/evidence/new-media -- bash build/run-desktop-container.sh dist/evidence/new-media-native-details
+```
+
+The connectivity fixture creates a private system bus and NetworkManager with
+all interfaces unmanaged and connectivity checking disabled. No policy grants,
+physical radios, connection saves, pairing or real credentials are needed.
+Only deliberate dummy password text may appear in its screenshots. The game
+check rejects the black introduction before accepting a playable scene; review
+the before/after player position, not just its process status.

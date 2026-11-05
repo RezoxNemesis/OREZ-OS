@@ -10,6 +10,13 @@ Existing `orezctl security` is a read-only status command, not an antivirus or
 intrusion detector. Local synthetic APT upgrade/downgrade tests do not establish
 a production update channel or complete system rollback.
 
+The follow-up actual-package test upgrades `0.1.0-1` to `0.1.0-2` offline in a
+rootless disposable container. It verifies ordinary-user denial, changed command
+bytes and installed version, preserved project file/appearance opt-out/private
+Android configuration, and stable repeat installation. Ten synthetic APT failure
+and rollback cases also pass. These narrow results do not qualify signed remote
+updates, a compromised authorized package, or full-system recovery.
+
 ## 1. Security policy persists through updates
 
 The durable rule is owner-only human administration, no AI elevation bypass,

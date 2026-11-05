@@ -75,3 +75,10 @@ is therefore incomplete; no access setting was changed.** Do not retry a billed
 tool or claim an access restriction has been applied. Use the owner's GitHub
 Settings → Collaborators/access, deploy keys, installed applications and Actions
 permissions to complete the audit when an authorized interface is available.
+
+
+Follow-up read-only audit (qa4-24): the shell GitHub credentials also could not
+read collaborators, pending invitations, deploy keys or default workflow-token
+permissions. No alternate credentials, policy bypass or access mutation was used.
+The full access audit therefore remains open; a successful audit-script exit
+means its report was captured, not that owner exclusivity was established.

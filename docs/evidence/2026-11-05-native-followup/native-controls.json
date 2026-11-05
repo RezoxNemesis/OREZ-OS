@@ -1,0 +1,46 @@
+{
+  "hardware_tested": false,
+  "scenarios": [
+    {
+      "name": "01-native-network-settings",
+      "status": "passed",
+      "detail": {
+        "module": "kcm_networkmanagement",
+        "open_close": true,
+        "physical_connection_tested": false
+      },
+      "seconds": 7.0
+    },
+    {
+      "name": "02-native-bluetooth-settings",
+      "status": "passed",
+      "detail": {
+        "module": "kcm_bluetooth",
+        "open_close": true,
+        "physical_connection_tested": false
+      },
+      "seconds": 6.89
+    },
+    {
+      "name": "03-native-settings-search",
+      "status": "passed",
+      "detail": {
+        "query": "Bluetooth",
+        "matching_result_visible": true,
+        "clear_verified": true
+      },
+      "seconds": 9.67
+    },
+    {
+      "name": "04-native-dummy-password",
+      "status": "passed",
+      "detail": {
+        "dummy_only": true,
+        "masked_revealed_remasked_cleared": true,
+        "cancel_saved_no_connection": true,
+        "wifi_authentication_tested": false
+      },
+      "seconds": 14.36
+    }
+  ]
+}

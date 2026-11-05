@@ -3,6 +3,8 @@
 set -euo pipefail
 root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 command -v dpkg-deb >/dev/null || { echo 'dpkg-deb is required' >&2; exit 1; }
+version="$(python3 "$root/build/package-info.py" version)"
+package="$(python3 "$root/build/package-info.py" path)"
 temporary="$(mktemp -d)"
 trap 'rm -rf -- "$temporary"' EXIT
 work="$temporary/payload"
@@ -15,9 +17,9 @@ rm -f -- "$work/usr/bin/calamares" "$work/usr/share/applications/calamares.deskt
 mkdir -p "$work/DEBIAN" "$root/dist"
 chmod 0755 "$work/DEBIAN"
 chmod g-s "$work/DEBIAN"
-cat > "$work/DEBIAN/control" <<'CONTROL'
+cat > "$work/DEBIAN/control" <<CONTROL
 Package: orez-shell
-Version: 0.1.0-1
+Version: ${version}
 Section: x11
 Priority: optional
 Architecture: all
@@ -30,9 +32,9 @@ Description: OREZ desktop assets, diagnostics and optional Android development m
 CONTROL
 chmod 0644 "$work/DEBIAN/control"
 # No maintainer scripts; installation never executes privileged arbitrary code.
-dpkg-deb --build --root-owner-group "$work" "$root/dist/orez-shell_0.1.0-1_all.deb"
-dpkg-deb --info "$root/dist/orez-shell_0.1.0-1_all.deb"
-if dpkg-deb --contents "$root/dist/orez-shell_0.1.0-1_all.deb" | grep -E '([[:space:]])\./(usr/bin/calamares|usr/share/applications/calamares.desktop|usr/lib/systemd/system/orez-.*verify.service|etc/systemd/system/.*wants/orez-.*verify.service)([[:space:]]|$)' ; then
+dpkg-deb --build --root-owner-group "$work" "$package"
+dpkg-deb --info "$package"
+if dpkg-deb --contents "$package" | grep -E '([[:space:]])\./(usr/bin/calamares|usr/share/applications/calamares.desktop|usr/lib/systemd/system/orez-.*verify.service|etc/systemd/system/.*wants/orez-.*verify.service)([[:space:]]|$)' ; then
   echo "Unsafe package: live-only installer override leaked into normal .deb" >&2
   exit 1
 fi

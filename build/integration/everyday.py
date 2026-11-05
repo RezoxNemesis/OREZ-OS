@@ -154,19 +154,36 @@ def game():
     (E / 'supertux-data-files.txt').write_text('\n'.join(files))
     levels = [Path(p) for p in files if p.endswith('.stl')]
     assert levels, 'No packaged starting level found'
-    level = next((p for p in levels if p.name == '01 - Welcome to Antarctica.stl'), levels[0])
+    level = next((p for p in levels if p.name == 'welcome_antarctica.stl'), None)
+    assert level is not None, 'Expected packaged playable level missing; do not substitute an intro'
     app = launch('supertux', [binary, '--window', '--geometry', '960x640', '--show-pos', '--show-fps', str(level)], env=env)
     time.sleep(7); assert app.poll() is None, 'SuperTux exited'
     # Use actual key input, not a simulated screenshot or fabricated score.
     ids = run('xdotool', 'search', '--onlyvisible', '--name', 'SuperTux', env=env).splitlines()
     assert ids, 'SuperTux window missing'
     window = ids[-1]
-    run('xdotool', 'windowfocus', '--sync', window, env=env)
-    shot('09-supertux-level-start')
-    run('xdotool', 'keydown', 'Right', env=env); time.sleep(2)
-    run('xdotool', 'key', 'space', env=env)
-    run('xdotool', 'keyup', 'Right', env=env)
-    shot('12-supertux-after-input')
+    run('xdotool', 'windowactivate', '--sync', window, env=env)
+    shot('09-supertux-introduction')
+    input_env = {**os.environ, 'DISPLAY': ':99'}
+    run('xdotool', 'mousemove', '700', '400', 'click', '1', env=input_env)
+    run('xdotool', 'keydown', 'space', env=input_env); time.sleep(.4)
+    run('xdotool', 'keyup', 'space', env=input_env)
+    time.sleep(3)
+    shot('10-supertux-active-level-before-input')
+    # A live process or successful XTEST request is not gameplay proof. Reject
+    # the predominantly black introduction for this pinned, snowy outdoor level.
+    from PIL import Image
+    raw = run('xdotool', 'getwindowgeometry', '--shell', window, env=env)
+    geometry = {k:int(v) for k,v in (line.split('=',1) for line in raw.splitlines())}
+    pixels = Image.open(E/'10-supertux-active-level-before-input.png').convert('RGB').crop(
+        (geometry['X'], geometry['Y'], geometry['X']+geometry['WIDTH'], geometry['Y']+geometry['HEIGHT']))
+    visible = sum(max(pixel)>60 for pixel in pixels.getdata()) / (pixels.width*pixels.height)
+    assert visible > .4, f'Playable scene not established; bright-pixel fraction {visible:.3f}'
+    run('xdotool', 'keydown', 'Right', env=input_env); time.sleep(2)
+    run('xdotool', 'keydown', 'space', env=input_env); time.sleep(.3)
+    run('xdotool', 'keyup', 'space', env=input_env)
+    run('xdotool', 'keyup', 'Right', env=input_env)
+    time.sleep(2); shot('12-supertux-after-input')
     app.terminate()
     return {'application':'SuperTux native Linux game', 'level':str(level), 'input':'Right and jump delivered', 'gameplay':'requires visual review of position overlay/captures; no Android/AAA/FPS certification'}
 

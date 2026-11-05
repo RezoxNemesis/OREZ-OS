@@ -20,6 +20,7 @@ setpriv --no-new-privs kwin_wayland --help > /evidence/kwin-help.txt 2>&1
 dbus-run-session -- bash <<'SESSION'
 set -Eeuo pipefail
 export XDG_CURRENT_DESKTOP=KDE XDG_SESSION_DESKTOP=KDE XDG_SESSION_TYPE=wayland XDG_MENU_PREFIX=plasma-
+export QT_ACCESSIBILITY=1 QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
 export QT_QUICK_BACKEND=software
 # Ignore privileged file-capability gains rather than granting the container
 # CAP_SYS_NICE. Software rendering needs no elevated scheduling privilege.
@@ -47,6 +48,10 @@ sleep 3
 DISPLAY=:99 scrot /evidence/01-plasma-desktop.png
 qdbus6 org.kde.KWin /KWin org.kde.KWin.supportInformation > /evidence/kwin-support.txt
 printf 'PASS: native KWin and Plasma desktop objects exist; screenshot requires review.\n'
+if [[ "${OREZ_SCENARIO:-desktop}" == connectivity ]]; then
+  python3 /input/connectivity.py
+  exit
+fi
 if [[ "${OREZ_SCENARIO:-desktop}" == everyday ]]; then
   python3 /input/everyday.py
   exit

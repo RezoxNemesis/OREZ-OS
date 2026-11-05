@@ -15,6 +15,10 @@ jobs:
   package:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    env:
+      # CI deliberately builds only the dependencies requested by this workflow.
+      OREZ_PACKAGE_IMAGE: orez-package-test:20261105
+      OREZ_DESKTOP_IMAGE: orez-desktop-test:20261105
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020

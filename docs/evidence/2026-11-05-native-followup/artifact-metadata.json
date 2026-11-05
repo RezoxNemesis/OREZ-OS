@@ -1,0 +1,9 @@
+{
+  "package": "dist/orez-shell_0.1.0-2_all.deb",
+  "bytes": 270708,
+  "sha256": "623f88bcafebd878fd64d557e10047e1b0688e42c2b5ca0f5f53d64e8b378eba",
+  "image_id": "sha256:e6427926838b638347acca36ea9ba9a168f4f0e95059391c17c1f94d4e73da3d",
+  "image_logical_bytes": 4173178310,
+  "normal_ui_user": 1500,
+  "os_installer_approved": false
+}

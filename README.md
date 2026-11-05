@@ -1,5 +1,7 @@
 # OREZ OS — Real Linux Build (0.1 Live Candidate)
 
+Latest component validation: [native controls, real-version upgrades and gameplay](docs/CONTINUED_QA.md). OREZ remains pre-alpha; no physical installation is approved.
+
 **Start here:** [single master blueprint](docs/MASTER_BLUEPRINT.md), [latest verified handoff](docs/AI_HANDOFF.md), [test screenshots and evidence rules](docs/TESTING_AND_SCREENSHOTS.md).
 
 The separate [phone-friendly interactive preview](preview/README.md) now has working navigation, appearance controls and demo device permissions. `npm run preview:build` exports a portable `dist/OREZ-Preview.html` and an HTTPS-hostable PWA. It is labelled as a browser preview and cannot install or control an OS. The native Linux project remains a distinct, unqualified live candidate.

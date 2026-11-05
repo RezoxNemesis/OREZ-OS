@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - 'build/**'
+      - 'packaging/**'
       - 'environment/**'
       - 'overlay/**'
       - 'tests/**'
@@ -45,7 +46,7 @@ jobs:
           python3 build/run-with-evidence.py --name 'Source regression' --kind source --output dist/evidence/source -- python3 -m unittest discover -s tests -v
           python3 build/run-with-evidence.py --name 'Native package build' --kind source --output dist/evidence/package-build -- bash build/package-shell.sh
           python3 build/run-with-evidence.py --name 'Package allowlist audit' --kind source --output dist/evidence/package-audit -- python3 build/verify-deb-files.py \
-            --package dist/orez-shell_0.1.0-1_all.deb \
+            --package "$(python3 build/package-info.py path)" --version "$(python3 build/package-info.py version)" \
             --manifest image/installer/installed-files.txt \
             --report dist/OREZ_DEB_CONTENTS.json
           cat dist/OREZ_DEB_CONTENTS.json

@@ -37,11 +37,14 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+BASE_VERSION=run(['dpkg-deb','--field','/input/orez-shell.deb','Version']).stdout.strip()
+
+
 def fixture(suffix, marker, dependency=None):
     stage = ROOT / suffix
     run(['dpkg-deb', '--raw-extract', '/input/orez-shell.deb', str(stage)])
     control = stage / 'DEBIAN/control'
-    text = control.read_text().replace('Version: 0.1.0-1', 'Version: 0.1.0-1+' + suffix)
+    text = control.read_text().replace('Version: ' + BASE_VERSION, 'Version: ' + BASE_VERSION + '+' + suffix)
     if dependency:
         text = '\n'.join('Depends: ' + dependency if line.startswith('Depends:') else line for line in text.splitlines()) + '\n'
     control.write_text(text)
@@ -93,13 +96,13 @@ def save():
 
 def initial():
     run(APT + ['install', str(one)])
-    state('0.1.0-1+qatest.1', hash_one)
+    state(BASE_VERSION + '+qatest.1', hash_one)
     return 'Actual first fixture installed and payload hash matched'
 
 
 def denied_user():
     run(['runuser', '-u', 'orez-test', '--', 'dpkg', '-i', str(two)], expected='failure')
-    state('0.1.0-1+qatest.1', hash_one)
+    state(BASE_VERSION + '+qatest.1', hash_one)
     return 'Ordinary-user dpkg installation denied without modifying current package'
 
 
@@ -111,32 +114,32 @@ def preference():
 
 def bad_archive():
     run(APT + ['install', str(corrupt)], expected='failure')
-    state('0.1.0-1+qatest.1', hash_one)
+    state(BASE_VERSION + '+qatest.1', hash_one)
     return 'Truncated package rejected; installed version, payload and unrelated data unchanged'
 
 
 def dependency_failure():
     run(APT + ['install', str(bad_dependency)], expected='failure')
-    state('0.1.0-1+qatest.1', hash_one)
+    state(BASE_VERSION + '+qatest.1', hash_one)
     return 'Unresolvable dependency rejected without breaking dpkg state'
 
 
 def upgrade():
     run(APT + ['install', str(two)])
-    state('0.1.0-1+qatest.2', hash_two)
+    state(BASE_VERSION + '+qatest.2', hash_two)
     assert 'Hidden=true' in (home / '.config/autostart/orez-initialize.desktop').read_text()
     return 'Newer local fixture installed; expected changed payload and user opt-out both verified'
 
 
 def refused_downgrade():
     run(APT + ['install', str(one)], expected='failure')
-    state('0.1.0-1+qatest.2', hash_two)
+    state(BASE_VERSION + '+qatest.2', hash_two)
     return 'APT refused unattended downgrade without explicit --allow-downgrades'
 
 
 def rollback():
     run(APT + ['--allow-downgrades', 'install', str(one)])
-    state('0.1.0-1+qatest.1', hash_one)
+    state(BASE_VERSION + '+qatest.1', hash_one)
     assert 'Hidden=true' in (home / '.config/autostart/orez-initialize.desktop').read_text()
     return 'Explicit package downgrade restored earlier payload while retaining user preference and files'
 
@@ -153,7 +156,7 @@ def purge():
 
 def return_after_purge():
     run(APT + ['install', str(two)])
-    state('0.1.0-1+qatest.2', hash_two)
+    state(BASE_VERSION + '+qatest.2', hash_two)
     assert 'Hidden=true' in run(['runuser', '-u', 'orez-test', '--', 'cat', str(home / '.config/autostart/orez-initialize.desktop')]).stdout
     return 'Fresh installation after purge retained user control and restored correct payload'
 

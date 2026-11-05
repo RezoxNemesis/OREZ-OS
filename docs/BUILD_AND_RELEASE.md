@@ -3,14 +3,23 @@
 ## Daily-use QA environment — 5 November 2026
 
 See [environment publishing instructions](../environment/README.md) for the
-layered dependency images, trust-preserving builds, normal-user runtime and
+compact dependency image, trust-preserving builds, normal-user runtime and
 provider requirements. Tools installed include VLC, SuperTux, Brave, Java,
 QEMU/OVMF and diagnostics. Android SDK/Google images are not included. APT
 versions float and builds are traceable, not yet byte-identical.
 
-The installed payload now has **23 paths**. Its package audit is separate from
-the prior signed-base **16-path** collision result. Repeat the actual upstream
-collision audit for the expanded allowlist before any new installation claim.
+The installed payload has **23 paths**. Actual upstream collision audit
+[42014023573](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42014023573)
+passed all 23 paths against the checksum-verified pinned Kubuntu image, with no
+missing, unexpected or overwritten paths. Its manifest matches the new package.
+This is a static path gate, not Calamares, ownership, encryption or recovery proof.
+
+`packaging/orez-shell.version` is the single version source (currently `0.1.0-2`).
+Use `python3 build/package-info.py path` to find the built artifact; never select
+an arbitrary old `.deb` from dist. Pass `--version` to the manifest audit so stale
+packages are rejected. `orezctl version` reads the actual installed dpkg state.
+Increasing a native component version does not mean the full OS is release-ready.
+Signed update repository and OS rollback infrastructure remain separate gates.
 Avoid full-ISO CI until the graphics environment provides a testable hypothesis.
 The latest durable run ledger is docs/evidence/2026-11-05-daily-use/.
 

@@ -7,16 +7,22 @@ environment publication API is available in this session; publish this definitio
 through the environment's configuration UI. Do not silently publish an image or
 change host security policy.
 
-## Build once, reuse the layers
+## Build once, reuse one dependency image
 
 From the repository root on a Docker-enabled Linux x86-64 builder:
 
 ```bash
-docker build -f build/integration/Dockerfile -t orez-package-test:20261105 .
-docker build -f build/integration/Desktop.Dockerfile -t orez-desktop-test:20261105 .
-docker build --secret id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt -f build/integration/Everyday.Dockerfile -t orez-everyday-test:20261105 .
-docker build --secret id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt -f environment/orez-qa.Dockerfile -t orez-qa:20261105 .
+docker build --secret id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt -f environment/orez-qa.Dockerfile -t orez-qa:20261105-compact .
 ```
+
+The canonical recipe starts directly from pinned Ubuntu and installs dependencies
+in one filesystem layer. This matters with Docker VFS, which copies ancestor
+filesystems instead of sharing overlay extents. It replaces the former four-image
+chain locally; smaller integration Dockerfiles remain in the opt-in CI workflow,
+which explicitly selects those image names to avoid installing unused tools. Native test
+runners default to the compact image. They explicitly use container root only
+for isolated package/service fixtures and run desktop applications as UID 1500.
+They grant no host devices, mounts, host networking or extra capabilities.
 
 For an ordinary network the optional CA secret can be omitted. In the managed
 workspace it supplies the **existing trusted public CA bundle** to curl/APT/npm
@@ -86,13 +92,19 @@ conditions are satisfied, with the owner's Google sign-in private and uncaptured
 
 ## Verified local image checkpoint
 
-Image `orez-qa:20261105` built successfully in qa3-25 with ID
-`sha256:3d500a65817e2d44d70a90d63ffab2db8fb0d3688a7c0bb66eae7af4c5215308`
-and about 4.22 GB logical size. It defaults to `orez-test`; pass
+Compact image `orez-qa:20261105-compact` built in qa4-04:
+`sha256:e6427926838b638347acca36ea9ba9a168f4f0e95059391c17c1f94d4e73da3d`,
+4,173,178,310 logical bytes. It defaults to `orez-test`; pass
 `--workdir /home/orez-test` at runtime if desired. Build preflight and exact package
 versions are in `/opt/orez-qa/`. QEMU and Java executables ran, but no KVM/GPU
-exists in the builder. The final image is retained locally, not published.
+exists in the builder. The image is local and has not been published.
 
-The 32 GiB VFS host has insufficient remaining storage to start another copy of
-this image. Native Wi-Fi/Bluetooth dialog/password/search checks remain pending
-on the larger host. Do not repeatedly retry the same disk-limited operation.
+The previous image chain exhausted the 32 GiB VFS workspace. Before removing
+only disposable QA images, the old desktop/dependency images were saved to
+`/dev/shm/orez-qa-work/desktop-images.tar.gz` (1,492,430,996 bytes) and all 31
+referenced content blobs were SHA-256 checked by `check-image-backup.py`.
+That RAM-backed archive is temporary and will not survive environment shutdown.
+The older final QA image can be rebuilt from its committed recipe; it was removed
+to recover space. Screenshots, source and owner data were retained. The compact
+replacement recovered enough disk for native container tests. Full ISO/Android
+work still needs the larger supported host described above.

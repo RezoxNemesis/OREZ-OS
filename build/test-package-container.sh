@@ -5,7 +5,7 @@ root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "$root"
 out="${1:?Pass a fresh output directory}"
 mkdir "$out"
-image="${OREZ_PACKAGE_IMAGE:-orez-package-test:20261105}"
+image="${OREZ_PACKAGE_IMAGE:-orez-qa:20261105-compact}"
 docker image inspect "$image" --format '{{.Id}}' > "$out/container-image.txt"
 input="$(mktemp -d)"
 container=''
@@ -14,11 +14,11 @@ cleanup() {
     rm -rf -- "$input"
 }
 trap cleanup EXIT
-cp dist/orez-shell_0.1.0-1_all.deb "$input/orez-shell.deb"
+cp "$(python3 build/package-info.py path)" "$input/orez-shell.deb"
 cp image/installer/installed-files.txt "$input/installed-files.txt"
 cp build/integration/package-lifecycle.sh build/integration/capture-native.sh "$input/"
 sha256sum "$input"/* > "$out/test-inputs.sha256"
-container="$(docker create --network none --pids-limit 256 --memory 3g \
+container="$(docker create --user 0 --network none --pids-limit 256 --memory 3g \
     --env OREZ_DISPOSABLE_TEST=1 --env OREZ_CAPTURE_NATIVE=1 "$image" bash /input/package-lifecycle.sh)"
 docker cp "$input/." "$container:/input"
 set +e

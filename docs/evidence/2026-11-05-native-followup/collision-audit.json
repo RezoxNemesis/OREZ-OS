@@ -1,0 +1,17 @@
+{
+  "source": "Decoded GitHub job 127199879972 logs, not downloaded artifact",
+  "run": 42014023573,
+  "head": "4bb77b1149461b3dc1a72b29432970d91f92324b",
+  "iso_checksum_passed": true,
+  "artifact_download": "Blocked by workspace HTTP 403; no bypass attempted",
+  "report": {
+    "installation_approved": false,
+    "limitations": "No actual Calamares, ownership, symlink-target, AppArmor runtime, encrypted boot, or recovery test performed.",
+    "missing_manifest_paths": [],
+    "overwrites_existing_base_paths": [],
+    "paths_in_manifest": 23,
+    "status": "STATIC_FILE_PATHS_PASS",
+    "tool": "OREZ offline install-layer path collision check",
+    "unexpected_payload_paths": []
+  }
+}

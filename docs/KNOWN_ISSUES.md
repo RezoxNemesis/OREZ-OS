@@ -1,5 +1,13 @@
 # OREZ OS — unresolved blockers
 
+## Native follow-up — 5 November 2026
+
+Native network/Bluetooth open-close, Settings search/clear and the dummy-password
+mask/reveal/re-mask/clear/cancel lifecycle now pass (qa4-29). Actual package
+0.1.0-1 → 0.1.0-2 upgrade and ten APT failure/recovery cases pass. SuperTux reaches
+a playable scene with observed movement/death response (qa4-27). These close
+component gates only. See [follow-up evidence](CONTINUED_QA.md).
+
 ## Daily-use blockers — 5 November 2026
 
 - Consumer Play Store runtime/licensing, guest boot and Android game/YouTube
@@ -12,8 +20,9 @@
   host with at least 80 GiB. Dependency images can be rebuilt from recorded files.
 - Owner is verified repository admin; collaborator/deploy-key/app access audit
   is incomplete. No access settings or visibility have been changed.
-- New 23-file package allowlist needs a fresh signed-base collision audit; the
-  historical 16-file result does not qualify the additional paths.
+- The expanded 23-path collision gate now passes against the actual pinned
+  Kubuntu image (run 42014023573). Actual installation, encryption and recovery
+  remain unqualified; do not treat this static audit as permission to install.
 - VLC passed software playback with a virtual audio sink; physical speakers,
   PipeWire, GPU decoding and long-duration frame-drop targets remain untested.
 
