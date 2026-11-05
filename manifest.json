@@ -1,0 +1,1574 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa6-",
+  "unique_images": 55,
+  "capture_references": 133,
+  "references": [
+    {
+      "source": "qa6-01-initrd-lab/report-001.png",
+      "sha256": "e2b525d134d4a4501035cbdf7d7761634133ea956b9395d981c9140be980a625",
+      "bytes": 231009
+    },
+    {
+      "source": "qa6-01-initrd-lab/report-002.png",
+      "sha256": "14a7c26bcedadf7767f690e3483eb1c1c2c8ca35dda07c5e3f7bb0854540a267",
+      "bytes": 149917
+    },
+    {
+      "source": "qa6-01-initrd-lab/report-003.png",
+      "sha256": "21211f11519b8ecba82f8d415d148024b1ae022d5b4fcdf7142a36e3d36c6537",
+      "bytes": 146963
+    },
+    {
+      "source": "qa6-01-initrd-lab/report-004.png",
+      "sha256": "f3eda74b9530fe9600e9634dd4b8c9ed86821f21c6c28be27ceb0614b1ec690f",
+      "bytes": 146125
+    },
+    {
+      "source": "qa6-01-initrd-lab/report-005.png",
+      "sha256": "3b1f20677cfa7c9e36b9bc0ae59396e87910ec870b98949bb8d5b454d059e3f5",
+      "bytes": 83857
+    },
+    {
+      "source": "qa6-02-apt-source-regression/report-001.png",
+      "sha256": "1f055a12e7de8efc747ed7083bab5e18877d149d564451bfc2d78e6d7c7b8ba7",
+      "bytes": 168464
+    },
+    {
+      "source": "qa6-03-source/report-001.png",
+      "sha256": "7c21929efb7011f3c454e9e6a672c151933d74f543e6c66e2efa116c7bbbddeb",
+      "bytes": 230202
+    },
+    {
+      "source": "qa6-03-source/report-002.png",
+      "sha256": "22045e61aed5cb3fb2f44e7684df7c28394f8e0a9f2eac9723da407f2137da34",
+      "bytes": 233799
+    },
+    {
+      "source": "qa6-03-source/report-003.png",
+      "sha256": "06e9a674d40f917813b1694771ec938115585a728f1006285a503e9039b95ba2",
+      "bytes": 224990
+    },
+    {
+      "source": "qa6-03-source/report-004.png",
+      "sha256": "df8991057fa56c6c8cd97caadd863898f80fe5851148a5a7663c3855ce50f326",
+      "bytes": 227918
+    },
+    {
+      "source": "qa6-03-source/report-005.png",
+      "sha256": "3f104e276fcf9e3bd35fd2a21e297b7987597f0986010edd5402f8055f262dc5",
+      "bytes": 184854
+    },
+    {
+      "source": "qa6-03-source/report-006.png",
+      "sha256": "b81111ceb521f30757a22ff7899dc0cde6f361f781a84b92c0872f7ecbf87fd4",
+      "bytes": 69101
+    },
+    {
+      "source": "qa6-04-authentic-apt-regression/report-001.png",
+      "sha256": "e49806f49370c333194a41ef2847e6536c902265c7e222363152432d5616be28",
+      "bytes": 127023
+    },
+    {
+      "source": "qa6-05-initrd-roundtrip/report-001.png",
+      "sha256": "dad19043942c238842f2004c18ca88c1547cfe9c68d038acc3922270083a260f",
+      "bytes": 137277
+    },
+    {
+      "source": "qa6-05-initrd-roundtrip/report-002.png",
+      "sha256": "bcd1f306bd2794628e1cc566567d39beb458df09b8492b7a2a20d5e980b1d8e6",
+      "bytes": 124916
+    },
+    {
+      "source": "qa6-06-multiarchive-roundtrip/report-001.png",
+      "sha256": "9b0b90348036092252b2bf5d89e3c4eca196ee07e1db45819b9eab6341a2d481",
+      "bytes": 85361
+    },
+    {
+      "source": "qa6-07-zstd-roundtrip/report-001.png",
+      "sha256": "e50a4ca5191870211a5c4fe21300075ce58aeb274d62d4d464353f7e1847a910",
+      "bytes": 134985
+    },
+    {
+      "source": "qa6-08-source/report-001.png",
+      "sha256": "83cfee41c9881cea71a0ed51c1ed2405752ee3a61bfe2fe912b6f0d7b46a5ed0",
+      "bytes": 232253
+    },
+    {
+      "source": "qa6-08-source/report-002.png",
+      "sha256": "e5416e049e39101f46763e905dcc650b93a34e22c26fa96e91054132840a81e8",
+      "bytes": 235897
+    },
+    {
+      "source": "qa6-08-source/report-003.png",
+      "sha256": "1949a33481a029fa7a66656f978fd572eede909d5f5b8cf0502279088a164e51",
+      "bytes": 226932
+    },
+    {
+      "source": "qa6-08-source/report-004.png",
+      "sha256": "3141ae9221ddfbcc64de0f6c5192d2ac12e3b41acc1063263038c6c83b73c958",
+      "bytes": 229711
+    },
+    {
+      "source": "qa6-08-source/report-005.png",
+      "sha256": "613af3fa73e8c1aa1c4bced325b7f903587745749d85552264f1e072a65b95c3",
+      "bytes": 193727
+    },
+    {
+      "source": "qa6-08-source/report-006.png",
+      "sha256": "35c124114ca0c4e6fa7316900f40039c7d4f1815597fef304b95cf9461b5c12a",
+      "bytes": 81700
+    },
+    {
+      "source": "qa6-09-repack-roundtrip/report-001.png",
+      "sha256": "1431d949c3a2fe1327731762655cf12cdfb4cf088ac0ba8c4777f1f2fcbdd8db",
+      "bytes": 59621
+    },
+    {
+      "source": "qa6-10-source/report-001.png",
+      "sha256": "ca267deddf6677092837e47b6286555715d0a93f7b733e96b343c59e4c0888ee",
+      "bytes": 230809
+    },
+    {
+      "source": "qa6-10-source/report-002.png",
+      "sha256": "3140d951a9f2f7eeba9b074011b0906b83923ba0db4778b9b0e9d74b7737b54c",
+      "bytes": 235621
+    },
+    {
+      "source": "qa6-10-source/report-003.png",
+      "sha256": "6a242ef5f6d4ba7ea467e6b42095c7601d156907481dccf971f0f942ebffee22",
+      "bytes": 222987
+    },
+    {
+      "source": "qa6-10-source/report-004.png",
+      "sha256": "048eea62d34793340eef270949d4ae615e0c1716dd8c040e8e4a2e2f74157788",
+      "bytes": 230730
+    },
+    {
+      "source": "qa6-10-source/report-005.png",
+      "sha256": "f46f0bafc4d08d3001a1f37bb7325b7fe1f2080044b119ae6990288b72ab6db2",
+      "bytes": 192887
+    },
+    {
+      "source": "qa6-10-source/report-006.png",
+      "sha256": "9577247821a8d369af295035d875460940acf14ea0e4c82a9e9673ab3b7b0316",
+      "bytes": 118529
+    },
+    {
+      "source": "qa6-11-repack-roundtrip/report-001.png",
+      "sha256": "79f33ea1b1d82da6b661dae92b9c5223ef82a828ed66d6f609ccc9bbcb41d34e",
+      "bytes": 163646
+    },
+    {
+      "source": "qa6-12-source/report-001.png",
+      "sha256": "76ce8b0fcea0f59d88e9c0fabfda67f1b87bef6c03d3f2f8a713ebcc5425d287",
+      "bytes": 229088
+    },
+    {
+      "source": "qa6-12-source/report-002.png",
+      "sha256": "ed2c3332208dfce21b7b191d14fc89d4e01f334cae76d3d88f8d7424f6a37c3c",
+      "bytes": 234050
+    },
+    {
+      "source": "qa6-12-source/report-003.png",
+      "sha256": "bd590e1077dd428c1ab13085ad8129b21845554522856eebfa1c8839f00a6c0f",
+      "bytes": 224768
+    },
+    {
+      "source": "qa6-12-source/report-004.png",
+      "sha256": "3efc5ecefa498eb259be6c1841216806b1ca751cfef7801a5489a8fbdf5d3a22",
+      "bytes": 223916
+    },
+    {
+      "source": "qa6-12-source/report-005.png",
+      "sha256": "b42e20054d1a7e1489bdd0aed277890817fb4b9910786e3b884256e3db424b41",
+      "bytes": 194558
+    },
+    {
+      "source": "qa6-12-source/report-006.png",
+      "sha256": "bee83145f835848c45bbc9e0d2ac9336ccf40d7cd68966c9a89e00e50df6952a",
+      "bytes": 133561
+    },
+    {
+      "source": "qa6-13-derivative-iso/report-001.png",
+      "sha256": "d8a6d0599e23a102d7b2106e83888a085423b6f69ed9f12c2b003b7c1c2749e3",
+      "bytes": 98454
+    },
+    {
+      "source": "qa6-14-offline-boot/report-001.png",
+      "sha256": "12f6755a4d1a8b1e11ece8275e12e0aa6d4ed82bd42cfdd6b988c36bbc05b75c",
+      "bytes": 278501
+    },
+    {
+      "source": "qa6-14-offline-boot/report-002.png",
+      "sha256": "13cf433ecbd5780d6d2aada48713de4f67f5dc357cc439bbf7338884b03e3e55",
+      "bytes": 272271
+    },
+    {
+      "source": "qa6-14-offline-boot/report-003.png",
+      "sha256": "aef80b6c5fd501db411204908d1031481064220069986c451198e21c46adfe1a",
+      "bytes": 142549
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0010.png",
+      "sha256": "de81943caee3fa862f45cddea98fe4ab271f086757e98d12692c4de19b503225",
+      "bytes": 1745
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0030.png",
+      "sha256": "52e989050bf4e73dd2d0cf642c5adc1c8f4cbcc97a3fdb0c61371e6ee363477a",
+      "bytes": 1325
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0050.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0070.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0090.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0110.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0130.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0150.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0170.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0190.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0210.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0230.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0250.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0270.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0290.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0310.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0330.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0350.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0370.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0390.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0410.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0430.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0450.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0470.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0490.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0510.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0530.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0550.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0570.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-0590.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0050.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0070.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0090.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0110.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0130.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0150.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0170.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0190.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0210.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0230.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0250.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0270.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0290.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0310.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0330.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0350.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0370.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0390.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0410.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0430.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0450.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0470.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0490.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0510.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0530.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0550.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0570.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/guest-sdl-0590.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0010.png",
+      "sha256": "a1f278b5cbb54a2d93cb69aaec898c1fc23a814231bd73ac160a9476b4075bbe",
+      "bytes": 5133
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0030.png",
+      "sha256": "2a72affa1120a9d5ccf7650046fc74dd3d6c0f6906accc64afa898fdcb672c01",
+      "bytes": 4682
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0050.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0070.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0090.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0110.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0130.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0150.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0170.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0190.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0210.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0230.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0250.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0270.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0290.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0310.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0330.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0350.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0370.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0390.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0410.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0430.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0450.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0470.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0490.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0510.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0530.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0550.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0570.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-14-offline-boot/vm/host-window-0590.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa6-15-authentication-audit/report-001.png",
+      "sha256": "7465031dd0a781f0cf4f4d6dd386d16278062500a38630afffee62094456de99",
+      "bytes": 134740
+    },
+    {
+      "source": "qa6-16-ci-verification/report-001.png",
+      "sha256": "197318709953e8b8c0598c0fc6e050d29fb23459282f7d9c52885907ea97f44c",
+      "bytes": 100311
+    },
+    {
+      "source": "qa6-17-boot-stage/report-001.png",
+      "sha256": "f478b99c63fcb4d3407773659c1f6109800977fd92958c1ad10928cae3add533",
+      "bytes": 141287
+    },
+    {
+      "source": "qa6-18-iso-retention/report-001.png",
+      "sha256": "04cb933598bff209ab2603beb097a9d6bd59d1610db5651538bff86ccf51f227",
+      "bytes": 90720
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Provision isolated initrd lab and extract verified candidate boot scripts",
+      "kind": "package-container",
+      "started_at": "2026-11-05T14:37:05.020435+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "62c46e1f9a60af1319b82456e6cb88870f7803ebd5073be1522dfc32a3a203ee",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-lab-start.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 195.94,
+      "finished_at": "2026-11-05T14:40:21.058570+00:00",
+      "log_sha256": "eecab950cfab7ad14fd547841707409089d48780cf8ddc039dffeea26af46126",
+      "directory": "qa6-01-initrd-lab"
+    },
+    {
+      "schema_version": 1,
+      "name": "Reproduce remote source selection and verify signed local-only APT cache update",
+      "kind": "package-container",
+      "started_at": "2026-11-05T14:49:34.732867+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "77bdf981d2613418441d8e03238db0c02c61b12230fbe06d5a7e40dbc0b41cf6",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-apt-regression-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 26.02,
+      "finished_at": "2026-11-05T14:50:00.868850+00:00",
+      "log_sha256": "666dc2b1ec87018c51bbb147b1b3880577e4606da279b51e22775dfb8a031201",
+      "directory": "qa6-02-apt-source-regression"
+    },
+    {
+      "schema_version": 1,
+      "name": "Initrd patch and live authentication audit regressions",
+      "kind": "source",
+      "started_at": "2026-11-05T14:51:24.282214+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.27,
+      "finished_at": "2026-11-05T14:51:25.619593+00:00",
+      "log_sha256": "98347c78af938d934cd1fd69f3b55a8a88b0312b94eee450bc30954bd09bd917",
+      "directory": "qa6-03-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Verify local-only APT cache using the actual ISO inline signing key",
+      "kind": "package-container",
+      "started_at": "2026-11-05T14:53:46.113747+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-apt-regression-v2-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.72,
+      "finished_at": "2026-11-05T14:53:46.885740+00:00",
+      "log_sha256": "c3d5890f0c5c99bc9482a98dd4467cab48156fce74af5e8a925c9f1fe41bc2c2",
+      "directory": "qa6-04-authentic-apt-regression"
+    },
+    {
+      "schema_version": 1,
+      "name": "Audit actual initrd authentication and round-trip the deterministic offline-cache patch",
+      "kind": "source",
+      "started_at": "2026-11-05T14:53:47.461235+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-patch-lab.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 5.28,
+      "finished_at": "2026-11-05T14:53:52.782496+00:00",
+      "log_sha256": "cce71d60f9e279428dd50cc5ffb3ceed0336691368056c217362d59d36431d86",
+      "directory": "qa6-05-initrd-roundtrip"
+    },
+    {
+      "schema_version": 1,
+      "name": "Validate concatenated initramfs with multi-archive-aware 3cpio",
+      "kind": "source",
+      "started_at": "2026-11-05T14:55:33.578255+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-archive-validation.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 1.69,
+      "finished_at": "2026-11-05T14:55:35.327904+00:00",
+      "log_sha256": "d1557e8dd05f98af15322d213d0603724d847c66fc28c46054a363cd975862b4",
+      "directory": "qa6-06-multiarchive-roundtrip"
+    },
+    {
+      "schema_version": 1,
+      "name": "Round-trip compatible concatenated Zstandard initramfs frames",
+      "kind": "source",
+      "started_at": "2026-11-05T14:58:21.782019+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "71b6700bc6637fa7feedd492b31a8357a7d1a376912f259483b041d478b3e119",
+      "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-zstd-validation.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 2.93,
+      "finished_at": "2026-11-05T14:58:24.769916+00:00",
+      "log_sha256": "14ab6ec6220deb50ab79ad99d777fe48044744c66092c0571d91eb45711229b3",
+      "directory": "qa6-07-zstd-roundtrip"
+    },
+    {
+      "schema_version": 1,
+      "name": "Source regression for final Zstandard initrd packaging",
+      "kind": "source",
+      "started_at": "2026-11-05T14:59:06.695204+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "8054b44ed956e716391cc9d322d104f7c1cbe7ed7be16e108c9f136e5cde884b",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.07,
+      "finished_at": "2026-11-05T14:59:07.825302+00:00",
+      "log_sha256": "a9a72785ceace85d8d0a69c921e8b6e27789b62493db21a72e4fe2058e90c682",
+      "directory": "qa6-08-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Pinned initrd repack and standard extraction",
+      "kind": "package-container",
+      "started_at": "2026-11-05T15:08:46.375334+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "a29c06983387df3a94f861c980bf0e191712553deade48d59fd169bd5149fb88",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-repack-validation.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.22,
+      "finished_at": "2026-11-05T15:08:46.644602+00:00",
+      "log_sha256": "7599ab1e658c94a45baee251b46b8a5ecb50cfd3dc0c709bebc672e6463489ce",
+      "directory": "qa6-09-repack-roundtrip"
+    },
+    {
+      "schema_version": 1,
+      "name": "Source regression after bounded initrd repack",
+      "kind": "source",
+      "started_at": "2026-11-05T15:08:55.707003+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "a29c06983387df3a94f861c980bf0e191712553deade48d59fd169bd5149fb88",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.18,
+      "finished_at": "2026-11-05T15:08:56.933886+00:00",
+      "log_sha256": "40f87d5bea50956e5b0a7a5e77ef537e5317474c1076abdbb7c953611e464d6a",
+      "directory": "qa6-10-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Pinned initrd repack standard extraction with complete fixture",
+      "kind": "package-container",
+      "started_at": "2026-11-05T15:09:21.401350+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "79a99e085af94e03540e5e58548cdbead57ce06cc65b9b3f21c75003c6eb940e",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-repack-validation-v2.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 9.86,
+      "finished_at": "2026-11-05T15:09:31.371690+00:00",
+      "log_sha256": "6fb72bf43913a778e216871df7c78603ca9a80d2b9a2031556170f87a4872e1d",
+      "directory": "qa6-11-repack-roundtrip"
+    },
+    {
+      "schema_version": 1,
+      "name": "Full source regression and builder syntax",
+      "kind": "source",
+      "started_at": "2026-11-05T15:11:21.054647+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "8f4e6b747a462ce7794b4d4cd9cc8dddc6edd94be6fd1baf55982b8f02cbe658",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? build/update-media-checksums.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-source.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.22,
+      "finished_at": "2026-11-05T15:11:22.337066+00:00",
+      "log_sha256": "4f9ec7cd9062268f7196cf16120e214e37c0732abf5372790722f2030270ab01",
+      "directory": "qa6-12-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Retained ISO derivative and static integrity gates",
+      "kind": "package-container",
+      "started_at": "2026-11-05T15:11:22.502350+00:00",
+      "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+      "source_digest": "8f4e6b747a462ce7794b4d4cd9cc8dddc6edd94be6fd1baf55982b8f02cbe658",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? build/update-media-checksums.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-build-derivative.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 87.45,
+      "finished_at": "2026-11-05T15:12:49.989159+00:00",
+      "log_sha256": "055b7f3a8130bd7ecc3bbf911baa455d1383456d57e1ee5ca01288181114cf58",
+      "directory": "qa6-13-derivative-iso"
+    },
+    {
+      "schema_version": 1,
+      "name": "Offline direct boot with local cache patch, TCG and software OpenGL",
+      "kind": "vm",
+      "started_at": "2026-11-05T15:13:56.231675+00:00",
+      "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+      "source_digest": "3d0741d082ac90ca1274a6b04a335ef9e5f6e7691c2997f423ed10ab0d925334",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-boot.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 619.45,
+      "finished_at": "2026-11-05T15:24:15.797290+00:00",
+      "log_sha256": "923e7fd31de598ee7fd3b2a9881c434dfa366fcf596641ada24a14e968aa66a2",
+      "directory": "qa6-14-offline-boot",
+      "vm_diagnostic": {
+        "schema_version": 1,
+        "boot": "direct",
+        "iso": "/home/orez-test/initrd-audit/offline-cache-fixed.iso",
+        "expected_sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+        "guest_ram_mib": 4096,
+        "cpu_accelerator": "tcg",
+        "host_renderer": "llvmpipe",
+        "device": "virtio-vga-gl",
+        "network": "none",
+        "writable_disks": [],
+        "installation_approved": false,
+        "desktop_qualified": false,
+        "secure_boot_tested": false,
+        "frames": [
+          {
+            "seconds": 10,
+            "file": "guest-0010.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 30,
+            "file": "guest-0030.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 50,
+            "file": "host-window-0050.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 50,
+            "file": "guest-0050.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 70,
+            "file": "host-window-0070.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 70,
+            "file": "guest-0070.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 90,
+            "file": "host-window-0090.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 90,
+            "file": "guest-0090.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 110,
+            "file": "host-window-0110.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 110,
+            "file": "guest-0110.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 130,
+            "file": "host-window-0130.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 130,
+            "file": "guest-0130.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 150,
+            "file": "host-window-0150.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 150,
+            "file": "guest-0150.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 170,
+            "file": "host-window-0170.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 170,
+            "file": "guest-0170.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 190,
+            "file": "host-window-0190.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 190,
+            "file": "guest-0190.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 210,
+            "file": "host-window-0210.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 210,
+            "file": "guest-0210.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 230,
+            "file": "host-window-0230.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 230,
+            "file": "guest-0230.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 250,
+            "file": "host-window-0250.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 250,
+            "file": "guest-0250.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 270,
+            "file": "host-window-0270.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 270,
+            "file": "guest-0270.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 290,
+            "file": "host-window-0290.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 290,
+            "file": "guest-0290.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 310,
+            "file": "host-window-0310.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 310,
+            "file": "guest-0310.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 330,
+            "file": "host-window-0330.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 330,
+            "file": "guest-0330.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 350,
+            "file": "host-window-0350.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 350,
+            "file": "guest-0350.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 370,
+            "file": "host-window-0370.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 370,
+            "file": "guest-0370.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 390,
+            "file": "host-window-0390.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 390,
+            "file": "guest-0390.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 410,
+            "file": "host-window-0410.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 410,
+            "file": "guest-0410.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 430,
+            "file": "host-window-0430.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 430,
+            "file": "guest-0430.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 450,
+            "file": "host-window-0450.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 450,
+            "file": "guest-0450.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 470,
+            "file": "host-window-0470.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 470,
+            "file": "guest-0470.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 490,
+            "file": "host-window-0490.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 490,
+            "file": "guest-0490.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 510,
+            "file": "host-window-0510.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 510,
+            "file": "guest-0510.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 530,
+            "file": "host-window-0530.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 530,
+            "file": "guest-0530.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 550,
+            "file": "host-window-0550.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 550,
+            "file": "guest-0550.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 570,
+            "file": "host-window-0570.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 570,
+            "file": "guest-0570.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 590,
+            "file": "host-window-0590.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 590,
+            "file": "guest-0590.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          }
+        ],
+        "actual_sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-m",
+          "4096",
+          "-smp",
+          "2",
+          "-vga",
+          "none",
+          "-device",
+          "virtio-vga-gl",
+          "-display",
+          "sdl,gl=on",
+          "-nic",
+          "none",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:/tmp/orez-virgl-aaoihdmy/qmp.sock,server=on,wait=off",
+          "-serial",
+          "file:/home/orez-test/offline-fixed-vm/serial.log",
+          "-no-reboot",
+          "-device",
+          "qemu-xhci,id=orez-xhci",
+          "-device",
+          "usb-tablet,bus=orez-xhci.0",
+          "-drive",
+          "file=/home/orez-test/initrd-audit/offline-cache-fixed.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+          "-kernel",
+          "/home/orez-test/offline-fixed-vm/vmlinuz",
+          "-initrd",
+          "/home/orez-test/offline-fixed-vm/initrd",
+          "-append",
+          "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+        ],
+        "qemu": {
+          "QMP": {
+            "version": {
+              "qemu": {
+                "micro": 1,
+                "minor": 2,
+                "major": 10
+              },
+              "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+            },
+            "capabilities": [
+              "oob"
+            ]
+          }
+        },
+        "status": "captured_requires_visual_review",
+        "try_clicked": false
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual initrd owner-authentication release gate",
+      "kind": "package-container",
+      "started_at": "2026-11-05T15:15:00.399366+00:00",
+      "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+      "source_digest": "3d0741d082ac90ca1274a6b04a335ef9e5f6e7691c2997f423ed10ab0d925334",
+      "working_tree": "",
+      "command": [
+        "docker",
+        "exec",
+        "--user",
+        "orez-test",
+        "orez-initrd-lab-20261105",
+        "python3",
+        "/home/orez-test/orez/build/audit-live-initrd.py",
+        "--root",
+        "/home/orez-test/initrd-audit/extracted-repacked",
+        "--report",
+        "/home/orez-test/initrd-audit/live-authentication-repacked.json"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.57,
+      "finished_at": "2026-11-05T15:15:01.092115+00:00",
+      "log_sha256": "085b769c28bac69a8f9cadb91c2d4b4f4f16c9763068acdadad04d751b6a0c3d",
+      "directory": "qa6-15-authentication-audit"
+    },
+    {
+      "schema_version": 1,
+      "name": "Exact-commit remote CI evidence verification (not a CI rerun)",
+      "kind": "source",
+      "started_at": "2026-11-05T15:23:38.643108+00:00",
+      "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+      "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+      "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa6-ci-summary.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.12,
+      "finished_at": "2026-11-05T15:23:38.921788+00:00",
+      "log_sha256": "aeec037b52563ae022df9f981ed21b675df436a0d01b0208b679838af1385ac1",
+      "directory": "qa6-16-ci-verification"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual offline cache-stage progress verification",
+      "kind": "vm",
+      "started_at": "2026-11-05T15:24:35.861728+00:00",
+      "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+      "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+      "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa6-review-boot.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.25,
+      "finished_at": "2026-11-05T15:24:36.238610+00:00",
+      "log_sha256": "c6e70e17a48c9d6ad7f8ae964dcfb7dd7243179127488a0db0407df2e4b30e4d",
+      "directory": "qa6-17-boot-stage"
+    },
+    {
+      "schema_version": 1,
+      "name": "Retain both verified test ISOs and reclaim disposable lab space",
+      "kind": "package-container",
+      "started_at": "2026-11-05T15:24:37.345268+00:00",
+      "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+      "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+      "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa6-retain.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 200.34,
+      "finished_at": "2026-11-05T15:27:57.779273+00:00",
+      "log_sha256": "8f74866c36f02d5df80316a9c547b3395ed2a100a1c8f5aec99c3913d6a6370a",
+      "directory": "qa6-18-iso-retention"
+    }
+  ]
+}
