@@ -1,5 +1,39 @@
 # OREZ OS — Verified Development Handoff
 
+## VERIFIED implementation, CI and 534-image download — 5 November 2026
+
+- Last confirmed implementation commit: **`bcbaae4e88b56a3d3fd3ea10031bbde7c5ca62c3`**,
+  branch `feature/orez-live-foundation-20261104`, draft/unmerged PR #1.
+- Exact-commit CI **SUCCESS**: [42021318734](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42021318734),
+  source job `127224513638`. Decoded logs confirm **78 source cases**, the
+  expected-version **23-file package audit**, preview production build and
+  **60/60 browser tests**. Full ISO job skipped. Native container checks were local.
+- [Additional CI preview/screenshots artifact](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42021318734/artifacts/13411507944):
+  `13411507944`, 200,821,799 bytes; GitHub reports SHA-256
+  `a175a79d929703adf1b72b3e827dd14ce67bfeddd71c1683cc9a4c3ccabff20e`.
+  Expires 19 November 2026 at 11:46 UTC (17:16 IST). This artifact was not
+  independently downloaded locally; its metadata and job logs were verified.
+- **Direct new PNG ZIP (534 images, about 124 MB):**
+  https://github.com/RezoxNemesis/OREZ-OS/archive/62575c4655607163e67abefebbe5025ccd575865.zip
+  Isolated orphan evidence branch `downloads/screenshots-2026-11-05-followup`.
+  Downloaded successfully: 124,263,582 bytes, archive SHA-256
+  `971937d5c9a436b18da280d4becedc4e6faf6366a9b5b2b167ea892f94d28102`.
+  All **534 original PNG hashes** match the local bundle. GitHub may regenerate
+  archive bytes; image hashes are the stable integrity evidence. Gallery and
+  manifest cover 557 captures / 31 local attempts, including failures. The public
+  download omits raw logs; the local workspace bundle retains them. CI captures
+  are in the separate artifact above. The older 340-image download remains below.
+- Bulk publication used normal authenticated Git transport after a dry run,
+  avoiding hundreds of per-image API writes and the per-file ZIP size limit.
+  No release upload, credential/policy bypass, merge or visibility change.
+- This handoff follow-up changes documentation/evidence metadata only and uses
+  `[skip ci]`. Verify its implementation diff against `bcbaae4` is empty; do not
+  claim a second CI run for this documentation checkpoint.
+- Source of truth: CONTINUED_QA.md, environment/README.md and the adjacent
+  `docs/evidence/2026-11-05-native-followup/` ledger. Completed checks, failure
+  qualifications, remaining release blockers and exact next actions are below.
+
+
 ## Native upgrade and controls checkpoint — 5 November 2026
 
 - Starting confirmed source HEAD: `cb8db4e8337fd0b19e8126de2a023b942aff000d`,

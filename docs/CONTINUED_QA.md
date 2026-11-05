@@ -2,8 +2,11 @@
 
 OREZ remains pre-alpha. These are component tests in a rootless Ubuntu container,
 not a booted installation, hardware certification or an authorization to install.
-The previous 340-image collection remains available separately. The new gallery,
-exact implementation commit and CI are recorded in AI_HANDOFF.md after verification.
+The previous 340-image collection remains available separately. [New 534-PNG download](https://github.com/RezoxNemesis/OREZ-OS/archive/62575c4655607163e67abefebbe5025ccd575865.zip)
+is published and every downloaded PNG hash verified. Implementation `bcbaae4`
+passed [CI 42021318734](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42021318734):
+78 source tests, 23-file package audit, preview build and 60 browser tests.
+Exact commit/artifact details and expiry are recorded in AI_HANDOFF.md.
 
 ## Implemented in this follow-up
 
