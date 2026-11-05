@@ -1,0 +1,10 @@
+2026-11-05T18:35:40.4960715Z Ran 148 tests in 1.029s
+2026-11-05T18:35:40.4995710Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/source; check=passed; screenshots=captured
+2026-11-05T18:35:43.4691050Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-build; check=passed; screenshots=captured
+2026-11-05T18:35:44.7230325Z OREZ .deb manifest and maintainer-script audit: PACKAGE_CONTENTS_PASS
+2026-11-05T18:35:44.7231245Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-audit; check=passed; screenshots=captured
+2026-11-05T18:35:44.7317742Z   "manifest_paths": 38,
+2026-11-05T18:35:44.7319170Z   "status": "PACKAGE_CONTENTS_PASS",
+2026-11-05T18:35:46.7740743Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/preview-build; check=passed; screenshots=captured
+2026-11-05T18:38:00.0328298Z   68 passed (2.2m)
+2026-11-05T18:38:00.0328875Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/browser; check=passed; screenshots=captured

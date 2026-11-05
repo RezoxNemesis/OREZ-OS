@@ -1,9 +1,12 @@
 # OREZ OS — Real Linux Build (0.1 Live Candidate)
 
-Latest Store work: [native Store and actual Android direction](docs/OREZ_STORE.md).
-Official Linux apps are preferred unchanged. Android consumer runtime and app
-compatibility remain pending; no browser shortcut substitutes for YouTube.
-Read [the latest verified handoff](docs/AI_HANDOFF.md) before continuing.
+Latest first-PC work: [owner enrollment, native Calendar/Reuz, themes and release gates](docs/FIRST_PC_RELEASE.md).
+The owner deferred Android emulation/Play/presets until a later upgrade and now
+explicitly permits web YouTube for the first PC release. Official Linux apps
+remain preferred. Read [the verified handoff](docs/AI_HANDOFF.md) before continuing.
+
+[Download 86 original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/19ae111fde8f63c506401860cb213286e4d80e7f.zip) from 22 local attempts, including failures. These are component/report captures, not a full OS download.
+[Implementation CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42085583005) passes 148 source tests, 38 package paths and 68 browser cases. Full ISO job skipped.
 
 Latest boot work: [offline cache correction and actual initrd audit](docs/OFFLINE_BOOT_QA.md). The new VM run reaches systemd but still has no usable desktop; owner authentication remains a release blocker.
 
@@ -49,7 +52,7 @@ The repo contains one controlled GitHub Actions workflow for manual dispatch or 
 
 See [`docs/AI_HANDOFF.md`](docs/AI_HANDOFF.md) for verified progress and the next steps. Never treat this candidate as a released or safe-to-install operating system until boot and recovery tests are recorded.
 
-**Licensing:** The modified casper hook and its retained original are GPL-2.0-or-later; see [source and notices](third_party/casper/README.md). Original OREZ-authored source and wallpaper reserved to the project owner; no blanket public reuse license has been granted. The upstream Kubuntu, Linux, KDE and other components keep their own licenses and attribution/redistribution obligations. Do not publish a modified binary image without confirming those obligations.
+**Licensing:** The modified casper hooks and their retained originals are GPL-2.0-or-later; see [source and notices](third_party/casper/README.md). Original OREZ-authored source and wallpaper reserved to the project owner; no blanket public reuse license has been granted. The upstream Kubuntu, Linux, KDE and other components keep their own licenses and attribution/redistribution obligations. Do not publish a modified binary image without confirming those obligations.
 
 ## First full-image construction result
 An explicit one-shot GitHub build [run #41809241570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41809241570) successfully authenticated Kubuntu 26.04.1 and constructed a live ISO from commit `fa7c59f`, with digest `9cc63144be546d7fcc1b1c3edd091f70b404e7c1c7e080bd4fa4287234bc0137`. This ISO was **not uploaded** and has **not** passed boot tests. A subsequent development change adds a VM-only direct-kernel casper witness to prove that the OREZ overlay is actually accessible at boot, without changing any installed disks or allowing network access.
