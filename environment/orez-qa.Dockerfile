@@ -18,7 +18,7 @@ RUN --mount=type=secret,id=qa_ca_bundle,mode=0444 \
       breeze breeze-icon-theme fonts-noto-core blender ffmpeg g++ make git sqlite3 unzip zip \
       curl gnupg ca-certificates vlc vlc-plugin-qt pulseaudio pulseaudio-utils \
       supertux nodejs npm python3-pil python3-pyatspi at-spi2-core \
-      qemu-system-x86 qemu-utils ovmf swtpm xorriso squashfs-tools zstd \
+      qemu-system-x86 qemu-system-gui qemu-system-modules-opengl qemu-utils ovmf swtpm xorriso squashfs-tools zstd \
       openjdk-21-jre-headless vulkan-tools pciutils usbutils iproute2 procps \
       plasma-nm network-manager bluedevil bluez bluez-obexd kio-extras; \
     curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \

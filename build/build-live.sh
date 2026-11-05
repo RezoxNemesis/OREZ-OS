@@ -13,6 +13,7 @@ UPSTREAM='https://cdimage.ubuntu.com/cdimage/kubuntu/releases/26.04.1/release'
 IMAGE_SHA256='831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8'
 IMAGE_SIGNING_FPR='843938DF228D22F7B3742BC0D94AA3F0EFE21092'
 OUTPUT="$OUTPUT_DIR/OREZ-OS-0.1-live-amd64.iso"
+SOURCE="${OREZ_UPSTREAM_ISO:-$CACHE_DIR/$IMAGE}"
 
 log() { printf '\n[OREZ] %s\n' "$*" >&2; }
 fail() { printf '[OREZ ERROR] %s\n' "$*" >&2; exit 1; }
@@ -23,12 +24,25 @@ for c in curl gpg gpgv sha256sum awk grep xorriso mksquashfs df stat; do need "$
 [[ "$OUTPUT_DIR" != "$CACHE_DIR" && "$WORK_DIR" != "$OUTPUT_DIR" ]] || fail 'Output, cache and work directories must be separate.'
 mkdir -p -- "$OUTPUT_DIR" "$CACHE_DIR" "$WORK_DIR"
 
-# An upstream ISO (5.1 GB) and new output ISO must coexist. Refuse before network usage
-# if the runner lacks space. Build intentionally does not auto-remove system software.
+# Reserve 11 GiB for both images and scratch space, less already allocated input
+# bytes (capped at 5 GiB). A partial download is untrusted until the full signed
+# digest passes, but its existing bytes need not be allocated twice on resume.
 free_kib="$(df -Pk "$OUTPUT_DIR" | awk 'NR==2 {print $4}')"
 [[ "$free_kib" =~ ^[0-9]+$ ]] || fail 'Cannot determine available disk space.'
-if (( free_kib < 11534336 )); then
-  fail "Need at least 11 GiB free to start; currently $((free_kib / 1048576)) GiB. Provision a larger runner."
+input_credit_kib=0
+cached_input=''
+if [[ -f "$SOURCE" ]]; then cached_input="$SOURCE"
+elif [[ -z "${OREZ_UPSTREAM_ISO:-}" && -f "$SOURCE.part" ]]; then cached_input="$SOURCE.part"
+fi
+# Credit only allocated bytes on the SAME filesystem as the output. A sparse
+# file or a cache on another volume must not weaken the output-space reserve.
+if [[ -n "$cached_input" && "$(stat -c %d "$cached_input")" == "$(stat -c %d "$OUTPUT_DIR")" ]]; then
+  input_credit_kib=$(( $(stat -c %b "$cached_input") / 2 ))
+  (( input_credit_kib <= 5242880 )) || input_credit_kib=5242880
+fi
+required_kib=$((11534336 - input_credit_kib))
+if (( free_kib < required_kib )); then
+  fail "Need ${required_kib} KiB free after cached-input credit; currently ${free_kib} KiB. Provision a larger runner."
 fi
 
 log 'Downloading authentic release metadata and Ubuntu signing keyring'
@@ -53,11 +67,12 @@ if ! grep -Fxq "$IMAGE_SHA256 *$IMAGE" "$WORK_DIR/SHA256SUMS"; then
   fail 'The official signed checksum no longer matches the locked upstream image.'
 fi
 
-SOURCE="${OREZ_UPSTREAM_ISO:-$CACHE_DIR/$IMAGE}"
 if [[ ! -f "$SOURCE" ]]; then
   [[ -z "${OREZ_UPSTREAM_ISO:-}" ]] || fail "Provided upstream ISO not found: $SOURCE"
   log 'Downloading 5.1 GB official Kubuntu ISO (cached for later builds)'
-  curl -fL --retry 3 --retry-delay 5 "$UPSTREAM/$IMAGE" -o "$SOURCE.part"
+  # Standard HTTP range resume; a server refusing it is an error. Never bypass
+  # TLS, substitute a mirror or trust the partial file without the final digest.
+  curl -fL --continue-at - --retry 3 --retry-delay 5 "$UPSTREAM/$IMAGE" -o "$SOURCE.part"
   mv -f -- "$SOURCE.part" "$SOURCE"
 fi
 log 'Verifying upstream ISO against pinned, signature-authenticated SHA-256'
