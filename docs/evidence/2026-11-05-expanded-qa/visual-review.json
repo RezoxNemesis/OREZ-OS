@@ -1,0 +1,30 @@
+[
+  {
+    "file": "native-desktop.png",
+    "original": "dist/evidence/qa2-15-native-details/01-plasma-desktop.png",
+    "sha256": "d9a2ef91a5229c3d2d7014e0f71cdb04bcd1544cf7007a64831182e9f1440eb5",
+    "class": "native-container-software-rendering",
+    "visual_review": "Visible desktop/launcher/recovered applications, or actual Blender CPU output; not ISO/hardware evidence"
+  },
+  {
+    "file": "native-launcher.png",
+    "original": "dist/evidence/qa2-15-native-details/03-launcher-open.png",
+    "sha256": "1b759200e3aa276e7f24dc22adee36e95537b9b9c733e0602ab10b4a20b00132",
+    "class": "native-container-software-rendering",
+    "visual_review": "Visible desktop/launcher/recovered applications, or actual Blender CPU output; not ISO/hardware evidence"
+  },
+  {
+    "file": "native-restart-2g.png",
+    "original": "dist/evidence/qa2-16-native-details/06-plasma-restart.png",
+    "sha256": "d3e5bb37d39e721ecdd7364aae614fd90dda75af3039415f892b02cd3dda8e8d",
+    "class": "native-container-software-rendering",
+    "visual_review": "Visible desktop/launcher/recovered applications, or actual Blender CPU output; not ISO/hardware evidence"
+  },
+  {
+    "file": "blender-cpu-render.png",
+    "original": "dist/evidence/qa2-06-capability-details/blender-cpu-render.png",
+    "sha256": "cef88977a6b849f3e53548c5eb1a22cb15210e4f7a7d80fef8c4b8a56b37dcef",
+    "class": "native-container-software-rendering",
+    "visual_review": "Visible desktop/launcher/recovered applications, or actual Blender CPU output; not ISO/hardware evidence"
+  }
+]

@@ -1,5 +1,11 @@
 # First real live ISO build — operating rules
 
+Expanded local QA instructions and exact environment limits are in
+[QA_SCENARIOS.md](QA_SCENARIOS.md). The manual package workflow now tests local
+version transitions and accepts optional `desktop_capabilities` (default false)
+for native Plasma/creative/development checks. Those expensive checks do not
+run on ordinary PRs. They do not authorize an ISO release or physical install.
+
 ## Current source/preview tooling
 
 Use Node 24 with the committed npm lockfile. The small PR job builds the native package and the independent responsive preview, runs source and desktop/mobile browser acceptance, and captures every test's evidence, including failures. New artifacts are retained for 14 days. See `TESTING_AND_SCREENSHOTS.md` for exact local commands and evidence limits; `preview/README.md` covers the single-file phone download and optional HTTPS PWA.

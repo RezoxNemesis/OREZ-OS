@@ -1,6 +1,11 @@
 name: OREZ isolated package integration
 on:
   workflow_dispatch:
+    inputs:
+      desktop_capabilities:
+        description: 'Also provision and test native Plasma, Blender and desktop capabilities'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -28,6 +33,19 @@ jobs:
           docker build -f build/integration/Dockerfile -t orez-package-test:20261105 . 2>&1 | tee dist/evidence/container-setup/build.log
       - name: Test real package lifecycle and native window
         run: python3 build/run-with-evidence.py --name 'Package lifecycle and native KDE window' --kind package-container --timeout 300 --output dist/evidence/package-lifecycle -- bash build/test-package-container.sh dist/evidence/package-details
+      - name: Test package upgrade and failure scenarios
+        run: python3 build/run-with-evidence.py --name 'Local package version and failure scenarios' --kind package-container --timeout 300 --output dist/evidence/package-scenarios -- bash build/test-package-scenarios.sh dist/evidence/package-scenarios-details
+      - name: Provision optional native desktop image
+        if: inputs.desktop_capabilities
+        run: docker build -f build/integration/Desktop.Dockerfile -t orez-desktop-test:20261105 . 2>&1 | tee dist/evidence/container-setup/desktop-build.log
+      - name: Test actual desktop windows and session recovery
+        if: inputs.desktop_capabilities
+        run: python3 build/run-with-evidence.py --name 'Native Plasma desktop scenarios' --kind package-container --timeout 420 --output dist/evidence/desktop -- bash build/run-desktop-container.sh dist/evidence/desktop-native-details
+      - name: Test native creative and development capabilities
+        if: inputs.desktop_capabilities
+        env:
+          OREZ_SCENARIO: capabilities
+        run: python3 build/run-with-evidence.py --name 'Native capability scenarios' --kind package-container --timeout 420 --output dist/evidence/capabilities -- bash build/run-desktop-container.sh dist/evidence/capabilities-native-details
       - name: Collect gallery
         if: always()
         run: python3 build/collect-evidence.py dist/evidence
@@ -37,4 +55,4 @@ jobs:
         with:
           name: orez-package-integration-evidence
           path: dist/evidence/
-          retention-days: 14
+          retention-days: 7

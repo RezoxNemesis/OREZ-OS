@@ -1,0 +1,113 @@
+[
+  {
+    "name": "02-native-window-assertions",
+    "status": "passed",
+    "detail": [
+      {
+        "app": "plasmashell",
+        "caption": "",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "app": "plasmashell",
+        "caption": "",
+        "width": 1440,
+        "height": 62
+      },
+      {
+        "app": "org.kde.dolphin",
+        "caption": "Home \u2014 Dolphin",
+        "width": 760,
+        "height": 586
+      },
+      {
+        "app": "org.kde.konsole",
+        "caption": "/ : bash \u2014 Konsole",
+        "width": 911,
+        "height": 504
+      },
+      {
+        "app": "kdesystemsettings",
+        "caption": "Quick Settings \u2014 System Settings",
+        "width": 930,
+        "height": 686
+      }
+    ]
+  },
+  {
+    "name": "03-launcher-input",
+    "status": "passed",
+    "detail": {
+      "input_delivered": true,
+      "popup_verdict": "requires visual review of 03-launcher-open.png"
+    }
+  },
+  {
+    "name": "04-minimize-resize-restore",
+    "status": "passed",
+    "detail": {
+      "minimized": false,
+      "active": true,
+      "width": 760,
+      "height": 600,
+      "interface": "KWin scripting API"
+    }
+  },
+  {
+    "name": "05-workspace-switch",
+    "status": "passed",
+    "detail": {
+      "count": 2,
+      "current": "OREZ QA"
+    }
+  },
+  {
+    "name": "06-plasma-restart",
+    "status": "passed",
+    "detail": {
+      "before": {
+        "desktops": 1,
+        "panels": 1,
+        "wallpaper": "file:///usr/share/backgrounds/orez/orez-ink.svg"
+      },
+      "after": {
+        "desktops": 1,
+        "panels": 1,
+        "wallpaper": "file:///usr/share/backgrounds/orez/orez-ink.svg"
+      },
+      "app_windows_after_restart": [
+        {
+          "app": "org.kde.dolphin",
+          "caption": "Home \u2014 Dolphin",
+          "width": 760,
+          "height": 600
+        },
+        {
+          "app": "org.kde.konsole",
+          "caption": "/ : bash \u2014 Konsole",
+          "width": 911,
+          "height": 504
+        },
+        {
+          "app": "kdesystemsettings",
+          "caption": "Quick Settings \u2014 System Settings",
+          "width": 930,
+          "height": 686
+        },
+        {
+          "app": "plasmashell",
+          "caption": "",
+          "width": 1440,
+          "height": 900
+        },
+        {
+          "app": "plasmashell",
+          "caption": "",
+          "width": 1440,
+          "height": 62
+        }
+      ]
+    }
+  }
+]

@@ -24,7 +24,7 @@ class OrezSourceTests(unittest.TestCase):
                 self.assertTrue((OVERLAY / exec_line.split()[0].lstrip('/')).exists())
 
     def test_scripts_syntax(self):
-        for script in [*ROOT.joinpath('build').glob('*.sh'), *OVERLAY.joinpath('usr/bin').iterdir()]:
+        for script in [*ROOT.joinpath('build').rglob('*.sh'), *OVERLAY.joinpath('usr/bin').iterdir()]:
             subprocess.run(['bash', '-n', str(script)], check=True)
 
     def test_overlay_is_unprivileged_and_visible(self):

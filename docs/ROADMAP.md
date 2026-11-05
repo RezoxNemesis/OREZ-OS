@@ -2,11 +2,11 @@
 
 ## 5 November implementation checkpoint
 
-The full master blueprint exists. A separate responsive browser preview is implemented and production-built; appearance persistence/reset, demo-device consent/revocation, safe installer status, keyboard/reduced-motion behavior, portable export, and corrected offline loading have local evidence. These do not advance native desktop, phone or installer acceptance.
+The full master blueprint exists. Expanded QA now verifies a visible native KWin/Plasma desktop in a disposable software-rendered Ubuntu container, actual application windows, launcher input, window management and workspaces. This advances component testing, while ISO/UEFI graphical boot remains open. A separate responsive browser preview passes all 60 local desktop/mobile cases; it does not qualify phone hardware or the installer.
 
-Source checks still pass 49 cases. The native package explicitly declares its Settings/Connect dependencies and retains the 16-file audit. Real APT/container and native UI checks are recorded in the session handoff. New screenshot infrastructure retains failures and distinguishes source reports, browser views and native container windows. Source/preview CI is automatic; the larger package integration job is manual-only.
+Source checks pass 52 cases. Ten APT transition/failure cases and eleven native capability scenarios have successful evidence, including C++ compilation, Git, SQLite, Blender CPU rendering, video processing and software OpenGL. See [QA scenarios](QA_SCENARIOS.md) for exact limits and failed attempts. Screenshot infrastructure retains failures and distinguishes source reports, browser views and native desktops. Source/preview CI is automatic; expensive native checks remain manual-only.
 
-Next: qualify a visible Plasma desktop on a suitable VM; validate real Calamares installation and dpkg registration on disposable virtual disks; test reboot, encryption, rollback and data restoration. Hardware and signed distribution follow those gates. Version upgrade/downgrade is a separate package test, not established by same-version reinstall.
+Next: qualify a booted Plasma desktop on a suitable VM; validate real Calamares installation and dpkg registration on disposable virtual disks; test reboot, encryption, rollback and independent data restoration. Hardware and signed distribution follow those gates. Local fixture package upgrades/downgrades are now tested; signed production updates and whole-system recovery are separate gates.
 
 ## Original milestone ledger and historical evidence
 

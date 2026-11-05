@@ -32,6 +32,7 @@ function App() {
   const [clipboard, setClipboard] = useState(false);
   const [filter, setFilter] = useState('');
   const [update, setUpdate] = useState<ServiceWorker | null>(null);
+  const applyingUpdate = React.useRef(false);
   React.useEffect(() => {
     if (import.meta.env.PROD && !document.documentElement.dataset.portable && /^https?:$/.test(location.protocol) && 'serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').then(registration => {
@@ -43,7 +44,9 @@ function App() {
           });
         });
       }).catch(() => setNotice('Offline preview unavailable in this browser; the online preview still works.'));
-      const reload = () => { if (sessionStorage.getItem('orez.preview.update')) { sessionStorage.removeItem('orez.preview.update'); location.reload(); } };
+      // A browser may deny both storage APIs. Update consent only needs to
+      // survive until this page reloads, so retain it in memory.
+      const reload = () => { if (applyingUpdate.current) location.reload(); };
       navigator.serviceWorker.addEventListener('controllerchange', reload);
       return () => navigator.serviceWorker.removeEventListener('controllerchange', reload);
     }
@@ -64,7 +67,7 @@ function App() {
       <span className="edition">INK / 01</span>
     </header>
     <div className="disclosure">Interactive browser preview · No access to your disks, phone, clipboard or system settings.</div>
-    {update && <div className="update">A preview update is ready. <button onClick={() => { sessionStorage.setItem('orez.preview.update', '1'); update.postMessage('ACTIVATE_UPDATE'); }}>Apply update</button></div>}
+    {update && <div className="update">A preview update is ready. <button onClick={() => { applyingUpdate.current = true; update.postMessage('ACTIVATE_UPDATE'); }}>Apply update</button></div>}
     <main id="main" tabIndex={-1}>
       {screen === 'Workspace' && <section className="workspace" aria-label="Desktop design preview">
         <div className="intro"><span className="eyebrow">A little space to think.</span><h1>Make room<br />for what matters.</h1><p>A quiet workspace for your ideas.<br />Built around your control.</p></div>

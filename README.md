@@ -4,7 +4,7 @@
 
 The separate [phone-friendly interactive preview](preview/README.md) now has working navigation, appearance controls and demo device permissions. `npm run preview:build` exports a portable `dist/OREZ-Preview.html` and an HTTPS-hostable PWA. It is labelled as a browser preview and cannot install or control an OS. The native Linux project remains a distinct, unqualified live candidate.
 
-**State: initial ISO constructed and casper direct-kernel VM live-root boot verified. UEFI/Plasma/hardware/install NOT VERIFIED.** This repository builds a *real* Ubuntu/Kubuntu-based bootable ISO by adding an OREZ desktop filesystem layer to the official, signed Kubuntu 26.04.1 LTS image. This is not the earlier HTML simulation and it does not run Android directly.
+**State: initial ISO constructed and casper direct-kernel VM live-root boot verified. Native Plasma now renders in an isolated container; graphical ISO/UEFI boot, hardware and installation remain unqualified.** [Expanded QA](docs/QA_SCENARIOS.md) records real desktop/capability checks and 60 passing browser-preview scenarios, with screenshots and failed attempts preserved. This repository builds a real Ubuntu/Kubuntu-based bootable ISO by adding an OREZ desktop filesystem layer to the official, signed Kubuntu 26.04.1 LTS image. The native project is separate from the browser preview and does not replace Android.
 
 ## What works in the source
 

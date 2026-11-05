@@ -1,6 +1,30 @@
 # OREZ OS — Verified Development Handoff
 
-## FINAL VERIFIED COMMIT / CI CHECKPOINT — 2026-11-05
+## EXPANDED QA CHECKPOINT — 2026-11-05
+
+This section supersedes earlier component-testing claims. The whole OS remains incomplete.
+
+- Starting verified HEAD: `e4846c0babafcdfd9081519a76bd2db7e892faad`; branch `feature/orez-live-foundation-20261104`; [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) remains draft/unmerged; main `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. Publication/CI annotation follows once the new commit is verified. Do not infer a CI pass from these local results.
+- **Real native desktop achieved in the workspace:** KWin Wayland/Plasma 6.6.6 nested in Xvfb on isolated Ubuntu 26.04.1, actual OREZ wallpaper, Settings, Dolphin, Konsole and launcher. Five native interaction/restart scenarios passed in both 4 GiB/2 CPU (`qa2-15`) and 2 GiB/1 CPU (`qa2-16`) profiles. Frames manually reviewed. Window tests use the KWin API; launcher uses actual mouse input. Desktop/panel/wallpaper state and open application windows survive Plasma restart.
+- Fixture constraints: software Mesa llvmpipe, no KVM/DRI/GPU, host devices, bind mounts, privileged container or runtime network. KWin's scheduling file capability was **removed only inside the disposable test layer**, code hash unchanged, no-new-privileges enabled. Full system bus, audio, portals, authentication/login and hardware behavior are not tested. This is **not an ISO boot**, and does not close M1.
+- **60/60 preview cases passed locally** (`qa2-12`): two viewport profiles; malformed/blocked/full storage, offline/reload, real consented worker update, navigation/search, demonstrative permission reset, sensitive browser API non-use, responsive layouts and eight automated WCAG scans. Fixed genuine sessionStorage update bug using in-memory consent. Physical Android remains untested.
+- **10/10 real APT scenarios passed** (`qa2-04`): synthetic version fixture upgrades, rejected unattended downgrade, explicit package downgrade, corrupt/unresolvable packages, ordinary-user denial, purge/reinstall and preserved user files/opt-out. No signed repository or whole-system rollback proof.
+- **11 native capability scenarios have passing evidence:** ten in `qa2-06` (overall failed because the GL selector was wrong), corrected OpenGL scenario in `qa2-10`. Real C++ build/run, Git, SQLite, Unicode files/archive restore, privilege denial, private-filesystem ENOSPC/recovery, process memory-allocation failure, FFmpeg H.264/AAC encode/decode and Blender CPU render. OpenGL is software only; no game/CUDA/model benchmark.
+- **52 source regressions and shell/Python syntax passed** (`qa2-13`); npm audit reported zero known vulnerabilities (`qa2-14`). Changed shell syntax is included recursively. PR CI will rerun on the exact implementation commit.
+- Complete evidence and limits: [QA_SCENARIOS.md](QA_SCENARIOS.md). Durable ledger (all 16 local attempts, hashes, exit statuses), scenario JSON and four real images: [expanded QA evidence](evidence/2026-11-05-expanded-qa/README.md). Local full bundle/gallery are generated under `dist`; never claim they are permanent GitHub artifacts.
+- Failures retained: initial capability execution denial, unnecessary compositor dependency, worker-storage bug, ineffective browser interception, wrong GL selector and empty Plasma response parsing. Successful follow-ups are explicit; no failed result was overwritten.
+- Manual integration workflow now includes package transition checks and optional `desktop_capabilities` (default false); seven-day artifacts. Do not run an expensive ISO job just for these changes. No installation media has been released, and no user's NVMe/USB/firmware was accessed.
+
+### Exact next actions
+
+1. Verify actual PR HEAD and the new source/browser CI's head SHA. Record run/artifact URL and conclusion; preserve failures if any. The older green run `41982877782` tests older implementation `d496601e443ed3a525ac22b7d9736391b3e256f2` only.
+2. Obtain an environment capable of a real UEFI boot and usable guest graphics; compare upstream and the rebuilt OREZ image with identical firmware/device settings. The successful nested container is a useful component control, not a replacement for that gate. Avoid blind repeats of the known all-black CPU-only QEMU setup.
+3. Test the inactive Calamares candidate only on disposable virtual disks: installed dpkg registration and OREZ persistence, reboot, correct AppArmor policy, LUKS2/Btrfs, cancellation, non-target disk preservation, snapshots and independent restore. Keep the public installer blocked until demonstrated.
+4. Fix/qualify remaining native visual details (wallpaper SVG texture warning, contrast/blur fallback, launcher/session assets), full desktop audio/portals/authentication, and move runtime welcome HTML out of documentation with a renewed upstream collision audit.
+5. Only after those gates, perform MSI/RTX/Realme/Secure Boot live-hardware qualification, signed update infrastructure, redistribution review and release. Keep physical data and Windows recovery media untouched.
+
+
+## ARCHIVED PREVIOUS COMMIT / CI CHECKPOINT — 2026-11-05
 
 - Published implementation: **`d496601e443ed3a525ac22b7d9736391b3e256f2`**, branch `feature/orez-live-foundation-20261104`, [draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), unmerged. Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`.
 - **GitHub CI SUCCESS:** [41982877782](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41982877782), source job `127096789431`. Verified logs report **52 source tests passed**, package build and 16-file path/mode/owner audit passed, production preview build passed, and **all 14 desktop/mobile browser tests passed in one run**. The expensive ISO job was skipped as intended.

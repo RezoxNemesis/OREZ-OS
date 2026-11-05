@@ -4,7 +4,7 @@
 **Recommended foundation:** Kubuntu 26.04 LTS, initially qualified against its 26.04.1 amd64 image  
 **Primary target:** Your Ryzen 5 5600 / RTX 3050 6 GB desktop  
 **Mobile scope:** Android browser preview and native companion, as you selected  
-**Current status (5 November 2026):** This is the single engineering blueprint. Source, native packaging, live-ISO construction and a separate phone/browser design preview now exist. Graphical ISO boot, safe installation, recovery and physical compatibility remain unqualified. See the current checkpoint in `AI_HANDOFF.md`; do not interpret planned capabilities below as implemented.
+**Current status (5 November 2026):** This is the single engineering blueprint. Source, native packaging, live-ISO construction and a separate phone/browser design preview now exist. Expanded QA has demonstrated a visible native KWin/Plasma desktop in a disposable container, package version transitions, creative/development tools, and 60 passing preview cases. Graphical ISO boot, safe installation, system recovery and physical compatibility remain unqualified. See `QA_SCENARIOS.md` and the current checkpoint in `AI_HANDOFF.md`; do not interpret planned capabilities below as implemented.
 
 ## 1. Direction, verified starting point, and release priorities
 

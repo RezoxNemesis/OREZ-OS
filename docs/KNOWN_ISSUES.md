@@ -2,11 +2,15 @@
 
 ## Current additions — 5 November 2026
 
+- Expanded QA now has a visible native KWin/Plasma container desktop, application windows, real launcher input and window/workspace interaction. This does not resolve the earlier ISO/UEFI black-frame gate. Full results and failure history: [QA scenarios](QA_SCENARIOS.md).
+- The desktop fixture lacks a full system bus/login stack, portals, PipeWire audio and hardware devices. Logs report those omissions; successful Settings rendering does not prove administrator dialogs, sound, capture or device settings work. Qt also warns about an unsupported SVG child in the wallpaper; final paper texture/rendering and native accessibility/contrast need design qualification.
+- Preview update handling no longer accesses sessionStorage after the blocked-storage regression. All 60 desktop/mobile browser cases now pass locally, including offline operation, actual consented worker updates and automated accessibility checks. This is not physical Android validation.
+
 - An actual ordinary-user package test found inaccessible commands when builders inherited a restrictive checkout umask. Explicit payload staging and stricter archive mode/owner validation fix the source; 52 regression tests pass. Full ISO boot with the changed staging path is still untested. This does not establish the cause of prior CI black frames, where checkout permissions differed.
 
 - Browser preview is interactive but separate from native Plasma. Real Android browser/PWA installation and touch/accessibility-device testing are pending. The portable HTML requires a browser capable of running local JavaScript; a file viewer may not work.
 - Package tests use a minimal Ubuntu dependency container with networking disabled. It has no kernel boot or physical GPU. Its default documentation exclusions initially removed two OREZ files; the desktop test fixture includes OREZ docs explicitly. Move runtime welcome HTML out of `/usr/share/doc` before supporting minimized hosts, and repeat the upstream path-collision audit when its path changes.
-- Source, package-content, browser and native-container checks cannot certify Calamares, Secure Boot, graphics, encrypted install, package version upgrade, rollback or real phone pairing. Those gates remain open.
+- Ten real APT transition/failure cases now pass using local synthetic versions, including explicit package rollback and user-data retention. Signed repository updates, distro upgrades, encrypted system rollback, Calamares, Secure Boot, GPU graphics and real phone pairing remain unqualified.
 - Source screenshots and logs retained by Actions expire after 14 days; older ISO evidence expires after two days. The tracked ledger is durable but does not replace the original downloadable evidence bundle.
 - Original-code licensing remains owner-reserved; public binary release obligations and long-term security maintenance are still unresolved.
 

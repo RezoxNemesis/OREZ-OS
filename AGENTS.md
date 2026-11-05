@@ -6,3 +6,4 @@
 5. Distinguish source implemented, package built, ISO generated, VM boot verified, hardware tested, and install approved.
 6. Keep the first milestone live-boot only. No public ISO release until redistribution and safety gates pass.
 7. Update `docs/AI_HANDOFF.md` after a session, including commit, test evidence, unresolved blockers and next actions.
+8. The owner requests screenshots for every executed test. Use the evidence runner for log/report captures, plus actual GUI frames for visual scenarios. Retain failed attempts, label browser/container/VM/hardware evidence accurately, and provide the gallery or bundle. Never fabricate an OS screenshot.

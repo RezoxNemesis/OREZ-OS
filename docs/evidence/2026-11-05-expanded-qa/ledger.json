@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "base_commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+  "note": "Uncommitted-source runs identify source digest and input hashes. Failures retained. Native container evidence is not a booted ISO.",
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Nested native Plasma Wayland desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:10:56.620593+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "13dccce8728b3a97ee4f6626d79ac899374731c094f5d306e1b54bfa3f70a745",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/run-desktop-container.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-01-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 126,
+      "status": "failed",
+      "duration_seconds": 58.56,
+      "finished_at": "2026-11-05T07:11:55.231056+00:00",
+      "log_sha256": "c4e481945688a4346f2d9dc478ed0548cdc7b9eccf0dc34f891a90ea205dd256",
+      "local_directory": "dist/evidence/qa2-01-desktop",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native creative developer and failure capabilities",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:10:56.709944+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "13dccce8728b3a97ee4f6626d79ac899374731c094f5d306e1b54bfa3f70a745",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/run-desktop-container.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-02-capability-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 126,
+      "status": "failed",
+      "duration_seconds": 58.64,
+      "finished_at": "2026-11-05T07:11:55.377674+00:00",
+      "log_sha256": "865aa18ad1332967b6751fd674cf1beaca9361a0924ab6f344b2db5e21ce7459",
+      "local_directory": "dist/evidence/qa2-02-capabilities",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Expanded browser failure accessibility and display scenarios",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T07:10:56.658185+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "13dccce8728b3a97ee4f6626d79ac899374731c094f5d306e1b54bfa3f70a745",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/run-desktop-container.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "npm",
+        "run",
+        "preview:test",
+        "--",
+        "scenarios.spec.ts"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 228.43,
+      "finished_at": "2026-11-05T07:14:45.118874+00:00",
+      "log_sha256": "639c24afb4f06016be60dae97925ac4de90f008e5e7f6de02f90e1fd4fbe41be",
+      "local_directory": "dist/evidence/qa2-03-browser-scenarios",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png",
+        "report-004.png",
+        "report-005.png",
+        "report-006.png",
+        "report-007.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Package upgrade rollback and rejection scenarios",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:12:56.324725+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "036131e0e817e531c7f88c60af206b5114654537fa20408014d73cc266bac3fc",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/test-package-scenarios.sh",
+        "dist/evidence/qa2-04-package-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 109.43,
+      "finished_at": "2026-11-05T07:14:45.803082+00:00",
+      "log_sha256": "57de83df9289c9d5369e4605ffbe2c94bde116d9bc40a4aa15018c1952479564",
+      "local_directory": "dist/evidence/qa2-04-package-scenarios",
+      "report_screenshots": [
+        "report-001.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native Plasma with explicitly unprivileged compositor",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:13:50.370449+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "20a1172b9972fe98b8c6ccd6ed0b865567613cf5e2c309d8b0e2d3d9235a416d",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-05-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 126,
+      "status": "failed",
+      "duration_seconds": 133.78,
+      "finished_at": "2026-11-05T07:16:04.176137+00:00",
+      "log_sha256": "49b1e24362605a3393bf2d54fc70b3f46655bfe874e7859b92e2b858858525d7",
+      "local_directory": "dist/evidence/qa2-05-desktop",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native capability scenarios without compositor dependency",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:13:50.370644+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "20a1172b9972fe98b8c6ccd6ed0b865567613cf5e2c309d8b0e2d3d9235a416d",
+      "working_tree": "M package-lock.json\n M package.json\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-06-capability-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 143.42,
+      "finished_at": "2026-11-05T07:16:13.825181+00:00",
+      "log_sha256": "d40f9bf474522fc4068252665dff82488ff3efd1c41f7275e001757152f5a547",
+      "local_directory": "dist/evidence/qa2-06-capabilities",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png",
+        "report-004.png",
+        "report-005.png",
+        "report-006.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Preview build with blocked-storage recovery fix",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T07:16:25.476134+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "d0f5f0ad80eb9f49de0a4cbbe7ced2204c409601e40e7fbacea55838cbd17ddf",
+      "working_tree": "M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "npm",
+        "run",
+        "preview:build"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.19,
+      "finished_at": "2026-11-05T07:16:27.711899+00:00",
+      "log_sha256": "52fe817b970c769196169feb8fdccb62cb81c769b24d1775fe5820aac6d9bfd4",
+      "local_directory": "dist/evidence/qa2-07-preview-build",
+      "report_screenshots": [
+        "report-001.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Storage registration and update recovery regressions",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T07:16:29.347670+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "d0f5f0ad80eb9f49de0a4cbbe7ced2204c409601e40e7fbacea55838cbd17ddf",
+      "working_tree": "M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "npm",
+        "run",
+        "preview:test",
+        "--",
+        "scenarios.spec.ts",
+        "--grep",
+        "blocked browser storage|injected worker-registration|real service worker update"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 34.96,
+      "finished_at": "2026-11-05T07:17:04.325928+00:00",
+      "log_sha256": "b54446d852675b47d2f2e3100f225790b6818974498e735f8b67f4d36268a933",
+      "local_directory": "dist/evidence/qa2-08-storage-recovery",
+      "report_screenshots": [
+        "report-001.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Nested Plasma after dropping test-only scheduling privilege",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:17:56.326136+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "462f35cc3a93be0dde26a873f6ea1ebbb45bc366f0aa5729f89ab546c264e6eb",
+      "working_tree": "M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-09-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 163.57,
+      "finished_at": "2026-11-05T07:20:39.928515+00:00",
+      "log_sha256": "aeb81c1f94dc57f7e8d484c7d7fa31bd049cdafd29cc34f403f4424bf976ecde",
+      "local_directory": "dist/evidence/qa2-09-desktop",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Software OpenGL window with corrected title detection",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:17:56.335854+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "462f35cc3a93be0dde26a873f6ea1ebbb45bc366f0aa5729f89ab546c264e6eb",
+      "working_tree": "M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-10-opengl-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 103.95,
+      "finished_at": "2026-11-05T07:19:40.313818+00:00",
+      "log_sha256": "25bac529038936156fb41e141103b9b379d996c84eb9ca7f72c598c223d9e581",
+      "local_directory": "dist/evidence/qa2-10-opengl",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native Plasma window, workspace and restart scenarios",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:27:33.772169+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "c11d4193b5634ea99ac3041bd4c9d17ba63e99e783f7b920772d85e8274278ea",
+      "working_tree": "M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-11-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 136.07,
+      "finished_at": "2026-11-05T07:29:49.882262+00:00",
+      "log_sha256": "9aefc2d7bb3407286d6002bf9d3d4368657f6fdb79267a5b8a437c804af7f47b",
+      "local_directory": "dist/evidence/qa2-11-desktop-interactions",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png",
+        "report-004.png",
+        "report-005.png",
+        "report-006.png",
+        "report-007.png",
+        "report-008.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "All 60 desktop and mobile preview scenarios",
+      "kind": "browser-preview",
+      "started_at": "2026-11-05T07:27:33.810449+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "c11d4193b5634ea99ac3041bd4c9d17ba63e99e783f7b920772d85e8274278ea",
+      "working_tree": "M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "npm",
+        "run",
+        "preview:test"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 234.49,
+      "finished_at": "2026-11-05T07:31:28.332909+00:00",
+      "log_sha256": "d8b22cccb8c47dd1b195a5a304ea8cdc2cdfbc21816614f53f4e28a7e10c243e",
+      "local_directory": "dist/evidence/qa2-12-browser-all",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Source regression and build-tool syntax",
+      "kind": "source",
+      "started_at": "2026-11-05T07:28:45.546561+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "c7a45afeb15555d20bfa3e4e043d0335a74b13502d5cee339ff0f2c4d58e2b02",
+      "working_tree": "M .github/workflows/orez-package-integration.yml\n M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n M tests/test_source.py\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -v && python3 -m compileall -q build"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.93,
+      "finished_at": "2026-11-05T07:28:46.519210+00:00",
+      "log_sha256": "89fd25d70e1e6207323dc9fdaae70abb20aa76dc797ea869f28107b192b18850",
+      "local_directory": "dist/evidence/qa2-13-source",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Locked JavaScript dependency vulnerability audit",
+      "kind": "source",
+      "started_at": "2026-11-05T07:28:47.045509+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "c7a45afeb15555d20bfa3e4e043d0335a74b13502d5cee339ff0f2c4d58e2b02",
+      "working_tree": "M .github/workflows/orez-package-integration.yml\n M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n M tests/test_source.py\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "npm",
+        "audit",
+        "--audit-level=high"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.67,
+      "finished_at": "2026-11-05T07:28:48.739074+00:00",
+      "log_sha256": "6d8c5c8f3d7684adb070417bd608d01ae90aa3dc26a65af03ffda4955f38d9a3",
+      "local_directory": "dist/evidence/qa2-14-dependency-audit",
+      "report_screenshots": [
+        "report-001.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native desktop interactions and restart, 4 GiB / 2 CPU",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:31:52.960885+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "10227e7a73c4ef4bdf1f2f33f74cb3140fac3a204e2759c07195f25f4e4e4441",
+      "working_tree": "M .github/workflows/orez-package-integration.yml\n M AGENTS.md\n M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n M tests/test_source.py\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? docs/QA_SCENARIOS.md\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-15-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 91.14,
+      "finished_at": "2026-11-05T07:33:24.134618+00:00",
+      "log_sha256": "ed1cd08051f1442c939ce5d4e25bfbaecf1c37cb520a4b7844c4ee93b036e025",
+      "local_directory": "dist/evidence/qa2-15-native-final",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "name": "Native desktop interactions and restart, constrained 2 GiB / 1 CPU",
+      "kind": "package-container",
+      "started_at": "2026-11-05T07:31:52.954048+00:00",
+      "commit": "e4846c0babafcdfd9081519a76bd2db7e892faad",
+      "source_digest": "10227e7a73c4ef4bdf1f2f33f74cb3140fac3a204e2759c07195f25f4e4e4441",
+      "working_tree": "M .github/workflows/orez-package-integration.yml\n M AGENTS.md\n M build/collect-evidence.py\n M package-lock.json\n M package.json\n M preview/src/main.tsx\n M tests/test_source.py\n?? build/integration/Desktop.Dockerfile\n?? build/integration/capabilities.py\n?? build/integration/desktop-interactions.py\n?? build/integration/desktop-scenarios.sh\n?? build/integration/desktop-session.sh\n?? build/integration/package-scenarios.py\n?? build/run-desktop-container.sh\n?? build/test-package-scenarios.sh\n?? docs/QA_SCENARIOS.md\n?? preview/tests/scenarios.spec.ts",
+      "command": [
+        "bash",
+        "build/run-desktop-container.sh",
+        "dist/evidence/qa2-16-native-details"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 91.82,
+      "finished_at": "2026-11-05T07:33:24.804896+00:00",
+      "log_sha256": "7745aff57ef51f5956722b6dd1371bb580cf214e5be8614c1cd94f65707e707e",
+      "local_directory": "dist/evidence/qa2-16-native-constrained",
+      "report_screenshots": [
+        "report-001.png",
+        "report-002.png",
+        "report-003.png"
+      ]
+    }
+  ]
+}
