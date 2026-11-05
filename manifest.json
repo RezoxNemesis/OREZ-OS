@@ -1,0 +1,2452 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa5-",
+  "unique_images": 80,
+  "capture_references": 200,
+  "references": [
+    {
+      "source": "qa5-01-vm-lab/report-001.png",
+      "sha256": "e77f8f440afa3dc203eaebb85baf650c8a07e53145232ce85db35da2c2eaa9f3",
+      "bytes": 143879
+    },
+    {
+      "source": "qa5-02-vm-graphics-dependencies/report-001.png",
+      "sha256": "c09dcc3efab84ff36e9bb19bad5771404f429cd9b2ac25687c52462ad93d0f5a",
+      "bytes": 184580
+    },
+    {
+      "source": "qa5-02-vm-graphics-dependencies/report-002.png",
+      "sha256": "7f7cdc616ffc224a4f3fee61f86a16a4a105ee32179a21ea7d50026284588252",
+      "bytes": 155909
+    },
+    {
+      "source": "qa5-02-vm-graphics-dependencies/report-003.png",
+      "sha256": "c396c3ab9ac700fd7270cec6095f389c23533ee892e701b299595093b77268e3",
+      "bytes": 94162
+    },
+    {
+      "source": "qa5-03-virgl-preflight/report-001.png",
+      "sha256": "6c74e8c445846fd756c67ca3ad00478a92ce931b0845cd91aa0b7d84cb965f5b",
+      "bytes": 64335
+    },
+    {
+      "source": "qa5-04-virgl-preflight/firmware.png",
+      "sha256": "b1feeb4825bbfaf8f9df6081366bd1a88f5cdee1ec2241fcb2be423c0bc0a2d5",
+      "bytes": 4300
+    },
+    {
+      "source": "qa5-04-virgl-preflight/qemu-window.png",
+      "sha256": "4212aa51a1942c086381e1a01d8a997dc05e7c7105809a3568146cfc07598b13",
+      "bytes": 7756
+    },
+    {
+      "source": "qa5-04-virgl-preflight/report-001.png",
+      "sha256": "7249c7e55886a6f61d17ae74fc92cc603186f65ddb269519244ff32cb556c238",
+      "bytes": 184604
+    },
+    {
+      "source": "qa5-04-virgl-preflight/report-002.png",
+      "sha256": "8072de42632d75fa37f833678f20e13fbf7b4f6b6e430d12c6c4385052ce937c",
+      "bytes": 80609
+    },
+    {
+      "source": "qa5-05-live-iso-build/report-001.png",
+      "sha256": "1aefe74d4586544078c35d6219eb4e4f7c333f03ad3dfd732c6e488cdc5dd3ad",
+      "bytes": 212057
+    },
+    {
+      "source": "qa5-05-live-iso-build/report-002.png",
+      "sha256": "d5323ed5ca952af9433b5477efd1642e4d031b0b8965909d5cfdeb5ee7902b7e",
+      "bytes": 228966
+    },
+    {
+      "source": "qa5-05-live-iso-build/report-003.png",
+      "sha256": "7fd58a9ad43f983795fc3c8f6fe96e3b068e3a6693ebbae0bcc59bb0d23a9b67",
+      "bytes": 230792
+    },
+    {
+      "source": "qa5-05-live-iso-build/report-004.png",
+      "sha256": "87e3d887c4d175c754628c4867471562bd80e2679666ecb380038966dc4a80bf",
+      "bytes": 77655
+    },
+    {
+      "source": "qa5-06-source/report-001.png",
+      "sha256": "95dc9868ca2cabea371213d8918acec83d5b2e47ce334742ffb42d62d511903d",
+      "bytes": 236995
+    },
+    {
+      "source": "qa5-06-source/report-002.png",
+      "sha256": "891be3d763a48ae416aab12cc8f75d66c750f1f9f584e4ceecd3d5ce98b1b30b",
+      "bytes": 239157
+    },
+    {
+      "source": "qa5-06-source/report-003.png",
+      "sha256": "fc2c539c76774f1befd477528976501ebc5eebc23917ca6e1c3e9eaa6d235b0d",
+      "bytes": 233620
+    },
+    {
+      "source": "qa5-06-source/report-004.png",
+      "sha256": "6564aa6b571db45026c6455f3ed46dd0b597397a9051b3dfd0f97dc9076f1f0e",
+      "bytes": 169817
+    },
+    {
+      "source": "qa5-07-resumed-live-build/report-001.png",
+      "sha256": "8f8239be07d62c0a85bde99e75e01afd1f483bd0f6d5e04c51be19c2c80e6b59",
+      "bytes": 99380
+    },
+    {
+      "source": "qa5-08-complete-live-build/report-001.png",
+      "sha256": "a047fca1d3f4a090321ba970a49a320f355a373a1628a08571d7fc5f4376e430",
+      "bytes": 158885
+    },
+    {
+      "source": "qa5-09-upstream-virgl/guest-0010.png",
+      "sha256": "de81943caee3fa862f45cddea98fe4ab271f086757e98d12692c4de19b503225",
+      "bytes": 1745
+    },
+    {
+      "source": "qa5-09-upstream-virgl/guest-0030.png",
+      "sha256": "65e291ec69b8d785ca443d665a214bd7156b65c480801d334b5a171113cc7810",
+      "bytes": 1306
+    },
+    {
+      "source": "qa5-09-upstream-virgl/guest-0050.png",
+      "sha256": "65e291ec69b8d785ca443d665a214bd7156b65c480801d334b5a171113cc7810",
+      "bytes": 1306
+    },
+    {
+      "source": "qa5-09-upstream-virgl/host-window-0010.png",
+      "sha256": "b9d45db30f40fea65a7b537da26dfbdcc7f3d9b008f20f5ed4f2156f9222d586",
+      "bytes": 5174
+    },
+    {
+      "source": "qa5-09-upstream-virgl/host-window-0030.png",
+      "sha256": "2f938aa09e6b4568cdadcee21e4950e12463573d97294f2123cbcf0525214dd2",
+      "bytes": 4684
+    },
+    {
+      "source": "qa5-09-upstream-virgl/host-window-0050.png",
+      "sha256": "8672ba18be91d806d477b4d6b0354a47c5f0b25999e7ac298c079f8f5042db64",
+      "bytes": 4706
+    },
+    {
+      "source": "qa5-09-upstream-virgl/live-review/guest-0050.png",
+      "sha256": "65e291ec69b8d785ca443d665a214bd7156b65c480801d334b5a171113cc7810",
+      "bytes": 1306
+    },
+    {
+      "source": "qa5-09-upstream-virgl/report-001.png",
+      "sha256": "9d21a9ae359335efa209ebb0f789715a0d8d23fb88cee7f216be21e713856161",
+      "bytes": 165246
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0010.png",
+      "sha256": "2d5bddc6ae8a050d182b33354b5c6b005bee6b8f77c29eefd1ee1730d508080c",
+      "bytes": 14633
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0030.png",
+      "sha256": "4f21c0150c1bcbcd83862a69c06e54f0c754a6d67151b4e166da4e896da40640",
+      "bytes": 9201
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0050.png",
+      "sha256": "d60439b9b309f66071f2c90249914509b3e394f0acdbc0663d87dbc245d1c5d2",
+      "bytes": 9198
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0070.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0090.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/guest-0110.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0010.png",
+      "sha256": "bbd6053d9138b8e55e9b7895f44cc9710d7d5a5f36d90a9773b5d1103898a551",
+      "bytes": 15831
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0030.png",
+      "sha256": "3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9",
+      "bytes": 9688
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0050.png",
+      "sha256": "3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9",
+      "bytes": 9688
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0070.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0090.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/host-window-0110.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/live-review/guest-0050.png",
+      "sha256": "d60439b9b309f66071f2c90249914509b3e394f0acdbc0663d87dbc245d1c5d2",
+      "bytes": 9198
+    },
+    {
+      "source": "qa5-10-orez-uefi-virgl/report-001.png",
+      "sha256": "b57324005b418b486a2db824eab7a8994606677d3794bc526f8c4dc124bcc9a0",
+      "bytes": 200000
+    },
+    {
+      "source": "qa5-11-vm-regression/report-001.png",
+      "sha256": "d02d568f0cd5a7f8cdd5247107c85eec29b88c536e856e52d6e71149604b8282",
+      "bytes": 104487
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0010.png",
+      "sha256": "52e989050bf4e73dd2d0cf642c5adc1c8f4cbcc97a3fdb0c61371e6ee363477a",
+      "bytes": 1325
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0030.png",
+      "sha256": "d3373be24d37538fd1dcf7dbbb6ec6bbe365f0df398ab43dd038be450f4d47c3",
+      "bytes": 3140
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0050.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0070.png",
+      "sha256": "e26102c2d5d97be155120183bd0377db411ef05cc6684f4f96a1a891888fa1c6",
+      "bytes": 3133
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0090.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0110.png",
+      "sha256": "e26102c2d5d97be155120183bd0377db411ef05cc6684f4f96a1a891888fa1c6",
+      "bytes": 3133
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0130.png",
+      "sha256": "e26102c2d5d97be155120183bd0377db411ef05cc6684f4f96a1a891888fa1c6",
+      "bytes": 3133
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0150.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0170.png",
+      "sha256": "e26102c2d5d97be155120183bd0377db411ef05cc6684f4f96a1a891888fa1c6",
+      "bytes": 3133
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0190.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0210.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0230.png",
+      "sha256": "a698c15df528d0e365100d36d42c3868e16ce4b7e4b44c9ec929d6b5fc52e86c",
+      "bytes": 3149
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0250.png",
+      "sha256": "e26102c2d5d97be155120183bd0377db411ef05cc6684f4f96a1a891888fa1c6",
+      "bytes": 3133
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0270.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0290.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0310.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0330.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0350.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0370.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0390.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0411.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0431.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0451.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0471.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0491.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0511.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0531.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0551.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0571.png",
+      "sha256": "e359c75ec96d74f3020bd4f9a5b56244191ea18187d5020791ae9bcd5f06716a",
+      "bytes": 3892
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-0591.png",
+      "sha256": "72a1af6adb8f9f44f299f5ece55b53dd13b23c92f13362eace27a850b47a17f3",
+      "bytes": 3875
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0030.png",
+      "sha256": "cf3f7704c6a4525e311524246970fdbc666b1aeeeeaa4020581b04372ee8a8ae",
+      "bytes": 3132
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0050.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0070.png",
+      "sha256": "8443ca7b96269fa4256788c1fe1563b0241cbb969d82347c7220af60ec8bcb96",
+      "bytes": 3138
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0090.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0110.png",
+      "sha256": "8443ca7b96269fa4256788c1fe1563b0241cbb969d82347c7220af60ec8bcb96",
+      "bytes": 3138
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0130.png",
+      "sha256": "8443ca7b96269fa4256788c1fe1563b0241cbb969d82347c7220af60ec8bcb96",
+      "bytes": 3138
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0150.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0170.png",
+      "sha256": "8443ca7b96269fa4256788c1fe1563b0241cbb969d82347c7220af60ec8bcb96",
+      "bytes": 3138
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0190.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0210.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0230.png",
+      "sha256": "755022eef66db8684fd6baeae6c48c04b6ce8b75c23bcf33d3390ca562812f69",
+      "bytes": 3154
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0250.png",
+      "sha256": "8443ca7b96269fa4256788c1fe1563b0241cbb969d82347c7220af60ec8bcb96",
+      "bytes": 3138
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0270.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0290.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0310.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0330.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0350.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0370.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0390.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0411.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0431.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0451.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0471.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0491.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0511.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0531.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0551.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0571.png",
+      "sha256": "0ef09ac249e2ec8e601e3e3651552272ccd79a5d3c9749b072a9a586f321818f",
+      "bytes": 3895
+    },
+    {
+      "source": "qa5-12-upstream-sdl/guest-sdl-0591.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0010.png",
+      "sha256": "2f938aa09e6b4568cdadcee21e4950e12463573d97294f2123cbcf0525214dd2",
+      "bytes": 4684
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0030.png",
+      "sha256": "1e6a7ff79497d93f8bb1994cbaed2f331fda951a29e7175f823805db9aab8348",
+      "bytes": 5132
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0050.png",
+      "sha256": "14d1edef717a21e9db54e9f0a35815eb83d029887667ea1f434c7147cbbde7d4",
+      "bytes": 5137
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0070.png",
+      "sha256": "14d1edef717a21e9db54e9f0a35815eb83d029887667ea1f434c7147cbbde7d4",
+      "bytes": 5137
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0090.png",
+      "sha256": "14d1edef717a21e9db54e9f0a35815eb83d029887667ea1f434c7147cbbde7d4",
+      "bytes": 5137
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0110.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0130.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0150.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0170.png",
+      "sha256": "14d1edef717a21e9db54e9f0a35815eb83d029887667ea1f434c7147cbbde7d4",
+      "bytes": 5137
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0190.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0210.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0230.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0250.png",
+      "sha256": "49cd4e0e7e8fcc7af719af25d9f46d2d96cd56ffd116433321e5466acafa9b5f",
+      "bytes": 5120
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0270.png",
+      "sha256": "14d1edef717a21e9db54e9f0a35815eb83d029887667ea1f434c7147cbbde7d4",
+      "bytes": 5137
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0290.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0310.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0330.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0350.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0370.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0390.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0411.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0431.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0451.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0471.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0491.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0511.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0531.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0551.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0571.png",
+      "sha256": "02402ceec6aa410652c825bd8d43d7c2883b99c51db9e895543cde139abba2c1",
+      "bytes": 5111
+    },
+    {
+      "source": "qa5-12-upstream-sdl/host-window-0591.png",
+      "sha256": "b476da355b0538f7167abb8f2d335430313c47456b9c125d184fcc0c807db2ba",
+      "bytes": 5126
+    },
+    {
+      "source": "qa5-12-upstream-sdl/live-review/guest-0030.png",
+      "sha256": "d3373be24d37538fd1dcf7dbbb6ec6bbe365f0df398ab43dd038be450f4d47c3",
+      "bytes": 3140
+    },
+    {
+      "source": "qa5-12-upstream-sdl/report-001.png",
+      "sha256": "2a9e2e5cb19c41e71013505235d06615a422db6bfb1a55611a9efbe7832e60dd",
+      "bytes": 292080
+    },
+    {
+      "source": "qa5-12-upstream-sdl/report-002.png",
+      "sha256": "a8db850da9962f89945d77c1564c0b30cdbe2aa4b1462ea8aa42f91d6b03bb54",
+      "bytes": 279668
+    },
+    {
+      "source": "qa5-12-upstream-sdl/report-003.png",
+      "sha256": "ba7916852696ec07c2d391a8306d85194f048bbf6999eb7df449d446cb9e1f95",
+      "bytes": 148610
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0010.png",
+      "sha256": "2d5bddc6ae8a050d182b33354b5c6b005bee6b8f77c29eefd1ee1730d508080c",
+      "bytes": 14633
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0030.png",
+      "sha256": "d90f31f552df4b67b2889c085dfcac588b74f723c4cba1da41c30af537b4cc86",
+      "bytes": 9214
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0050.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0070.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0090.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0110.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0130.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0150.png",
+      "sha256": "00e9c665b6d77af8e0388a71e20a7d889f94ae36ee8983db5485ededc7d8b545",
+      "bytes": 16443
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0170.png",
+      "sha256": "456712bd5522e89e37633789c5bb775295b886d4f2c7044bd36b497c82110002",
+      "bytes": 23775
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0190.png",
+      "sha256": "426556fd71f1867e8ba2600d0031b78579d3b8a0a9c97261b70e3f142f609d3a",
+      "bytes": 14466
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0210.png",
+      "sha256": "00e9c665b6d77af8e0388a71e20a7d889f94ae36ee8983db5485ededc7d8b545",
+      "bytes": 16443
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0230.png",
+      "sha256": "d704f2dd7e800c9435d92e596917f6e173dc08703e4dd83efb0c64828512c96a",
+      "bytes": 2318
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0250.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0270.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0290.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0310.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0330.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0350.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-0370.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0150.png",
+      "sha256": "ca35c2899a81be0aba0f5473f82cf7ec023d8a05c05f9f53bd55c85dbfbe67bd",
+      "bytes": 16536
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0170.png",
+      "sha256": "eaead0a5fec80404d9b47777c1f458a8612301be28f913006d9236dfdcc135d7",
+      "bytes": 23846
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0190.png",
+      "sha256": "3eb2b660aaf933dfb41ba61a307f624f9803e4bda4e4ec32af2883ec5cc60d6a",
+      "bytes": 14561
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0210.png",
+      "sha256": "ca35c2899a81be0aba0f5473f82cf7ec023d8a05c05f9f53bd55c85dbfbe67bd",
+      "bytes": 16536
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0230.png",
+      "sha256": "67f66b69473a3adaf1e041333e2eb628db2447ffbfe9309f6bf375a2c61fb5f9",
+      "bytes": 2333
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0250.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0270.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0290.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0310.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0330.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0350.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0370.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/guest-sdl-0390.png",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0010.png",
+      "sha256": "bbd6053d9138b8e55e9b7895f44cc9710d7d5a5f36d90a9773b5d1103898a551",
+      "bytes": 15831
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0030.png",
+      "sha256": "3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9",
+      "bytes": 9688
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0050.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0070.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0090.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0110.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0130.png",
+      "sha256": "9e110c68342a939f72accc7a817c88c7f0c42f9697a1f8af10c4c49d29f3ea87",
+      "bytes": 4323
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0150.png",
+      "sha256": "5ecc4bd09d95116c25e3e1175214a41386b12f204866d38c331f795c794990f0",
+      "bytes": 16702
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0170.png",
+      "sha256": "5ecc4bd09d95116c25e3e1175214a41386b12f204866d38c331f795c794990f0",
+      "bytes": 16702
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0190.png",
+      "sha256": "f7132882c8b74725f92e3ce68a1525885db7f0a2f82f7471ca8b3666177754fc",
+      "bytes": 23766
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0210.png",
+      "sha256": "e248cc44c950cb20933d942e4683f5ad3ca6400fb02a85f8c63a9c5cfe88af1e",
+      "bytes": 25371
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0230.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0250.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0270.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0290.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0310.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0330.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0350.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0370.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0390.png",
+      "sha256": "7ffffcbcafb2caeb89a8dddfee637663c75caa0eec6feb88d81b02fad343d29e",
+      "bytes": 4294
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/report-001.png",
+      "sha256": "80752a1775869e09651b5c7122d7c147c6198a07611ccadaec2626383ea49160",
+      "bytes": 288766
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/report-002.png",
+      "sha256": "b39abb629466a027b0f7d6575c90e51a05e825ab68bc96d79ad09b4c3934db38",
+      "bytes": 192020
+    },
+    {
+      "source": "qa5-14-boot-config-audit/report-001.png",
+      "sha256": "bf36bdb824c5108a7799d08b2783ab27cfd261a1267edf8588dde010020d035c",
+      "bytes": 91293
+    },
+    {
+      "source": "qa5-15-unclipped-windows/orez-orez-uefi-sdl.png",
+      "sha256": "1c94f0e4a93e8f69f04c414187013d10088bbfe0a760202d8b088e218fb23212",
+      "bytes": 3072
+    },
+    {
+      "source": "qa5-15-unclipped-windows/orez-upstream-sdl.png",
+      "sha256": "d2d2caa7b795e8fe7ebb3a862c255372ad88af4911c3fd2b9d46f641fb16704c",
+      "bytes": 3879
+    },
+    {
+      "source": "qa5-15-unclipped-windows/report-001.png",
+      "sha256": "5786a140a2f7d03eb94eb1bcc3b647a900bd90adf483094c295bfd1b48cc40e9",
+      "bytes": 94168
+    },
+    {
+      "source": "qa5-16-final-source/report-001.png",
+      "sha256": "450931bf9a0ef426b4cfb3173422df62cb674aabc1871eddc480c1d5b1836440",
+      "bytes": 237828
+    },
+    {
+      "source": "qa5-16-final-source/report-002.png",
+      "sha256": "f57e27fe269c4c6f17575d1ea8df136b3176be27583545ea76940e2b8179008b",
+      "bytes": 239892
+    },
+    {
+      "source": "qa5-16-final-source/report-003.png",
+      "sha256": "35cb322fa935c1ee7e3b63d1443459eddd4e48d1e1fae27216a099ce2807346e",
+      "bytes": 234455
+    },
+    {
+      "source": "qa5-16-final-source/report-004.png",
+      "sha256": "0ac83660581110a767576e6a128377397b71fe00dcca531564cbc0b459a9778d",
+      "bytes": 193386
+    },
+    {
+      "source": "qa5-17-refusal-checks/report-001.png",
+      "sha256": "5e07871d54a722760c2bf67c7aa0ea8d6838e6b989e69acc1cb66085ebb8f3ae",
+      "bytes": 90198
+    },
+    {
+      "source": "qa5-18-live-policy/report-001.png",
+      "sha256": "3bd9e28df1bf419317fc13aabf833720d596e70b4b7b5543bd956f281cbf7c14",
+      "bytes": 110398
+    },
+    {
+      "source": "qa5-19-iso-retention/report-001.png",
+      "sha256": "03a0712217697ec0116aab67f6bb561a846e729f207a47f325a999304983ba84",
+      "bytes": 106768
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Provision temporary rootless VM graphics laboratory and inspect QEMU backends",
+      "kind": "package-container",
+      "started_at": "2026-11-05T12:08:43.805655+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-lab-start.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 69.0,
+      "finished_at": "2026-11-05T12:09:52.880448+00:00",
+      "log_sha256": "f4a078605b1f0a6fd457ed6cbed824515eb24d05bdda44df90a5a33e87cabc49",
+      "directory": "qa5-01-vm-lab"
+    },
+    {
+      "schema_version": 1,
+      "name": "Install signed Ubuntu QEMU GUI and OpenGL dependencies in temporary lab",
+      "kind": "package-container",
+      "started_at": "2026-11-05T12:12:38.447693+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-lab-provision.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 40.97,
+      "finished_at": "2026-11-05T12:13:19.514790+00:00",
+      "log_sha256": "4eb0fb3642454e41eb3ac7719426eee2b2e70651be5fcd737cdada05726c9fdb",
+      "directory": "qa5-02-vm-graphics-dependencies"
+    },
+    {
+      "schema_version": 1,
+      "name": "Normal-user software OpenGL virtual GPU preflight",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:13:49.762554+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-virgl-preflight-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.37,
+      "finished_at": "2026-11-05T12:13:50.250745+00:00",
+      "log_sha256": "e5dc72a81745538f9c2e2f3bfb2da557813892228028195349481fb5527eb004",
+      "directory": "qa5-03-virgl-preflight"
+    },
+    {
+      "schema_version": 1,
+      "name": "Software OpenGL virtual GPU preflight with normal-user readable fixture",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:14:07.143969+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-virgl-preflight-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 15.49,
+      "finished_at": "2026-11-05T12:14:22.728764+00:00",
+      "log_sha256": "15d55e94322adb8950ccb3faf71f32e90639f1e3362deef1c52bf149bc95dc77",
+      "directory": "qa5-04-virgl-preflight"
+    },
+    {
+      "schema_version": 1,
+      "name": "Rebuild live-only OREZ ISO from pinned signature-verified Kubuntu and confirmed source",
+      "kind": "source",
+      "started_at": "2026-11-05T12:14:26.663588+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "31b52152921f31c115d715b81fe25e3e108fd6446d31ab77a6f12f6fd00f2b14",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-build-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 18,
+      "status": "failed",
+      "duration_seconds": 127.28,
+      "finished_at": "2026-11-05T12:16:34.048708+00:00",
+      "log_sha256": "62d04665671edefdfe67407939a71fdffa1d09909e07bab58063001db5da44c2",
+      "directory": "qa5-05-live-iso-build"
+    },
+    {
+      "schema_version": 1,
+      "name": "Source regression including diskless VM safety and QMP error handling",
+      "kind": "source",
+      "started_at": "2026-11-05T12:18:37.181490+00:00",
+      "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+      "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+      "working_tree": "M build/build-live.sh\n M environment/orez-qa.Dockerfile\n?? build/probe-virgl-vm.py\n?? tests/test_vm_probe.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.39,
+      "finished_at": "2026-11-05T12:18:42.024531+00:00",
+      "log_sha256": "ee25632824438d6efc386253ffe9ef2aabb673d2b9cd227fc888d5783001e3a1",
+      "directory": "qa5-06-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Resume official ISO download, verify its signature and rebuild live candidate",
+      "kind": "source",
+      "started_at": "2026-11-05T12:19:14.210007+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-build-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 18,
+      "status": "failed",
+      "duration_seconds": 8.13,
+      "finished_at": "2026-11-05T12:19:22.393537+00:00",
+      "log_sha256": "58736bb93a8cebef41767d047798685bd3a045d121293375b78cb1fe92f04710",
+      "directory": "qa5-07-resumed-live-build"
+    },
+    {
+      "schema_version": 1,
+      "name": "Resume remaining ISO bytes after second truncated transfer, retain checksum gate",
+      "kind": "source",
+      "started_at": "2026-11-05T12:20:14.570876+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-build-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 111.15,
+      "finished_at": "2026-11-05T12:22:05.760135+00:00",
+      "log_sha256": "966d72489c8e3ecea9663487f8ad0aa8981315dd8eff6ff31226c7b90be3fdba",
+      "directory": "qa5-08-complete-live-build"
+    },
+    {
+      "schema_version": 1,
+      "name": "Pristine Kubuntu live boot using normal-user TCG and software-backed VirGL",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:20:53.410913+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-run-virgl-host.sh",
+        "upstream-virgl",
+        "direct",
+        "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+        "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "600"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 80.12,
+      "finished_at": "2026-11-05T12:22:13.580236+00:00",
+      "log_sha256": "e4d2d4e76e9eb89e97f681b8725af4e6b8e2ccaab114388f72346414f7764514",
+      "directory": "qa5-09-upstream-virgl",
+      "vm_diagnostic": {
+        "schema_version": 1,
+        "boot": "direct",
+        "iso": "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+        "expected_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "guest_ram_mib": 4096,
+        "cpu_accelerator": "tcg",
+        "host_renderer": "llvmpipe",
+        "device": "virtio-vga-gl",
+        "network": "none",
+        "writable_disks": [],
+        "installation_approved": false,
+        "desktop_qualified": false,
+        "secure_boot_tested": false,
+        "frames": [
+          {
+            "seconds": 10,
+            "file": "guest-0010.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution"
+          },
+          {
+            "seconds": 30,
+            "file": "guest-0030.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution"
+          },
+          {
+            "seconds": 50,
+            "file": "guest-0050.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution"
+          }
+        ],
+        "actual_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-m",
+          "4096",
+          "-smp",
+          "2",
+          "-vga",
+          "none",
+          "-device",
+          "virtio-vga-gl",
+          "-display",
+          "sdl,gl=on",
+          "-nic",
+          "none",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:/tmp/orez-virgl-z2kjrg_c/qmp.sock,server=on,wait=off",
+          "-serial",
+          "file:/tmp/orez-upstream-virgl/serial.log",
+          "-no-reboot",
+          "-device",
+          "qemu-xhci,id=orez-xhci",
+          "-device",
+          "usb-tablet,bus=orez-xhci.0",
+          "-drive",
+          "file=/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+          "-kernel",
+          "/tmp/orez-upstream-virgl/vmlinuz",
+          "-initrd",
+          "/tmp/orez-upstream-virgl/initrd",
+          "-append",
+          "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+        ],
+        "qemu": {
+          "QMP": {
+            "version": {
+              "qemu": {
+                "micro": 1,
+                "minor": 2,
+                "major": 10
+              },
+              "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+            },
+            "capabilities": [
+              "oob"
+            ]
+          }
+        },
+        "status": "failed",
+        "error": "{'class': 'GenericError', 'desc': 'no surface'}"
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "Rebuilt OREZ ISO actual UEFI boot with software-backed VirGL, offline and diskless",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:22:22.710251+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-run-virgl-host.sh",
+        "orez-uefi-virgl",
+        "uefi",
+        "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+        "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "660"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 150.05,
+      "finished_at": "2026-11-05T12:24:52.881645+00:00",
+      "log_sha256": "b5347e7b46b263a1bc7f3a413849228f84481715f79d9ffb81be8e0e544f9db2",
+      "directory": "qa5-10-orez-uefi-virgl",
+      "vm_diagnostic": {
+        "schema_version": 1,
+        "boot": "uefi",
+        "iso": "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+        "expected_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "guest_ram_mib": 4096,
+        "cpu_accelerator": "tcg",
+        "host_renderer": "llvmpipe",
+        "device": "virtio-vga-gl",
+        "network": "none",
+        "writable_disks": [],
+        "installation_approved": false,
+        "desktop_qualified": false,
+        "secure_boot_tested": false,
+        "frames": [
+          {
+            "seconds": 10,
+            "file": "guest-0010.png",
+            "nonblank": false,
+            "details": "lit_pixels=1.72% color_bins=31 (1280x800)"
+          },
+          {
+            "seconds": 30,
+            "file": "guest-0030.png",
+            "nonblank": false,
+            "details": "lit_pixels=3.88% color_bins=3 (1280x800)"
+          },
+          {
+            "seconds": 50,
+            "file": "guest-0050.png",
+            "nonblank": false,
+            "details": "lit_pixels=3.87% color_bins=3 (1280x800)"
+          },
+          {
+            "seconds": 70,
+            "file": "guest-0070.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)"
+          },
+          {
+            "seconds": 90,
+            "file": "guest-0090.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)"
+          },
+          {
+            "seconds": 110,
+            "file": "guest-0110.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)"
+          }
+        ],
+        "actual_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "firmware_sha256": "874f15a7c9110e78a89db159f0f68fc97e9076b74777520de1c235426f758aa7",
+        "initial_vars_sha256": "5d2ac383371b408398accee7ec27c8c09ea5b74a0de0ceea6513388b15be5d1e",
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-m",
+          "4096",
+          "-smp",
+          "2",
+          "-vga",
+          "none",
+          "-device",
+          "virtio-vga-gl",
+          "-display",
+          "sdl,gl=on",
+          "-nic",
+          "none",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:/tmp/orez-virgl-klikd0m4/qmp.sock,server=on,wait=off",
+          "-serial",
+          "file:/tmp/orez-orez-uefi-virgl/serial.log",
+          "-no-reboot",
+          "-device",
+          "qemu-xhci,id=orez-xhci",
+          "-device",
+          "usb-tablet,bus=orez-xhci.0",
+          "-drive",
+          "file=/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+          "-drive",
+          "if=pflash,format=raw,unit=0,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd",
+          "-drive",
+          "if=pflash,format=raw,unit=1,file=/tmp/orez-virgl-klikd0m4/vars.fd",
+          "-boot",
+          "order=d"
+        ],
+        "qemu": {
+          "QMP": {
+            "version": {
+              "qemu": {
+                "micro": 1,
+                "minor": 2,
+                "major": 10
+              },
+              "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+            },
+            "capabilities": [
+              "oob"
+            ]
+          }
+        },
+        "status": "failed",
+        "error": "{'class': 'GenericError', 'desc': 'no surface'}"
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "VM control regression after transient modeset readback fix",
+      "kind": "source",
+      "started_at": "2026-11-05T12:23:40.230550+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "6046893569dd182f4f1d68785a2491c3f5acbd520a723f4c799f2fe11804d756",
+      "working_tree": "M build/probe-virgl-vm.py\n M tests/test_vm_probe.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_vm_probe.py",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.68,
+      "finished_at": "2026-11-05T12:23:41.134421+00:00",
+      "log_sha256": "421c079a091f2c0f2e5be4df62b2e9bd0da412ecb44a2cd1059f8d6bb3f1eaf3",
+      "directory": "qa5-11-vm-regression"
+    },
+    {
+      "schema_version": 1,
+      "name": "Pristine live boot with actual SDL capture during GL scanout",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:24:20.134492+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "f6960cff4699e4af136e1461d8858964eb5c59600aa5f1be84788793918005a2",
+      "working_tree": "M build/probe-virgl-vm.py\n M tests/test_vm_probe.py",
+      "command": [
+        "bash",
+        "/tmp/orez-run-virgl-host.sh",
+        "upstream-sdl",
+        "direct",
+        "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+        "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "600"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 658.11,
+      "finished_at": "2026-11-05T12:35:18.334547+00:00",
+      "log_sha256": "29c55dc225ed8d8278bc190a3268a3a950e876c8670c8190c686ae56904f4932",
+      "directory": "qa5-12-upstream-sdl",
+      "vm_diagnostic": {
+        "schema_version": 1,
+        "boot": "direct",
+        "iso": "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+        "expected_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "guest_ram_mib": 4096,
+        "cpu_accelerator": "tcg",
+        "host_renderer": "llvmpipe",
+        "device": "virtio-vga-gl",
+        "network": "none",
+        "writable_disks": [],
+        "installation_approved": false,
+        "desktop_qualified": false,
+        "secure_boot_tested": false,
+        "frames": [
+          {
+            "seconds": 10,
+            "file": "guest-0010.png",
+            "nonblank": false,
+            "details": "unqualified frame resolution",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 30,
+            "file": "host-window-0030.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 30,
+            "file": "guest-0030.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.21% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 50,
+            "file": "host-window-0050.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 50,
+            "file": "guest-0050.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 70,
+            "file": "host-window-0070.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 70,
+            "file": "guest-0070.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 90,
+            "file": "host-window-0090.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 90,
+            "file": "guest-0090.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 110,
+            "file": "host-window-0110.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 110,
+            "file": "guest-0110.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 130,
+            "file": "host-window-0130.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 130,
+            "file": "guest-0130.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 150,
+            "file": "host-window-0150.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 150,
+            "file": "guest-0150.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 170,
+            "file": "host-window-0170.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 170,
+            "file": "guest-0170.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 190,
+            "file": "host-window-0190.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 190,
+            "file": "guest-0190.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 210,
+            "file": "host-window-0210.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 210,
+            "file": "guest-0210.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 230,
+            "file": "host-window-0230.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 230,
+            "file": "guest-0230.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 250,
+            "file": "host-window-0250.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 250,
+            "file": "guest-0250.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.12% color_bins=2 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 270,
+            "file": "host-window-0270.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 270,
+            "file": "guest-0270.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 290,
+            "file": "host-window-0290.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 290,
+            "file": "guest-0290.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 310,
+            "file": "host-window-0310.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 310,
+            "file": "guest-0310.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 330,
+            "file": "host-window-0330.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 330,
+            "file": "guest-0330.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 350,
+            "file": "host-window-0350.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 350,
+            "file": "guest-0350.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 370,
+            "file": "host-window-0370.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 370,
+            "file": "guest-0370.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 390,
+            "file": "host-window-0390.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 390,
+            "file": "guest-0390.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 411,
+            "file": "host-window-0411.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 411,
+            "file": "guest-0411.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 431,
+            "file": "host-window-0431.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 431,
+            "file": "guest-0431.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 451,
+            "file": "host-window-0451.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 451,
+            "file": "guest-0451.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 471,
+            "file": "host-window-0471.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 471,
+            "file": "guest-0471.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 491,
+            "file": "host-window-0491.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 491,
+            "file": "guest-0491.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 511,
+            "file": "host-window-0511.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 511,
+            "file": "guest-0511.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 531,
+            "file": "host-window-0531.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 531,
+            "file": "guest-0531.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 551,
+            "file": "host-window-0551.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 551,
+            "file": "guest-0551.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 571,
+            "file": "host-window-0571.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 571,
+            "file": "guest-0571.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 591,
+            "file": "host-window-0591.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 591,
+            "file": "guest-0591.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+            "origin": "actual-sdl-window"
+          }
+        ],
+        "actual_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-m",
+          "4096",
+          "-smp",
+          "2",
+          "-vga",
+          "none",
+          "-device",
+          "virtio-vga-gl",
+          "-display",
+          "sdl,gl=on",
+          "-nic",
+          "none",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:/tmp/orez-virgl-zlmxbj4l/qmp.sock,server=on,wait=off",
+          "-serial",
+          "file:/tmp/orez-upstream-sdl/serial.log",
+          "-no-reboot",
+          "-device",
+          "qemu-xhci,id=orez-xhci",
+          "-device",
+          "usb-tablet,bus=orez-xhci.0",
+          "-drive",
+          "file=/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+          "-kernel",
+          "/tmp/orez-upstream-sdl/vmlinuz",
+          "-initrd",
+          "/tmp/orez-upstream-sdl/initrd",
+          "-append",
+          "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+        ],
+        "qemu": {
+          "QMP": {
+            "version": {
+              "qemu": {
+                "micro": 1,
+                "minor": 2,
+                "major": 10
+              },
+              "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+            },
+            "capabilities": [
+              "oob"
+            ]
+          }
+        },
+        "status": "captured_requires_visual_review",
+        "try_clicked": false
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "OREZ actual UEFI boot retaining SDL frames across graphics modesetting",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:25:11.717439+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "f6960cff4699e4af136e1461d8858964eb5c59600aa5f1be84788793918005a2",
+      "working_tree": "M build/probe-virgl-vm.py\n M tests/test_vm_probe.py",
+      "command": [
+        "bash",
+        "/tmp/orez-run-virgl-host.sh",
+        "orez-uefi-sdl",
+        "uefi",
+        "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+        "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "660"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 438.37,
+      "finished_at": "2026-11-05T12:32:30.195369+00:00",
+      "log_sha256": "96e77b483a044cb6fad244aa44a954b38b0c7e247841138321d2421907da0892",
+      "directory": "qa5-13-orez-uefi-sdl",
+      "vm_diagnostic": {
+        "schema_version": 1,
+        "boot": "uefi",
+        "iso": "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+        "expected_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "guest_ram_mib": 4096,
+        "cpu_accelerator": "tcg",
+        "host_renderer": "llvmpipe",
+        "device": "virtio-vga-gl",
+        "network": "none",
+        "writable_disks": [],
+        "installation_approved": false,
+        "desktop_qualified": false,
+        "secure_boot_tested": false,
+        "frames": [
+          {
+            "seconds": 10,
+            "file": "guest-0010.png",
+            "nonblank": false,
+            "details": "lit_pixels=1.72% color_bins=31 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 30,
+            "file": "guest-0030.png",
+            "nonblank": false,
+            "details": "lit_pixels=3.88% color_bins=3 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 50,
+            "file": "guest-0050.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 70,
+            "file": "guest-0070.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 90,
+            "file": "guest-0090.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 110,
+            "file": "guest-0110.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 130,
+            "file": "guest-0130.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=2 (1280x800)",
+            "origin": "qmp-readback"
+          },
+          {
+            "seconds": 150,
+            "file": "host-window-0150.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 150,
+            "file": "guest-0150.png",
+            "nonblank": false,
+            "details": "lit_pixels=1.72% color_bins=34 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 170,
+            "file": "host-window-0170.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 170,
+            "file": "guest-0170.png",
+            "nonblank": false,
+            "details": "lit_pixels=2.60% color_bins=45 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 190,
+            "file": "host-window-0190.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 190,
+            "file": "guest-0190.png",
+            "nonblank": false,
+            "details": "lit_pixels=1.72% color_bins=34 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 210,
+            "file": "host-window-0210.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 210,
+            "file": "guest-0210.png",
+            "nonblank": false,
+            "details": "lit_pixels=1.72% color_bins=34 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 230,
+            "file": "host-window-0230.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 230,
+            "file": "guest-0230.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1040x740)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 250,
+            "file": "host-window-0250.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 250,
+            "file": "guest-0250.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 270,
+            "file": "host-window-0270.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 270,
+            "file": "guest-0270.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 290,
+            "file": "host-window-0290.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 290,
+            "file": "guest-0290.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 310,
+            "file": "host-window-0310.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 310,
+            "file": "guest-0310.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 330,
+            "file": "host-window-0330.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 330,
+            "file": "guest-0330.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 350,
+            "file": "host-window-0350.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 350,
+            "file": "guest-0350.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 370,
+            "file": "host-window-0370.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          },
+          {
+            "seconds": 370,
+            "file": "guest-0370.png",
+            "nonblank": false,
+            "details": "lit_pixels=0.00% color_bins=1 (1280x800)",
+            "origin": "actual-sdl-window"
+          },
+          {
+            "seconds": 390,
+            "file": "host-window-0390.png",
+            "nonblank": null,
+            "readback": "no surface",
+            "action": "none"
+          }
+        ],
+        "actual_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+        "firmware_sha256": "874f15a7c9110e78a89db159f0f68fc97e9076b74777520de1c235426f758aa7",
+        "initial_vars_sha256": "5d2ac383371b408398accee7ec27c8c09ea5b74a0de0ceea6513388b15be5d1e",
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-m",
+          "4096",
+          "-smp",
+          "2",
+          "-vga",
+          "none",
+          "-device",
+          "virtio-vga-gl",
+          "-display",
+          "sdl,gl=on",
+          "-nic",
+          "none",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:/tmp/orez-virgl-5p0xv3wv/qmp.sock,server=on,wait=off",
+          "-serial",
+          "file:/tmp/orez-orez-uefi-sdl/serial.log",
+          "-no-reboot",
+          "-device",
+          "qemu-xhci,id=orez-xhci",
+          "-device",
+          "usb-tablet,bus=orez-xhci.0",
+          "-drive",
+          "file=/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+          "-drive",
+          "if=pflash,format=raw,unit=0,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd",
+          "-drive",
+          "if=pflash,format=raw,unit=1,file=/tmp/orez-virgl-5p0xv3wv/vars.fd",
+          "-boot",
+          "order=d"
+        ],
+        "qemu": {
+          "QMP": {
+            "version": {
+              "qemu": {
+                "micro": 1,
+                "minor": 2,
+                "major": 10
+              },
+              "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+            },
+            "capabilities": [
+              "oob"
+            ]
+          }
+        },
+        "status": "failed",
+        "error": "Command '['scrot', '--window', '6291463', '/tmp/orez-orez-uefi-sdl/guest-sdl-0390.png']' timed out after 15 seconds"
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "Compare original and OREZ ISO GRUB files to attribute inherited boot warning",
+      "kind": "source",
+      "started_at": "2026-11-05T12:28:40.982264+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "60d73e8a2331390cdb7e0e39824c09aca244171cb83202cd2542cc142e19cf33",
+      "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+      "command": [
+        "bash",
+        "/tmp/orez-boot-config-audit-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.72,
+      "finished_at": "2026-11-05T12:28:41.817971+00:00",
+      "log_sha256": "b4f52df714315699913991f52706a8d0410f42eb15ae793b667305598a5979e2",
+      "directory": "qa5-14-boot-config-audit"
+    },
+    {
+      "schema_version": 1,
+      "name": "Capture unclipped SDL windows without any guest input",
+      "kind": "vm",
+      "started_at": "2026-11-05T12:29:42.081805+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "60d73e8a2331390cdb7e0e39824c09aca244171cb83202cd2542cc142e19cf33",
+      "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+      "command": [
+        "bash",
+        "/tmp/orez-normalize-vm-windows-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 11.12,
+      "finished_at": "2026-11-05T12:29:53.537241+00:00",
+      "log_sha256": "23fc0ba869e37ff9c18014bdf1f5205bda5a1c50a3129dee905c536c6e44b5ed",
+      "directory": "qa5-15-unclipped-windows"
+    },
+    {
+      "schema_version": 1,
+      "name": "Final source regression with QMP capture fallback and isolated window handling",
+      "kind": "source",
+      "started_at": "2026-11-05T12:31:04.974831+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+      "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.27,
+      "finished_at": "2026-11-05T12:31:07.381028+00:00",
+      "log_sha256": "9c3d51f222170bdf1e31954834282752d6a90df13b4694a795612a5e3490a4b6",
+      "directory": "qa5-16-final-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual wrong-digest and root-invocation refusal in VM lab",
+      "kind": "package-container",
+      "started_at": "2026-11-05T12:31:39.564909+00:00",
+      "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+      "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+      "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+      "command": [
+        "bash",
+        "/tmp/orez-vm-refusal-checks.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.09,
+      "finished_at": "2026-11-05T12:31:41.719169+00:00",
+      "log_sha256": "1446c93c80b460bcd35b05913eda23eb3f1a18f48ef8efb4ea37d23b92ce983a",
+      "directory": "qa5-17-refusal-checks"
+    },
+    {
+      "schema_version": 1,
+      "name": "Inspect inherited live-session privilege policy without executing it",
+      "kind": "source",
+      "started_at": "2026-11-05T12:35:46.762282+00:00",
+      "commit": "d8193b7ef1c45b088e96241745776d68484768da",
+      "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-live-policy-audit-host.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.47,
+      "finished_at": "2026-11-05T12:35:47.305805+00:00",
+      "log_sha256": "34af676a6c3393c9f53f3e2aa553130b116003b636ce4b7f98910a4aa10c4b0e",
+      "directory": "qa5-18-live-policy"
+    },
+    {
+      "schema_version": 1,
+      "name": "Verify retained development ISO and safely remove completed temporary VM lab",
+      "kind": "source",
+      "started_at": "2026-11-05T12:36:43.673997+00:00",
+      "commit": "d8193b7ef1c45b088e96241745776d68484768da",
+      "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-retain-lab-artifacts.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 120.78,
+      "finished_at": "2026-11-05T12:38:44.510589+00:00",
+      "log_sha256": "fad31095c2362bdeea2504c026ab4ebb705e713dd362f0957989a7cf1bdb23bb",
+      "directory": "qa5-19-iso-retention"
+    }
+  ]
+}
