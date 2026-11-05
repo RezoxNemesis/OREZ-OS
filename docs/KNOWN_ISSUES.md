@@ -70,3 +70,7 @@
 
 23. Pristine Kubuntu checksum-verified control [41889832695](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41889832695) safely clicked Try but **also** produced two fully black VirtIO 2D frames. CPU-only QEMU cannot currently qualify KDE visuals for either Kubuntu or OREZ; avoid more identical tests without an accelerated control. Physical GPU remains untested.
 24. Install-only OREZ layer has zero file-path collisions with authentic Kubuntu 26.04.1 (16 whitelisted files, [41937702881](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41937702881)), and native `.deb` has exactly 16 allowed files and no maintainer scripts ([41938238699](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41938238699)). Neither test proves actual installation, signed update ownership, encryption or rollback.
+
+Owner update/monitor requirement: signed OREZ channel, owner-policy migration
+guards and local security detection are not implemented. Follow UPDATES_AND_GUARD.md;
+do not present existing read-only status as protection against all attacks.

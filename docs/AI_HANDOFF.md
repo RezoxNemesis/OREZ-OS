@@ -1,5 +1,44 @@
 # OREZ OS — Verified Development Handoff
 
+## VERIFIED DAILY-USE COMMIT AND CI — 5 November 2026
+
+- Tested implementation: **`4bb77b1149461b3dc1a72b29432970d91f92324b`**, branch
+  `feature/orez-live-foundation-20261104`, draft/unmerged PR #1. Main remains
+  `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`; repository remains public.
+- GitHub CI **SUCCESS**: [42001391558](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42001391558),
+  job `127157215150`. Actual logs confirm **74 source tests**, **23-file package
+  audit**, production preview build and **60/60 browser tests**. ISO job skipped.
+  Native container tests were local, not in this GitHub job.
+- [CI preview/screenshots artifact](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42001391558/artifacts/13402323459):
+  `13402323459`, 200,784,515 bytes, SHA-256
+  `59c70ed821e5ee17f9a07b96aec664abeb4725f9e727d04eba56ed4452c76156`.
+  Expires 19 November 2026 (14:51 IST / 09:21 UTC); recheck after expiry.
+- All local captures including failures: `dist/OREZ-daily-use-QA-screenshots.zip`,
+  **105,857,301 bytes**, SHA-256
+  `dff73929ec712251d79c6dd93215c28f1493472520d4e693cf1ffb750468b6a9`.
+  Extract and open index.html: **340 unique original PNGs covering 551 capture
+  references and 25 attempt records**. Hash-set comparison verifies all unique
+  PNG captures were included. Local ZIP is a supplied workspace artifact, not a
+  permanent GitHub release. Two native frames and the ledger are committed.
+- qa3-21's report screenshots initially failed at full disk. After reclaiming
+  duplicated PNG storage without changing bytes/paths, the preserved result/log
+  were rendered into 41 report screenshots. The failed build was not rerun or
+  relabelled successful. qa3-25 independently verified final image export.
+- New owner requirements after implementation commit are documented in
+  UPDATES_AND_GUARD.md: signed upgrade path, no silent security-policy weakening,
+  owner-authorized privilege grants, local bounded monitoring, uncertain alerts
+  without work interruption, no perfect identity/zero-false-positive promise.
+  This monitoring/update infrastructure is **not implemented**. No extra root
+  service or security setting change was made to satisfy a promise on paper.
+- Three proposed differentiators are in FUTURE_DIFFERENTIATORS.md; no untested
+  superiority claim or automatic additional implementation is implied.
+- This is a documentation/evidence-only follow-up, marked `[skip ci]`; verify
+  actual HEAD and that its implementation diff from the tested SHA is empty.
+  Do not claim this follow-up ran a second CI suite.
+- Status: pre-alpha, no safe install release. Last reported development ISO is
+  approximately 5.1 GB; latest changes are not in a newly qualified ISO and final
+  installed size is unknown. The 4.22 GB QA dependency image is **not** the OS.
+
 ## DAILY-USE IMPLEMENTATION CHECKPOINT — 5 November 2026
 
 This section supersedes older counts/resource-profile wording below.

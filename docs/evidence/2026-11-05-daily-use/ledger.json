@@ -543,7 +543,7 @@
     "finished_at": "2026-11-05T09:11:37.276961+00:00",
     "log_sha256": "35a69fe081955ae6f68c994d64e46fd867a4e9cfdb7d40af1c4c0999c7e568dd",
     "local_directory": "dist/evidence/qa3-21-environment-retry",
-    "screenshot_count": 0
+    "screenshot_count": 41
   },
   {
     "schema_version": 1,

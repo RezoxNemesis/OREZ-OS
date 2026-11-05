@@ -15,3 +15,14 @@ contains all report/browser/native captures. See ../../DAILY_USE_QA.md.
 
 Source 3aef3fe plus the recorded dirty-tree digest identifies local attempts;
 committed-source CI is recorded separately in the latest AI_HANDOFF checkpoint.
+
+Final committed-source validation: [CI 42001391558](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42001391558)
+passed on `4bb77b1149461b3dc1a72b29432970d91f92324b`: 74 source cases,
+23-file package audit, production build and 60 browser cases. ISO job skipped.
+
+All local screenshots: OREZ-daily-use-QA-screenshots.zip, 105857301 bytes,
+SHA-256 dff73929ec712251d79c6dd93215c28f1493472520d4e693cf1ffb750468b6a9.
+340 unique PNGs cover 551 capture references and 25 attempts. Every unique
+capture hash is verified in the bundle. Failed qa3-21 report capture was
+recovered from its original result/log after storage was reclaimed; 41 report
+images are now present. It remains a failed build attempt.

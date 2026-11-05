@@ -1,5 +1,11 @@
 # OREZ OS — evidence-based engineering roadmap
 
+Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
+owner-authorized upgrades, protection-policy invariants and local detection that
+preserves legitimate work. Security software receives fixes; no AI/vendor may
+silently expand privileges. Autonomous detection and signed OREZ updates remain
+unimplemented; perfect owner identification or zero false positives is not claimed.
+
 Connectivity follow-up: native Wi-Fi/internet/Bluetooth controls, Realme hotspot/
 USB tethering, consented phone mirroring, LAN/Bluetooth/USB file transfer and
 safe eject are required. See [CONNECTIVITY.md](CONNECTIVITY.md) for providers,

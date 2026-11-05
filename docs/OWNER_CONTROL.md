@@ -1,5 +1,11 @@
 # Owner control and repository visibility
 
+Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
+owner-authorized upgrades, protection-policy invariants and local detection that
+preserves legitimate work. Security software receives fixes; no AI/vendor may
+silently expand privileges. Autonomous detection and signed OREZ updates remain
+unimplemented; perfect owner identification or zero false positives is not claimed.
+
 Owner instruction, 5 November 2026: **RezoxNemesis is the sole human administrator
 and development authority.** Third-party services may provide functionality but
 must not receive an OREZ administrator identity, remote management channel,

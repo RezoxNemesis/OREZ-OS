@@ -1,5 +1,11 @@
 # OREZ OS security — defence in depth
 
+Updates/security follow-up: [UPDATES_AND_GUARD.md](UPDATES_AND_GUARD.md) defines
+owner-authorized upgrades, protection-policy invariants and local detection that
+preserves legitimate work. Security software receives fixes; no AI/vendor may
+silently expand privileges. Autonomous detection and signed OREZ updates remain
+unimplemented; perfect owner identification or zero false positives is not claimed.
+
 ## Owner control and Android boundary — 5 November 2026
 
 OWNER_CONTROL.md defines the owner's sole human administration policy and the
