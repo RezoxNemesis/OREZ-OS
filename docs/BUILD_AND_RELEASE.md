@@ -1,5 +1,13 @@
 # First real live ISO build — operating rules
 
+## Current source/preview tooling
+
+Use Node 24 with the committed npm lockfile. The small PR job builds the native package and the independent responsive preview, runs source and desktop/mobile browser acceptance, and captures every test's evidence, including failures. New artifacts are retained for 14 days. See `TESTING_AND_SCREENSHOTS.md` for exact local commands and evidence limits; `preview/README.md` covers the single-file phone download and optional HTTPS PWA.
+
+Actual APT ownership/reinstall/purge and an Xvfb-native KDE window are exercised in a separate manual-only Docker workflow. Provisioning the Ubuntu dependency image is relatively expensive; do not run it on every docs or preview change. Its base image digest is pinned, but APT versions float until a repository snapshot is adopted. No byte-identical-reproducibility claim follows from this fixture.
+
+No new ISO is built or released by this work. Existing live/installer blockers remain below. The consolidated plan is `MASTER_BLUEPRINT.md`; the current verified implementation is in `AI_HANDOFF.md`.
+
 ## Verified upstream
 - Official source: https://cdimage.ubuntu.com/cdimage/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso
 - SHA-256: `831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8`

@@ -1,5 +1,14 @@
 # Blueprint requirements-to-evidence map
 
+## Latest local evidence — 5 November
+
+- 52 source tests and exact package path/mode/owner audit passed after fixing restrictive-checkout permissions. Do not confuse this with a new ISO boot.
+- APT install, dpkg ownership, ordinary-user operations, same-version reinstall, native KDE Settings rendering, purge and unrelated-data retention passed in an isolated Ubuntu container. Actual Calamares/disk/reboot and newer-version upgrades remain untested.
+- Browser preview behavior passed desktop/mobile cases, with failed offline attempts preserved and both corrected offline cases passing separately. It is not a real Android companion or native desktop.
+- All tests have report screenshots; browser/native views are labelled by environment. Durable ledger: `docs/evidence/2026-11-05-session/ledger.json`. Latest committed-source CI remains authoritative in the handoff.
+
+## Earlier requirements and evidence
+
 | Requirement | Implementation | Evidence / blocker |
 |---|---|---|
 | Real Linux ISO | `build/build-live.sh` | Full image construction/static check passed CI 41809241570 |

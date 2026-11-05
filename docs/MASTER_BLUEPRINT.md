@@ -4,7 +4,7 @@
 **Recommended foundation:** Kubuntu 26.04 LTS, initially qualified against its 26.04.1 amd64 image  
 **Primary target:** Your Ryzen 5 5600 / RTX 3050 6 GB desktop  
 **Mobile scope:** Android browser preview and native companion, as you selected  
-**Current status:** Architecture and development plan; no OREZ implementation or compatibility certification exists yet.
+**Current status (5 November 2026):** This is the single engineering blueprint. Source, native packaging, live-ISO construction and a separate phone/browser design preview now exist. Graphical ISO boot, safe installation, recovery and physical compatibility remain unqualified. See the current checkpoint in `AI_HANDOFF.md`; do not interpret planned capabilities below as implemented.
 
 ## 1. Direction, verified starting point, and release priorities
 
@@ -29,20 +29,22 @@ OREZ must function fully when AI, phone integration, animations, transparency, a
 
 The public repository [RezoxNemesis/OREZ-OS](https://github.com/RezoxNemesis/OREZ-OS) exists.
 
-At inspection:
+At the latest repository verification before this session's implementation commit:
 
 | Item | Verified state |
 |---|---|
 | Default branch | `main` |
-| Latest commit | `fb0661d6cfb8850104d86b3377eef12a7ecd68ed` |
-| Repository contents | A README containing the project title |
-| Pull requests | None returned |
-| Workflow runs | None |
-| Releases | None |
-| Branch protection | `main` reported as unprotected |
-| Separate architecture attachment | Not found in the available workspace |
+| Development branch | `feature/orez-live-foundation-20261104` |
+| Starting implementation commit | `27aeece85b8057259ccbaba8abfc455b3bc7c286` |
+| Repository contents | Blueprint, required continuity docs, Linux overlay, package/ISO builders and tests |
+| Pull request | [#1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), draft and unmerged |
+| Prior source CI | [41938523642](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41938523642), success |
+| ISO evidence | Constructed; casper loads OREZ; visible desktop remains unverified |
+| Pristine control | Same black desktop in CPU-only QEMU: [41889832695](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41889832695) |
+| Releases | No safe downloadable OREZ installation ISO |
+| Original brief | User directive and attached 985-line architecture plan reviewed |
 
-Your directive is therefore the requirements baseline. This blueprint has **not** been committed to the repository, and no builds, APKs, ISOs, or hardware tests are claimed.
+This blueprint is committed project memory. Latest local checks and later commit/CI identities belong in the handoff and session evidence ledger. No APK, physical-device qualification or completed OS is claimed. M1/M2 gates remain open despite passing source and package checks.
 
 ### 1.3 Foundation decision
 
@@ -733,7 +735,7 @@ For a zero-additional-hosting development fallback, publish numbered chunks belo
 
 ### 4.6 Licensing and dependency maintenance
 
-Default new OREZ integration code to an open-source licence compatible with its dependencies. Preserve upstream licensing for modified KDE and other copyleft components.
+Original OREZ code and artwork currently remain reserved to the project owner, consistent with the repository README; no blanket open-source licence has been granted. Select an explicit compatible licence before public binary distribution. Preserve upstream licensing for modified KDE, React, Vite and other third-party components; original-code ownership never overrides dependency obligations.
 
 For each shipped component, track:
 
@@ -955,7 +957,9 @@ At each session end, update the handoff and known issues before reporting comple
 >
 > Continue the highest-priority unblocked task within the current authorized mode. Preserve existing work. Do not format disks, overwrite the Windows recovery USB, expose remote services, or bypass authentication.
 >
-> Validate changes proportionately. Distinguish planned, implemented, built, VM-tested, hardware-tested, and released work.
+> Validate changes proportionately. Capture screenshots for every test run, including failures, using the evidence runner; preserve real UI frames as well as report screenshots. Distinguish browser previews, container windows, VM desktops and physical hardware. Do not delete failed evidence when rerunning.
+>
+> Distinguish planned, implemented, built, VM-tested, hardware-tested, and released work.
 >
 > End by updating the handoff, decisions, roadmap, and known issues as appropriate. Report verified outcomes, blockers, and exact next actions.
 
@@ -969,7 +973,7 @@ This blueprint adopts the following defaults:
 - Existing Windows data and recovery media are preserved.
 - AI is optional and disabled until configured.
 - Conventional packages plus tested Btrfs recovery are the v1 update architecture.
-- Original OREZ integration code is open source by default; third-party obligations remain component-specific.
+- Original OREZ integration code/artwork remains owner-reserved pending an explicit licensing decision; third-party obligations remain component-specific.
 - No paid infrastructure, external hosting account, build runner, or signing key is assumed to exist.
 
 The following must be resolved through evidence during implementation:

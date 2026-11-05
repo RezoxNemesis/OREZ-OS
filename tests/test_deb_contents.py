@@ -51,6 +51,16 @@ class DebAuditTests(unittest.TestCase):
             with self.subTest(value=text), self.assertRaises(ValueError):
                 audit.manifest(text)
 
+    def test_private_world_writable_or_privileged_payload_modes_are_rejected(self):
+        for old, new in [('drwxr-xr-x', 'drwx------'), ('-rwxr-xr-x', '-rwx------'),
+                         ('-rwxr-xr-x', '-rwsr-xr-x'), ('-rwxr-xr-x', '-rwxrwxrwx'),
+                         ('root/root', 'user/user')]:
+            with self.subTest(mode=new):
+                result = audit.inspect(LISTING.replace(old, new), 'usr/bin/orezctl\n',
+                                       ['./control'], 'orez-shell', 'all')
+                self.assertEqual(result['status'], 'BLOCKED')
+                self.assertTrue(result['invalid_permissions_or_owners'])
+
     def test_ci_invokes_pkg_audit_after_build(self):
         workflow = (ROOT / ".github/workflows/orez-live.yml").read_text()
         self.assertIn("python3 build/verify-deb-files.py", workflow)

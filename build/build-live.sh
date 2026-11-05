@@ -73,7 +73,10 @@ xorriso -indev "$SOURCE" -ls /casper > "$WORK_DIR/upstream-casper-list.txt" 2>&1
 grep -Fq 'filesystem.squashfs' "$WORK_DIR/upstream-casper-list.txt" || fail 'Expected casper/filesystem.squashfs missing. Stop rather than guessing.'
 
 log 'Creating small, original OREZ filesystem layer'
-mksquashfs "$REPO_ROOT/overlay" "$WORK_DIR/zz-orez.squashfs" -comp xz -all-root -noappend -no-progress > "$WORK_DIR/squashfs.log" 2>&1 || fail 'Failed to construct squashfs layer.'
+stage_dir="$(mktemp -d "$WORK_DIR/overlay-stage.XXXXXX")"
+python3 "$REPO_ROOT/build/stage-overlay.py" --source "$REPO_ROOT/overlay" --output "$stage_dir/root"
+mksquashfs "$stage_dir/root" "$WORK_DIR/zz-orez.squashfs" -comp xz -all-root -noappend -no-progress > "$WORK_DIR/squashfs.log" 2>&1 || fail 'Failed to construct squashfs layer.'
+rm -rf -- "$stage_dir"
 [[ -s "$WORK_DIR/zz-orez.squashfs" ]] || fail 'Empty OREZ layer.'
 
 log 'Creating separated OREZ installed-system payload (installer still disabled)'

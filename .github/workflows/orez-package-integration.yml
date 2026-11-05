@@ -1,0 +1,40 @@
+name: OREZ isolated package integration
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: orez-package-integration-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Prepare evidence tools
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Build native package with evidence
+        run: python3 build/run-with-evidence.py --name 'Native package build' --kind source --output dist/evidence/package-build -- bash build/package-shell.sh
+      - name: Provision disposable Ubuntu dependency image
+        run: |
+          mkdir -p dist/evidence/container-setup
+          docker build -f build/integration/Dockerfile -t orez-package-test:20261105 . 2>&1 | tee dist/evidence/container-setup/build.log
+      - name: Test real package lifecycle and native window
+        run: python3 build/run-with-evidence.py --name 'Package lifecycle and native KDE window' --kind package-container --timeout 300 --output dist/evidence/package-lifecycle -- bash build/test-package-container.sh dist/evidence/package-details
+      - name: Collect gallery
+        if: always()
+        run: python3 build/collect-evidence.py dist/evidence
+      - name: Preserve all evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: orez-package-integration-evidence
+          path: dist/evidence/
+          retention-days: 14

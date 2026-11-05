@@ -1,0 +1,23 @@
+{
+  "name": "orez-development-tools",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "preview:dev": "vite --config preview/vite.config.ts --host 127.0.0.1",
+    "preview:build": "tsc --noEmit -p preview/tsconfig.json && vite build --config preview/vite.config.ts && node --check dist/preview/sw.js && node build/export-preview.mjs",
+    "preview:test": "playwright test --config preview/playwright.config.ts",
+    "evidence:render": "node build/render-evidence.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.6"
+  }
+}

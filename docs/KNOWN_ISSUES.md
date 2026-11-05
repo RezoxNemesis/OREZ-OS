@@ -1,5 +1,17 @@
 # OREZ OS — unresolved blockers
 
+## Current additions — 5 November 2026
+
+- An actual ordinary-user package test found inaccessible commands when builders inherited a restrictive checkout umask. Explicit payload staging and stricter archive mode/owner validation fix the source; 52 regression tests pass. Full ISO boot with the changed staging path is still untested. This does not establish the cause of prior CI black frames, where checkout permissions differed.
+
+- Browser preview is interactive but separate from native Plasma. Real Android browser/PWA installation and touch/accessibility-device testing are pending. The portable HTML requires a browser capable of running local JavaScript; a file viewer may not work.
+- Package tests use a minimal Ubuntu dependency container with networking disabled. It has no kernel boot or physical GPU. Its default documentation exclusions initially removed two OREZ files; the desktop test fixture includes OREZ docs explicitly. Move runtime welcome HTML out of `/usr/share/doc` before supporting minimized hosts, and repeat the upstream path-collision audit when its path changes.
+- Source, package-content, browser and native-container checks cannot certify Calamares, Secure Boot, graphics, encrypted install, package version upgrade, rollback or real phone pairing. Those gates remain open.
+- Source screenshots and logs retained by Actions expire after 14 days; older ISO evidence expires after two days. The tracked ledger is durable but does not replace the original downloadable evidence bundle.
+- Original-code licensing remains owner-reserved; public binary release obligations and long-term security maintenance are still unresolved.
+
+## Historical blocker ledger (read latest handoff first)
+
 1. **Do not install on the real SSD.** The upstream Kubuntu installer is not customized/tested and may not install OREZ's live SquashFS overlay; no restore procedure exists yet.
 2. Initial ISO creation and direct-kernel casper VM boot passed. Still missing: OVMF/UEFI boot, graphical Plasma session, Secure Boot, NVIDIA/Wi-Fi/Realme actual hardware tests.
 3. The 5+ GB image was ephemeral in a GitHub job and was **not uploaded**. Public image redistribution must respect upstream licences/marks and verified release signatures.

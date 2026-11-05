@@ -1,5 +1,10 @@
 # OREZ OS architecture decisions
 
+- ADR-009 (2026-11-05): Implement phone-first exploration as a clearly labelled responsive React preview with a portable HTML export and optional HTTPS PWA. Do not replace Android or connect browser code to native permissions. Pairing and installer views remain demonstrative/blocked until real implementations are qualified.
+- ADR-010 (2026-11-05): Every test run retains screenshots, output, source identity and failure evidence. Native Xvfb windows, browser views and VM framebuffers are separate evidence classes. Use manual-only Ubuntu container tests for APT ownership/reinstall/removal while VM graphics remain blocked; this cannot qualify Calamares or hardware.
+- ADR-011 (2026-11-05): Align the blueprint with the repository's existing owner-reserved original-source/artwork policy. An explicit original-code licence and component obligations are release prerequisites; a public repository is not a licence grant.
+- ADR-012 (2026-11-05): Builders stage explicit root-owned 0755 directories/commands and 0644 data instead of inheriting checkout permissions. Package mode/owner checks and ordinary-user execution are required acceptance gates. A source file-list pass alone is insufficient.
+
 - ADR-001 (2026-11-04): Kubuntu 26.04.1 LTS + KDE Plasma 6 selected for stable drivers, software, desktop and security foundation.
 - ADR-002 (2026-11-04): Signed-checksum-verified upstream ISO + small original SquashFS overlay for fast initial live proof. Installer persistence requires separate qualification.
 - ADR-003 (2026-11-04): AI privileges/remote command absent until typed least-privilege broker and user consent are independently tested.

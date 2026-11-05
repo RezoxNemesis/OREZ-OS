@@ -60,9 +60,17 @@ def inspect(contents, required, control_members, package_name, architecture):
     unexpected_control = sorted(members - {"control", "md5sums"})
     missing = sorted(wanted - present)
     unexpected = sorted(present - wanted)
+    bad_permissions = []
+    for line in contents.splitlines():
+        parts = line.split(maxsplit=5)
+        mode, owner, name = parts[0], parts[1], parts[5].split(' -> ', 1)[0]
+        relative = name.removeprefix('./').rstrip('/')
+        expected = 'drwxr-xr-x' if mode.startswith('d') else '-rwxr-xr-x' if relative.startswith('usr/bin/') else '-rw-r--r--'
+        if mode != expected or owner != 'root/root':
+            bad_permissions.append({'path': name, 'mode': mode, 'owner': owner, 'expected': expected})
     blocked = bool(
         missing or unexpected or other_types or dangerous_scripts or
-        unexpected_control or package_name != "orez-shell" or architecture != "all"
+        unexpected_control or bad_permissions or package_name != "orez-shell" or architecture != "all"
     )
     return {
         "status": "BLOCKED" if blocked else "PACKAGE_CONTENTS_PASS",
@@ -75,6 +83,7 @@ def inspect(contents, required, control_members, package_name, architecture):
         "unexpected_control_members": unexpected_control,
         "package": package_name,
         "architecture": architecture,
+        "invalid_permissions_or_owners": bad_permissions,
         "limitations": "No installation, apt dependency resolution, dpkg ownership on target, boot or recovery test performed.",
     }
 

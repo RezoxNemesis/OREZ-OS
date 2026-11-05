@@ -1,5 +1,15 @@
 # OREZ OS — evidence-based engineering roadmap
 
+## 5 November implementation checkpoint
+
+The full master blueprint exists. A separate responsive browser preview is implemented and production-built; appearance persistence/reset, demo-device consent/revocation, safe installer status, keyboard/reduced-motion behavior, portable export, and corrected offline loading have local evidence. These do not advance native desktop, phone or installer acceptance.
+
+Source checks still pass 49 cases. The native package explicitly declares its Settings/Connect dependencies and retains the 16-file audit. Real APT/container and native UI checks are recorded in the session handoff. New screenshot infrastructure retains failures and distinguishes source reports, browser views and native container windows. Source/preview CI is automatic; the larger package integration job is manual-only.
+
+Next: qualify a visible Plasma desktop on a suitable VM; validate real Calamares installation and dpkg registration on disposable virtual disks; test reboot, encryption, rollback and data restoration. Hardware and signed distribution follow those gates. Version upgrade/downgrade is a separate package test, not established by same-version reinstall.
+
+## Original milestone ledger and historical evidence
+
 | Milestone | Planned outcome | Current status |
 |---|---|---|
 | M0 | Source, requirements, repository rules, handoff | Partial |
