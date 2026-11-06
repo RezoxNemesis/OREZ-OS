@@ -34,9 +34,9 @@ public final class WriteService extends Service {
     private volatile boolean monitorActive=false;
     private Thread monitorThread;
     private LiveMonitorClient monitorClient;
-    private String reportIsoSha256="", reportUsbProduct="USB mass storage";
-    private long reportIsoBytes=0, reportUsbBytes=0;
-    private int reportUsbVid=0, reportUsbPid=0;
+    public static volatile String reportIsoSha256="", reportUsbProduct="USB mass storage";
+    public static volatile long reportIsoBytes=0, reportUsbBytes=0;
+    public static volatile int reportUsbVid=0, reportUsbPid=0;
     private static final String CHANNEL="orez_linux_writer";
     private static final int NOTIFICATION_ID=730;
     private PowerManager.WakeLock wakeLock;
@@ -288,7 +288,27 @@ public final class WriteService extends Service {
             .put("done",done)
             .put("total",total)
             .put("checksumMatch",checksumMatched)
-            .put("checksumSource",checksumMatched?"user-provided official SHA256SUMS":"");
+            .put("checksumSource",checksumMatched?"user-entered reference checksum":"");
+    }
+
+    public static String diagnosticReport() {
+        int percent=total>0?(int)Math.min(100,done*100/total):0;
+        String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
+        return "OREZ USB Studio Linux 0.3.1 diagnostic report\\n"+
+            "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\\n"+
+            "Phase: "+phase+"\\n"+
+            "Detail: "+detail+"\\n"+
+            "Running: "+running+"\\n"+
+            "Success: "+success+"\\n"+
+            "Progress: "+done+" / "+total+" bytes ("+percent+"%)\\n"+
+            "ISO size: "+reportIsoBytes+" bytes\\n"+
+            "ISO SHA-256: "+reportIsoSha256+"\\n"+
+            "Target architecture: x86_64\\n"+
+            "USB: "+target+"\\n"+
+            "USB capacity: "+reportUsbBytes+" bytes\\n"+
+            "Source checksum matched entered reference: "+checksumMatched+"\\n"+
+            "Live Monitor: "+monitorState+"\\n"+
+            "USB serial number, Android file URI, ISO contents and pairing token are excluded.";
     }
 
     private void stopLiveMonitor() {
