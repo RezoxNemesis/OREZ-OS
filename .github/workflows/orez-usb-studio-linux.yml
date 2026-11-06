@@ -72,9 +72,9 @@ jobs:
       - name: Upload APK and checksum
         uses: actions/upload-artifact@v4
         with:
-          name: OREZ-USB-Studio-Linux-0.3.0
+          name: OREZ-USB-Studio-Linux-0.3.1
           path: |
-            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.3.0.apk
+            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.3.1.apk
             tools/orez-usb-studio-linux/dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
