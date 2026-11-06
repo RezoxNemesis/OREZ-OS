@@ -1,6 +1,13 @@
-# OREZ Flash Formatter 1.0.0
+# OREZ Flash Formatter 1.0.1
 
-A standalone Android USB OTG flash-drive formatter. It uses Android USB Host and USB Mass Storage Bulk-Only Transport (BOT), performs a read-only capacity/preflight check, then on explicit user confirmation writes an MBR + FAT32 layout and reads back key structures.
+A standalone Android USB OTG flash-drive formatter. It uses Android USB Host and USB Mass Storage Bulk-Only Transport (BOT), performs a read-only capacity/preflight check, then on explicit user confirmation writes an MBR + FAT32 layout and reads back the MBR, FAT32 boot sector, and both FAT tables.
+
+## 1.0.1 compatibility and diagnostics
+
+- Requests SCSI sense data after a CHECK CONDITION response and reports the rejected command, LBA, sense key, and ASC/ASCQ where available.
+- Recognises an explicitly unsupported SCSI SYNCHRONIZE CACHE command and continues only with read-back verification; it does not ignore rejected data writes.
+- Reports the phase and exact device error when formatting stops.
+- Never automatically retries a failed USB command or resumes a partially completed format.
 
 ## Safety
 
