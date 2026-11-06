@@ -2,7 +2,7 @@ package com.orez.formatter;
 
 import java.io.IOException;
 
-/** Creates a conventional MBR/FAT32 volume so Android file managers can mount a recovered USB. */
+/** Creates a conventional MBR/FAT32 volume and verifies it by reading it back. */
 public final class UsbFat32Formatter {
     private static final int SECTOR=512, RESERVED=32, PARTITION_START=2048, SECTORS_PER_CLUSTER=64;
     private UsbFat32Formatter() {}
@@ -24,10 +24,17 @@ public final class UsbFat32Formatter {
         if(clusters<65525 || clusters>0x0ffffff5L || fatSectors>0xffffffffL)
             throw new IOException("The USB capacity is outside the supported FAT32 layout.");
         byte[] zero=new byte[UsbBot.MAX_TRANSFER];
-        // Remove both primary and backup GPT/ISO metadata before publishing the new MBR.
-        for(long l=0;l<34;l++) bot.write(l,zero,0,SECTOR);
-        for(long l=Math.max(34,disk-33);l<disk;l++) bot.write(l,zero,0,SECTOR);
-        bot.sync();
+        // Remove primary and backup GPT/ISO signatures before writing a new MBR.
+        for(long l=0;l<34;l++) {
+            bot.write(l,zero,0,SECTOR);
+            if(progress!=null) progress.update("Clearing old partition metadata",l+1,34);
+        }
+        for(long l=Math.max(34,disk-33);l<disk;l++) {
+            bot.write(l,zero,0,SECTOR);
+            if(progress!=null) progress.update("Clearing backup partition metadata",l-Math.max(34,disk-33)+1,Math.min(33,disk-34));
+        }
+        if(!bot.sync() && progress!=null)
+            progress.update("Drive has no cache-flush command; read-back verification will be used",1,1);
 
         byte[] mbr=new byte[SECTOR];
         mbr[446]=(byte)0x00; mbr[450]=(byte)0x0c;
@@ -67,7 +74,8 @@ public final class UsbFat32Formatter {
         writeFat(bot,fat2,fatSectors,firstFat,progress,"Initializing FAT 2");
         byte[] root=new byte[SECTOR];
         bot.write(PARTITION_START+RESERVED+2*fatSectors,root,0,SECTOR);
-        bot.sync();
+        if(!bot.sync() && progress!=null)
+            progress.update("Verifying without device cache-flush support",1,1);
 
         byte[] verify=new byte[SECTOR];
         bot.read(0,verify,0,SECTOR);
@@ -79,6 +87,9 @@ public final class UsbFat32Formatter {
         bot.read(fat1,verify,0,SECTOR);
         if((verify[0]&255)!=0xf8 || (verify[8]&255)!=0xff)
             throw new IOException("FAT table read-back verification failed.");
+        bot.read(fat2,verify,0,SECTOR);
+        if((verify[0]&255)!=0xf8 || (verify[8]&255)!=0xff)
+            throw new IOException("Second FAT read-back verification failed.");
         if(progress!=null) progress.update("FAT32 format verified",disk,disk);
     }
 
