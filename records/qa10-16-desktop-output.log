@@ -1,0 +1,102 @@
+NATIVE DESKTOP TEST: isolated Ubuntu container, not an ISO boot or hardware certification.
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
+blender 5.0.1+dfsg-1ubuntu1
+dolphin 4:25.12.3-0ubuntu1
+ffmpeg 7:8.0.1-3ubuntu2
+konsole 4:25.12.3-0ubuntu1
+kwin-wayland 4:6.6.6-0ubuntu0.1
+orez-shell 0.1.0-4
+plasma-workspace 4:6.6.6-0ubuntu0.1
+/usr/bin/kwin_wayland: OK
+Test fixture only: removed KWin realtime-scheduling file capability; executable bytes unchanged.
+name of display: :99
+display: :99  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Mesa (0xffffffff)
+    Device: llvmpipe (LLVM 21.1.8, 256 bits) (0xffffffff)
+    Version: 26.0.8
+    Accelerated: no
+    Video memory: 18007MB
+    Unified memory: yes
+    Preferred profile: core (0x1)
+    Max core profile version: 4.5
+    Max compat profile version: 4.5
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.2
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 0 MB, largest block: 0 MB
+    VBO free aux. memory - total: 15329 MB, largest block: 15329 MB
+    Texture free memory - total: 0 MB, largest block: 0 MB
+    Texture free aux. memory - total: 15329 MB, largest block: 15329 MB
+    Renderbuffer free memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free aux. memory - total: 15329 MB, largest block: 15329 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 0 MB
+    Total available memory: 18007 MB
+    Currently available dedicated video memory: 0 MB
+OpenGL vendor string: Mesa
+OpenGL renderer string: llvmpipe (LLVM 21.1.8, 256 bits)
+OpenGL core profile version string: 4.5 (Core Profile) Mesa 26.0.8-1ubuntu0.3
+OpenGL core profile shading language version string: 4.50
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.5 (Compatibility Profile) Mesa 26.0.8-1ubuntu0.3
+OpenGL shading language version string: 4.50
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 26.0.8-1ubuntu0.3
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.kde.ActivityManager' requested by ':1.2' (uid=1500 pid=4037 comm="plasmashell --no-respawn" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.kde.ActivityManager'
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.kde.KSplash' requested by ':1.2' (uid=1500 pid=4037 comm="plasmashell --no-respawn" label="kernel")
+1
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.kde.kdeconnect' requested by ':1.2' (uid=1500 pid=4037 comm="plasmashell --no-respawn" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.kde.kdeconnect'
+kdeconnect.core: Failed to open any MDNS client sockets
+kdeconnect.core: Failed to open any MDNS server sockets
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.freedesktop.Notifications' requested by ':1.6' (uid=1500 pid=4084 comm="/usr/bin/kdeconnectd" label="kernel")
+Cannot find a compatible running Bluez. Please check the Bluez installation. QtBluetooth requires at least BlueZ version 5.
+kdeconnect.core: No local bluetooth adapter found
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.freedesktop.Notifications'
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.kde.kded6' requested by ':1.8' (uid=1500 pid=4104 comm="/usr/lib/x86_64-linux-gnu/libexec/kf6/kioworker /u" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.kde.kded6'
+"applications.menu"  not found in  QList("/etc/xdg/menus")
+PASS: native KWin and Plasma desktop objects exist; screenshot requires review.
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.12' (uid=1500 pid=4126 comm="busctl call --user org.a11y.Bus /org/a11y/bus org." label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[4144]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1500 pid=4032 comm="kwin_wayland --x11-display :99 --width 1440 --heig" label="kernel")
+SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+dbus-daemon[4144]: Successfully activated service 'org.a11y.atspi.Registry'
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.16' (uid=1500 pid=4160 comm="plasma-apply-colorscheme OREZInk" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.17' (uid=1500 pid=4185 comm="plasma-apply-colorscheme OREZPaper" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+{"name": "appearance", "status": "passed", "detail": {"wallpaper": "file:///usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg", "palettes_applied": ["OREZInk", "OREZPaper"], "final_demo_palette": "OREZPaper", "default_first_boot_palette_not_changed_in_source": true}}
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Activating service name='org.kde.runners.baloo' requested by ':1.2' (uid=1500 pid=4037 comm="plasmashell --no-respawn" label="kernel")
+dbus-daemon[4030]: [session uid=1500 pid=4030 pidfd=5] Successfully activated service 'org.kde.runners.baloo'
+{"name": "launcher", "status": "passed", "detail": {"input_delivered": true, "visual_review_required": true, "scope": "Native launcher search, not an application download"}}
+{"name": "file-operations", "status": "passed", "detail": {"copy_rename_trash_undo": true, "original_unchanged": true, "tabs_split_input_delivered": true, "fixture": "/home/orez-test/OREZ-Tour-4119", "physical_usb_tested": false}}
+{"name": "multitasking", "status": "passed", "detail": {"windows": [{"app": "dolphin", "width": 690}, {"app": "konsole", "width": 690}], "minimize_restore": true, "workspace": {"count": 2, "name": "OREZ Tour"}, "interface": "Real KWin scripting interface"}}
+qt.bluetooth.bluez: Missing CAP_NET_ADMIN permission. Cannot determine whether a found address is of random or public type.
+qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+{"name": "shell-restart", "status": "passed", "detail": {"apps_before": ["dolphin", "konsole"], "apps_after": ["dolphin", "konsole"], "panel_returned": true, "kernel_driver_power_failure_tested": false}}
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke (error 1). Did the X11 server die?

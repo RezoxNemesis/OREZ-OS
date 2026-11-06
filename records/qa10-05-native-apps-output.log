@@ -1,0 +1,4 @@
+python3: can't open file '/input/daily-apps.py': [Errno 13] Permission denied
+python3: can't open file '/input/store.py': [Errno 13] Permission denied
+python3: can't open file '/input/store-app-input.py': [Errno 13] Permission denied
+Error response from daemon: Could not find the file /evidence/store in container orez-tour-20261106

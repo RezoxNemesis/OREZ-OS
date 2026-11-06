@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "qa10-09-connectivity",
+  "kind": "package-container",
+  "started_at": "2026-11-06T02:02:30.645837+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "82d42f844f323d81103d4eedbd2099d090fb791065b3ab1e19600618e4990cb6",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-connectivity.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 44.81,
+  "finished_at": "2026-11-06T02:03:15.505995+00:00",
+  "log_sha256": "555ec13e4d2028db5ddabe93a5f69480bd1abe2b7bd84240199a0b85026e1586"
+}

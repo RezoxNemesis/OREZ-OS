@@ -1,0 +1,19 @@
+{"name": "calendar-create-edit", "status": "passed", "detail": "Actual event creation and editing persisted to local SQLite."}
+{"name": "calendar-ics-export", "status": "passed", "detail": "Actual save dialog exported .ics with UTF-8 notes and private permissions."}
+{"name": "calendar-delete-consent", "status": "passed", "detail": "Cancel preserves the event; explicit delete removes only that event."}
+{"name": "reuz-preferences", "status": "passed", "detail": "Timezone and format preferences saved; system clock not changed."}
+{"name": "reuz-countdown", "status": "passed", "detail": "Real Qt countdown pause/resume/completion; no physical audio or wake test."}
+{"name": "reuz-stopwatch", "status": "passed", "detail": "Default buttons start/pause, lap and reset the real stopwatch."}
+{"name": "native-theme-palettes", "status": "passed", "detail": "Real app renders both packaged palette definitions; this is app-level color testing, not a full Plasma-session theme switch."}
+{"name": "close-active-clock", "status": "passed", "detail": "Active-work warning is cancellable; confirmed close stops UI timers and leaves no background app."}
+{"name": "catalog", "status": "passed", "detail": {"native_widgets": true, "apps": 10, "runs_as_uid": 1500}}
+{"name": "search-and-empty", "status": "passed", "detail": "Search, empty state and clear all work."}
+{"name": "actual-android-gates", "status": "passed", "detail": "All requested Android entries are visibly pending; no APK/provider is installed."}
+{"name": "cancel-runtime-start", "status": "passed", "detail": "Development runtime acknowledgement can be cancelled; no emulator, licence acceptance or download starts."}
+{"name": "my-apps", "status": "passed", "detail": {"detected_apps": ["brave-linux", "vlc", "supertux"], "android_not_falsely_installed": true}}
+{"name": "launch-native-vlc", "status": "passed", "detail": {"native_vlc_processes": [1637], "window_observed": true, "media_playback_tested": false, "network_consents_accepted": false}}
+{"name": "publisher-info-cancel", "status": "passed", "detail": "Opening an external site can be cancelled; no browser started."}
+{"name": "activity-controls", "status": "passed", "detail": "Local controls/action log visible; no account information used."}
+{"name": "close-reopen", "status": "passed", "detail": "Store closes and reopens without a resident downloader."}
+{"name": "vlc-default-keyboard-mouse", "status": "passed", "detail": {"version": "3.0.23-1", "positions_us": [1900474, 2900390], "space_pause_resume": true, "mouse_context_menu": true, "fullscreen_f": true, "quit_ctrl_q": true, "custom_key_mapping": false, "hardware_acceleration_tested": false, "audio_tested": false, "scope": "generated local video, native Linux application"}}
+{"name": "native-brave", "status": "blocked", "detail": {"exit_code": 0, "reason": "Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted\n[1799:1799:1106/015852.530330:FATAL:content/browser/zygote_host/zygote_host_impl_linux.cc:228] Zygote process exited prematurely with exit code 1\n[1106/015852.534992:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)\n[1106/015852.535047:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)\n/usr/bin/brave-browser: line 30:  1799 Trace/breakpoint trap      \"$HERE/brave\" \"$@\"\n", "sandbox_bypassed": false, "scope": "Native launch attempted; no working browser or browsing claim"}}

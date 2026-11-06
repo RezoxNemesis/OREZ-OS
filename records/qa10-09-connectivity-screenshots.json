@@ -1,0 +1,8 @@
+{
+  "kind": "test-report",
+  "screenshots": [
+    "report-001.png",
+    "report-002.png",
+    "report-003.png"
+  ]
+}

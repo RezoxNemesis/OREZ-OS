@@ -1,0 +1,2149 @@
+{
+  "scope": "Actual component tour plus labeled historical VM and document render; not installation approval.",
+  "unique_images": 245,
+  "capture_references": 296,
+  "references": [
+    {
+      "source": "qa10-01-setup/report-001.png",
+      "sha256": "135cfaea5715991df59734bf953186f04feb263ced33d7f757ea1a3a1c30f400",
+      "bytes": 217844
+    },
+    {
+      "source": "qa10-01-setup/report-002.png",
+      "sha256": "a58ae31f8415f9c492ee0df6cac21fae114b221fe277e1b3610d4cc09f056379",
+      "bytes": 154165
+    },
+    {
+      "source": "qa10-01-setup/report-003.png",
+      "sha256": "f55c00f89f8f6c3dcb4827d563675b8522b13a87701501118ddac69e6583f45d",
+      "bytes": 145613
+    },
+    {
+      "source": "qa10-01-setup/report-004.png",
+      "sha256": "e7e60b441e0abbb1ceae77d9db06d96178736f0192a20e739bccc853c3713e87",
+      "bytes": 147089
+    },
+    {
+      "source": "qa10-02-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "326ebf1cf1536d42cd18c16f44d79324a1e9079d1d63fa91bf044605cede2dff",
+      "bytes": 1122865
+    },
+    {
+      "source": "qa10-02-desktop/native-details/last-frame.png",
+      "sha256": "326ebf1cf1536d42cd18c16f44d79324a1e9079d1d63fa91bf044605cede2dff",
+      "bytes": 1122865
+    },
+    {
+      "source": "qa10-02-desktop/report-001.png",
+      "sha256": "dd7d9468b85522fea6365f910a71a57a868978c00510fa029477467bb3f7252b",
+      "bytes": 176384
+    },
+    {
+      "source": "qa10-02-desktop/report-002.png",
+      "sha256": "2cadc560fa4b5b84bced433f50df283843738897c6080b60babf48d5ce78e8ca",
+      "bytes": 235755
+    },
+    {
+      "source": "qa10-02-desktop/report-003.png",
+      "sha256": "3a2cbfb55d17032c514ef975678c7ba1c96388dfe18c92347998337813610001",
+      "bytes": 209089
+    },
+    {
+      "source": "qa10-02-desktop/report-004.png",
+      "sha256": "6fa8b837ec10230873383c31fa79e24826825b7298c29e336b9a84d63a37dfd1",
+      "bytes": 136444
+    },
+    {
+      "source": "qa10-03-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "6f67987c342f81dec7778f8c7ca55fd00e773487fd202debb7a301f9df55b9ea",
+      "bytes": 1122921
+    },
+    {
+      "source": "qa10-03-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "6f67987c342f81dec7778f8c7ca55fd00e773487fd202debb7a301f9df55b9ea",
+      "bytes": 1122921
+    },
+    {
+      "source": "qa10-03-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "77edb70db85b330fcef5a4828f9f70772db8f5e132191fd606b4e93c9fd45438",
+      "bytes": 1123164
+    },
+    {
+      "source": "qa10-03-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "2f17fb8885069b41ca8feeddbb796752bf5506294516b6281bfbbb4c2d4672fa",
+      "bytes": 1122877
+    },
+    {
+      "source": "qa10-03-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "463f270ea24cd647626709a711058b365ff1068e40ab8f8baf52733fc44e1205",
+      "bytes": 1226703
+    },
+    {
+      "source": "qa10-03-desktop/native-details/04-launcher-open.png",
+      "sha256": "cb01b0ddbf5d7885c9e14cf65b2556b91aa371c99e150038ad6c85ce7cb45a14",
+      "bytes": 1078781
+    },
+    {
+      "source": "qa10-03-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "bd262567292eba54b6718fda5da57a96427beaa2c59a219e963394347240c257",
+      "bytes": 1093955
+    },
+    {
+      "source": "qa10-03-desktop/native-details/06-dolphin-files.png",
+      "sha256": "23a12e57dc19d957e7c72bf94ed6781f1f531268635c20eda95d9752fd201272",
+      "bytes": 468233
+    },
+    {
+      "source": "qa10-03-desktop/native-details/07-file-copy.png",
+      "sha256": "5c255bb5bc7f53a9b5a3f5543550358bd65c2be0516d1ee7cd808540e333f92b",
+      "bytes": 468049
+    },
+    {
+      "source": "qa10-03-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "2de491f9b19644e12fe57937473ccdcd385fbf97813c2e7228b927888d3fda40",
+      "bytes": 308893
+    },
+    {
+      "source": "qa10-03-desktop/native-details/13-minimized-files.png",
+      "sha256": "4677652f00b1eafda671d89b23bca127628ef61823aeaaaa2795c517be21d7c2",
+      "bytes": 308874
+    },
+    {
+      "source": "qa10-03-desktop/native-details/14-second-workspace.png",
+      "sha256": "797d366958fb656080c4b342b118a56f7d05b9646bb41ec98c1c6b123eac406a",
+      "bytes": 1098643
+    },
+    {
+      "source": "qa10-03-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "d70e5ef263a01f8bcdf90361d94eec35dc7047e0b96ceb33219d594646d349c6",
+      "bytes": 307800
+    },
+    {
+      "source": "qa10-03-desktop/native-details/appearance.png",
+      "sha256": "86e78c99d0883e8015329fdc467b80ca46320ebb2d5a9f01f3bf85b435f72ba3",
+      "bytes": 1324259
+    },
+    {
+      "source": "qa10-03-desktop/native-details/file-operations.png",
+      "sha256": "a63a511cd2c5ebfa5be8334f78442e0047cb21fd0b347d1938d64ca5968d0846",
+      "bytes": 476831
+    },
+    {
+      "source": "qa10-03-desktop/native-details/last-frame.png",
+      "sha256": "131bafc2e0c68f6549a4b43fcc96e1d4e2e535b3c240808f493afcd590e08778",
+      "bytes": 307096
+    },
+    {
+      "source": "qa10-03-desktop/native-details/launcher.png",
+      "sha256": "bd262567292eba54b6718fda5da57a96427beaa2c59a219e963394347240c257",
+      "bytes": 1093955
+    },
+    {
+      "source": "qa10-03-desktop/native-details/multitasking.png",
+      "sha256": "90d854350a860e25a723fb76db67517ebbbbc0e6c0e8cd54f1d9556be1a54031",
+      "bytes": 1098623
+    },
+    {
+      "source": "qa10-03-desktop/native-details/shell-restart.png",
+      "sha256": "dff5346eb41f631976d2b21afe640d227f6fbb1b763a844a1558ed84a2c326f9",
+      "bytes": 307819
+    },
+    {
+      "source": "qa10-03-desktop/report-001.png",
+      "sha256": "b6360b46a457ad6da566de031ed538c3f670383f1ff91e69eb472b52f5e47539",
+      "bytes": 173785
+    },
+    {
+      "source": "qa10-03-desktop/report-002.png",
+      "sha256": "4507b8b3c095b262b012f41096e1c3ad570545d96e04aaa4729925afa57dbd7c",
+      "bytes": 235841
+    },
+    {
+      "source": "qa10-03-desktop/report-003.png",
+      "sha256": "cc61adf7993ecaba576623b540ef92f06e3e2526b6ac981fb9960c83c1db67cb",
+      "bytes": 278930
+    },
+    {
+      "source": "qa10-03-desktop/report-004.png",
+      "sha256": "38e3a2d6ea9f7fcf6a6459c14909e5c4e6b718ed489434569c39eb43bd2f5d72",
+      "bytes": 211180
+    },
+    {
+      "source": "qa10-03-desktop/report-005.png",
+      "sha256": "efd75ff557821d588e385f395d8a9e4940b268cd93c3d3ce473264047cb745b5",
+      "bytes": 183833
+    },
+    {
+      "source": "qa10-04-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "e7389b40e8415a19b707eda4c5fa10859a94ff32849a3b339733d6a1eef4d7b4",
+      "bytes": 1122748
+    },
+    {
+      "source": "qa10-04-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "e7389b40e8415a19b707eda4c5fa10859a94ff32849a3b339733d6a1eef4d7b4",
+      "bytes": 1122748
+    },
+    {
+      "source": "qa10-04-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "0884ccff80a5cd0cf5b8b3fa83c631f7042ece55adc78ac73c9cb729057b194a",
+      "bytes": 1123059
+    },
+    {
+      "source": "qa10-04-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "e7389b40e8415a19b707eda4c5fa10859a94ff32849a3b339733d6a1eef4d7b4",
+      "bytes": 1122748
+    },
+    {
+      "source": "qa10-04-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "13c0a538cb99ca32bb618602140d18277d198b117d8bd3f597f23657150ef3be",
+      "bytes": 1240055
+    },
+    {
+      "source": "qa10-04-desktop/native-details/04-launcher-open.png",
+      "sha256": "1abd1c9058d84a00f5ef647aa6a0edc9cbb0cb9cbd448921b35604bff1c13188",
+      "bytes": 1078598
+    },
+    {
+      "source": "qa10-04-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "04de0cec98cd4e3ad3dc0de192bdd83182fe51fb0e4d5b4750222c8d88a3c957",
+      "bytes": 1093830
+    },
+    {
+      "source": "qa10-04-desktop/native-details/06-dolphin-files.png",
+      "sha256": "ec845a102caad63cc1a9097a61b6779223ba02ff95ecb11dcd6f424b76beebdb",
+      "bytes": 468095
+    },
+    {
+      "source": "qa10-04-desktop/native-details/07-file-copy.png",
+      "sha256": "0b431be6518cf1d4b93c8c34c5a5d561f3cc0d437c07384fc21dfbe599f24fb6",
+      "bytes": 465657
+    },
+    {
+      "source": "qa10-04-desktop/native-details/08-rename-dialog.png",
+      "sha256": "d40f13deda1a78c0b503044d562ecb0b290004ef7f5d808b71dc21c88191b695",
+      "bytes": 470629
+    },
+    {
+      "source": "qa10-04-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "bd177dc9e533d1e935e64215514495c2f9221dabac4c7ee02d940a7430d9b973",
+      "bytes": 336135
+    },
+    {
+      "source": "qa10-04-desktop/native-details/13-minimized-files.png",
+      "sha256": "084bbe84589241599f2c47d34c09dcfd0f178a97cbb092e5bc94b0f20713d0a3",
+      "bytes": 336135
+    },
+    {
+      "source": "qa10-04-desktop/native-details/14-second-workspace.png",
+      "sha256": "ce334b58a909292de00442ec90037154f6cb687e1b0209e91e1997a750bc88b5",
+      "bytes": 1123649
+    },
+    {
+      "source": "qa10-04-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "98084f936270cb9fc4b84e21cf13f9c140fac15839a6d34b3df145c2982a3cb4",
+      "bytes": 329588
+    },
+    {
+      "source": "qa10-04-desktop/native-details/appearance.png",
+      "sha256": "f126690055ca01727247443b54f625df8036e207022f1cfff5c1696095a4e689",
+      "bytes": 1235207
+    },
+    {
+      "source": "qa10-04-desktop/native-details/file-operations.png",
+      "sha256": "d6d70afc8d6b1e8cb604bf822d3cc6e6a1ef07f26d8d073752a14626776d69db",
+      "bytes": 465729
+    },
+    {
+      "source": "qa10-04-desktop/native-details/last-frame.png",
+      "sha256": "e91ce9320e341a7302055b2f460400e6999e74dbe8adb4dc2f67eea46e74ce54",
+      "bytes": 327169
+    },
+    {
+      "source": "qa10-04-desktop/native-details/launcher.png",
+      "sha256": "1e1ef30222c456f7d33ba59c872fb2a98718c60259af1acce74c78d52f6e5042",
+      "bytes": 1093855
+    },
+    {
+      "source": "qa10-04-desktop/native-details/multitasking.png",
+      "sha256": "d7e1da4f171e1fc96a2644f8cb3c99b2cc37aa4ed3564a4ba981c24ecd8590e3",
+      "bytes": 325662
+    },
+    {
+      "source": "qa10-04-desktop/native-details/shell-restart.png",
+      "sha256": "c2d3488293e2de5e518da9c5af62bddd39f53200b72a00fe04a48cdba28704a6",
+      "bytes": 327144
+    },
+    {
+      "source": "qa10-04-desktop/report-001.png",
+      "sha256": "daf49a5632c0d05a402235c317cff9d15dc590afb86851179c19b0d4a1907afd",
+      "bytes": 168312
+    },
+    {
+      "source": "qa10-04-desktop/report-002.png",
+      "sha256": "1e11e974c87c0dda6a70bb29122d396a794da8ec55243bfcf6ec8a8de3c811eb",
+      "bytes": 229519
+    },
+    {
+      "source": "qa10-04-desktop/report-003.png",
+      "sha256": "d2b1260bf480fd17454f5d9633d8ca40c12a6b70762e321a00f314b06055676d",
+      "bytes": 266155
+    },
+    {
+      "source": "qa10-04-desktop/report-004.png",
+      "sha256": "7b8ae1158c1ff335f47f86cdef15fa4ab27953d7581a43e5285a11488c20bea3",
+      "bytes": 257047
+    },
+    {
+      "source": "qa10-04-desktop/report-005.png",
+      "sha256": "d4021c88e64d863af9d93abbe043d19b5cb281d33768e1235f46c556870b33b7",
+      "bytes": 177452
+    },
+    {
+      "source": "qa10-04-desktop/report-006.png",
+      "sha256": "15c4ad08e7cf006c3dd6e73859443eef8f3d68093e29fa7547b4f068ff874a1f",
+      "bytes": 113084
+    },
+    {
+      "source": "qa10-05-native-apps/report-001.png",
+      "sha256": "9e2892dfa93e784a8b1cf5233323f9f54c6a85baf4f1ef383fddf8c63ec333fd",
+      "bytes": 69588
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/01-calendar-saved.png",
+      "sha256": "57db73c228b59c941f3b2f6ebdb76686010bca30a53f189cad7d7272c0c8b333",
+      "bytes": 53351
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/02-calendar-create-edit.png",
+      "sha256": "f9f4b942550021892919b05442d9ebd2b02979a18174ba495f7544b8cc99d969",
+      "bytes": 53253
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/03-calendar-export-dialog.png",
+      "sha256": "4d4852868849c35360b5cd428756ed3f0046950b035f7d34dbc90aa1517b490d",
+      "bytes": 27498
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/04-calendar-ics-export.png",
+      "sha256": "c0e51cbb71c8e6a692ace60e8e99207b93e1bb845200ff48b78c1042fbbf36dc",
+      "bytes": 56736
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/05-calendar-cancel-delete.png",
+      "sha256": "efad9c28f323befc64c266fc9224d37270096b4d6cdf7886b3f04f95deab358d",
+      "bytes": 10893
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/06-calendar-confirm-delete.png",
+      "sha256": "efad9c28f323befc64c266fc9224d37270096b4d6cdf7886b3f04f95deab358d",
+      "bytes": 10893
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/07-calendar-delete-consent.png",
+      "sha256": "0eb9afa5c040d2efe0dd7cbb65fb694932050cc94ebf4f68a200eb04305de93e",
+      "bytes": 51674
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/08-reuz-preferences.png",
+      "sha256": "29112006c6dfa735d49603e0b1ee0cf5c98cac1eaefc9cdee11f5199df1d5ceb",
+      "bytes": 45718
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/09-reuz-paused-timer.png",
+      "sha256": "c367d2baae2c1e33161829a347f6bdb90138b4f882b0b85f6bc1e3d6f4d12523",
+      "bytes": 32029
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/10-reuz-countdown.png",
+      "sha256": "7d7e73f08f298982e348e8bf87cb93021b8d689b1fe35164082e18686b50d1a6",
+      "bytes": 32085
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/11-reuz-stopwatch-lap.png",
+      "sha256": "e41f58bc0124ec4d67891b6d4b8731d49f901ef37aed34bfe6f4f24af6ffe897",
+      "bytes": 30898
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/12-reuz-stopwatch.png",
+      "sha256": "3dfc3a158c898b05d57e92d8192d7c11050103da1ebc840ece4f695b9688511b",
+      "bytes": 28564
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/13-reuz-OREZInk.png",
+      "sha256": "f5fe07eed8174327ce36f84011a12f0bbfa584ebd2872379b7c4e6842301799b",
+      "bytes": 29073
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/14-reuz-OREZPaper.png",
+      "sha256": "d26a1489da456105eca3bd10c0bf15184ef04c97be22a78076d5bc71d7de3f01",
+      "bytes": 28834
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/15-native-theme-palettes.png",
+      "sha256": "d26a1489da456105eca3bd10c0bf15184ef04c97be22a78076d5bc71d7de3f01",
+      "bytes": 28834
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/16-reuz-close-cancel.png",
+      "sha256": "3706f1e71238196486a4a2d8b8d3c7c67778d2df81e8cb6ed4a6528306e5f34e",
+      "bytes": 11771
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/17-reuz-close-confirm.png",
+      "sha256": "3706f1e71238196486a4a2d8b8d3c7c67778d2df81e8cb6ed4a6528306e5f34e",
+      "bytes": 11771
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/18-close-active-clock.png",
+      "sha256": "c0fca343463ee54b2227b0a327cefbc637f3cf04062fc36042477a5d59a8f224",
+      "bytes": 28988
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/daily-apps/closed-app-display.png",
+      "sha256": "677e71d92027ed4e1e28a4893e8b98c28efd3273a57c2c79c0064900d4b8598d",
+      "bytes": 3869
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/01-vlc-actual-playback.png",
+      "sha256": "620e16ab39681a72eb960ecfdfa0541dd5433909c689cd76b402fd68d9d677b5",
+      "bytes": 79139
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/02-vlc-default-space-paused.png",
+      "sha256": "c31a0bb84263f0da23481f444bdec1f545b631ab2c5d2245897515dbd9e7fd89",
+      "bytes": 76978
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/03-vlc-mouse-context-menu.png",
+      "sha256": "268b07e2da428f4312ea1ea0ba9a3f27fc7bcdb48f7880498db974af52c9c83d",
+      "bytes": 66175
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/04-vlc-default-f-fullscreen.png",
+      "sha256": "f27a1a4411aaf095ec51746c5649473e23c2be98b5a4ec7d47ae191c3a9de6bc",
+      "bytes": 62575
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/04-vlc-mouse-paused.png",
+      "sha256": "8a1c6678e2d264d6bdccada85b28e41fbefb938d25ce3d8800b0465b7d112d50",
+      "bytes": 76237
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/05-vlc-default-quit.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/06-brave-start-attempt.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/native-brave-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/input/vlc-default-keyboard-mouse-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/01-catalog.png",
+      "sha256": "bcdd9439f05cda24dcba1bc909bd3bb143a0b5637988143dfe595f1ea394fd8a",
+      "bytes": 110801
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/02-search-subway.png",
+      "sha256": "bc3fd34ecdfcaecccf7d47b5ba290197b8a947b74ddbf02bc4fc40213ffba11e",
+      "bytes": 91704
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/03-empty-search.png",
+      "sha256": "b740be69f34f32f9903afdf710f07b72b88fba0741d48ca8bc4317b0ed3e4cde",
+      "bytes": 53136
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/04-search-and-empty.png",
+      "sha256": "bcdd9439f05cda24dcba1bc909bd3bb143a0b5637988143dfe595f1ea394fd8a",
+      "bytes": 110801
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/05-youtube-blocked.png",
+      "sha256": "bcdd9439f05cda24dcba1bc909bd3bb143a0b5637988143dfe595f1ea394fd8a",
+      "bytes": 110801
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/06-instagram-blocked.png",
+      "sha256": "ab412a438a99328f7e88abcebe48218c5f41872fd514c56becb5bf47997ee6db",
+      "bytes": 110811
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/07-free-fire-blocked.png",
+      "sha256": "1caa992a640269f8ba827d3000b4d9d994d7a4b5641897ca8989cbaea3d63e85",
+      "bytes": 108596
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/08-subway-surfers-blocked.png",
+      "sha256": "6b259ebc673a6c71f548edb10ea42c212a38d6dbfecb5cd87248de66a0bd5287",
+      "bytes": 110507
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/09-asphalt-legends-blocked.png",
+      "sha256": "95f38cab0503c432c4c0ac2cd4ad6b2830bc9a4f2ba02d5071ff1151e5a747ea",
+      "bytes": 110826
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/10-play-store-blocked.png",
+      "sha256": "ce4939a6976ab0fd1079ceff4256064eab50bb7b5ef2edce753980026128b6fa",
+      "bytes": 110692
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/11-actual-android-gates.png",
+      "sha256": "ce4939a6976ab0fd1079ceff4256064eab50bb7b5ef2edce753980026128b6fa",
+      "bytes": 110692
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/12-runtime-consent-cancel-dialog.png",
+      "sha256": "94fca8d149bf5c456dbfaa4a3e420fce850bddc1879fa480bdbcd9906e5f1a93",
+      "bytes": 20084
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/13-cancel-runtime-start.png",
+      "sha256": "bcdd9439f05cda24dcba1bc909bd3bb143a0b5637988143dfe595f1ea394fd8a",
+      "bytes": 110801
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/14-my-apps.png",
+      "sha256": "192e1ce0dc2283f58f376a69bb8e908a151c3ac9a7107e3b01b887613665c983",
+      "bytes": 98461
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/15-launch-native-vlc.png",
+      "sha256": "3b15a938a8b037bfd86dc96d830198e0e885ddaeb8b8fff0c222b02696493f7b",
+      "bytes": 100701
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/16-external-source-cancel.png",
+      "sha256": "fbefac49503e45b717713826c1ff9dea8f5409cb24a09051c7c72628a563b62f",
+      "bytes": 21649
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/17-publisher-info-cancel.png",
+      "sha256": "8cbec411e6e007be4dbff161e3d1b2437cefc1e39b6976f59d26e78fa8a741be",
+      "bytes": 110542
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/18-local-activity-controls.png",
+      "sha256": "5cfc19e5f504457dc2a7cfd8fd13178002178a153eead0d7435a9108c13f7969",
+      "bytes": 57984
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/19-activity-controls.png",
+      "sha256": "8cbec411e6e007be4dbff161e3d1b2437cefc1e39b6976f59d26e78fa8a741be",
+      "bytes": 110542
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/20-close-reopen.png",
+      "sha256": "bcdd9439f05cda24dcba1bc909bd3bb143a0b5637988143dfe595f1ea394fd8a",
+      "bytes": 110801
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/closed-native-store-display.png",
+      "sha256": "677e71d92027ed4e1e28a4893e8b98c28efd3273a57c2c79c0064900d4b8598d",
+      "bytes": 3869
+    },
+    {
+      "source": "qa10-06-native-apps/native-details/store/native-vlc-opened-from-store.png",
+      "sha256": "f0cab6683b987b97bb1266145bf17d4e5ddb121106dff444355cf6def76c86f0",
+      "bytes": 126339
+    },
+    {
+      "source": "qa10-06-native-apps/report-001.png",
+      "sha256": "3e46090153d0fae50b518422ac7b12b8ed79e34a8cae1b5f455bf8269046343d",
+      "bytes": 249243
+    },
+    {
+      "source": "qa10-06-native-apps/report-002.png",
+      "sha256": "92459785c34c4763f82fab95629369fb8e0ad62d6e651ff4be78d49e12aefda8",
+      "bytes": 56219
+    },
+    {
+      "source": "qa10-07-components/native-details/01-login-test-mode.png",
+      "sha256": "362503afd1757649989896ae7d2059956b3640b04f9a4377d043ceb2c006ed71",
+      "bytes": 1055228
+    },
+    {
+      "source": "qa10-07-components/native-details/02-login-empty-password.png",
+      "sha256": "42be4f4bc05c488c2fe60c0c9fcf41847ce9a4d8194361b8e4210f574b8121eb",
+      "bytes": 1053626
+    },
+    {
+      "source": "qa10-07-components/native-details/03-login-password-masked.png",
+      "sha256": "050355222327445a545be130a745acd601576d95ac2cfc6cc8e6e0acf89154b7",
+      "bytes": 1055197
+    },
+    {
+      "source": "qa10-07-components/native-details/04-installer-current-safety-block.png",
+      "sha256": "dc75733e33af195feb81ecf2f3a768fac7a48feb0d22a6f41197fe3212e7657f",
+      "bytes": 24665
+    },
+    {
+      "source": "qa10-07-components/native-details/06-game-fullscreen-before.png",
+      "sha256": "dc5771b4501fc7016687634e52747b0b75a1d201603b3eac278b99490c94f099",
+      "bytes": 22019
+    },
+    {
+      "source": "qa10-07-components/native-details/07-game-fullscreen-after-input.png",
+      "sha256": "190d9100b2fc777d426901bfeb1c4661e5adec14e2f79b84bb3690540f5690e6",
+      "bytes": 234432
+    },
+    {
+      "source": "qa10-07-components/native-details/08-game-pause-menu.png",
+      "sha256": "d1e7e81145158a6ec2fdf8852b6c67c98f934edcca5da43277082f1dae9c0920",
+      "bytes": 259710
+    },
+    {
+      "source": "qa10-07-components/native-details/fullscreen-game-result.png",
+      "sha256": "f69b107d9cf58440761754b83f3b845dc6d0b784ce842f966dc36227f0f43d27",
+      "bytes": 39364
+    },
+    {
+      "source": "qa10-07-components/native-details/installer-guard-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-07-components/native-details/login-theme-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-07-components/native-details/phone-connect-result.png",
+      "sha256": "f69b107d9cf58440761754b83f3b845dc6d0b784ce842f966dc36227f0f43d27",
+      "bytes": 39364
+    },
+    {
+      "source": "qa10-07-components/report-001.png",
+      "sha256": "8345a154091c624e016002680d936496cf55321db7735dcf1dad3128dff4fdcf",
+      "bytes": 158731
+    },
+    {
+      "source": "qa10-08-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "4d8d9fe87c78981979ba1467325fce90a596c9b3a8364622672bc4e2c4345b15",
+      "bytes": 1122770
+    },
+    {
+      "source": "qa10-08-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "4d8d9fe87c78981979ba1467325fce90a596c9b3a8364622672bc4e2c4345b15",
+      "bytes": 1122770
+    },
+    {
+      "source": "qa10-08-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "e027686bf9e56e28b7e86190b78c6542c65f40d504562b0d75b1dc69819f3016",
+      "bytes": 1123044
+    },
+    {
+      "source": "qa10-08-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "4d8d9fe87c78981979ba1467325fce90a596c9b3a8364622672bc4e2c4345b15",
+      "bytes": 1122770
+    },
+    {
+      "source": "qa10-08-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "0de2b9a13cb4318468ce632fb2dfc8063043248520ed9a4e49354d0444160e2d",
+      "bytes": 1197916
+    },
+    {
+      "source": "qa10-08-desktop/native-details/04-launcher-open.png",
+      "sha256": "17804a6ea89288433feebab077069cbf4fdb708460616f689735d1ca5a9a8806",
+      "bytes": 1078671
+    },
+    {
+      "source": "qa10-08-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "148cc2cd683678a3afe46dfb7dd141e3f02ce6c40b3795103514d59bf7451fee",
+      "bytes": 1093849
+    },
+    {
+      "source": "qa10-08-desktop/native-details/06-dolphin-files.png",
+      "sha256": "1cb0b8c33ba68c56047374a1d345b8d6828902eb9d682cf141c3eec9c540275a",
+      "bytes": 468295
+    },
+    {
+      "source": "qa10-08-desktop/native-details/07-file-copy.png",
+      "sha256": "d8345237a0cb6ec9fb241b9a503edb9bb637c6df7bf4a87e5ef1188c795c8058",
+      "bytes": 465840
+    },
+    {
+      "source": "qa10-08-desktop/native-details/08-rename-dialog.png",
+      "sha256": "0b2e6e68279437a3333a3e3f03a397f4aff702ec99823f9fe917c7a1482980fc",
+      "bytes": 470819
+    },
+    {
+      "source": "qa10-08-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "235427d07bac8eb0f22f41ef89a428af91c4d18b36f0f1feab9c394b5af29864",
+      "bytes": 336605
+    },
+    {
+      "source": "qa10-08-desktop/native-details/13-minimized-files.png",
+      "sha256": "5b7e62377c38647a7c7c96d1833826855b1657585aad5059edbba170bc662609",
+      "bytes": 334988
+    },
+    {
+      "source": "qa10-08-desktop/native-details/14-second-workspace.png",
+      "sha256": "18fd6301878771793c46cacd7bdb520734cbb3b5eabae5b082f51ca40513b452",
+      "bytes": 1122979
+    },
+    {
+      "source": "qa10-08-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "585e67eda61bcf1fce7d4a4303652e31591cd34f4a163fe73f4550400b565bd0",
+      "bytes": 335627
+    },
+    {
+      "source": "qa10-08-desktop/native-details/appearance.png",
+      "sha256": "e1e3471b1309c8bb2a4b439e3dd295de8b031d32d267a8f3effbd5384c701cb7",
+      "bytes": 1273906
+    },
+    {
+      "source": "qa10-08-desktop/native-details/file-operations.png",
+      "sha256": "74cfd8cab680af6585b2907bc3244c74d972ff1d9d470e45d9fbb4ff8d6fe430",
+      "bytes": 505476
+    },
+    {
+      "source": "qa10-08-desktop/native-details/last-frame.png",
+      "sha256": "585e67eda61bcf1fce7d4a4303652e31591cd34f4a163fe73f4550400b565bd0",
+      "bytes": 335627
+    },
+    {
+      "source": "qa10-08-desktop/native-details/launcher.png",
+      "sha256": "79fb7245d77652d17b658aeda908802a2de5906c21d96f8be9d2880f724c538e",
+      "bytes": 1093905
+    },
+    {
+      "source": "qa10-08-desktop/native-details/multitasking.png",
+      "sha256": "3540b67cc431564319f4e173bd46089b636033e764776a8b7645ad3649c43b2b",
+      "bytes": 331429
+    },
+    {
+      "source": "qa10-08-desktop/native-details/shell-restart.png",
+      "sha256": "585e67eda61bcf1fce7d4a4303652e31591cd34f4a163fe73f4550400b565bd0",
+      "bytes": 335627
+    },
+    {
+      "source": "qa10-08-desktop/report-001.png",
+      "sha256": "cf00042fb8e3233282ff53df8a73c1edc2d7da7950104c930ba0aab7d5db1421",
+      "bytes": 169018
+    },
+    {
+      "source": "qa10-08-desktop/report-002.png",
+      "sha256": "ca98c9d62933b8d792348ef45bbd649537471e3c3f1970c73d18e1037d094aaa",
+      "bytes": 231639
+    },
+    {
+      "source": "qa10-08-desktop/report-003.png",
+      "sha256": "a23faed581fc7930c18160e4dfb3211d9ae57be1a1c0fef047e38490d0cb0574",
+      "bytes": 269214
+    },
+    {
+      "source": "qa10-08-desktop/report-004.png",
+      "sha256": "6b7c2eda7a433437fb3456c2ce41a25e10129459ed11eb37ad26ec95049efd29",
+      "bytes": 184942
+    },
+    {
+      "source": "qa10-08-desktop/report-005.png",
+      "sha256": "01dd977afe5ce6267d57727fedba28ab3315d54cec975e704e56a285860485db",
+      "bytes": 113812
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/01-native-network-settings.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/01-network-closed.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/01-network-open.png",
+      "sha256": "c4e1148ec53c1154f9205d545b9e0fa099040264857fcb1dd1a50e40b6c3865f",
+      "bytes": 556953
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/01-plasma-desktop.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/02-bluetooth-closed.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/02-bluetooth-open.png",
+      "sha256": "6b340efffa22865cc5df0727ae80f392bc3a5ac77593641dc22c286722a9c586",
+      "bytes": 592050
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/02-native-bluetooth-settings.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/03-native-settings-search.png",
+      "sha256": "febe3e36c403fa75c9d10fd8e4f470163909985e02cc9c65e38bfce84ff227cc",
+      "bytes": 1122806
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/03-settings-search-cleared.png",
+      "sha256": "70b4121053971007a5f127a58602467990855bcbea52fbb861eefa45b8c05013",
+      "bytes": 629933
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/03-settings-search-results.png",
+      "sha256": "3bf24156a1bcd6acbc1acecc908c381ebf2b858d27943fe360b6320c5257114e",
+      "bytes": 596839
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/04-connection-types.png",
+      "sha256": "18fbf0391fe2ac756e30838f532f3c1b92646830e51b5e2f13740e749a5e3458",
+      "bytes": 595710
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/04-native-dummy-password.png",
+      "sha256": "93c55bed6c48d47538bc8fbe196e025acb28ac33d3b4b3885982128d48d35ed8",
+      "bytes": 1122915
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/05-wifi-security.png",
+      "sha256": "c8d6d94c67e4baf64edae1cfc212ee012c8e643790e70305bd443bcddca58e32",
+      "bytes": 562246
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/06-dummy-password-masked.png",
+      "sha256": "fed2d9516cc164d219282c444f6e3dc75462da75bdf9a022985d6274d6c845cb",
+      "bytes": 573070
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/07-dummy-password-revealed.png",
+      "sha256": "ecfe623f919a1214bf6df9ec69d0771497e534d287054976c9f8f4995321297f",
+      "bytes": 574284
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/08-dummy-password-cleared.png",
+      "sha256": "1584f7e3dd51fd477fbd2e9f23cc462462a7d8804f7c0e1433549970797c85d2",
+      "bytes": 573018
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/09-connection-cancelled.png",
+      "sha256": "1c464cf6979ec977a6d93daccff91fc4f9b03aced5dcea0ec63aa080dd6af1f4",
+      "bytes": 557075
+    },
+    {
+      "source": "qa10-09-connectivity/native-details/last-frame.png",
+      "sha256": "93c55bed6c48d47538bc8fbe196e025acb28ac33d3b4b3885982128d48d35ed8",
+      "bytes": 1122915
+    },
+    {
+      "source": "qa10-09-connectivity/report-001.png",
+      "sha256": "f4500bef88b315f39462bc1c25540a1ac9e4bd9857e286822c650d52a2720261",
+      "bytes": 171564
+    },
+    {
+      "source": "qa10-09-connectivity/report-002.png",
+      "sha256": "bbf39f54a5b850a9be20d539984a186e8c0118caf94d72e4a120ed2a3962fd91",
+      "bytes": 232623
+    },
+    {
+      "source": "qa10-09-connectivity/report-003.png",
+      "sha256": "fba891289920b5fe6042195b4deeb3f05ab8cf58ba664fec22557c2bb2ec49c2",
+      "bytes": 176878
+    },
+    {
+      "source": "qa10-10-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "93c55bed6c48d47538bc8fbe196e025acb28ac33d3b4b3885982128d48d35ed8",
+      "bytes": 1122915
+    },
+    {
+      "source": "qa10-10-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "93c55bed6c48d47538bc8fbe196e025acb28ac33d3b4b3885982128d48d35ed8",
+      "bytes": 1122915
+    },
+    {
+      "source": "qa10-10-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "c2889000261da63dd736e6c80d561c930d708cdb19c2ed7c46533dd9ef463893",
+      "bytes": 1123243
+    },
+    {
+      "source": "qa10-10-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "93c55bed6c48d47538bc8fbe196e025acb28ac33d3b4b3885982128d48d35ed8",
+      "bytes": 1122915
+    },
+    {
+      "source": "qa10-10-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "981507f75ce450ff18bef091ec64198e3531027b531042a879809163de101700",
+      "bytes": 1226761
+    },
+    {
+      "source": "qa10-10-desktop/native-details/04-launcher-open.png",
+      "sha256": "68c9448e74ac6b99c30b4a2505545f0035f8475a8c2c8c3abef73e7f6b27919c",
+      "bytes": 1078856
+    },
+    {
+      "source": "qa10-10-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "98ee14df83a9cd3ee87415b80eeed7db2ca11411873ebc4d90c9e5a097491f5e",
+      "bytes": 1094026
+    },
+    {
+      "source": "qa10-10-desktop/native-details/06-dolphin-files.png",
+      "sha256": "e47373ce2169c8eed509a34c09ed9c9e26c6739f12f2ca779c5c13c003bdea2e",
+      "bytes": 468505
+    },
+    {
+      "source": "qa10-10-desktop/native-details/07-file-copy.png",
+      "sha256": "408fc55ec4cf5f50ba63efd2c3627c34bc944b42e5d3e00dbbd82d3e2fbbcd2d",
+      "bytes": 468241
+    },
+    {
+      "source": "qa10-10-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "a6613e7867e84b5c5264f1f5034a709f9a337a74be152f106e1384f6b2acc5eb",
+      "bytes": 329279
+    },
+    {
+      "source": "qa10-10-desktop/native-details/13-minimized-files.png",
+      "sha256": "34a635c142ad036d14cc0ded902713730b17cc52c7b9d2a0a9f08c84ab7f1c16",
+      "bytes": 327452
+    },
+    {
+      "source": "qa10-10-desktop/native-details/14-second-workspace.png",
+      "sha256": "ca03c33f4233ff7b09e59497065f45ba9eccaa1b3d270685601b3087d8604a7f",
+      "bytes": 1123095
+    },
+    {
+      "source": "qa10-10-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "4a836c38e0c3b87e75b20b1cc40460668cf4c2b17fb2f6e98a4dbe6b75e53315",
+      "bytes": 329731
+    },
+    {
+      "source": "qa10-10-desktop/native-details/appearance.png",
+      "sha256": "57ba82413528aad3823f1b9a1243a7508e10c559dde84de1653a725b268f2ae9",
+      "bytes": 1274089
+    },
+    {
+      "source": "qa10-10-desktop/native-details/file-operations.png",
+      "sha256": "7fc7c2cdd5a59daf05ae5db2b9acacbb7b4d7eae390e2f1ce2c057e481f167eb",
+      "bytes": 496271
+    },
+    {
+      "source": "qa10-10-desktop/native-details/last-frame.png",
+      "sha256": "ff74c41249d2c0628db35500bcb2ffb27b8a3f36f959a0ba218649f030c2770d",
+      "bytes": 651215
+    },
+    {
+      "source": "qa10-10-desktop/native-details/launcher.png",
+      "sha256": "78cd81e69235fe3ac594fdbe7ab7221da11985edead91452181e7373eb4da0bb",
+      "bytes": 1094050
+    },
+    {
+      "source": "qa10-10-desktop/native-details/multitasking.png",
+      "sha256": "ca03c33f4233ff7b09e59497065f45ba9eccaa1b3d270685601b3087d8604a7f",
+      "bytes": 1123095
+    },
+    {
+      "source": "qa10-10-desktop/native-details/shell-restart.png",
+      "sha256": "4a836c38e0c3b87e75b20b1cc40460668cf4c2b17fb2f6e98a4dbe6b75e53315",
+      "bytes": 329731
+    },
+    {
+      "source": "qa10-10-desktop/report-001.png",
+      "sha256": "7e418b2326d38d79ba0a897b432cead202c9beb7d9b42fb8a0b069f3220af772",
+      "bytes": 168707
+    },
+    {
+      "source": "qa10-10-desktop/report-002.png",
+      "sha256": "386ef07b8be83edb3462f51953af8d6d0c0ff9d6fb724cd7bd4ccee270922d5b",
+      "bytes": 234316
+    },
+    {
+      "source": "qa10-10-desktop/report-003.png",
+      "sha256": "f39407b9380fc873bef71b6bf52f803f4c4c03114f6b46db5547a3cc0fd3faac",
+      "bytes": 271449
+    },
+    {
+      "source": "qa10-10-desktop/report-004.png",
+      "sha256": "891c1cfaf85458c2ced6521f5a1bf12f13ff414b8e909ea246de436e8bd16587",
+      "bytes": 174443
+    },
+    {
+      "source": "qa10-10-desktop/report-005.png",
+      "sha256": "fbe306804af909168d78ef1a87465d8ab73bd1b8764bdb7053ad6eed202d09fa",
+      "bytes": 89317
+    },
+    {
+      "source": "qa10-11-welcome-document/report-001.png",
+      "sha256": "d0bcb18c54ab7c9f7709cd72ea642ac884fdde343fb88580112ac1cad4773ae2",
+      "bytes": 92525
+    },
+    {
+      "source": "qa10-12-welcome-document/report-001.png",
+      "sha256": "f3faf2dc4d9647b031d38718a6c2329d7e0054a9b3ce14957169c24d1aab1a63",
+      "bytes": 87780
+    },
+    {
+      "source": "qa10-13-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "98975aacf54ea6c32929b8a70821b94c9024762dbeaed4811bb34a9ef26ff060",
+      "bytes": 1122917
+    },
+    {
+      "source": "qa10-13-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "98975aacf54ea6c32929b8a70821b94c9024762dbeaed4811bb34a9ef26ff060",
+      "bytes": 1122917
+    },
+    {
+      "source": "qa10-13-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "b96a9489a7c2dd8d5bd672fac917dca3a7ccefca68997248710f44caa15e7d96",
+      "bytes": 1123188
+    },
+    {
+      "source": "qa10-13-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "98975aacf54ea6c32929b8a70821b94c9024762dbeaed4811bb34a9ef26ff060",
+      "bytes": 1122917
+    },
+    {
+      "source": "qa10-13-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "b8f34d16bf578055652cb2524cd8eee107db95c9daaf221490aefa26cb58869d",
+      "bytes": 1226677
+    },
+    {
+      "source": "qa10-13-desktop/native-details/04-launcher-open.png",
+      "sha256": "0dd87ae072c82d5127c982707c5368ab27174b3bd80a9c340d92359c14c0b95c",
+      "bytes": 1078816
+    },
+    {
+      "source": "qa10-13-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "7887d40b142da352bf59973da49cc8c440d80d9eb6917d264a521cdd34ebf13d",
+      "bytes": 1093988
+    },
+    {
+      "source": "qa10-13-desktop/native-details/06-dolphin-files.png",
+      "sha256": "7ab319b0c742ecbf05f8df1f35827b56907f17d3ae5a3d0fd658c7c29a5d8e4a",
+      "bytes": 468480
+    },
+    {
+      "source": "qa10-13-desktop/native-details/07-file-copy.png",
+      "sha256": "d8ce194101e5e9eae90544373f108532611b0ef7129250a4ffd66027fcbd23a0",
+      "bytes": 466031
+    },
+    {
+      "source": "qa10-13-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "c3075f0b4928c6c396fb8b684e7f35657c4218c2988a4d24bd7dfd49924dcaa6",
+      "bytes": 329183
+    },
+    {
+      "source": "qa10-13-desktop/native-details/13-minimized-files.png",
+      "sha256": "62c63033c2dba3344ee6a6035a8dbc76114ac7686a9c95a6b283459adfed1f34",
+      "bytes": 651090
+    },
+    {
+      "source": "qa10-13-desktop/native-details/14-second-workspace.png",
+      "sha256": "dfbe83c9e8955ccf0cd14dfff92e60604eda9ec5d54bd3591e49d928d5e315db",
+      "bytes": 1123081
+    },
+    {
+      "source": "qa10-13-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "b7702c24ffe2c7a0ce2e82f9a0bb55ac062c2e19eef0c6d81591f3540c6de6ac",
+      "bytes": 329709
+    },
+    {
+      "source": "qa10-13-desktop/native-details/appearance.png",
+      "sha256": "53baa2138b04bc4446d3f0c8ffd64d0e0f6a35e2df8e24ad75ec978f3bf263d3",
+      "bytes": 1414015
+    },
+    {
+      "source": "qa10-13-desktop/native-details/file-operations.png",
+      "sha256": "d1754cc913d8d5ea03ed246accfdb2f9f56613b11c72f46966e858a84f969162",
+      "bytes": 496242
+    },
+    {
+      "source": "qa10-13-desktop/native-details/last-frame.png",
+      "sha256": "6cb1a356c511e19d8cf404c43fc59d4ff4b790f1f558efa698646ed01e3a0e1c",
+      "bytes": 653761
+    },
+    {
+      "source": "qa10-13-desktop/native-details/launcher.png",
+      "sha256": "7887d40b142da352bf59973da49cc8c440d80d9eb6917d264a521cdd34ebf13d",
+      "bytes": 1093988
+    },
+    {
+      "source": "qa10-13-desktop/native-details/multitasking.png",
+      "sha256": "88d0225b65dc37961d9c617980ffdf6b362360033526bfca406a774a7066c48b",
+      "bytes": 325358
+    },
+    {
+      "source": "qa10-13-desktop/native-details/shell-restart.png",
+      "sha256": "b7702c24ffe2c7a0ce2e82f9a0bb55ac062c2e19eef0c6d81591f3540c6de6ac",
+      "bytes": 329709
+    },
+    {
+      "source": "qa10-13-desktop/report-001.png",
+      "sha256": "f5b5d7043bd0f6e9e602b51b009b08eaa887b4cfb217aef22e3e8c359298515f",
+      "bytes": 168872
+    },
+    {
+      "source": "qa10-13-desktop/report-002.png",
+      "sha256": "e9107c00c1154920692f98bbff64ab58777f4807367d4ddb79d2b63f0425fa7c",
+      "bytes": 231809
+    },
+    {
+      "source": "qa10-13-desktop/report-003.png",
+      "sha256": "e48888bb0c3495da95158d7682f6c9f526d1494582ac91e3aae3a41a65670e36",
+      "bytes": 270070
+    },
+    {
+      "source": "qa10-13-desktop/report-004.png",
+      "sha256": "8ddb867ecd76156b804013f36fe16653ecf8c3c937aceaf62b1cd8f0b92d5cb1",
+      "bytes": 174592
+    },
+    {
+      "source": "qa10-13-desktop/report-005.png",
+      "sha256": "c6589993f5312242fb4428c9dc3580545a8407df52c3394a0c3b36aa911fb2a5",
+      "bytes": 89461
+    },
+    {
+      "source": "qa10-14-welcome-document/report-001.png",
+      "sha256": "2cdb98d683e31fb5a597533da6d791cf9b046d9fd68e90c1d549be6cb07915d3",
+      "bytes": 61800
+    },
+    {
+      "source": "qa10-14-welcome-document/welcome-document-desktop.png",
+      "sha256": "d301a6ed2db4bdb4862a1d9f5cd7f585bdfc207eeb70acc8fa7a41e43bd3506b",
+      "bytes": 176932
+    },
+    {
+      "source": "qa10-14-welcome-document/welcome-document-phone.png",
+      "sha256": "04cc89a762b6f700c8577d7224f4b1c2c803b91e58a72b4735aa8c26b3a42f33",
+      "bytes": 179110
+    },
+    {
+      "source": "qa10-15-components/native-details/01-login-test-mode.png",
+      "sha256": "d8c2d5989fb17d005d81717861eb8ec47170d07ae89943fc25cf79f9fbc1f3bc",
+      "bytes": 1055277
+    },
+    {
+      "source": "qa10-15-components/native-details/02-login-empty-password.png",
+      "sha256": "485777e50b19faf96211839be45a1919f9764ca5d19c79b1a9409f47f44d2db3",
+      "bytes": 1053679
+    },
+    {
+      "source": "qa10-15-components/native-details/03-login-password-masked.png",
+      "sha256": "7f19797fcf24eab279896236698d6acf1cd3b6d81c87335789c136a434169868",
+      "bytes": 1055142
+    },
+    {
+      "source": "qa10-15-components/native-details/04-installer-current-safety-block.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-15-components/native-details/05-phone-connect-no-devices.png",
+      "sha256": "f69b107d9cf58440761754b83f3b845dc6d0b784ce842f966dc36227f0f43d27",
+      "bytes": 39364
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-0.png",
+      "sha256": "0736b50f4ee8cf710996af354c4573400dca0d73bf6932134108c3ad8bf9c0b6",
+      "bytes": 21344
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-1.png",
+      "sha256": "65b6a112192ba61a7c773c2acf8c722d93ea201d8c28e00b37110680d8b4ec0c",
+      "bytes": 21235
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-10.png",
+      "sha256": "8b7f7262042d5afb010f520498a155903c8c0577133b12056ce707a30779bc9c",
+      "bytes": 21483
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-11.png",
+      "sha256": "f814d21ec28a0a37134f07329fb1e4aeb350d822f1b467535c4c52a0ece54285",
+      "bytes": 21646
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-2.png",
+      "sha256": "b7ee0857c6c69af8d28506037eddc0518c69ed86c2d618d66c7d8926f3dd0de4",
+      "bytes": 21435
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-3.png",
+      "sha256": "e9e7ded61dcab4e786bdf94ee4e1b09413e753fc0a1361abc02ffa3cdc6b66a7",
+      "bytes": 22230
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-4.png",
+      "sha256": "12a82f6c8e1366a1b7951a92cf704c8e4791bcfbbbf4388a249b7b1aa3886e02",
+      "bytes": 21933
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-5.png",
+      "sha256": "78b795199501cc2243dacdea41603a8b50cc4ed3c93ffc32d72023fd97a3fe64",
+      "bytes": 21874
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-6.png",
+      "sha256": "06b7bffd3824f1edfb20749f629025e8b04956aa0ababdbbdb140424eca2a7b8",
+      "bytes": 21796
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-7.png",
+      "sha256": "27e1babe78947e2b7274d35ae4f2c57aa01f8692e07fa28531d73ec9b13caa69",
+      "bytes": 21301
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-8.png",
+      "sha256": "9e04fa8f73f2a312b8f606a68bb9a75407f7c40183b00a8f58aada4f17d4eca8",
+      "bytes": 21835
+    },
+    {
+      "source": "qa10-15-components/native-details/06-game-scene-wait-9.png",
+      "sha256": "1595536409adba1f61b31b567f02a806a269c3d10692b70de2ac6584b0a87534",
+      "bytes": 22091
+    },
+    {
+      "source": "qa10-15-components/native-details/fullscreen-game-result.png",
+      "sha256": "ae6c8963b7cdd392ca545f3c646721910c11882f476c4a4caf0aafaa94c48ded",
+      "bytes": 21763
+    },
+    {
+      "source": "qa10-15-components/native-details/installer-guard-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-15-components/native-details/login-theme-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-15-components/native-details/phone-connect-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-15-components/report-001.png",
+      "sha256": "0e62932d80f06bfc6d978a8b0491d3a12d8dfc197cf394b9524c28c0ba0197b8",
+      "bytes": 265987
+    },
+    {
+      "source": "qa10-15-components/report-002.png",
+      "sha256": "3e5a635e9c18de6086d7cd62efd0f64e396105f72f774edef767ef8d28be2fad",
+      "bytes": 116946
+    },
+    {
+      "source": "qa10-16-desktop/native-details/01-desktop-current-default.png",
+      "sha256": "4d98664eecb38c340725c358158134d701ea97af6d606efbdbda7012e0de402c",
+      "bytes": 1122818
+    },
+    {
+      "source": "qa10-16-desktop/native-details/01-plasma-desktop.png",
+      "sha256": "4d98664eecb38c340725c358158134d701ea97af6d606efbdbda7012e0de402c",
+      "bytes": 1122818
+    },
+    {
+      "source": "qa10-16-desktop/native-details/02-desktop-OREZInk.png",
+      "sha256": "f20d2e3e3662cca1534f80de8ff048747cc06b93669550b9500692a8ea7a57b0",
+      "bytes": 1123146
+    },
+    {
+      "source": "qa10-16-desktop/native-details/02-desktop-OREZPaper.png",
+      "sha256": "4d98664eecb38c340725c358158134d701ea97af6d606efbdbda7012e0de402c",
+      "bytes": 1122818
+    },
+    {
+      "source": "qa10-16-desktop/native-details/03-desktop-horizon.png",
+      "sha256": "139b0ebaa51f5b3da6eacb956bcb643a1a523254187c62676b2c59020974730e",
+      "bytes": 1212784
+    },
+    {
+      "source": "qa10-16-desktop/native-details/04-launcher-open.png",
+      "sha256": "41f2cd276224f9020ffdf83cb525a4149b2b508e02dfbdea6b3a59fd0fd8febb",
+      "bytes": 1078757
+    },
+    {
+      "source": "qa10-16-desktop/native-details/05-launcher-orez-search.png",
+      "sha256": "322a448677cbb198666da1466e91c419271edf8d497a02f86d01e244967ffdf0",
+      "bytes": 1093931
+    },
+    {
+      "source": "qa10-16-desktop/native-details/06-dolphin-files.png",
+      "sha256": "66fca29921474500013ce6862ee3abe931052b999a8481874f9cd49eafaeb196",
+      "bytes": 468179
+    },
+    {
+      "source": "qa10-16-desktop/native-details/07-file-copy.png",
+      "sha256": "1e0841fbabc2a7c9d1ab77b1da6eac43f3a7e7bc527e371ca81ee8ff0ca67a4d",
+      "bytes": 465716
+    },
+    {
+      "source": "qa10-16-desktop/native-details/08-file-rename.png",
+      "sha256": "19f5689906bc7d803943dd318be37dd473415d1c938a13b6ee67cf099d6c266a",
+      "bytes": 470589
+    },
+    {
+      "source": "qa10-16-desktop/native-details/08-rename-dialog.png",
+      "sha256": "fe99b24f3c1f014d3cc62723135e2fc4e61785dd5255fb51502a3261835c945e",
+      "bytes": 470442
+    },
+    {
+      "source": "qa10-16-desktop/native-details/09-file-to-trash.png",
+      "sha256": "a6dd2c905dfac5aa709f8db614f35456fbbf55e60d3b046ac5b2f9d8dda4f4b8",
+      "bytes": 470557
+    },
+    {
+      "source": "qa10-16-desktop/native-details/10-file-undo.png",
+      "sha256": "9d6898881a99f2faf344cda0682352b84398d2b99be4663ae59358c5add4670e",
+      "bytes": 465715
+    },
+    {
+      "source": "qa10-16-desktop/native-details/11-dolphin-tabs-split.png",
+      "sha256": "160ab5ce3862857e0b636a2d4f1cb8c7fd89286e57ef4d011d3fa449acfdd702",
+      "bytes": 476835
+    },
+    {
+      "source": "qa10-16-desktop/native-details/12-files-and-terminal.png",
+      "sha256": "7b67940c048393c5bade7ff632b29f1c3c0a12e79e49e7329fdf917743b97e2c",
+      "bytes": 332384
+    },
+    {
+      "source": "qa10-16-desktop/native-details/13-minimized-files.png",
+      "sha256": "12f53d7954f39eb730833a36d8e6b5db1a02c37fb76a3aaacfbb0906c4c1027e",
+      "bytes": 651136
+    },
+    {
+      "source": "qa10-16-desktop/native-details/14-second-workspace.png",
+      "sha256": "b5e06b07e2e480e61ae240a22267f2a9e8c61129d4d96ac69baf6621d0242f32",
+      "bytes": 1123022
+    },
+    {
+      "source": "qa10-16-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "sha256": "54a55a01bd44b31cfda5249cedb9743af5fe800b9a433029f7fb35871745eaac",
+      "bytes": 332815
+    },
+    {
+      "source": "qa10-16-desktop/native-details/appearance.png",
+      "sha256": "03645913cef0d7696d96a06961f17a1a724df5690ada872341dcf1e5a1170484",
+      "bytes": 1309902
+    },
+    {
+      "source": "qa10-16-desktop/native-details/file-operations.png",
+      "sha256": "160ab5ce3862857e0b636a2d4f1cb8c7fd89286e57ef4d011d3fa449acfdd702",
+      "bytes": 476835
+    },
+    {
+      "source": "qa10-16-desktop/native-details/last-frame.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-16-desktop/native-details/launcher.png",
+      "sha256": "5c8d9e615a50fa09624df1f2f33f0613b23ee05f48d8a45c70c5012284952a52",
+      "bytes": 1093955
+    },
+    {
+      "source": "qa10-16-desktop/native-details/menu-rename.png",
+      "sha256": "a3a218b955613567a5d4fb839bf6bb5318526a3817354b5f615b874af43e6e66",
+      "bytes": 495953
+    },
+    {
+      "source": "qa10-16-desktop/native-details/menu-trash.png",
+      "sha256": "321d8419dc409cfbe8221b5a237e64bcd4d806c8f5198d973f8366a62efe6d6e",
+      "bytes": 496288
+    },
+    {
+      "source": "qa10-16-desktop/native-details/multitasking.png",
+      "sha256": "9cb59b201b6555029c8c7a0eb6db2b890c08bbc8695cbe26c47dd9c2d1477fcd",
+      "bytes": 330575
+    },
+    {
+      "source": "qa10-16-desktop/native-details/shell-restart.png",
+      "sha256": "9cb59b201b6555029c8c7a0eb6db2b890c08bbc8695cbe26c47dd9c2d1477fcd",
+      "bytes": 330575
+    },
+    {
+      "source": "qa10-16-desktop/report-001.png",
+      "sha256": "d26854144bae38179cff4ca0e5160a3940b5448c0ead0d89d7f28e679b7541f0",
+      "bytes": 170030
+    },
+    {
+      "source": "qa10-16-desktop/report-002.png",
+      "sha256": "6dd318de100abf359a755caa397530c86ea8239ae97eda1fda1c9fad10f3c5f5",
+      "bytes": 233267
+    },
+    {
+      "source": "qa10-16-desktop/report-003.png",
+      "sha256": "6a95fc51fb0e69e5a6525906a6d830c94013917d75e526a75113d52e7fd1d6e8",
+      "bytes": 253012
+    },
+    {
+      "source": "qa10-17-fullscreen-game/native-details/06-game-fullscreen-before.png",
+      "sha256": "9b849f796c997f011fec14b0d7eb62af38f36104248ee4a81edba89881ca4fd1",
+      "bytes": 238981
+    },
+    {
+      "source": "qa10-17-fullscreen-game/native-details/06-game-scene-wait-0.png",
+      "sha256": "14a929a3815e6f0101e09a0ad450885caaf0399f04191a7faa5547633c8464ac",
+      "bytes": 224455
+    },
+    {
+      "source": "qa10-17-fullscreen-game/native-details/07-game-fullscreen-after-input.png",
+      "sha256": "24c010ad86d6623237a3c98a7a5aa1dd8b3c9cb77aa12ff4d3eb2bd6c72abb4f",
+      "bytes": 240501
+    },
+    {
+      "source": "qa10-17-fullscreen-game/native-details/08-game-pause-menu.png",
+      "sha256": "69c645128cdbc6198993caf05abc1daab43f34d86d84c89f6143c05db7506c61",
+      "bytes": 234003
+    },
+    {
+      "source": "qa10-17-fullscreen-game/native-details/fullscreen-game-result.png",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "bytes": 3863
+    },
+    {
+      "source": "qa10-17-fullscreen-game/report-001.png",
+      "sha256": "2a281a8e365318bb0f62190e84a3a3fb1d30692d1835b1460712e9479ffa26c8",
+      "bytes": 73989
+    },
+    {
+      "source": "qa10-18-source/report-001.png",
+      "sha256": "18c9a99ec4e10d2488176f8086fe7b9fd4f157ef9e4ee363bcc116dc98ea399b",
+      "bytes": 223331
+    },
+    {
+      "source": "qa10-18-source/report-002.png",
+      "sha256": "d0ceba4628def4c8a274a091e1807eda34020fdb6ed57c6c92254f1550e1717c",
+      "bytes": 215235
+    },
+    {
+      "source": "qa10-18-source/report-003.png",
+      "sha256": "06889d33c0c9ecec80f0a4976bbfd922cdeb44ced1318aad942fb1cd6dfa1392",
+      "bytes": 234041
+    },
+    {
+      "source": "qa10-18-source/report-004.png",
+      "sha256": "9db05186092d145d340101586742304101c48bed244fbe7ce4939e0de4ea9b49",
+      "bytes": 227393
+    },
+    {
+      "source": "qa10-18-source/report-005.png",
+      "sha256": "2168a6f3b97e27cfc545204813c17119847b5afaf3823e5ffc3ec0975675ef73",
+      "bytes": 225780
+    },
+    {
+      "source": "qa10-18-source/report-006.png",
+      "sha256": "442d58031ab5e16d8766a6e2fe091524d8ec7ebddfadfb0f85710d29c8d41a20",
+      "bytes": 226133
+    },
+    {
+      "source": "qa10-18-source/report-007.png",
+      "sha256": "902450459be765cd5d6ad254227c9e11eb125cf9f512211435c393b016d24b35",
+      "bytes": 220649
+    },
+    {
+      "source": "qa10-18-source/report-008.png",
+      "sha256": "741b671ccb6f8f1b1e7c1a4362e8fca177a018f4055b3eb8ef4760e987031814",
+      "bytes": 211143
+    },
+    {
+      "source": "qa10-18-source/report-009.png",
+      "sha256": "ece90a7554acf42fad7887174c410e3f4d629ee38533290af291e3fc6fa17afc",
+      "bytes": 191258
+    },
+    {
+      "source": "qa10-18-source/report-010.png",
+      "sha256": "0ddb88a85241bfebc6cde482dbafc34bfda931dab228784f47d4ee4546e39316",
+      "bytes": 130266
+    },
+    {
+      "source": "qa10-19-gallery/gallery-desktop.png",
+      "sha256": "7e1831e5a1322b9f9b20789fbecf50a3eed358be84e964adbbc53933fa00f41b",
+      "bytes": 87183
+    },
+    {
+      "source": "qa10-19-gallery/gallery-phone.png",
+      "sha256": "049c29c6043c695130b453177eba5df13d265faddd0b553cccf5598f55b329c4",
+      "bytes": 64760
+    },
+    {
+      "source": "qa10-19-gallery/report-001.png",
+      "sha256": "8b6c3babd6b8a9fed09fba0d9fbe92f941af9afafbbb57d0ed07959205654890",
+      "bytes": 59972
+    },
+    {
+      "source": "qa5-13-orez-uefi-sdl/host-window-0030.png",
+      "sha256": "3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9",
+      "bytes": 9688,
+      "historical": true
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Isolated native tour dependencies and offline fixture",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:37:30.383971+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "a1637d4f370e2ea0d60269ff1d9507141f8ebe4d7db5c984872fca0d7d7a76bc",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-setup.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 190.89,
+      "finished_at": "2026-11-06T01:40:41.332184+00:00",
+      "log_sha256": "8e4ab7fc43d1a7e3d32aa035ae91143bd8421cd7e1a515fd72b72f8c4c290d50",
+      "directory": "qa10-01-setup"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native OREZ desktop, files, themes, multitasking and shell restart tour",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:46:57.193025+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "7bdd47341d563cf06ee4cfefd935561f81ba06e00b34f531b2b3c21c0e75ea37",
+      "working_tree": "M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 12.75,
+      "finished_at": "2026-11-06T01:47:10.146979+00:00",
+      "log_sha256": "bfdb217b31f66a7f1c68206db14e829b84d9c29227e4693fbbc113c34573175f",
+      "directory": "qa10-02-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native tour with verified private display access",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:49:22.725552+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "6b7279a21ee5593b2fb489a37e0f3e2f7489d56fbd53323e6bccf39c49ec50fa",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 41.4,
+      "finished_at": "2026-11-06T01:50:04.195351+00:00",
+      "log_sha256": "51030cc7c961e04fb13947209fc234125c220b494f5991b7446991c1bce551be",
+      "directory": "qa10-03-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-04-desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:57:25.568602+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "2d4c945f8a3a14de8fbf718637a3823cfdcb92e3cbf6004f77501e0cd1cbc67d",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 37.59,
+      "finished_at": "2026-11-06T01:58:03.206028+00:00",
+      "log_sha256": "81e1ab8895f97637192e9fd55b9e88b5f12942833035fcc4a70851e4b69e5a25",
+      "directory": "qa10-04-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-05-native-apps",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:57:51.018618+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "2d4c945f8a3a14de8fbf718637a3823cfdcb92e3cbf6004f77501e0cd1cbc67d",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-apps.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 1.23,
+      "finished_at": "2026-11-06T01:57:52.299439+00:00",
+      "log_sha256": "442e008659295f70663827cd31284a360d6a9027d6b32347542f3515916ef532",
+      "directory": "qa10-05-native-apps"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-06-native-apps",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:58:32.822890+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "f63f480e35a9090b6544a3a1d79b17300f093ce71e1404878cc42564d0b216d1",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-apps.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 22.81,
+      "finished_at": "2026-11-06T01:58:55.683630+00:00",
+      "log_sha256": "d3972db1926563127b520289fc4938a079f1b3117254b3326e4f93b8b1d924cd",
+      "directory": "qa10-06-native-apps"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-07-components",
+      "kind": "package-container",
+      "started_at": "2026-11-06T01:59:38.443538+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "9edf0440c7cbfe24fefdb487056f50463e4bc3bc789263219ed63aba7721c0b9",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-components.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 28.04,
+      "finished_at": "2026-11-06T02:00:06.526732+00:00",
+      "log_sha256": "3a312b7fd11388385533b222a9911ffe320d4a49d28251dbc666dd24db1b602b",
+      "directory": "qa10-07-components"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-08-desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:01:41.021271+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "ddc375c9fe086724b04ec983f4ec587c6529108906b3820dc7a05b40668c859f",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 38.08,
+      "finished_at": "2026-11-06T02:02:19.139289+00:00",
+      "log_sha256": "30dbac086ef6b9f93b5a73dd24153a248ee32ea95df8a524c474e9861ddbe323",
+      "directory": "qa10-08-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-09-connectivity",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:02:30.645837+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "82d42f844f323d81103d4eedbd2099d090fb791065b3ab1e19600618e4990cb6",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-connectivity.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 44.81,
+      "finished_at": "2026-11-06T02:03:15.505995+00:00",
+      "log_sha256": "555ec13e4d2028db5ddabe93a5f69480bd1abe2b7bd84240199a0b85026e1586",
+      "directory": "qa10-09-connectivity"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-10-desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:03:38.619704+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "ef4bb323a313a1e1a4f26be67382ce32ebc24f3588fcbf59da6e55a092aad010",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 33.44,
+      "finished_at": "2026-11-06T02:04:12.130944+00:00",
+      "log_sha256": "02e41c2ee650e41aee80c5609aaa6e90f74955eb21326e7390b3d36cf8dc96af",
+      "directory": "qa10-10-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-11-welcome-document",
+      "kind": "browser-preview",
+      "started_at": "2026-11-06T02:03:39.900179+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "de1dbae9df550ed66dff7273995faae6d5d955c75e73fc657d4c5bb0ac56ca52",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "node",
+        "build/integration/tour-welcome.mjs"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.77,
+      "finished_at": "2026-11-06T02:03:40.709582+00:00",
+      "log_sha256": "bcd95d7a2d60445f891255ba3eedbf11e0fdea81f0eb5c2d166372debd93c1e3",
+      "directory": "qa10-11-welcome-document"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-12-welcome-document",
+      "kind": "browser-preview",
+      "started_at": "2026-11-06T02:04:23.110619+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "82527e458f92720b2b3cdc918138027288c367a4a565c4b2f56987b005bcbed3",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "node",
+        "build/integration/tour-welcome.mjs"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 1.37,
+      "finished_at": "2026-11-06T02:04:24.532697+00:00",
+      "log_sha256": "0155c4aea380e891cdb97db2c4b34d6d64d2806d3f153a820e8c3c7ea9fe8d02",
+      "directory": "qa10-12-welcome-document"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-13-desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:04:38.519700+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "0e427375da38955404df5263dc735337e742f90a8e6bc1ad3caf9fe934c21588",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 37.61,
+      "finished_at": "2026-11-06T02:05:16.165695+00:00",
+      "log_sha256": "6f4d110e52ae862a2d46ee4940151ceecae9071b1ad4326eae13662030e7d4b4",
+      "directory": "qa10-13-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-14-welcome-document",
+      "kind": "browser-preview",
+      "started_at": "2026-11-06T02:04:52.790337+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "77a3a6cca19d74e2637e26f58d9c5d0d825b318537083b28c336bfcba4e3b5de",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "node",
+        "build/integration/tour-welcome.mjs"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.71,
+      "finished_at": "2026-11-06T02:04:55.540728+00:00",
+      "log_sha256": "201e00343999a5b4341998b4e4b35a9ff6db91b536e9540e8c5d79b3266c6634",
+      "directory": "qa10-14-welcome-document"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-15-components",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:05:46.580480+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "77a3a6cca19d74e2637e26f58d9c5d0d825b318537083b28c336bfcba4e3b5de",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-components.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 29.71,
+      "finished_at": "2026-11-06T02:06:16.325169+00:00",
+      "log_sha256": "6e00e2d5c2739bd0e788884d3f23c8cfaa766071f9ef12271ea35e2c9065bc3e",
+      "directory": "qa10-15-components"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-16-desktop",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:06:55.858489+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "35833f7527cd62a05166e1c8d66b36788fe1bcf6f5d091ba870050d5422c19ac",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-desktop.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 40.62,
+      "finished_at": "2026-11-06T02:07:36.521271+00:00",
+      "log_sha256": "0d29696e2b5f4b4bac9364364746d6ee56f3495e1575db40b1eb9ee1915d3d76",
+      "directory": "qa10-16-desktop"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-17-fullscreen-game",
+      "kind": "package-container",
+      "started_at": "2026-11-06T02:08:33.075077+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "2c44bcf70b318803caea06162db73ca36c342f56284750418cf3724db3c83517",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/create-experience-tour.py\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa10-components.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 13.71,
+      "finished_at": "2026-11-06T02:08:46.831818+00:00",
+      "log_sha256": "cd0f2877a06191508693be9b40b47313eb7ee24bf20f87abc5dc28f5c4b613d5",
+      "directory": "qa10-17-fullscreen-game"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-18-source",
+      "kind": "source",
+      "started_at": "2026-11-06T02:09:03.915172+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "2c44bcf70b318803caea06162db73ca36c342f56284750418cf3724db3c83517",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/create-experience-tour.py\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.52,
+      "finished_at": "2026-11-06T02:09:05.501287+00:00",
+      "log_sha256": "4f142ee63a6b68e65f04f8347addb75cbe19d859ea8b3f516b738928222f6082",
+      "directory": "qa10-18-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa10-19-gallery",
+      "kind": "browser-preview",
+      "started_at": "2026-11-06T02:12:01.960169+00:00",
+      "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+      "source_digest": "074509fa5dd6dd2061e18e0af53494143bb9749d7e8eb0e71cc2615a9b1056e9",
+      "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/create-experience-tour.py\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-gallery.mjs\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+      "command": [
+        "node",
+        "build/integration/tour-gallery.mjs"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.0,
+      "finished_at": "2026-11-06T02:12:06.018629+00:00",
+      "log_sha256": "91af5781009f3be1072ff426e0c5ad6242028f0f1cbcf2ed222f14cbeda5b3e6",
+      "directory": "qa10-19-gallery"
+    }
+  ],
+  "tour": [
+    {
+      "title": "The current boot menu",
+      "source": "qa5-13-orez-uefi-sdl/host-window-0030.png",
+      "caption": "Historical 5 November VM capture of the retained old development ISO. Kubuntu labels remain; this image predates owner hardening and must not be installed. A final OREZ boot menu is still required.",
+      "kind": "Historical VM \u2014 not a new boot test",
+      "sha256": "3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9",
+      "image": "images/3a93997e3b1c0810682c0e765a137faaab2c3c45b5fbc3bacaf00d37568604c9.png"
+    },
+    {
+      "title": "Installation is currently blocked",
+      "source": "qa10-15-components/native-details/04-installer-current-safety-block.png",
+      "caption": "The actual live-media guard displays why installation is unavailable and exits 78. No installer or disk write was performed.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22",
+      "image": "images/26e314c88dc960b06e42599c6efcc3a6e009f9c9bc0c4f25bc3567fad5a14a22.png"
+    },
+    {
+      "title": "Welcome home: login theme",
+      "source": "qa10-15-components/native-details/01-login-test-mode.png",
+      "caption": "Actual SDDM theme test mode. The environment has no usable desktop session, so sign-in is unavailable. This is not a successful boot or authentication test.",
+      "kind": "Actual SDDM test mode",
+      "sha256": "d8c2d5989fb17d005d81717861eb8ec47170d07ae89943fc25cf79f9fbc1f3bc",
+      "image": "images/d8c2d5989fb17d005d81717861eb8ec47170d07ae89943fc25cf79f9fbc1f3bc.png"
+    },
+    {
+      "title": "Password field",
+      "source": "qa10-15-components/native-details/03-login-password-masked.png",
+      "caption": "Dummy text is masked in the real login field. The completed installer must create your local owner password; no Google or Microsoft login is required.",
+      "kind": "Actual SDDM test mode",
+      "sha256": "7f19797fcf24eab279896236698d6acf1cd3b6d81c87335789c136a434169868",
+      "image": "images/7f19797fcf24eab279896236698d6acf1cd3b6d81c87335789c136a434169868.png"
+    },
+    {
+      "title": "Current welcome document",
+      "source": "qa10-14-welcome-document/welcome-document-desktop.png",
+      "caption": "The shipped local help document rendered in host Chromium from its source, at desktop and phone widths. Native Brave/file-URL launch is not tested by this render. A first-run setup wizard remains planned.",
+      "kind": "Actual local document \u2014 browser render",
+      "sha256": "d301a6ed2db4bdb4862a1d9f5cd7f585bdfc207eeb70acc8fa7a41e43bd3506b",
+      "image": "images/d301a6ed2db4bdb4862a1d9f5cd7f585bdfc207eeb70acc8fa7a41e43bd3506b.png"
+    },
+    {
+      "title": "Your desktop",
+      "source": "qa10-16-desktop/native-details/01-desktop-current-default.png",
+      "caption": "Actual nested Plasma desktop with the approved Rest wallpaper. The test account retains its demo palette. KDE taskbar/icons are still visible; this is not the final polished shell or a booted ISO.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "4d98664eecb38c340725c358158134d701ea97af6d606efbdbda7012e0de402c",
+      "image": "images/4d98664eecb38c340725c358158134d701ea97af6d606efbdbda7012e0de402c.png"
+    },
+    {
+      "title": "Find OREZ applications",
+      "source": "qa10-16-desktop/native-details/05-launcher-orez-search.png",
+      "caption": "Actual launcher search shows Store, Connect, Settings, Calendar, hardware tools and Welcome. Android entries exist but their consumer runtime remains deferred.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "322a448677cbb198666da1466e91c419271edf8d497a02f86d01e244967ffdf0",
+      "image": "images/322a448677cbb198666da1466e91c419271edf8d497a02f86d01e244967ffdf0.png"
+    },
+    {
+      "title": "Searchable Settings",
+      "source": "qa10-09-connectivity/native-details/03-settings-search-results.png",
+      "caption": "Typed Bluetooth into native Settings; matching results appeared. Clearing the query and closing Settings also passed.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "3bf24156a1bcd6acbc1acecc908c381ebf2b858d27943fe360b6320c5257114e",
+      "image": "images/3bf24156a1bcd6acbc1acecc908c381ebf2b858d27943fe360b6320c5257114e.png"
+    },
+    {
+      "title": "Network settings",
+      "source": "qa10-09-connectivity/native-details/01-network-open.png",
+      "caption": "Native NetworkManager settings open and close. This offline container has no physical Wi-Fi radio; no connection or hotspot claim.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "c4e1148ec53c1154f9205d545b9e0fa099040264857fcb1dd1a50e40b6c3865f",
+      "image": "images/c4e1148ec53c1154f9205d545b9e0fa099040264857fcb1dd1a50e40b6c3865f.png"
+    },
+    {
+      "title": "Wi-Fi password controls",
+      "source": "qa10-09-connectivity/native-details/06-dummy-password-masked.png",
+      "caption": "A dummy wireless credential was masked, revealed, remasked, cleared and cancelled. No connection was saved. This does not test actual Wi-Fi authentication.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "fed2d9516cc164d219282c444f6e3dc75462da75bdf9a022985d6274d6c845cb",
+      "image": "images/fed2d9516cc164d219282c444f6e3dc75462da75bdf9a022985d6274d6c845cb.png"
+    },
+    {
+      "title": "Bluetooth settings",
+      "source": "qa10-09-connectivity/native-details/02-bluetooth-open.png",
+      "caption": "The actual page correctly reports no Bluetooth adapter in the container. Target-PC pairing, audio and file transfer are pending.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "6b340efffa22865cc5df0727ae80f392bc3a5ac77593641dc22c286722a9c586",
+      "image": "images/6b340efffa22865cc5df0727ae80f392bc3a5ac77593641dc22c286722a9c586.png"
+    },
+    {
+      "title": "Phone connection",
+      "source": "qa10-15-components/native-details/05-phone-connect-no-devices.png",
+      "caption": "Real KDE Connect window, no paired phone. KDE Connect handles transfers/control; scrcpy provides separate consented screen mirroring. No Realme mirroring session was fabricated.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "f69b107d9cf58440761754b83f3b845dc6d0b784ce842f966dc36227f0f43d27",
+      "image": "images/f69b107d9cf58440761754b83f3b845dc6d0b784ce842f966dc36227f0f43d27.png"
+    },
+    {
+      "title": "File operations",
+      "source": "qa10-16-desktop/native-details/10-file-undo.png",
+      "caption": "A disposable text file was copied, renamed, moved to Trash and restored with Undo through the real Dolphin UI. The original and restored bytes matched. No user data or physical drive was touched.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "9d6898881a99f2faf344cda0682352b84398d2b99be4663ae59358c5add4670e",
+      "image": "images/9d6898881a99f2faf344cda0682352b84398d2b99be4663ae59358c5add4670e.png"
+    },
+    {
+      "title": "Tabs and split view",
+      "source": "qa10-16-desktop/native-details/11-dolphin-tabs-split.png",
+      "caption": "Real Dolphin tabs and two panes, showing the restored renamed file. Split/tabs visually confirmed; nested function-key automation was replaced with actual menu/button input.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "160ab5ce3862857e0b636a2d4f1cb8c7fd89286e57ef4d011d3fa449acfdd702",
+      "image": "images/160ab5ce3862857e0b636a2d4f1cb8c7fd89286e57ef4d011d3fa449acfdd702.png"
+    },
+    {
+      "title": "OREZ Store",
+      "source": "qa10-06-native-apps/native-details/store/14-my-apps.png",
+      "caption": "The native Store detects installed Brave, VLC and SuperTux. VLC launched from its button. Android app entries are explicitly pending, not functional Play Store downloads.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "192e1ce0dc2283f58f376a69bb8e908a151c3ac9a7107e3b01b887613665c983",
+      "image": "images/192e1ce0dc2283f58f376a69bb8e908a151c3ac9a7107e3b01b887613665c983.png"
+    },
+    {
+      "title": "OREZ Calendar",
+      "source": "qa10-06-native-apps/native-details/daily-apps/01-calendar-saved.png",
+      "caption": "Actual local event creation/editing, SQLite persistence, ICS export and cancellable deletion passed. No cloud account or remote request.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "57db73c228b59c941f3b2f6ebdb76686010bca30a53f189cad7d7272c0c8b333",
+      "image": "images/57db73c228b59c941f3b2f6ebdb76686010bca30a53f189cad7d7272c0c8b333.png"
+    },
+    {
+      "title": "Reuz clock",
+      "source": "qa10-06-native-apps/native-details/daily-apps/08-reuz-preferences.png",
+      "caption": "Native timezone and 12/24-hour preferences saved without changing the system clock. This is the current OREZ Reuz component, not a claim about another repository release.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "29112006c6dfa735d49603e0b1ee0cf5c98cac1eaefc9cdee11f5199df1d5ceb",
+      "image": "images/29112006c6dfa735d49603e0b1ee0cf5c98cac1eaefc9cdee11f5199df1d5ceb.png"
+    },
+    {
+      "title": "Reuz countdown",
+      "source": "qa10-06-native-apps/native-details/daily-apps/09-reuz-paused-timer.png",
+      "caption": "Start, pause, resume and completion passed. It is an application timer; suspended-PC wake and physical alarm audio are not verified.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "c367d2baae2c1e33161829a347f6bdb90138b4f882b0b85f6bc1e3d6f4d12523",
+      "image": "images/c367d2baae2c1e33161829a347f6bdb90138b4f882b0b85f6bc1e3d6f4d12523.png"
+    },
+    {
+      "title": "Reuz stopwatch",
+      "source": "qa10-06-native-apps/native-details/daily-apps/11-reuz-stopwatch-lap.png",
+      "caption": "Start/pause, lap and reset passed. Closing active work asks for confirmation and cancellation keeps the app open.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "e41f58bc0124ec4d67891b6d4b8731d49f901ef37aed34bfe6f4f24af6ffe897",
+      "image": "images/e41f58bc0124ec4d67891b6d4b8731d49f901ef37aed34bfe6f4f24af6ffe897.png"
+    },
+    {
+      "title": "OREZ Ink palette",
+      "source": "qa10-06-native-apps/native-details/daily-apps/13-reuz-OREZInk.png",
+      "caption": "Real Reuz rendering with the packaged Ink palette. Both Paper and Ink were applied; the five proposed future themes are not implemented.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "f5fe07eed8174327ce36f84011a12f0bbfa584ebd2872379b7c4e6842301799b",
+      "image": "images/f5fe07eed8174327ce36f84011a12f0bbfa584ebd2872379b7c4e6842301799b.png"
+    },
+    {
+      "title": "Horizon wallpaper",
+      "source": "qa10-16-desktop/native-details/03-desktop-horizon.png",
+      "caption": "Your second supplied wallpaper applied in the real desktop, then restored to Rest. A wallpaper change is not a new OS edition.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "139b0ebaa51f5b3da6eacb956bcb643a1a523254187c62676b2c59020974730e",
+      "image": "images/139b0ebaa51f5b3da6eacb956bcb643a1a523254187c62676b2c59020974730e.png"
+    },
+    {
+      "title": "Fullscreen VLC",
+      "source": "qa10-06-native-apps/native-details/input/04-vlc-default-f-fullscreen.png",
+      "caption": "Generated local video played. Actual Space pause/resume, mouse menu, F fullscreen on/off and Ctrl+Q passed. GPU decoding, physical audio and streaming were not tested.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "f27a1a4411aaf095ec51746c5649473e23c2be98b5a4ec7d47ae191c3a9de6bc",
+      "image": "images/f27a1a4411aaf095ec51746c5649473e23c2be98b5a4ec7d47ae191c3a9de6bc.png"
+    },
+    {
+      "title": "Fullscreen native game",
+      "source": "qa10-17-fullscreen-game/native-details/07-game-fullscreen-after-input.png",
+      "caption": "SuperTux rendered at 1440\u00d7900. Captures show the player moving from x\u224896 to x\u2248482 after Right input. This is software rendering, not an RTX benchmark, Android emulation or universal game compatibility.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "24c010ad86d6623237a3c98a7a5aa1dd8b3c9cb77aa12ff4d3eb2bd6c72abb4f",
+      "image": "images/24c010ad86d6623237a3c98a7a5aa1dd8b3c9cb77aa12ff4d3eb2bd6c72abb4f.png"
+    },
+    {
+      "title": "Game pause menu",
+      "source": "qa10-17-fullscreen-game/native-details/08-game-pause-menu.png",
+      "caption": "Escape opened the actual game pause menu. Only the disposable native game session was stopped.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "69c645128cdbc6198993caf05abc1daab43f34d86d84c89f6143c05db7506c61",
+      "image": "images/69c645128cdbc6198993caf05abc1daab43f34d86d84c89f6143c05db7506c61.png"
+    },
+    {
+      "title": "Files and terminal together",
+      "source": "qa10-16-desktop/native-details/12-files-and-terminal.png",
+      "caption": "Dolphin and Konsole arranged side by side. Minimize and restore also passed. Ordinary user UID 1500, not a privileged desktop session.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "7b67940c048393c5bade7ff632b29f1c3c0a12e79e49e7329fdf917743b97e2c",
+      "image": "images/7b67940c048393c5bade7ff632b29f1c3c0a12e79e49e7329fdf917743b97e2c.png"
+    },
+    {
+      "title": "A second workspace",
+      "source": "qa10-16-desktop/native-details/14-second-workspace.png",
+      "caption": "KWin created a second workspace, switched to it, returned and removed the test workspace. The windows stayed on their original workspace.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "b5e06b07e2e480e61ae240a22267f2a9e8c61129d4d96ac69baf6621d0242f32",
+      "image": "images/b5e06b07e2e480e61ae240a22267f2a9e8c61129d4d96ac69baf6621d0242f32.png"
+    },
+    {
+      "title": "Restart the panel, preserve the work",
+      "source": "qa10-16-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "caption": "A controlled Plasma shell restart brought the panel back while the existing Dolphin/Konsole processes remained alive. This is not kernel-crash, power-loss or disk-recovery qualification.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "54a55a01bd44b31cfda5249cedb9743af5fe800b9a433029f7fb35871745eaac",
+      "image": "images/54a55a01bd44b31cfda5249cedb9743af5fe800b9a433029f7fb35871745eaac.png"
+    },
+    {
+      "title": "Brave: honest environment limit",
+      "source": "qa10-06-native-apps/report-001.png",
+      "caption": "The official native Linux browser was attempted. Its sandbox could not create required nested namespaces. This report records BLOCKED, even though the vendor wrapper returned zero; no working browser or YouTube is claimed.",
+      "kind": "Test report \u2014 not a browser window",
+      "sha256": "3e46090153d0fae50b518422ac7b12b8ed79e34a8cae1b5f455bf8269046343d",
+      "image": "images/3e46090153d0fae50b518422ac7b12b8ed79e34a8cae1b5f455bf8269046343d.png"
+    },
+    {
+      "title": "AI status is visible",
+      "source": "qa10-16-desktop/native-details/12-files-and-terminal.png",
+      "caption": "orezctl ai explicitly reports NOT ENABLED. No AI/MCP root or remote action broker is installed. Future AI must use ordinary permissions and explicit owner approval.",
+      "kind": "Native component \u2014 isolated container",
+      "sha256": "7b67940c048393c5bade7ff632b29f1c3c0a12e79e49e7329fdf917743b97e2c",
+      "image": "images/7b67940c048393c5bade7ff632b29f1c3c0a12e79e49e7329fdf917743b97e2c.png"
+    }
+  ],
+  "implementation_commit": "f3e88c0c56485830d82f9ad09a69b7047a5cf197",
+  "latest_owner_direction": "Native Linux Brave; YouTube optional; consented scrcpy mirroring prioritized, not yet tested with a phone. Local account created during setup, no existing online account required."
+}

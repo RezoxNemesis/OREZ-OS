@@ -1,0 +1,257 @@
+test_adb_targets_only_private_loopback_and_owned_serial (test_android_manager.AndroidAppRoutingTests.test_adb_targets_only_private_loopback_and_owned_serial) ... ok
+test_android_error_never_becomes_success_or_install_claim (test_android_manager.AndroidAppRoutingTests.test_android_error_never_becomes_success_or_install_claim) ... ok
+test_app_settings_target_guest_package_only (test_android_manager.AndroidAppRoutingTests.test_app_settings_target_guest_package_only) ... ok
+test_consumer_gate_blocks_without_contacting_devices (test_android_manager.AndroidAppRoutingTests.test_consumer_gate_blocks_without_contacting_devices) ... ok
+test_owned_runtime_required_before_any_adb_command (test_android_manager.AndroidAppRoutingTests.test_owned_runtime_required_before_any_adb_command) ... ok
+test_resolved_android_launcher_is_not_a_website (test_android_manager.AndroidAppRoutingTests.test_resolved_android_launcher_is_not_a_website) ... ok
+test_unknown_package_or_operation_is_rejected (test_android_manager.AndroidAppRoutingTests.test_unknown_package_or_operation_is_rejected) ... ok
+test_wrong_avd_and_foreign_activity_fail_closed (test_android_manager.AndroidAppRoutingTests.test_wrong_avd_and_foreign_activity_fail_closed) ... ok
+test_adb_is_private_loopback_and_separate_from_normal_development (test_android_manager.AndroidManagerTests.test_adb_is_private_loopback_and_separate_from_normal_development) ... ok
+test_archive_traversal_and_symlink_rejected (test_android_manager.AndroidManagerTests.test_archive_traversal_and_symlink_rejected) ... ok
+test_bootstrap_cancellation_downloads_nothing (test_android_manager.AndroidManagerTests.test_bootstrap_cancellation_downloads_nothing) ... ok
+test_invalid_configuration_is_rejected (test_android_manager.AndroidManagerTests.test_invalid_configuration_is_rejected) ... ok
+test_launch_is_accelerated_unrooted_without_host_shares (test_android_manager.AndroidManagerTests.test_launch_is_accelerated_unrooted_without_host_shares) ... ok
+test_memory_pressure_prevents_guest_start (test_android_manager.AndroidManagerTests.test_memory_pressure_prevents_guest_start) ... ok
+test_no_kvm_fails_before_emulator_start (test_android_manager.AndroidManagerTests.test_no_kvm_fails_before_emulator_start) ... ok
+test_private_state_permissions (test_android_manager.AndroidManagerTests.test_private_state_permissions) ... ok
+test_remove_only_managed_runtime_preserves_other_files (test_android_manager.AndroidManagerTests.test_remove_only_managed_runtime_preserves_other_files) ... ok
+test_reset_requires_exact_confirmation (test_android_manager.AndroidManagerTests.test_reset_requires_exact_confirmation) ... ok
+test_root_execution_is_rejected (test_android_manager.AndroidManagerTests.test_root_execution_is_rejected) ... ok
+test_six_gib_host_gets_smaller_guest_default (test_android_manager.AndroidManagerTests.test_six_gib_host_gets_smaller_guest_default) ... ok
+test_sixteen_gib_host_gets_bounded_guest_default (test_android_manager.AndroidManagerTests.test_sixteen_gib_host_gets_bounded_guest_default) ... ok
+test_status_does_not_install_or_create_directories (test_android_manager.AndroidManagerTests.test_status_does_not_install_or_create_directories) ... ok
+test_symlink_profile_cannot_erase_external_directory (test_android_manager.AndroidManagerTests.test_symlink_profile_cannot_erase_external_directory) ... ok
+test_symlink_root_is_rejected (test_android_manager.AndroidManagerTests.test_symlink_root_is_rejected) ... ok
+test_unknown_storage_is_not_adopted (test_android_manager.AndroidManagerTests.test_unknown_storage_is_not_adopted) ... ok
+test_unrelated_pid_cannot_be_stopped (test_android_manager.AndroidManagerTests.test_unrelated_pid_cannot_be_stopped) ... ok
+test_valid_archive_has_accessible_nonprivileged_modes (test_android_manager.AndroidManagerTests.test_valid_archive_has_accessible_nonprivileged_modes) ... ok
+test_first_login_uses_owner_default (test_android_manager.WallpaperTests.test_first_login_uses_owner_default) ... ok
+test_owner_images_are_unchanged (test_android_manager.WallpaperTests.test_owner_images_are_unchanged) ... ok
+test_preview_uses_same_unmodified_wallpaper (test_android_manager.WallpaperTests.test_preview_uses_same_unmodified_wallpaper) ... ok
+test_ambiguous_original_xattr_paths_fail_closed (test_app_layer.AppLayerTests.test_ambiguous_original_xattr_paths_fail_closed) ... ok
+test_deleted_file_is_not_silently_left_in_lower_layer (test_app_layer.AppLayerTests.test_deleted_file_is_not_silently_left_in_lower_layer) ... ok
+test_file_capabilities_cannot_bypass_setuid_review (test_app_layer.AppLayerTests.test_file_capabilities_cannot_bypass_setuid_review) ... ok
+test_file_content_metadata_and_link_changes_are_recorded (test_app_layer.AppLayerTests.test_file_content_metadata_and_link_changes_are_recorded) ... ok
+test_inode_type_change_is_not_approximated (test_app_layer.AppLayerTests.test_inode_type_change_is_not_approximated) ... ok
+test_inventory_never_follows_absolute_directory_alias (test_app_layer.AppLayerTests.test_inventory_never_follows_absolute_directory_alias) ... ok
+test_path_traversal_rejected (test_app_layer.AppLayerTests.test_path_traversal_rejected) ... ok
+test_policy_and_autostart_changes_are_rejected (test_app_layer.AppLayerTests.test_policy_and_autostart_changes_are_rejected) ... ok
+test_runtime_and_build_logs_are_not_redistributed (test_app_layer.AppLayerTests.test_runtime_and_build_logs_are_not_redistributed) ... ok
+test_unreviewed_privileged_binary_rejected (test_app_layer.AppLayerTests.test_unreviewed_privileged_binary_rejected) ... ok
+test_work_guard_rejects_host_roots_and_aliases (test_app_layer.AppLayerTests.test_work_guard_rejects_host_roots_and_aliases) ... ok
+test_xattrs_on_original_ancestor_are_not_overlooked (test_app_layer.AppLayerTests.test_xattrs_on_original_ancestor_are_not_overlooked) ... ok
+test_calendar_export_escapes_folds_utf8_and_ends_next_day (test_daily_models.DailyModelsTests.test_calendar_export_escapes_folds_utf8_and_ends_next_day) ... ok
+test_calendar_persists_unicode_and_parameterized_titles (test_daily_models.DailyModelsTests.test_calendar_persists_unicode_and_parameterized_titles) ... ok
+test_corrupt_clock_configuration_is_not_silently_reset (test_daily_models.DailyModelsTests.test_corrupt_clock_configuration_is_not_silently_reset) ... ok
+test_existing_foreign_database_is_not_replaced (test_daily_models.DailyModelsTests.test_existing_foreign_database_is_not_replaced) ... ok
+test_invalid_clock_preferences_do_not_overwrite_previous_choice (test_daily_models.DailyModelsTests.test_invalid_clock_preferences_do_not_overwrite_previous_choice) ... ok
+test_private_database_and_settings_permissions (test_daily_models.DailyModelsTests.test_private_database_and_settings_permissions) ... ok
+test_reuz_timezone_formats_and_day_boundary_persist (test_daily_models.DailyModelsTests.test_reuz_timezone_formats_and_day_boundary_persist) ... ok
+test_root_and_aliased_storage_are_refused (test_daily_models.DailyModelsTests.test_root_and_aliased_storage_are_refused) ... ok
+test_stopwatch_pause_resume_laps_and_reset (test_daily_models.DailyModelsTests.test_stopwatch_pause_resume_laps_and_reset) ... ok
+test_timer_rejects_unbounded_or_zero_duration (test_daily_models.DailyModelsTests.test_timer_rejects_unbounded_or_zero_duration) ... ok
+test_timer_suspended_elapsed_time_and_exactly_one_completion (test_daily_models.DailyModelsTests.test_timer_suspended_elapsed_time_and_exactly_one_completion) ... ok
+test_unknown_events_invalid_dates_and_empty_titles_are_rejected (test_daily_models.DailyModelsTests.test_unknown_events_invalid_dates_and_empty_titles_are_rejected) ... ok
+test_web_youtube_is_explicit_and_preserves_browser_sandbox (test_daily_models.DailyModelsTests.test_web_youtube_is_explicit_and_preserves_browser_sandbox) ... ok
+test_ci_invokes_pkg_audit_after_build (test_deb_contents.DebAuditTests.test_ci_invokes_pkg_audit_after_build) ... ok
+test_exact_archive_payload_without_maintainer_scripts_passes_source_gate (test_deb_contents.DebAuditTests.test_exact_archive_payload_without_maintainer_scripts_passes_source_gate) ... ok
+test_manifest_rejects_absolute_traversal_and_duplicates (test_deb_contents.DebAuditTests.test_manifest_rejects_absolute_traversal_and_duplicates) ... ok
+test_missing_extra_or_symlink_blocks (test_deb_contents.DebAuditTests.test_missing_extra_or_symlink_blocks) ... ok
+test_package_scripts_or_wrong_identity_blocks (test_deb_contents.DebAuditTests.test_package_scripts_or_wrong_identity_blocks) ... ok
+test_private_world_writable_or_privileged_payload_modes_are_rejected (test_deb_contents.DebAuditTests.test_private_world_writable_or_privileged_payload_modes_are_rejected) ... ok
+test_brave_repository_cannot_supply_ubuntu_packages (test_image_packages.ImagePackageTests.test_brave_repository_cannot_supply_ubuntu_packages) ... ok
+test_exact_transaction_preserves_unrelated_base (test_image_packages.ImagePackageTests.test_exact_transaction_preserves_unrelated_base) ... ok
+test_filename_cannot_escape_bundle (test_image_packages.ImagePackageTests.test_filename_cannot_escape_bundle) ... ok
+test_integrity_rejects_modified_missing_extra_and_symlink_payload (test_image_packages.ImagePackageTests.test_integrity_rejects_modified_missing_extra_and_symlink_payload) ... ok
+test_inventory_preserves_multiarch_and_ignores_removed_packages (test_image_packages.ImagePackageTests.test_inventory_preserves_multiarch_and_ignores_removed_packages) ... ok
+test_key_pins_ignore_subkey_and_require_primary (test_image_packages.ImagePackageTests.test_key_pins_ignore_subkey_and_require_primary) ... ok
+test_profile_rejects_shell_syntax_duplicates_and_boot_updates (test_image_packages.ImagePackageTests.test_profile_rejects_shell_syntax_duplicates_and_boot_updates) ... ok
+test_removal_downgrade_and_protected_upgrade_rejected (test_image_packages.ImagePackageTests.test_removal_downgrade_and_protected_upgrade_rejected) ... ok
+test_stale_plan_rejected (test_image_packages.ImagePackageTests.test_stale_plan_rejected) ... ok
+test_untrusted_and_weak_hash_rejected (test_image_packages.ImagePackageTests.test_untrusted_and_weak_hash_rejected) ... ok
+test_uri_rejects_alternate_host_insecure_transport_and_credentials (test_image_packages.ImagePackageTests.test_uri_rejects_alternate_host_insecure_transport_and_credentials) ... ok
+test_valid_profile (test_image_packages.ImagePackageTests.test_valid_profile) ... ok
+test_bad_or_duplicate_manifest_blocks (test_install_collisions.InstallCollisionTests.test_bad_or_duplicate_manifest_blocks) ... ok
+test_existing_base_file_name_blocks (test_install_collisions.InstallCollisionTests.test_existing_base_file_name_blocks) ... ok
+test_extra_directories_allowed_but_extra_files_not_allowed (test_install_collisions.InstallCollisionTests.test_extra_directories_allowed_but_extra_files_not_allowed) ... ok
+test_files_do_not_overwrite_original_kubuntu (test_install_collisions.InstallCollisionTests.test_files_do_not_overwrite_original_kubuntu) ... ok
+test_missing_or_unexpected_payload_path_blocks (test_install_collisions.InstallCollisionTests.test_missing_or_unexpected_payload_path_blocks) ... ok
+test_real_allowlist_is_valid_and_still_not_installer_certification (test_install_collisions.InstallCollisionTests.test_real_allowlist_is_valid_and_still_not_installer_certification) ... ok
+test_inactive_profile_matches_exact_two_ordered_sources (test_install_manifest_replay.SyntheticInstallPayloadTests.test_inactive_profile_matches_exact_two_ordered_sources) ... ok
+test_install_manifest_is_allowlisted_and_unprivileged (test_install_manifest_replay.SyntheticInstallPayloadTests.test_install_manifest_is_allowlisted_and_unprivileged) ... ok
+test_synthetic_root_replay_and_negative_apparmor_regression (test_install_manifest_replay.SyntheticInstallPayloadTests.test_synthetic_root_replay_and_negative_apparmor_regression) ... ok
+test_kubuntu_live_only_apparmor_policy_blocks (test_installed_audit.InstallerAuditTests.test_kubuntu_live_only_apparmor_policy_blocks) ... ok
+test_luks_crypttab_without_luks_option_blocks (test_installed_audit.InstallerAuditTests.test_luks_crypttab_without_luks_option_blocks) ... ok
+test_missing_crypttab_blocks_when_encryption_expected (test_installed_audit.InstallerAuditTests.test_missing_crypttab_blocks_when_encryption_expected) ... ok
+test_missing_orez_identity_is_install_blocker (test_installed_audit.InstallerAuditTests.test_missing_orez_identity_is_install_blocker) ... ok
+test_non_btrfs_root_blocks_when_btrfs_expected (test_installed_audit.InstallerAuditTests.test_non_btrfs_root_blocks_when_btrfs_expected) ... ok
+test_safe_static_fixtures_do_not_claim_install_safety (test_installed_audit.InstallerAuditTests.test_safe_static_fixtures_do_not_claim_install_safety) ... ok
+test_symlink_outside_installed_root_is_rejected (test_installed_audit.InstallerAuditTests.test_symlink_outside_installed_root_is_rejected) ... ok
+test_decoder_output_is_bounded (test_live_initrd.InitrdPatchTests.test_decoder_output_is_bounded) ... ok
+test_hook_uses_local_repositories_without_weakening_authentication (test_live_initrd.InitrdPatchTests.test_hook_uses_local_repositories_without_weakening_authentication) ... ok
+test_manifest_cannot_change_verified_prefix (test_live_initrd.InitrdPatchTests.test_manifest_cannot_change_verified_prefix) ... ok
+test_prefix_preservation_roundtrip_and_tamper_detection (test_live_initrd.InitrdPatchTests.test_prefix_preservation_roundtrip_and_tamper_detection) ... ok
+test_replacement_preserves_every_other_byte_and_is_reversible (test_live_initrd.InitrdPatchTests.test_replacement_preserves_every_other_byte_and_is_reversible) ... ok
+test_symlink_and_oversized_input_refused (test_live_initrd.InitrdPatchTests.test_symlink_and_oversized_input_refused) ... ok
+test_wrong_missing_duplicate_and_malformed_member_refused (test_live_initrd.InitrdPatchTests.test_wrong_missing_duplicate_and_malformed_member_refused) ... ok
+test_wrong_upstream_and_existing_outputs_are_refused (test_live_initrd.InitrdPatchTests.test_wrong_upstream_and_existing_outputs_are_refused) ... ok
+test_absence_of_patterns_never_claims_runtime_security (test_live_initrd.LiveAuthAuditTests.test_absence_of_patterns_never_claims_runtime_security) ... ok
+test_both_privilege_paths_and_empty_password_block (test_live_initrd.LiveAuthAuditTests.test_both_privilege_paths_and_empty_password_block) ... ok
+test_missing_or_linked_hooks_fail_closed (test_live_initrd.LiveAuthAuditTests.test_missing_or_linked_hooks_fail_closed) ... ok
+test_malformed_missing_duplicate_and_escaping_paths_refused (test_live_initrd.MediaChecksumTests.test_malformed_missing_duplicate_and_escaping_paths_refused) ... ok
+test_updates_only_orez_files_and_preserves_upstream_entries (test_live_initrd.MediaChecksumTests.test_updates_only_orez_files_and_preserves_upstream_entries) ... ok
+test_canonical (test_live_owner_metadata.OwnerMetadataTests.test_canonical) ... ok
+test_missing_file_rejected (test_live_owner_metadata.OwnerMetadataTests.test_missing_file_rejected) ... ok
+test_unreadable_or_writable_file_rejected (test_live_owner_metadata.OwnerMetadataTests.test_unreadable_or_writable_file_rejected) ... ok
+test_user_owned_directory_rejected (test_live_owner_metadata.OwnerMetadataTests.test_user_owned_directory_rejected) ... ok
+test_all_reviewed_hooks_roundtrip_and_unrelated_changes_are_rejected (test_owner_initrd.OwnerInitrdTests.test_all_reviewed_hooks_roundtrip_and_unrelated_changes_are_rejected) ... ok
+test_changed_upstream_owner_hook_is_refused (test_owner_initrd.OwnerInitrdTests.test_changed_upstream_owner_hook_is_refused) ... ok
+test_no_empty_password_grant_autologin_or_emergency_root_shell (test_owner_initrd.OwnerInitrdTests.test_no_empty_password_grant_autologin_or_emergency_root_shell) ... ok
+test_normal_payload_excludes_live_owner_but_live_layer_requires_it (test_owner_initrd.OwnerInitrdTests.test_normal_payload_excludes_live_owner_but_live_layer_requires_it) ... ok
+test_cancel_and_mismatch_do_not_change_account (test_owner_setup.OwnerSetupTests.test_cancel_and_mismatch_do_not_change_account) ... ok
+test_completion_receipt_contains_no_password_and_request_is_removed (test_owner_setup.OwnerSetupTests.test_completion_receipt_contains_no_password_and_request_is_removed) ... ok
+test_failed_password_change_relocks_owner_and_keeps_setup_required (test_owner_setup.OwnerSetupTests.test_failed_password_change_relocks_owner_and_keeps_setup_required) ... ok
+test_live_guard_rejects_ordinary_user_and_persistent_boot (test_owner_setup.OwnerSetupTests.test_live_guard_rejects_ordinary_user_and_persistent_boot) ... ok
+test_owner_boot_components_never_enter_normal_package_allowlist (test_owner_setup.OwnerSetupTests.test_owner_boot_components_never_enter_normal_package_allowlist) ... ok
+test_password_is_stdin_only_and_subprocess_errors_are_not_disclosed (test_owner_setup.OwnerSetupTests.test_password_is_stdin_only_and_subprocess_errors_are_not_disclosed) ... ok
+test_password_validation_rejects_blank_short_and_injected_records (test_owner_setup.OwnerSetupTests.test_password_validation_rejects_blank_short_and_injected_records) ... ok
+test_pipe_input_is_denied_before_reading_password (test_owner_setup.OwnerSetupTests.test_pipe_input_is_denied_before_reading_password) ... ok
+test_artifact_path_matches_declared_version (test_package_version.PackageVersionTests.test_artifact_path_matches_declared_version) ... ok
+test_prerelease_sorts_before_same_release (test_package_version.PackageVersionTests.test_prerelease_sorts_before_same_release) ... ok
+test_revision_advances_previous_verified_package (test_package_version.PackageVersionTests.test_revision_advances_previous_verified_package) ... ok
+test_unsafe_or_ambiguous_versions_are_rejected (test_package_version.PackageVersionTests.test_unsafe_or_ambiguous_versions_are_rejected) ... ok
+test_private_checkout_becomes_readable_without_mutating_sources_or_link_targets (test_payload_permissions.PayloadPermissionsTests.test_private_checkout_becomes_readable_without_mutating_sources_or_link_targets) ... ok
+test_refuses_existing_destination (test_payload_permissions.PayloadPermissionsTests.test_refuses_existing_destination) ... ok
+test_blank_try_frame_retries_without_input (test_source.OrezSourceTests.test_blank_try_frame_retries_without_input) ... ok
+test_builder_has_no_raw_disk_writer (test_source.OrezSourceTests.test_builder_has_no_raw_disk_writer) ... ok
+test_candidate_calamares_profile_is_not_active_and_excludes_live_apparmor (test_source.OrezSourceTests.test_candidate_calamares_profile_is_not_active_and_excludes_live_apparmor) ... ok
+test_collision_audit_workflow_is_one_shot_and_non_destructive (test_source.OrezSourceTests.test_collision_audit_workflow_is_one_shot_and_non_destructive) ... ok
+test_desktop_files_have_registered_commands (test_source.OrezSourceTests.test_desktop_files_have_registered_commands) ... ok
+test_graphical_frame_rejects_blank_even_with_plasma_process (test_source.OrezSourceTests.test_graphical_frame_rejects_blank_even_with_plasma_process) ... ok
+test_graphical_witness_is_unprivileged_and_opt_in (test_source.OrezSourceTests.test_graphical_witness_is_unprivileged_and_opt_in) ... ok
+test_hardware_preflight_never_uses_disk_write_or_elevation (test_source.OrezSourceTests.test_hardware_preflight_never_uses_disk_write_or_elevation) ... ok
+test_install_only_payload_has_strict_file_allowlist (test_source.OrezSourceTests.test_install_only_payload_has_strict_file_allowlist) ... ok
+test_installer_source_inspector_never_formats_disks (test_source.OrezSourceTests.test_installer_source_inspector_never_formats_disks) ... ok
+test_iso_checker_requires_live_installer_safety_guard (test_source.OrezSourceTests.test_iso_checker_requires_live_installer_safety_guard) ... ok
+test_live_boot_witness_is_opt_in_and_read_only (test_source.OrezSourceTests.test_live_boot_witness_is_opt_in_and_read_only) ... ok
+test_live_installer_is_visibly_disabled_but_host_package_preserves_calamares (test_source.OrezSourceTests.test_live_installer_is_visibly_disabled_but_host_package_preserves_calamares) ... ok
+test_orez_controls_and_transparency (test_source.OrezSourceTests.test_orez_controls_and_transparency) ... ok
+test_orezctl_denies_unknown_commands (test_source.OrezSourceTests.test_orezctl_denies_unknown_commands) ... ok
+test_overlay_is_unprivileged_and_visible (test_source.OrezSourceTests.test_overlay_is_unprivileged_and_visible) ... ok
+test_pristine_kubuntu_control_is_offline_and_diskless (test_source.OrezSourceTests.test_pristine_kubuntu_control_is_offline_and_diskless) ... ok
+test_qemu_usb_controller_and_safe_welcome_click (test_source.OrezSourceTests.test_qemu_usb_controller_and_safe_welcome_click) ... ok
+test_qmp_try_welcome_transition_is_disposable_only (test_source.OrezSourceTests.test_qmp_try_welcome_transition_is_disposable_only) ... ok
+test_qpainter_kernel_flag_both_branches (test_source.OrezSourceTests.test_qpainter_kernel_flag_both_branches) ... ok
+test_required_project_handoff_documents_exist (test_source.OrezSourceTests.test_required_project_handoff_documents_exist) ... ok
+test_scripts_syntax (test_source.OrezSourceTests.test_scripts_syntax) ... ok
+test_status_does_not_require_root (test_source.OrezSourceTests.test_status_does_not_require_root) ... ok
+test_user_can_disable_and_restore_wallpaper_autostart (test_source.OrezSourceTests.test_user_can_disable_and_restore_wallpaper_autostart) ... ok
+test_vm_qpainter_experiment_is_visible_opt_in_only (test_source.OrezSourceTests.test_vm_qpainter_experiment_is_visible_opt_in_only) ... ok
+test_vm_video_adapter_is_test_only_and_allowlisted (test_source.OrezSourceTests.test_vm_video_adapter_is_test_only_and_allowlisted) ... ok
+test_wallpaper_svg_parses (test_source.OrezSourceTests.test_wallpaper_svg_parses) ... ok
+test_welcome_frame_check_accepts_pinned_layout_only (test_source.OrezSourceTests.test_welcome_frame_check_accepts_pinned_layout_only) ... ok
+test_invalid_catalog_schema_and_web_kind_are_rejected (test_store.StoreTests.test_invalid_catalog_schema_and_web_kind_are_rejected) ... ok
+test_native_launch_uses_fixed_binary_no_catalog_execution (test_store.StoreTests.test_native_launch_uses_fixed_binary_no_catalog_execution) ... ok
+test_no_web_app_launch_flags_or_privileged_helper (test_store.StoreTests.test_no_web_app_launch_flags_or_privileged_helper) ... ok
+test_official_linux_versions_are_preferred_without_android_duplicates (test_store.StoreTests.test_official_linux_versions_are_preferred_without_android_duplicates) ... ok
+test_publisher_info_requires_consent_and_never_installs_app (test_store.StoreTests.test_publisher_info_requires_consent_and_never_installs_app) ... ok
+test_requested_apps_are_android_and_never_web_fallbacks (test_store.StoreTests.test_requested_apps_are_android_and_never_web_fallbacks) ... ok
+test_root_is_rejected_before_actions (test_store.StoreTests.test_root_is_rejected_before_actions) ... ok
+test_runtime_controls_require_explicit_acknowledgement (test_store.StoreTests.test_runtime_controls_require_explicit_acknowledgement) ... ok
+test_status_does_not_create_directories_or_start_processes (test_store.StoreTests.test_status_does_not_create_directories_or_start_processes) ... ok
+test_symlink_or_unrecognized_store_data_not_adopted (test_store.StoreTests.test_symlink_or_unrecognized_store_data_not_adopted) ... ok
+test_unknown_app_and_command_injection_rejected (test_store.StoreTests.test_unknown_app_and_command_injection_rejected) ... ok
+test_ambiguous_windows_are_never_moved_or_used_for_input (test_vm_probe.VMProbeTests.test_ambiguous_windows_are_never_moved_or_used_for_input) ... ok
+test_both_boot_paths_have_only_offline_readonly_iso_and_private_control (test_vm_probe.VMProbeTests.test_both_boot_paths_have_only_offline_readonly_iso_and_private_control) ... ok
+test_cleanup_terminates_child (test_vm_probe.VMProbeTests.test_cleanup_terminates_child) ... ok
+test_device_input_refused_before_execution (test_vm_probe.VMProbeTests.test_device_input_refused_before_execution) ... ok
+test_missing_surface_error_keeps_structured_cause (test_vm_probe.VMProbeTests.test_missing_surface_error_keeps_structured_cause) ... ok
+test_other_application_window_is_never_moved (test_vm_probe.VMProbeTests.test_other_application_window_is_never_moved) ... ok
+test_qmp_disconnect_is_not_a_pass (test_vm_probe.VMProbeTests.test_qmp_disconnect_is_not_a_pass) ... ok
+test_qmp_error_is_not_a_pass (test_vm_probe.VMProbeTests.test_qmp_error_is_not_a_pass) ... ok
+test_qmp_events_and_fragmented_reply (test_vm_probe.VMProbeTests.test_qmp_events_and_fragmented_reply) ... ok
+
+----------------------------------------------------------------------
+Ran 172 tests in 1.235s
+
+OK
+Google Android SDK terms: https://developer.android.com/studio/terms
+This is a development/testing provider. Google software is not redistributed by OREZ.
+{
+  "schema_version": 2,
+  "original_sha256": "892a31ef13fac2358166026cc2622e4f723be0e38a91ecb7a914dd542d99fed2",
+  "original_bytes": 761,
+  "patched_sha256": "84d09a22fb9918fc38cd4f3a09cafef76a1fb1c7aafdf631714961ec36ebb474",
+  "patched_bytes": 1111,
+  "early_prefix_bytes": 23,
+  "early_prefix_sha256": "9d899690039bfbcf5df5c7c21579d9eb392b3cdb3fea37d42678b174fe15e626",
+  "original_archive_sha256": "b5efd8ea2cffcd63411a29780c77aa54497d0608e1e76162b64d6cf4b4e826a8",
+  "patched_archive_sha256": "db4e2ae15b428619f4cee4d98b6a57292d009b6c559f0f28696e169b996b8d1d",
+  "replacement": "scripts/casper-bottom/41apt_build_cache_cdrom",
+  "hook_sha256": "69952083c106fba70ac431f6915f4ae7669d039b04999122605c083287a7172e",
+  "compression": "zstd",
+  "compressor_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "owner": "0:0",
+  "mode": "0755",
+  "licence": "GPL-2.0-or-later",
+  "runtime_tested": false,
+  "secure_boot_qualified": false,
+  "administrator_policy_changed": false,
+  "installation_approved": false
+}
+{
+  "schema_version": 2,
+  "original_sha256": "892a31ef13fac2358166026cc2622e4f723be0e38a91ecb7a914dd542d99fed2",
+  "original_bytes": 761,
+  "patched_sha256": "84d09a22fb9918fc38cd4f3a09cafef76a1fb1c7aafdf631714961ec36ebb474",
+  "patched_bytes": 1111,
+  "early_prefix_bytes": 23,
+  "early_prefix_sha256": "9d899690039bfbcf5df5c7c21579d9eb392b3cdb3fea37d42678b174fe15e626",
+  "original_archive_sha256": "b5efd8ea2cffcd63411a29780c77aa54497d0608e1e76162b64d6cf4b4e826a8",
+  "patched_archive_sha256": "db4e2ae15b428619f4cee4d98b6a57292d009b6c559f0f28696e169b996b8d1d",
+  "replacement": "scripts/casper-bottom/41apt_build_cache_cdrom",
+  "hook_sha256": "69952083c106fba70ac431f6915f4ae7669d039b04999122605c083287a7172e",
+  "compression": "zstd",
+  "compressor_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "owner": "0:0",
+  "mode": "0755",
+  "licence": "GPL-2.0-or-later",
+  "runtime_tested": false,
+  "secure_boot_qualified": false,
+  "administrator_policy_changed": false,
+  "installation_approved": false
+}
+PASS: early archives unchanged; reviewed hook replacements reversible; effective authentication/runtime unqualified
+{
+  "schema_version": 3,
+  "original_sha256": "a86df03d279dbdb9ac31152482ff0a618b794a574f200180649b1be0edf6f56d",
+  "original_bytes": 3089,
+  "patched_sha256": "88126331edbaffcb08b7c6aab421644c921c45eaa1bb2a1b16101ca4322e90ef",
+  "patched_bytes": 3564,
+  "early_prefix_bytes": 17,
+  "early_prefix_sha256": "9102f21d40a94fc0d99c75b8ab5cd94a31c9d4424658d089e236d4fb6a3f98c2",
+  "original_archive_sha256": "cdd0dd2462e529dd07956929d876f270625aa25a97fa1a398403112b2fd17c8f",
+  "patched_archive_sha256": "69a77e4730349e74858148b735f8d096f609054c13bdf5a5e8c292d46c706279",
+  "replacement": "scripts/casper-bottom/41apt_build_cache_cdrom",
+  "hook_sha256": "69952083c106fba70ac431f6915f4ae7669d039b04999122605c083287a7172e",
+  "compression": "zstd",
+  "compressor_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "owner": "0:0",
+  "mode": "0755",
+  "licence": "GPL-2.0-or-later",
+  "runtime_tested": false,
+  "secure_boot_qualified": false,
+  "administrator_policy_changed": true,
+  "installation_approved": false,
+  "owner_setup": {
+    "profile": "local-console-volatile-live-v1",
+    "hooks": {
+      "scripts/casper-bottom/15autologin": "e07bfb68ab1fc32d8ae5e099a9f5123118a01b74c7e96e656e21fa23942c2f7b",
+      "scripts/casper-bottom/25adduser": "755e5587473019f064d5fe53271f5eec1416a88ec4e714720d3101629142f47a",
+      "scripts/casper-bottom/44pk_allow_ubuntu": "1b2fb467bad0811753b1f0fb4435b94d92b13a992d3d0bdec0cf7287ae4ff750"
+    },
+    "requires_live_payload": true,
+    "effective_policy_tested": false
+  }
+}
+PASS: early archives unchanged; reviewed hook replacements reversible; effective authentication/runtime unqualified

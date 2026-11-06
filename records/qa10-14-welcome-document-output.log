@@ -1,0 +1,1 @@
+PASS: actual local welcome document rendered at desktop and phone widths, warning visible, no horizontal overflow. Host Playwright capture, not native Brave or booted OS.

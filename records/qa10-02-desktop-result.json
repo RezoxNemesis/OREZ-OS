@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Native OREZ desktop, files, themes, multitasking and shell restart tour",
+  "kind": "package-container",
+  "started_at": "2026-11-06T01:46:57.193025+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "7bdd47341d563cf06ee4cfefd935561f81ba06e00b34f531b2b3c21c0e75ea37",
+  "working_tree": "M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-desktop.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 12.75,
+  "finished_at": "2026-11-06T01:47:10.146979+00:00",
+  "log_sha256": "bfdb217b31f66a7f1c68206db14e829b84d9c29227e4693fbbc113c34573175f"
+}

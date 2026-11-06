@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/OREZ-OS/overlay/usr/share/doc/orez/welcome.html
+Call log:
+[2m  - navigating to "file:///workspace/OREZ-OS/overlay/usr/share/doc/orez/welcome.html", waiting until "load"[22m
+
+    at /workspace/OREZ-OS/build/integration/tour-welcome.mjs:13:13 {
+  log: [
+    '  - navigating to "file:///workspace/OREZ-OS/overlay/usr/share/doc/orez/welcome.html", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.22.1
