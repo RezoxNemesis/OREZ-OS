@@ -1,5 +1,21 @@
 # OREZ OS — unresolved blockers
 
+## Direct live-session correction — 6 November 2026, 06:06 UTC
+
+The actual selected Kubuntu Live Environment starts
+`kwin_wayland --xwayland --no-lockscreen kubuntu-installer-prompt`, then Plasma
+only after the prompt exits. qa12-08 authenticated through SDDM and reached
+that prompt on **VT4**, confirmed by loginctl session 7. Checking only VT1
+(the greeter) or VT2 can miss the active graphical session; do not infer
+desktop failure from the wrong VT. This does not retrospectively qualify
+earlier black-screen tests.
+
+Live source now selects a dedicated OREZ session directory with a direct native
+Plasma Wayland launcher. Vendor session entries remain intact, autologin remains
+off, and SessionDir is visible/configurable in live /etc/sddm.conf. The current
+1d68fccb running VM predates this change; its Try action is being observed.
+210 source tests pass; new-image/default-boot validation is still pending.
+
 ## Current diagnostic and installer preparation — 6 November 2026
 
 The fifth integrated UEFI run (qa12-02, old e9d423a image) stopped owner setup

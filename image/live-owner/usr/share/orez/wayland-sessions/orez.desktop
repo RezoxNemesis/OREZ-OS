@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=XSession
+Name=OREZ Desktop
+Comment=OREZ live desktop with the native Plasma Wayland session
+Exec=/usr/lib/x86_64-linux-gnu/libexec/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
+TryExec=/usr/bin/startplasma-wayland
+DesktopNames=KDE

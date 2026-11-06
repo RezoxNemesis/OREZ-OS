@@ -212,3 +212,20 @@ recovery, current security updates, source/licence obligations, signed release
 metadata and actual PC compatibility must pass. Keep the repository public
 until the owner's PC-readiness condition is met. The installed disk footprint
 has not been measured; ISO size is not installation size.
+
+## Direct desktop session correction
+
+Actual source inspection of the base and qa12-08 show that the inherited
+Kubuntu Live Environment runs the upstream installer prompt before Plasma.
+A successful owner login therefore did not immediately enter the desktop.
+The live owner source now provides `OREZ Desktop` under
+`/usr/share/orez/wayland-sessions` and selects it through live SDDM SessionDir.
+It uses the same direct launcher as the base's Plasma (Wayland) entry; vendor
+files are preserved and no autologin, no-lockscreen flag or authentication bypass
+is added to the OREZ entry. An authenticated administrator can inspect/change
+the directory in /etc/sddm.conf; reboot restores the nonpersistent live default.
+
+210 source tests pass. The observed 1d68fccb ISO predates this correction; its
+actual authenticated wrapper session is on VT4, while the greeter is on VT1.
+Read loginctl and validate the active session instead of assuming every blank
+VT is the desktop. Default-boot qualification of the new entry is pending.

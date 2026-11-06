@@ -27,6 +27,15 @@ Controls and diagnostics:
   visible password input. This limit is `CONSOLE_RELEASE_TIMEOUT` in the
   documented live-only helper, not a hidden background timeout.
 - Login: the OREZ Paper SDDM theme uses the normal local SDDM/PAM backend.
+- Desktop session: live `/etc/sddm.conf` selects the dedicated
+  `/usr/share/orez/wayland-sessions` directory. Its `OREZ Desktop` entry invokes
+  the native Plasma Wayland launcher directly. The upstream Kubuntu Live
+  Environment wrapper first starts an installer prompt and is not used here.
+  Vendor session files remain intact. An authenticated administrator can
+  change `SessionDir` in `/etc/sddm.conf`; restarting SDDM ends graphical work,
+  so save it first. Reboot resets this volatile configuration. This source
+  change still requires a new default-boot validation; a manually selected
+  Plasma session in an older image does not qualify the new boot path.
 - Status: `systemctl status orez-owner-setup.service` and
   `systemctl status sddm.service`; logs identify startup/failure, never passwords.
 - Live owner name: `/var/lib/orez-live/owner-required` before setup; private

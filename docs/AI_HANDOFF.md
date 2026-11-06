@@ -1,5 +1,33 @@
 # OREZ OS — Verified Development Handoff
 
+## Direct-session fix in progress — 6 November 2026, 06:06 UTC
+
+Last confirmed implementation 2a419ae2dd901603c17b8e7400f3035e98e23ee0.
+CI 42169587389 passes 208 source tests, 38 package paths and 68 browser cases;
+full ISO job skipped. Artifact 13480587260, SHA256
+6e48549bad73850e322c97b417534b71565b128d606cebe82afd99a696e7ec75.
+
+Current qa12-08 / orez-qa12-nosplash actual 1d68fccb boot: enrollment concealed,
+normal tty3 owner login succeeded, UID1000, passwordless sudo refused and
+password-authenticated serial diagnostics succeeded. Real OREZ SDDM renders
+and rejects an incorrect password. Correct graphical authentication created
+owner session 7 on VT4, showing the upstream Kubuntu Try/Install prompt.
+The guest is diskless/offline. Try was clicked; desktop result pending. Earlier
+tty2 attempts and partial/blank frames remain unqualified, not erased.
+
+Actual source confirms default Kubuntu Live Environment launches the installer
+prompt before Plasma. New source selects a dedicated live OREZ Desktop entry
+with the native direct Plasma launcher. No vendor session deletion, autologin
+or auth relaxation. 210 source tests pass; commit/new-image/CI/default-boot
+qualification pending. Inspect actual session/VT before judging graphics.
+
+Continue observation, retain every frame/failure, finish corrected ISO integrity
+checks, then test the new boot entry. Do not claim old-image Try results qualify
+the new image. Destroy the private test credential/container after collecting
+evidence. Update this entry with final source/CI/VM/archive identities. Installer
+profile remains inactive; actual disk/reboot/recovery and other release gates
+are unchanged. No hardware, owner credentials or recovery USB touched.
+
 ## Active preparation checkpoint — 6 November 2026, 05:37 UTC
 
 Last confirmed commit 8fd868f4470c5e52db3175662601661c3868a9f0; branch
