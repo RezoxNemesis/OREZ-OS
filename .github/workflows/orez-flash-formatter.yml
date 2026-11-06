@@ -1,0 +1,72 @@
+name: OREZ Flash Formatter — Android APK
+
+on:
+  push:
+    branches:
+      - "feature/orez-standalone-usb-formatter-1.0.0"
+    paths:
+      - "tools/orez-flash-formatter/**"
+      - ".github/workflows/orez-flash-formatter.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orez-flash-formatter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  android:
+    name: Build and verify standalone formatter APK
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: tools/orez-flash-formatter
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools"
+      - name: Install Android platform and build tools
+        run: |
+          yes | sdkmanager --licenses >/dev/null
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+      - name: Run source tests
+        run: gradle --no-daemon :app:testDebugUnitTest
+      - name: Build standalone debug APK
+        run: gradle --no-daemon :app:assembleDebug
+      - name: Verify APK and calculate SHA-256
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          mkdir -p dist
+          cp "$APK" dist/OREZ-Flash-Formatter-1.0.0.apk
+          sha256sum dist/OREZ-Flash-Formatter-1.0.0.apk | tee dist/SHA256SUMS.txt
+          echo "### OREZ Flash Formatter 1.0.0" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Independent application ID: com.orez.flashformatter" >> "$GITHUB_STEP_SUMMARY"
+          echo "- APK signature verified; JVM tests passed." >> "$GITHUB_STEP_SUMMARY"
+          echo "- Physical USB OTG formatting test is still required." >> "$GITHUB_STEP_SUMMARY"
+          cat dist/SHA256SUMS.txt >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload standalone APK and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: OREZ-Flash-Formatter-1.0.0
+          path: |
+            tools/orez-flash-formatter/dist/OREZ-Flash-Formatter-1.0.0.apk
+            tools/orez-flash-formatter/dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
