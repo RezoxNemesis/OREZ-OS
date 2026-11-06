@@ -11,6 +11,11 @@
         <activity android:name=".MainActivity" android:exported="true" android:configChanges="orientation|screenSize">
             <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
         </activity>
+        <activity android:name=".RecoveryActivity" android:exported="true" android:configChanges="orientation|screenSize"/>
+        <activity-alias android:name=".UsbRecoveryLauncher" android:targetActivity=".RecoveryActivity"
+            android:label="OREZ USB Recovery" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity-alias>
         <service android:name=".WriteService" android:exported="false" android:foregroundServiceType="connectedDevice"/>
     </application>
 </manifest>
