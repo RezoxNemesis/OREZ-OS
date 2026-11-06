@@ -94,3 +94,26 @@ No new full ISO or installed-size measurement was produced. Original unsafe ISO
 and separately packed app layer remain unchanged. Installation/owner-login,
 recovery, NVIDIA/Secure Boot, real radio/phone/audio/USB and 6-GiB acceptance gates
 remain open. See FIRST_BOOT_AND_TOUR.md and AI_HANDOFF.md for the latest state.
+
+
+## Published tour
+
+[Browse all 29 screens on GitHub](https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md).
+[Direct ZIP download: 245 original PNGs plus the offline HTML tour and ideas](https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip).
+The ZIP is 105,851,922 bytes (about 105.9 MB). Every archived PNG hash was checked
+against its manifest after downloading the actual GitHub ZIP. All 19 original
+runs and 11 failures remain in the gallery; one boot frame is historical.
+The subsequent download-integrity check has its own [report screenshot](download-verification.png)
+and [machine-readable result](github-download.json), separate from that frozen
+archive. CI screenshots are in the workflow artifact, not silently added to it.
+
+Extract and open index.html on desktop or Android; images/ contains ordinary PNG
+files. The direct GitHub TOUR.md page also displays every selected screen.
+No ISO or installation permission is included in this download.
+
+
+Exact implementation CI [42149300734](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42149300734)
+passed on f3e88c0c56485830d82f9ad09a69b7047a5cf197. The full ISO job was skipped.
+[Separate CI screenshot/report artifact](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42149300734/artifacts/13471862095)
+(about 211.2 MB; GitHub may require sign-in). Native Vulkan/NVIDIA or hardware
+qualification is not implied by source/browser CI.

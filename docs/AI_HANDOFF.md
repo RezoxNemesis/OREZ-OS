@@ -1,5 +1,33 @@
 # OREZ OS — Verified Development Handoff
 
+### Verified publication and CI — latest, 6 November 2026
+
+- Implementation commit **f3e88c0c56485830d82f9ad09a69b7047a5cf197** pushed to
+  `feature/orez-live-foundation-20261104`. PR #1 stays draft/open/unmerged.
+- Exact-commit CI **42149300734 success**: source/package/browser checks pass;
+  full ISO job skipped. CI evidence artifact **13471862095**, 211,203,943 bytes,
+  is separate from the local tour archive. No additional full ISO run triggered.
+- Published orphan archive commit **8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f**,
+  branch `downloads/experience-tour-2026-11-06`. Direct ZIP:
+  https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip
+  **105,851,922 bytes**, SHA-256
+  `e689e22ff11e1ef2921a01d75e82ae2234d7a15740b7e1d111db12050cbcf4c2`.
+  245 original PNGs, 296 references, 19 runs, all 11 failures; 29 guided screens,
+  45 proposed ideas. Every PNG hash verified from the actual downloaded GitHub
+  ZIP. Run qa10-20 is the subsequent checksum check, with its own report PNG in
+  `docs/evidence/2026-11-06-experience-tour/download-verification.png`; it is
+  separate from the frozen ZIP. CI captures are also separate, in its artifact.
+- Direct phone-readable GitHub tour:
+  https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md
+  Or extract ZIP and open index.html. No OS/ISO download is implied.
+- Removed only the task container `orez-tour-20261106` after evidence copies;
+  stopped the task-local gallery server. About 13 GiB free. Original ISO,
+  app-layer SquashFS, package pool and current .deb retained. No physical disk,
+  Windows USB, firmware, real account or host security policy touched.
+- This follow-up is documentation/evidence only; the self-identifying final
+  handoff commit uses [skip ci]. Verify actual branch HEAD on resume. The CI
+  claim above applies to f3e88c0, not to an invented run on the follow-up commit.
+
 ## Latest experience-tour session — 6 November 2026
 
 Implementation and draft PR remain unfinished as an OS release. This session
@@ -33,7 +61,8 @@ these are not native Brave, boot or phone-mirroring tests.
 Artifacts: a 29-stop guided tour and all 245 original PNGs (296 references,
 19 new local runs plus one explicitly historical VM boot frame), with 45 proposed
 ideas. Full gallery/download publication pending the next verified entry.
-No new native package, image application layer or full ISO was produced.
+No new native package version, image application layer or full ISO was produced.
+CI rebuilt the unchanged component package as part of normal verification.
 The retained old 5,073,338,368-byte ISO and separate 383,488,000-byte app layer
 are unchanged. Installed disk footprint remains unmeasured; 25–35 GB is only a
 provisional planning budget, not a minimum certification or actual install size.

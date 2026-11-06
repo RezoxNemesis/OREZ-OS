@@ -148,3 +148,11 @@ Unimplemented features cannot honestly have a working screenshot or practical
 pass. Their design, acceptance tests and blockers are documented instead. A
 comprehensive component tour is not a claim to have tested every OS capability,
 a completed install, target-PC hardware, power-loss recovery or malware immunity.
+
+
+## Open the actual tour
+
+[29-screen tour with a screenshot at every stop](https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md)
+— [direct ZIP, 245 original PNGs and offline tour](https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip).
+About 105.9 MB. The archive contains all failed attempts too. See
+[evidence and verification](evidence/2026-11-06-experience-tour/README.md).
