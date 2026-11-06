@@ -37,6 +37,10 @@ public final class WriteService extends Service {
     public static volatile String reportIsoSha256="", reportUsbProduct="USB mass storage";
     public static volatile long reportIsoBytes=0, reportUsbBytes=0;
     public static volatile int reportUsbVid=0, reportUsbPid=0;
+    private static final Object REPORT_LOCK=new Object();
+    private static final StringBuilder REPORT_HISTORY=new StringBuilder();
+    private static String lastRecordedPhase="";
+
     private static final String CHANNEL="orez_linux_writer";
     private static final int NOTIFICATION_ID=730;
     private PowerManager.WakeLock wakeLock;
@@ -76,6 +80,9 @@ public final class WriteService extends Service {
         checksumMatched=false;
         monitorState=(pairCode==null || pairCode.trim().isEmpty())?"Disabled":"Starting";
         phase="Starting"; detail="Checking the ISO and reviewed USB before writing.";
+        resetDiagnosticHistory();
+        recordStatusEvent(phase,detail,done,total);
+
         createChannel();
         if(Build.VERSION.SDK_INT>=29) startForeground(NOTIFICATION_ID,notification(),ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE);
         else startForeground(NOTIFICATION_ID,notification());
@@ -291,6 +298,33 @@ public final class WriteService extends Service {
             .put("checksumSource",checksumMatched?"user-entered reference checksum":"");
     }
 
+    private static void resetDiagnosticHistory() {
+        synchronized(REPORT_LOCK) {
+            REPORT_HISTORY.setLength(0);
+            lastRecordedPhase="";
+        }
+    }
+
+    private static void recordStatusEvent(String eventPhase,String eventDetail,long completed,long maximum) {
+        if(eventPhase==null) return;
+        synchronized(REPORT_LOCK) {
+            boolean terminal=eventPhase.startsWith("Failed") ||
+                    eventPhase.startsWith("Cancelled") ||
+                    eventPhase.startsWith("Interrupted") ||
+                    eventPhase.startsWith("Stopped");
+            if(eventPhase.equals(lastRecordedPhase) && !terminal) return;
+            String stamp=new java.text.SimpleDateFormat("HH:mm:ss",Locale.ROOT).format(new java.util.Date());
+            REPORT_HISTORY.append(stamp).append(" · ").append(eventPhase)
+                    .append(" · ").append(sanitizeMonitorDetail(eventDetail))
+                    .append(" · ").append(completed).append("/").append(maximum).append(" bytes\n");
+            lastRecordedPhase=eventPhase;
+            if(REPORT_HISTORY.length()>12000) {
+                int cut=REPORT_HISTORY.indexOf("\n",REPORT_HISTORY.length()-10000);
+                if(cut>0) REPORT_HISTORY.delete(0,cut+1);
+            }
+        }
+    }
+
     private static String sanitizeMonitorDetail(String value) {
         if(value==null) return "";
         String safe=value
@@ -302,20 +336,23 @@ public final class WriteService extends Service {
     public static String diagnosticReport() {
         int percent=total>0?(int)Math.min(100,done*100/total):0;
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
-        return "OREZ USB Studio Linux 0.3.1 diagnostic report\\n"+
-            "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\\n"+
-            "Phase: "+phase+"\\n"+
-            "Detail: "+sanitizeMonitorDetail(detail)+"\\n"+
-            "Running: "+running+"\\n"+
-            "Success: "+success+"\\n"+
-            "Progress: "+done+" / "+total+" bytes ("+percent+"%)\\n"+
-            "ISO size: "+reportIsoBytes+" bytes\\n"+
-            "ISO SHA-256: "+reportIsoSha256+"\\n"+
-            "Target architecture: x86_64\\n"+
-            "USB: "+target+"\\n"+
-            "USB capacity: "+reportUsbBytes+" bytes\\n"+
-            "Source checksum matched entered reference: "+checksumMatched+"\\n"+
-            "Live Monitor: "+monitorState+"\\n"+
+        String timeline;
+        synchronized(REPORT_LOCK) { timeline=REPORT_HISTORY.toString(); }
+        return "OREZ USB Studio Linux 0.3.1 diagnostic report\n"+
+            "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\n"+
+            "Phase: "+phase+"\n"+
+            "Detail: "+sanitizeMonitorDetail(detail)+"\n"+
+            "Running: "+running+"\n"+
+            "Success: "+success+"\n"+
+            "Progress: "+done+" / "+total+" bytes ("+percent+"%)\n"+
+            "ISO size: "+reportIsoBytes+" bytes\n"+
+            "ISO SHA-256: "+reportIsoSha256+"\n"+
+            "Target architecture: x86_64\n"+
+            "USB: "+target+"\n"+
+            "USB capacity: "+reportUsbBytes+" bytes\n"+
+            "Source checksum matched entered reference: "+checksumMatched+"\n"+
+            "Live Monitor: "+monitorState+"\n"+
+            "Session timeline:\n"+timeline+
             "USB serial number, Android file URI, ISO contents and pairing token are excluded.";
     }
 
@@ -364,6 +401,7 @@ public final class WriteService extends Service {
     }
 
     private void setStatus(String p,String d,long completed,long maximum) {
+        recordStatusEvent(p,d,completed,maximum);
         phase=p; detail=d; done=completed; total=maximum; updateNotification(false);
     }
     private void createChannel() {
