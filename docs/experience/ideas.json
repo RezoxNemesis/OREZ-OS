@@ -1,0 +1,377 @@
+{
+  "schema": 1,
+  "status": "proposed_not_implemented",
+  "novelty_note": "Original OREZ combinations and game concepts; not a claim that no other product has related ideas.",
+  "scope": "45 proposals. Stabilize boot, installation, updates and recovery first. Games are optional native downloads, not mandatory preload.",
+  "categories": [
+    {
+      "id": "games",
+      "title": "Original games",
+      "ideas": [
+        {
+          "id": "games-1",
+          "title": "Ink Courier",
+          "description": "Deliver letters through brush-painted villages by drawing a limited supply of ink platforms.",
+          "engineering": "Small native Godot 2D game; keyboard/controller; offline.",
+          "acceptance": "Finish ten levels with remappable controls and a 60-FPS target on qualified hardware."
+        },
+        {
+          "id": "games-2",
+          "title": "Folded Worlds",
+          "description": "Fold a paper map to connect paths, redirect light and reach hidden rooms.",
+          "engineering": "Native puzzle game with deterministic undo; no ads or purchases.",
+          "acceptance": "Every puzzle has a reachable solution and undo restores the exact board."
+        },
+        {
+          "id": "games-3",
+          "title": "Quiet Station",
+          "description": "Repair a train station by arranging signals, power and passenger routes.",
+          "engineering": "Short pause-anytime logic sessions; optional local co-op later.",
+          "acceptance": "Pause/save/reload preserves the complete simulation without losing progress."
+        },
+        {
+          "id": "games-4",
+          "title": "Shadow Garden",
+          "description": "Grow a moonlit garden by placing trees whose shadows form changing paths.",
+          "engineering": "Low-spec turn-based puzzle with an accessible high-contrast mode.",
+          "acceptance": "All puzzles remain playable without colour discrimination or timed input."
+        },
+        {
+          "id": "games-5",
+          "title": "Rewind Harbour",
+          "description": "Route small boats through a harbour while rewinding selected objects instead of the entire world.",
+          "engineering": "A compact native puzzle prototype; bounded simulation history.",
+          "acceptance": "Rewind cannot duplicate rewards or corrupt saved games."
+        }
+      ]
+    },
+    {
+      "id": "os",
+      "title": "OS features",
+      "ideas": [
+        {
+          "id": "os-1",
+          "title": "Project Rooms",
+          "description": "Open a chosen set of files, apps and window positions as one named work context.",
+          "engineering": "Local workspace manifests; never store credentials or automatically execute imported scripts.",
+          "acceptance": "Export/import a room; missing apps are explained and no command runs without permission."
+        },
+        {
+          "id": "os-2",
+          "title": "Change Receipts",
+          "description": "Show what every OREZ-managed update or settings action changed, why, and how to undo it.",
+          "engineering": "Start with OREZ operations; never claim to capture every arbitrary root command.",
+          "acceptance": "Apply and undo a supported change; compare effective state and preserve the audit entry."
+        },
+        {
+          "id": "os-3",
+          "title": "Resource Agreements",
+          "description": "Give a foreground game, render or call a visible resource budget and postpone optional background jobs.",
+          "engineering": "Use supported Linux cgroups/PSI; owner can override; no magical CPU/GPU unlock.",
+          "acceptance": "Measure frame times and responsiveness under enforced competing loads."
+        },
+        {
+          "id": "os-4",
+          "title": "Offline Readiness",
+          "description": "A clear checklist shows which apps, drivers, documentation and recovery tools really work without internet.",
+          "engineering": "Package/content inventory plus explicit offline tests.",
+          "acceptance": "Disconnect networking and launch every item marked ready; stale claims must disappear."
+        },
+        {
+          "id": "os-5",
+          "title": "Context Dock",
+          "description": "Each Project Room can keep a small set of relevant files and safe actions in its own dock.",
+          "engineering": "Explicit local configuration; no covert usage tracking.",
+          "acceptance": "Switch rooms repeatedly without launching hidden apps or leaking another room’s recent files."
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security features",
+      "ideas": [
+        {
+          "id": "security-1",
+          "title": "Access Receipts",
+          "description": "Display the app, exact folder/device, purpose, duration and revocation control for permission grants.",
+          "engineering": "Narrow capability broker; OS authentication is separate from AI text.",
+          "acceptance": "Wrong app, expired token and revoked token must all be rejected."
+        },
+        {
+          "id": "security-2",
+          "title": "Canary Documents",
+          "description": "Optional decoy documents detect suspicious mass rewriting near protected work.",
+          "engineering": "Evidence-based alert first; ignore known backup/indexing workflows; no automatic destructive response.",
+          "acceptance": "Run benign indexers and controlled synthetic ransomware fixtures; measure both misses and false alarms."
+        },
+        {
+          "id": "security-3",
+          "title": "Remote-Control Beacon",
+          "description": "Show a persistent, owner-controlled indicator whenever an authorized remote-input session exists.",
+          "engineering": "Track known remote sessions and device arrivals, not private keystrokes; cannot prove human identity.",
+          "acceptance": "Start/revoke a permitted session; injected USB input must not be mislabeled as proven owner activity."
+        },
+        {
+          "id": "security-4",
+          "title": "Payment Workspace",
+          "description": "Offer a separate, minimal browser profile for financial work with reduced extensions and sharing.",
+          "engineering": "Opt-in isolation, clear domain display and ordinary bank authentication; no guarantee against phishing.",
+          "acceptance": "Verify profile/cookie separation, clipboard policy and permission revocation with dummy accounts."
+        },
+        {
+          "id": "security-5",
+          "title": "Revocation-Safe Restore",
+          "description": "Restore the system without silently resurrecting revoked devices, tokens or obsolete trust decisions.",
+          "engineering": "Separate revocation records from ordinary rollback; require owner-held recovery credentials.",
+          "acceptance": "Revoke access, roll back, and prove the revoked principal still cannot connect."
+        }
+      ]
+    },
+    {
+      "id": "shortcuts",
+      "title": "Shortcut features",
+      "ideas": [
+        {
+          "id": "shortcuts-1",
+          "title": "Hold-to-Learn",
+          "description": "Hold a configurable key to see the shortcuts available in the current app.",
+          "engineering": "Accessible overlay; query known app bindings; do not intercept passwords.",
+          "acceptance": "Overlay is readable at 200% scale and never consumes a typing shortcut unintentionally."
+        },
+        {
+          "id": "shortcuts-2",
+          "title": "Action Palette",
+          "description": "Search settings, apps and safe operations with clear previews and required permissions.",
+          "engineering": "Local command registry; no arbitrary shell execution from guessed natural language.",
+          "acceptance": "Ambiguous and privileged actions require explicit selection and normal authentication."
+        },
+        {
+          "id": "shortcuts-3",
+          "title": "Return to Task",
+          "description": "One configurable action returns to the previous Project Room and focused document.",
+          "engineering": "Window/app context only; recovery of unsaved documents depends on application support.",
+          "acceptance": "Switch across three rooms; restore the correct window without exposing hidden work."
+        },
+        {
+          "id": "shortcuts-4",
+          "title": "Peek and Place",
+          "description": "Hold a shortcut, choose a workspace visually, and release to move the current window.",
+          "engineering": "Use compositor APIs and cancel safely with Escape.",
+          "acceptance": "Move/cancel repeatedly across multiple displays without losing the window."
+        },
+        {
+          "id": "shortcuts-5",
+          "title": "Private Paste Shelf",
+          "description": "An opt-in temporary shelf holds selected clipboard items and clears them visibly.",
+          "engineering": "Never assume sensitive-content detection is perfect; exclude password managers where supported.",
+          "acceptance": "Disable/clear removes stored items; clipboard synchronization remains separately consented."
+        }
+      ]
+    },
+    {
+      "id": "multitasking",
+      "title": "Multitasking features",
+      "ideas": [
+        {
+          "id": "multitasking-1",
+          "title": "Task Lanes",
+          "description": "Group windows by activity and give each group its own notification policy.",
+          "engineering": "Reuse Plasma workspaces/activities with a coherent OREZ interface.",
+          "acceptance": "Switch groups under load and prove notification exceptions still work."
+        },
+        {
+          "id": "multitasking-2",
+          "title": "Window Placeholders",
+          "description": "After restart, show where previous windows belonged and let the owner reopen them.",
+          "engineering": "Do not claim to recover arbitrary app memory or unsaved content.",
+          "acceptance": "Unavailable files/apps produce useful placeholders and never trigger silent downloads."
+        },
+        {
+          "id": "multitasking-3",
+          "title": "Drop-to-Action Tray",
+          "description": "Drop selected files onto explicit local actions such as convert, compress or compare.",
+          "engineering": "Preview output and destination; preserve originals; external sending is always separate.",
+          "acceptance": "Cancellation leaves originals intact; path traversal and command injection are refused."
+        },
+        {
+          "id": "multitasking-4",
+          "title": "Phone Handoff Parcel",
+          "description": "Send a selected document or task note to the paired phone with a visible transfer receipt.",
+          "engineering": "Build on KDE Connect; selected data only, encrypted transport where supported.",
+          "acceptance": "Pair, send, interrupt, retry and revoke against an actual Android device."
+        },
+        {
+          "id": "multitasking-5",
+          "title": "Attention Queue",
+          "description": "Collect routine notifications while recording or gaming, then present a concise review.",
+          "engineering": "User-defined exceptions for calls and critical warnings; no invisible permanent suppression.",
+          "acceptance": "A critical alert remains visible and queued notifications survive an app restart."
+        }
+      ]
+    },
+    {
+      "id": "stability",
+      "title": "Crash resistance and recovery",
+      "ideas": [
+        {
+          "id": "stability-1",
+          "title": "Graphics Safe Profile",
+          "description": "Keep a tested conservative display/effects profile for recovery after graphics problems.",
+          "engineering": "Supported driver/compositor options only; no firmware or voltage bypass.",
+          "acceptance": "Recover from a deliberately bad test profile on a VM and the actual GPU."
+        },
+        {
+          "id": "stability-2",
+          "title": "Checkpoint Before Change",
+          "description": "Create an appropriate system checkpoint before supported driver or OS changes.",
+          "engineering": "Snapshots complement independent backups; account for app consistency and revocations.",
+          "acceptance": "Interrupt an update, restore, and verify both boot and untouched user documents."
+        },
+        {
+          "id": "stability-3",
+          "title": "Restart Only What Failed",
+          "description": "Offer to restart a hung app or desktop shell while keeping other applications running.",
+          "engineering": "Record diagnostics with consent; never promise recovery of all unsaved app state.",
+          "acceptance": "Crash the selected component and prove unrelated processes/data remain intact."
+        },
+        {
+          "id": "stability-4",
+          "title": "Trial Boot Updates",
+          "description": "Boot a staged update once and retain a known-good recovery choice until health checks pass.",
+          "engineering": "Design against rollback to vulnerable versions and protect trust/revocation state.",
+          "acceptance": "Failed boot returns to the approved recovery path without deleting user files."
+        },
+        {
+          "id": "stability-5",
+          "title": "Memory Pressure Assistant",
+          "description": "Explain memory pressure and offer to pause selected background work before a severe stall.",
+          "engineering": "Use actual pressure metrics and bounded zram/swap policies; no cache-clearing gimmicks.",
+          "acceptance": "Test enforced 6/16-GiB workloads, missed warnings and false interventions."
+        }
+      ]
+    },
+    {
+      "id": "wellbeing",
+      "title": "Computer wellbeing",
+      "ideas": [
+        {
+          "id": "wellbeing-1",
+          "title": "Thermal Context",
+          "description": "Explain sustained temperature, fan and throttling patterns in plain language.",
+          "engineering": "Read hwmon/NVML when available; offer maintenance advice rather than unsafe tuning.",
+          "acceptance": "Compare displayed values with trusted tools and handle missing sensors honestly."
+        },
+        {
+          "id": "wellbeing-2",
+          "title": "Storage Care",
+          "description": "Track NVMe health, free-space pressure and supported maintenance schedules.",
+          "engineering": "No automatic formatting, destructive tests or unsupported repair operations.",
+          "acceptance": "Recognize simulated warning logs; verify read-only polling and safe cancellation."
+        },
+        {
+          "id": "wellbeing-3",
+          "title": "Power With Evidence",
+          "description": "Compare quiet, balanced and performance profiles using measured workload results.",
+          "engineering": "Owner chooses the trade-off; avoid universal better-performance/lower-power promises.",
+          "acceptance": "Repeat the same benchmark and record power, temperature and completion time."
+        },
+        {
+          "id": "wellbeing-4",
+          "title": "Backup Rehearsal",
+          "description": "Periodically restore a chosen sample into an isolated folder to check backup usability.",
+          "engineering": "Explicit opt-in, encrypted backups where configured, and no original-file overwrite.",
+          "acceptance": "Detect a damaged backup and recover the sample with an owner-held key."
+        },
+        {
+          "id": "wellbeing-5",
+          "title": "Restful Desktop",
+          "description": "Schedule quiet periods and sleep around the owner’s actual work rather than a fixed idle timer alone.",
+          "engineering": "Respect renders, recordings and active sessions; explain every inhibited sleep request.",
+          "acceptance": "Verify sleep/wake and display reconnection while preserving active work."
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "title": "UI design",
+      "ideas": [
+        {
+          "id": "ui-1",
+          "title": "Readable Paper Glass",
+          "description": "Use restrained translucent panels with an opaque fallback when contrast or GPU resources require it.",
+          "engineering": "Accessible colours, cached effects and a visible effects switch.",
+          "acceptance": "Check contrast on both supplied wallpapers and under software rendering."
+        },
+        {
+          "id": "ui-2",
+          "title": "Meaningful Motion",
+          "description": "Animate where a window or task went, using short transitions that can be disabled.",
+          "engineering": "Respect reduced-motion preferences everywhere.",
+          "acceptance": "No task requires animation to understand its state; measure input latency."
+        },
+        {
+          "id": "ui-3",
+          "title": "Truthful Status",
+          "description": "Show effective configuration and distinguish ready, unavailable, pending and failed features.",
+          "engineering": "No fake connected devices, working AI badges or implied successful installs.",
+          "acceptance": "Disconnect services/devices and compare the UI with actual backend state."
+        },
+        {
+          "id": "ui-4",
+          "title": "One Search, Clear Scope",
+          "description": "Search apps and settings together, with optional file indexing under explicit exclusions.",
+          "engineering": "Local-first indexing; expose included locations and deletion controls.",
+          "acceptance": "Excluded/private locations never appear and changed settings are discoverable."
+        },
+        {
+          "id": "ui-5",
+          "title": "Keyboard and Pointer Equality",
+          "description": "Make every important action usable with visible focus, mouse, keyboard and assistive tools.",
+          "engineering": "Avoid tiny controls, hidden hover-only actions and icon-only consent.",
+          "acceptance": "Complete the main journeys without a mouse and at enlarged text scale."
+        }
+      ]
+    },
+    {
+      "id": "themes",
+      "title": "Additional theme directions",
+      "ideas": [
+        {
+          "id": "themes-1",
+          "title": "Silver Mist",
+          "description": "Cool grayscale paper, light glass and subtle silver focus outlines.",
+          "engineering": "Keep the approved tree imagery and minimal palette.",
+          "acceptance": "Contrast and focus indicators pass on light and detailed wallpaper regions."
+        },
+        {
+          "id": "themes-2",
+          "title": "Moonlit Ink",
+          "description": "Charcoal surfaces with pale brush details and quiet, warm-white text.",
+          "engineering": "A proposed refinement beyond the current basic OREZ Ink palette.",
+          "acceptance": "Unchecked controls, disabled states and text remain distinguishable."
+        },
+        {
+          "id": "themes-3",
+          "title": "Snow Field",
+          "description": "Nearly white surfaces, generous spacing and a small ink-red accent.",
+          "engineering": "Red is optional and never the sole meaning of a status.",
+          "acceptance": "All status meanings remain clear in grayscale and colour-vision simulations."
+        },
+        {
+          "id": "themes-4",
+          "title": "Archive Paper",
+          "description": "Warm handmade-paper tones with compact typography for long reading and coding.",
+          "engineering": "Font choice and density remain user-controlled.",
+          "acceptance": "Review long documents, code and file lists at common display scales."
+        },
+        {
+          "id": "themes-5",
+          "title": "Focus Contrast",
+          "description": "Opaque black/white surfaces, strong borders and reduced animation.",
+          "engineering": "Accessibility/performance profile with the same features as decorative themes.",
+          "acceptance": "Every permission, error and focus state remains visible with effects disabled."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "qa10-05-native-apps",
+  "kind": "package-container",
+  "started_at": "2026-11-06T01:57:51.018618+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "2d4c945f8a3a14de8fbf718637a3823cfdcb92e3cbf6004f77501e0cd1cbc67d",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/experience/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-apps.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 1.23,
+  "finished_at": "2026-11-06T01:57:52.299439+00:00",
+  "log_sha256": "442e008659295f70663827cd31284a360d6a9027d6b32347542f3515916ef532"
+}

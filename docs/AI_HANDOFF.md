@@ -1,5 +1,51 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest experience-tour session — 6 November 2026
+
+Implementation and draft PR remain unfinished as an OS release. This session
+adds a practical 29-screen tour, 45 future proposals, reproducible native tour
+fixtures and first-boot/account/storage documentation; no full ISO was rebuilt.
+Before this session the confirmed branch HEAD was
+`4c7f5825d992b055ed9963c57079afcc8f120353`, branch
+`feature/orez-live-foundation-20261104`, PR #1 open/draft/unmerged; main remained
+`fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. Prior successful CI 42140670101
+covered f6c3df71d742d151e796808f60b87a2874830d79. New commit/CI/download details
+will be recorded in the follow-up below after publication is verified.
+
+Latest owner decisions: official native Linux Brave; YouTube optional; prioritize
+consented scrcpy phone mirroring, separately from KDE Connect. An owner needs no
+existing OREZ/Google/Microsoft account: installation/first setup must create a
+local username/password before normal sign-in. Login never registers arbitrary
+credentials. SDDM's test-mode “No desktop session found” is a session-startup
+limitation, not missing online registration. Full installation/account creation/
+authentication/desktop startup remains unqualified.
+
+Verified this session: 31 final scoped native scenarios pass, Brave BLOCKED;
+172 source tests pass. Native scope: Plasma themes/search, Dolphin copy/rename/
+Trash/Undo/tabs/split, workspaces, controlled panel restart, Settings network/
+Bluetooth/search/dummy password, Calendar/Reuz, Store, VLC controls/fullscreen,
+SDDM rendering/installer refusal/empty Connect UI, fullscreen SuperTux movement.
+All 11 failed automation attempts are retained. See
+`docs/evidence/2026-11-06-experience-tour/README.md` for exact scope and counts.
+Welcome document and tour gallery separately pass desktop/phone rendering;
+these are not native Brave, boot or phone-mirroring tests.
+
+Artifacts: a 29-stop guided tour and all 245 original PNGs (296 references,
+19 new local runs plus one explicitly historical VM boot frame), with 45 proposed
+ideas. Full gallery/download publication pending the next verified entry.
+No new native package, image application layer or full ISO was produced.
+The retained old 5,073,338,368-byte ISO and separate 383,488,000-byte app layer
+are unchanged. Installed disk footprint remains unmeasured; 25–35 GB is only a
+provisional planning budget, not a minimum certification or actual install size.
+
+Next implementation priority remains exact-base application-layer integration,
+current owner-initrd/payload packaging and verified UEFI/live boot, followed by
+safe disposable-VM installation/reboot/recovery. Do not distribute the old ISO.
+Do not infer NVIDIA, Secure Boot, radios, phone/audio/USB or 6-GiB performance
+from the software-rendered test container. OREZ AI remains disabled, Android
+consumer emulation deferred, signed production updates/recovery unfinished.
+Keep repository public until all actual PC-readiness gates pass.
+
 ## Latest image application checkpoint — 6 November 2026
 
 - Last confirmed implementation/CI fix **`f6c3df71d742d151e796808f60b87a2874830d79`**,

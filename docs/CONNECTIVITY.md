@@ -1,5 +1,7 @@
 # Connections, phone sharing and removable storage
 
+Latest owner clarification (6 November 2026): use the official **native Linux Brave** browser. YouTube is optional for the first release; prioritize consented phone screen mirroring through scrcpy. KDE Connect handles pairing/transfers/controls, not Android screen mirroring by itself. Actual mirroring and phone audio remain unverified without the Realme connected.
+
 The owner wants simple Wi-Fi/internet/Bluetooth controls, Android screen mirroring,
 phone-to-PC internet sharing, and file transfers over the network, Bluetooth or
 USB. Reuse native Linux services. Actual MSI radio, Realme phone and USB-device

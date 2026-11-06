@@ -1,5 +1,7 @@
 # First PC release: owner login and daily applications
 
+Latest owner clarification (6 November 2026): use the official **native Linux Brave** browser. YouTube is optional for the first release; prioritize consented phone screen mirroring through scrcpy. KDE Connect handles pairing/transfers/controls, not Android screen mirroring by itself. Actual mirroring and phone audio remain unverified without the Realme connected.
+
 6 November follow-up: [actual image application stage](IMAGE_APPLICATIONS.md)
 now installs Brave, VLC, SuperTux and PySide6 into the extracted base and packs
 an independently verified app layer. No new full ISO is assembled yet. Calendar/

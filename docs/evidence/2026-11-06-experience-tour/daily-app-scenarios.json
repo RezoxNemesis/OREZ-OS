@@ -1,0 +1,48 @@
+{
+  "scope": "Native Qt apps in disposable Xvfb container, not ISO/hardware acceptance",
+  "scenarios": [
+    {
+      "name": "calendar-create-edit",
+      "status": "passed",
+      "detail": "Actual event creation and editing persisted to local SQLite."
+    },
+    {
+      "name": "calendar-ics-export",
+      "status": "passed",
+      "detail": "Actual save dialog exported .ics with UTF-8 notes and private permissions."
+    },
+    {
+      "name": "calendar-delete-consent",
+      "status": "passed",
+      "detail": "Cancel preserves the event; explicit delete removes only that event."
+    },
+    {
+      "name": "reuz-preferences",
+      "status": "passed",
+      "detail": "Timezone and format preferences saved; system clock not changed."
+    },
+    {
+      "name": "reuz-countdown",
+      "status": "passed",
+      "detail": "Real Qt countdown pause/resume/completion; no physical audio or wake test."
+    },
+    {
+      "name": "reuz-stopwatch",
+      "status": "passed",
+      "detail": "Default buttons start/pause, lap and reset the real stopwatch."
+    },
+    {
+      "name": "native-theme-palettes",
+      "status": "passed",
+      "detail": "Real app renders both packaged palette definitions; this is app-level color testing, not a full Plasma-session theme switch."
+    },
+    {
+      "name": "close-active-clock",
+      "status": "passed",
+      "detail": "Active-work warning is cancellable; confirmed close stops UI timers and leaves no background app."
+    }
+  ],
+  "uid": 1500,
+  "remote_requests": false,
+  "background_alarm_service": false
+}

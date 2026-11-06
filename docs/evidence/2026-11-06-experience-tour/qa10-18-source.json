@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "qa10-18-source",
+  "kind": "source",
+  "started_at": "2026-11-06T02:09:03.915172+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "2c44bcf70b318803caea06162db73ca36c342f56284750418cf3724db3c83517",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/create-experience-tour.py\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.52,
+  "finished_at": "2026-11-06T02:09:05.501287+00:00",
+  "log_sha256": "4f142ee63a6b68e65f04f8347addb75cbe19d859ea8b3f516b738928222f6082"
+}

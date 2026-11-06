@@ -48,6 +48,10 @@ sleep 3
 DISPLAY=:99 scrot /evidence/01-plasma-desktop.png
 qdbus6 org.kde.KWin /KWin org.kde.KWin.supportInformation > /evidence/kwin-support.txt
 printf 'PASS: native KWin and Plasma desktop objects exist; screenshot requires review.\n'
+if [[ "${OREZ_SCENARIO:-desktop}" == tour ]]; then
+  python3 /input/tour-desktop.py "$plasma"
+  exit
+fi
 if [[ "${OREZ_SCENARIO:-desktop}" == connectivity ]]; then
   python3 /input/connectivity.py
   exit

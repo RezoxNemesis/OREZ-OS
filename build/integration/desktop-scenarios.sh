@@ -45,7 +45,9 @@ if [[ "${OREZ_SCENARIO:-desktop}" != capabilities ]]; then
   # Drop a privilege from this private test container. Do NOT grant SYS_NICE,
   # alter host policy, or put this change in the OREZ image/package.
   sha256sum /usr/bin/kwin_wayland > /evidence/kwin-code-before.sha256
-  setcap -r /usr/bin/kwin_wayland
+  if [[ -s /evidence/kwin-file-capabilities.txt ]]; then
+    setcap -r /usr/bin/kwin_wayland
+  fi
   getcap /usr/bin/kwin_wayland > /evidence/kwin-file-capabilities-after.txt
   sha256sum --check /evidence/kwin-code-before.sha256
   printf 'Test fixture only: removed KWin realtime-scheduling file capability; executable bytes unchanged.\n'

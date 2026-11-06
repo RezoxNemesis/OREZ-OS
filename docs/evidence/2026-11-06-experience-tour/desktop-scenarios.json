@@ -1,0 +1,79 @@
+{
+  "scope": "Native nested Plasma container; not a booted ISO",
+  "scenarios": [
+    {
+      "name": "appearance",
+      "status": "passed",
+      "detail": {
+        "wallpaper": "file:///usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg",
+        "palettes_applied": [
+          "OREZInk",
+          "OREZPaper"
+        ],
+        "final_demo_palette": "OREZPaper",
+        "default_first_boot_palette_not_changed_in_source": true
+      }
+    },
+    {
+      "name": "launcher",
+      "status": "passed",
+      "detail": {
+        "input_delivered": true,
+        "visual_review_required": true,
+        "scope": "Native launcher search, not an application download"
+      }
+    },
+    {
+      "name": "file-operations",
+      "status": "passed",
+      "detail": {
+        "copy_rename_trash_undo": true,
+        "original_unchanged": true,
+        "tabs_split_input_delivered": true,
+        "fixture": "/home/orez-test/OREZ-Tour-4119",
+        "physical_usb_tested": false
+      }
+    },
+    {
+      "name": "multitasking",
+      "status": "passed",
+      "detail": {
+        "windows": [
+          {
+            "app": "dolphin",
+            "width": 690
+          },
+          {
+            "app": "konsole",
+            "width": 690
+          }
+        ],
+        "minimize_restore": true,
+        "workspace": {
+          "count": 2,
+          "name": "OREZ Tour"
+        },
+        "interface": "Real KWin scripting interface"
+      }
+    },
+    {
+      "name": "shell-restart",
+      "status": "passed",
+      "detail": {
+        "apps_before": [
+          "dolphin",
+          "konsole"
+        ],
+        "apps_after": [
+          "dolphin",
+          "konsole"
+        ],
+        "panel_returned": true,
+        "kernel_driver_power_failure_tested": false
+      }
+    }
+  ],
+  "uid": 1500,
+  "hardware_tested": false,
+  "installation_approved": false
+}

@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "scope": "Actual component tour plus labeled historical VM and document render; not installation approval.",
+  "stops": [
+    {
+      "title": "The current boot menu",
+      "source": "qa5-13-orez-uefi-sdl/host-window-0030.png",
+      "caption": "Historical 5 November VM capture of the retained old development ISO. Kubuntu labels remain; this image predates owner hardening and must not be installed. A final OREZ boot menu is still required.",
+      "kind": "Historical VM \u2014 not a new boot test"
+    },
+    {
+      "title": "Installation is currently blocked",
+      "source": "qa10-15-components/native-details/04-installer-current-safety-block.png",
+      "caption": "The actual live-media guard displays why installation is unavailable and exits 78. No installer or disk write was performed.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Welcome home: login theme",
+      "source": "qa10-15-components/native-details/01-login-test-mode.png",
+      "caption": "Actual SDDM theme test mode. The environment has no usable desktop session, so sign-in is unavailable. This is not a successful boot or authentication test.",
+      "kind": "Actual SDDM test mode"
+    },
+    {
+      "title": "Password field",
+      "source": "qa10-15-components/native-details/03-login-password-masked.png",
+      "caption": "Dummy text is masked in the real login field. The completed installer must create your local owner password; no Google or Microsoft login is required.",
+      "kind": "Actual SDDM test mode"
+    },
+    {
+      "title": "Current welcome document",
+      "source": "qa10-14-welcome-document/welcome-document-desktop.png",
+      "caption": "The shipped local help document rendered in host Chromium from its source, at desktop and phone widths. Native Brave/file-URL launch is not tested by this render. A first-run setup wizard remains planned.",
+      "kind": "Actual local document \u2014 browser render"
+    },
+    {
+      "title": "Your desktop",
+      "source": "qa10-16-desktop/native-details/01-desktop-current-default.png",
+      "caption": "Actual nested Plasma desktop with the approved Rest wallpaper. The test account retains its demo palette. KDE taskbar/icons are still visible; this is not the final polished shell or a booted ISO.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Find OREZ applications",
+      "source": "qa10-16-desktop/native-details/05-launcher-orez-search.png",
+      "caption": "Actual launcher search shows Store, Connect, Settings, Calendar, hardware tools and Welcome. Android entries exist but their consumer runtime remains deferred.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Searchable Settings",
+      "source": "qa10-09-connectivity/native-details/03-settings-search-results.png",
+      "caption": "Typed Bluetooth into native Settings; matching results appeared. Clearing the query and closing Settings also passed.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Network settings",
+      "source": "qa10-09-connectivity/native-details/01-network-open.png",
+      "caption": "Native NetworkManager settings open and close. This offline container has no physical Wi-Fi radio; no connection or hotspot claim.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Wi-Fi password controls",
+      "source": "qa10-09-connectivity/native-details/06-dummy-password-masked.png",
+      "caption": "A dummy wireless credential was masked, revealed, remasked, cleared and cancelled. No connection was saved. This does not test actual Wi-Fi authentication.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Bluetooth settings",
+      "source": "qa10-09-connectivity/native-details/02-bluetooth-open.png",
+      "caption": "The actual page correctly reports no Bluetooth adapter in the container. Target-PC pairing, audio and file transfer are pending.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Phone connection",
+      "source": "qa10-15-components/native-details/05-phone-connect-no-devices.png",
+      "caption": "Real KDE Connect window, no paired phone. KDE Connect handles transfers/control; scrcpy provides separate consented screen mirroring. No Realme mirroring session was fabricated.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "File operations",
+      "source": "qa10-16-desktop/native-details/10-file-undo.png",
+      "caption": "A disposable text file was copied, renamed, moved to Trash and restored with Undo through the real Dolphin UI. The original and restored bytes matched. No user data or physical drive was touched.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Tabs and split view",
+      "source": "qa10-16-desktop/native-details/11-dolphin-tabs-split.png",
+      "caption": "Real Dolphin tabs and two panes, showing the restored renamed file. Split/tabs visually confirmed; nested function-key automation was replaced with actual menu/button input.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "OREZ Store",
+      "source": "qa10-06-native-apps/native-details/store/14-my-apps.png",
+      "caption": "The native Store detects installed Brave, VLC and SuperTux. VLC launched from its button. Android app entries are explicitly pending, not functional Play Store downloads.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "OREZ Calendar",
+      "source": "qa10-06-native-apps/native-details/daily-apps/01-calendar-saved.png",
+      "caption": "Actual local event creation/editing, SQLite persistence, ICS export and cancellable deletion passed. No cloud account or remote request.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Reuz clock",
+      "source": "qa10-06-native-apps/native-details/daily-apps/08-reuz-preferences.png",
+      "caption": "Native timezone and 12/24-hour preferences saved without changing the system clock. This is the current OREZ Reuz component, not a claim about another repository release.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Reuz countdown",
+      "source": "qa10-06-native-apps/native-details/daily-apps/09-reuz-paused-timer.png",
+      "caption": "Start, pause, resume and completion passed. It is an application timer; suspended-PC wake and physical alarm audio are not verified.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Reuz stopwatch",
+      "source": "qa10-06-native-apps/native-details/daily-apps/11-reuz-stopwatch-lap.png",
+      "caption": "Start/pause, lap and reset passed. Closing active work asks for confirmation and cancellation keeps the app open.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "OREZ Ink palette",
+      "source": "qa10-06-native-apps/native-details/daily-apps/13-reuz-OREZInk.png",
+      "caption": "Real Reuz rendering with the packaged Ink palette. Both Paper and Ink were applied; the five proposed future themes are not implemented.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Horizon wallpaper",
+      "source": "qa10-16-desktop/native-details/03-desktop-horizon.png",
+      "caption": "Your second supplied wallpaper applied in the real desktop, then restored to Rest. A wallpaper change is not a new OS edition.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Fullscreen VLC",
+      "source": "qa10-06-native-apps/native-details/input/04-vlc-default-f-fullscreen.png",
+      "caption": "Generated local video played. Actual Space pause/resume, mouse menu, F fullscreen on/off and Ctrl+Q passed. GPU decoding, physical audio and streaming were not tested.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Fullscreen native game",
+      "source": "qa10-17-fullscreen-game/native-details/07-game-fullscreen-after-input.png",
+      "caption": "SuperTux rendered at 1440\u00d7900. Captures show the player moving from x\u224896 to x\u2248482 after Right input. This is software rendering, not an RTX benchmark, Android emulation or universal game compatibility.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Game pause menu",
+      "source": "qa10-17-fullscreen-game/native-details/08-game-pause-menu.png",
+      "caption": "Escape opened the actual game pause menu. Only the disposable native game session was stopped.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Files and terminal together",
+      "source": "qa10-16-desktop/native-details/12-files-and-terminal.png",
+      "caption": "Dolphin and Konsole arranged side by side. Minimize and restore also passed. Ordinary user UID 1500, not a privileged desktop session.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "A second workspace",
+      "source": "qa10-16-desktop/native-details/14-second-workspace.png",
+      "caption": "KWin created a second workspace, switched to it, returned and removed the test workspace. The windows stayed on their original workspace.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Restart the panel, preserve the work",
+      "source": "qa10-16-desktop/native-details/15-panel-restart-apps-preserved.png",
+      "caption": "A controlled Plasma shell restart brought the panel back while the existing Dolphin/Konsole processes remained alive. This is not kernel-crash, power-loss or disk-recovery qualification.",
+      "kind": "Native component \u2014 isolated container"
+    },
+    {
+      "title": "Brave: honest environment limit",
+      "source": "qa10-06-native-apps/report-001.png",
+      "caption": "The official native Linux browser was attempted. Its sandbox could not create required nested namespaces. This report records BLOCKED, even though the vendor wrapper returned zero; no working browser or YouTube is claimed.",
+      "kind": "Test report \u2014 not a browser window"
+    },
+    {
+      "title": "AI status is visible",
+      "source": "qa10-16-desktop/native-details/12-files-and-terminal.png",
+      "caption": "orezctl ai explicitly reports NOT ENABLED. No AI/MCP root or remote action broker is installed. Future AI must use ordinary permissions and explicit owner approval.",
+      "kind": "Native component \u2014 isolated container"
+    }
+  ]
+}

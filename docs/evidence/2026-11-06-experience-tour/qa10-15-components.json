@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "qa10-15-components",
+  "kind": "package-container",
+  "started_at": "2026-11-06T02:05:46.580480+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "77a3a6cca19d74e2637e26f58d9c5d0d825b318537083b28c336bfcba4e3b5de",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-components.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 29.71,
+  "finished_at": "2026-11-06T02:06:16.325169+00:00",
+  "log_sha256": "6e00e2d5c2739bd0e788884d3f23c8cfaa766071f9ef12271ea35e2c9065bc3e"
+}
