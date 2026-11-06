@@ -57,8 +57,11 @@ includes its start time, and the helper never kills a PID. New source checks pas
 completion of setup, a successful owner tty2 login and refusal of passwordless
 sudo. This is one observed boot, not broad timing-race qualification. Its SDDM
 log records one greeter exit/restart before reaching the real login screen.
-Graphical session startup remains under test; no desktop pass is inferred from
-account creation or source tests.
+SDDM/PAM graphical authentication also succeeded at 04:09:25 UTC after the
+test driver switched from repeating timed keys to immediate down/up events.
+Plasma started but the observed desktop stayed black; logs show software graphics
+issues and a splash timeout. A later QMP capture conflict stopped the test
+harness, not a proved guest crash. No usable-desktop pass is inferred.
 
 ## What the image now includes
 
@@ -174,17 +177,21 @@ change that artifact's recorded build identity.
 
 ## VM tool and release limits
 
-The new `environment/orez-vm-tools.Dockerfile` builds a 304,335,442-byte helper,
-local image ID `8f6feedff444e7075fae0bdfe8f2401f4c82a4eaf1c7dfce25ece26fba75865f`.
-It defaults to UID 1500 and supplies QEMU/OVMF, Pillow and xorriso. It was not
-published. The minimal tool avoids another multi-gigabyte desktop-container copy.
+The current `environment/orez-vm-tools.Dockerfile` builds a 737,968,451-byte
+helper with optional software-backed VirGL, Xvfb and SDL. Local image ID:
+`d169d643a3f43dbff1ef1113a22bae5bd8e1bb9aff0c5503f51538bf2ef4d25a`.
+The prior headless-only image was 304,335,442 bytes. Both default to UID1500;
+neither is published. See environment/README.md for the private-display command.
 
 `build/probe-integrated-live.py` hashes the ISO and captures real QMP display
 frames from an offline diskless UEFI guest. QEMU runs as an ordinary user; its
 control socket is private, no display port is published, and no physical disk
 or host GPU is passed through. Guest RAM is explicitly 6,144 MiB. This does not
 qualify a 6 GiB desktop workload, host cgroup enforcement or RTX acceleration.
-Recording frames successfully never sets `desktop_verified` to true.
+Recording frames successfully never sets `desktop_verified` to true. Optional
+`--graphics virgl` verifies host llvmpipe and captures the real SDL window using
+a private Xauthority display; it does not provide hardware acceleration. Missed
+QMP captures are recorded without killing a VM during operator input.
 
 Before a full OS download: successful owner enrollment/login and effective
 security tests, native desktop workloads, disposable-disk install/reboot and

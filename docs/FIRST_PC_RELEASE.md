@@ -131,8 +131,8 @@ returned success. Service verification does not execute startup ordering.
 
 1. Provision the documented environment: actual usable KVM/render access,
    browser namespace sandbox, enforced resource limits and at least 80 GiB
-   workspace. The current 32 GiB workspace cannot safely retain a new build
-   alongside its evidence, two old ISOs and dependency/lab images. Publish the
+   workspace. The current 32 GiB workspace can build the integrated live image with
+   staging cleanup, but lacks room for full installed-disk/recovery scenarios. Publish the
    updated `environment/orez-qa.Dockerfile`; its new dependencies alone do not
    grant these host capabilities. No unsupported security bypass.
 2. Integrated native Brave/VLC/SuperTux/Qt and dpkg-owned OREZ layers now pass

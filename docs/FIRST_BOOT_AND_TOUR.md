@@ -12,12 +12,12 @@ compatibility. The 45 future ideas are in [EXPERIENCE_IDEAS.md](EXPERIENCE_IDEAS
    firmware splash simply through a desktop theme.
 2. The intended media offers **Try OREZ**, **Install OREZ** and troubleshooting /
    safe graphics. These are operating modes of one OREZ edition, not a selection
-   of Linux distributions. Current retained media still has upstream Kubuntu
-   boot labels; branding and the combined image require follow-up.
-3. Try mode runs a temporary live session. Current owner-enrollment source asks
+   of Linux distributions. The current integrated image offers Try OREZ (installation unavailable)
+   and safe graphics; its inherited boot splash still says Kubuntu.
+3. Try mode runs a temporary live session. Current integrated owner enrollment asks
    twice on the local console for a temporary 12–128-character password before
-   starting SDDM. This policy has isolated authentication tests, but the retained
-   old ISO predates it. Nothing should silently write to the internal SSD.
+   starting SDDM. The latest actual UEFI run concealed both entries and authenticated
+   the new owner; this is not installation or broad security certification. Nothing should silently write to the internal SSD.
 4. The intended installer asks language, keyboard, time zone, optional network,
    the owner's name/password, and a **clearly identified disk and partition
    plan**. Encryption and any dual-boot choice receive separate explanations.
@@ -50,8 +50,8 @@ unknown credentials must be rejected without revealing unnecessary account
 details. OREZ's visual design uses established Linux/PAM authentication rather
 than a new online identity service. In the tour's test-mode screenshot, “No
 desktop session found” concerns available session startup, not online account
-registration. The full create-account → authenticate → start-desktop sequence
-remains a release gate.
+registration. The live create-account and authenticate steps now have actual VM evidence.
+A usable desktop and the installed-system sequence remain release gates.
 
 ## Internet and disk space
 
@@ -64,14 +64,14 @@ work offline. Wi-Fi setup should be skippable and recoverable in Settings.
 
 | Item | Measured or estimated size | Meaning |
 | --- | --- | --- |
-| Retained old development ISO | 5,073,338,368 bytes, about 5.07 GB / 4.72 GiB | Measured; old owner policy; **do not install/distribute** |
-| Separate native-app SquashFS | 383,488,000 bytes, about 383.5 MB | Measured; not integrated into a new full ISO |
+| Current integrated development ISO | 5,455,347,712 bytes, about 5.46 GB / 5.08 GiB | Measured; installer disabled; **not a release download** |
+| Native-app SquashFS within that ISO | 383,488,000 bytes, about 383.5 MB | Measured; already included in the ISO size above |
 | Finished installation | Provisional 25–35 GB engineering budget | **Estimate only** until an actual clean install is measured; not a minimum-size certification |
 | Comfortable system allocation | Plan around 80–100 GB if existing data/layout permits | Recommendation allowing updates and apps; games, models, swap and backup/snapshot retention may need much more |
 | Installation USB | Separate 16 GB or larger drive recommended | Planning allowance, not permission to erase any drive; preserve the Windows recovery USB |
 
 ISO compression, installed files and free-space reserve are different quantities.
-The two measured artifacts must not be added and called the installed size.
+The app layer is already included in the ISO; neither size is installed disk usage.
 The 500 GB SSD has about 466 GiB total capacity before existing partitions. No
 allocation is chosen until its actual layout and backup status are reviewed.
 

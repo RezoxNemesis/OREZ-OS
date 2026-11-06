@@ -1,12 +1,23 @@
 # Publish the OREZ test environment
 
-A separate 304.3 MB headless VM helper is now available at
-`environment/orez-vm-tools.Dockerfile`, local tag `orez-vm-tools:20261106`.
-It runs QEMU/OVMF as UID 1500 with a private QMP console; see
-[LIVE_ASSEMBLY.md](../docs/LIVE_ASSEMBLY.md). It neither provides KVM/GPU access
-nor qualifies a desktop from a captured frame. It has not been published.
-Copy only required harness files with readable canonical modes; mounting the
-private checkout does not make it readable to a different test UID.
+The VM helper recipe `environment/orez-vm-tools.Dockerfile` now includes
+QEMU/OVMF plus optional private Xvfb/SDL/VirGL software graphics. Its latest
+local image is `orez-vm-tools:20261106-virgl`, **737,968,451 bytes**,
+ID `d169d643a3f43dbff1ef1113a22bae5bd8e1bb9aff0c5503f51538bf2ef4d25a`.
+The previous headless-only image was 304,335,442 bytes. Both default to UID1500.
+The new recipe has been built locally, not published. See
+[LIVE_ASSEMBLY.md](../docs/LIVE_ASSEMBLY.md) for actual test scope.
+Copy required harness files with canonical readable modes; the private checkout
+is not automatically readable by another test UID.
+
+For software 3D diagnostics run `build/probe-integrated-live.py --graphics virgl`
+under `xvfb-run -a -s '-screen 0 1440x1000x24 -nolisten tcp'` inside the isolated
+VM helper. Supply the same required ISO/hash/output/window arguments as 2D.
+The harness verifies host llvmpipe, uses a private Xauthority cookie, and captures
+the actual SDL window owned by its QEMU process. No cookie value is exported.
+This supplies a virtual 3D interface, not hardware-accelerated GPU performance.
+QMP input should use immediate key down/up events; timed holds produced repeats
+under TCG. Never infer password validity from a failed automation attempt.
 
 For image construction, use the separate **239.7 MB** helper in
 `environment/orez-image-tools.Dockerfile`. It was built locally as

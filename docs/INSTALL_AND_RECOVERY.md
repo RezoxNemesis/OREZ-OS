@@ -4,11 +4,14 @@ Latest owner scope (5 November 2026): **finish the first PC release before Andro
 
 **DO NOT INSTALL THE CURRENT DEVELOPMENT ISO ON YOUR REAL SSD.** This is a Linux live-boot candidate, not a qualified installer. Upstream Kubuntu's install button may be present, but it has not been adapted to persist OREZ components. No safe USB-installable OREZ release is published yet.
 
-Latest rebuild: 5,073,338,368 bytes, locally retained development image only.
-Actual OVMF/GRUB screens were captured, but no usable live desktop was qualified.
-The upstream live-user hook's passwordless sudo policy also needs explicit
-owner-authentication review; see OWNER_CONTROL.md. The disabled Calamares entry
-point is not protection against every possible privileged disk write.
+Latest integrated image: **5,455,347,712 bytes (5.46 GB / 5.08 GiB)**, local
+development artifact only. See [exact identity and boot scope](LIVE_ASSEMBLY.md).
+Current hooks remove inherited blank credentials, passwordless sudo, wildcard
+live Polkit grants and autologin. Third actual boot concealed both enrollment
+entries, authenticated the new owner and refused passwordless sudo. A usable
+booted desktop and complete effective security policy remain unqualified.
+The inactive three-layer Calamares candidate is not a successful installation;
+the disabled launcher cannot protect against every authorized root disk write.
 
 ## Required qualification sequence
 1. Build a verified ISO from pinned, signed Kubuntu sources. Record exact SHA-256, source commit and licence provenance.
@@ -30,7 +33,7 @@ Do not assume either bug is resolved without updated tests. Do not patch setting
 The Windows 11 installation/recovery USB is reserved and must not be overwritten. Only a separate, clearly identified USB drive may eventually be written with the verified OREZ ISO. In the installer, no SSD erase target is preselected; Windows/BitLocker/EFI partitions must be identified and preserved unless the user explicitly approves a destructive plan. Never make an AI prompt or remembered setting sufficient authorization to erase storage.
 
 ## Source-only synthetic installer replay
-Source suite test_install_manifest_replay.py validates the inactive two-stage Calamares candidate and copies the installed OREZ file allowlist into a fresh temporary directory with a synthetic vendor baseline. It verifies a known live-only AppArmor override would block release and that the candidate's exclusion removes this synthetic problem. A passing source test **does not** qualify a real installed system, encryption, boot, update or recovery. See docs/INSTALLER_SYNTHETIC_TEST.md.
+Source suite test_install_manifest_replay.py validates the inactive three-layer Calamares candidate and copies the installed OREZ file allowlist into a fresh temporary directory with a synthetic vendor baseline. It verifies a known live-only AppArmor override would block release and that the candidate's exclusion removes this synthetic problem. A passing source test **does not** qualify a real installed system, encryption, boot, update or recovery. See docs/INSTALLER_SYNTHETIC_TEST.md.
 
 ## File-level collision gate (development source)
 `build/check-install-collisions.py` compares the contents listed from the **real base filesystem.squashfs** and the separate allowlisted `orez-install.squashfs`. Any preexisting base file with the same OREZ payload pathname, unexpected extra payload path, or missing allowlisted path blocks the image audit. Shared parent directories are permitted. The output is `INSTALL_LAYER_COLLISIONS.json`, and `installation_approved` always remains false. This is a read-only check, not a real install, a filesystem permission review or package-ownership verification.

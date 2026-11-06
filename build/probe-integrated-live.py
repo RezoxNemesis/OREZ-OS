@@ -28,6 +28,7 @@ def main():
     p.add_argument('--sha256', required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--seconds', type=int, default=1200)
+    p.add_argument('--graphics', choices=['2d', 'virgl'], default='2d')
     a = p.parse_args()
     if os.geteuid() == 0 or not 30 <= a.seconds <= 3600:
         p.error('Require an ordinary user and a 30..3600 second observation window')
@@ -49,16 +50,29 @@ def main():
               'secure_boot_tested': False, 'desktop_verified': False,
               'installation_approved': False, 'frames': [],
               'firmware_sha256': hashlib.sha256(firmware.read_bytes()).hexdigest()}
+    environment = dict(os.environ)
+    if a.graphics == 'virgl':
+        # Caller uses xvfb-run with Xauthority. Never connect to the host desktop.
+        if not environment.get('DISPLAY') or not environment.get('XAUTHORITY'):
+            p.error('VirGL requires a private xvfb-run display and Xauthority')
+        environment.update(LIBGL_ALWAYS_SOFTWARE='1', GALLIUM_DRIVER='llvmpipe', SDL_VIDEODRIVER='x11')
+        gl = subprocess.run(['glxinfo', '-B'], env=environment, capture_output=True, text=True, timeout=30)
+        gl.check_returncode()
+        if 'llvmpipe' not in gl.stdout:
+            p.error('Host software OpenGL renderer was not confirmed')
+        (a.output / 'glxinfo.txt').write_text(gl.stdout + gl.stderr)
+        record.update(graphics='virtio-vga-gl; SDL on private Xvfb', host_renderer='llvmpipe')
     process = None
     from PIL import Image
     try:
         with tempfile.TemporaryDirectory(prefix='orez-qmp-') as temp:
             runtime = Path(temp)
+            environment['XDG_RUNTIME_DIR'] = str(runtime)
             shutil.copyfile(variables, runtime / 'vars.fd')
             (a.output / 'console-path.txt').write_text(str(runtime / 'qmp.sock') + '\n')
             command = ['qemu-system-x86_64', '-machine', 'q35,accel=tcg', '-cpu', 'max',
-                       '-m', '6144', '-smp', '2', '-vga', 'none', '-device', 'virtio-vga',
-                       '-display', 'none', '-nic', 'none', '-monitor', 'none',
+                       '-m', '6144', '-smp', '2', '-vga', 'none', '-device', 'virtio-vga-gl' if a.graphics == 'virgl' else 'virtio-vga',
+                       '-display', 'sdl,gl=on' if a.graphics == 'virgl' else 'none', '-nic', 'none', '-monitor', 'none',
                        '-qmp', f'unix:{runtime}/qmp.sock,server=on,wait=off',
                        '-serial', f'file:{a.output}/serial.log', '-no-reboot',
                        '-device', 'qemu-xhci,id=orez-xhci', '-device', 'usb-tablet,bus=orez-xhci.0',
@@ -68,7 +82,13 @@ def main():
                        '-boot', 'order=d']
             record['command'] = command
             with (a.output / 'qemu.log').open('w') as log:
-                process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
+                process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, env=environment)
+                if a.graphics == 'virgl':
+                    # Local operator can capture the same real window; no cookie
+                    # value or credential is exported, only ephemeral paths.
+                    (a.output / 'console-display.json').write_text(json.dumps({
+                        'pid': process.pid, 'DISPLAY': environment['DISPLAY'],
+                        'XAUTHORITY': environment['XAUTHORITY']}) + '\n')
                 started = time.monotonic()
                 while not (runtime / 'qmp.sock').exists():
                     if process.poll() is not None or time.monotonic() - started > 20:
@@ -90,19 +110,32 @@ def main():
                     ppm = a.output / f'guest-{elapsed:04d}.ppm'
                     qmp = None
                     try:
+                        if a.graphics == 'virgl':
+                            window = helper.own_window(process.pid, environment)
+                            if window is None:
+                                raise RuntimeError('No unique visible window owned by the QEMU process')
+                            # GL scanout need not have a QMP readback surface. Capture
+                            # actual SDL pixels, without cropping/scaling/compositing.
+                            subprocess.run(['scrot', '--window', window, str(ppm.with_suffix('.png'))],
+                                           env=environment, check=True, timeout=15)
+                            record['frames'].append(ppm.with_suffix('.png').name)
+                            print('Captured actual UEFI SDL guest frame:', elapsed, flush=True)
+                            continue
                         qmp = helper.QMP(runtime / 'qmp.sock')
                         qmp.call('screendump', {'filename': str(ppm)})
                         with Image.open(ppm) as frame:
                             frame.save(ppm.with_suffix('.png'))
                         record['frames'].append(ppm.with_suffix('.png').name)
                         print('Captured actual UEFI guest frame:', elapsed, flush=True)
-                    except helper.QMPCommandError as error:
+                    except (helper.QMPCommandError, OSError) as error:
+                        # The local QMP monitor may be occupied by deliberate
+                        # operator input. A missed capture must not kill the VM.
                         record.setdefault('frame_errors', []).append({'seconds': elapsed, 'error': str(error)})
                     finally:
                         if qmp:
                             qmp.close()
                         ppm.unlink(missing_ok=True)
-                    (a.output / 'boot-observation.json').write_text(json.dumps(record, indent=2) + '\n')
+                        (a.output / 'boot-observation.json').write_text(json.dumps(record, indent=2) + '\n')
     finally:
         helper.stop(process)
         (a.output / 'boot-observation.json').write_text(json.dumps(record, indent=2) + '\n')

@@ -1,5 +1,43 @@
 # OREZ OS — Verified Development Handoff
 
+## Actual authentication and software-3D diagnostic — 6 November 2026
+
+Last confirmed implementation `baf7fc32e62181d31789adac903c32da75bd1b95`;
+CI **42160542537 succeeds**, 185 source tests, 38 package paths, 68 browser
+cases. Full ISO job skipped; artifact **13476298553**, 211,353,187 bytes,
+SHA256 `aeed94bbace4a8a3157e8a2b6c164f94064a97a1f63098e7e9bbb9611a1ec851`.
+
+Third actual UEFI run qa11-20 on e9d423a... proves concealed initial/confirmation
+passwords, successful UID1000 tty2 login, passwordless sudo denial, repeated
+owner-authenticated sudo for serial diagnostics, wrong graphical-password denial
+and **successful SDDM/PAM graphical authentication at 04:09:25 UTC**. Plasma
+session started. Timed QMP key presses had inserted extra characters; retry with
+immediate down/up events produced the expected 20 masked characters and worked.
+
+The actual desktop remained black. Guest logs show absent renderD128, EGL/software
+rendering issues and a splash timeout. Some DRM permission errors occur when
+switching away from the active VT; they do not authorize weakening security.
+A concurrent QMP capture timed out and the harness stopped the VM; this is a
+collector failure, not a proved guest crash. All 100 actual frames/logs and the
+failure are copied under qa11-20. The offline diskless guest/container and private
+dummy credential have been destroyed. Its attached read-only synthetic USB media
+was not mounted/played before termination; interrupted package checks do not pass.
+
+The VM helper now handles missed QMP captures without terminating the guest and
+supports `--graphics virgl` under private `xvfb-run`. Actual SDL window capture is
+independent of QMP input. New 737,968,451-byte tools image d169d643... is built,
+not published; 185 source tests still pass in qa11-24. No host device, privilege,
+network listener, browser bypass or production authentication policy was changed.
+
+**Current run qa11-25 is in progress:** container `orez-integrated-vm-20261106-v4`,
+output `dist/integrated-vm/uefi-v4-virgl`, same ISO e9d423a..., 6 GiB, TCG,
+software-backed VirGL. Host llvmpipe confirms Accelerated:no. UEFI/GRUB/splash
+frames exist; owner/desktop/app results are pending. Do not infer qualification
+from the initialized 3D interface. Finish the run, preserve every frame/failure,
+destroy its temporary credential/container, publish the gallery and update this
+handoff with the final commit/CI/download identity. No public OS release or
+installation is authorized by these checks. Physical SSD/Windows USB untouched.
+
 ## Console security correction in progress — 6 November 2026
 
 - Last confirmed implementation commit: `c7698f926434aec0e5506bd70afc0dfc680f7980`.

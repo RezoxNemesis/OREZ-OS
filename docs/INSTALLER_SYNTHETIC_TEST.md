@@ -5,8 +5,8 @@ installer is replaced with a visible refusal until real installation and recover
 tests qualify. This page describes additional *source-level* protection.
 
 The Python unittest test_install_manifest_replay.py:
-- requires the candidate's exact two-source order, base Kubuntu first and
-  OREZ's allowlisted SquashFS second
+- requires the candidate's exact three-source order: base Kubuntu, native-app
+  delta, then the dpkg-owned OREZ SquashFS
 - requires the known live-only AppArmor override to be excluded from the
   eventual installed root
 - verifies OREZ's installed file allowlist contains no Calamares executable,

@@ -1,85 +1,81 @@
-# OREZ OS — Real Linux Build (0.1 Live Candidate)
+# OREZ OS — development live image
 
-6 November image work: [actual native application layer](docs/IMAGE_APPLICATIONS.md).
-Brave/VLC/SuperTux/Qt dependencies install offline in the real extracted base;
-the 383.5 MB additive SquashFS passes independent content/metadata verification.
-This layer is not yet assembled into a new ISO or boot/installation-qualified.
-[Download 99 new original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/d0dd6db403d2b62b5c6ff067dcab8636563ebb5d.zip)
-from 25 local checks, including failures. Actual Qt offscreen windows and test
-reports are labeled separately; these are not full desktop/installation images.
-[Current CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42140670101) passes
-172 source tests, 38 package paths and 68 browser cases; full ISO job skipped.
+**A real 5.46 GB integrated Linux ISO exists. It is not an approved installer or public OS release.**
 
-Latest first-PC work: [owner enrollment, native Calendar/Reuz, themes and release gates](docs/FIRST_PC_RELEASE.md).
-The owner deferred Android emulation/Play/presets until a later upgrade and now
-explicitly permits web YouTube for the first PC release. Official Linux apps
-remain preferred. Read [the verified handoff](docs/AI_HANDOFF.md) before continuing.
+The image contains the Kubuntu foundation, native Brave/VLC/SuperTux/Qt,
+dpkg-owned OREZ Calendar/Reuz/Store components, approved wallpapers and local
+owner enrollment. [Exact build inputs, hashes and scope](docs/LIVE_ASSEMBLY.md).
+The latest observed UEFI boot concealed both enrollment password entries,
+authenticated the new owner at the console and graphical login, and refused
+passwordless sudo. A usable desktop in the booted image is still unqualified;
+software graphics and startup diagnostics are in progress. Installation stays disabled.
 
-[Previous session: 86 original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/19ae111fde8f63c506401860cb213286e4d80e7f.zip) from 22 local attempts, including failures. These are component/report captures, not a full OS download.
-[Previous implementation CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42085583005) passes 148 source tests, 38 package paths and 68 browser cases. Full ISO job skipped.
+[Start with the verified handoff](docs/AI_HANDOFF.md). It distinguishes source,
+package, image, actual boot, desktop, installation and physical-hardware results.
+[Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
 
-Latest boot work: [offline cache correction and actual initrd audit](docs/OFFLINE_BOOT_QA.md). The new VM run reaches systemd but still has no usable desktop; owner authentication remains a release blocker.
+[CI on baf7fc3](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42160542537)
+passes **185 source tests, the 38-file package audit and 68 browser cases**.
+The full ISO job is skipped; these checks do not certify an installed OS.
 
-Latest component validation: [native controls, real-version upgrades and gameplay](docs/CONTINUED_QA.md). OREZ remains pre-alpha; no physical installation is approved.
+## Scope and personality
 
-**Start here:** [single master blueprint](docs/MASTER_BLUEPRINT.md), [latest verified handoff](docs/AI_HANDOFF.md), [test screenshots and evidence rules](docs/TESTING_AND_SCREENSHOTS.md).
+OREZ is a Linux distribution with a calm sumi-e/paper/glass identity and visible
+owner control. It inherits Linux hardware/process/filesystem/network support
+and KDE's mature desktop, while developing its own integrated experience.
+It does not replace Android or guarantee every application or physical device.
 
-The separate [phone-friendly interactive preview](preview/README.md) now has working navigation, appearance controls and demo device permissions. `npm run preview:build` exports a portable `dist/OREZ-Preview.html` and an HTTPS-hostable PWA. It is labelled as a browser preview and cannot install or control an OS. The native Linux project remains a distinct, unqualified live candidate.
+The first PC release prioritizes boot, safe installation, owner login, settings,
+native applications, performance measurement, security and recovery. Official
+Linux Brave is preferred; YouTube is optional and consented phone mirroring is
+planned. Android/Play Store emulation is deferred. OREZ AI remains disabled
+until its permission system is implemented and tested. No vendor/AI admin identity,
+shipped owner password or unattended installation is added.
 
-**State: initial ISO constructed and casper direct-kernel VM live-root boot verified. Native Plasma now renders in an isolated container; graphical ISO/UEFI boot, hardware and installation remain unqualified.** [Expanded QA](docs/QA_SCENARIOS.md) records real desktop/capability checks and 60 passing browser-preview scenarios, with screenshots and failed attempts preserved. This repository builds a real Ubuntu/Kubuntu-based bootable ISO by adding an OREZ desktop filesystem layer to the official, signed Kubuntu 26.04.1 LTS image. The native project is separate from the browser preview and does not replace Android.
+- [Single master blueprint](docs/MASTER_BLUEPRINT.md)
+- [First PC release and remaining gates](docs/FIRST_PC_RELEASE.md)
+- [Boot, account creation and everyday experience](docs/FIRST_BOOT_AND_TOUR.md)
+- [Owner control](docs/OWNER_CONTROL.md) and [security architecture](docs/SECURITY.md)
+- [Installation and recovery hold](docs/INSTALL_AND_RECOVERY.md)
+- [Testing and screenshot rules](docs/TESTING_AND_SCREENSHOTS.md)
 
-## What works in the source
+## Evidence and downloads
 
-- Existing real KDE Plasma Linux environment, native apps, terminal, files, network and settings from the Kubuntu base.
-- Original OREZ sumi-e wallpaper and a first-login branding setup with no root privileges.
-- OREZ Welcome and read-only hardware/status commands (`orezctl status`, `orezctl hardware`).
-- Official ISO SHA-256 verification **and** GPG signature validation against pinned Ubuntu CD Image Signing Key.
-- Build process retains the upstream EFI/BIOS boot artifacts using `xorriso -boot_image any replay`, without building an unsigned bootloader.
-- No disk formatting, remote listeners, AI privilege broker, hidden settings or automatic installer actions.
+There is **no safe installation download yet**. Do not install development media
+on the owner's SSD or overwrite the Windows recovery USB. No physical disk,
+firmware or real credential is used by the disposable VM tests.
 
-## Important limitation
+The [previous 29-screen component tour](https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md)
+has [245 original PNGs in a direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip).
+It labels native-container, test-mode, report and historical VM evidence.
+Current integrated-boot captures and all failures are retained; consult the
+latest handoff for their published archive and exact interpretation.
 
-This is a **live-USB boot engineering candidate only**. We have proved the squashfs layer is mounted by upstream casper in a disposable, headless VM (see run 41810060479), but NOT UEFI/Plasma login, NVIDIA acceleration or that the installed OS incorporates the OREZ layer. **Do not use its installation option**. Keep your Windows 11 USB and all SSD data untouched. An installable OREZ ISO will require its own tested and documented installation/rollback release gate.
+The [phone-friendly preview](preview/README.md) is a separate browser/PWA
+prototype. `npm run preview:build` exports its portable HTML. Preview screenshots
+are never evidence of an installed or booted desktop.
 
-## Build on Linux (x86-64; 8 GB RAM and 12+ GiB available disk)
+## Building and testing
 
-You can run this from an appropriately provisioned Linux environment (not from your phone itself):
+Use a Linux x86-64 builder; allow at least 80 GiB workspace for full image,
+installation and recovery work. The current 32 GiB lab requires careful staging
+cleanup and cannot qualify complete installed-disk scenarios.
 
-```bash
-sudo apt-get update
-sudo apt-get install --yes curl gnupg xorriso squashfs-tools zstd python3 ca-certificates
-bash build/build-live.sh
-bash build/check-iso.sh dist/OREZ-OS-0.1-live-amd64.iso
-```
+Follow [the image assembly instructions](docs/LIVE_ASSEMBLY.md) and
+[dependency-stage instructions](docs/IMAGE_APPLICATIONS.md). The canonical builder
+requires verified native app and dpkg-owned component layers through
+`OREZ_APP_LAYER`, `OREZ_COMPONENT_LAYER` and `OREZ_COMPONENT_REPORT` before it
+verifies the signed upstream image. It deliberately refuses missing inputs.
+The old manual full-image workflow still needs dependency-job integration;
+triggering it repeatedly will not provide those inputs.
 
-The build script can use a previously downloaded official image via `OREZ_UPSTREAM_ISO=/path/to/kubuntu-26.04.1-desktop-amd64.iso` but still verifies its signature-backed checksum. No privileged access is required for building (except installing build tools).
+[Environment recipes](environment/README.md) cover small image/VM tools and
+larger native-desktop QA dependencies. VM tests use ordinary-user QEMU,
+private display/control sockets and disposable storage only. Installing tools
+does not create KVM, an NVIDIA GPU, working radios or enforced host cgroups.
 
-## Mobile-first workflow
-
-The repo contains one controlled GitHub Actions workflow for manual dispatch or explicit one-shot `build/live-*` branches. Hosted runner disk space is an explicit risk, and complete 5 GB ISO artifacts **are not uploaded** by default because GitHub's free storage quotas are much smaller. Build checks publish a lightweight SHA and result summary, not an imaginary download link. An authorized distribution path must be set up before users can download a full ISO.
-
-### Project handoff
-
-See [`docs/AI_HANDOFF.md`](docs/AI_HANDOFF.md) for verified progress and the next steps. Never treat this candidate as a released or safe-to-install operating system until boot and recovery tests are recorded.
-
-**Licensing:** The modified casper hooks and their retained originals are GPL-2.0-or-later; see [source and notices](third_party/casper/README.md). Original OREZ-authored source and wallpaper reserved to the project owner; no blanket public reuse license has been granted. The upstream Kubuntu, Linux, KDE and other components keep their own licenses and attribution/redistribution obligations. Do not publish a modified binary image without confirming those obligations.
-
-## First full-image construction result
-An explicit one-shot GitHub build [run #41809241570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41809241570) successfully authenticated Kubuntu 26.04.1 and constructed a live ISO from commit `fa7c59f`, with digest `9cc63144be546d7fcc1b1c3edd091f70b404e7c1c7e080bd4fa4287234bc0137`. This ISO was **not uploaded** and has **not** passed boot tests. A subsequent development change adds a VM-only direct-kernel casper witness to prove that the OREZ overlay is actually accessible at boot, without changing any installed disks or allowing network access.
-
-## Native settings entrypoints
-OREZ Welcome, Settings, and Phone Connect desktop app entries appear in KDE launcher. Standard KDE System Settings exposes real system preferences. `orezctl appearance disable` is a per-user, reversible off switch for OREZ first-login wallpaper. `orezctl ai` reports all AI automation disabled. KDE Connect requires upstream package installation and secure, explicit user pairing.
-
-## UEFI virtual-firmware evidence
-The [UEFI VM build/test run 41811624570](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41811624570) passed. Inspection of its OVMF screenshot shows TianoCore/GRUB loading the remixed ISO and Kubuntu splash, **not** the OREZ graphical desktop. GRUB logged `can't find command grub_platform`; this requires qualification. The captured test is not an installer, Secure Boot or physical-PC validation.
-
-## Latest release gate results (2026-11-04)
-The [full diagnostic run 41817833118](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41817833118) built a real ISO and started Linux with the OREZ live layer, but **failed** the required Plasma graphical session test. Two OVMF screenshots still show the upstream Kubuntu boot splash. Read-only installer inspection confirmed that the stock Calamares source only copies the original `filesystem.squashfs` (not OREZ), and its live AppArmor configuration disables a user-namespace restriction. **This is not a safe, installable release.**
-
-The new live-only Calamares warning stub is source/package-tested ([run 41818841716](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41818841716)) but must still be checked in a freshly built ISO. The separate native Debian package intentionally excludes that installer override. Development remains on [Draft PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1), not merged to main.
-
-## Latest evidence checkpoint
-The test-only QPainter fallback did **not** resolve CPU-only QEMU's black KDE screen: [41882928635](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41882928635) has an overall FAIL result. Its live root, KDE process witnesses and guarded Try action passed, but both desktop frames were solid black; UEFI mode still did not reach a visually working desktop. This is not proof of RTX 3050 incompatibility. Read the CURRENT VERIFIED STATE section at the beginning of `docs/AI_HANDOFF.md` before attempting more work. No ISO is released for installation.
-
-## November 5 verified snapshot
-The **original pristine Kubuntu** also displays a black virtual desktop in the same software-only QEMU after Try: [run 41889832695](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41889832695). A better graphics test environment or physical Try-only verification is needed; this is not proof about the RTX 3050. The real installed-file payload and native Debian package now each pass matching 16-file allowlist checks: [collision run 41937702881](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41937702881), [package audit 41938238699](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/41938238699). **No OREZ installation is yet qualified.** See `docs/AI_HANDOFF.md` for the evidence ledger and remaining gates.
+**Licensing:** Modified casper hooks and retained originals are GPL-2.0-or-later;
+see [source and notices](third_party/casper/README.md). Original OREZ source and
+wallpaper remain owner-reserved; every upstream licence still applies. Complete
+redistribution/source obligations and signed-release gates before distributing
+binaries. Keep the repository public until the owner's actual PC-readiness gates pass.
