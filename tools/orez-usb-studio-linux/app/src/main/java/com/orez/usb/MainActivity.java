@@ -36,7 +36,9 @@ public final class MainActivity extends Activity {
     private String isoName="No Linux ISO selected",isoHash="",isoSummary="";
     private boolean inspecting=false,receiverRegistered=false;
     private TextView isoLabel,usbLabel,statusLabel,detailLabel,hashState;
-    private EditText checksumInput;
+    private EditText checksumInput,monitorPairCode;
+    private CheckBox monitorConsent;
+    private TextView monitorStateLabel;
     private Button selectIsoButton,selectUsbButton,createButton,cancelButton;
     private ProgressBar progress;
     private Runnable poll;
@@ -82,6 +84,7 @@ public final class MainActivity extends Activity {
             if(isFinishing())return;
             statusLabel.setText(WriteService.phase);
             detailLabel.setText(WriteService.detail);
+            if(monitorStateLabel!=null) monitorStateLabel.setText(WriteService.monitorState);
             long maximum=WriteService.total,completed=WriteService.done;
             progress.setIndeterminate(WriteService.running && maximum<=0);
             progress.setProgress(maximum>0?(int)Math.min(100,completed*100/maximum):0);
@@ -132,7 +135,36 @@ public final class MainActivity extends Activity {
         selectUsbButton=button("Select connected USB drive",false);page.addView(selectUsbButton);
         selectUsbButton.setOnClickListener(v->scanUsb());
 
-        page.addView(sectionTitle("04  /  WRITE AND VERIFY"));
+        page.addView(sectionTitle("04  /  OPTIONAL LIVE MONITOR"));
+        TextView monitorPrivacy=label("With your permission, send live USB-writing progress and diagnostic details to the existing OREZ monitor so this chat can inspect the current status. Only the ISO SHA-256 and size, x86_64 target, USB model/VID/PID/capacity, progress, phase and error details are reported. No ISO contents, file paths, USB serial number or unrelated phone data are sent. Reporting uses HTTPS and can be left off.",13,MUTED);
+        monitorPrivacy.setBackground(round(CARD,14));monitorPrivacy.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(monitorPrivacy);
+        monitorConsent=new CheckBox(this);
+        monitorConsent.setText("Enable Live Monitor for this USB-writing session");
+        monitorConsent.setTextColor(TEXT);monitorConsent.setButtonTintList(android.content.res.ColorStateList.valueOf(MINT));
+        page.addView(monitorConsent);
+        monitorPairCode=new EditText(this);
+        monitorPairCode.setSingleLine(true);monitorPairCode.setTextColor(TEXT);monitorPairCode.setHintTextColor(MUTED);
+        monitorPairCode.setHint("Paste private pairing code from ChatGPT");
+        monitorPairCode.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        monitorPairCode.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
+        monitorPairCode.setPadding(dp(13),dp(11),dp(13),dp(11));monitorPairCode.setBackground(round(CARD,12));
+        page.addView(monitorPairCode,new LinearLayout.LayoutParams(-1,dp(54)));
+        monitorPairCode.setEnabled(false);
+        monitorConsent.setOnCheckedChangeListener((button,checked)->{
+            monitorPairCode.setEnabled(checked);
+            if(!checked) monitorPairCode.setText("");
+            if(monitorStateLabel!=null) monitorStateLabel.setText(checked?"Consent enabled for the next USB-writing session only.":"Live monitoring is off. No data will be transmitted.");
+            refreshControls();
+        });
+        monitorPairCode.addTextChangedListener(new TextWatcher(){
+            public void beforeTextChanged(CharSequence s,int st,int count,int after){}
+            public void onTextChanged(CharSequence s,int st,int before,int count){refreshControls();}
+            public void afterTextChanged(Editable e){}
+        });
+        monitorStateLabel=label("Live monitoring is off. No data will be transmitted.",13,MUTED);
+        page.addView(monitorStateLabel);
+
+        page.addView(sectionTitle("05  /  WRITE AND VERIFY"));
         TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO, checks the drive capacity, writes the original hybrid image, flushes it, then reads back every byte and compares SHA-256.",13,MUTED);
         safety.setBackground(round(CARD,14));safety.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(safety);
         createButton=button("Review & create Linux USB",true);page.addView(createButton);
@@ -159,7 +191,7 @@ public final class MainActivity extends Activity {
             try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://kubuntu.org/getkubuntu/")));}
             catch(Exception e){toast("Could not open the browser.");}
         });
-        page.addView(label("No pairing code. No cloud upload. No Internet permission inside this writer. Your ISO and USB contents stay on the phone and drive.",12,MUTED));
+        page.addView(label("Live monitoring is optional and off by default. A fresh private pairing code is required for each session. The connection is reporting-only from this Linux app: it never accepts remote USB-write, cancel or checksum commands. If the network fails, local writing continues.",12,MUTED));
         refreshControls();
     }
 
@@ -325,6 +357,8 @@ public final class MainActivity extends Activity {
                 .putExtra("isoUri",isoUri)
                 .putExtra("isoBytes",isoBytes)
                 .putExtra("expectedSha256",isoHash);
+            if(monitorConsent!=null && monitorConsent.isChecked())
+                job.putExtra("liveMonitorPairCode",monitorPairCode.getText().toString().trim());
             try { startForegroundService(job); }
             catch(Exception e) { toast("Could not start the foreground USB writer: "+e.getMessage()); }
             dialog.dismiss();
@@ -337,7 +371,9 @@ public final class MainActivity extends Activity {
         String typed=checksumInput==null?"":checksumInput.getText().toString().trim();
         return !WriteService.running && !inspecting && isoUri!=null && isoBytes>0 &&
             isoHash.matches("[0-9a-f]{64}") && typed.matches("(?i)[0-9a-f]{64}") &&
-            typed.equalsIgnoreCase(isoHash) && selectedUsb!=null && usbBytes>=((isoBytes+511)/512)*512;
+            typed.equalsIgnoreCase(isoHash) && selectedUsb!=null && usbBytes>=((isoBytes+511)/512)*512 &&
+            (monitorConsent==null || !monitorConsent.isChecked() ||
+             LiveMonitorClient.isValidCode(monitorPairCode==null?"":monitorPairCode.getText().toString()));
     }
 
     private void refreshControls() {
@@ -352,6 +388,8 @@ public final class MainActivity extends Activity {
         createButton.setAlpha(createButton.isEnabled()?1f:.42f);
         selectIsoButton.setEnabled(!WriteService.running && !inspecting);
         selectUsbButton.setEnabled(!WriteService.running && !inspecting);
+        if(monitorConsent!=null) monitorConsent.setEnabled(!WriteService.running);
+        if(monitorPairCode!=null) monitorPairCode.setEnabled(!WriteService.running && monitorConsent!=null && monitorConsent.isChecked());
     }
 
     private static String deviceName(UsbDevice d) {
@@ -366,6 +404,7 @@ public final class MainActivity extends Activity {
 
     @Override protected void onDestroy() {
         handler.removeCallbacksAndMessages(null);
+        if(monitorPairCode!=null) monitorPairCode.setText("");
         if(receiverRegistered)try{unregisterReceiver(usbReceiver);}catch(Exception ignored){}
         super.onDestroy();
     }
