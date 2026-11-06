@@ -1,0 +1,20 @@
+{
+  "commit": "d8193b7ef1c45b088e96241745776d68484768da",
+  "run_id": 42027937005,
+  "job_id": 127246748045,
+  "conclusion": "success",
+  "verified_from_decoded_job_log": {
+    "source_87": true,
+    "browser_60": true,
+    "package_23": true,
+    "preview_built": true
+  },
+  "iso_job": "skipped",
+  "artifact": {
+    "id": 13415300743,
+    "bytes": 200884515,
+    "github_reported_digest": "sha256:1b2d79ee01373b563d927c9d571c038988d08086bc73dbd62a1dcfa272d3741d",
+    "expires_at": "2026-11-19T12:34:46Z",
+    "independently_downloaded": false
+  }
+}

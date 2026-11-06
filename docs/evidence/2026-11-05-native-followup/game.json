@@ -1,0 +1,13 @@
+[
+  {
+    "name": "native-game-input",
+    "status": "passed",
+    "detail": {
+      "application": "SuperTux native Linux game",
+      "level": "/usr/share/games/supertux2/levels/world1/welcome_antarctica.stl",
+      "input": "Right and jump delivered",
+      "gameplay": "requires visual review of position overlay/captures; no Android/AAA/FPS certification"
+    },
+    "seconds": 17.36
+  }
+]

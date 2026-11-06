@@ -1,0 +1,49 @@
+{
+  "purpose": "orez-inactive-installer-profile",
+  "profile_sha256": "dd0c7b112876b059a8e4185bcc33212ee641d5e87229107bdfbd64f5e312f486",
+  "base_status_sha256": "397f502b98cc8fe7721e6e09553d3887b8e0da1f5e231153b3534ceda0531b29",
+  "generated_config_sha256": {
+    "etc/calamares/settings.conf": "931ceea9dffa7e9142595def6900713d4f1ec1547c559bd5ac3730f976fda190",
+    "etc/calamares/modules/users.conf": "406a21a1a1fbf1d83947a8c8abb6aaad20ff18a3422b212e9cfd4f26dae9af7f",
+    "etc/calamares/modules/partition.conf": "aa77e34f72481199fa8bc856aba918e665d8942f987bed4789da7ceb2e5d8083",
+    "etc/calamares/modules/packages.conf": "da843739db01c5a5d3077670e98e3ebc8739308c1a2061b0e39906fe029beba1",
+    "etc/calamares/modules/welcome.conf": "20e0f98f87b2d43e2893cd9011ce6315131fea4b9b9c8b2075d994441b7ce824",
+    "etc/calamares/modules/locale.conf": "8cb83b0506f6350c680dc465ae5688ae92beda1d3b7c35f9ccfdbd0e77e4eccf",
+    "etc/calamares/modules/displaymanager.conf": "182da574fe18b5c4f1b24fd49ffffed06c4b90ab72dc8b7033c9695c225ccab1",
+    "etc/calamares/modules/unpackfs.conf": "e507eb54c66ecaf94734e2f8a5a457dad5c20fdd347bca5cbeb23827660428c9"
+  },
+  "requires_unchanged_upstream_config": [
+    "etc/calamares/modules/automirror.conf",
+    "etc/calamares/modules/before_bootloader_context.conf",
+    "etc/calamares/modules/bootloader.conf",
+    "etc/calamares/modules/finished.conf",
+    "etc/calamares/modules/fstab.conf",
+    "etc/calamares/modules/grubcfg.conf",
+    "etc/calamares/modules/machineid.conf",
+    "etc/calamares/modules/mount.conf",
+    "etc/calamares/modules/oemid.conf",
+    "etc/calamares/modules/pkgselect_context.conf",
+    "etc/calamares/modules/pkgselect_snap_context.conf",
+    "etc/calamares/modules/shellprocess_add386arch.conf",
+    "etc/calamares/modules/shellprocess_before_bootloader_kerncopy.conf",
+    "etc/calamares/modules/shellprocess_bug-LP#1829805.conf",
+    "etc/calamares/modules/shellprocess_fix_oem_uid.conf",
+    "etc/calamares/modules/shellprocess_fixconkeys_part1.conf",
+    "etc/calamares/modules/shellprocess_fixconkeys_part2.conf",
+    "etc/calamares/modules/shellprocess_logs.conf",
+    "etc/calamares/modules/shellprocess_oemprep.conf",
+    "etc/calamares/modules/shellprocess_rmcdrom.conf",
+    "etc/calamares/modules/umount.conf",
+    "etc/sysctl.d/20-apparmor.conf"
+  ],
+  "installation_approved": false,
+  "activated": false,
+  "limitations": [
+    "Inactive configuration only; no installer activation helper is provided.",
+    "32 GiB storage and 2 GiB installer RAM are provisional checks, not measured installation size or a performance guarantee.",
+    "No graphical disk selection, package removal, UEFI reboot, LUKS/Btrfs recovery or non-target preservation pass.",
+    "Original branding and installed OREZ login-theme packaging still need integration.",
+    "Source obligations for modified distribution configuration remain part of release qualification."
+  ],
+  "record_note": "Generated before the descriptive unchanged-config list was narrowed to Calamares files. Unpack still excludes the live AppArmor override; generated file hashes are unchanged."
+}

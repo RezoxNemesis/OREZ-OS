@@ -1,0 +1,36 @@
+[
+  {
+    "name": "login-theme",
+    "status": "passed",
+    "detail": {
+      "scope": "Actual SDDM test-mode rendering; input requires visual review",
+      "authentication_tested": false,
+      "session_unavailable_without_render_device": true,
+      "full_boot": false
+    }
+  },
+  {
+    "name": "installer-guard",
+    "status": "passed",
+    "detail": {
+      "guard_exit": 78,
+      "installation_performed": false,
+      "storage_accessed": false,
+      "scope": "Actual live-media safety guard only; no functional installer claimed"
+    }
+  },
+  {
+    "name": "phone-connect",
+    "status": "passed",
+    "detail": {
+      "scope": "Native KDE Connect window; offline test container",
+      "paired_phone": false,
+      "transfer_mirroring_tested": false
+    }
+  },
+  {
+    "name": "fullscreen-game",
+    "status": "failed",
+    "error": "AssertionError('Playable scene was not established')"
+  }
+]

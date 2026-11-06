@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Reproduce remote source selection and verify signed local-only APT cache update",
+  "kind": "package-container",
+  "started_at": "2026-11-05T14:49:34.732867+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "77bdf981d2613418441d8e03238db0c02c61b12230fbe06d5a7e40dbc0b41cf6",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-apt-regression-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 26.02,
+  "finished_at": "2026-11-05T14:50:00.868850+00:00",
+  "log_sha256": "666dc2b1ec87018c51bbb147b1b3880577e4606da279b51e22775dfb8a031201"
+}

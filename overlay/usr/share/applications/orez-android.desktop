@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Android Apps
+Comment=Manage an optional Google Play Android development emulator
+Exec=/usr/bin/orez-android gui
+Icon=phone
+Terminal=false
+Categories=System;Emulator;
+Keywords=Android;Google Play;Games;Emulator;

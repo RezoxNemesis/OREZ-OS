@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Initrd patch and live authentication audit regressions",
+  "kind": "source",
+  "started_at": "2026-11-05T14:51:24.282214+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.27,
+  "finished_at": "2026-11-05T14:51:25.619593+00:00",
+  "log_sha256": "98347c78af938d934cd1fd69f3b55a8a88b0312b94eee450bc30954bd09bd917"
+}

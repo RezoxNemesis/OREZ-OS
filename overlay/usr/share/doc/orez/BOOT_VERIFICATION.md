@@ -1,0 +1,7 @@
+# OREZ live-only VM verification witness
+
+The service `orez-live-verify.service` is installed only to help verify this **experimental** ISO in a disposable local VM. It is **disabled in normal boots by design** unless the exact kernel parameters `boot=casper orez.verify=1` are both present. It runs as the unprivileged `nobody` user, with access only to serial ports via the `dialout` group, and with no network access or system write permissions. It reads a few OREZ identity files and verifies that `/` is mounted as an overlay filesystem, then writes `OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT` to the local VM's serial console and journal.
+
+The service does not install software or change files, create users, change passwords, access an external network, modify storage, or authorize an AI tool. Its current active state is visible with `systemctl status orez-live-verify.service`; disable completely with `sudo systemctl disable --now orez-live-verify.service` or remove the `orez-shell` package in a qualified installed system. The build testing workflow passes the flag only on a disposable virtual machine; it is not enabled by OREZ's default boot menu.
+
+A successful witness proves the kernel and casper found an OREZ overlay and started systemd. It does **not** alone prove the Plasma graphical desktop, physical-device drivers, NVIDIA acceleration, Secure Boot trust, installer persistence, or safe disk partitioning.

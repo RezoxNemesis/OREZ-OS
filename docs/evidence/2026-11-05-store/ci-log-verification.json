@@ -1,0 +1,17 @@
+{
+  "run_id": 42067954280,
+  "job_id": 127387318281,
+  "implementation_commit": "7fafddf4764528278e6c095e2e52a0c44c5f109d",
+  "source_tests": 119,
+  "manifest_paths": 28,
+  "browser_tests": 68,
+  "log_lines": [
+    "2026-11-05T16:47:41.1729856Z Ran 119 tests in 0.670s",
+    "2026-11-05T16:47:42.2293458Z  Version: 0.1.0-3",
+    "2026-11-05T16:47:43.1630353Z OREZ .deb manifest and maintainer-script audit: PACKAGE_CONTENTS_PASS",
+    "2026-11-05T16:47:43.1707455Z   \"manifest_paths\": 28,",
+    "2026-11-05T16:47:43.1708434Z   \"status\": \"PACKAGE_CONTENTS_PASS\",",
+    "2026-11-05T16:49:19.4727079Z   68 passed (1.6m)"
+  ],
+  "artifact_independently_downloaded": false
+}

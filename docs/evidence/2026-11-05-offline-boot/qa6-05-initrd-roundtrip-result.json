@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Audit actual initrd authentication and round-trip the deterministic offline-cache patch",
+  "kind": "source",
+  "started_at": "2026-11-05T14:53:47.461235+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-patch-lab.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 5.28,
+  "finished_at": "2026-11-05T14:53:52.782496+00:00",
+  "log_sha256": "cce71d60f9e279428dd50cc5ffb3ceed0336691368056c217362d59d36431d86"
+}

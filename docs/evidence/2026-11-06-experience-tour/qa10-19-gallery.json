@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "qa10-19-gallery",
+  "kind": "browser-preview",
+  "started_at": "2026-11-06T02:12:01.960169+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "074509fa5dd6dd2061e18e0af53494143bb9749d7e8eb0e71cc2615a9b1056e9",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n M docs/ARCHITECTURE.md\n M docs/CONNECTIVITY.md\n M docs/FIRST_PC_RELEASE.md\n?? build/create-experience-tour.py\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-gallery.mjs\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+  "command": [
+    "node",
+    "build/integration/tour-gallery.mjs"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 4.0,
+  "finished_at": "2026-11-06T02:12:06.018629+00:00",
+  "log_sha256": "91af5781009f3be1072ff426e0c5ad6242028f0f1cbcf2ed222f14cbeda5b3e6"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Offline direct boot with local cache patch, TCG and software OpenGL",
+  "kind": "vm",
+  "started_at": "2026-11-05T15:13:56.231675+00:00",
+  "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+  "source_digest": "3d0741d082ac90ca1274a6b04a335ef9e5f6e7691c2997f423ed10ab0d925334",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-boot.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 619.45,
+  "finished_at": "2026-11-05T15:24:15.797290+00:00",
+  "log_sha256": "923e7fd31de598ee7fd3b2a9881c434dfa366fcf596641ada24a14e968aa66a2"
+}

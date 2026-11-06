@@ -1,0 +1,8 @@
+OREZ build: 0.1.0-dev
+Stage: live candidate / NOT INSTALLER QUALIFIED
+Upstream: kubuntu-26.04.1-desktop-amd64.iso
+Upstream_SHA256: 831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8
+OREZ_SHA256: 8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9
+Source_revision: 82183ea8fbc5c1a759576a5ff0b814b936402bed
+VM_boot: NOT TESTED
+Physical_boot: NOT TESTED

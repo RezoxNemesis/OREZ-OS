@@ -1,0 +1,28 @@
+{
+  "id": 42085583005,
+  "head_sha": "214955046c4cd2b5dacba38510bc29d0332996b6",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42085583005",
+  "event": "pull_request",
+  "created_at": "2026-11-05T18:34:46Z",
+  "updated_at": "2026-11-05T18:38:11Z",
+  "decoded_log_verified": true,
+  "job_id": 127449663492,
+  "source_tests": 148,
+  "package_paths": 38,
+  "browser_cases": 68,
+  "live_iso_job": "skipped",
+  "installation_approved": false,
+  "artifacts": [
+    {
+      "id": 13443551005,
+      "name": "orez-source-and-preview-evidence",
+      "size_in_bytes": 210978044,
+      "digest": "sha256:2731ad5286e36ab87f35993c60e3a66f9269de399677a4d8439506b801c3e480",
+      "expired": false,
+      "expires_at": "2026-11-19T18:38:00Z"
+    }
+  ],
+  "artifact_zip_independently_downloaded": false
+}

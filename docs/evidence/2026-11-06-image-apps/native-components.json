@@ -1,0 +1,42 @@
+{
+  "scope": "Actual base chroot, native Qt OFFSCREEN components; not a desktop/ISO boot",
+  "uid": 1500,
+  "source_sha256": {
+    "daily_ui.py": "5c03c6b48662ada76b2bad2293d107147dac83c0f861e580632a1f69f5d55512",
+    "daily_models.py": "c25523dabd7abea5b55219aa8a04412e52c2bee41c5b6c98c89dc73e5d26f139"
+  },
+  "scenarios": [
+    {
+      "name": "native-binary-startup",
+      "status": "passed",
+      "detail": {
+        "versions": {
+          "Brave": "Brave Browser 157.1.99.55 unknown",
+          "VLC": "VLC version 3.0.23 Vetinari (3.0.23-2-0-g79128878dd)",
+          "SuperTux": "supertux2 v0.6.3"
+        },
+        "supertux_explicit_data_path": true,
+        "brave_shell_wrapper_tested": false,
+        "gui_playback_browsing_or_gameplay_tested": false
+      }
+    },
+    {
+      "name": "calendar-save-reopen",
+      "status": "passed",
+      "detail": "Real SQLite persistence and button signal on installed Qt; no simulated storage."
+    },
+    {
+      "name": "clock-preferences-palettes",
+      "status": "passed",
+      "detail": "Native clock, saved display timezone, Paper and Ink app palettes; no system-time change."
+    },
+    {
+      "name": "countdown-pause-finish-close",
+      "status": "passed",
+      "detail": "Real Qt event loop, pause/resume and completion; confirmed timer shutdown after close."
+    }
+  ],
+  "physical_input_tested": false,
+  "app_sandbox_enforcement_tested": false,
+  "installation_approved": false
+}

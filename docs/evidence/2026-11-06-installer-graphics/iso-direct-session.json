@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "parent_kind": "recorded-development-derivative",
+  "parent_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "application_layer_sha256": "22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51",
+  "component_layer_sha256": "e5ae0294aea3f3ee37f3ad853df52e9a5746fc3d1aa98d46281b95c78e35048b",
+  "component_package_version": "0.1.0-4",
+  "package_count": 2301,
+  "layers_low_to_high": [
+    "filesystem.squashfs",
+    "orez-apps.squashfs",
+    "orez-install.squashfs",
+    "zz-orez.squashfs"
+  ],
+  "source_commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+  "fresh_signature_check_by_this_script": false,
+  "boot_tested": false,
+  "installation_approved": false,
+  "release_approved": false,
+  "output_sha256": "6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6",
+  "output_bytes": 5455347712,
+  "mapped_files_verified": 10,
+  "base_filesystem_unchanged": true
+}

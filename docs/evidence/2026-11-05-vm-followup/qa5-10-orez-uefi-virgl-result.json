@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Rebuilt OREZ ISO actual UEFI boot with software-backed VirGL, offline and diskless",
+  "kind": "vm",
+  "started_at": "2026-11-05T12:22:22.710251+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-run-virgl-host.sh",
+    "orez-uefi-virgl",
+    "uefi",
+    "/home/orez-test/orez/dist/OREZ-OS-0.1-live-amd64.iso",
+    "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+    "660"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 150.05,
+  "finished_at": "2026-11-05T12:24:52.881645+00:00",
+  "log_sha256": "b5347e7b46b263a1bc7f3a413849228f84481715f79d9ffb81be8e0e544f9db2"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "qa10-12-welcome-document",
+  "kind": "browser-preview",
+  "started_at": "2026-11-06T02:04:23.110619+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "82527e458f92720b2b3cdc918138027288c367a4a565c4b2f56987b005bcbed3",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-components.py\n?? build/integration/tour-desktop.py\n?? build/integration/tour-welcome.mjs\n?? docs/EXPERIENCE_IDEAS.md\n?? docs/FIRST_BOOT_AND_TOUR.md\n?? docs/experience/",
+  "command": [
+    "node",
+    "build/integration/tour-welcome.mjs"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 1.37,
+  "finished_at": "2026-11-06T02:04:24.532697+00:00",
+  "log_sha256": "0155c4aea380e891cdb97db2c4b34d6d64d2806d3f153a820e8c3c7ea9fe8d02"
+}

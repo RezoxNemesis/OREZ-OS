@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Pristine Kubuntu live boot using normal-user TCG and software-backed VirGL",
+  "kind": "vm",
+  "started_at": "2026-11-05T12:20:53.410913+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-run-virgl-host.sh",
+    "upstream-virgl",
+    "direct",
+    "/home/orez-test/orez/.cache/orez/kubuntu-26.04.1-desktop-amd64.iso",
+    "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+    "600"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 80.12,
+  "finished_at": "2026-11-05T12:22:13.580236+00:00",
+  "log_sha256": "e4d2d4e76e9eb89e97f681b8725af4e6b8e2ccaab114388f72346414f7764514"
+}

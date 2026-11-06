@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Native tour with verified private display access",
+  "kind": "package-container",
+  "started_at": "2026-11-06T01:49:22.725552+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "6b7279a21ee5593b2fb489a37e0f3e2f7489d56fbd53323e6bccf39c49ec50fa",
+  "working_tree": "M build/integration/desktop-scenarios.sh\n M build/integration/desktop-session.sh\n M build/run-desktop-container.sh\n?? build/integration/tour-desktop.py",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-desktop.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 41.4,
+  "finished_at": "2026-11-06T01:50:04.195351+00:00",
+  "log_sha256": "51030cc7c961e04fb13947209fc234125c220b494f5991b7446991c1bce551be"
+}

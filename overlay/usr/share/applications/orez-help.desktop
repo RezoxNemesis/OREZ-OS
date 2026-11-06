@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Help & Recovery
+GenericName=Help, Recovery Status and Diagnostics
+Comment=Find safe next steps and inspect read-only system diagnostics
+Exec=/usr/bin/orez-help
+Icon=help-browser
+Terminal=false
+Categories=System;Utility;

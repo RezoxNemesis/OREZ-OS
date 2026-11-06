@@ -1,0 +1,15 @@
+{
+  "implementation_commit": "ccde111404f75a32a7f5cc97274d067c42034556",
+  "run_id": 42164885745,
+  "url": "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42164885745",
+  "conclusion": "success",
+  "source_tests": 187,
+  "package_paths": 38,
+  "browser_cases": 68,
+  "full_iso_job": "skipped",
+  "artifact_id": 13477989561,
+  "artifact_bytes": 211372300,
+  "artifact_sha256": "97c434ba6e2b8c59c5c7fd265f0ac645544335ded268c2296ad5bdba114e9846",
+  "artifact_expires_at": "2026-11-20T04:54:04Z",
+  "installation_approved": false
+}

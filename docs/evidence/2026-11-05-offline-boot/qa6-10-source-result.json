@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Source regression after bounded initrd repack",
+  "kind": "source",
+  "started_at": "2026-11-05T15:08:55.707003+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "a29c06983387df3a94f861c980bf0e191712553deade48d59fd169bd5149fb88",
+  "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.18,
+  "finished_at": "2026-11-05T15:08:56.933886+00:00",
+  "log_sha256": "40f87d5bea50956e5b0a7a5e77ef537e5317474c1076abdbb7c953611e464d6a"
+}

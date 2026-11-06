@@ -1,0 +1,73 @@
+{
+  "scope": "Actual default-menu UEFI boot of image 6ca85cf, source 56af0a2. No kernel flags edited. Later manual owner-console Plasma launch is a separate diagnostic.",
+  "iso_sha256": "6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6",
+  "image_source_commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+  "environment": {
+    "guest_ram_mib": 6144,
+    "vcpus": 2,
+    "acceleration": "TCG",
+    "graphics": "virtio-vga 2D",
+    "network": "none",
+    "writable_disks": [],
+    "host_devices": []
+  },
+  "status": "blocked",
+  "installation_approved": false,
+  "normal_login_desktop_pass": false,
+  "verified": [
+    "Normal default UEFI boot reached completed local enrollment; both password entries concealed in the observed frame",
+    "Real themed SDDM selected OREZ Desktop; wrong password refused and correct password accepted",
+    "Owner console UID1000; passwordless sudo refused; normally authenticated diagnostic commands worked"
+  ],
+  "normal_login_failure": {
+    "accepted_at_utc": "2026-11-06T06:40:33Z",
+    "exited_at_utc": "2026-11-06T06:40:57Z",
+    "session_exit_code": 64,
+    "observation": "Correct authentication launched selected command on VT2, then it exited and SDDM restarted. Session log empty. Cause unqualified; exit64 is not a documented generic graphics error."
+  },
+  "separate_manual_diagnostic": {
+    "action": "Authenticated ordinary owner tty3 launched startplasma-wayland, with output redirected to volatile /tmp; no root, compositor override, auth or sandbox relaxation",
+    "observed": [
+      "startplasma, KWin, plasmashell and plasma-welcome processes",
+      "No remaining systemd jobs at the inspected instant",
+      "Real KDE Welcome window on active VT3",
+      "Approved wallpaper, desktop icons, panel, system tray and clock",
+      "Clicking Skip closed the Welcome window",
+      "Clicking native System Settings opened its actual Quick Settings window; search and Bluetooth/Wi-Fi/display/accessibility routes visible"
+    ],
+    "not_qualified": [
+      "Normal SDDM startup remains broken",
+      "No setting changed or functional radio/network test",
+      "No KRunner, file-manager, application workload, game, audio or video pass",
+      "No lock/unlock, logout/reboot, installed-system, recovery or performance pass"
+    ],
+    "evidence": [
+      "diagnostic-active-plasma-vt3.png",
+      "diagnostic-welcome-skip.png",
+      "diagnostic-runner-after-welcome.png",
+      "diagnostic-settings-final.png"
+    ]
+  },
+  "observations": [
+    "Inherited Kubuntu desktop/installer icons, Welcome and theme choices remain; installer never clicked and guard remains",
+    "Slow software-emulated rendering is not target-PC performance evidence",
+    "A tty input attempt raced getty timeout and part of the disposable password appeared as a new username; original failure frames retained",
+    "One OCR classification missed the prompt and sent no input; another OCR attempt timed out before credential input. Successful prompt-observed retries are separate. These are test-driver failures, not proved kernel crashes"
+  ],
+  "not_qualified": [
+    "Installed footprint and safe disk installation/recovery",
+    "Fresh authenticated security baseline, full effective policy and signed release/source redistribution",
+    "Target NVIDIA, Secure Boot, Wi-Fi, Bluetooth, USB and hardware performance",
+    "Autonomous OREZ AI and consumer Android emulation"
+  ],
+  "stop_reason": "Configured 3600-second observation completed; QEMU exited through harness cleanup, not a demonstrated guest crash",
+  "actual_pngs": 212,
+  "all_saved_pngs_decode": true,
+  "credential_scope": "Private random disposable VM-only credential; no real owner credential",
+  "credential_destroyed": true,
+  "containers_removed": [
+    "orez-qa12-direct-default",
+    "orez-qa12-assembly"
+  ],
+  "finalized_at": "2026-11-06T07:19:44.470116+00:00"
+}

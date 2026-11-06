@@ -1,0 +1,143 @@
+{
+  "run": {
+    "id": 42140670101,
+    "head_sha": "f6c3df71d742d151e796808f60b87a2874830d79",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42140670101",
+    "run_attempt": 1
+  },
+  "jobs": [
+    {
+      "id": 127639908888,
+      "name": "Validate OREZ code and Debian package",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-06T00:58:57Z",
+      "completed_at": "2026-11-06T01:01:23Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-06T00:58:58Z",
+          "completed_at": "2026-11-06T00:58:58Z"
+        },
+        {
+          "name": "Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-06T00:58:58Z",
+          "completed_at": "2026-11-06T00:59:00Z"
+        },
+        {
+          "name": "Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-06T00:59:00Z",
+          "completed_at": "2026-11-06T00:59:01Z"
+        },
+        {
+          "name": "Source and shell checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-06T00:59:01Z",
+          "completed_at": "2026-11-06T00:59:43Z"
+        },
+        {
+          "name": "Build phone and desktop preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-06T00:59:43Z",
+          "completed_at": "2026-11-06T00:59:44Z"
+        },
+        {
+          "name": "Capture every browser test, including failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-06T00:59:44Z",
+          "completed_at": "2026-11-06T01:01:15Z"
+        },
+        {
+          "name": "Preserve screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-06T01:01:15Z",
+          "completed_at": "2026-11-06T01:01:15Z"
+        },
+        {
+          "name": "Upload screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-06T01:01:15Z",
+          "completed_at": "2026-11-06T01:01:21Z"
+        },
+        {
+          "name": "Report exact status",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-06T01:01:21Z",
+          "completed_at": "2026-11-06T01:01:21Z"
+        },
+        {
+          "name": "Post Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-06T01:01:21Z",
+          "completed_at": "2026-11-06T01:01:21Z"
+        },
+        {
+          "name": "Post Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-11-06T01:01:21Z",
+          "completed_at": "2026-11-06T01:01:21Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-11-06T01:01:21Z",
+          "completed_at": "2026-11-06T01:01:21Z"
+        }
+      ]
+    },
+    {
+      "id": 127640850138,
+      "name": "Build full Kubuntu-derived live ISO (manual only)",
+      "status": "completed",
+      "conclusion": "skipped",
+      "started_at": "2026-11-06T01:01:24Z",
+      "completed_at": "2026-11-06T01:01:23Z",
+      "steps": []
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13468381144,
+      "name": "orez-source-and-preview-evidence",
+      "size_in_bytes": 211196535,
+      "digest": "sha256:0e1fd5ac698146f2b8d563909d0ac953aac22e76ba06b0017fa892b5c0055583",
+      "expired": false,
+      "expires_at": "2026-11-20T01:01:16Z"
+    }
+  ],
+  "decoded_log_verified": true,
+  "source_tests_passed": 172,
+  "browser_tests_passed": 68,
+  "package_paths": 38,
+  "full_iso_job": "skipped",
+  "artifact_zip_independently_downloaded": false
+}

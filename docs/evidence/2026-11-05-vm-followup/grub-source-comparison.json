@@ -1,0 +1,15 @@
+{
+  "upstream": {
+    "grub_sha256": "3759b158b9857fac5edbbfca65f37d3396440ea2df67a3c951ce90bf45dcaf2d",
+    "bare_grub_platform_lines": [
+      23
+    ]
+  },
+  "orez": {
+    "grub_sha256": "3759b158b9857fac5edbbfca65f37d3396440ea2df67a3c951ce90bf45dcaf2d",
+    "bare_grub_platform_lines": [
+      23
+    ]
+  },
+  "conclusion": "Both actual ISOs contain byte-identical GRUB configuration with bare grub_platform at line 23. The warning is inherited upstream; this does not qualify desktop/installation."
+}

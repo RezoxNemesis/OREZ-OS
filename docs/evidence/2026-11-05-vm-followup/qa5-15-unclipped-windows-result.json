@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Capture unclipped SDL windows without any guest input",
+  "kind": "vm",
+  "started_at": "2026-11-05T12:29:42.081805+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "60d73e8a2331390cdb7e0e39824c09aca244171cb83202cd2542cc142e19cf33",
+  "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+  "command": [
+    "bash",
+    "/tmp/orez-normalize-vm-windows-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 11.12,
+  "finished_at": "2026-11-05T12:29:53.537241+00:00",
+  "log_sha256": "23fc0ba869e37ff9c18014bdf1f5205bda5a1c50a3129dee905c536c6e44b5ed"
+}

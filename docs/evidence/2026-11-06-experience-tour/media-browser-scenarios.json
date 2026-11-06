@@ -1,0 +1,31 @@
+[
+  {
+    "name": "vlc-default-keyboard-mouse",
+    "status": "passed",
+    "detail": {
+      "version": "3.0.23-1",
+      "positions_us": [
+        1900474,
+        2900390
+      ],
+      "space_pause_resume": true,
+      "mouse_context_menu": true,
+      "fullscreen_f": true,
+      "quit_ctrl_q": true,
+      "custom_key_mapping": false,
+      "hardware_acceleration_tested": false,
+      "audio_tested": false,
+      "scope": "generated local video, native Linux application"
+    }
+  },
+  {
+    "name": "native-brave",
+    "status": "blocked",
+    "detail": {
+      "exit_code": 0,
+      "reason": "Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted\n[1799:1799:1106/015852.530330:FATAL:content/browser/zygote_host/zygote_host_impl_linux.cc:228] Zygote process exited prematurely with exit code 1\n[1106/015852.534992:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)\n[1106/015852.535047:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)\n/usr/bin/brave-browser: line 30:  1799 Trace/breakpoint trap      \"$HERE/brave\" \"$@\"\n",
+      "sandbox_bypassed": false,
+      "scope": "Native launch attempted; no working browser or browsing claim"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# OREZ LIVE TEST ONLY — no installer until qualification completes.
+# This override exists ONLY in disposable OREZ live media, never in the .deb.
+set -euo pipefail
+notice='OREZ LIVE TEST — installation is disabled. This ISO has NOT passed safe installation, data preservation, Secure Boot, or recovery tests. Do not format your SSD. Continue using the temporary live desktop.'
+printf '%s\n' "$notice" >&2
+if [[ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]] && command -v kdialog >/dev/null 2>&1; then
+  kdialog --title 'OREZ OS — Installer Unavailable' --error "$notice" || true
+fi
+exit 78

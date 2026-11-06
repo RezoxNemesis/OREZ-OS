@@ -1,0 +1,66 @@
+{
+  "fixture_versions": true,
+  "installation_approved": false,
+  "scenarios": [
+    {
+      "name": "initial fixture install",
+      "status": "passed",
+      "detail": "Actual first fixture installed and payload hash matched",
+      "seconds": 0.922
+    },
+    {
+      "name": "non-admin install rejected",
+      "status": "passed",
+      "detail": "Ordinary-user dpkg installation denied without modifying current package",
+      "seconds": 0.062
+    },
+    {
+      "name": "user opt-out",
+      "status": "passed",
+      "detail": "Per-user opt-out configured for upgrade preservation tests",
+      "seconds": 0.034
+    },
+    {
+      "name": "corrupt archive rejected",
+      "status": "passed",
+      "detail": "Truncated package rejected; installed version, payload and unrelated data unchanged",
+      "seconds": 0.065
+    },
+    {
+      "name": "unmet dependency rejected",
+      "status": "passed",
+      "detail": "Unresolvable dependency rejected without breaking dpkg state",
+      "seconds": 0.135
+    },
+    {
+      "name": "newer version upgrade",
+      "status": "passed",
+      "detail": "Newer local fixture installed; expected changed payload and user opt-out both verified",
+      "seconds": 0.762
+    },
+    {
+      "name": "implicit downgrade rejected",
+      "status": "passed",
+      "detail": "APT refused unattended downgrade without explicit --allow-downgrades",
+      "seconds": 0.097
+    },
+    {
+      "name": "explicit package rollback",
+      "status": "passed",
+      "detail": "Explicit package downgrade restored earlier payload while retaining user preference and files",
+      "seconds": 0.767
+    },
+    {
+      "name": "purge preserves user state",
+      "status": "passed",
+      "detail": "Purge removed package but retained user data and deliberate user opt-out",
+      "seconds": 0.851
+    },
+    {
+      "name": "reinstall after purge",
+      "status": "passed",
+      "detail": "Fresh installation after purge retained user control and restored correct payload",
+      "seconds": 0.72
+    }
+  ]
+}

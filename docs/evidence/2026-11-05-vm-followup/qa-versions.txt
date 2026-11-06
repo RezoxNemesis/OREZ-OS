@@ -1,0 +1,7 @@
+libgl1-mesa-dri:amd64	26.0.8-1ubuntu0.3
+libvirglrenderer1:amd64	1.2.0-2ubuntu2
+ovmf	2025.11-3ubuntu7.3
+qemu-system-gui	1:10.2.1+ds-1ubuntu3.3
+qemu-system-modules-opengl	1:10.2.1+ds-1ubuntu3.3
+qemu-system-x86	1:10.2.1+ds-1ubuntu3.3
+xvfb	2:21.1.22-1ubuntu1.3

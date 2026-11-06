@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# OREZ test-only witness. Never changes storage, privileges, or network state.
+set -euo pipefail
+has_token() { [[ " $(cat /proc/cmdline) " == *" $1 "* ]]; }
+has_token 'orez.verify=1' || exit 0
+has_token 'boot=casper' || exit 0
+[[ -f /usr/share/doc/orez/welcome.html && -f /etc/orez-release && -x /usr/bin/orezctl ]] || exit 1
+[[ "$(stat -f -c '%T' /)" == 'overlayfs' ]] || { echo 'OREZ_BOOT_PROOF=FAIL_ROOTFS_NOT_OVERLAY' >&2; exit 1; }
+# This witness is meaningful only when a real casper rootfs can see OREZ's own files.
+proof='OREZ_BOOT_PROOF=CASPER_AND_OREZ_LAYER_PRESENT'
+printf '%s\n' "$proof"
+if [[ -c /dev/ttyS0 && -w /dev/ttyS0 ]]; then printf '\n%s\n' "$proof" > /dev/ttyS0; fi

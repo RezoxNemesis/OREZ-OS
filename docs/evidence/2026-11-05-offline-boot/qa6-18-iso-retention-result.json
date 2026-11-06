@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Retain both verified test ISOs and reclaim disposable lab space",
+  "kind": "package-container",
+  "started_at": "2026-11-05T15:24:37.345268+00:00",
+  "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+  "source_digest": "b2413789e867866ae3e77cf542b4241ae028670bc9bc9e822a7c560ef3f616ba",
+  "working_tree": "?? docs/evidence/2026-11-05-offline-boot/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-retain.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 200.34,
+  "finished_at": "2026-11-05T15:27:57.779273+00:00",
+  "log_sha256": "8f74866c36f02d5df80316a9c547b3395ed2a100a1c8f5aec99c3913d6a6370a"
+}

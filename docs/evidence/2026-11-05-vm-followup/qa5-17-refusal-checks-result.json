@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Actual wrong-digest and root-invocation refusal in VM lab",
+  "kind": "package-container",
+  "started_at": "2026-11-05T12:31:39.564909+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "bbf3fd1883975c3f32237c2ecbd68475d249de8d40b6890403e297108ad89c83",
+  "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+  "command": [
+    "bash",
+    "/tmp/orez-vm-refusal-checks.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 2.09,
+  "finished_at": "2026-11-05T12:31:41.719169+00:00",
+  "log_sha256": "1446c93c80b460bcd35b05913eda23eb3f1a18f48ef8efb4ea37d23b92ce983a"
+}

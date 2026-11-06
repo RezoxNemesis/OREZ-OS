@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Isolated native tour dependencies and offline fixture",
+  "kind": "package-container",
+  "started_at": "2026-11-06T01:37:30.383971+00:00",
+  "commit": "4c7f5825d992b055ed9963c57079afcc8f120353",
+  "source_digest": "a1637d4f370e2ea0d60269ff1d9507141f8ebe4d7db5c984872fca0d7d7a76bc",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-qa10-setup.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 190.89,
+  "finished_at": "2026-11-06T01:40:41.332184+00:00",
+  "log_sha256": "8e4ab7fc43d1a7e3d32aa035ae91143bd8421cd7e1a515fd72b72f8c4c290d50"
+}

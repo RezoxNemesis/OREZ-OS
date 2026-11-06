@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+# OREZ OS v0.1: read-only status and hardware diagnostics; no root / remote access.
+set -euo pipefail
+usage() {
+  cat <<'USAGE'
+OREZ OS 0.1 — developer live image
+Usage: orezctl <status|version|hardware|preflight|performance|power|network|network-status|bluetooth|files|security|connect|settings|store|youtube|appearance|ai|help>
+ status      Version and safety information
+ version     Show installed OREZ component package version
+ hardware    Read-only graphics, network and storage inventory
+ preflight   Show target-PC UEFI and driver readiness report (no writes)
+ performance Read memory, pressure and available power-profile status once
+ power       Open native power settings; no automatic tuning
+ network     Open native Wi-Fi, Ethernet and tethering connection settings
+ network-status Read connection/device state without passwords or network changes
+ bluetooth   Open native Bluetooth pairing settings
+ files       Open Dolphin for files, removable drives and safe eject
+ security    Read-only security facts (not certification)
+ connect     Open KDE Connect pairing or list devices
+ settings    Open native KDE System Settings
+ store       Open OREZ Store: Android app targets, native apps and visible permissions
+ youtube     Open the explicitly labelled web YouTube edition in native Brave
+ appearance  User-controlled wallpaper autostart on/off/status
+ ai          Report optional AI is disabled
+ help        This help
+No administrative operation or hidden automation is available in v0.1.
+USAGE
+}
+case "${1:-help}" in
+  version)
+    if installed_record="$(dpkg-query -W -f='${db:Status-Status} ${Version}' orez-shell 2>/dev/null)" && [[ "$installed_record" == installed\ * ]]; then
+      printf 'OREZ native components: %s\n' "${installed_record#installed }"
+    else
+      echo 'OREZ package version unavailable; this may be an unpackaged source/live overlay.'
+    fi
+    ;;
+  status)
+    printf '%s\n' 'OREZ OS 0.1 — LIVE TEST ONLY'
+    printf '%s\n' 'Foundation: official Kubuntu 26.04.1 LTS; do not install from this experimental remix.'
+    printf '%s\n' 'Settings: use KDE System Settings. AI/remote access: NOT ENABLED.'
+    uname -srm
+    ;;
+  hardware)
+    printf '%s\n' '--- CPU ---'; lscpu | grep -E 'Architecture:|Model name:' || true
+    printf '%s\n' '--- Video / network (PCI) ---'; if command -v lspci >/dev/null; then lspci | grep -Ei 'vga|3d|network|ethernet' || true; fi
+    printf '%s\n' '--- Storage (read-only) ---'; lsblk -o NAME,TYPE,SIZE,MODEL,TRAN || true
+    printf '%s\n' '--- NVIDIA driver ---'; if command -v nvidia-smi >/dev/null; then nvidia-smi -L || true; else printf '%s\n' 'Driver not loaded or unavailable'; fi
+    ;;
+  preflight) exec /usr/bin/orez-preflight ;;
+  performance)
+    echo 'OREZ performance snapshot: read-only; not a benchmark or a tuning operation.'
+    echo 'Memory available includes reclaimable cache; low free memory alone is not a fault.'
+    if command -v free >/dev/null; then free -h; fi
+    for resource in cpu memory io; do
+      if [[ -r "/proc/pressure/$resource" ]]; then
+        printf '%s pressure: ' "$resource"; cat "/proc/pressure/$resource"
+      fi
+    done
+    if command -v powerprofilesctl >/dev/null; then
+      printf 'Effective power profile: '
+      timeout 5s powerprofilesctl get || echo 'Unavailable in this session'
+    else
+      echo 'Power profile service unavailable; use native Power Management settings.'
+    fi
+    echo 'No cache purges, clock changes, background polling or security changes were made.'
+    ;;
+  power) exec systemsettings kcm_powerdevil ;;
+  network) exec systemsettings kcm_networkmanagement ;;
+  bluetooth) exec systemsettings kcm_bluetooth ;;
+  files) exec dolphin ;;
+  network-status)
+    echo 'OREZ connection status: read-only, no pairing or connection changes.'
+    if command -v nmcli >/dev/null; then
+      timeout 5s nmcli -t -f STATE,CONNECTIVITY general || echo 'NetworkManager unavailable in this session'
+      timeout 5s nmcli -t -f DEVICE,TYPE,STATE device status || true
+    else
+      echo 'NetworkManager client unavailable in this session'
+    fi
+    if command -v rfkill >/dev/null; then rfkill list bluetooth || true; fi
+    echo 'Open native Network or Bluetooth settings to connect. Credentials are never printed here.'
+    ;;
+  security)
+    echo 'OREZ security: read-only report; NOT a security certification.'
+    echo 'OREZ remote administration and AI privileges: NOT ENABLED.'
+    if [[ -r /sys/module/apparmor/parameters/enabled ]]; then printf 'AppArmor: '; cat /sys/module/apparmor/parameters/enabled; fi
+    if command -v mokutil >/dev/null; then mokutil --sb-state 2>/dev/null || true; fi
+    ;;
+  connect)
+    case "${2:-devices}" in
+      devices) if command -v kdeconnect-cli >/dev/null; then kdeconnect-cli --list-devices; else echo 'KDE Connect not installed' >&2; exit 1; fi ;;
+      open) if command -v kdeconnect-app >/dev/null; then exec kdeconnect-app; elif command -v kdeconnect-settings >/dev/null; then exec kdeconnect-settings; else echo 'KDE Connect GUI not installed' >&2; exit 1; fi ;;
+      *) usage >&2; exit 2 ;;
+    esac ;;
+  store) exec /usr/bin/orez-store gui ;;
+  youtube) exec /usr/bin/orez-youtube ;;
+  settings) if command -v systemsettings >/dev/null; then exec systemsettings; else echo 'KDE Settings missing' >&2; exit 1; fi ;;
+  appearance)
+    dir="${XDG_CONFIG_HOME:-$HOME/.config}/autostart"
+    override="$dir/orez-initialize.desktop"
+    case "${2:-status}" in
+      status) if [[ -f "$override" ]] && grep -qx 'Hidden=true' "$override"; then echo 'OREZ wallpaper disabled'; else echo 'OREZ wallpaper enabled; change in KDE Settings'; fi ;;
+      disable) mkdir -p -- "$dir"; printf '[Desktop Entry]\nType=Application\nName=OREZ Wallpaper Setup\nHidden=true\n' > "$override"; echo 'Wallpaper autostart disabled; current wallpaper unchanged.' ;;
+      enable) mkdir -p -- "$dir"; rm -f -- "$override" "${XDG_CONFIG_HOME:-$HOME/.config}/orez/wallpaper-v0.1-applied"; echo 'Wallpaper autostart enabled for next login.' ;;
+      *) usage >&2; exit 2 ;;
+    esac ;;
+  ai) echo 'OREZ AI: NOT ENABLED. No AI/MCP root or remote action broker is installed.' ;;
+  help|-h|--help) usage ;;
+  *) usage >&2; exit 2 ;;
+esac

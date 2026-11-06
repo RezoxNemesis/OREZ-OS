@@ -1,0 +1,86 @@
+[
+  {
+    "name": "owner-wallpaper-selection",
+    "status": "passed",
+    "detail": {
+      "default": "file:///usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg",
+      "alternative": "file:///usr/share/wallpapers/OREZ-Horizon/contents/images/1280x720.jpg",
+      "restored": "file:///usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg"
+    },
+    "seconds": 3.47
+  },
+  {
+    "name": "native-settings-apply-restore",
+    "status": "passed",
+    "detail": {
+      "before": "BreezeLight",
+      "applied": "BreezeDark",
+      "restored": "BreezeLight",
+      "method": "native KDE apply tool + effective KConfig, actual Settings window"
+    },
+    "seconds": 8.93
+  },
+  {
+    "name": "android-controls-and-kvm-denial",
+    "status": "passed",
+    "detail": {
+      "manager_controls": "visible",
+      "start": "correctly rejected unavailable KVM",
+      "play_store_download": "BLOCKED: no installed Android guest, KVM or Google sign-in; SDK is development-only"
+    },
+    "seconds": 3.01
+  },
+  {
+    "name": "vlc-playback-audio-pause-seek",
+    "status": "passed",
+    "detail": {
+      "playing_positions_us": [
+        2651903,
+        5401000
+      ],
+      "paused_positions_us": [
+        5401000,
+        5401000
+      ],
+      "seek_position_us": 15401000,
+      "audio_peak": 4217,
+      "audio_output": "virtual sink only; no physical speaker test"
+    },
+    "seconds": 12.93
+  },
+  {
+    "name": "native-game-input",
+    "status": "failed",
+    "error": "No packaged starting level found",
+    "seconds": 0.08
+  },
+  {
+    "name": "desktop-responsiveness-under-load",
+    "status": "passed",
+    "detail": {
+      "dbus_round_trip_ms": [
+        105.01,
+        19.78,
+        19.23,
+        15.63,
+        13.58,
+        16.2,
+        22.87,
+        19.36,
+        10.12,
+        12.97,
+        9.47,
+        10.84
+      ],
+      "max_ms": 105.01,
+      "scope": "component API responsiveness, not input-to-photon latency or target-PC FPS"
+    },
+    "seconds": 0.28
+  },
+  {
+    "name": "brave-sandbox-startup",
+    "status": "blocked",
+    "error": "Error: browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /usr/bin/brave-browser --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --ozone-platform=wayland --no-first-run --no-default-browser-check --user-data-dir=/tmp/playwright_chromiumdev_profile-Z24o7t --remote-debugging-pipe --no-startup-window\n<launched> pid=484\n[pid=484][err] [491:491:1105/083755.600142:ERROR:ui/ozone/platform/wayland/common/drm_render_node_path_finder.cc:40] drmGetDevices2() has not found any devices: No such file or directory (2)\n[pid=484][err] Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted\n[pid=484][err] [491:491:1105/083755.723573:FATAL:content/browser/zygote_host/zygote_host_impl_linux.cc:228] Zygote process exited prematurely with exit code 1\n[pid=484][err] [1105/083755.740478:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)\n[pid=484][err] [1105/083755.740566:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)\n[pid=484][err] /usr/bin/brave-browser: line 30:   491 Trace/breakpoint trap      \"$HERE/brave\" \"$@\"\n[pid=484] <process did exit: exitCode=0, signal=null>\n[pid=484] starting temporary directories cleanup\nCall log:\n  - <launching> /usr/bin/brave-browser --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --ozone-platform=wayland --no-first-run --no-default-browser-check --user-data-dir=/tmp/playwright_chromiumdev_profile-Z24o7t --remote-debugging-pipe --no-startup-window\n  - <launched> pid=484\n  - [pid=484][err] [491:491:1105/083755.600142:ERROR:ui/ozone/platform/wayland/common/drm_render_node_path_finder.cc:40] drmGetDevices2() has not found any devices: No such file or directory (2)\n  - [pid=484][err] Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted\n  - [pid=484][err] [491:491:1105/083755.723573:FATAL:content/browser/zygote_host/zygote_host_impl_linux.cc:228] Zygote process exited prematurely with exit code 1\n  - [pid=484][err] [1105/083755.740478:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)\n  - [pid=484][err] [1105/083755.740566:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)\n  - [pid=484][err] /usr/bin/brave-browser: line 30:   491 Trace/breakpoint trap      \"$HERE/brave\" \"$@\"\n  - [pid=484] <process did exit: exitCode=0, signal=null>\n  - [pid=484] starting temporary directories cleanup\n  - [pid=484] <gracefully close start>\n  - [pid=484] <kill>\n  - [pid=484] <skipped force kill spawnedProcess.killed=false processClosed=true>\n  - [pid=484] finished temporary directories cleanup\n  - [pid=484] <gracefully close end>\n",
+    "policy": "No --no-sandbox, privileged container or host security-policy changes permitted."
+  }
+]

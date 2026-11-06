@@ -1,0 +1,21 @@
+{
+  "provider": "Official Android Emulator \u2014 development/testing provider",
+  "system_image": "system-images;android-36;google_apis_playstore;x86_64",
+  "installed": false,
+  "profile_exists": false,
+  "kvm_available": false,
+  "architecture": "x86_64",
+  "java_available": false,
+  "data_directory": "/home/orez-test/.local/share/orez/android",
+  "free_gib": 1.1,
+  "configuration": {
+    "memory_mb": 3072,
+    "cores": 2,
+    "graphics": "software"
+  },
+  "running": false,
+  "logs": "/home/orez-test/.local/share/orez/android/logs",
+  "autostart": false,
+  "google_account": "Sign in only inside the emulator. OREZ never requests Google credentials.",
+  "compatibility": "Play Store installation and games require real AVD/hardware validation; ARM-only/DRM/anti-cheat apps may refuse emulators."
+}

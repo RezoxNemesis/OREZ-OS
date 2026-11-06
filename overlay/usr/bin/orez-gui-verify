@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# VM-only, opt-in, unprivileged Plasma and display-manager probe.
+set -euo pipefail
+args=" $(cat /proc/cmdline) "
+[[ "$args" == *' orez.verify=1 '* ]] || exit 0
+[[ "$args" == *' boot=casper '* ]] || exit 0
+emit() {
+  printf '%s\n' "$1"
+  if [[ -c /dev/ttyS0 && -w /dev/ttyS0 ]]; then printf '\n%s\n' "$1" > /dev/ttyS0; fi
+}
+for attempt in $(seq 1 150); do
+  dm="$(systemctl is-active display-manager.service 2>/dev/null || true)"
+  if [[ "$dm" == active ]] && pgrep -x plasmashell >/dev/null 2>&1; then
+    emit 'OREZ_GUI_PROOF=PLASMA_PROCESS_AND_DISPLAY_MANAGER_ACTIVE'
+    exit 0
+  fi
+  if (( attempt % 15 == 0 )); then
+    graphical="$(systemctl is-active graphical.target 2>/dev/null || true)"
+    multi="$(systemctl is-active multi-user.target 2>/dev/null || true)"
+    emit "OREZ_GUI_DIAG attempt=$attempt display=$dm graphical=$graphical multiuser=$multi"
+    if (( attempt == 30 || attempt == 75 )); then
+      jobs="$(systemctl --no-pager --plain list-jobs --no-legend 2>/dev/null | head -18 | tr '\n' ';' || true)"
+      errors="$(systemctl --no-pager --plain --failed --no-legend 2>/dev/null | head -12 | tr '\n' ';' || true)"
+      process="$(ps -eo pid,comm,args 2>/dev/null | grep -E 'sddm|plasmashell|kwin_wayland|Xorg|Xwayland' | grep -v 'grep -E' | head -12 | tr '\n' ';' || true)"
+      emit "OREZ_GUI_JOBS=$jobs"
+      emit "OREZ_GUI_FAILED_UNITS=$errors"
+      emit "OREZ_GUI_PROCESSES=$process"
+    fi
+  fi
+  sleep 2
+done
+emit 'OREZ_GUI_PROOF=NO_CONFIRMED_PLASMA_SESSION'
+exit 1

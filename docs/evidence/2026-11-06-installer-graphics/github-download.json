@@ -1,0 +1,15 @@
+{
+  "archive_commit": "090a5014051e3d230a4a04300d3395f58dedf7a4",
+  "url": "https://github.com/RezoxNemesis/OREZ-OS/archive/090a5014051e3d230a4a04300d3395f58dedf7a4.zip",
+  "bytes": 57778908,
+  "sha256": "772797e4e22546baf877b04581959c922bf083689b97345c9831d22e84de924d",
+  "verified_original_pngs": 301,
+  "capture_references": 512,
+  "local_runs": 21,
+  "failed_commands": [
+    "qa12-12-offline-installer-final",
+    "qa12-20-login-profiles"
+  ],
+  "all_png_hashes_and_decoding_match": true,
+  "installation_approved": false
+}

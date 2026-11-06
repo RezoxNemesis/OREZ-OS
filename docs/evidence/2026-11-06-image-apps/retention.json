@@ -1,0 +1,16 @@
+{
+  "purpose": "Retain verified artifacts; reclaim only task-generated expanded filesystems",
+  "layer_bytes": 383488000,
+  "layer_sha256": "22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51",
+  "original_iso_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+  "runtime_tests_left_persistent_image_unchanged": true,
+  "authenticated_package_pool_retained": true,
+  "all_reports_and_screenshots_retained": true,
+  "removed_task_directories": [
+    "/work/app-root-v2",
+    "/work/apps-installed-v2/layer",
+    "/work/app-layer-packed/roundtrip"
+  ],
+  "physical_disks_touched": false,
+  "installation_approved": false
+}

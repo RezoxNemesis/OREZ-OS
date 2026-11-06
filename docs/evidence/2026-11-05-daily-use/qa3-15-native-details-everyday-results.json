@@ -1,0 +1,13 @@
+[
+  {
+    "name": "native-game-input",
+    "status": "passed",
+    "detail": {
+      "application": "SuperTux native Linux game",
+      "level": "/usr/share/games/supertux2/levels/bonus1/abednego-level1.stl",
+      "input": "Right and jump delivered",
+      "gameplay": "requires visual review of position overlay/captures; no Android/AAA/FPS certification"
+    },
+    "seconds": 10.29
+  }
+]

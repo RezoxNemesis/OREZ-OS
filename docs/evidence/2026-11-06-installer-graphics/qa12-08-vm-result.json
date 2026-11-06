@@ -1,0 +1,31 @@
+{
+  "scope": "Actual diskless/offline 6-GiB TCG UEFI boot, 1d68fccb ISO; manually disabled cosmetic Plymouth and added existing orez.verify flag. Not the new 6ca85 direct-session image.",
+  "status": "blocked",
+  "installation_approved": false,
+  "usable_desktop": false,
+  "verified": [
+    "Local enrollment inputs concealed in the observed full redraw",
+    "Ordinary owner tty3 authentication and UID1000",
+    "Passwordless sudo refused; password-authenticated serial diagnostics succeeded",
+    "Actual OREZ SDDM rendered; incorrect password rejected",
+    "Correct graphical authentication started owner session 7 on VT4",
+    "Native upstream Kubuntu live prompt rendered"
+  ],
+  "not_qualified": [
+    "No usable Plasma desktop or native application workload",
+    "Default boot and longer splash-exit wait not qualified by this no-splash run",
+    "Full effective security policy, installation, recovery, Secure Boot and hardware"
+  ],
+  "observations": [
+    "Some tty2 input/capture attempts were inconclusive; successful tty3 attempt retained separately",
+    "Greeter uses VT1; authenticated wrapper used VT4. Do not equate a wrong or inactive VT with a failed desktop",
+    "Try controls disappeared but both kubuntu-installer-prompt and its KWin wrapper remained running; no startplasma/plasmashell process was observed",
+    "Owner terminated only graphical session 7. SDDM reported helper exit and did not yield a new visible greeter during the remaining observation",
+    "No temporary Qt/KWin service override or sandbox/authentication relaxation was applied",
+    "The orez.verify QPainter flag only applies to the later Plasma session, so that compositor test was not reached"
+  ],
+  "stop_reason": "Operator stopped after preserving the wrapper-flow failure and rebuilding a corrected direct-session image; no kernel crash inferred",
+  "actual_pngs": 144,
+  "credential_scope": "Only a private random disposable VM credential; no real owner credential",
+  "credential_destroyed": true
+}

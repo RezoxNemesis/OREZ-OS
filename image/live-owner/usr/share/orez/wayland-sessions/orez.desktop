@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=XSession
+Name=OREZ Desktop
+Comment=OREZ live desktop with the native Plasma Wayland session
+Exec=/bin/sh /usr/lib/orez/orez-session-trace
+TryExec=/usr/bin/startplasma-wayland
+DesktopNames=KDE

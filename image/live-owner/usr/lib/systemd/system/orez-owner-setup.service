@@ -1,0 +1,28 @@
+[Unit]
+Description=OREZ local live-owner password setup
+Documentation=file:/usr/share/doc/orez/LIVE_OWNER_SETUP.md
+After=local-fs.target console-setup.service systemd-vconsole-setup.service plymouth-start.service
+Before=display-manager.service getty@tty1.service
+Conflicts=getty@tty1.service
+ConditionKernelCommandLine=boot=casper
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /usr/lib/orez/owner_setup.py
+RemainAfterExit=yes
+TimeoutStartSec=infinity
+StandardInput=tty-force
+StandardOutput=tty
+StandardError=tty
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+UMask=0077
+PrivateNetwork=yes
+NoNewPrivileges=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX
+RestrictRealtime=yes
+

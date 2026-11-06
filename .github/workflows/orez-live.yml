@@ -1,0 +1,193 @@
+name: OREZ OS — live candidate
+
+on:
+  push:
+    branches:
+      - 'build/live-*'  # Explicit one-shot branches, not ordinary development pushes
+  pull_request:
+    paths:
+      - 'build/**'
+      - 'packaging/**'
+      - 'environment/**'
+      - 'overlay/**'
+      - 'image/**'
+      - 'third_party/**'
+      - 'tests/**'
+      - 'preview/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/orez-live.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orez-live-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-validation:
+    name: Validate OREZ code and Debian package
+    runs-on: ubuntu-24.04
+    # Cold-run Ubuntu font downloads consumed >8 minutes in run 42138946808;
+    # all checks passed but the 12-minute job timed out at final cleanup.
+    timeout-minutes: 18
+    steps:
+      - name: Checkout (pinned action)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Pinned Node setup
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Source and shell checks
+        env:
+          OREZ_CHROMIUM: ''
+        run: |
+          # Prefer HTTPS for conventional Ubuntu source files when present.
+          # Some hosted runners instead use mirror+file:/etc/apt/apt-mirrors.txt;
+          # this conditional rewrite does NOT change that mirror-list transport.
+          # Keep APT signatures, TLS verification and proxy settings unchanged.
+          for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources; do
+            if [[ -f "$source" ]]; then
+              sudo sed -i \
+                -e 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' \
+                -e 's|http://archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' \
+                -e 's|http://security.ubuntu.com/ubuntu|https://security.ubuntu.com/ubuntu|g' "$source"
+            fi
+          done
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y --no-install-recommends zstd
+          python3 build/run-with-evidence.py --name 'Source regression' --kind source --output dist/evidence/source -- python3 -m unittest discover -s tests -v
+          python3 build/run-with-evidence.py --name 'Native package build' --kind source --output dist/evidence/package-build -- bash build/package-shell.sh
+          python3 build/run-with-evidence.py --name 'Package allowlist audit' --kind source --output dist/evidence/package-audit -- python3 build/verify-deb-files.py \
+            --package "$(python3 build/package-info.py path)" --version "$(python3 build/package-info.py version)" \
+            --manifest image/installer/installed-files.txt \
+            --report dist/OREZ_DEB_CONTENTS.json
+          cat dist/OREZ_DEB_CONTENTS.json
+      - name: Build phone and desktop preview
+        id: preview
+        run: python3 build/run-with-evidence.py --name 'Preview production build' --kind browser-preview --output dist/evidence/preview-build -- npm run preview:build
+      - name: Capture every browser test, including failures
+        if: ${{ !cancelled() && steps.preview.outcome == 'success' }}
+        run: python3 build/run-with-evidence.py --name 'Desktop and mobile acceptance' --kind browser-preview --output dist/evidence/browser -- npm run preview:test
+      - name: Preserve screenshots, reports and preview
+        if: always()
+        run: python3 build/collect-evidence.py dist/evidence
+      - name: Upload screenshots, reports and preview
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-source-and-preview-evidence
+          path: |
+            dist/evidence/
+            dist/preview/
+            dist/OREZ-Preview.html
+            dist/OREZ_DEB_CONTENTS.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Report exact status
+        run: |
+          echo '### OREZ source candidate' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Native shell package built and source tests passed.' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Bootable ISO, real UEFI/VM boot, drivers and installation: **not tested by this job**.' >> "$GITHUB_STEP_SUMMARY"
+
+  live-image:
+    name: Build full Kubuntu-derived live ISO (dedicated builder only)
+    needs: source-validation
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    # A hosted ubuntu-24.04 runner has neither the documented workspace capacity
+    # nor the prebuilt, independently verified image layers. Never spend a run
+    # downloading a 5+ GB base only to fail at the builder's required-input gate.
+    runs-on: [self-hosted, linux, x64, orez-image-builder]
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Verify dedicated builder and prepared image inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          df -h .
+          free_kib="$(df -Pk . | awk 'NR==2 {print $4}')"
+          if (( free_kib < 83886080 )); then
+            echo 'Need at least 80 GiB free workspace for the documented image and VM build.' >&2
+            exit 1
+          fi
+          for tool in curl gpg gpgv sha256sum xorriso mksquashfs unsquashfs zstd python3 qemu-system-x86_64; do
+            command -v "$tool" >/dev/null || { echo "Dedicated builder missing: $tool" >&2; exit 1; }
+          done
+          for variable in OREZ_APP_LAYER OREZ_COMPONENT_LAYER OREZ_COMPONENT_REPORT; do
+            value="${!variable:-}"
+            [[ -n "$value" && -f "$value" && ! -L "$value" ]] || {
+              echo "Dedicated builder must pre-provision a regular verified input for $variable." >&2
+              exit 1
+            }
+          done
+          echo 'Dedicated builder preflight passed; build inputs will be independently reverified by build-live.sh.'
+      - name: Produce and verify development ISO
+        id: iso
+        run: |
+          bash build/build-live.sh
+          bash build/check-iso.sh dist/OREZ-OS-0.1-live-amd64.iso
+          cat dist/build-report.txt
+          echo '### ISO build produced — not hardware-certified' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/build-report.txt >> "$GITHUB_STEP_SUMMARY"
+          echo 'Full ISO is intentionally not uploaded to Actions artifacts: size and redistribution approvals remain unresolved.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Free upstream download and install VM boot tools
+        run: |
+          rm -f -- .cache/orez/kubuntu-26.04.1-desktop-amd64.iso
+          df -h .
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf socat
+      - name: Read-only Calamares installation source audit
+        timeout-minutes: 4
+        run: |
+          bash build/check-installer-source.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo '### Installer source not certified' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/installer-source/INSTALLER_READINESS.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Prove casper loaded OREZ layer inside a disposable VM
+        timeout-minutes: 14
+        env:
+          OREZ_QEMU_TIMEOUT: '700'
+          OREZ_REQUIRE_GUI: '1'
+          OREZ_VM_VGA: 'virtio'  # test-only VirtIO 2D adapter
+        run: |
+          bash build/test-casper-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo '### Guest boot proof: casper sees OREZ layer' >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/GUI_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          cat dist/boot-evidence/GUI_FRAME_RESULT.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '**This verifies direct Linux boot, NOT UEFI, Plasma graphics, NVIDIA, Secure Boot, installer or physical PC.**' >> "$GITHUB_STEP_SUMMARY"
+      - name: Capture OVMF UEFI boot screen for visual review
+        if: ${{ always() && steps.iso.outcome == 'success' }}
+        timeout-minutes: 7
+        env:
+          OREZ_UEFI_CAPTURE_AFTER: '90'
+          OREZ_UEFI_EXTRA_WAIT: '145'
+        run: |
+          bash build/test-uefi-vm.sh dist/OREZ-OS-0.1-live-amd64.iso
+          echo 'UEFI screenshot captured; **NOT yet reviewed or certified.**' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve small VM evidence (never upload the ISO)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-casper-boot-evidence
+          path: |
+            dist/boot-evidence/casper-serial.log
+            dist/boot-evidence/RESULT.txt
+            dist/installer-source/
+            dist/boot-evidence/GUI_RESULT.txt
+            dist/boot-evidence/GUI_FRAME_RESULT.txt
+            dist/boot-evidence/gui-screen-22.ppm.gz
+            dist/boot-evidence/gui-screen-24.ppm.gz
+            dist/boot-evidence/try-prompt-before.ppm.gz
+            dist/boot-evidence/try-unmatched.ppm.gz
+            dist/boot-evidence/qmp-try-result.log
+            dist/boot-evidence/UEFI_RESULT.txt
+            dist/boot-evidence/uefi-screen.ppm.gz
+            dist/boot-evidence/uefi-screen-later.ppm.gz
+            dist/boot-evidence/uefi-serial.log
+            dist/build-report.txt
+          if-no-files-found: warn
+          retention-days: 2

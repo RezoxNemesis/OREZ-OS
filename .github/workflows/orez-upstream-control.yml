@@ -1,0 +1,59 @@
+name: OREZ — pristine Kubuntu VirtIO control
+
+on:
+  push:
+    branches:
+      - 'build/upstream-control-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orez-upstream-control-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pristine-control:
+    name: Verify original Kubuntu graphics in disposable QEMU
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - name: Pinned GitHub checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check available disk
+        run: |
+          df -h .
+          available="$(df -Pk . | awk 'NR==2 {print $4}')"
+          if (( available < 7340032 )); then echo '7 GiB of free disk is required' >&2; exit 1; fi
+      - name: Install control build tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends curl ca-certificates xorriso qemu-system-x86 socat
+      - name: Download pinned official ISO
+        run: |
+          mkdir -p dist/upstream-baseline
+          curl -fL --retry 3 --retry-delay 3 \
+            https://cdimage.ubuntu.com/cdimage/kubuntu/releases/26.04.1/release/kubuntu-26.04.1-desktop-amd64.iso \
+            -o dist/upstream-baseline/original.iso
+          printf '%s  %s\n' 831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8 \
+            dist/upstream-baseline/original.iso | sha256sum -c -
+      - name: Control GUI boot (no OREZ modifications)
+        timeout-minutes: 17
+        run: |
+          bash build/test-upstream-baseline.sh dist/upstream-baseline/original.iso
+          cat dist/upstream-baseline/BASELINE_RESULT.txt
+      - name: Retain only small diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: pristine-kubuntu-control
+          path: |
+            dist/upstream-baseline/BASELINE_RESULT.txt
+            dist/upstream-baseline/guest-serial.log
+            dist/upstream-baseline/qmp-try.log
+            dist/upstream-baseline/try-before.ppm.gz
+            dist/upstream-baseline/last-screen.ppm.gz
+            dist/upstream-baseline/frame-*.ppm.gz
+          if-no-files-found: warn
+          retention-days: 2

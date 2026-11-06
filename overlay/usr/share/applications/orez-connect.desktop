@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Connect
+GenericName=Android-to-PC Connection
+Comment=Pair and manage Android devices using KDE Connect
+Exec=/usr/bin/orez-connect
+Icon=phone
+Terminal=false
+Categories=Network;Utility;

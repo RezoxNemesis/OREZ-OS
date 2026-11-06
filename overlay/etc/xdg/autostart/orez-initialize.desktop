@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Wallpaper Setup (Can Be Disabled)
+Comment=Apply OREZ wallpaper once; no administrator access or network use
+Exec=/usr/bin/orez-session-init
+OnlyShowIn=KDE;
+X-GNOME-Autostart-enabled=true
+Terminal=false
+NoDisplay=false

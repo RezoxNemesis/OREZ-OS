@@ -1,0 +1,19 @@
+2026-11-06T02:17:39.3280141Z Captured 10 report screenshots in /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/source
+2026-11-06T02:17:39.3633870Z test_malformed_missing_duplicate_and_escaping_paths_refused (test_live_initrd.MediaChecksumTests.test_malformed_missing_duplicate_and_escaping_paths_refused) ... ok
+2026-11-06T02:17:39.3711915Z Ran 172 tests in 1.234s
+2026-11-06T02:17:39.3721867Z   "installation_approved": false
+2026-11-06T02:17:39.3730600Z   "installation_approved": false
+2026-11-06T02:17:39.3739979Z   "installation_approved": false,
+2026-11-06T02:17:39.3746112Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/source; check=passed; screenshots=captured
+2026-11-06T02:17:40.6860563Z Captured 1 report screenshots in /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-build
+2026-11-06T02:17:40.7050209Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-build; check=passed; screenshots=captured
+2026-11-06T02:17:41.9212457Z Captured 1 report screenshots in /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-audit
+2026-11-06T02:17:41.9389317Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/package-audit; check=passed; screenshots=captured
+2026-11-06T02:17:41.9476318Z   "installation_approved": false,
+2026-11-06T02:17:43.8096191Z Captured 1 report screenshots in /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/preview-build
+2026-11-06T02:17:43.8291744Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/preview-build; check=passed; screenshots=captured
+2026-11-06T02:20:00.9916699Z Captured 3 report screenshots in /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/browser
+2026-11-06T02:20:01.0208732Z   68 passed (2.2m)
+2026-11-06T02:20:01.0209300Z Evidence: /home/runner/work/OREZ-OS/OREZ-OS/dist/evidence/browser; check=passed; screenshots=captured
+2026-11-06T02:20:09.5848067Z Artifact orez-source-and-preview-evidence.zip successfully finalized. Artifact ID 13471862095
+2026-11-06T02:20:09.5849848Z Artifact orez-source-and-preview-evidence has been successfully uploaded! Final size is 211203943 bytes. Artifact ID is 13471862095

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# OREZ OS hardware readiness report. This script NEVER writes, mounts or formats disks.
+# It is NOT a certification and never requires sudo.
+set -euo pipefail
+printf '%s\n' 'OREZ OS 0.1 — hardware preflight (read-only)'
+printf '%s\n' 'No files or disks will be modified. Status is informational only.'
+printf '\n--- Boot environment ---\n'
+if [[ -d /sys/firmware/efi ]]; then
+  echo '[PASS] Linux currently booted using UEFI.'
+else
+  echo '[UNKNOWN] No /sys/firmware/efi; current boot may use BIOS or an emulated environment.'
+fi
+if command -v mokutil >/dev/null 2>&1; then
+  mokutil --sb-state 2>/dev/null || echo '[UNKNOWN] Secure Boot state not readable.'
+else
+  echo '[UNKNOWN] Secure Boot requires mokutil (not installed).'
+fi
+printf '\n--- CPU / RAM ---\n'
+cpu="$(grep -m1 -E '^model name[[:space:]]*:' /proc/cpuinfo 2>/dev/null | cut -d: -f2- | sed -E 's/^ +//' || true)"
+[[ -z "$cpu" ]] || printf 'CPU: %s\n' "$cpu"
+if [[ "$cpu" == *'AMD Ryzen 5 5600'* ]]; then
+  echo '[PASS] CPU model matches target Ryzen 5 5600.'
+else
+  echo '[UNKNOWN] CPU not the documented exact target; not necessarily incompatible.'
+fi
+if [[ -r /proc/meminfo ]]; then
+  kb="$(awk '/^MemTotal:/ {print $2; exit}' /proc/meminfo)"
+  if [[ "$kb" =~ ^[0-9]+$ ]]; then
+    printf 'RAM: %s MiB visible\n' "$(( kb / 1024 ))"
+    if (( kb >= 14680064 )); then
+      echo '[PASS] At least ~14 GiB usable physical RAM visible.'
+    else
+      echo '[NOTICE] Less than ~14 GiB visible. Full target RAM availability unverified.'
+    fi
+  fi
+fi
+printf '\n--- GPU and PCI network devices ---\n'
+if command -v lspci >/dev/null 2>&1; then
+  lspci -nn | grep -Ei 'VGA|3D controller|Network controller|Ethernet controller' || true
+else
+  echo '[UNKNOWN] lspci unavailable; install pciutils through trusted packages.'
+fi
+if command -v nvidia-smi >/dev/null 2>&1; then
+  nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader 2>/dev/null || true
+else
+  echo '[UNKNOWN] NVIDIA driver/accelerator not visible through nvidia-smi.'
+fi
+printf '\n--- Disks (inspection only) ---\n'
+if command -v lsblk >/dev/null 2>&1; then
+  lsblk -o NAME,TYPE,SIZE,MODEL,FSTYPE,MOUNTPOINTS || true
+else
+  echo '[UNKNOWN] lsblk unavailable.'
+fi
+printf '\n--- Phone connectivity prerequisites ---\n'
+if command -v kdeconnect-cli >/dev/null 2>&1; then
+  echo '[AVAILABLE] KDE Connect tool is installed; pairing and transfer still require testing.'
+else
+  echo '[NOT CONFIGURED] KDE Connect is not installed.'
+fi
+echo 'No USB connection, driver capability, Secure Boot safety or installer compatibility is certified by this report.'

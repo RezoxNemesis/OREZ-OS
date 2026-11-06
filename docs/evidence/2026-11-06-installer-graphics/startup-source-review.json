@@ -1,0 +1,26 @@
+{
+  "scope": "Read-only official source review; not runtime root-cause identification",
+  "sddm_installed_version": "0.21.0+git20250502.4fe234b-2ubuntu3",
+  "sddm_findings": [
+    "Helper statuses are0..5;64 is not an upstream graphics-specific helper status",
+    "UserSession finished status is forwarded to HelperApp exit",
+    "Session started true reflects process startup, not initialized Plasma",
+    "Pre-exec VT/account/group/chdir failures use3 or5; log is opened afterward"
+  ],
+  "sddm_sources": [
+    "https://github.com/sddm/sddm/blob/4fe234b/src/auth/Auth.h#L83",
+    "https://github.com/sddm/sddm/blob/4fe234b/src/helper/UserSession.cpp#L50",
+    "https://github.com/sddm/sddm/blob/4fe234b/src/helper/HelperApp.cpp#L196"
+  ],
+  "kde_version": "6.6.6",
+  "kde_findings": [
+    "Reviewed startplasma-wayland main returns1 for bus setup failure,4 for session startup failure, otherwise0",
+    "No explicit64/EX_USAGE path found in reviewed launcher sources",
+    "Downstream package patches, environment and library termination remain unqualified"
+  ],
+  "kde_sources": [
+    "https://github.com/KDE/plasma-workspace/blob/v6.6.6/startkde/startplasma-wayland.cpp#L68",
+    "https://github.com/KDE/plasma-workspace/blob/v6.6.6/startkde/startplasma.cpp#L689"
+  ],
+  "actual_iso_sources": "qa12-19 reads exact SDDM wrapper and D-Bus helper; qa12-21 reads base profiles including observed symlink targets. The distro wrapper differs from upstream SDDM tip. No runtime root cause is inferred from upstream source alone."
+}

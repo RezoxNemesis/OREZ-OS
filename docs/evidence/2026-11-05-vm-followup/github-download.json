@@ -1,0 +1,12 @@
+{
+  "url": "https://github.com/RezoxNemesis/OREZ-OS/archive/a98c92f105bb00a7b4ecc6ffce2bf5a9db0bdbd6.zip",
+  "branch": "downloads/screenshots-2026-11-05-live-boot",
+  "commit": "a98c92f105bb00a7b4ecc6ffce2bf5a9db0bdbd6",
+  "bytes": 5545928,
+  "archive_sha256": "37220d95095e818fb994dee3d39c98a2bfaa0f40d6cb5f63a8cae4e1fa193767",
+  "unique_pngs": 80,
+  "capture_references": 200,
+  "local_attempts": 19,
+  "all_png_hashes_verified": true,
+  "scope": "Screenshots and metadata only; no ISO. Capture completion is not desktop acceptance."
+}

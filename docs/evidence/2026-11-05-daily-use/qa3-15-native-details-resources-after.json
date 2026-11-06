@@ -1,0 +1,10 @@
+{
+  "scope": "visible cgroup, potentially shared parent; not proof of a container limit",
+  "process_cgroup": "0::/",
+  "memory.max": "17179869184",
+  "memory.current": "17028034560",
+  "memory.peak": "17180053504",
+  "memory.events": "low 0\nhigh 0\nmax 203674\noom 0\noom_kill 0\noom_group_kill 0",
+  "cpu.max": "400000 100000",
+  "cpu.stat": "usage_usec 6014666867\nuser_usec 2538062019\nsystem_usec 3476604848\nnice_usec 0\nnr_periods 63052\nnr_throttled 3106\nthrottled_usec 245911071\nnr_bursts 0\nburst_usec 0"
+}

@@ -1,0 +1,41 @@
+#!/bin/sh
+# OREZ modification of Ubuntu casper; GPL-2.0-or-later.
+# Prepare a local console enrollment request. Never enable automatic login.
+case "${1:-}" in prereqs) exit 0 ;; esac
+. /scripts/casper-functions
+log_begin_msg 'Preparing OREZ local owner setup and authenticated login...'
+blocked() {
+    printf '%s\n' "$1" 'Boot stopped. Power off and retry with verified media.' >&2
+    # Fail closed without dropping to an unauthenticated root recovery shell.
+    trap '' INT TERM HUP
+    while :; do sleep 3600; done
+}
+if ! printf '%s\n' "$USERNAME" | grep -Eq '^[a-z_][a-z0-9_-]{0,30}$'; then
+    blocked 'OREZ: invalid live username.'
+fi
+# Required files must be in the read-only OREZ live layer, not the host package.
+if [ ! -f /root/usr/lib/orez/owner_setup.py ] || [ ! -f /root/usr/lib/systemd/system/orez-owner-setup.service ] || [ ! -f /root/etc/systemd/system/sddm.service.d/10-orez-owner.conf ] || [ ! -f /root/usr/share/orez/wayland-sessions/orez.desktop ] || [ ! -x /root/usr/bin/startplasma-wayland ] || [ ! -x /root/usr/bin/sddm ]; then
+    blocked 'OREZ: owner setup payload missing.'
+fi
+umask 077
+mkdir -p /root/var/lib/orez-live
+printf '%s\n' "$USERNAME" > /root/var/lib/orez-live/owner-required
+chmod 0700 /root/var/lib/orez-live
+chmod 0600 /root/var/lib/orez-live/owner-required
+# Primary SDDM config overrides inherited drop-in autologin values.
+cat > /root/etc/sddm.conf <<'EOF'
+[Theme]
+Current=orez
+
+[Wayland]
+# The upstream live wrapper starts an installer prompt before Plasma.
+# Use a dedicated live-session directory, without deleting vendor entries.
+SessionDir=/usr/share/orez/wayland-sessions
+
+[Autologin]
+User=
+Session=
+Relogin=false
+EOF
+chmod 0644 /root/etc/sddm.conf
+log_end_msg

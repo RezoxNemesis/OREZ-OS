@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Round-trip compatible concatenated Zstandard initramfs frames",
+  "kind": "source",
+  "started_at": "2026-11-05T14:58:21.782019+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "71b6700bc6637fa7feedd492b31a8357a7d1a376912f259483b041d478b3e119",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-zstd-validation.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 2.93,
+  "finished_at": "2026-11-05T14:58:24.769916+00:00",
+  "log_sha256": "14ab6ec6220deb50ab79ad99d777fe48044744c66092c0571d91eb45711229b3"
+}

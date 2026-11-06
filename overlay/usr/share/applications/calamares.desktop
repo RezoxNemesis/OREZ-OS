@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Installer — Unavailable (Live Test Only)
+GenericName=Unqualified Installation Disabled
+Comment=Read why installation to SSD is blocked until safety verification
+Exec=/usr/bin/calamares
+Terminal=false
+Icon=dialog-warning
+Categories=System;

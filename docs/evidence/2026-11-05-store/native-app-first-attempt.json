@@ -1,0 +1,17 @@
+[
+  {
+    "name": "vlc-default-keyboard-mouse",
+    "status": "failed",
+    "error": "VLC mouse context menu not observed"
+  },
+  {
+    "name": "native-brave",
+    "status": "blocked",
+    "detail": {
+      "exit_code": 0,
+      "reason": "Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted\n[667:667:1105/164036.335122:FATAL:content/browser/zygote_host/zygote_host_impl_linux.cc:228] Zygote process exited prematurely with exit code 1\n[1105/164036.386632:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)\n[1105/164036.386850:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)\n/usr/bin/brave-browser: line 30:   667 Trace/breakpoint trap      \"$HERE/brave\" \"$@\"\n",
+      "sandbox_bypassed": false,
+      "scope": "Native launch attempted; no working browser or browsing claim"
+    }
+  }
+]

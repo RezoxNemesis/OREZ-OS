@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "Actual initrd owner-authentication release gate",
+  "kind": "package-container",
+  "started_at": "2026-11-05T15:15:00.399366+00:00",
+  "commit": "d01cc72f3b8fda4889144e823f1b0710fd5a7b71",
+  "source_digest": "3d0741d082ac90ca1274a6b04a335ef9e5f6e7691c2997f423ed10ab0d925334",
+  "working_tree": "",
+  "command": [
+    "docker",
+    "exec",
+    "--user",
+    "orez-test",
+    "orez-initrd-lab-20261105",
+    "python3",
+    "/home/orez-test/orez/build/audit-live-initrd.py",
+    "--root",
+    "/home/orez-test/initrd-audit/extracted-repacked",
+    "--report",
+    "/home/orez-test/initrd-audit/live-authentication-repacked.json"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 0.57,
+  "finished_at": "2026-11-05T15:15:01.092115+00:00",
+  "log_sha256": "085b769c28bac69a8f9cadb91c2d4b4f4f16c9763068acdadad04d751b6a0c3d"
+}

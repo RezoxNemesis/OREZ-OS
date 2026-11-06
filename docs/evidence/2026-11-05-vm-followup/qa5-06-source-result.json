@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Source regression including diskless VM safety and QMP error handling",
+  "kind": "source",
+  "started_at": "2026-11-05T12:18:37.181490+00:00",
+  "commit": "f607b2f29bd6e5ba02d94d8ebe5dee4f677695b1",
+  "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+  "working_tree": "M build/build-live.sh\n M environment/orez-qa.Dockerfile\n?? build/probe-virgl-vm.py\n?? tests/test_vm_probe.py",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 4.39,
+  "finished_at": "2026-11-05T12:18:42.024531+00:00",
+  "log_sha256": "ee25632824438d6efc386253ffe9ef2aabb673d2b9cd227fc888d5783001e3a1"
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Explicit web edition, requested for the first PC release; never an Android claim.
+set -euo pipefail
+if [[ "$EUID" == 0 ]]; then
+  echo 'Open YouTube as your ordinary desktop user, never root.' >&2
+  exit 2
+fi
+for browser in /usr/bin/brave-browser /usr/bin/brave-browser-stable; do
+  if [[ -x "$browser" ]]; then exec "$browser" --new-window https://www.youtube.com/; fi
+done
+echo 'Brave is not installed. Install its official Linux package through authenticated software management.' >&2
+exit 1

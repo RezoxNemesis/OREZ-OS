@@ -1,0 +1,9 @@
+Generating APT cache for cdrom (OREZ local sources only) ... Ign:1 file:/cdrom resolute InRelease
+Get:2 file:/cdrom resolute Release [664 B]
+Get:2 file:/cdrom resolute Release [664 B]
+Get:3 file:/cdrom resolute Release.gpg [228 B]
+Get:3 file:/cdrom resolute Release.gpg [228 B]
+Get:4 file:/cdrom resolute/main amd64 Packages [11.0 kB]
+Get:5 file:/cdrom resolute/restricted amd64 Packages [8949 B]
+Warning: OREZ: CD-ROM cache generation failed or timed out; normal APT settings retained
+done.

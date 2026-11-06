@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "Known upstream initrd source hooks only",
+  "status": "BLOCKED",
+  "findings": [
+    {
+      "code": "PASSWORDLESS_SUDO",
+      "hook": "25adduser",
+      "lines": [
+        77
+      ],
+      "implication": "live-user command elevation without owner authentication"
+    },
+    {
+      "code": "BLANK_LIVE_PASSWORD",
+      "hook": "25adduser",
+      "lines": [
+        57
+      ],
+      "implication": "known upstream empty live-user password"
+    },
+    {
+      "code": "WILDCARD_POLKIT",
+      "hook": "44pk_allow_ubuntu",
+      "lines": [
+        29
+      ],
+      "implication": "wildcard live-user PolicyKit grant requires effective-policy review"
+    }
+  ],
+  "hook_sha256": {
+    "25adduser": "59a8ca5cd3fc469a892148a7b69562cff2c3b23d82ea2552278fffa48fc96ae3",
+    "44pk_allow_ubuntu": "603fb48837b36aa25679ab9cc1bf88b50680d331610e6d18fb43bd9e53b3f9d0"
+  },
+  "effective_policy_tested": false,
+  "owner_authentication_qualified": false,
+  "installation_approved": false,
+  "next_gate": "Review all initrd/live grants and test owner-authenticated sudo/Polkit before sensitive live use."
+}

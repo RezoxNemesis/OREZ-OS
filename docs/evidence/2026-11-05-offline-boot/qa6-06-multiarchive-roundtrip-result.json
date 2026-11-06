@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Validate concatenated initramfs with multi-archive-aware 3cpio",
+  "kind": "source",
+  "started_at": "2026-11-05T14:55:33.578255+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "3caec2fd79707175af046e9f5afc780ebb8901803afdc3f0f825ad4391711588",
+  "working_tree": "M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "bash",
+    "/tmp/orez-qa6-archive-validation.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 1,
+  "status": "failed",
+  "duration_seconds": 1.69,
+  "finished_at": "2026-11-05T14:55:35.327904+00:00",
+  "log_sha256": "d1557e8dd05f98af15322d213d0603724d847c66fc28c46054a363cd975862b4"
+}

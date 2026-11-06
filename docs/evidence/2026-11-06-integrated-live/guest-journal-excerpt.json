@@ -1,0 +1,37 @@
+{
+  "scope": "Selected exact lines from the actual third-boot guest journal streamed to virtual serial after owner-authenticated sudo; not a synthetic log or another boot",
+  "source_path": "dist/evidence/qa11-20-splash-wait-uefi/actual-vm/serial.log",
+  "source_sha256": "e05484862d05dd48a835386b021158b8b57b22e71c127481e5dcacb426e44d60",
+  "iso_sha256": "e9d423a9d2425e292b2091deded5d50a1d9b34d4e58cb1741a883ae21f1ce04c",
+  "lines": [
+    {
+      "line": 76,
+      "text": "Nov 06 04:09:25 orez sddm[1632]: Authentication for user  \"orez\"  successful"
+    },
+    {
+      "line": 78,
+      "text": "Nov 06 04:09:25 orez sddm-helper[2115]: pam_unix(sddm:session): session opened for user orez(uid=1000) by orez(uid=0)"
+    },
+    {
+      "line": 106,
+      "text": "Nov 06 04:09:29 orez sddm[1632]: Session started true"
+    },
+    {
+      "line": 108,
+      "text": "Nov 06 04:09:32 orez sddm-helper-start-wayland[1751]: \"kwin_core: Failed to open /dev/dri/renderD128 device (No such device)\\nkwin_wayland_drm: Failed to open drm device /dev/dri/renderD128\\n\""
+    },
+    {
+      "line": 292,
+      "text": "Nov 06 04:10:30 orez kwin_wayland_wrapper[2321]: EGL setup failed, disabling glamor"
+    },
+    {
+      "line": 298,
+      "text": "Nov 06 04:10:33 orez systemd[1916]: plasma-ksplash.service: Failed with result 'timeout'."
+    },
+    {
+      "line": 330,
+      "text": "Nov 06 04:10:51 orez kwin_wayland_wrapper[2258]: kwin_core: Failed to open /dev/dri/renderD128 device (No such device)"
+    }
+  ],
+  "usable_desktop_verified": false
+}

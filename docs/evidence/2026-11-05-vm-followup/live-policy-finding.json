@@ -1,0 +1,11 @@
+{
+  "kind": "static upstream source policy finding",
+  "source_iso_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "path": "usr/share/initramfs-tools/scripts/casper-bottom/25adduser",
+  "source_sha256": "59a8ca5cd3fc469a892148a7b69562cff2c3b23d82ea2552278fffa48fc96ae3",
+  "finding": "The supplied casper live-user hook writes passwordless full sudo for the live account when sudoers.d exists. OREZ owner-only privilege boundaries are not qualified for live sessions.",
+  "runtime_policy_exercised": false,
+  "installed_policy_exercised": false,
+  "release_gate": "Audit actual initrd/live Polkit and sudo policy; require owner authentication before enabling sensitive use. Do not assume the Calamares blocker prevents privilege escalation.",
+  "nonexecution": "Only read bytes from a regular ISO; no hook, sudo command, installer or credential change executed."
+}

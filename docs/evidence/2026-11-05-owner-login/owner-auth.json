@@ -1,0 +1,40 @@
+{
+  "scope": "Real local PAM/password/sudo in disposable rootless container; live-boot guard substituted only in fixture",
+  "scenarios": [
+    {
+      "name": "non-live-production-denial",
+      "status": "passed",
+      "detail": "Production CLI refuses this non-live host before changing an account."
+    },
+    {
+      "name": "cancel-and-mismatch",
+      "status": "passed",
+      "detail": "Cancel, invalid password and mismatch preserve the locked account and enrollment request."
+    },
+    {
+      "name": "real-console-password-setup",
+      "status": "passed",
+      "detail": {
+        "local_console_setup": true,
+        "root_locked": true,
+        "completion_idempotent": true,
+        "credential_logged": false
+      }
+    },
+    {
+      "name": "effective-sudo-permissions",
+      "status": "passed",
+      "detail": "No-password, wrong-password, cached-session and non-admin requests denied; correct owner password permits id -u."
+    },
+    {
+      "name": "symlink-request-denial",
+      "status": "passed",
+      "detail": "Aliased enrollment request refused before reading a password or changing the account."
+    }
+  ],
+  "owner_uid": 1000,
+  "passwords_or_hashes_recorded": false,
+  "polkit_dialog_tested": false,
+  "sddm_login_tested": false,
+  "full_iso_boot_tested": false
+}

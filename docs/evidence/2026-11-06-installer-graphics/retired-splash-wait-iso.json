@@ -1,0 +1,7 @@
+{
+  "path": "/work/splash-wait/OREZ-OS-0.1-live-amd64.iso",
+  "sha256": "e9d423a9d2425e292b2091deded5d50a1d9b34d4e58cb1741a883ae21f1ce04c",
+  "bytes": 5455347712,
+  "retired": true,
+  "reason": "Reclaim only the superseded failed live ISO; reports, current 1d68 image and original parent retained."
+}

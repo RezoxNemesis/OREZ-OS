@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "release": "resolute",
+  "architecture": "amd64",
+  "packages": [
+    "python3-pyside6.qtwidgets", "brave-browser", "vlc", "vlc-plugin-qt", "supertux",
+    "plasma-session-wayland", "sddm", "plasma-nm", "network-manager", "bluedevil",
+    "bluez", "bluez-obexd", "kdeconnect", "kio-extras", "kdialog", "konsole", "systemsettings"
+  ],
+  "brave_key_fingerprints": [
+    "DBF1A116C220B8C7164F98230686B78420038257",
+    "47D32A74E9A9E013A4B4926C68D513D36A73CD96",
+    "B2A3DCA350E67256740DF904DE4EC67BE4B0DCA0"
+  ],
+  "maximum_download_bytes": 1073741824,
+  "references": ["https://brave.com/linux/", "https://brave.com/signing-keys/", "https://manpages.ubuntu.com/manpages/resolute/man8/apt-secure.8.html"]
+}

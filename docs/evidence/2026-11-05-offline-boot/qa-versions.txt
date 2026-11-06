@@ -1,0 +1,6 @@
+apt	3.2.0
+initramfs-tools-core	0.151ubuntu1
+qemu-system-gui	1:10.2.1+ds-1ubuntu3.3
+qemu-system-modules-opengl	1:10.2.1+ds-1ubuntu3.3
+qemu-system-x86	1:10.2.1+ds-1ubuntu3.3
+zstd	1.5.7+dfsg-3

@@ -1,0 +1,53 @@
+{
+  "installation_approved": false,
+  "signed_repository_tested": false,
+  "scenarios": [
+    {
+      "name": "previous verified artifact installed",
+      "status": "passed",
+      "detail": {
+        "version": "0.1.0-1",
+        "sha256": "a895a3c5a9eed2b1c48e29b7326380a18a0bc374433b6195bd0cc86833cf71fd"
+      }
+    },
+    {
+      "name": "user state prepared",
+      "status": "passed",
+      "detail": {
+        "paths": [
+          "/home/orez-test/QA project/\u65e5\u672c\u8a9e.txt",
+          "/home/orez-test/.config/autostart/orez-initialize.desktop",
+          "/home/orez-test/.local/share/orez/android/config.json"
+        ],
+        "android_configuration_mode": "0600",
+        "credentials": "none; fixture data only"
+      }
+    },
+    {
+      "name": "ordinary-user upgrade denied",
+      "status": "passed",
+      "detail": {
+        "exit_code": 2,
+        "version_unchanged": true
+      }
+    },
+    {
+      "name": "actual revision upgraded with state intact",
+      "status": "passed",
+      "detail": {
+        "from": "0.1.0-1",
+        "to": "0.1.0-2",
+        "changed_command_verified": true,
+        "user_files_preferences_android_settings_unchanged": true
+      }
+    },
+    {
+      "name": "repeat installation stable",
+      "status": "passed",
+      "detail": {
+        "version": "0.1.0-2",
+        "user_state_preserved": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "GitHub tour download integrity",
+  "kind": "source",
+  "started_at": "2026-11-06T02:18:24.252874+00:00",
+  "commit": "f3e88c0c56485830d82f9ad09a69b7047a5cf197",
+  "source_digest": "0e5dc933fefc2d6a6c3699770a4ca4615aab10b63baad09339fba6dd2faa3b96",
+  "working_tree": "",
+  "command": [
+    "python3",
+    "/tmp/orez-tour-download-verify.py"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.49,
+  "finished_at": "2026-11-06T02:18:25.814451+00:00",
+  "log_sha256": "c4c79053b5bf2adfe5374e1a94fe131b19a164bbc77baf4e8461c6878886d9e0"
+}

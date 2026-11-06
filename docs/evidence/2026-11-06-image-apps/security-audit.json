@@ -1,0 +1,21 @@
+{
+  "scope": "Actual offline staged package state and source delta audit; not running desktop security enforcement",
+  "base_installed_packages": 2283,
+  "result_installed_packages": 2300,
+  "additions": 17,
+  "changed_paths": 5549,
+  "existing_package_upgrades_or_removals": 0,
+  "account_boot_auth_service_policy_changes": [],
+  "brave_enterprise_management_configured": false,
+  "brave_management_setid": false,
+  "brave_cron_first_command": "exit 0",
+  "brave_sandbox_helper_mode": "4755 root:root",
+  "browser_sandbox_runtime_qualified": false,
+  "original_ubuntu_sources_unchanged": true,
+  "reviewed_vendor_update_source": "/etc/apt/sources.list.d/brave-browser-release.sources",
+  "new_capability_bearing_files": [],
+  "temporary_installer_policy_restored": true,
+  "package_links_removed": true,
+  "original_iso_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+  "installation_approved": false
+}

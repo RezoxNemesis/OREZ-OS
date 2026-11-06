@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Compare original and OREZ ISO GRUB files to attribute inherited boot warning",
+  "kind": "source",
+  "started_at": "2026-11-05T12:28:40.982264+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "60d73e8a2331390cdb7e0e39824c09aca244171cb83202cd2542cc142e19cf33",
+  "working_tree": "M build/bundle-evidence.py\n M build/probe-virgl-vm.py\n M environment/README.md\n M tests/test_vm_probe.py\n?? docs/VM_GRAPHICS_QA.md",
+  "command": [
+    "bash",
+    "/tmp/orez-boot-config-audit-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 0.72,
+  "finished_at": "2026-11-05T12:28:41.817971+00:00",
+  "log_sha256": "b4f52df714315699913991f52706a8d0410f42eb15ae793b667305598a5979e2"
+}

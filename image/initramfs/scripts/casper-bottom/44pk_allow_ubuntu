@@ -1,0 +1,8 @@
+#!/bin/sh
+# OREZ modification of Ubuntu casper; GPL-2.0-or-later.
+# Do not grant wildcard PolicyKit authority to a live user or login service.
+case "${1:-}" in prereqs) exit 0 ;; esac
+. /scripts/casper-functions
+log_begin_msg 'Preserving standard authenticated PolicyKit policy...'
+rm -f /root/var/lib/polkit-1/localauthority/10-vendor.d/10-live-cd.pkla
+log_end_msg

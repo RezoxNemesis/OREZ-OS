@@ -1,0 +1,12 @@
+{
+  "url": "https://github.com/RezoxNemesis/OREZ-OS/archive/9617f39aa6887f5790e5c14118141c4768ef9734.zip",
+  "branch": "downloads/screenshots-2026-11-05-offline-boot",
+  "commit": "9617f39aa6887f5790e5c14118141c4768ef9734",
+  "bytes": 7167733,
+  "sha256": "26c571031511a7aaa0f8809f0b62bb254e64751218462cb90c7eb4da25912b8b",
+  "verified_png_images": 55,
+  "all_image_hashes_match_local_bundle": true,
+  "captures": 133,
+  "local_attempts": 18,
+  "note": "GitHub may regenerate archive bytes; individual PNG hashes provide stable image identity."
+}

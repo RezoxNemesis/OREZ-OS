@@ -1,0 +1,7 @@
+{
+  "id": "./", "name": "OREZ Design Preview", "short_name": "OREZ Preview",
+  "description": "Interactive design preview. Does not install or control an operating system.",
+  "start_url": "./", "scope": "./", "display": "standalone",
+  "background_color": "#f5f3ef", "theme_color": "#f5f3ef",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

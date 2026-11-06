@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "original_sha256": "0d34300a307d5dd3fbb0ff61e5b43ee3887bcc2d0f6523d600714767f6df4092",
+  "original_bytes": 95100336,
+  "patched_sha256": "c47f5c9cc3fbaff680ef219baef5bccd6dd02934827ac181e2447409c3a74f21",
+  "patched_bytes": 92518577,
+  "early_prefix_bytes": 67781012,
+  "early_prefix_sha256": "13b059f89af0ef4ca98d61cdead9dc37d7b766bcde1bc1e62b929d9737b0b993",
+  "original_archive_sha256": "305d97687a6f10426c718e6fb637b81be4a8424e07d87141353d68dcce6d19c6",
+  "patched_archive_sha256": "69cb8f89a6da629ed97cde7b6b38ed16842d4ee237b4c3a9714552a35c3ad22b",
+  "replacement": "scripts/casper-bottom/41apt_build_cache_cdrom",
+  "hook_sha256": "69952083c106fba70ac431f6915f4ae7669d039b04999122605c083287a7172e",
+  "compression": "zstd",
+  "compressor_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "owner": "0:0",
+  "mode": "0755",
+  "licence": "GPL-2.0-or-later",
+  "runtime_tested": false,
+  "secure_boot_qualified": false,
+  "administrator_policy_changed": false,
+  "installation_approved": false
+}

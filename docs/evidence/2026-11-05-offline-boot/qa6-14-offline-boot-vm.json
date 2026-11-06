@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "boot": "direct",
+  "iso": "/home/orez-test/initrd-audit/offline-cache-fixed.iso",
+  "expected_sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+  "guest_ram_mib": 4096,
+  "cpu_accelerator": "tcg",
+  "host_renderer": "llvmpipe",
+  "device": "virtio-vga-gl",
+  "network": "none",
+  "writable_disks": [],
+  "installation_approved": false,
+  "desktop_qualified": false,
+  "secure_boot_tested": false,
+  "frames": [
+    {
+      "seconds": 10,
+      "file": "guest-0010.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution",
+      "origin": "qmp-readback"
+    },
+    {
+      "seconds": 30,
+      "file": "guest-0030.png",
+      "nonblank": false,
+      "details": "unqualified frame resolution",
+      "origin": "qmp-readback"
+    },
+    {
+      "seconds": 50,
+      "file": "host-window-0050.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 50,
+      "file": "guest-0050.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 70,
+      "file": "host-window-0070.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 70,
+      "file": "guest-0070.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 90,
+      "file": "host-window-0090.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 90,
+      "file": "guest-0090.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 110,
+      "file": "host-window-0110.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 110,
+      "file": "guest-0110.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 130,
+      "file": "host-window-0130.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 130,
+      "file": "guest-0130.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 150,
+      "file": "host-window-0150.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 150,
+      "file": "guest-0150.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 170,
+      "file": "host-window-0170.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 170,
+      "file": "guest-0170.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 190,
+      "file": "host-window-0190.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 190,
+      "file": "guest-0190.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 210,
+      "file": "host-window-0210.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 210,
+      "file": "guest-0210.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 230,
+      "file": "host-window-0230.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 230,
+      "file": "guest-0230.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 250,
+      "file": "host-window-0250.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 250,
+      "file": "guest-0250.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 270,
+      "file": "host-window-0270.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 270,
+      "file": "guest-0270.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 290,
+      "file": "host-window-0290.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 290,
+      "file": "guest-0290.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 310,
+      "file": "host-window-0310.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 310,
+      "file": "guest-0310.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 330,
+      "file": "host-window-0330.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 330,
+      "file": "guest-0330.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 350,
+      "file": "host-window-0350.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 350,
+      "file": "guest-0350.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 370,
+      "file": "host-window-0370.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 370,
+      "file": "guest-0370.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 390,
+      "file": "host-window-0390.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 390,
+      "file": "guest-0390.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 410,
+      "file": "host-window-0410.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 410,
+      "file": "guest-0410.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 430,
+      "file": "host-window-0430.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 430,
+      "file": "guest-0430.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 450,
+      "file": "host-window-0450.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 450,
+      "file": "guest-0450.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 470,
+      "file": "host-window-0470.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 470,
+      "file": "guest-0470.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 490,
+      "file": "host-window-0490.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 490,
+      "file": "guest-0490.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 510,
+      "file": "host-window-0510.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 510,
+      "file": "guest-0510.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 530,
+      "file": "host-window-0530.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 530,
+      "file": "guest-0530.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 550,
+      "file": "host-window-0550.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 550,
+      "file": "guest-0550.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 570,
+      "file": "host-window-0570.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 570,
+      "file": "guest-0570.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    },
+    {
+      "seconds": 590,
+      "file": "host-window-0590.png",
+      "nonblank": null,
+      "readback": "no surface",
+      "action": "none"
+    },
+    {
+      "seconds": 590,
+      "file": "guest-0590.png",
+      "nonblank": false,
+      "details": "lit_pixels=0.09% color_bins=2 (1280x800)",
+      "origin": "actual-sdl-window"
+    }
+  ],
+  "actual_sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+  "command": [
+    "qemu-system-x86_64",
+    "-machine",
+    "q35,accel=tcg",
+    "-cpu",
+    "max",
+    "-m",
+    "4096",
+    "-smp",
+    "2",
+    "-vga",
+    "none",
+    "-device",
+    "virtio-vga-gl",
+    "-display",
+    "sdl,gl=on",
+    "-nic",
+    "none",
+    "-monitor",
+    "none",
+    "-qmp",
+    "unix:/tmp/orez-virgl-aaoihdmy/qmp.sock,server=on,wait=off",
+    "-serial",
+    "file:/home/orez-test/offline-fixed-vm/serial.log",
+    "-no-reboot",
+    "-device",
+    "qemu-xhci,id=orez-xhci",
+    "-device",
+    "usb-tablet,bus=orez-xhci.0",
+    "-drive",
+    "file=/home/orez-test/initrd-audit/offline-cache-fixed.iso,if=ide,index=1,media=cdrom,format=raw,readonly=on",
+    "-kernel",
+    "/home/orez-test/offline-fixed-vm/vmlinuz",
+    "-initrd",
+    "/home/orez-test/offline-fixed-vm/initrd",
+    "-append",
+    "boot=casper orez.verify=1 console=ttyS0,115200n8 loglevel=4 systemd.show_status=1"
+  ],
+  "qemu": {
+    "QMP": {
+      "version": {
+        "qemu": {
+          "micro": 1,
+          "minor": 2,
+          "major": 10
+        },
+        "package": "Debian 1:10.2.1+ds-1ubuntu3.3"
+      },
+      "capabilities": [
+        "oob"
+      ]
+    }
+  },
+  "status": "captured_requires_visual_review",
+  "try_clicked": false
+}

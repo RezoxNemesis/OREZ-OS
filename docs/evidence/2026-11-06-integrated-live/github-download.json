@@ -1,0 +1,19 @@
+{
+  "archive_commit": "564b9298062ff811b3955c976aecf74e90b03a9e",
+  "url": "https://github.com/RezoxNemesis/OREZ-OS/archive/564b9298062ff811b3955c976aecf74e90b03a9e.zip",
+  "bytes": 66988014,
+  "sha256": "9bca756be0921250953f710b4dd4a41bf45e85aad208dac19f73d8666af089c2",
+  "verified_original_pngs": 355,
+  "capture_references": 499,
+  "local_runs": 26,
+  "failed_commands": [
+    "qa11-07-integrated-uefi",
+    "qa11-14-first-boot-acceptance",
+    "qa11-15-first-boot-acceptance",
+    "qa11-20-splash-wait-uefi",
+    "qa11-21-second-boot-acceptance",
+    "qa11-25-integrated-virgl-uefi"
+  ],
+  "all_png_hashes_and_decoding_match": true,
+  "installation_approved": false
+}

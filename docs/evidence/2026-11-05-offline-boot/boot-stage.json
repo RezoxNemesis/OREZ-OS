@@ -1,0 +1,15 @@
+{
+  "scope": "Observed serial progress beyond the formerly blocking offline cache hook",
+  "cache_stage_completed": true,
+  "cache_warning_observed": true,
+  "cache_update_success_claimed": false,
+  "local_media_read_observed": true,
+  "remote_repository_observed_in_stage": false,
+  "guest_network": "none",
+  "iso_sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+  "serial_sha256": "b5dd94209eeb242e764474c0ba74191cf0afb22aed1270f94de947f81e04e3b2",
+  "desktop_qualified": false,
+  "owner_authentication_qualified": false,
+  "installation_approved": false,
+  "limitation": "This proves bounded optional-cache fallback and boot progress, not successful cache generation, a usable desktop or physical performance."
+}

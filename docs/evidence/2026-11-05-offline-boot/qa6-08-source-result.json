@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "Source regression for final Zstandard initrd packaging",
+  "kind": "source",
+  "started_at": "2026-11-05T14:59:06.695204+00:00",
+  "commit": "af7ce29e2cb4702f57344b5fe7552150fb25c05c",
+  "source_digest": "8054b44ed956e716391cc9d322d104f7c1cbe7ed7be16e108c9f136e5cde884b",
+  "working_tree": "M .github/workflows/orez-live.yml\n M build/build-live.sh\n M build/check-iso.sh\n M environment/orez-qa.Dockerfile\n?? build/audit-live-initrd.py\n?? build/patch-live-initrd.py\n?? image/initramfs/\n?? tests/test_live_initrd.py\n?? third_party/",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 1.07,
+  "finished_at": "2026-11-05T14:59:07.825302+00:00",
+  "log_sha256": "a9a72785ceace85d8d0a69c921e8b6e27789b62493db21a72e4fe2058e90c682"
+}

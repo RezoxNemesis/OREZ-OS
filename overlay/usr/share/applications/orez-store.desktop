@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Store
+Comment=Explore free apps, Android app targets, permissions and compatibility
+Exec=/usr/bin/orez-store gui
+Icon=system-software-install
+Terminal=false
+Categories=System;PackageManager;
+Keywords=Apps;Store;YouTube;Games;Android;

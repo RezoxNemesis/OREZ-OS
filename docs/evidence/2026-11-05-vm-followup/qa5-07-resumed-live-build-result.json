@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Resume official ISO download, verify its signature and rebuild live candidate",
+  "kind": "source",
+  "started_at": "2026-11-05T12:19:14.210007+00:00",
+  "commit": "82183ea8fbc5c1a759576a5ff0b814b936402bed",
+  "source_digest": "cccbbdd5ecf5c64b3eed914615f10781298d67abb8ecaf82cfacc21a189e103c",
+  "working_tree": "",
+  "command": [
+    "bash",
+    "/tmp/orez-vm-build-host.sh"
+  ],
+  "host": "Linux x86_64",
+  "installation_approved": false,
+  "run_url": null,
+  "exit_code": 18,
+  "status": "failed",
+  "duration_seconds": 8.13,
+  "finished_at": "2026-11-05T12:19:22.393537+00:00",
+  "log_sha256": "58736bb93a8cebef41767d047798685bd3a045d121293375b78cb1fe92f04710"
+}
