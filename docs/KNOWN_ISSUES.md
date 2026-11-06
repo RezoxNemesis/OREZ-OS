@@ -2,6 +2,15 @@
 
 ## Image applications checkpoint — 6 November 2026
 
+- CI timeout corrected: first run finished its checks but exceeded the 12-minute
+  deadline after slow HTTP-mirror font downloads. An 18-minute bounded job now
+  passes in run 42140670101. The conditional HTTPS rewrite of standard source
+  files did not affect the hosted runner's indirect mirror list; its actual
+  transport remains Azure HTTP with APT signature validation. Do not claim that
+  the faster rerun proved a mirror optimization. Pinned Actions still
+  emit the platform Node 20 deprecation warning while being forced onto Node 24;
+  review newer official Action pins in a separate maintenance change.
+
 - Native browser/player/game/Qt dependencies are now genuinely installed in the
   extracted ISO base and packed as a verified additive layer. The production
   builder still needs exact-base binding, correct layer ordering/manifests,

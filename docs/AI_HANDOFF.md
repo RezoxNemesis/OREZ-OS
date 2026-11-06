@@ -2,7 +2,8 @@
 
 ## Latest image application checkpoint — 6 November 2026
 
-- Last confirmed implementation **`28320e7b478e054cad740759139a37a8ba6df948`**,
+- Last confirmed implementation/CI fix **`f6c3df71d742d151e796808f60b87a2874830d79`**,
+  with the application-layer implementation at `28320e7b478e054cad740759139a37a8ba6df948`,
   branch `feature/orez-live-foundation-20261104`, PR #1 draft/open/unmerged.
   Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. A subsequent docs/evidence
   checkpoint uses `[skip ci]`; verify actual HEAD and PR before modifying source.
@@ -16,8 +17,18 @@
   job 127634073656 confirms **172 source tests, 38 package paths, preview build
   and 68 browser cases passed**; artifact 13467901830 uploaded. This is not an
   overall green run. Slow Azure HTTP font downloads took over eight minutes.
-  Follow-up uses official HTTPS Ubuntu mirrors and an 18-minute bounded limit;
-  follow-up CI is pending. No TLS/signature/proxy/security bypass.
+  Follow-up uses an 18-minute bounded limit and a conditional HTTPS preference
+  for conventional Ubuntu source files. The actual hosted runner used an
+  indirect mirror list and still fetched from Azure HTTP; do not attribute its
+  faster run to that conditional rewrite. APT signature validation stayed on;
+  [follow-up CI 42140670101](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42140670101)
+  is **SUCCESS** on `f6c3df7`. Decoded job 127639908888 verifies the same **172
+  source tests, 38 package paths and 68 browser cases**, with full ISO skipped.
+  No TLS/signature/proxy/security bypass. Final artifact **13468381144**:
+  **211,196,535 bytes**, GitHub SHA-256
+  `0e1fd5ac698146f2b8d563909d0ac953aac22e76ba06b0017fa892b5c0055583`,
+  expires **20 November 2026 01:01 UTC**. Logs/metadata verified; CI ZIP not
+  independently downloaded. Its screenshots are separate from the local gallery.
 - Added real image package pipeline: reviewed desktop profile, signed APT
   dependency resolution against the actual ISO's 2,283-package inventory,
   scoped Brave repository/key pins, exact offline dpkg installation, filesystem

@@ -5,6 +5,23 @@ hardware certification or release download. See [IMAGE_APPLICATIONS.md](../../IM
 for the complete procedure and remaining gates. Exact commit, CI and screenshot
 download are recorded in the latest [handoff](../../AI_HANDOFF.md).
 
+[Download 99 original PNGs](https://github.com/RezoxNemesis/OREZ-OS/archive/d0dd6db403d2b62b5c6ff067dcab8636563ebb5d.zip),
+verified against every original image hash. All 25 local attempts and six failures
+are represented (102 capture references; exact duplicates stored once).
+
+[Final CI 42140670101](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42140670101)
+passes on `f6c3df7`: decoded logs confirm 172 source tests, 38 package paths and
+68 browser cases. Full ISO skipped. CI screenshots are separate in artifact
+13468381144 (expires 20 November); metadata/logs verified, ZIP not downloaded.
+The first run completed all checks and uploaded evidence but was canceled by its
+12-minute deadline. Its annotation/logs remain in ci-attempt-1.json and the
+excerpt. The follow-up's 18-minute bounded deadline passes. Its conditional
+HTTPS preference for conventional source files did not affect this hosted
+runner's indirect mirror list: final logs still show Azure HTTP. Faster setup
+cannot be credited to that rewrite. APT signature checks remained on; no
+authentication or sandbox bypass. See ci-final.json. The actual image package
+resolver separately enforces HTTPS and its signed, scoped repository profile.
+
 - Final authenticated download: qa9-10, 17 additions, 342,396,222 bytes; APT's
   `_apt` sandbox retained. `package-manifest.json` contains exact versions,
   origins, hashes, key pins and repository-index hashes. The large inherited

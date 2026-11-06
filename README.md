@@ -7,6 +7,8 @@ This layer is not yet assembled into a new ISO or boot/installation-qualified.
 [Download 99 new original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/d0dd6db403d2b62b5c6ff067dcab8636563ebb5d.zip)
 from 25 local checks, including failures. Actual Qt offscreen windows and test
 reports are labeled separately; these are not full desktop/installation images.
+[Current CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42140670101) passes
+172 source tests, 38 package paths and 68 browser cases; full ISO job skipped.
 
 Latest first-PC work: [owner enrollment, native Calendar/Reuz, themes and release gates](docs/FIRST_PC_RELEASE.md).
 The owner deferred Android emulation/Play/presets until a later upgrade and now

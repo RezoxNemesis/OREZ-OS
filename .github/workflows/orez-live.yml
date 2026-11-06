@@ -45,9 +45,10 @@ jobs:
         env:
           OREZ_CHROMIUM: ''
         run: |
-          # Use signed official Ubuntu indexes over HTTPS on this disposable
-          # runner. The Azure HTTP mirror was extremely slow in the measured run.
-          # Keep TLS, APT signatures and the runner's proxy settings enabled.
+          # Prefer HTTPS for conventional Ubuntu source files when present.
+          # Some hosted runners instead use mirror+file:/etc/apt/apt-mirrors.txt;
+          # this conditional rewrite does NOT change that mirror-list transport.
+          # Keep APT signatures, TLS verification and proxy settings unchanged.
           for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources; do
             if [[ -f "$source" ]]; then
               sudo sed -i \
