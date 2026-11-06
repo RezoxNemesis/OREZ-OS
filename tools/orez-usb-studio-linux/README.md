@@ -1,14 +1,14 @@
-# OREZ USB Studio Linux 0.3.1
+# OREZ USB Studio Linux 0.4.0
 
-A phone-first Android writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
+A phone-first Android USB recovery and writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
 
-## Writing model
+## USB recovery\n\nThe separate **OREZ USB Recovery** launcher entry detects USB Mass Storage BOT devices even when Android Files cannot mount their damaged partition layout. After explicit device selection and typing `FORMAT`, it replaces the previous hybrid/partition metadata with a conventional MBR + FAT32 volume, initializes both FAT copies and verifies the MBR, FAT32 boot sector and FAT table by reading them back. This is a destructive operation and is not a physical flash-memory repair. It requires a 512-byte-sector BOT device and USB OTG permission.\n\n## Writing model
 
 Ubuntu/Kubuntu desktop ISOs are hybrid disk images. The app writes the original image to the USB device from byte zero, preserving its embedded partition map, ISO9660 data and boot structures. It does not extract the ISO, reformat it as FAT32, create a new partition table, or split files.
 
 Before erasing, it checks the ISO9660 volume descriptor, El Torito catalogue checksum, hybrid MBR/GPT evidence, the casper kernel/filesystem files and the x86_64 EFI loader. It calculates SHA-256 and requires the user to provide the matching value from the official distribution checksum file. It confirms USB capacity and requires typing ERASE.
 
-The writer uses Android USB Host API with USB Mass Storage Bulk-Only Transport and SCSI READ(10)/WRITE(10), in bounded 16 KiB transfers. It flushes the device and performs a complete sector-by-sector read-back comparison, calculating SHA-256 again. A failed or interrupted write is reported as incomplete; no write retry or automatic resume occurs.
+The writer uses Android USB Host API with USB Mass Storage Bulk-Only Transport and SCSI READ(10)/WRITE(10), in bounded 16 KiB transfers. It flushes the device and performs a complete sector-by-sector read-back comparison, calculating SHA-256 again. A failed or interrupted write is reported as incomplete; no write retry or automatic resume occurs. Android bulk data stages are now drained across short `bulkTransfer` completions instead of assuming one call transfers the entire SCSI stage.
 
 ## Optional OREZ Live Monitor
 
