@@ -17,9 +17,10 @@ Installation stays disabled.
 package, image, actual boot, desktop, installation and physical-hardware results.
 [Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
 
-[CI on 02acdac](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42176829799)
-passes **214 source tests, the 38-file package audit and 68 browser cases**.
-The full ISO job is skipped; these checks do not certify an installed OS.
+[Latest CI on b979c6b](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711)
+passes **225 source tests, the 38-path package audit and 68 desktop/mobile preview cases**.
+The full ISO job was skipped; these checks do not certify a rebuilt/booted ISO or installed OS.
+The live-only session trace wrapper is committed; its instrumented ISO still needs a default-UEFI VM boot.
 
 ## Scope and personality
 

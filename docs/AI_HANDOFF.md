@@ -2,38 +2,43 @@
 
 ## Latest verified checkpoint — 6 November 2026, login trace instrumentation
 
-**No approved installation download.** The actual normal-login session still
-fails after successful authentication. A separate ordinary-owner console
-diagnostic now renders the real desktop and native Settings. Earlier active
-checkpoints below are historical; use this section and its linked final records.
+**No approved installation download.** Normal graphical login still fails after successful authentication. A separate ordinary-owner console diagnostic rendered the real Plasma desktop and native Settings, but that is not a normal login pass. A live-only trace wrapper is committed to identify where the session command exits. No root cause or login fix is claimed.
 
-### Repository and exact evidence
+### Repository and latest CI
 
-- Branch: `feature/orez-live-foundation-20261104`; last confirmed implementation
-  commit: `b979c6b7505670d41cd6342d19e86ebe850e443e` (login trace instrumentation and regression test).
-  This final documentation/evidence follow-up uses `[skip ci]`; verify actual
-  remote HEAD before editing rather than inventing a self-referential hash.
-- [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) is open, draft and
-  unmerged. Repository stays public. Do not infer owner/collaborator access
-  restrictions from public visibility; the actual access audit remains open.
-- [CI 42176829799](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42176829799)
-  on `02acdac` passes **214 source tests, 38 package paths and 68 browser-preview
-  cases**; full ISO job skipped. Artifact `13483093997`: 211,660,238 bytes,
-  SHA256 `5c7c1f4544dfbbe9d6f5f8ff9f4ad2e5190599c83b358c54a25903b732913fb7`,
-  expires 20 November 2026. [Full CI identity](evidence/2026-11-06-installer-graphics/ci-shadow-audit.json).
-- Booted image source: **`56af0a24133985d225ac22c2e85a6f3cb050f483`**;
-  `dist/assembly-lab/direct-session/OREZ-OS-0.1-live-amd64.iso`, 5,455,347,712
-  bytes (5.46 GB / 5.08 GiB), SHA256
-  `6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6`.
-  Reconstruction from recorded development parent; fresh upstream signature,
-  current security baseline, complete redistribution and signed release remain
-  separate requirements. This is not installed disk usage.
-- [301 original PNGs — direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/090a5014051e3d230a4a04300d3395f58dedf7a4.zip),
-  [12-screen actual tour](https://github.com/RezoxNemesis/OREZ-OS/blob/090a5014051e3d230a4a04300d3395f58dedf7a4/TOUR.md).
-  Archive commit `090a5014051e3d230a4a04300d3395f58dedf7a4` maps 512 capture
-  references across 21 local runs, retaining failures. Exact duplicate bytes
-  are stored once. CI and subsequent download-verification screenshots are
-  separately linked in the [evidence ledger](evidence/2026-11-06-installer-graphics/README.md).
+- Repository: `RezoxNemesis/OREZ-OS`
+- Branch: `feature/orez-live-foundation-20261104`
+- Latest verified commit at this checkpoint: `2f7026b183cf86d37f7da9995b93b793041cd3f0`.
+- [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) remains open, draft and unmerged.
+- [CI run 42211534711](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711) on `b979c6b` passed **225 source tests, the 38-path Debian package audit, and 68 desktop/mobile preview tests**. The full ISO job was skipped.
+- Evidence artifact `13499580862` is 211,801,054 bytes and expires 20 November 2026. It contains source/package/preview evidence, not a bootable ISO.
+
+### Actual image and login evidence
+
+The existing 5.46 GB development ISO is source commit `56af0a24133985d225ac22c2e85a6f3cb050f483`, SHA-256 `6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6`. Its default-menu UEFI boot completed local owner enrollment. SDDM/PAM accepted the owner password, but the selected session command exited 64 and returned to the greeter. Manual startup from an authenticated owner TTY rendered Plasma and Settings. See [the actual run record](evidence/2026-11-06-installer-graphics/qa12-17-vm-result.json).
+
+### Important interpretation
+
+SDDM source review shows its own helper-status enum is 0–5. For a Wayland login, SDDM launches its configured session command and forwards that command's numeric exit code through `HelperApp::sessionFinished`. Thus 64 is the returned code from the Wayland session command chain, not a normal SDDM helper enum status. The exact inner process still needs tracing. See [LOGIN_BLOCKER.md](LOGIN_BLOCKER.md) for pinned source references and trace handling.
+
+The `Failed to write utmpx` message is a known compatibility warning on systems where systemd has disabled legacy utmp support; it is not evidence of the login root cause. Do not create `/run/utmp` or change permissions as a guessed fix.
+
+### Current committed diagnostic
+
+Commit `b979c6b7505670d41cd6342d19e86ebe850e443e` adds `image/live-owner/usr/lib/orez/orez-session-trace`, invoked by the live OREZ Wayland session entry. It calls the exact original Plasma D-Bus wrapper and `startplasma-wayland`, logs a narrowly allowlisted set of non-secret environment facts and the exact returned status, and returns that status unchanged. It does not change PAM, credentials, privilege boundaries, AppArmor, compositor settings or automatic-login policy. Current source regression tests cover the session entry, privacy restrictions and shell syntax.
+
+### Exact next work
+
+1. Rebuild an instrumented ISO with the verified native-app layer, dpkg-owned OREZ layer and current live-owner layer. The legacy manual full-image workflow does not yet prepare these required inputs; do not repeatedly dispatch it expecting them to appear.
+2. Boot the new exact ISO from the ordinary default UEFI menu in a disposable, offline, diskless VM with disposable credentials. Inspect the system journal for `wrapper_started`, the child-start marker and `plasma_session_child_exit=N`.
+3. If no wrapper marker appears, inspect SDDM's `SessionCommand` and `/etc/sddm/wayland-session` boundary. If it appears, follow the exact child exit and corresponding process evidence. Preserve matched control runs and do not log secrets.
+4. Fix only the demonstrated cause, then repeat default-menu UEFI login, keyboard/mouse, launcher, Settings, Dolphin, terminal, logout and second login.
+5. Independently complete signed upstream image assembly, installed branding/package verification, Calamares tests on disposable virtual disks, non-target preservation, encryption, update/recovery and source/licensing checks.
+6. Keep the installer disabled, PR draft, and public ISO download blocked until all applicable release gates pass. Physical NVIDIA, Secure Boot, Wi-Fi/Bluetooth, suspend/power and performance still require target-hardware tests.
+
+**Next-chat prompt:** “Continue OREZ OS from this handoff. Verify remote HEAD, PR and CI. Commit b979c6b adds a live-only session trace wrapper; source CI passed, but an instrumented ISO has not been built or booted. SDDM forwards the Wayland session command's returned exit code; 64 is not one of the SDDM helper enum statuses. Missing utmpx is a known compatibility warning. Build the instrumented ISO, trace it in a disposable default-UEFI VM, preserve authentication/security, fix only the demonstrated cause, and keep installation/download blocked until all gates pass.”
+
+## Historical investigation and image notes (preserved)
 
 ### What changed and what actually ran
 

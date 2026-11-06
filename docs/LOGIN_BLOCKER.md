@@ -53,4 +53,4 @@ CI run [42211534711](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/422115
 
 ## Release gate
 
-Normal graphical login remains **BLOCKED****. Installer activation, ISO publication and real-PC installation remain prohibited until the login passes and the independent installer, disk-safety, encryption, update/recovery, licensing and target-hardware gates are completed.
+Normal graphical login remains **BLOCKED**. Installer activation, ISO publication and real-PC installation remain prohibited until the login passes and the independent installer, disk-safety, encryption, update/recovery, licensing and target-hardware gates are completed.
