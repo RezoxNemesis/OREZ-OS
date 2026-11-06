@@ -37,3 +37,5 @@ usr/share/applications/orez-calendar.desktop
 usr/share/applications/reuz-time.desktop
 usr/share/color-schemes/OREZPaper.colors
 usr/share/color-schemes/OREZInk.colors
+usr/lib/orez/settings_ui.py
+usr/share/orez/settings-catalog.json
