@@ -95,25 +95,37 @@ jobs:
           echo '- Bootable ISO, real UEFI/VM boot, drivers and installation: **not tested by this job**.' >> "$GITHUB_STEP_SUMMARY"
 
   live-image:
-    name: Build full Kubuntu-derived live ISO (manual only)
+    name: Build full Kubuntu-derived live ISO (dedicated builder only)
     needs: source-validation
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    # A hosted ubuntu-24.04 runner has neither the documented workspace capacity
+    # nor the prebuilt, independently verified image layers. Never spend a run
+    # downloading a 5+ GB base only to fail at the builder's required-input gate.
+    runs-on: [self-hosted, linux, x64, orez-image-builder]
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: Check available disk before downloads
+      - name: Verify dedicated builder and prepared image inputs
+        shell: bash
         run: |
+          set -Eeuo pipefail
           df -h .
           free_kib="$(df -Pk . | awk 'NR==2 {print $4}')"
-          if (( free_kib < 11534336 )); then
-            echo 'Insufficient space for 5.1 GB upstream + remixed ISO. Use a larger builder.' >&2
+          if (( free_kib < 83886080 )); then
+            echo 'Need at least 80 GiB free workspace for the documented image and VM build.' >&2
             exit 1
           fi
-      - name: Install image construction tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends curl gnupg xorriso squashfs-tools zstd ca-certificates
+          for tool in curl gpg gpgv sha256sum xorriso mksquashfs unsquashfs zstd python3 qemu-system-x86_64; do
+            command -v "$tool" >/dev/null || { echo "Dedicated builder missing: $tool" >&2; exit 1; }
+          done
+          for variable in OREZ_APP_LAYER OREZ_COMPONENT_LAYER OREZ_COMPONENT_REPORT; do
+            value="${!variable:-}"
+            [[ -n "$value" && -f "$value" && ! -L "$value" ]] || {
+              echo "Dedicated builder must pre-provision a regular verified input for $variable." >&2
+              exit 1
+            }
+          done
+          echo 'Dedicated builder preflight passed; build inputs will be independently reverified by build-live.sh.'
       - name: Produce and verify development ISO
         id: iso
         run: |
