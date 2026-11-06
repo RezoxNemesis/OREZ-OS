@@ -7,9 +7,9 @@ proves login, desktop usability, installation or target hardware support.
 
 | Artifact | Verified identity |
 | --- | --- |
-| Integrated ISO | `dist/assembly-lab/console-fix/OREZ-OS-0.1-live-amd64.iso` |
+| Integrated ISO | `dist/assembly-lab/splash-wait/OREZ-OS-0.1-live-amd64.iso` |
 | ISO size | 5,455,347,712 bytes; 5.46 decimal GB / 5.08 GiB |
-| ISO SHA-256 | `4425b475c5f2081e7ce0b06b73b002825d27214475eb78a1d92489cb61eff72d` |
+| ISO SHA-256 | `e9d423a9d2425e292b2091deded5d50a1d9b34d4e58cb1741a883ae21f1ce04c` |
 | Parent development ISO | `8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9` |
 | Unchanged original filesystem | 4,381,224,960 bytes; `a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7` |
 | Native application layer | 383,488,000 bytes; `22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51` |
@@ -38,13 +38,27 @@ credential existed only in the diskless/offline test guest, which was stopped;
 the helper's private password file was destroyed with its test container.
 Unaltered failure frames are retained as evidence, not real owner credentials.
 
-The corrected image in the table above orders console/keymap/splash startup
+The first attempted correction orders console/keymap/splash startup
 before enrollment, moves splash teardown into the same enrollment process
 instead of a separate TTY-resetting ExecStartPre, and refuses Python's
 password-echo fallback before input. This addresses suspected console-reset
 ordering; the first run alone does not establish which process reset echo.
-183 source tests pass, including a real pseudoterminal no-echo check. A fresh
-UEFI run must still prove the correction in the integrated boot path.
+183 source tests passed, including a real pseudoterminal no-echo check, but
+**the second actual boot still exposed the first password**. Its image identity
+is `4425b475c5f2081e7ce0b06b73b002825d27214475eb78a1d92489cb61eff72d`.
+The second run also proves that the real SDDM interface rejects an incorrect
+password and masks graphical password input; this does not resolve the console
+flaw. Correct-password desktop startup is separately observed.
+
+The current image in the table now waits for the original Plymouth daemon to
+exit and checks that it no longer answers before prompting. The process identity
+includes its start time, and the helper never kills a PID. New source checks pass
+(185 total). The third actual UEFI boot shows both password entries concealed,
+completion of setup, a successful owner tty2 login and refusal of passwordless
+sudo. This is one observed boot, not broad timing-race qualification. Its SDDM
+log records one greeter exit/restart before reaching the real login screen.
+Graphical session startup remains under test; no desktop pass is inferred from
+account creation or source tests.
 
 ## What the image now includes
 

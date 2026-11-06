@@ -16,11 +16,13 @@ import re
 import stat
 import subprocess
 import sys
+import time
 import warnings
 
 REQUEST = Path('/var/lib/orez-live/owner-required')
 READY = Path('/run/orez-live/owner-ready.json')
 SUDOERS = Path('/etc/sudoers.d/orez-live-owner')
+PLYMOUTH_PID = Path('/run/plymouth/pid')
 
 
 def root_file(path, mode):
@@ -87,13 +89,42 @@ def validate_password(password):
         raise ValueError('Use 12–128 characters without control characters.')
 
 
+def process_identity(pid):
+    try:
+        fields = Path('/proc/' + str(pid) + '/stat').read_text().rpartition(')')[2].split()
+        return None if fields[0] == 'Z' else fields[19]
+    except FileNotFoundError:
+        return None
+
+
 def prepare_console():
-    # Keep splash teardown in the same service process as the prompt. A
-    # separate ExecStartPre with TTYReset can reset echo around its successor.
-    # Console/keymap setup is ordered before this unit as well.
-    subprocess.run(['/usr/bin/plymouth', 'quit'], stdout=subprocess.DEVNULL,
-                   stderr=subprocess.DEVNULL, timeout=20, check=False,
-                   env={'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8'})
+    # A quit request alone need not mean the daemon has closed its TTY. Wait
+    # for shutdown before getpass changes echo; never kill an arbitrary PID.
+    pid = identity = None
+    try:
+        mode = stat.S_IMODE(PLYMOUTH_PID.lstat().st_mode)
+        if mode & 0o022:
+            raise ValueError('Untrusted splash process file.')
+        root_file(PLYMOUTH_PID, mode)
+        pid = int(PLYMOUTH_PID.read_text().strip())
+        if pid <= 1:
+            raise ValueError('Invalid splash process identity.')
+        identity = process_identity(pid)
+    except FileNotFoundError:
+        pass
+    def invoke(argument):
+        return subprocess.run(['/usr/bin/plymouth', argument], stdout=subprocess.DEVNULL,
+                              stderr=subprocess.DEVNULL, timeout=20, check=False,
+                              env={'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8'})
+    invoke('quit')
+    invoke('--wait')
+    deadline = time.monotonic() + 20
+    while identity is not None and process_identity(pid) == identity:
+        if time.monotonic() >= deadline:
+            raise ValueError('Boot splash has not released the console. Reboot to retry.')
+        time.sleep(.05)
+    if invoke('--ping').returncode == 0:
+        raise ValueError('Boot splash is still active. Password setup remains blocked.')
 
 
 def hidden_password(prompt):

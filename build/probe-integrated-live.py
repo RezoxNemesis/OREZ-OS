@@ -29,8 +29,8 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--seconds', type=int, default=1200)
     a = p.parse_args()
-    if os.geteuid() == 0 or not 30 <= a.seconds <= 1800:
-        p.error('Require an ordinary user and a 30..1800 second observation window')
+    if os.geteuid() == 0 or not 30 <= a.seconds <= 3600:
+        p.error('Require an ordinary user and a 30..3600 second observation window')
     if a.iso.is_symlink() or not stat.S_ISREG(a.iso.stat().st_mode):
         p.error('ISO must be a regular file')
     if any(',' in str(path) for path in [a.iso, a.output]):

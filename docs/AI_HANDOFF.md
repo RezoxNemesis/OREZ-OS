@@ -1,5 +1,32 @@
 # OREZ OS — Verified Development Handoff
 
+## Console security correction in progress — 6 November 2026
+
+- Last confirmed implementation commit: `c7698f926434aec0e5506bd70afc0dfc680f7980`.
+  Exact-commit CI 42155617155 passes 183 source tests, 38 package paths and
+  68 browser cases; full ISO job skipped. Artifact 13474800628.
+- Ordering-only image still exposed the first password. Latest source waits for
+  the original Plymouth PID/start-time identity to exit, checks the daemon is
+  inactive and refuses getpass's visible fallback. No arbitrary process killing.
+- Latest ISO SHA `e9d423a9d2425e292b2091deded5d50a1d9b34d4e58cb1741a883ae21f1ce04c`,
+  5,455,347,712 bytes, static audit passes. Source regression qa11-22: 185 pass.
+- Current third UEFI boot: both enrollment entries hidden, setup completes,
+  tty2 login authenticates as UID1000; passwordless sudo refused. Real OREZ SDDM
+  appears, with one initial greeter restart logged. Desktop/app checks still
+  pending. The second run denied incorrect graphical credentials but had only
+  100 seconds of black-frame observation after correct-password submission.
+- Active observation: `orez-integrated-vm-20261106-v3`, diskless/offline 6-GiB TCG;
+  `dist/integrated-vm/uefi-v3`, evidence qa11-20. Remove the container's private
+  dummy credential after stopping and copying all evidence. Never print it.
+- Original first integrated ISO was retired after verifying its recorded hash
+  to recover storage; its metadata and failed-boot evidence are preserved.
+  Original parent, second and third images, app/core layers and package pool
+  remain. No physical disk/USB/firmware or real credentials touched.
+- Next: finish actual GUI observation and ordinary-owner diagnostics; preserve
+  failure evidence, publish the PNG gallery, update PR/handoff with exact final
+  commit/CI. Installer/recovery/licensing/signing/update/hardware gates remain.
+  Do not offer these images as a qualified installation download.
+
 ## Integrated-image implementation in progress — 6 November 2026
 
 Last confirmed starting commit: `6a44b9cfd550fc606d3988aec9fcbb0d7773027a`,

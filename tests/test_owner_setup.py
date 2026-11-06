@@ -95,6 +95,25 @@ class OwnerSetupTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Cannot hide password'):
                 owner.hidden_password('Password: ')
 
+    def test_console_waits_for_original_splash_process_exit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pid = Path(tmp)/'pid'; pid.write_text('234')
+            with patch.object(owner, 'PLYMOUTH_PID', pid), patch.object(owner, 'root_file'), \
+                 patch.object(owner, 'process_identity', side_effect=['original', 'original', None]), \
+                 patch.object(owner.time, 'sleep') as sleep, \
+                 patch.object(owner.subprocess, 'run', side_effect=[subprocess.CompletedProcess([],0),subprocess.CompletedProcess([],0),subprocess.CompletedProcess([],1)]) as child:
+                owner.prepare_console()
+                self.assertEqual(sleep.call_count, 1)
+                self.assertEqual([c.args[0] for c in child.call_args_list],
+                                 [['/usr/bin/plymouth','quit'],['/usr/bin/plymouth','--wait'],['/usr/bin/plymouth','--ping']])
+
+    def test_splash_still_alive_blocks_password_prompt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch.object(owner, 'PLYMOUTH_PID', Path(tmp)/'absent'), \
+                 patch.object(owner.subprocess, 'run', return_value=subprocess.CompletedProcess([],0)):
+                with self.assertRaisesRegex(ValueError,'still active'):
+                    owner.prepare_console()
+
     def test_real_terminal_password_is_not_echoed(self):
         import os, pty, select, sys, termios, time
         master, slave = pty.openpty()

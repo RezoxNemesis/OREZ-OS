@@ -3,14 +3,20 @@
 ## Integrated ISO and actual owner boot — 6 November 2026
 
 A new 5.46 GB integrated ISO passes exact-base, native-app, dpkg ownership,
-owner payload and media checks. The first actual UEFI run reached owner setup,
-authenticated tty2 login and the real OREZ SDDM screen; passwordless sudo was
-refused. **The first enrollment password was echoed on the console**, so
-security acceptance failed. A corrected image and 183 passing source tests now
-exist; its fresh VM result is recorded in the latest handoff/evidence ledger.
-See [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md). No installer/release is approved.
-These results supersede older “not assembled” and “no visible login” entries
-below; historical failures remain for traceability.
+owner payload and media checks. The first two actual UEFI runs exposed the
+initial enrollment password. The current correction waits for Plymouth's actual
+process exit and refuses visible-input fallback. Third boot: both entries hidden,
+setup completes, tty2 owner authentication works and passwordless sudo is refused.
+185 source tests pass. One cold-boot observation does not certify all timings.
+
+The real OREZ SDDM interface is visible; wrong-password refusal and masking were
+observed in the second boot. Correct-password submission produced black frames
+for the remaining 100-second observation window, so desktop acceptance is still
+blocked, not a proven root cause. The third boot's journal records one greeter
+restart; further graphical authentication/desktop observation is in progress.
+See [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md) and the latest handoff/evidence ledger.
+No installer/release is approved. These results supersede older “not assembled”
+and “no visible login” entries below; historical failures remain for traceability.
 
 
 ## Image applications checkpoint — 6 November 2026
