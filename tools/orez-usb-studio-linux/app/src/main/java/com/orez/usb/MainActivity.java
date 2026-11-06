@@ -100,7 +100,7 @@ public final class MainActivity extends Activity {
         LinearLayout page=new LinearLayout(this); page.setOrientation(LinearLayout.VERTICAL);
         page.setPadding(dp(20),dp(22),dp(20),dp(32)); scroll.addView(page); setContentView(scroll);
 
-        TextView brand=label("OREZ   /   USB STUDIO     0.4.0",12,MINT);
+        TextView brand=label("OREZ   /   USB STUDIO     0.4.1",12,MINT);
         brand.setLetterSpacing(.13f); page.addView(brand);
         TextView title=label("Linux installer.\nWritten the right way.",29,TEXT);
         title.setTypeface(Typeface.DEFAULT,Typeface.BOLD); page.addView(title);
@@ -166,7 +166,7 @@ public final class MainActivity extends Activity {
         page.addView(monitorStateLabel);
 
         page.addView(sectionTitle("05  /  WRITE AND VERIFY"));
-        TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO, checks the drive capacity, writes the original hybrid image, flushes it, then reads back every byte and compares SHA-256.",13,MUTED);
+        TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO, checks the drive capacity, writes the original hybrid image, flushes it, then requests a cache flush when supported and reads back every byte to compare SHA-256.",13,MUTED);
         safety.setBackground(round(CARD,14));safety.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(safety);
         createButton=button("Review & create Linux USB",true);page.addView(createButton);
         createButton.setOnClickListener(v->confirmWrite());
@@ -321,17 +321,21 @@ public final class MainActivity extends Activity {
             try(UsbBot bot=new UsbBot(usbManager,device)) {
                 long bytes=bot.capacityBytes();
                 runOnUiThread(()->{
+                    // Ignore a stale probe if the user selected a different drive meanwhile.
+                    if(selectedUsb==null || selectedUsb.getDeviceId()!=device.getDeviceId()) return;
                     UsbDevice current=usbManager.getDeviceList().get(device.getDeviceName());
-                    if(current==null || current.getDeviceId()!=device.getDeviceId()) {
-                        selectedUsb=null;usbBytes=0;usbLabel.setText("USB disconnected. Select it again.");
+                    if(current==null || current.getDeviceId()!=device.getDeviceId() || !usbManager.hasPermission(current)) {
+                        selectedUsb=null;usbBytes=0;usbLabel.setText("USB disconnected or permission expired. Select it again.");
                     } else {
-                        selectedUsb=device;usbBytes=bytes;
-                        usbLabel.setText(deviceName(device)+"\n"+formatBytes(bytes)+" · 512-byte logical sectors\nRead-only connection check passed.");
+                        selectedUsb=current;usbBytes=bytes;
+                        usbLabel.setText(deviceName(current)+"\n"+formatBytes(bytes)+" · 512-byte logical sectors\nRead-only connection check passed.");
                     }
                     refreshControls();
                 });
             } catch(Exception e) {
                 runOnUiThread(()->{
+                    // Do not let an older probe clear a newer selection.
+                    if(selectedUsb==null || selectedUsb.getDeviceId()!=device.getDeviceId()) return;
                     selectedUsb=null;usbBytes=0;
                     usbLabel.setText("USB check failed: "+(e.getMessage()==null?e.toString():e.getMessage()));
                     refreshControls();
@@ -381,9 +385,16 @@ public final class MainActivity extends Activity {
         String typed=checksumInput==null?"":checksumInput.getText().toString().trim();
         return !WriteService.running && !inspecting && isoUri!=null && isoBytes>0 &&
             isoHash.matches("[0-9a-f]{64}") && typed.matches("(?i)[0-9a-f]{64}") &&
-            typed.equalsIgnoreCase(isoHash) && selectedUsb!=null && usbBytes>=((isoBytes+511)/512)*512 &&
+            typed.equalsIgnoreCase(isoHash) && selectedUsbStillPresent() && usbBytes>=((isoBytes+511)/512)*512 &&
             (monitorConsent==null || !monitorConsent.isChecked() ||
              LiveMonitorClient.isValidCode(monitorPairCode==null?"":monitorPairCode.getText().toString()));
+    }
+
+    private boolean selectedUsbStillPresent() {
+        if(selectedUsb==null || usbManager==null || !usbManager.hasPermission(selectedUsb)) return false;
+        UsbDevice current=usbManager.getDeviceList().get(selectedUsb.getDeviceName());
+        return current!=null && current.getDeviceId()==selectedUsb.getDeviceId() &&
+                current.getVendorId()==selectedUsb.getVendorId() && current.getProductId()==selectedUsb.getProductId();
     }
 
     private void refreshControls() {
