@@ -59,6 +59,7 @@ public final class WriteService extends Service {
         String expected=intent.getStringExtra("expectedSha256");
         long expectedBytes=intent.getLongExtra("isoBytes",-1);
         String pairCode=intent.getStringExtra("liveMonitorPairCode");
+        intent.removeExtra("liveMonitorPairCode");
         if(pairCode!=null && !pairCode.trim().isEmpty() && !LiveMonitorClient.isValidCode(pairCode)) {
             phase="Stopped before USB writing"; detail="The live-monitor pairing code is invalid. No write was started.";
             stopSelf(startId); return START_NOT_STICKY;
@@ -347,6 +348,7 @@ public final class WriteService extends Service {
     }
 
     @Override public void onDestroy() {
+        stopLiveMonitor();
         if(running) cancelled=true;
         if(wakeLock!=null && wakeLock.isHeld()) wakeLock.release();
         super.onDestroy();
