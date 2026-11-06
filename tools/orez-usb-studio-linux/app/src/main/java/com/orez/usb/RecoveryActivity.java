@@ -94,11 +94,6 @@ public final class RecoveryActivity extends Activity {
     private void confirmFormat(){
         if(busy || selected==null || !manager.hasPermission(selected))return;
         EditText confirm=new EditText(this);confirm.setSingleLine(true);confirm.setHint("Type FORMAT to confirm");
-        new AlertDialog.Builder(this).setTitle("Erase and restore USB?")
-            .setMessage("Selected: "+(selected.getProductName()==null?"USB mass storage":selected.getProductName())+
-                "\n\nThis will replace the damaged Linux ISO layout with a fresh MBR + FAT32 filesystem. All existing contents will be destroyed.")
-            .setView(confirm).setNegativeButton("Cancel",null).setPositiveButton("Format",null).create().show();
-        // A second explicit confirmation is used by the button below; the positive action is wired in show dialog.
         AlertDialog d=new AlertDialog.Builder(this).setTitle("Final erase confirmation")
             .setMessage("This operation is destructive and cannot be undone. Type FORMAT below.")
             .setView(confirm).setNegativeButton("Cancel",null).setPositiveButton("Format USB",null).create();
