@@ -82,3 +82,8 @@ windows, automatic version-tested Android game controls without manual setup,
 authenticated install/update UI,
 and PySide6 provisioning in both live/installed ISO roots. Finish owner-auth and
 visible desktop gates before installation. Details: [OREZ_STORE.md](OREZ_STORE.md).
+
+
+## Owner UX requirement — 6 November 2026
+
+**New release-blocking requirement:** deliver Linux capability without making routine desktop use terminal-dependent or confusing. The promise is **Simple on the surface. Powerful underneath. Never leave the user lost.** Implement a familiar desktop, one plain-language searchable Settings home, graphical app installation/updates/device management, visible Back/Home/Help/Recovery routes, friendly errors, safe reversible defaults and progressive disclosure of advanced tools. Terminal, package ecosystem and development tools remain available but optional. Full acceptance tests and first-release user flows: [UX_PHILOSOPHY.md](UX_PHILOSOPHY.md). These requirements are not yet certified; browser previews or static mock-ups do not count as installed-OS usability evidence.
