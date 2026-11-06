@@ -1,5 +1,12 @@
 # First real live ISO build — operating rules
 
+Latest image assembly: [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md) records the new
+5,455,347,712-byte integrated development ISO, strict layer/dpkg verification,
+current boot evidence and remaining release gates. It supersedes older
+statements below that no integrated image exists. The canonical builder now
+requires separately prepared verified app and component layers; the old manual
+GitHub full-image job does not yet provision them.
+
 Latest image work (6 November 2026): [application dependency stage](IMAGE_APPLICATIONS.md)
 adds an authenticated package resolver, offline isolated installation and exact
 additive SquashFS verification. Actual 383,488,000-byte layer built; full ISO

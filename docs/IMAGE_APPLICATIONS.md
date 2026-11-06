@@ -2,8 +2,9 @@
 
 Brave, VLC, SuperTux and PySide6 now install successfully **inside a temporary
 root extracted from the actual retained ISO base**. The resulting additive
-SquashFS is built and independently verified. It is **not integrated into a
-new full ISO**, boot-tested or approved for installation. QA-container software
+SquashFS is built and independently verified. It is now integrated into a **5,455,347,712-byte development ISO** with
+current owner setup and the dpkg-owned OREZ package. See [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md)
+for exact artifact identity and boot evidence. Installation is not approved. QA-container software
 and this staged image filesystem are separate artifacts.
 
 ## Verified result
@@ -167,10 +168,11 @@ rights; source visibility and software licensing remain separate concerns.
 
 ## Remaining first-PC gates
 
-- Bind the app layer to the exact upstream filesystem and package state in the
-  production ISO builder; verify casper layer order, package manifests and media
-  checksums. Combine the current owner-initrd/live payload and dpkg-owned OREZ
-  package. The current `build-live.sh` does not yet consume this app layer.
+- Exact-base binding, current owner payload, dpkg-owned components, ordered
+  layers, package manifest and all modified-media checksums now pass in the
+  integrated development image. `build-live.sh` now consumes the separately
+  prepared layers and refuses incomplete inputs. Fresh signed-upstream end-to-end
+  assembly, frozen dependency reconstruction and CI provisioning remain open.
 - Boot offline UEFI through owner enrollment, SDDM and usable Plasma on a
   supported graphical VM host. Test native launchers, Brave sandbox, YouTube,
   VLC playback, games, AppArmor and visible settings in that exact image.

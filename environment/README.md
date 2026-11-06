@@ -1,5 +1,13 @@
 # Publish the OREZ test environment
 
+A separate 304.3 MB headless VM helper is now available at
+`environment/orez-vm-tools.Dockerfile`, local tag `orez-vm-tools:20261106`.
+It runs QEMU/OVMF as UID 1500 with a private QMP console; see
+[LIVE_ASSEMBLY.md](../docs/LIVE_ASSEMBLY.md). It neither provides KVM/GPU access
+nor qualifies a desktop from a captured frame. It has not been published.
+Copy only required harness files with readable canonical modes; mounting the
+private checkout does not make it readable to a different test UID.
+
 For image construction, use the separate **239.7 MB** helper in
 `environment/orez-image-tools.Dockerfile`. It was built locally as
 `orez-image-tools:20261105`; it has APT/Python, dpkg, GnuPG, xorriso and SquashFS

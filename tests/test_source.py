@@ -145,7 +145,7 @@ class OrezSourceTests(unittest.TestCase):
 
     def test_candidate_calamares_profile_is_not_active_and_excludes_live_apparmor(self):
         profile = (ROOT / 'image/installer/orez-unpackfs-candidate.conf').read_text()
-        self.assertEqual(profile.count('sourcefs: "squashfs"'), 2)
+        self.assertEqual(profile.count('sourcefs: "squashfs"'), 3)
         self.assertIn('source: "/cdrom/casper/filesystem.squashfs"', profile)
         self.assertIn('source: "/cdrom/casper/orez-install.squashfs"', profile)
         self.assertIn('etc/sysctl.d/20-apparmor.conf', profile)
@@ -324,7 +324,9 @@ class OrezSourceTests(unittest.TestCase):
             self.assertNotIn(dangerous, build)
         self.assertIn('sha256sum -c', build)
         self.assertIn('gpgv', build)
-        self.assertIn('-boot_image any replay', build)
+        self.assertIn('assemble-live.py', build)
+        assembly = (ROOT / 'build/assemble-live.py').read_text()
+        self.assertIn("['-boot_image','any','replay','-commit']", assembly)
 
 
 if __name__ == '__main__':

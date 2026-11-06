@@ -16,6 +16,7 @@ import re
 import stat
 import subprocess
 import sys
+import warnings
 
 REQUEST = Path('/var/lib/orez-live/owner-required')
 READY = Path('/run/orez-live/owner-ready.json')
@@ -86,6 +87,26 @@ def validate_password(password):
         raise ValueError('Use 12–128 characters without control characters.')
 
 
+def prepare_console():
+    # Keep splash teardown in the same service process as the prompt. A
+    # separate ExecStartPre with TTYReset can reset echo around its successor.
+    # Console/keymap setup is ordered before this unit as well.
+    subprocess.run(['/usr/bin/plymouth', 'quit'], stdout=subprocess.DEVNULL,
+                   stderr=subprocess.DEVNULL, timeout=20, check=False,
+                   env={'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8'})
+
+
+def hidden_password(prompt):
+    # The stdlib's default fallback warns and then reads with echo enabled.
+    # A password-enrollment service must refuse that fallback before reading.
+    with warnings.catch_warnings():
+        warnings.simplefilter('error', getpass.GetPassWarning)
+        try:
+            return getpass.getpass(prompt)
+        except getpass.GetPassWarning:
+            raise ValueError('Cannot hide password input. Reboot verified media and retry.') from None
+
+
 def private_directory(path):
     path.mkdir(mode=0o700, parents=True, exist_ok=True)
     info = path.lstat()
@@ -132,15 +153,16 @@ def enroll():
     validate_owner(username)
     if not sys.stdin.isatty() or not sys.stdout.isatty():
         raise ValueError('A local console is required; password input cannot come from a pipe.')
+    prepare_console()
     print('\nOREZ OS — Set up this live session\n')
     print('Live owner: ' + username)
     print('Choose a temporary password for login, screen unlock and administrator prompts.')
     print('This is a volatile USB test session. It does not install OREZ or change your SSD.')
     print('The password is not saved on your installation media. Root login stays locked.')
     print('Use 12–128 characters. Input is hidden. Ctrl+C cancels; reboot to restart setup.\n')
-    password = getpass.getpass('New live-session password: ')
+    password = hidden_password('New live-session password: ')
     validate_password(password)
-    confirmation = getpass.getpass('Repeat password: ')
+    confirmation = hidden_password('Repeat password: ')
     if password != confirmation:
         raise ValueError('Passwords did not match. No password was changed.')
     complete(username, password)

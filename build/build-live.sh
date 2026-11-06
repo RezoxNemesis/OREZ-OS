@@ -20,9 +20,23 @@ fail() { printf '[OREZ ERROR] %s\n' "$*" >&2; exit 1; }
 need() { command -v "$1" >/dev/null 2>&1 || fail "Missing tool: $1"; }
 
 [[ "$(uname -s)" = 'Linux' && "$(uname -m)" = 'x86_64' ]] || fail 'This builder requires x86-64 Linux.'
-for c in curl gpg gpgv sha256sum awk grep xorriso mksquashfs zstd df stat; do need "$c"; done
+for c in curl gpg gpgv sha256sum awk grep xorriso mksquashfs unsquashfs zstd df stat python3; do need "$c"; done
 [[ "$OUTPUT_DIR" != "$CACHE_DIR" && "$WORK_DIR" != "$OUTPUT_DIR" ]] || fail 'Output, cache and work directories must be separate.'
 mkdir -p -- "$OUTPUT_DIR" "$CACHE_DIR" "$WORK_DIR"
+# App/component layers are separately built in the isolated offline pipeline.
+# Refuse a source-only image: successful assembly must include native apps and
+# the actual dpkg-owned OREZ transaction. Check before any large download.
+for variable in OREZ_APP_LAYER OREZ_COMPONENT_LAYER OREZ_COMPONENT_REPORT; do
+  [[ -n "${!variable:-}" && -f "${!variable}" ]] || fail "Set $variable to the reviewed build input; see docs/LIVE_ASSEMBLY.md."
+done
+[[ ! -e "$OUTPUT" && ! -L "$OUTPUT" ]] || fail 'Refusing to replace an existing ISO.'
+python3 - "$REPO_ROOT" "$OREZ_APP_LAYER" "$OREZ_COMPONENT_LAYER" "$OREZ_COMPONENT_REPORT" <<'PY_INPUTS'
+import sys
+sys.path.insert(0, sys.argv[1] + '/build')
+from live_assembly import verify_components
+verify_components(*sys.argv[2:])
+print('Exact native application and dpkg-owned OREZ layers verified.')
+PY_INPUTS
 
 # Reserve 11 GiB for both images and scratch space, less already allocated input
 # bytes (capped at 5 GiB). A partial download is untrusted until the full signed
@@ -78,52 +92,11 @@ fi
 log 'Verifying upstream ISO against pinned, signature-authenticated SHA-256'
 printf '%s  %s\n' "$IMAGE_SHA256" "$SOURCE" | sha256sum -c - >/dev/null || fail 'ISO SHA-256 mismatch. Refusing to remix.'
 
-log 'Inspecting ISO for a compatible casper boot configuration'
-rm -f -- "$WORK_DIR/grub.cfg" "$WORK_DIR/zz-orez.squashfs"
-xorriso -osirrox on -indev "$SOURCE" -extract /boot/grub/grub.cfg "$WORK_DIR/grub.cfg" >/dev/null 2>&1 || fail 'Cannot inspect upstream GRUB configuration.'
-if grep -Eiq 'layerfs-path[= ]' "$WORK_DIR/grub.cfg"; then
-  fail 'Explicit casper layering found; this fast remix must be reviewed for compatibility.'
-fi
-xorriso -indev "$SOURCE" -ls /casper > "$WORK_DIR/upstream-casper-list.txt" 2>&1 || fail 'Cannot inspect upstream casper files.'
-grep -Fq 'filesystem.squashfs' "$WORK_DIR/upstream-casper-list.txt" || fail 'Expected casper/filesystem.squashfs missing. Stop rather than guessing.'
-
-log 'Creating small, original OREZ filesystem layer'
-stage_dir="$(mktemp -d "$WORK_DIR/overlay-stage.XXXXXX")"
-python3 "$REPO_ROOT/build/stage-overlay.py" --source "$REPO_ROOT/overlay" --output "$stage_dir/root" --live-owner
-mksquashfs "$stage_dir/root" "$WORK_DIR/zz-orez.squashfs" -comp xz -all-root -noappend -no-progress > "$WORK_DIR/squashfs.log" 2>&1 || fail 'Failed to construct squashfs layer.'
-rm -rf -- "$stage_dir"
-[[ -s "$WORK_DIR/zz-orez.squashfs" ]] || fail 'Empty OREZ layer.'
-
-log 'Creating separated OREZ installed-system payload (installer still disabled)'
-bash "$REPO_ROOT/build/build-install-payload.sh" "$WORK_DIR/orez-install.squashfs"
-[[ -s "$WORK_DIR/orez-install.squashfs" ]] || fail 'Missing installed-system candidate payload.'
-
-log 'Applying pinned local APT cache and explicit live-owner enrollment hooks'
-initrd_stage="$(mktemp -d "$WORK_DIR/initrd-stage.XXXXXX")"
-xorriso -osirrox on -indev "$SOURCE" -extract /casper/initrd "$initrd_stage/original" >/dev/null 2>&1
-python3 "$REPO_ROOT/build/patch-live-initrd.py" --input "$initrd_stage/original" \
-  --output "$initrd_stage/patched" --report "$initrd_stage/orez-initrd.json" --owner-setup
-
-xorriso -osirrox on -indev "$SOURCE" -extract /md5sum.txt "$initrd_stage/original-md5sum.txt" >/dev/null 2>&1
-python3 "$REPO_ROOT/build/update-media-checksums.py" --source "$initrd_stage/original-md5sum.txt" \
-  --output "$initrd_stage/md5sum.txt" --initrd "$initrd_stage/patched" \
-  --metadata "$initrd_stage/orez-initrd.json" --live "$WORK_DIR/zz-orez.squashfs" \
-  --install "$WORK_DIR/orez-install.squashfs"
-
-log 'Replaying upstream EFI/BIOS boot metadata while adding OREZ layer'
-rm -f -- "$OUTPUT.part"
-xorriso -indev "$SOURCE" -outdev "$OUTPUT.part" \
-  -map "$WORK_DIR/zz-orez.squashfs" /casper/zz-orez.squashfs \
-  -map "$WORK_DIR/orez-install.squashfs" /casper/orez-install.squashfs \
-  -map "$initrd_stage/md5sum.txt" /md5sum.txt \
-  -map "$initrd_stage/patched" /casper/initrd \
-  -map "$initrd_stage/orez-initrd.json" /casper/orez-initrd.json \
-  -boot_image any replay -commit > "$WORK_DIR/xorriso.log" 2>&1 \
-  || fail "Remix failed. See $WORK_DIR/xorriso.log"
-[[ -s "$OUTPUT.part" ]] || fail 'No output ISO written.'
-mv -f -- "$OUTPUT.part" "$OUTPUT"
-cp -- "$initrd_stage/orez-initrd.json" "$OUTPUT_DIR/orez-initrd.json"
-rm -rf -- "$initrd_stage"
+log 'Assembling exact base, native apps, dpkg-owned OREZ and owner-enrollment layers'
+export OREZ_SOURCE_COMMIT="${GITHUB_SHA:-$(git -C "$REPO_ROOT" rev-parse HEAD)}"
+python3 "$REPO_ROOT/build/assemble-live.py" --iso "$SOURCE" \
+  --apps "$OREZ_APP_LAYER" --components "$OREZ_COMPONENT_LAYER" \
+  --component-report "$OREZ_COMPONENT_REPORT" --output "$OUTPUT"
 
 log 'Checking ISO structure and computing digest'
 bash "$REPO_ROOT/build/check-iso.sh" "$OUTPUT"

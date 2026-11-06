@@ -1,5 +1,18 @@
 # OREZ OS — unresolved blockers
 
+## Integrated ISO and actual owner boot — 6 November 2026
+
+A new 5.46 GB integrated ISO passes exact-base, native-app, dpkg ownership,
+owner payload and media checks. The first actual UEFI run reached owner setup,
+authenticated tty2 login and the real OREZ SDDM screen; passwordless sudo was
+refused. **The first enrollment password was echoed on the console**, so
+security acceptance failed. A corrected image and 183 passing source tests now
+exist; its fresh VM result is recorded in the latest handoff/evidence ledger.
+See [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md). No installer/release is approved.
+These results supersede older “not assembled” and “no visible login” entries
+below; historical failures remain for traceability.
+
+
 ## Image applications checkpoint — 6 November 2026
 
 - CI timeout corrected: first run finished its checks but exceeded the 12-minute

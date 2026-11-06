@@ -26,7 +26,7 @@ class SyntheticInstallPayloadTests(unittest.TestCase):
         raw = MANIFEST.read_text().splitlines()
         return [line.strip() for line in raw if line.strip() and not line.lstrip().startswith("#")]
 
-    def test_inactive_profile_matches_exact_two_ordered_sources(self):
+    def test_inactive_profile_matches_exact_three_ordered_sources(self):
         actual = [
             line.rstrip()
             for line in PROFILE.read_text().splitlines()
@@ -40,6 +40,9 @@ class SyntheticInstallPayloadTests(unittest.TestCase):
             '    destination: ""',
             "    exclude:",
             '      - "etc/sysctl.d/20-apparmor.conf"',
+            '  - source: "/cdrom/casper/orez-apps.squashfs"',
+            '    sourcefs: "squashfs"',
+            '    destination: ""',
             '  - source: "/cdrom/casper/orez-install.squashfs"',
             '    sourcefs: "squashfs"',
             '    destination: ""',

@@ -4,8 +4,9 @@ Latest owner clarification (6 November 2026): use the official **native Linux Br
 
 6 November follow-up: [actual image application stage](IMAGE_APPLICATIONS.md)
 now installs Brave, VLC, SuperTux and PySide6 into the extracted base and packs
-an independently verified app layer. No new full ISO is assembled yet. Calendar/
-Reuz also pass offscreen component checks against those actual dependencies.
+an independently verified app layer. [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md) now
+records the integrated 5.46 GB development ISO and its actual boot evidence.
+Calendar/Reuz also pass offscreen component checks against those dependencies.
 
 **Binding owner scope update, 5 November 2026:** prioritize reliable boot,
 installation, authenticated login, the desktop, settings, native Brave/VLC/Linux
@@ -14,9 +15,9 @@ connectivity and security. Android emulation/Play Store/game presets move to a
 later upgrade. Web YouTube is explicitly authorized for this first release;
 this does not turn the future Android requirement into a browser shortcut.
 
-**Release is not ready.** This checkpoint implements and tests components. No
-new full ISO was built. Retained development ISOs predate these changes and must
-not be used for sensitive work or installed on the owner's SSD. A passing native
+**Release is not ready.** A new integrated live development ISO now includes
+these components and owner setup. It must not be used for sensitive work or
+installed on the owner's SSD. The older retained ISO predates owner hardening. A passing native
 window test does not certify boot, installation or physical hardware.
 
 ## Implemented changes and their evidence
@@ -134,11 +135,11 @@ returned success. Service verification does not execute startup ordering.
    alongside its evidence, two old ISOs and dependency/lab images. Publish the
    updated `environment/orez-qa.Dockerfile`; its new dependencies alone do not
    grant these host capabilities. No unsupported security bypass.
-2. Build a dependency-complete candidate with signed upstream Qt, native Brave,
-   VLC and a free native game such as SuperTux. The existing remix builder layers
-   OREZ source but does not yet provision the new application dependencies into
-   the pinned base. QA-container installation is not preinstallation in an ISO.
-   Capture SBOM, licences, package inventory, authentic input and output hashes.
+2. Integrated native Brave/VLC/SuperTux/Qt and dpkg-owned OREZ layers now pass
+   static checks in a new development ISO. Complete fresh signed-upstream
+   reconstruction, current base security updates, frozen inputs, SBOM and
+   source/licence retention. The local derivative reuses the recorded old ISO;
+   its hash binding is not a fresh upstream signature check.
 3. Qualify offline UEFI boot → local enrollment → SDDM → authenticated Plasma,
    incorrect-password denial, lock/unlock, logout/login and reboot. Check actual
    effective sudo/Polkit, network exposure and no autologin. Revalidate upstream

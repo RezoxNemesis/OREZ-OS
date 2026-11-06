@@ -1,5 +1,42 @@
 # OREZ OS — Verified Development Handoff
 
+## Integrated-image implementation in progress — 6 November 2026
+
+Last confirmed starting commit: `6a44b9cfd550fc606d3988aec9fcbb0d7773027a`,
+branch `feature/orez-live-foundation-20261104`; PR #1 reverified open/draft,
+main `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. New implementation commit/CI
+and final VM/evidence publication will be recorded in a follow-up entry.
+
+- Built real offline dpkg-owned OREZ layer: 38 package files plus database,
+  68 verified paths, 2,301 final package records; all old package records intact.
+- Built and independently audited a new 5,455,347,712-byte integrated ISO with
+  native apps, current owner setup, boot flag/menu fixes and media checksums.
+  First image SHA `82f5b470426776e1443755aba03de9b092c1a58619efc6d1181a5b882a4c56eb`.
+- First UEFI boot reached owner enrollment, authenticated tty2 login as UID1000,
+  passwordless sudo refusal, active SDDM and the actual OREZ login screen with
+  a desktop session. **First password entry was echoed**, so acceptance FAILS;
+  confirmation was hidden. No actual owner password was used. Diskless guest
+  stopped and its ephemeral credential file/container destroyed.
+- Corrected console startup ordering and rejected getpass's visible-input
+  fallback. Corrected ISO SHA
+  `4425b475c5f2081e7ce0b06b73b002825d27214475eb78a1d92489cb61eff72d`, same size;
+  source tests 183 pass, static ISO audit passes. Fresh UEFI run still in progress
+  at this commit. Do not infer a no-echo runtime pass from source tests.
+- Build scripts now require native app and dpkg-owned layers; old manual full
+  GitHub job does not yet provision those inputs. It fails early instead of
+  producing an obsolete incomplete image. No full CI build was dispatched.
+- New 304.3 MB normal-user QEMU/OVMF helper is built locally, not published.
+  Removed only recreated staging roots/gallery copies and the unused 4.17 GB
+  desktop QA image/cache, after retaining its ID and recipe; screenshots and
+  original ISO/app/package inputs remain. Actual 32 GiB storage remains tight.
+- No target SSD, Windows USB, firmware or real credentials touched. Installer
+  remains disabled; AI unavailable; Android deferred; repository public.
+- Continue from the fresh VM result, investigate/fix any remaining enrollment
+  or graphical authentication issue, then test native workloads and disposable
+  installation/recovery. See LIVE_ASSEMBLY.md for exact commands/hashes. Finish
+  source/licence/security-update/signing gates before offering an OS download.
+
+
 ### Verified publication and CI — latest, 6 November 2026
 
 - Implementation commit **f3e88c0c56485830d82f9ad09a69b7047a5cf197** pushed to

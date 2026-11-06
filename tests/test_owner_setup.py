@@ -81,10 +81,43 @@ class OwnerSetupTests(unittest.TestCase):
                 with contextlib.redirect_stdout(io.StringIO()), patch.multiple(owner, REQUEST=request, READY=Path(directory)/'absent'), \
                      patch.object(owner,'require_live'),patch.object(owner,'root_file'),patch.object(owner,'validate_owner'), \
                      patch.object(owner.sys.stdin,'isatty',return_value=True),patch.object(owner.sys.stdout,'isatty',return_value=True), \
-                     patch.object(owner.getpass,'getpass',side_effect=replies) as prompt,patch.object(owner,'complete') as complete:
+                     patch.object(owner.getpass,'getpass',side_effect=replies) as prompt,patch.object(owner,'prepare_console'),patch.object(owner,'complete') as complete:
                     with self.assertRaises((KeyboardInterrupt,ValueError)): owner.enroll()
                     complete.assert_not_called()
                     self.assertGreaterEqual(prompt.call_count, 1)
+
+    def test_unprotected_password_fallback_is_denied_before_input(self):
+        import warnings
+        def fallback(prompt):
+            warnings.warn('Cannot disable terminal echo', owner.getpass.GetPassWarning)
+            self.fail('Unprotected input must never be read')
+        with patch.object(owner.getpass, 'getpass', side_effect=fallback):
+            with self.assertRaisesRegex(ValueError, 'Cannot hide password'):
+                owner.hidden_password('Password: ')
+
+    def test_real_terminal_password_is_not_echoed(self):
+        import os, pty, select, sys, termios, time
+        master, slave = pty.openpty()
+        path = ROOT/'image/live-owner/usr/lib/orez/owner_setup.py'
+        code = "import importlib.util; s=importlib.util.spec_from_file_location('owner', %r); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); value=m.hidden_password('Password: '); print('READ-OK' if value=='ephemeral test input' else 'READ-FAILED')" % str(path)
+        process = None
+        captured = b''
+        try:
+            process = subprocess.Popen([sys.executable, '-c', code], stdin=slave, stdout=slave, stderr=slave, start_new_session=True)
+            deadline = time.monotonic()+5
+            while b'Password: ' not in captured:
+                self.assertLess(time.monotonic(), deadline, 'No password prompt')
+                if select.select([master], [], [], .1)[0]: captured += os.read(master, 4096)
+            self.assertFalse(termios.tcgetattr(slave)[3] & termios.ECHO)
+            os.write(master, b'ephemeral test input\n')
+            process.wait(timeout=5)
+            while select.select([master], [], [], .1)[0]: captured += os.read(master, 4096)
+            self.assertIn(b'READ-OK', captured)
+            self.assertNotIn(b'ephemeral test input', captured)
+            self.assertTrue(termios.tcgetattr(slave)[3] & termios.ECHO)
+        finally:
+            if process and process.poll() is None: process.kill(); process.wait()
+            os.close(master); os.close(slave)
 
     def test_owner_boot_components_never_enter_normal_package_allowlist(self):
         manifest=(ROOT/'image/installer/installed-files.txt').read_text()

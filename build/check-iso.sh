@@ -64,4 +64,5 @@ for name, local in zip(media.NAMES, ['initrd', 'orez-initrd.json', 'live.squashf
         raise SystemExit(f'Media checksum mismatch: {name}')
 print('PASS: four OREZ media-error checksums match extracted bytes (not an authenticity proof)')
 PY_CHECK
+python3 "$repo/build/verify-integrated-media.py" "$iso"
 echo 'Static ISO structure, install-safe payload and live-only installer guard: PASS (boot/install execution NOT tested)'

@@ -48,8 +48,9 @@ passwordless sudo and wildcard Polkit grants. Effective runtime behavior still
 requires testing, and these grants must be hardened before sensitive live use is
 qualified. See [the initrd audit](OFFLINE_BOOT_QA.md). The
 development ISO is not an owner-policy-certified system. New owner-enrollment
-source and isolated authentication tests now pass, but the retained ISOs predate
-that fix and full boot/effective-policy acceptance remains open. See
+source and isolated authentication tests now pass. The new integrated ISO
+includes that fix; the older retained parent predates it. Full boot/effective-policy
+acceptance remains open; consult LIVE_ASSEMBLY.md for the current runtime evidence. See
 [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md). Do not infer security
 from the installer blocker or the unprivileged OREZ component tests. No root
 grant or credential change was executed by this read-only source audit.

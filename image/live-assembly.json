@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "purpose": "Reviewed exact-base live assembly, not signed runtime updates",
+  "official_iso_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "development_parent_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "base_filesystem_bytes": 4381224960,
+  "base_status_sha256": "397f502b98cc8fe7721e6e09553d3887b8e0da1f5e231153b3534ceda0531b29",
+  "app_layer_sha256": "22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51",
+  "app_status_sha256": "16abaa0f6d649a998a7b68a31188835f2270568635dc8024a918a18aaad4f8ac",
+  "layer_order_low_to_high": [
+    "filesystem.squashfs",
+    "orez-apps.squashfs",
+    "orez-install.squashfs",
+    "zz-orez.squashfs"
+  ],
+  "installation_approved": false
+}
