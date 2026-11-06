@@ -86,7 +86,7 @@ public final class MainActivity extends Activity {
             progress.setIndeterminate(WriteService.running && maximum<=0);
             progress.setProgress(maximum>0?(int)Math.min(100,completed*100/maximum):0);
             cancelButton.setVisibility(WriteService.running?View.VISIBLE:View.GONE);
-            if(WriteService.running) refreshControls();
+            refreshControls();
             handler.postDelayed(this,600);
         }};
         handler.post(poll);
