@@ -402,8 +402,14 @@ public final class WriteService extends Service {
     }
 
     @Override public void onDestroy() {
+        if(running) {
+            cancelled=true;
+            success=false;
+            phase="Interrupted — USB not verified";
+            detail="Android stopped the writer service. The USB may be incomplete; recreate it from sector zero.";
+            running=false;
+        }
         stopLiveMonitor();
-        if(running) cancelled=true;
         if(wakeLock!=null && wakeLock.isHeld()) wakeLock.release();
         super.onDestroy();
     }
