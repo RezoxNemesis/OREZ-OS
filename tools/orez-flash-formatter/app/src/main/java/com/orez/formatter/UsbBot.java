@@ -161,7 +161,7 @@ public final class UsbBot implements AutoCloseable {
             throw transportFailure("USB completion signature or tag is invalid.");
         long residue=le32(csw,8);
         int status=csw[12]&255;
-        if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes during "+describe(cdb)+".");
+        if(residue!=0 && status==0) throw transportFailure("USB reports "+residue+" untransferred bytes during "+describe(cdb)+".");
         if(status==1) {
             if(!requestSenseOnCheckCondition) {
                 failed=true;
