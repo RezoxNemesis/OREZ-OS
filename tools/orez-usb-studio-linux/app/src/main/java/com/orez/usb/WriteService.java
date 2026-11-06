@@ -280,7 +280,7 @@ public final class WriteService extends Service {
 
     private JSONObject buildMonitorStatus() throws Exception {
         return new JSONObject()
-            .put("version","0.3.1")
+            .put("version","0.4.0")
             .put("phase",phase)
             .put("detail",sanitizeMonitorDetail(detail))
             .put("running",running)
@@ -338,7 +338,7 @@ public final class WriteService extends Service {
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
         String timeline;
         synchronized(REPORT_LOCK) { timeline=REPORT_HISTORY.toString(); }
-        return "OREZ USB Studio Linux 0.3.1 diagnostic report\n"+
+        return "OREZ USB Studio Linux 0.4.0 diagnostic report\n"+
             "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\n"+
             "Phase: "+phase+"\n"+
             "Detail: "+sanitizeMonitorDetail(detail)+"\n"+
