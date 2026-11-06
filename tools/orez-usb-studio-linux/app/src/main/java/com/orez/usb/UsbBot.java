@@ -11,7 +11,7 @@ public final class UsbBot implements AutoCloseable {
     private final UsbInterface usbInterface;
     private final UsbEndpoint bulkIn, bulkOut;
     private int tag = 1;
-    private boolean failed, closed;
+    private boolean failed, closed, cacheFlushSupported = true;
     private long sectors;
 
     public static boolean supports(UsbDevice device) {
@@ -112,12 +112,31 @@ public final class UsbBot implements AutoCloseable {
         }
     }
 
-    public synchronized void sync() throws IOException {
+    /**
+     * Flushes the device write cache when supported. Some flash controllers return
+     * ILLEGAL REQUEST for SYNCHRONIZE CACHE; in that case callers must still perform
+     * a full read-back and advise a physical eject/reconnect before booting.
+     */
+    public synchronized boolean sync() throws IOException {
+        if(!cacheFlushSupported) return false;
         byte[] cdb=new byte[10];cdb[0]=0x35;
-        command(cdb,null,false);
+        try {
+            command(cdb,null,false);
+            return true;
+        } catch(ScsiCheckCondition e) {
+            if(ScsiSense.isUnsupportedCacheFlush(e.sense.senseKey,e.sense.asc)) {
+                cacheFlushSupported=false;
+                return false;
+            }
+            throw e;
+        }
     }
 
     private void command(byte[] cdb,byte[] data,boolean read) throws IOException {
+        commandInternal(cdb,data,read,true);
+    }
+
+    private void commandInternal(byte[] cdb,byte[] data,boolean read,boolean allowSense) throws IOException {
         ensureUsable();
         if(cdb==null || cdb.length<1 || cdb.length>16) throw new IOException("Invalid SCSI command.");
         int size=data==null?0:data.length;
@@ -131,20 +150,59 @@ public final class UsbBot implements AutoCloseable {
         cbw[14]=(byte)cdb.length;
         System.arraycopy(cdb,0,cbw,15,cdb.length);
         int sent=bulkFully(bulkOut,cbw,0,cbw.length,10000);
-        if(sent!=31) throw transportFailure("USB command block returned "+sent+" of 31 bytes.");
+        if(sent!=31) throw transportFailure("USB command block returned "+sent+" of 31 bytes for "+describe(cdb)+".");
         if(size>0) {
             int actual=bulkFully(read?bulkIn:bulkOut,data,0,size,30000);
-            if(actual!=size) throw transportFailure((read?"USB read":"USB write")+" data stage returned "+actual+" of "+size+" bytes.");
+            if(actual!=size) throw transportFailure((read?"USB read":"USB write")+" data stage returned "+actual+" of "+size+" bytes for "+describe(cdb)+".");
         }
         byte[] csw=new byte[13];
         int got=bulkFully(bulkIn,csw,0,csw.length,10000);
-        if(got!=13) throw transportFailure("USB completion block returned "+got+" of 13 bytes.");
+        if(got!=13) throw transportFailure("USB completion block returned "+got+" of 13 bytes for "+describe(cdb)+".");
         if(le32(csw,0)!=0x53425355L || le32(csw,4)!=(current&0xffffffffL))
-            throw transportFailure("USB completion signature or tag is invalid.");
+            throw transportFailure("USB completion signature or tag is invalid for "+describe(cdb)+".");
         long residue=le32(csw,8);
         int status=csw[12]&255;
-        if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes.");
-        if(status!=0) throw transportFailure(status==1?"The USB device rejected a SCSI command. No automatic retry was attempted.":"USB Mass Storage entered a phase error. No automatic retry was attempted.");
+        if(status==1) {
+            if(!allowSense) {
+                failed=true;
+                throw new IOException("The drive also rejected SCSI REQUEST SENSE after "+describe(cdb)+". No retry was attempted.");
+            }
+            ScsiSense.Info sense;
+            try {
+                sense=requestSense();
+            } catch(IOException e) {
+                failed=true;
+                throw new IOException(describe(cdb)+" was rejected (CHECK CONDITION), and REQUEST SENSE failed: "+e.getMessage());
+            }
+            throw new ScsiCheckCondition(describe(cdb),sense);
+        }
+        if(status!=0) throw transportFailure("USB Mass Storage reported phase error during "+describe(cdb)+".");
+        if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes during "+describe(cdb)+".");
+    }
+
+    private ScsiSense.Info requestSense() throws IOException {
+        byte[] cdb=new byte[6];cdb[0]=0x03;cdb[4]=18;
+        byte[] response=new byte[18];
+        commandInternal(cdb,response,true,false);
+        return ScsiSense.decode(response);
+    }
+
+    private static String describe(byte[] cdb) {
+        int op=cdb[0]&255;
+        if(op==0x25) return "SCSI READ CAPACITY(10)";
+        if(op==0x28 || op==0x2a)
+            return (op==0x28?"SCSI READ(10)":"SCSI WRITE(10)")+" at LBA "+be32(cdb,2);
+        if(op==0x35) return "SCSI SYNCHRONIZE CACHE(10)";
+        if(op==0x03) return "SCSI REQUEST SENSE";
+        return "SCSI opcode 0x"+String.format(java.util.Locale.ROOT,"%02X",op);
+    }
+
+    private static final class ScsiCheckCondition extends IOException {
+        final ScsiSense.Info sense;
+        ScsiCheckCondition(String command,ScsiSense.Info sense) {
+            super(command+" was rejected by the drive: "+sense.description()+". No automatic retry was attempted.");
+            this.sense=sense;
+        }
     }
 
     /** Android bulkTransfer may legally complete only part of a requested data stage. */
