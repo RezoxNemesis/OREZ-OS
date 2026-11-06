@@ -1,5 +1,90 @@
 # OREZ OS — Verified Development Handoff
 
+## Final verified publication — 6 November 2026
+
+**OREZ is not ready for PC installation.** Current implementation commit:
+`ccde111404f75a32a7f5cc97274d067c42034556`, branch
+`feature/orez-live-foundation-20261104`. PR #1 remains open/draft/unmerged;
+main is `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. The repository remains public.
+This final follow-up changes documentation/evidence only and uses `[skip ci]`;
+verify actual branch HEAD on resume. No CI result is invented for that follow-up.
+
+Exact implementation CI **42164885745 success**: **187 source tests, 38 package
+paths, 68 browser-preview cases**. Full ISO job skipped. CI screenshot artifact
+**13477989561**, 211,372,300 bytes, expires 20 November 2026 at 04:54:04 UTC;
+SHA256 `97c434ba6e2b8c59c5c7fd265f0ac645544335ded268c2296ad5bdba114e9846`.
+https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42164885745
+
+Published screenshot archive commit `564b9298062ff811b3955c976aecf74e90b03a9e`,
+branch `downloads/integrated-live-2026-11-06`. Direct download:
+https://github.com/RezoxNemesis/OREZ-OS/archive/564b9298062ff811b3955c976aecf74e90b03a9e.zip
+**66,988,014 bytes; 355 original unique PNGs, 499 capture references, 26 local
+runs, all six failed commands retained.** Actual downloaded ZIP passed every
+PNG SHA-256/decoding check. Archive SHA256:
+`9bca756be0921250953f710b4dd4a41bf45e85aad208dac19f73d8666af089c2`.
+Phone-readable tour:
+https://github.com/RezoxNemesis/OREZ-OS/blob/564b9298062ff811b3955c976aecf74e90b03a9e/TOUR.md
+The subsequent qa11-27 download check is outside that frozen ZIP; its PNG/result
+are in docs/evidence/2026-11-06-integrated-live. CI evidence is separate too.
+
+Current development ISO: **5,455,347,712 bytes**, SHA256
+`e9d423a9d2425e292b2091deded5d50a1d9b34d4e58cb1741a883ae21f1ce04c`,
+`dist/assembly-lab/splash-wait/OREZ-OS-0.1-live-amd64.iso`. It has integrated
+native dependencies, dpkg-owned OREZ files and live owner setup; no public ISO
+is released. Original base/parent, app/component layers, package pool and local
+build reports remain. The first failed integrated ISO was retired after hashing;
+its evidence/metadata remain. The second failed image is retained for audit.
+
+Four real UEFI observations: first two exposed initial dummy enrollment input;
+subsequent Plymouth-exit correction concealed both observed entries. Third run
+proves console and SDDM/PAM authentication, wrong-password denial, refusal of
+passwordless sudo and explicit-password elevation. Plasma started but no usable
+desktop. Fourth same-image software-VirGL run proves console owner login; no
+usable desktop. QMP/scrot collector timeouts ended those probes through cleanup,
+not proved guest crashes. Final capture-only timeout handling has local/CI
+regressions but no subsequent full boot. Exact selected guest journal lines and
+source-log hash are retained in guest-journal-excerpt.json. A truncated final
+PNG is recorded and retained locally, excluded from the decodable image archive.
+
+All four VM containers/private dummy credentials and the assembly helper were
+removed after evidence collection. No task VM or server remains running. The
+737,968,451-byte VM-tools image/recipe is built locally, not published. No host
+security policy, actual owner credential, physical device, NVMe or Windows USB
+was touched. Around 4 GiB lab disk remained before final documentation.
+
+**Exact next work:**
+
+1. Read this entry, OWNER_CONTROL.md, IMAGE_APPLICATIONS.md and LIVE_ASSEMBLY.md;
+   verify remote branch/PR/CI and local artifact digests before editing.
+2. Provision the documented supported lab: KVM access for the test user, supported
+   rendering, at least 80 GiB storage and enforced resource limits. Current helper
+   explicitly uses TCG; add an opt-in, preflight-verified KVM profile before
+   claiming accelerated tests. Do not fake devices or weaken security. Existing
+   environment recipes alone cannot supply missing host hardware capabilities.
+3. Diagnose graphical startup with a new controlled hypothesis and matched
+   upstream comparison. Verify the actual desktop, native Brave sandbox,
+   VLC/game workloads, owner lock/logout/reboot and effective sudo/Polkit/network
+   controls. Capture actual screens, failures and logs; TCG elapsed time is not
+   a performance verdict for the Ryzen/RTX machine.
+4. Complete authenticated dependency preparation in the full build pipeline,
+   fresh signed-upstream/security-update reconstruction and reproducibility.
+   The old full-image workflow still lacks layer inputs; do not rerun blindly.
+5. Implement and test actual Calamares installation, owner-chosen account,
+   explicit target confirmation, non-target preservation, encryption, reboot,
+   failed-update recovery and backup restore on disposable virtual disks.
+   Only then qualify the target hardware and finish source/licensing/signing,
+   owner-access and production update gates. Keep installer disabled meanwhile.
+6. AI permission-controlled integration/automatic-defense work remains incomplete;
+   consumer Android emulation is deferred. Do not turn planned features into
+   completion claims. Publish an OS download only after the actual release gates.
+
+Reusable next-chat prompt: “Resume RezoxNemesis/OREZ-OS from docs/AI_HANDOFF.md.
+Verify actual branch, PR #1 and exact-commit CI first. Current implementation is
+ccde111, ISO e9d423a..., screenshot archive 564b9298. Owner login works in scoped
+actual VM tests, usable booted desktop and installation remain blocked. Continue
+the next verified engineering task without changing owner authorization or
+physical disks. Preserve screenshots/failures and update the handoff.”
+
 ## Fourth UEFI run complete — 6 November 2026, latest
 
 Last confirmed source checkpoint `7d6b3237eb2f51c8fe4629d7c3b9c3109244ceab`;

@@ -202,7 +202,9 @@ qualify a 6 GiB desktop workload, host cgroup enforcement or RTX acceleration.
 Recording frames successfully never sets `desktop_verified` to true. Optional
 `--graphics virgl` verifies host llvmpipe and captures the real SDL window using
 a private Xauthority display; it does not provide hardware acceleration. Missed
-QMP captures are recorded without killing a VM during operator input.
+QMP captures are recorded without killing a VM during operator input. SDL capture
+timeouts are now recorded too, with partial output removed; the latter correction
+has source regression coverage but no subsequent full boot.
 
 Before a full OS download: successful owner enrollment/login and effective
 security tests, native desktop workloads, disposable-disk install/reboot and

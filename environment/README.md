@@ -16,6 +16,12 @@ VM helper. Supply the same required ISO/hash/output/window arguments as 2D.
 The harness verifies host llvmpipe, uses a private Xauthority cookie, and captures
 the actual SDL window owned by its QEMU process. No cookie value is exported.
 This supplies a virtual 3D interface, not hardware-accelerated GPU performance.
+Both QMP and SDL capture failures are recorded without qualifying a frame. The
+latest SDL timeout correction removes partial PNGs and continues; source tests
+cover timeout/retry and refusal of an ambiguous window. It has not had another
+full boot. All four current VM containers and the assembly helper are stopped
+and removed after evidence collection; the two dependency image recipes/IDs and
+packed build inputs remain.
 QMP input should use immediate key down/up events; timed holds produced repeats
 under TCG. Never infer password validity from a failed automation attempt.
 

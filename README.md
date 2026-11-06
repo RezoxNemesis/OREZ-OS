@@ -5,17 +5,17 @@
 The image contains the Kubuntu foundation, native Brave/VLC/SuperTux/Qt,
 dpkg-owned OREZ Calendar/Reuz/Store components, approved wallpapers and local
 owner enrollment. [Exact build inputs, hashes and scope](docs/LIVE_ASSEMBLY.md).
-The latest observed UEFI boot concealed both enrollment password entries,
+Observed UEFI tests concealed both enrollment password entries,
 authenticated the new owner at the console and graphical login, and refused
 passwordless sudo. A usable desktop in the booted image is still unqualified;
-software graphics and startup diagnostics are in progress. Installation stays disabled.
+software graphics and startup remain unresolved. Installation stays disabled.
 
 [Start with the verified handoff](docs/AI_HANDOFF.md). It distinguishes source,
 package, image, actual boot, desktop, installation and physical-hardware results.
 [Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
 
-[CI on baf7fc3](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42160542537)
-passes **185 source tests, the 38-file package audit and 68 browser cases**.
+[CI on ccde111](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42164885745)
+passes **187 source tests, the 38-file package audit and 68 browser cases**.
 The full ISO job is skipped; these checks do not certify an installed OS.
 
 ## Scope and personality
@@ -48,8 +48,10 @@ firmware or real credential is used by the disposable VM tests.
 The [previous 29-screen component tour](https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md)
 has [245 original PNGs in a direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip).
 It labels native-container, test-mode, report and historical VM evidence.
-Current integrated-boot captures and all failures are retained; consult the
-latest handoff for their published archive and exact interpretation.
+[Current integrated-image evidence: 355 original PNGs, about 67 MB](https://github.com/RezoxNemesis/OREZ-OS/archive/564b9298062ff811b3955c976aecf74e90b03a9e.zip)
+contains 26 local runs and all six failed commands. [Actual five-screen boot tour](https://github.com/RezoxNemesis/OREZ-OS/blob/564b9298062ff811b3955c976aecf74e90b03a9e/TOUR.md).
+Every image hash/PNG decode was verified after downloading the GitHub ZIP;
+[verification and scope](docs/evidence/2026-11-06-integrated-live/README.md).
 
 The [phone-friendly preview](preview/README.md) is a separate browser/PWA
 prototype. `npm run preview:build` exports its portable HTML. Preview screenshots
