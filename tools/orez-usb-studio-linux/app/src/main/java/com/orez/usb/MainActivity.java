@@ -100,7 +100,7 @@ public final class MainActivity extends Activity {
         LinearLayout page=new LinearLayout(this); page.setOrientation(LinearLayout.VERTICAL);
         page.setPadding(dp(20),dp(22),dp(20),dp(32)); scroll.addView(page); setContentView(scroll);
 
-        TextView brand=label("OREZ   /   USB STUDIO     0.3.1",12,MINT);
+        TextView brand=label("OREZ   /   USB STUDIO     0.4.0",12,MINT);
         brand.setLetterSpacing(.13f); page.addView(brand);
         TextView title=label("Linux installer.\nWritten the right way.",29,TEXT);
         title.setTypeface(Typeface.DEFAULT,Typeface.BOLD); page.addView(title);
