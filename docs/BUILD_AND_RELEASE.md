@@ -1,5 +1,11 @@
 # First real live ISO build — operating rules
 
+Latest image work (6 November 2026): [application dependency stage](IMAGE_APPLICATIONS.md)
+adds an authenticated package resolver, offline isolated installation and exact
+additive SquashFS verification. Actual 383,488,000-byte layer built; full ISO
+integration and boot/installer qualification remain open. Use the small image
+tools recipe rather than copying the large desktop QA filesystem into a builder.
+
 Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
 
 Offline-startup follow-up: [initrd patch and integrity rules](OFFLINE_BOOT_QA.md)
@@ -29,7 +35,7 @@ passed all 23 paths against the checksum-verified pinned Kubuntu image, with no
 missing, unexpected or overwritten paths. Its manifest matches the new package.
 This is a static path gate, not Calamares, ownership, encryption or recovery proof.
 
-`packaging/orez-shell.version` is the single version source (currently `0.1.0-2`).
+`packaging/orez-shell.version` is the single version source (currently `0.1.0-4`).
 Use `python3 build/package-info.py path` to find the built artifact; never select
 an arbitrary old `.deb` from dist. Pass `--version` to the manifest audit so stale
 packages are rejected. `orezctl version` reads the actual installed dpkg state.

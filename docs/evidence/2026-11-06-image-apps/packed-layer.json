@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "purpose": "orez-experimental-app-layer",
+  "source_iso_sha256": "8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9",
+  "base_status_sha256": "397f502b98cc8fe7721e6e09553d3887b8e0da1f5e231153b3534ceda0531b29",
+  "installed_status_sha256": "16abaa0f6d649a998a7b68a31188835f2270568635dc8024a918a18aaad4f8ac",
+  "profile_sha256": "7663d2b633a1df84806225c6a1165aeb0f541a3b4589cbdb89e59da3fd6b5e1a",
+  "layer_sha256": "22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51",
+  "layer_bytes": 383488000,
+  "source_date_epoch": 1793923200,
+  "paths_verified": 5624,
+  "original_xattr_paths": [
+    "usr/bin/kwin_wayland",
+    "usr/bin/mtr-packet",
+    "usr/bin/ping",
+    "usr/lib/snapd/snap-confine",
+    "usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-ptp-helper",
+    "usr/lib/x86_64-linux-gnu/libexec/ksysguard/ksgrd_network_helper",
+    "usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdevil"
+  ],
+  "shadowed_original_xattrs": [],
+  "roundtrip_metadata_and_content_equal": true,
+  "full_iso_built": false,
+  "boot_tested": false,
+  "installation_approved": false
+}

@@ -1,0 +1,9 @@
+{
+  "path": "dist/vm-candidate/OREZ-OS-0.1-offline-cache-amd64.iso",
+  "bytes": 5070782464,
+  "sha256": "31549d2026ce81bb7fc0d5bc821801690e97528881cf3f5de093d494e349a705",
+  "action": "remove superseded generated cache-only ISO to fit actual filesystem staging",
+  "parent_retained": "dist/vm-candidate/OREZ-OS-0.1-live-amd64.iso",
+  "evidence_retained": "docs/evidence/2026-11-05-offline-boot",
+  "installation_approved": false
+}

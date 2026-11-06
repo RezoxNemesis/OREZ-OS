@@ -1,5 +1,10 @@
 # First PC release: owner login and daily applications
 
+6 November follow-up: [actual image application stage](IMAGE_APPLICATIONS.md)
+now installs Brave, VLC, SuperTux and PySide6 into the extracted base and packs
+an independently verified app layer. No new full ISO is assembled yet. Calendar/
+Reuz also pass offscreen component checks against those actual dependencies.
+
 **Binding owner scope update, 5 November 2026:** prioritize reliable boot,
 installation, authenticated login, the desktop, settings, native Brave/VLC/Linux
 games, web YouTube, OREZ themes, Calendar, Reuz Time, permission-controlled AI,

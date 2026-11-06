@@ -1,5 +1,13 @@
 # Publish the OREZ test environment
 
+For image construction, use the separate **239.7 MB** helper in
+`environment/orez-image-tools.Dockerfile`. It was built locally as
+`orez-image-tools:20261105`; it has APT/Python, dpkg, GnuPG, xorriso and SquashFS
+tools, with no desktop. [Image-stage instructions](../docs/IMAGE_APPLICATIONS.md)
+cover online resolution, offline chroot installation, metadata preservation and
+storage limits. This avoids another full copy of the 4+ GB desktop QA image
+under Docker VFS. Neither image was published by this session.
+
 These are **development dependencies**, not a release ISO or a promise that
 hardware capabilities can be created inside a container. The owner authorized
 installing missing test tools and intends to publish the environment. No cloud

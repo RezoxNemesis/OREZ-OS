@@ -1,5 +1,24 @@
 # OREZ OS — unresolved blockers
 
+## Image applications checkpoint — 6 November 2026
+
+- Native browser/player/game/Qt dependencies are now genuinely installed in the
+  extracted ISO base and packed as a verified additive layer. The production
+  builder still needs exact-base binding, correct layer ordering/manifests,
+  current owner initrd/payload assembly and renewed media checksums. No new full
+  ISO, authenticated graphical boot or safe installer is established.
+- The isolated chroot cannot load AppArmor or qualify normal Brave wrapper/
+  sandbox launch; SuperTux needs its documented explicit data directory there.
+  Version output is not playback/gameplay. Qt screenshots are offscreen
+  components using the actual installed dependencies, not the booted desktop.
+- 32 GiB storage is inadequate for retaining multiple full ISO/staged/VM images.
+  Only the checksum-verified superseded cache-only development ISO was removed
+  this turn; its reports/checksum remain. The original older ISO is retained and
+  predates owner-policy hardening. Neither artifact is an installation release.
+- Package versions/index hashes are retained, but snapshot repositories, complete
+  source/licence inventory, signed releases and current base security-update
+  qualification remain open. See [IMAGE_APPLICATIONS.md](IMAGE_APPLICATIONS.md).
+
 Latest owner scope (5 November 2026): **finish the first PC release before Android emulation.** Native Brave/VLC/Linux games, explicitly authorized web YouTube, owner login, OREZ Calendar/Reuz, themes, AI permissions and connectivity take priority. See [FIRST_PC_RELEASE.md](FIRST_PC_RELEASE.md) for implementation, test limits and blocking gates. No installable release is approved. This supersedes older Android-first and web-YouTube-prohibited statements for the first release only.
 
 ## Offline startup follow-up — 5 November 2026, latest

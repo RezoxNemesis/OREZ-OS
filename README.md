@@ -1,5 +1,10 @@
 # OREZ OS — Real Linux Build (0.1 Live Candidate)
 
+6 November image work: [actual native application layer](docs/IMAGE_APPLICATIONS.md).
+Brave/VLC/SuperTux/Qt dependencies install offline in the real extracted base;
+the 383.5 MB additive SquashFS passes independent content/metadata verification.
+This layer is not yet assembled into a new ISO or boot/installation-qualified.
+
 Latest first-PC work: [owner enrollment, native Calendar/Reuz, themes and release gates](docs/FIRST_PC_RELEASE.md).
 The owner deferred Android emulation/Play/presets until a later upgrade and now
 explicitly permits web YouTube for the first PC release. Official Linux apps
