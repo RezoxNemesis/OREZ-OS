@@ -275,7 +275,7 @@ public final class WriteService extends Service {
         return new JSONObject()
             .put("version","0.3.1")
             .put("phase",phase)
-            .put("detail",detail)
+            .put("detail",sanitizeMonitorDetail(detail))
             .put("running",running)
             .put("success",success)
             .put("isoSha256",reportIsoSha256)
@@ -291,13 +291,21 @@ public final class WriteService extends Service {
             .put("checksumSource",checksumMatched?"user-entered reference checksum":"");
     }
 
+    private static String sanitizeMonitorDetail(String value) {
+        if(value==null) return "";
+        String safe=value
+            .replaceAll("(?i)(content|file)://[^\\\\s]+","[redacted URI]")
+            .replaceAll("(?i)(/storage/[^\\\\s]+|/sdcard/[^\\\\s]+|/data/[^\\\\s]+|/dev/bus/usb/[^\\\\s]+)","[redacted path]");
+        return safe.length()>600?safe.substring(0,600):safe;
+    }
+
     public static String diagnosticReport() {
         int percent=total>0?(int)Math.min(100,done*100/total):0;
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
         return "OREZ USB Studio Linux 0.3.1 diagnostic report\\n"+
             "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\\n"+
             "Phase: "+phase+"\\n"+
-            "Detail: "+detail+"\\n"+
+            "Detail: "+sanitizeMonitorDetail(detail)+"\\n"+
             "Running: "+running+"\\n"+
             "Success: "+success+"\\n"+
             "Progress: "+done+" / "+total+" bytes ("+percent+"%)\\n"+
