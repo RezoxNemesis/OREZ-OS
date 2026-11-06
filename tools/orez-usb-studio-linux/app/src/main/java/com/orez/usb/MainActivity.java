@@ -100,7 +100,7 @@ public final class MainActivity extends Activity {
         LinearLayout page=new LinearLayout(this); page.setOrientation(LinearLayout.VERTICAL);
         page.setPadding(dp(20),dp(22),dp(20),dp(32)); scroll.addView(page); setContentView(scroll);
 
-        TextView brand=label("OREZ   /   USB STUDIO     0.3.0",12,MINT);
+        TextView brand=label("OREZ   /   USB STUDIO     0.3.1",12,MINT);
         brand.setLetterSpacing(.13f); page.addView(brand);
         TextView title=label("Linux installer.\nWritten the right way.",29,TEXT);
         title.setTypeface(Typeface.DEFAULT,Typeface.BOLD); page.addView(title);
@@ -147,6 +147,7 @@ public final class MainActivity extends Activity {
         monitorPairCode.setHint("Paste private pairing code from ChatGPT");
         monitorPairCode.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
         monitorPairCode.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
+        monitorPairCode.setSaveEnabled(false);
         monitorPairCode.setPadding(dp(13),dp(11),dp(13),dp(11));monitorPairCode.setBackground(round(CARD,12));
         page.addView(monitorPairCode,new LinearLayout.LayoutParams(-1,dp(54)));
         monitorPairCode.setEnabled(false);
@@ -359,8 +360,10 @@ public final class MainActivity extends Activity {
                 .putExtra("expectedSha256",isoHash);
             if(monitorConsent!=null && monitorConsent.isChecked())
                 job.putExtra("liveMonitorPairCode",monitorPairCode.getText().toString().trim());
-            try { startForegroundService(job); }
-            catch(Exception e) { toast("Could not start the foreground USB writer: "+e.getMessage()); }
+            try {
+                startForegroundService(job);
+                if(monitorConsent!=null && monitorConsent.isChecked() && monitorPairCode!=null) monitorPairCode.setText("");
+            } catch(Exception e) { toast("Could not start the foreground USB writer: "+e.getMessage()); }
             dialog.dismiss();
             refreshControls();
         }));
