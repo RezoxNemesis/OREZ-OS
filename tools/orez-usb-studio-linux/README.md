@@ -1,14 +1,18 @@
-# OREZ USB Studio Linux 0.4.0
+# OREZ USB Studio Linux 0.4.1
 
 A phone-first Android USB recovery and writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
 
-## USB recovery\n\nThe separate **OREZ USB Recovery** launcher entry detects USB Mass Storage BOT devices even when Android Files cannot mount their damaged partition layout. After explicit device selection and typing `FORMAT`, it replaces the previous hybrid/partition metadata with a conventional MBR + FAT32 volume, initializes both FAT copies and verifies the MBR, FAT32 boot sector and FAT table by reading them back. This is a destructive operation and is not a physical flash-memory repair. It requires a 512-byte-sector BOT device and USB OTG permission.\n\n## Writing model
+## USB recovery
+
+The separate **OREZ USB Recovery** launcher entry detects USB Mass Storage BOT devices even when Android Files cannot mount their damaged partition layout. After explicit device selection and typing `FORMAT`, it replaces the previous hybrid/partition metadata with a conventional MBR + FAT32 volume, initializes both FAT copies and verifies the MBR, FAT32 boot sector and FAT tables by reading them back. This is a destructive operation and is not a physical flash-memory repair. It requires a 512-byte-sector BOT device and USB OTG permission.
+
+## Writing model
 
 Ubuntu/Kubuntu desktop ISOs are hybrid disk images. The app writes the original image to the USB device from byte zero, preserving its embedded partition map, ISO9660 data and boot structures. It does not extract the ISO, reformat it as FAT32, create a new partition table, or split files.
 
-Before erasing, it checks the ISO9660 volume descriptor, El Torito catalogue checksum, hybrid MBR/GPT evidence, the casper kernel/filesystem files and the x86_64 EFI loader. It calculates SHA-256 and requires the user to provide the matching value from the official distribution checksum file. It confirms USB capacity and requires typing ERASE.
+Before erasing, it checks the ISO9660 volume descriptor, El Torito catalogue checksum, hybrid MBR/GPT evidence, the casper kernel/filesystem files and the x86_64 EFI loader. It calculates SHA-256 and requires the user to provide the matching value from the official distribution checksum file. It confirms USB capacity and requires typing `ERASE`.
 
-The writer uses Android USB Host API with USB Mass Storage Bulk-Only Transport and SCSI READ(10)/WRITE(10), in bounded 16 KiB transfers. It flushes the device and performs a complete sector-by-sector read-back comparison, calculating SHA-256 again. A failed or interrupted write is reported as incomplete; no write retry or automatic resume occurs. Android bulk data stages are now drained across short `bulkTransfer` completions instead of assuming one call transfers the entire SCSI stage.
+The writer uses Android USB Host API with USB Mass Storage Bulk-Only Transport and SCSI READ(10)/WRITE(10), in bounded 16 KiB transfers. It requests SCSI SYNCHRONIZE CACHE when supported. Some USB flash controllers reject that optional command; 0.4.1 identifies this response, continues to a complete sector-by-sector read-back comparison, and instructs the user to safely eject and reconnect before booting. Rejected data writes and transport errors still stop the job. It calculates SHA-256 again over the read-back data. A failed or interrupted write is reported as incomplete; no write retry or automatic resume occurs. Android bulk data stages are drained across short `bulkTransfer` completions instead of assuming one call transfers the entire SCSI stage. SCSI REQUEST SENSE details identify the rejected command and, where available, its sense key and ASC/ASCQ.
 
 ## Optional OREZ Live Monitor
 
@@ -30,8 +34,8 @@ UAS-only devices, 4K logical-sector devices, non-hybrid images, ARM images and n
 
 ## Safety
 
-The selected USB is completely overwritten from LBA 0 through the end of the ISO image. Verify its product name and capacity before typing ERASE. Back up all data first. Disconnecting or cancelling during writing leaves incomplete media. Internet permission is used only when Live Monitor is explicitly enabled. The app does not upload the ISO or its contents. Checksum authenticity depends on obtaining the expected SHA-256 from the official distribution source.
+The selected USB is overwritten from LBA 0 through the end of the ISO image. Verify its product name and capacity before typing ERASE. Back up all data first. Disconnecting or cancelling during writing leaves incomplete media. Internet permission is used only when Live Monitor is explicitly enabled. The app does not upload the ISO or its contents. Checksum authenticity depends on obtaining the expected SHA-256 from the official distribution source.
 
 ## Build
 
-Requires JDK 17, Android SDK platform 35, Android Gradle Plugin 8.7.3 and Gradle 8.9. The GitHub Actions workflow builds, runs unit tests, signs the debug APK with the ephemeral Android debug key, and uploads an APK artifact. Users uninstall a prior differently signed build before installing this build.
+Requires JDK 17, Android SDK platform 35, Android Gradle Plugin 8.7.3 and Gradle 8.9. The GitHub Actions workflow runs unit tests, builds the debug APK, verifies its signature, and uploads the APK artifact. Debug APKs use the CI debug signing key; uninstall a differently signed prior build before installing this APK.
