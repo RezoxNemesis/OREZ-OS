@@ -3,7 +3,7 @@ package com.orez.formatter;
 import android.hardware.usb.*;
 import java.io.IOException;
 
-/** Strict USB Mass Storage Bulk-Only Transport, SCSI transparent command set, LUN 0. */
+/** USB Mass Storage Bulk-Only Transport with SCSI sense diagnostics. */
 public final class UsbBot implements AutoCloseable {
     public static final int MAX_TRANSFER = 16 * 1024;
     private static final int BLOCK = 512;
@@ -11,7 +11,7 @@ public final class UsbBot implements AutoCloseable {
     private final UsbInterface usbInterface;
     private final UsbEndpoint bulkIn, bulkOut;
     private int tag = 1;
-    private boolean failed, closed;
+    private boolean failed, closed, cacheFlushSupported = true;
     private long sectors;
 
     public static boolean supports(UsbDevice device) {
@@ -112,12 +112,30 @@ public final class UsbBot implements AutoCloseable {
         }
     }
 
-    public synchronized void sync() throws IOException {
+    /**
+     * Returns false only when the device explicitly reports that SYNCHRONIZE CACHE
+     * is unsupported. The formatter must still complete read-back verification.
+     */
+    public synchronized boolean sync() throws IOException {
+        if(!cacheFlushSupported) return false;
         byte[] cdb=new byte[10];cdb[0]=0x35;
-        command(cdb,null,false);
+        try {
+            command(cdb,null,false);
+            return true;
+        } catch(ScsiCheckCondition e) {
+            if(e.senseKey==0x05 && (e.asc==0x20 || e.asc==0x24)) {
+                cacheFlushSupported=false;
+                return false;
+            }
+            throw e;
+        }
     }
 
     private void command(byte[] cdb,byte[] data,boolean read) throws IOException {
+        commandInternal(cdb,data,read,true);
+    }
+
+    private void commandInternal(byte[] cdb,byte[] data,boolean read,boolean requestSenseOnCheckCondition) throws IOException {
         ensureUsable();
         if(cdb==null || cdb.length<1 || cdb.length>16) throw new IOException("Invalid SCSI command.");
         int size=data==null?0:data.length;
@@ -143,11 +161,63 @@ public final class UsbBot implements AutoCloseable {
             throw transportFailure("USB completion signature or tag is invalid.");
         long residue=le32(csw,8);
         int status=csw[12]&255;
-        if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes.");
-        if(status!=0) throw transportFailure(status==1?"The USB device rejected a SCSI command. No automatic retry was attempted.":"USB Mass Storage entered a phase error. No automatic retry was attempted.");
+        if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes during "+describe(cdb)+".");
+        if(status==1) {
+            if(!requestSenseOnCheckCondition) {
+                failed=true;
+                throw new IOException("The drive also rejected REQUEST SENSE after "+describe(cdb)+". Reconnect the USB; no retry was attempted.");
+            }
+            Sense sense;
+            try { sense=requestSense(); }
+            catch(IOException e) {
+                failed=true;
+                throw new IOException(describe(cdb)+" was rejected (CHECK CONDITION), and REQUEST SENSE failed: "+e.getMessage());
+            }
+            throw new ScsiCheckCondition(describe(cdb),sense);
+        }
+        if(status!=0) throw transportFailure("USB Mass Storage reported phase error during "+describe(cdb)+".");
     }
 
-    /** Android bulkTransfer may legally complete only part of a requested data stage. */
+    private Sense requestSense() throws IOException {
+        byte[] cdb=new byte[6];cdb[0]=0x03;cdb[4]=18;
+        byte[] response=new byte[18];
+        commandInternal(cdb,response,true,false);
+        int format=response[0]&0x7f;
+        if(format==0x70 || format==0x71)
+            return new Sense(response[2]&0x0f,response[12]&255,response[13]&255);
+        if(format==0x72 || format==0x73)
+            return new Sense(response[1]&0x0f,response[2]&255,response[3]&255);
+        throw new IOException("Drive returned an unrecognised sense format 0x"+hex(format)+".");
+    }
+
+    private static String describe(byte[] cdb) {
+        int op=cdb[0]&255;
+        if(op==0x25) return "SCSI READ CAPACITY(10)";
+        if(op==0x28 || op==0x2a) {
+            long lba=be32(cdb,2);
+            return (op==0x28?"SCSI READ(10)":"SCSI WRITE(10)")+" at LBA "+lba;
+        }
+        if(op==0x35) return "SCSI SYNCHRONIZE CACHE(10)";
+        if(op==0x03) return "SCSI REQUEST SENSE";
+        return "SCSI opcode 0x"+hex(op);
+    }
+
+    private static String senseName(int key) {
+        switch(key) {
+            case 0x00:return "NO SENSE";
+            case 0x01:return "RECOVERED ERROR";
+            case 0x02:return "NOT READY";
+            case 0x03:return "MEDIUM ERROR";
+            case 0x04:return "HARDWARE ERROR";
+            case 0x05:return "ILLEGAL REQUEST";
+            case 0x06:return "UNIT ATTENTION";
+            case 0x07:return "DATA PROTECT (write-protected)";
+            case 0x0b:return "ABORTED COMMAND";
+            default:return "SENSE KEY 0x"+hex(key);
+        }
+    }
+    private static String hex(int n){return String.format(java.util.Locale.ROOT,"%02X",n&255);}
+
     private int bulkFully(UsbEndpoint endpoint,byte[] buffer,int offset,int length,int timeout) {
         int completed=0;
         while(completed<length) {
@@ -160,7 +230,7 @@ public final class UsbBot implements AutoCloseable {
 
     private IOException transportFailure(String message) {
         failed=true;
-        return new IOException(message+" The USB may be incomplete. Reconnect it and restart the entire write; no automatic retry is made.");
+        return new IOException(message+" The USB transport may be incomplete. Reconnect it and restart the entire format; no automatic retry is made.");
     }
     private void ensureUsable() throws IOException {
         if(closed) throw new IOException("USB connection is closed.");
@@ -185,5 +255,22 @@ public final class UsbBot implements AutoCloseable {
     }
     private static void putLe32(byte[] b,int p,long value) {
         b[p]=(byte)value;b[p+1]=(byte)(value>>>8);b[p+2]=(byte)(value>>>16);b[p+3]=(byte)(value>>>24);
+    }
+
+    private static final class Sense {
+        final int senseKey,asc,ascq;
+        Sense(int key,int asc,int ascq){this.senseKey=key;this.asc=asc;this.ascq=ascq;}
+    }
+    private static final class ScsiCheckCondition extends IOException {
+        final int senseKey,asc,ascq;
+        ScsiCheckCondition(String command,Sense sense) {
+            super(command+" rejected the command: "+senseName(sense.senseKey)+
+                " (sense 0x"+hex(sense.senseKey)+", ASC/ASCQ 0x"+hex(sense.asc)+"/0x"+hex(sense.ascq)+"). "+
+                (sense.senseKey==0x07?"The USB is reporting write protection. ":
+                 sense.senseKey==0x03?"The USB reports a media error. ":
+                 sense.senseKey==0x04?"The USB controller reports a hardware error. ":"")+
+                "No automatic retry was attempted.");
+            this.senseKey=sense.senseKey;this.asc=sense.asc;this.ascq=sense.ascq;
+        }
     }
 }
