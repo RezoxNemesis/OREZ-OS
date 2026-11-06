@@ -114,6 +114,32 @@ class OwnerSetupTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'still active'):
                     owner.prepare_console()
 
+    def test_slow_splash_exit_keeps_waiting_without_reading_a_secret(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pid = Path(tmp)/'pid'; pid.write_text('234')
+            output = io.StringIO()
+            with patch.object(owner, 'PLYMOUTH_PID', pid), patch.object(owner, 'root_file'), \
+                 patch.object(owner, 'process_identity', side_effect=['original', 'original', 'original', None]), \
+                 patch.object(owner.time, 'monotonic', side_effect=[0, 30, 60]), \
+                 patch.object(owner.time, 'sleep'), patch.object(owner.getpass, 'getpass') as prompt, \
+                 contextlib.redirect_stdout(output), \
+                 patch.object(owner.subprocess, 'run', side_effect=[subprocess.CompletedProcess([],0),subprocess.CompletedProcess([],0),subprocess.CompletedProcess([],1)]):
+                owner.prepare_console()
+                prompt.assert_not_called()
+            self.assertIn('no password is being read', output.getvalue())
+
+    def test_splash_deadline_fails_closed_without_forced_process_kill(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pid = Path(tmp)/'pid'; pid.write_text('234')
+            with patch.object(owner, 'PLYMOUTH_PID', pid), patch.object(owner, 'root_file'), \
+                 patch.object(owner, 'process_identity', return_value='original'), \
+                 patch.object(owner.time, 'monotonic', side_effect=[0, 121]), \
+                 patch.object(owner.os, 'kill') as kill, patch.object(owner.getpass, 'getpass') as prompt, \
+                 patch.object(owner.subprocess, 'run', return_value=subprocess.CompletedProcess([],0)):
+                with self.assertRaisesRegex(ValueError, 'has not released'):
+                    owner.prepare_console()
+                kill.assert_not_called(); prompt.assert_not_called()
+
     def test_real_terminal_password_is_not_echoed(self):
         import os, pty, select, sys, termios, time
         master, slave = pty.openpty()

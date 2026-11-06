@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "purpose": "orez-inactive-installer-profile",
+  "calamares_version": "3.3.14-0ubuntu25",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "source_config_sha256": {
+    "etc/calamares/modules/automirror.conf": "a1d2c0f0624adfacebd57cc4e2d110b17a407318004b6d2a02d70a77376679d5",
+    "etc/calamares/modules/before_bootloader_context.conf": "d85b5131da394b7a0943eb0fb55bedd8713ab1999d8956b9d57f2c46039a0285",
+    "etc/calamares/modules/bootloader.conf": "0b2f82cd10cfa2c295f01a8a730d3741156460e58716ec7497b3f2dc10629a2e",
+    "etc/calamares/modules/displaymanager.conf": "e1fd60e2444440db30dbadf896cb5b386c94f49a62e155ec3f1cd3598f5d46a5",
+    "etc/calamares/modules/finished.conf": "19903804d8767a5550be5f8864056982d5c30389e70a67a66b57f2fdb9dcf1a5",
+    "etc/calamares/modules/fstab.conf": "13c623478d8a16e023389bd87c309a32d91ef5c7b19d63bc5bf4f201213d459b",
+    "etc/calamares/modules/grubcfg.conf": "0bb16bfbca92015d22940182be0380bcfe3d477f470f7e8cce7318f1dcb16e71",
+    "etc/calamares/modules/locale.conf": "8466b241cb467a337113045094bd58f5aa778eef15f67076d696b31dd5faa0b1",
+    "etc/calamares/modules/machineid.conf": "2ae48879b18699ba5b15e0ce7b2a799edce20b999de3f6a81864940ad8c48c0e",
+    "etc/calamares/modules/mount.conf": "439cdcc17fe195ba68dc3988ffeafdf27bf3e4fabf3b88d857ad2a8eccd82dd2",
+    "etc/calamares/modules/oemid.conf": "98f01a8949d05cdc3d4a972ada9323acde9ec2dc381922f1549383a79f312c8a",
+    "etc/calamares/modules/packages.conf": "68d1daea1e0e18dfd0cc8d62d27c218dce76060284f2291c8f0a27c00062c8af",
+    "etc/calamares/modules/partition.conf": "722fd7e9871691877f75f6089273fec9057c7010d459c4123b42ed79bf193d6b",
+    "etc/calamares/modules/pkgselect_context.conf": "da994a9ade817401e9abf91edc5cf915287d278714024fc3fc31517dca834da6",
+    "etc/calamares/modules/pkgselect_snap_context.conf": "d96ec64aef44fbfe67e463b6e7fc6a09558c744546175bde6246468c2d96dbc9",
+    "etc/calamares/modules/shellprocess_add386arch.conf": "38fc12fa12fa0f36bc1f1cf40e45e67a99bd061c012aa6e53eeb88391575611f",
+    "etc/calamares/modules/shellprocess_before_bootloader_kerncopy.conf": "cdbe29fc3d0c612d46e76b43cfd160efdd3a329c39c87d33f91447af613341ec",
+    "etc/calamares/modules/shellprocess_bug-LP#1829805.conf": "42001a5719a693a2d4f271dd257801c633cfa43df0d559d72d51fde095c741a8",
+    "etc/calamares/modules/shellprocess_fix_oem_uid.conf": "5d55379c8e584ceace263d6aea4a731320a542eb6ff46a9899e5596475dcdff8",
+    "etc/calamares/modules/shellprocess_fixconkeys_part1.conf": "417618eea074a69577ce2b9a2451fc1e120fb516bfa722195f814a4270eb320f",
+    "etc/calamares/modules/shellprocess_fixconkeys_part2.conf": "ab8bb5ab0043ef052e916d0c5219bba4c0f863ae3ef2963419b610fc075c2756",
+    "etc/calamares/modules/shellprocess_logs.conf": "b9405431d11e60b04afde960c484de957c4ee31c8757b7052ef666aee622c770",
+    "etc/calamares/modules/shellprocess_oemprep.conf": "50f59bbecf6cbd38fea4748895e4bd6955870a6fc432848deacd9b96d0827748",
+    "etc/calamares/modules/shellprocess_rmcdrom.conf": "31b0f3ec18100b04d052027495622adb7b3c26d77cf1d06a96028238dbd3806a",
+    "etc/calamares/modules/umount.conf": "73510b58802d1e6d93f4c91c7ac2fe4f8cd981c4b23b78fb93ae1aba4db93f37",
+    "etc/calamares/modules/unpackfs.conf": "981485b00c5be4ff7620c130be91c460766f85aafa8fbd6599d2f8bab1ae6e37",
+    "etc/calamares/modules/users.conf": "c5125ccb044504ca864d3a60d60c0e9375f8e3c3ad6fe128d9fd2b557504318f",
+    "etc/calamares/modules/welcome.conf": "3c4f825a1e9045b40e26595b7891c8a7cf37d429851f592089e4c7b3dfe8e7db",
+    "etc/calamares/settings.conf": "34cee2ac95a95cb03c8437e5f7de9670ff54ae3f8b0053f38a70fefe7a228ded",
+    "etc/sysctl.d/20-apparmor.conf": "d93a1597e90eeddfcb31c3cf8dd3c1892fac3f85ce00e73f61046d2243cba60c"
+  },
+  "required_installed_packages": {
+    "grub-efi-amd64-bin": "2.14-2ubuntu1",
+    "grub-efi-amd64-signed": "1.215+2.14-2ubuntu1",
+    "shim-signed": "1.59+15.8-0ubuntu2"
+  },
+  "changes": {
+    "etc/calamares/settings.conf": {
+      "replacements": [
+        [
+          "- id: before_bootloader\n  module: contextualprocess\n  config: before_bootloader_context.conf\n",
+          ""
+        ],
+        [
+          "- id: pkgselect_action\n  module: contextualprocess\n  config: pkgselect_context.conf\n",
+          ""
+        ],
+        [
+          "- id: pkgselect_snap_action\n  module: contextualprocess\n  config: pkgselect_snap_context.conf\n",
+          ""
+        ],
+        [
+          "  - pkgselect\n",
+          ""
+        ],
+        [
+          "  - automirror\n",
+          ""
+        ],
+        [
+          "  - contextualprocess@before_bootloader\n",
+          ""
+        ],
+        [
+          "  - contextualprocess@pkgselect_action\n",
+          ""
+        ],
+        [
+          "  - contextualprocess@pkgselect_snap_action\n",
+          ""
+        ]
+      ],
+      "expected_output_sha256": "931ceea9dffa7e9142595def6900713d4f1ec1547c559bd5ac3730f976fda190"
+    },
+    "etc/calamares/modules/users.conf": {
+      "replacements": [
+        [
+          "    minLength: 8\n",
+          "    minLength: 12\n"
+        ],
+        [
+          "    maxLength: -1\n",
+          "    maxLength: 128\n"
+        ],
+        [
+          "        - minlen=8\n",
+          "        - minlen=12\n"
+        ],
+        [
+          "  shell: /bin/bash\n",
+          "  shell: /bin/bash\n  home_permissions: \"o700\"\n"
+        ],
+        [
+          "doAutologin: false\n",
+          "doAutologin: false\nallowActiveDirectory: false\n"
+        ]
+      ],
+      "expected_output_sha256": "406a21a1a1fbf1d83947a8c8abb6aaad20ff18a3422b212e9cfd4f26dae9af7f"
+    },
+    "etc/calamares/modules/partition.conf": {
+      "replacements": [
+        [
+          "defaultFileSystemType: \"ext4\"\n",
+          "defaultFileSystemType: \"btrfs\"\ninitialPartitioningChoice: none\nallowManualPartitioning: true\n"
+        ],
+        [
+          "showNotEncryptedBootMessage: false\n",
+          "showNotEncryptedBootMessage: true\n"
+        ]
+      ],
+      "expected_output_sha256": "aa77e34f72481199fa8bc856aba918e665d8942f987bed4789da7ceb2e5d8083"
+    },
+    "etc/calamares/modules/packages.conf": {
+      "replacements": [
+        [
+          "update_db: true\n",
+          "update_db: false\n"
+        ],
+        [
+          "ignore_update_db_error: true\n",
+          "ignore_update_db_error: false\n"
+        ],
+        [
+          "      - \"^live-*\"\n",
+          "      - casper\n"
+        ],
+        [
+          "  - try_install:\n      - language-pack-$LOCALE\n      - language-pack-gnome-$LOCALE\n      - language-pack-kde-$LOCALE\n      - hunspell-$LOCALE\n      - libreoffice-help-$LOCALE\n      - libreoffice-l10n-$LOCALE\n",
+          ""
+        ],
+        [
+          "      - cifs-utils\n",
+          ""
+        ]
+      ],
+      "expected_output_sha256": "da843739db01c5a5d3077670e98e3ebc8739308c1a2061b0e39906fe029beba1"
+    },
+    "etc/calamares/modules/welcome.conf": {
+      "replacements": [
+        [
+          "    requiredStorage:    8\n",
+          "    requiredStorage:    32\n"
+        ],
+        [
+          "    requiredRam:        0.5\n",
+          "    requiredRam:        2\n"
+        ],
+        [
+          "    internetCheckUrl:\thttps://networkcheck.kde.org\n",
+          ""
+        ],
+        [
+          "        - internet\n",
+          ""
+        ],
+        [
+          "showDonateUrl: https://kubuntu.org/donate/\n",
+          "showDonateUrl: false\n"
+        ]
+      ],
+      "expected_output_sha256": "20e0f98f87b2d43e2893cd9011ce6315131fea4b9b9c8b2075d994441b7ce824"
+    },
+    "etc/calamares/modules/locale.conf": {
+      "replacements": [
+        [
+          "region: \"America\"\nzone: \"New_York\"\n",
+          "region: \"Etc\"\nzone: \"UTC\"\n"
+        ],
+        [
+          "    style: \"xml\"\n",
+          "    style: \"none\"\n"
+        ]
+      ],
+      "expected_output_sha256": "8cb83b0506f6350c680dc465ae5688ae92beda1d3b7c35f9ccfdbd0e77e4eccf"
+    },
+    "etc/calamares/modules/displaymanager.conf": {
+      "replacements": [
+        [
+          "    executable: \"startkde\"\n",
+          "    executable: \"startplasma-wayland\"\n"
+        ]
+      ],
+      "expected_output_sha256": "182da574fe18b5c4f1b24fd49ffffed06c4b90ab72dc8b7033c9695c225ccab1"
+    }
+  },
+  "unpack_candidate_sha256": "e507eb54c66ecaf94734e2f8a5a457dad5c20fdd347bca5cbeb23827660428c9",
+  "installation_approved": false,
+  "references": [
+    "https://github.com/calamares/calamares/blob/v3.3.14/src/modules/users/users.conf",
+    "https://github.com/calamares/calamares/blob/v3.3.14/src/modules/partition/partition.conf"
+  ],
+  "limitations": [
+    "Inactive configuration only; no installer activation helper is provided.",
+    "32 GiB storage and 2 GiB installer RAM are provisional checks, not measured installation size or a performance guarantee.",
+    "No graphical disk selection, package removal, UEFI reboot, LUKS/Btrfs recovery or non-target preservation pass.",
+    "Original branding and installed OREZ login-theme packaging still need integration.",
+    "Source obligations for modified distribution configuration remain part of release qualification."
+  ]
+}

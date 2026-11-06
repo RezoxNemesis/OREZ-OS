@@ -20,6 +20,12 @@ is not claimed. No owner password is used in automated test evidence.
 
 Controls and diagnostics:
 
+- Console readiness: after requesting splash shutdown, setup waits up to 120
+  seconds for the original process to exit and checks that the splash is
+  inactive before reading any password. During a slow shutdown it reports its
+  wait every ten seconds; Ctrl+C cancels. It never kills a reused PID or enables
+  visible password input. This limit is `CONSOLE_RELEASE_TIMEOUT` in the
+  documented live-only helper, not a hidden background timeout.
 - Login: the OREZ Paper SDDM theme uses the normal local SDDM/PAM backend.
 - Status: `systemctl status orez-owner-setup.service` and
   `systemctl status sddm.service`; logs identify startup/failure, never passwords.

@@ -133,7 +133,7 @@ jobs:
         run: |
           bash build/check-installer-source.sh dist/OREZ-OS-0.1-live-amd64.iso
           echo '### Installer source not certified' >> "$GITHUB_STEP_SUMMARY"
-          cat dist/boot-evidence/INSTALLER_READINESS.txt >> "$GITHUB_STEP_SUMMARY"
+          cat dist/installer-source/INSTALLER_READINESS.json >> "$GITHUB_STEP_SUMMARY"
       - name: Prove casper loaded OREZ layer inside a disposable VM
         timeout-minutes: 14
         env:
@@ -164,9 +164,7 @@ jobs:
           path: |
             dist/boot-evidence/casper-serial.log
             dist/boot-evidence/RESULT.txt
-            dist/boot-evidence/INSTALLER_READINESS.txt
-            dist/boot-evidence/upstream-unpackfs.conf
-            dist/boot-evidence/upstream-live-apparmor.conf
+            dist/installer-source/
             dist/boot-evidence/GUI_RESULT.txt
             dist/boot-evidence/GUI_FRAME_RESULT.txt
             dist/boot-evidence/gui-screen-22.ppm.gz

@@ -9,6 +9,65 @@ mod = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(mod)
 
 class InstallerAuditTests(unittest.TestCase):
+    def owner_fixture(self, root):
+        self.fixture(root)
+        for path, value in {
+            'etc/passwd': 'root:x:0:0:root:/root:/bin/bash\nowner:x:1000:1000:Owner:/home/owner:/bin/bash\n',
+            'etc/shadow': 'root:!:20000:0:99999:7:::\nowner:$y$fixture$not-a-real-credential:20000:0:99999:7:::\n',
+            'etc/group': 'root:x:0:\nowner:x:1000:\nsudo:x:27:owner\n',
+            'etc/sudoers': 'root ALL=(ALL:ALL) ALL\n%sudo ALL=(ALL:ALL) ALL\n',
+        }.items():
+            (root / path).write_text(value)
+        (root / 'etc/shadow').chmod(0o600)
+
+    def test_owner_static_policy_does_not_claim_runtime_or_install_pass(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp); self.owner_fixture(root)
+            result = mod.inspect(root, owner='owner')
+            self.assertEqual(result['blockers'], [])
+            self.assertFalse(result['safe_to_install'])
+            self.assertNotIn('not-a-real-credential', str(result))
+
+    def test_unlocked_root_blank_owner_and_readable_shadow_block(self):
+        for text, mode, expected in [
+            ('root:$6$salt$fake:20000:0:99999:7:::\nowner:$y$salt$fake:20000:0:99999:7:::\n', 0o600, 'root_password_locked'),
+            ('root:!:20000:0:99999:7:::\nowner::20000:0:99999:7:::\n', 0o600, 'owner_password'),
+            ('root:!:20000:0:99999:7:::\nowner:$:20000:0:99999:7:::\n', 0o600, 'owner_password'),
+            ('root:!:20000:0:99999:7:::\nowner:$y$salt$fake:20000:0:99999:7:::\n', 0o644, 'shadow_permissions'),
+        ]:
+            with self.subTest(expected=expected), tempfile.TemporaryDirectory() as tmp:
+                root = pathlib.Path(tmp); self.owner_fixture(root)
+                (root / 'etc/shadow').write_text(text); (root / 'etc/shadow').chmod(mode)
+                self.assertIn(expected, mod.inspect(root, owner='owner')['blockers'])
+
+    def test_alias_uid_and_other_primary_administrator_group_block(self):
+        for extra, expected in [
+            ('alias:x:01000:1001:Alias:/home/alias:/bin/bash\n', 'owner_identity'),
+            ('other:x:1001:027:Other:/home/other:/bin/bash\n', 'administrator_groups'),
+            ('backdoor:x:00:1002:Other:/home/backdoor:/bin/bash\n', 'root_identity'),
+        ]:
+            with self.subTest(expected=expected), tempfile.TemporaryDirectory() as tmp:
+                root = pathlib.Path(tmp); self.owner_fixture(root)
+                with (root / 'etc/passwd').open('a') as stream: stream.write(extra)
+                self.assertIn(expected, mod.inspect(root, owner='owner')['blockers'])
+
+    def test_extra_sudo_group_member_and_passwordless_rule_block(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp); self.owner_fixture(root)
+            (root / 'etc/group').write_text('sudo:x:27:owner,stranger\n')
+            directory = root / 'etc/sudoers.d'; directory.mkdir()
+            (directory / 'unsafe').write_text('%sudo ALL=(ALL:ALL) NOPASSWD: ALL\n')
+            result = mod.inspect(root, owner='owner')
+            self.assertIn('administrator_groups', result['blockers'])
+            self.assertIn('known_passwordless_sudo', result['blockers'])
+
+    def test_external_sudo_include_directory_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp); self.owner_fixture(root)
+            (root / 'etc/sudoers.d').symlink_to('/etc')
+            with self.assertRaisesRegex(ValueError, 'escapes'):
+                mod.inspect(root, owner='owner')
+
     def fixture(self, root, present=True, unsafe_override=False, crypto='luks', btrfs=True):
         def write(path, content):
             p = root / path

@@ -23,6 +23,7 @@ REQUEST = Path('/var/lib/orez-live/owner-required')
 READY = Path('/run/orez-live/owner-ready.json')
 SUDOERS = Path('/etc/sudoers.d/orez-live-owner')
 PLYMOUTH_PID = Path('/run/plymouth/pid')
+CONSOLE_RELEASE_TIMEOUT = 120
 
 
 def root_file(path, mode):
@@ -118,10 +119,17 @@ def prepare_console():
                               env={'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8'})
     invoke('quit')
     invoke('--wait')
-    deadline = time.monotonic() + 20
+    started = time.monotonic()
+    deadline = started + CONSOLE_RELEASE_TIMEOUT
+    next_notice = started + 10
     while identity is not None and process_identity(pid) == identity:
-        if time.monotonic() >= deadline:
+        now = time.monotonic()
+        if now >= deadline:
             raise ValueError('Boot splash has not released the console. Reboot to retry.')
+        if now >= next_notice:
+            print('Waiting for the boot splash to close safely; no password is being read. '
+                  'Ctrl+C cancels setup.', flush=True)
+            next_notice = now + 10
         time.sleep(.05)
     if invoke('--ping').returncode == 0:
         raise ValueError('Boot splash is still active. Password setup remains blocked.')

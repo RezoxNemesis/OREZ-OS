@@ -1,5 +1,15 @@
 # OREZ OS architecture decisions
 
+## 2026-11-06 — inactive offline installer preparation
+
+Pin the actual Calamares source and existing UEFI bootloader versions. Generate
+reviewable changes into a fresh staging directory, never active system paths.
+Avoid optional network operations during installation; create a local owner,
+start without a selected partitioning mode, and simulate exact installer/live
+package removals against the real final package inventory. Retain the SMB client.
+Keep installation blocked until actual disposable-disk tests, reboot, recovery
+and owner-policy gates pass. See [profile details](INSTALLER_PROFILE.md).
+
 ## 2026-11-05 — owner assets, Android, resources and environment
 
 - Adopt original user-provided Rest JPEG as initial wallpaper and Horizon as an

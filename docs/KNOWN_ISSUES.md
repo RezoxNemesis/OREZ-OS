@@ -1,5 +1,24 @@
 # OREZ OS — unresolved blockers
 
+## Current diagnostic and installer preparation — 6 November 2026
+
+The fifth integrated UEFI run (qa12-02, old e9d423a image) stopped owner setup
+because Plymouth did not exit within its 20-second observation window. No
+password was read. The new 1d68fccb image permits up to 120 seconds, reports
+progress, preserves cancellation and still fails closed. Static checks pass;
+the longer wait itself has not been qualified by a default boot.
+
+A sixth diskless/offline boot (qa12-08) is in progress with the cosmetic splash
+disabled and the existing test-only QPainter flag. Its result is pending, not a
+normal-boot, performance or installation pass. Final result belongs in AI_HANDOFF.
+
+Actual inspection of 30 source configurations and an offline APT simulation now
+support an [inactive installer profile](INSTALLER_PROFILE.md). Only eight exact
+installer/live packages would be removed; the 2,301-package dependency graph
+remains consistent. Maintainer scripts, actual installation and reboot remain
+untested. Original installer branding and installed OREZ login-theme packaging
+still need integration. The full image CI job still lacks prepared layer inputs.
+
 ## Integrated ISO and actual owner boot — 6 November 2026
 
 A new 5.46 GB integrated ISO passes exact-base, native-app, dpkg ownership,

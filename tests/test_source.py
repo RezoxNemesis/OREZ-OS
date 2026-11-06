@@ -107,7 +107,9 @@ class OrezSourceTests(unittest.TestCase):
 
     def test_installer_source_inspector_never_formats_disks(self):
         src = (ROOT / 'build/check-installer-source.sh').read_text()
-        self.assertIn('unsquashfs -cat', src)
+        self.assertIn('inspect-installer-source.py', src)
+        src += (ROOT / 'build/inspect-installer-source.py').read_text()
+        self.assertIn("'unsquashfs', '-o'", src)
         self.assertIn('Certified for SSD installation: NO', src)
         for danger in ['sudo ', 'mkfs.', 'wipefs', 'sgdisk', 'parted ', 'dd if=']:
             self.assertNotIn(danger, src)

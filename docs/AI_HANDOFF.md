@@ -1,5 +1,40 @@
 # OREZ OS — Verified Development Handoff
 
+## Active preparation checkpoint — 6 November 2026, 05:37 UTC
+
+Last confirmed commit 8fd868f4470c5e52db3175662601661c3868a9f0; branch
+feature/orez-live-foundation-20261104; PR #1 open/draft. Prior implementation CI
+42164885745 passed; current changes have not yet run on GitHub. Repository public.
+
+Current source adds actual Calamares configuration inspection, a pinned inactive
+offline installer profile, dependency-removal simulation and owner-account
+static checks. Final simulation against 2,301 records removes only eight exact
+installer/live packages; SMB client retained. See INSTALLER_PROFILE.md.
+
+qa12-02 actual UEFI boot failed closed before password entry: Plymouth remained
+alive beyond 20 seconds. The wait now allows 120 seconds with visible progress
+and cancellation. New ISO 1d68fccb306750e33c9af9f95b1f0c543eb8cabeb312e5725381198235589752
+is 5,455,347,712 bytes and passes assembly/media/owner integrity checks. It is
+built from 8fd868f-working-tree, not a fresh signed upstream reconstruction.
+
+Current run: container orez-qa12-nosplash, output dist/integrated-vm/qa12-nosplash,
+evidence qa12-08-nosplash-qpaint-uefi, 6 GiB/2 CPU/TCG/2D/no disks/network/devices.
+Manually set boot=casper orez.verify=1 plymouth.enable=0, removed quiet/splash;
+this isolates graphics from cosmetic splash behavior. Does not qualify default
+boot or the longer splash wait. It is still booting; do not report a desktop.
+
+Finish this run, preserve all frames and failures, destroy its private dummy
+credential/container, publish and verify the qa12 screenshot gallery. Final
+source CI/commit/result must supersede this active entry. The assembly helper
+orez-qa12-assembly is also present. No physical disks, firmware or real owner
+credentials touched. A verified obsolete second ISO was retired for space;
+metadata and failure evidence remain. About 2.6 GiB lab storage remains.
+
+Still blocked: usable booted desktop/native workloads, actual install/reboot/
+recovery, hardware/Secure Boot, complete effective security policy, fresh signed
+base/security updates, redistribution/signing, full pipeline and owner-access
+audit. AI autonomous defense/consumer Android deferred. No qualified ISO download.
+
 ## Final verified publication — 6 November 2026
 
 **OREZ is not ready for PC installation.** Current implementation commit:
