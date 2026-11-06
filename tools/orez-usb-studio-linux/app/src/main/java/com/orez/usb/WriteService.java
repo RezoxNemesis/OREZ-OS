@@ -169,8 +169,11 @@ public final class WriteService extends Service {
                 throw new IOException("The ISO changed during writing. USB is incomplete and must be rewritten from the beginning.");
 
             checkCancelled();
-            setStatus("Flushing USB cache","Waiting for the drive to commit the image.",expectedBytes,expectedBytes);
-            bot.sync();
+            setStatus("Flushing USB cache","Requesting the drive to commit its write cache.",expectedBytes,expectedBytes);
+            boolean cacheFlushConfirmed=bot.sync();
+            if(!cacheFlushConfirmed) {
+                setStatus("Cache flush unsupported","This USB controller rejected the optional SCSI cache-flush command. The app will still perform a complete read-back comparison. After completion, safely eject and reconnect the USB before booting.",expectedBytes,expectedBytes);
+            }
 
             setStatus("Reading back USB","Comparing every written byte against the original ISO.",0,expectedBytes);
             MessageDigest sourceVerify=sha256(),deviceVerify=sha256();
@@ -207,7 +210,9 @@ public final class WriteService extends Service {
                 throw new IOException("The full USB read-back SHA-256 does not match the ISO. USB is not verified.");
 
             success=true;
-            setStatus("Complete","Raw ISO write and full USB read-back SHA-256 verification passed. Safely eject the USB before moving it to your PC.",expectedBytes,expectedBytes);
+            setStatus("Complete","Raw ISO write and full USB read-back SHA-256 verification passed."+
+                (cacheFlushConfirmed?" Safely eject the USB before moving it to your PC.":
+                 " This controller did not confirm a cache flush. Safely eject, disconnect and reconnect the USB, then verify it is visible before booting from it."),expectedBytes,expectedBytes);
         } catch(Exception e) {
             success=false;
             String msg=e.getMessage()==null?e.toString():e.getMessage();
@@ -280,7 +285,7 @@ public final class WriteService extends Service {
 
     private JSONObject buildMonitorStatus() throws Exception {
         return new JSONObject()
-            .put("version","0.4.0")
+            .put("version","0.4.1")
             .put("phase",phase)
             .put("detail",sanitizeMonitorDetail(detail))
             .put("running",running)
@@ -338,7 +343,7 @@ public final class WriteService extends Service {
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
         String timeline;
         synchronized(REPORT_LOCK) { timeline=REPORT_HISTORY.toString(); }
-        return "OREZ USB Studio Linux 0.4.0 diagnostic report\n"+
+        return "OREZ USB Studio Linux 0.4.1 diagnostic report\n"+
             "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\n"+
             "Phase: "+phase+"\n"+
             "Detail: "+sanitizeMonitorDetail(detail)+"\n"+
