@@ -11,7 +11,7 @@ class LiveSessionTests(unittest.TestCase):
     def test_live_session_directory_resolves_to_direct_native_desktop(self):
         hook = (ROOT / 'image/initramfs/scripts/casper-bottom/15autologin').read_text()
         config = configparser.ConfigParser()
-        config.read_string(hook.split("<<'EOF'\\n", 1)[1].split('\\nEOF', 1)[0])
+        config.read_string(hook.split("<<'EOF'\n", 1)[1].split('\nEOF', 1)[0])
         directory = ROOT / 'image/live-owner' / config['Wayland']['SessionDir'].lstrip('/')
         entries = list(directory.glob('*.desktop'))
         self.assertEqual(len(entries), 1)
