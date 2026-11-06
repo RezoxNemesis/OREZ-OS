@@ -1,6 +1,6 @@
 # OREZ OS — Verified Development Handoff
 
-## Latest verified checkpoint — 6 November 2026, login trace instrumentation
+## Latest verified checkpoint — 6 November 2026, builder gate and source validation
 
 **No approved installation download.** Normal graphical login still fails after successful authentication. A separate ordinary-owner console diagnostic rendered the real Plasma desktop and native Settings, but that is not a normal login pass. A live-only trace wrapper is committed to identify where the session command exits. No root cause or login fix is claimed.
 
@@ -8,9 +8,9 @@
 
 - Repository: `RezoxNemesis/OREZ-OS`
 - Branch: `feature/orez-live-foundation-20261104`
-- Latest verified commit at this checkpoint: `2f7026b183cf86d37f7da9995b93b793041cd3f0`.
+- Latest branch HEAD: `8d41c9fae3d5a6e4308fea9af6b98c5fd2f92dca` (`Require a provisioned OREZ image builder for full ISO jobs`).
 - [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) remains open, draft and unmerged.
-- [CI run 42211534711](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711) on `b979c6b` passed **225 source tests, the 38-path Debian package audit, and 68 desktop/mobile preview tests**. The full ISO job was skipped.
+- Latest CI [run 42218868521](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42218868521) on the current branch HEAD completed successfully: source/shell validation, native package build/audit, preview production build, and desktop/mobile browser acceptance all passed. The full ISO job was **skipped** because no dedicated self-hosted `orez-image-builder` runner is registered. Earlier CI [run 42211534711](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711) passed 225 source tests, the 38-path package audit, and 68 desktop/mobile preview tests.
 - Evidence artifact `13499580862` is 211,801,054 bytes and expires 20 November 2026. It contains source/package/preview evidence, not a bootable ISO.
 
 ### Actual image and login evidence
@@ -37,6 +37,40 @@ Commit `b979c6b7505670d41cd6342d19e86ebe850e443e` adds `image/live-owner/usr/lib
 6. Keep the installer disabled, PR draft, and public ISO download blocked until all applicable release gates pass. Physical NVIDIA, Secure Boot, Wi-Fi/Bluetooth, suspend/power and performance still require target-hardware tests.
 
 **Next-chat prompt:** “Continue OREZ OS from this handoff. Verify remote HEAD, PR and CI. Commit b979c6b adds a live-only session trace wrapper; source CI passed, but an instrumented ISO has not been built or booted. SDDM forwards the Wayland session command's returned exit code; 64 is not one of the SDDM helper enum statuses. Missing utmpx is a known compatibility warning. Build the instrumented ISO, trace it in a disposable default-UEFI VM, preserve authentication/security, fix only the demonstrated cause, and keep installation/download blocked until all gates pass.”
+
+## Current build and release disposition — verified 6 November 2026
+
+The current workflow deliberately separates a successful source/preview CI run
+from a full OS image build. The latest run's source/preview job passed, but its
+full-image job was skipped. The only artifact from that run is
+[orez-source-and-preview-evidence](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42218868521);
+it is a 211,813,704-byte evidence/preview archive, **not an ISO**.
+
+The full-image job now requires a pre-provisioned self-hosted Linux x86-64
+runner labelled `orez-image-builder`, at least 80 GiB free workspace, the
+documented ISO/SquashFS/QEMU tools, and three independently prepared regular
+(non-symlink) inputs: `OREZ_APP_LAYER`, `OREZ_COMPONENT_LAYER`, and
+`OREZ_COMPONENT_REPORT`. The workflow re-verifies these inputs through the
+canonical builder. No such runner is currently available to this session, and
+no free cloud runner with these properties has been provisioned. No paid
+compute has been created or authorized.
+
+The previously assembled 5.46 GB development ISO remains the only known
+integrated image, SHA-256
+`6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6`.
+It has a known graphical-login failure (PAM accepts the owner, then the session
+exits 64); the live-only trace instrumentation has not yet been exercised in a
+newly rebuilt ISO. It is not a safe or approved installable download. Do not
+publish it, relabel the preview artifact as an ISO, or enable installation.
+
+PR #1 remains draft and unmerged. The installer remains disabled. No physical
+SSD, Windows recovery USB, firmware, or real credentials have been accessed.
+Release work is **not complete**: the blocking sequence is (1) obtain a
+zero-cost compliant builder and prepare verified image layers, (2) build the
+instrumented ISO, (3) trace and repair normal SDDM login, (4) repeat full
+default-UEFI desktop acceptance, and (5) complete installer, encryption,
+update/recovery, security, licensing and target-hardware gates. Keep all
+installation/download gates closed until the evidence exists.
 
 ## Historical investigation and image notes (preserved)
 
