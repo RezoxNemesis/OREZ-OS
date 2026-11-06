@@ -1,0 +1,153 @@
+{
+  "run": {
+    "id": 42138946808,
+    "head_sha": "28320e7b478e054cad740759139a37a8ba6df948",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "html_url": "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42138946808",
+    "run_attempt": 1
+  },
+  "jobs": [
+    {
+      "id": 127634073656,
+      "name": "Validate OREZ code and Debian package",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-06T00:43:55Z",
+      "completed_at": "2026-11-06T00:55:55Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-06T00:43:56Z",
+          "completed_at": "2026-11-06T00:43:57Z"
+        },
+        {
+          "name": "Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-06T00:43:57Z",
+          "completed_at": "2026-11-06T00:43:58Z"
+        },
+        {
+          "name": "Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-06T00:43:58Z",
+          "completed_at": "2026-11-06T00:44:01Z"
+        },
+        {
+          "name": "Source and shell checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-06T00:44:01Z",
+          "completed_at": "2026-11-06T00:53:27Z"
+        },
+        {
+          "name": "Build phone and desktop preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-06T00:53:27Z",
+          "completed_at": "2026-11-06T00:53:30Z"
+        },
+        {
+          "name": "Capture every browser test, including failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-06T00:53:30Z",
+          "completed_at": "2026-11-06T00:55:43Z"
+        },
+        {
+          "name": "Preserve screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-06T00:55:43Z",
+          "completed_at": "2026-11-06T00:55:43Z"
+        },
+        {
+          "name": "Upload screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-06T00:55:43Z",
+          "completed_at": "2026-11-06T00:55:52Z"
+        },
+        {
+          "name": "Report exact status",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-06T00:55:52Z",
+          "completed_at": "2026-11-06T00:55:52Z"
+        },
+        {
+          "name": "Post Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-06T00:55:52Z",
+          "completed_at": "2026-11-06T00:55:52Z"
+        },
+        {
+          "name": "Post Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-11-06T00:55:52Z",
+          "completed_at": "2026-11-06T00:55:52Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-11-06T00:55:52Z",
+          "completed_at": "2026-11-06T00:55:52Z"
+        }
+      ]
+    },
+    {
+      "id": 127638808686,
+      "name": "Build full Kubuntu-derived live ISO (manual only)",
+      "status": "completed",
+      "conclusion": "skipped",
+      "started_at": "2026-11-06T00:55:56Z",
+      "completed_at": "2026-11-06T00:55:56Z",
+      "steps": []
+    }
+  ],
+  "annotations": [
+    {
+      "annotation_level": "failure",
+      "message": "The job has exceeded the maximum execution time of 12m0s"
+    },
+    {
+      "annotation_level": "warning",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13467901830,
+      "name": "orez-source-and-preview-evidence",
+      "size_in_bytes": 211201739,
+      "digest": "sha256:95f944e7d3e7127580fa18846656a1d92e0842520514a6c2bafe72a77d29392d",
+      "expired": false,
+      "expires_at": "2026-11-20T00:55:44Z"
+    }
+  ],
+  "decoded_log_verified": true,
+  "source_tests_passed": 172,
+  "browser_tests_passed": 68,
+  "package_paths": 38,
+  "full_iso_job": "skipped",
+  "artifact_zip_independently_downloaded": false
+}

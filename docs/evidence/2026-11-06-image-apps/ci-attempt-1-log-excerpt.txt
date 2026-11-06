@@ -1,0 +1,5 @@
+2026-11-06T00:53:24.8194379Z Ran 172 tests in 1.050s
+2026-11-06T00:53:27.5913575Z OREZ .deb manifest and maintainer-script audit: PACKAGE_CONTENTS_PASS
+2026-11-06T00:53:27.6005704Z   "status": "PACKAGE_CONTENTS_PASS",
+2026-11-06T00:55:43.6630500Z   68 passed (2.2m)
+2026-11-06T00:55:52.1300627Z Artifact download URL: https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42138946808/artifacts/13467901830

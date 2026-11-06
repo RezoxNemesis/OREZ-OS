@@ -30,7 +30,9 @@ jobs:
   source-validation:
     name: Validate OREZ code and Debian package
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    # Cold-run Ubuntu font downloads consumed >8 minutes in run 42138946808;
+    # all checks passed but the 12-minute job timed out at final cleanup.
+    timeout-minutes: 18
     steps:
       - name: Checkout (pinned action)
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -43,6 +45,17 @@ jobs:
         env:
           OREZ_CHROMIUM: ''
         run: |
+          # Use signed official Ubuntu indexes over HTTPS on this disposable
+          # runner. The Azure HTTP mirror was extremely slow in the measured run.
+          # Keep TLS, APT signatures and the runner's proxy settings enabled.
+          for source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources; do
+            if [[ -f "$source" ]]; then
+              sudo sed -i \
+                -e 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' \
+                -e 's|http://archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' \
+                -e 's|http://security.ubuntu.com/ubuntu|https://security.ubuntu.com/ubuntu|g' "$source"
+            fi
+          done
           npm ci --ignore-scripts
           npx playwright install --with-deps chromium
           sudo apt-get install -y --no-install-recommends zstd

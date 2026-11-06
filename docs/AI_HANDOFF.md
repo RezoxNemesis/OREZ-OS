@@ -1,5 +1,110 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest image application checkpoint — 6 November 2026
+
+- Last confirmed implementation **`28320e7b478e054cad740759139a37a8ba6df948`**,
+  branch `feature/orez-live-foundation-20261104`, PR #1 draft/open/unmerged.
+  Main remains `fb0661d6cfb8850104d86b3377eef12a7ecd68ed`. A subsequent docs/evidence
+  checkpoint uses `[skip ci]`; verify actual HEAD and PR before modifying source.
+- Binding owner scope remains **first PC boot/install/login/desktop**, native
+  Brave/VLC/Linux games, explicitly authorized web YouTube, Calendar/Reuz,
+  themes, permission-controlled AI and connectivity/security. Android/Play/
+  presets are deferred. Repository stays public until all PC-readiness gates
+  pass. No release, installation or visibility change is approved by these tests.
+- First implementation [CI 42138946808](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42138946808)
+  is **CANCELLED by its 12-minute timeout**, despite all steps completing. Decoded
+  job 127634073656 confirms **172 source tests, 38 package paths, preview build
+  and 68 browser cases passed**; artifact 13467901830 uploaded. This is not an
+  overall green run. Slow Azure HTTP font downloads took over eight minutes.
+  Follow-up uses official HTTPS Ubuntu mirrors and an 18-minute bounded limit;
+  follow-up CI is pending. No TLS/signature/proxy/security bypass.
+- Added real image package pipeline: reviewed desktop profile, signed APT
+  dependency resolution against the actual ISO's 2,283-package inventory,
+  scoped Brave repository/key pins, exact offline dpkg installation, filesystem
+  policy audit and additive SquashFS packing with independent extraction.
+  Actual result: **17 additions, zero existing upgrades/removals, 2,300 installed
+  packages**. Downloads **342,396,222 bytes**, authenticated with `_apt` sandbox
+  retained in final qa9-10. Base security-update qualification is still separate.
+- Native versions: Brave **1.99.55**, VLC **3.0.23-1**, SuperTux **0.6.3-5**,
+  PySide6 **6.10.2-6ubuntu1**. These now exist in the staged actual base, not only
+  in the unrelated QA container. NetworkManager/Plasma-NM/BlueZ/Bluedevil/OBEX/
+  KDE Connect were already present. Hardware behavior remains untested.
+- Retained **experimental app layer**, `dist/image-lab/app-layer-packed/orez-apps.squashfs`:
+  **383,488,000 bytes**, SHA-256
+  `22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51`.
+  **5,624 paths** match after independent extraction, including data, numeric
+  owner/group, modes, symlink targets and xattrs. All seven original capability
+  paths remain outside the delta, including ancestors. Do not ship the temporary
+  root: source runtime trees/xattrs were omitted only for build staging.
+- This app transaction changes no accounts, boot files, sudo/PAM/Polkit or service
+  policies. Brave management is unconfigured, no management group/key/set-ID
+  binary, and its cron script immediately exits. The official Chromium sandbox
+  helper remains root-owned **4755** and is explicitly reviewed, not a vendor
+  login. AppArmor profile loading and browser sandbox enforcement were **not**
+  qualified in the chroot. Signed publisher code still requires trust.
+- Four final actual-base component scenarios pass (qa9-21): exact native binary
+  version strings; Calendar SQLite save/reopen; Reuz timezone/format and Paper/
+  Ink rendering; countdown pause/resume/completion and close. Six real **Qt
+  offscreen** PNGs, ordinary UID 1500, sources/palettes under `/run`. Not Plasma,
+  physical input, full OREZ package preinstallation, video, browsing or gameplay.
+  SuperTux uses documented explicit data path; Brave direct executable version
+  check does not qualify its shell wrapper or sandbox.
+- Final local source suite: **172 tests pass**. Final policy/retention checks
+  pass. Failed attempts and warning-limited downloads remain documented; see
+  `docs/evidence/2026-11-06-image-apps/` and [IMAGE_APPLICATIONS.md](IMAGE_APPLICATIONS.md).
+  Seventeen binary-control source identities/copyright metadata recorded;
+  source archives, complete SBOM and licence/redistribution review remain open.
+- **99 original PNGs / 102 capture references / 25 local attempts**, all six
+  failed attempts retained. Direct GitHub ZIP verified against every image hash:
+  https://github.com/RezoxNemesis/OREZ-OS/archive/d0dd6db403d2b62b5c6ff067dcab8636563ebb5d.zip
+  Orphan branch `downloads/screenshots-2026-11-06-image-apps`; ZIP
+  **14,296,078 bytes**, SHA
+  `d3ef387fd42ed7c57c91c923899b394bc9a9fa5cba3de3704ee9d61479e7ac82`.
+  Extract/open index.html; actual Qt offscreen captures and test reports are
+  labeled separately. CI captures are separate in the workflow artifact.
+  Local complete ZIP `dist/OREZ-image-apps-screenshots.zip`: 14,450,056 bytes,
+  SHA `5895bf7f59de11e2b8a3407666bd1ff260295d2ec1d7383835c69fee60382b26`.
+- Built reusable **239,706,361-byte** `orez-image-tools:20261105`, image ID
+  `sha256:e3e83bc9229c3a52afff4df5a701b1ff5ace3c0df14ffdb17c68bfa495378508`.
+  The recipe is in `environment/orez-image-tools.Dockerfile`. No environment or
+  image publication. Existing desktop QA image unchanged; host still lacks
+  KVM/render access, working browser namespaces and enforced cgroup limits.
+- **No new full ISO.** The app layer is not yet consumed by `build/build-live.sh`.
+  Retained original ISO: `dist/vm-candidate/OREZ-OS-0.1-live-amd64.iso`,
+  **5,073,338,368 bytes**, SHA
+  `8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9`.
+  It predates owner hardening and must not be distributed/installed. The
+  superseded 5,070,782,464-byte cache-only derivative was hash-verified and
+  removed to recover space; its checksum/evidence remain. Older statements below
+  that both large ISOs are retained are historical and superseded.
+- Expanded `app-root-v2`, `apps-installed-v2/layer` and packed `roundtrip` were
+  removed only after re-verification; about **13 GiB free**. The authenticated
+  `dist/image-lab/app-packages-v4` pool, original metadata/keys, exact before/
+  after inventories, stage marker and packed artifact/report remain. Both
+  task containers removed. Previous owner-initrd and orez-shell 0.1.0-4 artifact
+  also remain. No physical disk, Windows USB, firmware or host policy changed.
+
+Exact next actions:
+1. Read IMAGE_APPLICATIONS.md and FIRST_PC_RELEASE.md; verify actual branch/CI,
+   retained artifact hashes and free space. Do not reuse removed chroot paths.
+2. Bind the authenticated app layer to the exact upstream base filesystem in
+   the production builder. Verify actual casper layer ordering, package/status
+   manifests, media checksums and current schema-3 owner-initrd/live payload.
+   Ensure the OREZ install payload is truly dpkg-owned. Do not trust arbitrary
+   externally supplied JSON manifests as their own authentication.
+3. Build a combined candidate on an adequately provisioned host, preserving the
+   installer guard. On supported KVM/render/browser-sandbox/cgroup infrastructure,
+   test offline UEFI → enrollment → SDDM → authenticated Plasma, wrong-password
+   denial, lock/unlock, sudo/Polkit and exact-image native applications.
+4. Complete disposable-disk installer/reboot/encryption, non-target preservation,
+   rollback and independent restore. Then physical MSI/RTX/Secure Boot/Realme,
+   Wi-Fi/Bluetooth/audio/USB and actual enforced 6/16 GiB workloads.
+5. Complete visible AI/security/update controls, source/licence records, signed
+   releases and repository-access audit before public ISO delivery and the
+   owner's requested eventual private visibility. AI remains NOT ENABLED;
+   autonomous protection and signed production updates remain unfinished.
+
+
 ## Latest first-PC release checkpoint — 5 November 2026
 
 - Last confirmed implementation **`214955046c4cd2b5dacba38510bc29d0332996b6`**,

@@ -124,6 +124,10 @@ the builder's package status. The retained development input used this turn is
 with base offset 9,394,176 and base status
 `397f502b98cc8fe7721e6e09553d3887b8e0da1f5e231153b3534ceda0531b29`.
 It is an old development ISO, not a newly authenticated upstream release.
+The expanded root/layer/roundtrip directories were removed after verification to
+recover storage. The packed artifact/report, authenticated package pool,
+before/after inventories, marker and all evidence remain. Recreate a new root
+for further runtime tests; do not assume the old root is still running.
 For production, use the upstream signature workflow in BUILD_AND_RELEASE.md
 and derive/verify the actual base offset; do not assume offsets remain stable.
 

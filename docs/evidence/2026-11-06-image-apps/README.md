@@ -27,6 +27,14 @@ download are recorded in the latest [handoff](../../AI_HANDOFF.md).
 - Final source regression: qa9-22, **172 tests pass**. Tests cover package trust,
   exact transitions, traversal, policy paths, set-ID/file capabilities and
   inherited-xattr protection in addition to the prior suite.
+- Retention check: qa9-24 re-hashes the retained ISO/layer, verifies runtime
+  tests left the persistent staged image unchanged, preserves the authenticated
+  package pool, then removes only expanded task filesystems. About 13 GiB free
+  space remains; both temporary containers are removed.
+- Source/licence inventory: qa9-25 verifies 17 actual Debian control records and
+  records source identities plus installed copyright metadata. Fifteen direct
+  copyright records are present; aliases/missing entries need review. This is
+  not complete licensing clearance, corresponding-source retention or an SBOM.
 - Final vendor/owner policy audit: qa9-23, `security-audit.json`. No account or
   boot/auth/service-policy changes; no Brave management configuration or
   management privilege. Official Chromium sandbox helper remains `4755`;

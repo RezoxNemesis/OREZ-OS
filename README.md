@@ -4,14 +4,17 @@
 Brave/VLC/SuperTux/Qt dependencies install offline in the real extracted base;
 the 383.5 MB additive SquashFS passes independent content/metadata verification.
 This layer is not yet assembled into a new ISO or boot/installation-qualified.
+[Download 99 new original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/d0dd6db403d2b62b5c6ff067dcab8636563ebb5d.zip)
+from 25 local checks, including failures. Actual Qt offscreen windows and test
+reports are labeled separately; these are not full desktop/installation images.
 
 Latest first-PC work: [owner enrollment, native Calendar/Reuz, themes and release gates](docs/FIRST_PC_RELEASE.md).
 The owner deferred Android emulation/Play/presets until a later upgrade and now
 explicitly permits web YouTube for the first PC release. Official Linux apps
 remain preferred. Read [the verified handoff](docs/AI_HANDOFF.md) before continuing.
 
-[Download 86 original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/19ae111fde8f63c506401860cb213286e4d80e7f.zip) from 22 local attempts, including failures. These are component/report captures, not a full OS download.
-[Implementation CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42085583005) passes 148 source tests, 38 package paths and 68 browser cases. Full ISO job skipped.
+[Previous session: 86 original PNG screenshots](https://github.com/RezoxNemesis/OREZ-OS/archive/19ae111fde8f63c506401860cb213286e4d80e7f.zip) from 22 local attempts, including failures. These are component/report captures, not a full OS download.
+[Previous implementation CI](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42085583005) passes 148 source tests, 38 package paths and 68 browser cases. Full ISO job skipped.
 
 Latest boot work: [offline cache correction and actual initrd audit](docs/OFFLINE_BOOT_QA.md). The new VM run reaches systemd but still has no usable desktop; owner authentication remains a release blocker.
 
