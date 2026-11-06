@@ -85,17 +85,21 @@ public final class WriteService extends Service {
             wakeLock.acquire(4L*60L*60L*1000L);
         } catch(Exception ignored) {}
 
+        Runnable startWriter=()->{
+            worker=new Thread(()->runWriter(device,uri,expected.toLowerCase(Locale.ROOT),expectedBytes),"orez-linux-image-writer");
+            worker.start();
+        };
         if(pairCode!=null && !pairCode.trim().isEmpty()) {
-            try { startLiveMonitor(pairCode); }
+            try { startLiveMonitor(pairCode,startWriter); }
             catch(Exception e) {
                 running=false; phase="Stopped before USB writing";
                 detail="Live-monitor setup failed; no USB write was started. "+e.getMessage();
                 updateNotification(true); stopForeground(STOP_FOREGROUND_REMOVE); stopSelf(startId);
                 return START_NOT_STICKY;
             }
+        } else {
+            startWriter.run();
         }
-        worker=new Thread(()->runWriter(device,uri,expected.toLowerCase(Locale.ROOT),expectedBytes),"orez-linux-image-writer");
-        worker.start();
         return START_NOT_STICKY;
     }
 
@@ -213,33 +217,55 @@ public final class WriteService extends Service {
         }
     }
 
-    private void startLiveMonitor(String pairingCode) throws IOException {
+    private void startLiveMonitor(String pairingCode,Runnable onConnected) throws IOException {
         monitorClient=new LiveMonitorClient(pairingCode);
         monitorActive=true;
         monitorState="Connecting…";
         monitorThread=new Thread(()->{
             LiveMonitorClient client=monitorClient;
-            while(monitorActive) {
+            boolean connected=false;
+            try {
+                // Require one successful authenticated report before any USB sector is written.
+                client.report(buildMonitorStatus());
+                connected=true;
+                monitorState="Connected · "+client.shortSessionId();
+                onConnected.run();
+            } catch(Exception e) {
+                running=false;
+                success=false;
+                phase="Stopped before USB writing";
+                detail="Live monitoring could not be established. The USB has not been changed. "+
+                        (e.getMessage()==null?"Connection unavailable":e.getMessage());
+                monitorState="Connection failed";
+                updateNotification(true);
+                stopForeground(STOP_FOREGROUND_REMOVE);
+                stopSelf();
+            }
+
+            while(connected && monitorActive) {
+                try { Thread.sleep(10000); }
+                catch(InterruptedException e) { break; }
+                if(!monitorActive) break;
                 try {
                     client.report(buildMonitorStatus());
                     monitorState="Connected · "+client.shortSessionId();
                 } catch(Exception e) {
                     String reason=e.getMessage()==null?"Connection unavailable":e.getMessage();
                     monitorState="Offline · "+reason;
+                    // The authorized local USB job continues even if a later report fails.
                 }
-                if(!monitorActive) break;
-                try { Thread.sleep(10000); }
-                catch(InterruptedException e) { break; }
             }
-            try {
-                client.report(buildMonitorStatus());
-                monitorState="Final status sent";
-            } catch(Exception e) {
-                monitorState="Final report unavailable · "+(e.getMessage()==null?"connection error":e.getMessage());
-            } finally {
-                client.close();
-                if(monitorClient==client) monitorClient=null;
+
+            if(connected) {
+                try {
+                    client.report(buildMonitorStatus());
+                    monitorState="Final status sent";
+                } catch(Exception e) {
+                    monitorState="Final report unavailable · "+(e.getMessage()==null?"connection error":e.getMessage());
+                }
             }
+            client.close();
+            if(monitorClient==client) monitorClient=null;
         },"orez-linux-live-monitor");
         monitorThread.setDaemon(true);
         monitorThread.start();
