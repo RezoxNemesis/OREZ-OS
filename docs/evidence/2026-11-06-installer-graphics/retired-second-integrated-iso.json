@@ -1,0 +1,6 @@
+{
+  "artifact": "dist/assembly-lab/console-fix/OREZ-OS-0.1-live-amd64.iso",
+  "sha256": "4425b475c5f2081e7ce0b06b73b002825d27214475eb78a1d92489cb61eff72d",
+  "bytes": 5455347712,
+  "reason": "Retire failed ordering-only development image to make space for corrected output. Current image, original parent, metadata and all failure screenshots remain."
+}

@@ -1,0 +1,123 @@
+{
+  "commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+  "run_url": "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42176829799",
+  "jobs": [
+    {
+      "id": 127757109265,
+      "name": "Validate OREZ code and Debian package",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 42176829799,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Source and shell checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Build phone and desktop preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Capture every browser test, including failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Preserve screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Upload screenshots, reports and preview",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Report exact status",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Pinned Node setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Checkout (pinned action)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        }
+      ]
+    },
+    {
+      "id": 127758208451,
+      "name": "Build full Kubuntu-derived live ISO (manual only)",
+      "status": "completed",
+      "conclusion": "skipped",
+      "run_id": 42176829799,
+      "logs_url": null,
+      "steps": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 13483093997,
+      "name": "orez-source-and-preview-evidence",
+      "size_in_bytes": 211660238,
+      "url": "https://api.github.com/repos/RezoxNemesis/OREZ-OS/actions/artifacts/13483093997",
+      "archive_download_url": "https://api.github.com/repos/RezoxNemesis/OREZ-OS/actions/artifacts/13483093997/zip",
+      "expired": false,
+      "created_at": "2026-11-06T06:52:14Z",
+      "expires_at": "2026-11-20T06:52:06Z",
+      "updated_at": "2026-11-06T06:52:14Z",
+      "digest": "sha256:5c7c1f4544dfbbe9d6f5f8ff9f4ad2e5190599c83b358c54a25903b732913fb7",
+      "workflow_run": {
+        "id": 42176829799,
+        "repository_id": 1445297054,
+        "head_repository_id": 1445297054,
+        "head_branch": "feature/orez-live-foundation-20261104",
+        "head_sha": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3"
+      }
+    }
+  ],
+  "source_tests": 214,
+  "package_paths": 38,
+  "browser_preview_cases": 68,
+  "full_iso_job": "skipped",
+  "installation_approved": false
+}

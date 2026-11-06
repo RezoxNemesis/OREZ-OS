@@ -1,5 +1,38 @@
 # OREZ OS — unresolved blockers
 
+## Current normal boot and reliability gaps — 6 November 2026
+
+Image 6ca85cf (source 56af0a2) passes the observed normal UEFI enrollment/SDDM
+path: both enrollment entries hidden, correct owner authentication accepted,
+incorrect credentials refused, console UID1000 and passwordless sudo denied.
+However the direct graphical session exited 64 at 06:40:57 and the greeter
+restarted. There is no complete usable-desktop pass. A subsequent ordinary-owner
+console launch rendered real KDE Welcome, the approved wallpaper, panel/system
+tray and native Quick Settings; clicking Skip closed Welcome. This is a separate
+diagnostic, not a repaired default login or a performance/workload pass.
+See AI_HANDOFF.md and the final qa12-17 result. No root or sandbox bypass was applied.
+Inherited Kubuntu icons, Welcome and theme choices still need integration.
+
+Exact image session wrappers/profiles are inspected in qa12-19/21. An upstream
+source review does not map 64 to a standard SDDM/Plasma graphics error; downstream
+and runtime cause remains open. The first profile-inspection attempt failed on
+a symlink and is retained as qa12-20. A tty test-driver timeout exposed part of
+a disposable credential in a username field; retain the failure and destroy
+that credential before publication. The test containers and credential have now
+been destroyed. No real owner credential is involved.
+
+Implementation 02acdac tightens the offline audit of shadow ownership/modes
+and group access; 214 source tests, 38 package paths and 68 preview cases pass
+in CI 42176829799. These are not installed-system or full security certification.
+See RELIABILITY_AND_CONTROL.md and qa/RELIABILITY_TEST_CASES.md for explicit
+unexecuted update-recovery, privacy, driver, performance and control gates.
+
+Plymouth has separate 20-second control-call limits and a 120-second original
+process-disappearance limit. A slow control call can still stop setup before
+the latter begins; every such timeout fails closed. The observed normal boot
+does not certify all shutdown timings. Earlier entries below are historical.
+
+
 ## Direct live-session correction — 6 November 2026, 06:06 UTC
 
 The actual selected Kubuntu Live Environment starts

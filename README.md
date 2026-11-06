@@ -7,15 +7,18 @@ dpkg-owned OREZ Calendar/Reuz/Store components, approved wallpapers and local
 owner enrollment. [Exact build inputs, hashes and scope](docs/LIVE_ASSEMBLY.md).
 Observed UEFI tests concealed both enrollment password entries,
 authenticated the new owner at the console and graphical login, and refused
-passwordless sudo. A usable desktop in the booted image is still unqualified;
-software graphics and startup remain unresolved. Installation stays disabled.
+passwordless sudo. Normal graphical authentication succeeds, but its session
+exits before the desktop stays open. A separate ordinary-owner console launch
+rendered the real wallpaper, panel, system tray and native Settings window.
+That diagnostic does not qualify normal login or complete desktop usability.
+Installation stays disabled.
 
 [Start with the verified handoff](docs/AI_HANDOFF.md). It distinguishes source,
 package, image, actual boot, desktop, installation and physical-hardware results.
 [Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
 
-[CI on 56af0a2](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42172398708)
-passes **210 source tests, the 38-file package audit and 68 browser cases**.
+[CI on 02acdac](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42176829799)
+passes **214 source tests, the 38-file package audit and 68 browser cases**.
 The full ISO job is skipped; these checks do not certify an installed OS.
 
 ## Scope and personality
@@ -49,10 +52,17 @@ firmware or real credential is used by the disposable VM tests.
 The [previous 29-screen component tour](https://github.com/RezoxNemesis/OREZ-OS/blob/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f/TOUR.md)
 has [245 original PNGs in a direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/8fabdcc81cb4e67aa98c6925a9ad8829c3d4ac1f.zip).
 It labels native-container, test-mode, report and historical VM evidence.
-[Current integrated-image evidence: 355 original PNGs, about 67 MB](https://github.com/RezoxNemesis/OREZ-OS/archive/564b9298062ff811b3955c976aecf74e90b03a9e.zip)
+[Earlier integrated-image evidence: 355 original PNGs, about 67 MB](https://github.com/RezoxNemesis/OREZ-OS/archive/564b9298062ff811b3955c976aecf74e90b03a9e.zip)
 contains 26 local runs and all six failed commands. [Actual five-screen boot tour](https://github.com/RezoxNemesis/OREZ-OS/blob/564b9298062ff811b3955c976aecf74e90b03a9e/TOUR.md).
 Every image hash/PNG decode was verified after downloading the GitHub ZIP;
 [verification and scope](docs/evidence/2026-11-06-integrated-live/README.md).
+
+Latest: [301 original PNGs in a direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/090a5014051e3d230a4a04300d3395f58dedf7a4.zip)
+and a [12-screen actual boot/desktop tour](https://github.com/RezoxNemesis/OREZ-OS/blob/090a5014051e3d230a4a04300d3395f58dedf7a4/TOUR.md).
+All 512 capture references across 21 local runs are retained, including the
+failed commands and normal-login failure. Native Settings is shown only in the
+separate manually launched diagnostic session.
+[Exact evidence and remaining gates](docs/evidence/2026-11-06-installer-graphics/README.md).
 
 The [phone-friendly preview](preview/README.md) is a separate browser/PWA
 prototype. `npm run preview:build` exports its portable HTML. Preview screenshots

@@ -1,0 +1,12 @@
+{
+  "scope": "Actual offline diskless 6-GiB TCG UEFI boot of unchanged e9d423a ISO; orez.verify=1 added interactively in GRUB to request existing test-only QPainter mode",
+  "status": "blocked",
+  "installation_approved": false,
+  "usable_desktop": false,
+  "owner_setup": "Failed closed before reading a password: original splash process did not exit within the 20-second release deadline. Actual error visible in manual-failure-console.png.",
+  "compositor_test": "Not reached; no QPainter result inferred",
+  "credential_scope": "No password was generated or entered in this run",
+  "actual_pngs": 42,
+  "stop_reason": "Operator stopped after owner setup failure; not a collector or kernel crash",
+  "boot_proof": "Actual serial reports CASPER_AND_OREZ_LAYER_PRESENT; this is not desktop acceptance"
+}

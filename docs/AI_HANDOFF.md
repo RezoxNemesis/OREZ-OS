@@ -1,5 +1,138 @@
 # OREZ OS — Verified Development Handoff
 
+## Final verified checkpoint — 6 November 2026, installer/graphics round
+
+**No approved installation download.** The actual normal-login session still
+fails after successful authentication. A separate ordinary-owner console
+diagnostic now renders the real desktop and native Settings. Earlier active
+checkpoints below are historical; use this section and its linked final records.
+
+### Repository and exact evidence
+
+- Branch: `feature/orez-live-foundation-20261104`; last confirmed implementation
+  commit: `02acdac3acbd64472d73c5d4ea4320c6afef9bd3`.
+  This final documentation/evidence follow-up uses `[skip ci]`; verify actual
+  remote HEAD before editing rather than inventing a self-referential hash.
+- [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) is open, draft and
+  unmerged. Repository stays public. Do not infer owner/collaborator access
+  restrictions from public visibility; the actual access audit remains open.
+- [CI 42176829799](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42176829799)
+  on `02acdac` passes **214 source tests, 38 package paths and 68 browser-preview
+  cases**; full ISO job skipped. Artifact `13483093997`: 211,660,238 bytes,
+  SHA256 `5c7c1f4544dfbbe9d6f5f8ff9f4ad2e5190599c83b358c54a25903b732913fb7`,
+  expires 20 November 2026. [Full CI identity](evidence/2026-11-06-installer-graphics/ci-shadow-audit.json).
+- Booted image source: **`56af0a24133985d225ac22c2e85a6f3cb050f483`**;
+  `dist/assembly-lab/direct-session/OREZ-OS-0.1-live-amd64.iso`, 5,455,347,712
+  bytes (5.46 GB / 5.08 GiB), SHA256
+  `6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6`.
+  Reconstruction from recorded development parent; fresh upstream signature,
+  current security baseline, complete redistribution and signed release remain
+  separate requirements. This is not installed disk usage.
+- [301 original PNGs — direct ZIP](https://github.com/RezoxNemesis/OREZ-OS/archive/090a5014051e3d230a4a04300d3395f58dedf7a4.zip),
+  [12-screen actual tour](https://github.com/RezoxNemesis/OREZ-OS/blob/090a5014051e3d230a4a04300d3395f58dedf7a4/TOUR.md).
+  Archive commit `090a5014051e3d230a4a04300d3395f58dedf7a4` maps 512 capture
+  references across 21 local runs, retaining failures. Exact duplicate bytes
+  are stored once. CI and subsequent download-verification screenshots are
+  separately linked in the [evidence ledger](evidence/2026-11-06-installer-graphics/README.md).
+
+### What changed and what actually ran
+
+Actual inspection covers 30 pinned Calamares source configurations. An inactive
+profile includes the native application and dpkg-owned component layers,
+excludes live owner/AppArmor overrides, removes optional network download steps,
+defines authenticated local owner creation and preserves explicit disk choice.
+Offline APT simulation against 2,301 records removes only eight requested
+installer/live packages, with zero additional dependency removals/broken packages;
+`cifs-utils` is retained. Maintainer scripts and installation were **not** run.
+Branding and installed login-theme integration remain incomplete. See
+[INSTALLER_PROFILE.md](INSTALLER_PROFILE.md); installer guard stays active.
+
+Live startup now selects a dedicated OREZ Desktop entry using the native Plasma
+launcher, avoiding the inherited pre-desktop Kubuntu Try/Install prompt. No
+vendor session deletion, autologin, root bypass or relaxed authentication.
+The later `02acdac` source audit correction validates shadow ownership, safe
+modes, target-root group membership and non-root readers instead of accepting
+mode bits alone. Four additional test methods pass; metadata/ACL/runtime and
+complete installed-system security remain separate checks.
+
+Final actual run **qa12-17**, 06:18–07:18 UTC: default menu entry, **no edited
+kernel flags**, ordinary-user QEMU, 6 GiB guest RAM, 2 vCPU, TCG, virtio-vga 2D,
+offline, diskless and no host devices. Both enrollment entries were concealed;
+owner setup completed; OREZ SDDM showed the correct desktop choice. Incorrect
+password refused. Correct password accepted at 06:40:33, but the selected
+graphical session exited **64 at 06:40:57**, restarting the greeter. Its session
+log was empty. This is a startup failure after authentication, not a password
+failure or an established generic GPU error. Ordinary console login reached
+UID1000, refused passwordless sudo and allowed explicitly authenticated diagnostics.
+
+**Separate diagnostic:** the authenticated ordinary owner launched
+`startplasma-wayland` from tty3. After a long software-emulation delay, actual
+KWin/Plasma rendered KDE Welcome, the approved wallpaper, desktop icons, panel,
+system tray and clock. Clicking Skip closed Welcome. Clicking the taskbar
+Settings icon opened real native Quick Settings, with search and device/settings
+routes visible. No setting changed and no radio/network function was exercised.
+Inherited Kubuntu icons/Welcome/theme choices remain. No normal-login repair,
+application workload, performance, lock/unlock/logout/reboot or installer pass.
+[Final run scope](evidence/2026-11-06-installer-graphics/qa12-17-vm-result.json).
+
+Retained failures include qa12-02's fail-closed splash timeout, qa12-08's
+inherited installer-prompt session, qa12-12's missing temporary helper, qa12-20's
+profile-inspector symlink handling, and qa12-17's normal-session failure. A tty
+test driver raced getty timeout and partly echoed a **disposable** password into
+a new username; OCR missed/timed out on other attempts before input. Preserve
+these failures rather than counting them as successful concealed entry. They
+do not establish a guest kernel crash. All 212 saved qa12-17 PNGs decode.
+
+The requested parallel review of byallon's concerns produced
+[RELIABILITY_AND_CONTROL.md](RELIABILITY_AND_CONTROL.md) and
+[qa/RELIABILITY_TEST_CASES.md](qa/RELIABILITY_TEST_CASES.md). These specify update
+recovery, explicit privacy/service inventory, driver recovery, measured resources
+and frame pacing, dependency-aware removals and discoverable settings. They
+distinguish existing source from missing/unverified features; proposed acceptance
+cases have not been executed. No zero-telemetry, zero-lag or perfect-security claim.
+
+### Cleanup, limits and exact next actions
+
+All task containers, QEMU processes and private disposable credentials have been
+destroyed after collection. Physical SSD, firmware, recovery USB and real owner
+credentials were untouched. Local images/evidence remain; retired superseded
+images have identity records. The test host has no `/dev/kvm` or `/dev/dri`, a
+32 GiB workspace (about 4 GiB free after cleanup), and no enforced Docker resource
+limits. It cannot qualify actual NVIDIA/radios or production performance.
+Recipes exist in `environment/`; they have not provisioned missing host devices.
+
+1. Verify remote branch/PR/CI and these artifact identities. Read the final
+   qa12-17 result before describing the desktop. Do not rerun old diagnostics
+   solely to reproduce their counts.
+2. Isolate why the exact SDDM-launched wrapper exits 64 while ordinary console
+   startup can render Plasma. Read actual package/profile inputs and record
+   narrowly scoped wrapper exit markers in a disposable guest; avoid logging
+   secrets or broad environment dumps. Inspect the sourced im-config initializer
+   and downstream package behavior. [Upstream review](evidence/2026-11-06-installer-graphics/startup-source-review.json)
+   and qa12-19/21 do not establish the runtime cause. Preserve authentication,
+   sandbox, AppArmor and owner permissions.
+3. After a justified fix, build exact new bytes and verify normal boot/sign-in,
+   desktop/apps, lock/unlock/logout/reboot with real captures. Prefer a KVM-capable
+   host with usable graphics and at least 80 GiB workspace; no emulated FPS claims.
+4. Complete installed branding/theme packaging and dependency-preparation CI.
+   Activate the prepared installer only inside disposable virtual disks, then
+   test explicit disk selection, installation, reboot, encryption/dual-boot
+   boundaries, interrupted updates and recovery. Never target the owner's SSD.
+5. Finish service/privacy/settings inventory and the reliability contract's
+   measurable gates, security baseline and policy checks, licensing/source,
+   signed releases and owner-access audit. Physical NVIDIA/Secure Boot/radios/
+   power/suspend/performance remain necessary before target-PC readiness.
+6. Keep PR draft and installation/public ISO blocked until those applicable
+   gates pass. Android consumer emulation and autonomous OREZ AI remain deferred.
+   Do not change repository visibility early.
+
+**Next-chat prompt:** “Continue RezoxNemesis/OREZ-OS from docs/AI_HANDOFF.md.
+Verify actual remote HEAD, PR and CI first. Image 6ca85cf accepts the owner in
+SDDM but exits64; manual ordinary-owner Plasma renders desktop and Settings.
+Investigate that startup boundary without security bypasses, then qualify new
+bytes in a disposable VM. Preserve every test's screenshots/failures and keep
+the installer blocked. Do not claim an OS download or hardware pass prematurely.”
+
 ## Shadow audit review fix — 6 November 2026, 06:48 UTC
 
 The parallel reliability review found and corrected a static-audit false pass:

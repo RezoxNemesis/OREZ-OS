@@ -1,0 +1,65 @@
+{
+  "purpose": "orez-offline-installer-removal-simulation",
+  "status_sha256": "286657fa64d3941509e96229cc0cd6fa13c0caa20f1bd081a923e4237bfde212",
+  "installed_records": 2301,
+  "config_sha256": "da843739db01c5a5d3077670e98e3ebc8739308c1a2061b0e39906fe029beba1",
+  "requested": [
+    "casper",
+    "calamares-settings-kubuntu",
+    "calamares-settings-ubuntu-common",
+    "calamares-settings-ubuntu-common-data",
+    "calamares",
+    "calamares-data",
+    "libcalamaresui3.3",
+    "kubuntu-installer-prompt"
+  ],
+  "changes": [
+    {
+      "name": "calamares",
+      "version": "3.3.14-0ubuntu25",
+      "operation": "remove"
+    },
+    {
+      "name": "calamares-data",
+      "version": "3.3.14-0ubuntu25",
+      "operation": "remove"
+    },
+    {
+      "name": "calamares-settings-kubuntu",
+      "version": "1:26.04.12",
+      "operation": "remove"
+    },
+    {
+      "name": "calamares-settings-ubuntu-common",
+      "version": "1:26.04.12",
+      "operation": "remove"
+    },
+    {
+      "name": "calamares-settings-ubuntu-common-data",
+      "version": "1:26.04.12",
+      "operation": "remove"
+    },
+    {
+      "name": "casper",
+      "version": "26.04.2",
+      "operation": "remove"
+    },
+    {
+      "name": "kubuntu-installer-prompt",
+      "version": "26.04.3",
+      "operation": "remove"
+    },
+    {
+      "name": "libcalamaresui3.3",
+      "version": "3.3.14-0ubuntu25",
+      "operation": "remove"
+    }
+  ],
+  "broken_count": 0,
+  "packages_installed_or_removed": false,
+  "installation_approved": false,
+  "limitations": [
+    "Installed dependency graph only; no package maintainer scripts executed.",
+    "No Calamares execution, target filesystem or reboot qualification."
+  ]
+}

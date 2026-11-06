@@ -16,6 +16,24 @@ proves login, desktop usability, installation or target hardware support.
 | Dpkg-owned OREZ layer | 1,224,704 bytes; `e5ae0294aea3f3ee37f3ad853df52e9a5746fc3d1aa98d46281b95c78e35048b` |
 | Final package inventory | 2,301 installed records; `orez-shell` 0.1.0-4 |
 
+The table identifies image source `56af0a24133985d225ac22c2e85a6f3cb050f483`.
+Its normal default-menu UEFI run completed concealed owner enrollment, rendered
+OREZ SDDM and accepted the correct password, but the selected session exited 64
+and returned to the greeter. The cause remains unqualified. In a later separate
+ordinary-owner tty3 diagnostic, `startplasma-wayland` eventually rendered KDE
+Welcome, the approved wallpaper, panel/system tray and native Quick Settings.
+Mouse input closed Welcome and opened Settings. No root, compositor override,
+authentication bypass or sandbox relaxation was applied. This is evidence of
+some working native desktop behavior, not a repaired normal login, workload,
+performance, installation or physical-hardware pass. See the
+[final run record](evidence/2026-11-06-installer-graphics/qa12-17-vm-result.json)
+and [actual screenshots](https://github.com/RezoxNemesis/OREZ-OS/blob/090a5014051e3d230a4a04300d3395f58dedf7a4/TOUR.md).
+
+All test containers and disposable credentials were destroyed after the
+bounded observation. Sections below preserve earlier-image history; those
+results do not automatically qualify the current bytes. Later source commit
+`02acdac` changes the offline audit and documentation, not this ISO.
+
 This build reuses the exact recorded local development parent. It does not claim
 a fresh verification of the official upstream signature. The original lower
 filesystem is independently hashed inside both input and output images. The
