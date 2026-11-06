@@ -1,0 +1,1106 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa9-",
+  "unique_images": 99,
+  "capture_references": 102,
+  "references": [
+    {
+      "source": "qa9-01-tools/report-001.png",
+      "sha256": "fbca5e8c773cbba7c0f8e45b0dec643997e0337e858399feced2740a46df50aa",
+      "bytes": 226654
+    },
+    {
+      "source": "qa9-01-tools/report-002.png",
+      "sha256": "131cf6f9642c5de8ec12c1cb5bdbdbe16d8ad1f404ef1d3161200a4f14a6fb3f",
+      "bytes": 261952
+    },
+    {
+      "source": "qa9-01-tools/report-003.png",
+      "sha256": "523f7de153d7e630bbba3efa05b0a81c10a11602924b7cf579f1a54c10ec4ba4",
+      "bytes": 277870
+    },
+    {
+      "source": "qa9-01-tools/report-004.png",
+      "sha256": "385d9b19a713f3a48d90a2d5dac4a1a0a0712535a1bb8f964c1c67efd6426f72",
+      "bytes": 299136
+    },
+    {
+      "source": "qa9-01-tools/report-005.png",
+      "sha256": "4858c2a99659b967d215965c85fcaa379072aef55ed08eacb8443b95add98c3a",
+      "bytes": 253772
+    },
+    {
+      "source": "qa9-01-tools/report-006.png",
+      "sha256": "59fc62dd787123cc355b11b652895a4a297b220fad623d1322735dd43ba2fbff",
+      "bytes": 160389
+    },
+    {
+      "source": "qa9-01-tools/report-007.png",
+      "sha256": "2f0abc024177e235e2e859f882bf393bc295c727e254dad6a342048baece770d",
+      "bytes": 155693
+    },
+    {
+      "source": "qa9-01-tools/report-008.png",
+      "sha256": "1365d9a8c727bcd64ba67ceb8960841f0b5f99ec395d61b3bd79bce3a465596a",
+      "bytes": 164514
+    },
+    {
+      "source": "qa9-01-tools/report-009.png",
+      "sha256": "6ff008461b65c1cecd731eb1f0d4f6cc2ab6d0028b259b996c0ad7c2dbc2c1c5",
+      "bytes": 157629
+    },
+    {
+      "source": "qa9-01-tools/report-010.png",
+      "sha256": "fa544ba01a4561148be47bd284a6765d9d0ba38050952a4e23a71b8f08194c7b",
+      "bytes": 175324
+    },
+    {
+      "source": "qa9-01-tools/report-011.png",
+      "sha256": "7005ceaebff261e70f12a78aec7919866893b0b816f2c520ada71232eda4fd1a",
+      "bytes": 161227
+    },
+    {
+      "source": "qa9-01-tools/report-012.png",
+      "sha256": "8c663f1440df78ae69604a25b2c322683b8c28a96a1b6043b519a267ed69be03",
+      "bytes": 165624
+    },
+    {
+      "source": "qa9-01-tools/report-013.png",
+      "sha256": "4f72777c130b792e31df0a0f628d2ecc388665ab73e8b1dea2f383bfd7b50d79",
+      "bytes": 168913
+    },
+    {
+      "source": "qa9-01-tools/report-014.png",
+      "sha256": "4c1b08039bcdffd3c9ef5d26c3dd8beecbcad662e683cbd5047e75db9209b35d",
+      "bytes": 167013
+    },
+    {
+      "source": "qa9-01-tools/report-015.png",
+      "sha256": "1d96294cfa5c97a58eedf8efeca8fe2a22ab3e9087a9e6ea62254d55f2a5af39",
+      "bytes": 163868
+    },
+    {
+      "source": "qa9-01-tools/report-016.png",
+      "sha256": "8085f2a7ce555051b569f5cefa24e5b4f561fca898be5e82bea991136c014fd7",
+      "bytes": 169323
+    },
+    {
+      "source": "qa9-01-tools/report-017.png",
+      "sha256": "f836bf91d07212bf5d17d2249f17e3f675d21a1a4f95e7383d83012aed5fd4aa",
+      "bytes": 168713
+    },
+    {
+      "source": "qa9-01-tools/report-018.png",
+      "sha256": "da8ddefdd208269688080e0a66b40cee73bb3b863469a0e194ce3d1c52128d1e",
+      "bytes": 166815
+    },
+    {
+      "source": "qa9-01-tools/report-019.png",
+      "sha256": "e38e32b198096b72246ded2402b3c902e4956d94bb7eee769a2b43dc67818db5",
+      "bytes": 154421
+    },
+    {
+      "source": "qa9-01-tools/report-020.png",
+      "sha256": "8ad8a055943456cf8d3732cd742cef7fe1612d3e4bea35cefdbbc9d5230641d7",
+      "bytes": 164091
+    },
+    {
+      "source": "qa9-01-tools/report-021.png",
+      "sha256": "51ad889c1be1b7462261fd361c17cfc618c16a245e75d64927e8be8ac31935bb",
+      "bytes": 157711
+    },
+    {
+      "source": "qa9-01-tools/report-022.png",
+      "sha256": "18ea823188a1a9e0368b27b4d00c92ec51cca24e3529111056f28c2303cc3f1a",
+      "bytes": 148231
+    },
+    {
+      "source": "qa9-01-tools/report-023.png",
+      "sha256": "ffc885b369b1ba8cd21f68f1d4949213c4eb7fc6087375b9540bd88274a6e142",
+      "bytes": 201041
+    },
+    {
+      "source": "qa9-01-tools/report-024.png",
+      "sha256": "f2e2c06a906fe76a133e351022fb70b746a6df99c63255124871c3c953fc0088",
+      "bytes": 152981
+    },
+    {
+      "source": "qa9-01-tools/report-025.png",
+      "sha256": "50e3b8e68a3e9b01421d991410ff976499c4485362a6b0ae722018c78057c2ec",
+      "bytes": 148550
+    },
+    {
+      "source": "qa9-01-tools/report-026.png",
+      "sha256": "106550bfc96d8a14fac9a0f837fdaeda9bf9544665cf777a4b9b62df87588632",
+      "bytes": 134110
+    },
+    {
+      "source": "qa9-02-base-inventory/report-001.png",
+      "sha256": "3ee0a9929abc777b16090a943a2fdd8a2d8a06fae8b8f0183fb3193e774028cd",
+      "bytes": 173153
+    },
+    {
+      "source": "qa9-03-base-inventory/report-001.png",
+      "sha256": "6658fdaa077cc6fab96070733a3477bb5ea7c714ab8fc9aad691c5fb99049bb6",
+      "bytes": 171869
+    },
+    {
+      "source": "qa9-03-base-inventory/report-002.png",
+      "sha256": "b61fd7885dc6400cdf32967f74f4af937bc5ab88f97f43c214fca9c45fe1fbaf",
+      "bytes": 78849
+    },
+    {
+      "source": "qa9-04-resolve/report-001.png",
+      "sha256": "943f2436ed31935984a672ec750778fad0364648d59682c1f58f4d2b835838e5",
+      "bytes": 80513
+    },
+    {
+      "source": "qa9-05-resolve/report-001.png",
+      "sha256": "64917f6639ec4f97f8645428756ce4c397c7c99ba2c9e5ab9465b502f7b554dd",
+      "bytes": 129469
+    },
+    {
+      "source": "qa9-05-resolve/report-002.png",
+      "sha256": "38d17b25ce492960b48e2329301bce11bcb376adfc7ca986bbf7000f42d4ce6b",
+      "bytes": 111731
+    },
+    {
+      "source": "qa9-05-resolve/report-003.png",
+      "sha256": "9916205e2ae48124c0879be3daf8ed712b6c16937c5ab511e905b7c7d251b618",
+      "bytes": 121148
+    },
+    {
+      "source": "qa9-05-resolve/report-004.png",
+      "sha256": "a8e53a8959a11085efc7733c70ac3b9a3494ca618c6be3a5c6fe8899970a4fc0",
+      "bytes": 129354
+    },
+    {
+      "source": "qa9-06-source/report-001.png",
+      "sha256": "3e3504217f13e0a914553211141a1fdb1914d541c25c770d8e2f083476af54d5",
+      "bytes": 228483
+    },
+    {
+      "source": "qa9-06-source/report-002.png",
+      "sha256": "a36f83b0b5a2900f34659411fe007e12f88bb59f75534d030724c33384e40f36",
+      "bytes": 235170
+    },
+    {
+      "source": "qa9-06-source/report-003.png",
+      "sha256": "df8d951b9ee19ca861e6f49246c87316a6ac9d4254c65c4a51a9c1b31d362df1",
+      "bytes": 236024
+    },
+    {
+      "source": "qa9-06-source/report-004.png",
+      "sha256": "11f40c8bff0f579101b5aa505e9fba2834944bffbfb68e5ee1a0db594e3eb8c9",
+      "bytes": 232987
+    },
+    {
+      "source": "qa9-06-source/report-005.png",
+      "sha256": "b44685050ce6a3ff8f4bbf79347bb4c3fdca27896c0dee336a528be613cce86f",
+      "bytes": 236290
+    },
+    {
+      "source": "qa9-06-source/report-006.png",
+      "sha256": "9606e07cd995b2fc83878eb9d7f88362a23867623b496786a39853c3af0d9d7f",
+      "bytes": 225263
+    },
+    {
+      "source": "qa9-06-source/report-007.png",
+      "sha256": "d015baf6c7a563811bc1fa069a7c3f08bffa26aab80c362d4ee756383eadd63a",
+      "bytes": 226822
+    },
+    {
+      "source": "qa9-06-source/report-008.png",
+      "sha256": "bcea7b43bc0e583fb92bc18e8cfb81dc9584fdeb24a9823c505daf3fefc4f3e8",
+      "bytes": 199792
+    },
+    {
+      "source": "qa9-06-source/report-009.png",
+      "sha256": "344e84084ec6877499cf4c0fc1498ae302590db5cc3762fda7968d8d86340f07",
+      "bytes": 193323
+    },
+    {
+      "source": "qa9-06-source/report-010.png",
+      "sha256": "90e88eab72ca427f360083e39c4a96043e86d65951c1ae15dceb016fda5e8000",
+      "bytes": 59546
+    },
+    {
+      "source": "qa9-07-runtime/report-001.png",
+      "sha256": "1fd1838c3185c6c7371b50f9f7ccef01e0f0482c20520a392660f8e268c4dfb3",
+      "bytes": 69839
+    },
+    {
+      "source": "qa9-08-resolve/report-001.png",
+      "sha256": "502b30d65cf6cdfe0d6ac9d21c33fb631a1e8a29ee80c9a2141aa60980418e53",
+      "bytes": 113861
+    },
+    {
+      "source": "qa9-08-resolve/report-002.png",
+      "sha256": "2d4a431ed3e0cc6982579bb8dd53eaff1cde450a09eec1998b2596c7eda45909",
+      "bytes": 114353
+    },
+    {
+      "source": "qa9-08-resolve/report-003.png",
+      "sha256": "862bd6692588e24bd5afc3acdbb640ef5760a01309765f8ca49b074cc9a101cb",
+      "bytes": 135981
+    },
+    {
+      "source": "qa9-08-resolve/report-004.png",
+      "sha256": "8b2c30681673b7d949f1a5bb51faaf3b08dc209067f4c6c1f380567b548c9e9e",
+      "bytes": 131660
+    },
+    {
+      "source": "qa9-09-space/report-001.png",
+      "sha256": "3353f270ed0c6989e71f7a1cfd56fabf4cf346612564d834889bb1630badc273",
+      "bytes": 91685
+    },
+    {
+      "source": "qa9-10-resolve/report-001.png",
+      "sha256": "e2177b20023e70c224a567f95aa60e35f1d4ead1182c4d9533d97b393e4f3104",
+      "bytes": 114646
+    },
+    {
+      "source": "qa9-10-resolve/report-002.png",
+      "sha256": "a90822f11abcd55f9a5ad265e7420c8bdc5b8f6c8d356511beec128e039ae0d8",
+      "bytes": 115149
+    },
+    {
+      "source": "qa9-10-resolve/report-003.png",
+      "sha256": "de51aecee48f494c5132cba66a3abb62addc9ceef5fadca28cfeca85329b039a",
+      "bytes": 126525
+    },
+    {
+      "source": "qa9-10-resolve/report-004.png",
+      "sha256": "cb8821e04e9a7c357811d4f578c0c817eefaaeadeaac6136b9af68acfcdb6916",
+      "bytes": 124424
+    },
+    {
+      "source": "qa9-11-stage/report-001.png",
+      "sha256": "f729a8ec50ce4f8177bf68d99f0d560cc1793efcf0589bd0bec6998ca78777dd",
+      "bytes": 179314
+    },
+    {
+      "source": "qa9-12-stage/report-001.png",
+      "sha256": "ddec7d10eb4e978f1b8dc182a60ed2ddb24898d6add7b9e1f509043baa013991",
+      "bytes": 116219
+    },
+    {
+      "source": "qa9-13-install/report-001.png",
+      "sha256": "c4cb91ad720bb77450daf040789c49821678930659d202c83ced7aa6f6a305b0",
+      "bytes": 233940
+    },
+    {
+      "source": "qa9-13-install/report-002.png",
+      "sha256": "ff90c2254b33e467a62a34f9aef60d754ddf5ad33e98d3d050ee024daa0963d0",
+      "bytes": 120481
+    },
+    {
+      "source": "qa9-14-source/report-001.png",
+      "sha256": "61ef3281b4e14063354d638ab71d09c7f6e5f070ce92cb142ab22f3346284d2a",
+      "bytes": 229664
+    },
+    {
+      "source": "qa9-14-source/report-002.png",
+      "sha256": "d268646b55a56526060c2c9e9109360d14e4e108a3e748ac8c5a6bb6dc7b988a",
+      "bytes": 224114
+    },
+    {
+      "source": "qa9-14-source/report-003.png",
+      "sha256": "24f7b326918b8228d6d6fafb2f6de27f26d0021ceeebf30dbc4f3ce5eb936db2",
+      "bytes": 238637
+    },
+    {
+      "source": "qa9-14-source/report-004.png",
+      "sha256": "4b7c628055f545a3eda5e7e32aafe09e18fcaed9d2833622a8ae4454d202063b",
+      "bytes": 234672
+    },
+    {
+      "source": "qa9-14-source/report-005.png",
+      "sha256": "fbdb237dfbe5f9c268556b4f6652c11839590bc5b55af035d4e46630d3d71018",
+      "bytes": 236469
+    },
+    {
+      "source": "qa9-14-source/report-006.png",
+      "sha256": "0bbc3c5c05a4bd9de3af6adb01d6c1543907956c185b86c0a33346dffff239d0",
+      "bytes": 228214
+    },
+    {
+      "source": "qa9-14-source/report-007.png",
+      "sha256": "647d58ff6a15c5c0606d464758028b9a705181e3e2ea628d5c9886968a9045ab",
+      "bytes": 229823
+    },
+    {
+      "source": "qa9-14-source/report-008.png",
+      "sha256": "222f952c1382e70ab97f02d338f37bc0d8c7644c07d94b2b5c7bd17f52038136",
+      "bytes": 206746
+    },
+    {
+      "source": "qa9-14-source/report-009.png",
+      "sha256": "305b58a0ddbd1e8a6407d49cc1ce083674cbd020a59b45d3d278bba60caf8881",
+      "bytes": 210095
+    },
+    {
+      "source": "qa9-14-source/report-010.png",
+      "sha256": "bddca7247f552456406e3f16fad8145346cd03d5500ef81995c66734ce324b88",
+      "bytes": 110418
+    },
+    {
+      "source": "qa9-15-install/report-001.png",
+      "sha256": "ea75b8a1ffd5bf147637415cb452d1c68ce50ba7a4e734397ed8f91296f046be",
+      "bytes": 71589
+    },
+    {
+      "source": "qa9-16-install/report-001.png",
+      "sha256": "0d44b5dce28b283552b5ecfe38df47bd772e3c1a22933391d216182052400863",
+      "bytes": 197920
+    },
+    {
+      "source": "qa9-16-install/report-002.png",
+      "sha256": "4f1bac8904d8bbc2a9951b4ff89f5e784ef2c5183bbb35efc1b932d0a507298b",
+      "bytes": 149346
+    },
+    {
+      "source": "qa9-17-xattrs/report-001.png",
+      "sha256": "a0f1d752e7b96642f23d4ede00cbd6d2686742299a4053694d53dc3cd799d91f",
+      "bytes": 131274
+    },
+    {
+      "source": "qa9-18-pack/report-001.png",
+      "sha256": "57ab2c5d2e839cac9a1c1bd75c85375e94f21b2a80911abb9a5533469f4a6669",
+      "bytes": 160034
+    },
+    {
+      "source": "qa9-18-pack/report-002.png",
+      "sha256": "945922719a85e547f7f3b9e2d377cc02cfa2a63cd99f237b931635e3a3db9856",
+      "bytes": 139597
+    },
+    {
+      "source": "qa9-19-staged-ui/report-001.png",
+      "sha256": "19964f247b778a84ba0b79571b115f242750a0efdc102d8c6fdd76011ae4b4c9",
+      "bytes": 80390
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/01-calendar-editor.png",
+      "sha256": "633cf283765920375495d968a07baf41bfa17b29da8af886b8c97eea53ad4c9d",
+      "bytes": 63957
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/02-calendar-saved.png",
+      "sha256": "284e3aa0e5ae4ee399018a903be063011e26661363569345c736586252519bbd",
+      "bytes": 53655
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/03-reuz-clock-paper.png",
+      "sha256": "84b3f85ccdcde9e089c8e0aee494d3e2c55b4de5ffab5fa893d9f290879b4ed0",
+      "bytes": 46892
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/04-reuz-clock-ink.png",
+      "sha256": "d3101dda59db808be2758375f9e86caa19fc3ea532774950025131f5e527bb03",
+      "bytes": 46982
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/05-reuz-paused.png",
+      "sha256": "9cef48297db9441aa61333afc165a6868eee87dcd920391632a2d05c47456e20",
+      "bytes": 31637
+    },
+    {
+      "source": "qa9-20-staged-ui/native-components/06-reuz-finished.png",
+      "sha256": "914ac7727cf24560fa32ae84c48551a24f600ade56cf854f4f8c2fc870c695dd",
+      "bytes": 32364
+    },
+    {
+      "source": "qa9-20-staged-ui/report-001.png",
+      "sha256": "d68d984f5d4a54d349cc2e6d1a233d318991b75aa237477c0d4fe180c9b221a0",
+      "bytes": 107652
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/01-calendar-editor.png",
+      "sha256": "633cf283765920375495d968a07baf41bfa17b29da8af886b8c97eea53ad4c9d",
+      "bytes": 63957
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/02-calendar-saved.png",
+      "sha256": "9c1860ff88e4eb2c7ff90ce977793d018be3baf1a9640dbcb5328adbd782ae4f",
+      "bytes": 53637
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/03-reuz-clock-paper.png",
+      "sha256": "5835731bac42ac563578e6513b4fc3ca09e8955d91cb55337348d581a6ad9a85",
+      "bytes": 45694
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/04-reuz-clock-ink.png",
+      "sha256": "d2c5c36517316bc21bc216b9ccae68fd1e729bc1d5766b58f0aaeb1bcd127679",
+      "bytes": 45771
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/05-reuz-paused.png",
+      "sha256": "9cef48297db9441aa61333afc165a6868eee87dcd920391632a2d05c47456e20",
+      "bytes": 31637
+    },
+    {
+      "source": "qa9-21-staged-ui/native-components/06-reuz-finished.png",
+      "sha256": "914ac7727cf24560fa32ae84c48551a24f600ade56cf854f4f8c2fc870c695dd",
+      "bytes": 32364
+    },
+    {
+      "source": "qa9-21-staged-ui/report-001.png",
+      "sha256": "aa2023b44aa1b6049967012386cf9670468fc13a40e9d8d91abfed68753bc44d",
+      "bytes": 105822
+    },
+    {
+      "source": "qa9-22-source/report-001.png",
+      "sha256": "c1045f04ad39ce67103f076553a9f4874898b5bfe2fd5f74ce807d05c6c6c470",
+      "bytes": 228874
+    },
+    {
+      "source": "qa9-22-source/report-002.png",
+      "sha256": "8503c5c4202896e236bbfd967ffd5150e2f32963b9c4ee5b0c2851dc6d67a936",
+      "bytes": 221117
+    },
+    {
+      "source": "qa9-22-source/report-003.png",
+      "sha256": "06d0c814cb957960d483a525bed1663ffc4d01329ce0bb3e662397bc08d31476",
+      "bytes": 239905
+    },
+    {
+      "source": "qa9-22-source/report-004.png",
+      "sha256": "af76fda12c89aa7c0f77bd5766fe2931a65a07e569872aea38c88b059eae7332",
+      "bytes": 233141
+    },
+    {
+      "source": "qa9-22-source/report-005.png",
+      "sha256": "8abeb0020c7e074dbf672b8067ffbd911782b593ddb3b894d5236d38c201eb3b",
+      "bytes": 231229
+    },
+    {
+      "source": "qa9-22-source/report-006.png",
+      "sha256": "eba01c01d4a95f4791cf29bfe74bec04ffbf3c727b34877b5dcbfff00b4b84fb",
+      "bytes": 231755
+    },
+    {
+      "source": "qa9-22-source/report-007.png",
+      "sha256": "4a9910a0ad4ba3e74deaae909473459c669dc50e126d2014ce2426ee4bc76101",
+      "bytes": 226700
+    },
+    {
+      "source": "qa9-22-source/report-008.png",
+      "sha256": "db592b4149576a17df3fecb5e4d202784ec51a16f5a26e537764b3aea760b25a",
+      "bytes": 217070
+    },
+    {
+      "source": "qa9-22-source/report-009.png",
+      "sha256": "9a943aa7c72cfb9d55cba924b8ae27fd4d2aa0c131611089a49a5c8a83564e6a",
+      "bytes": 197038
+    },
+    {
+      "source": "qa9-22-source/report-010.png",
+      "sha256": "e7d02831c513ffd73937197ad7e3859af611cafe2e27003941a777ea4d1b412d",
+      "bytes": 135394
+    },
+    {
+      "source": "qa9-23-security/report-001.png",
+      "sha256": "3abd2851574420f9ed16e816fbb9ef786c0c643763292cb3c821adf694935483",
+      "bytes": 121905
+    },
+    {
+      "source": "qa9-24-retention/report-001.png",
+      "sha256": "91f294791123fb0e2e196f72b250ca2cab075d1b91218b8c2042d0728c4a356b",
+      "bytes": 120997
+    },
+    {
+      "source": "qa9-25-source-inventory/report-001.png",
+      "sha256": "10638502018d8718134822e2f61c1f2e2c6724bbe5007589285defaa284f043f",
+      "bytes": 74389
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "Minimal rootless image-builder dependencies",
+      "kind": "package-container",
+      "started_at": "2026-11-05T23:59:19.126083+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "a399513303cbaf0af78066832cdef78747db70205b29ddc2c31da0e54e31cd96",
+      "working_tree": "?? environment/orez-image-tools.Dockerfile",
+      "command": [
+        "docker",
+        "build",
+        "--secret",
+        "id=qa_ca_bundle,src=/etc/ssl/certs/ca-certificates.crt",
+        "-f",
+        "environment/orez-image-tools.Dockerfile",
+        "-t",
+        "orez-image-tools:20261105",
+        "."
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 112.79,
+      "finished_at": "2026-11-06T00:01:11.982402+00:00",
+      "log_sha256": "54097b71f1314efe7c97831adef0d43c476f4ee7ec6334b32e114b5253933cb3",
+      "directory": "qa9-01-tools"
+    },
+    {
+      "schema_version": 1,
+      "name": "Retained real base filesystem and app dependency inventory",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:02:16.822322+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "a399513303cbaf0af78066832cdef78747db70205b29ddc2c31da0e54e31cd96",
+      "working_tree": "?? environment/orez-image-tools.Dockerfile",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-base.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 27.42,
+      "finished_at": "2026-11-06T00:02:44.283099+00:00",
+      "log_sha256": "c0bdd55b849e713cb085f2e467b75a7a8f59474898ceb397d702b2cf1233ce35",
+      "directory": "qa9-02-base-inventory"
+    },
+    {
+      "schema_version": 1,
+      "name": "Real base inventory with actual legacy APT layout",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:03:41.058678+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "a399513303cbaf0af78066832cdef78747db70205b29ddc2c31da0e54e31cd96",
+      "working_tree": "?? environment/orez-image-tools.Dockerfile",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-inventory-v2.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.82,
+      "finished_at": "2026-11-06T00:03:41.929691+00:00",
+      "log_sha256": "cb14967fd3de5427a0a1d7349f45bd8fcf582e666d6c1abd82c052b228c79bfd",
+      "directory": "qa9-03-base-inventory"
+    },
+    {
+      "schema_version": 1,
+      "name": "Signed application dependency resolution from actual ISO status",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:07:12.983969+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "a3fe3d53e026e0fa229c51e75a1c25f623fa498633247cd58197da5b94f48c19",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-resolve.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.47,
+      "finished_at": "2026-11-06T00:07:13.488730+00:00",
+      "log_sha256": "18061b7193b6bc85ac05cc340fdacf7b3e6e25812cb9dfe85df256dc511f8153",
+      "directory": "qa9-04-resolve"
+    },
+    {
+      "schema_version": 1,
+      "name": "Signed APT closure using isolated configuration",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:08:12.107932+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "329ed17bb1f26e9813acbf448eaee547b2beff33649891811707611c81796842",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-resolve-v2.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 56.64,
+      "finished_at": "2026-11-06T00:09:08.804610+00:00",
+      "log_sha256": "6d158270bb4f75b503cb4e3ea81944972ff80ae468cccbd96a46c9e747dd3feb",
+      "directory": "qa9-05-resolve"
+    },
+    {
+      "schema_version": 1,
+      "name": "Image package trust and transaction regression",
+      "kind": "source",
+      "started_at": "2026-11-06T00:08:13.511845+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "329ed17bb1f26e9813acbf448eaee547b2beff33649891811707611c81796842",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.12,
+      "finished_at": "2026-11-06T00:08:14.661871+00:00",
+      "log_sha256": "62afd272c08b4c801d1e77a0f09a8cc6322729596a2422677528f596abc862d2",
+      "directory": "qa9-06-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Rootless image staging capability probe",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:09:13.267444+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "329ed17bb1f26e9813acbf448eaee547b2beff33649891811707611c81796842",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-runtime.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.33,
+      "finished_at": "2026-11-06T00:09:13.644203+00:00",
+      "log_sha256": "d7818e72acf41cfe282e4a76a66fd4503ce796910d4cd612436a1e53c18a3bf6",
+      "directory": "qa9-07-runtime"
+    },
+    {
+      "schema_version": 1,
+      "name": "Sandbox-readable authenticated application package closure",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:12:17.844695+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "766d809b54f1ce6fe570d7eb03d0494f4419427e8c7ee66bb19251d15bfd721f",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-resolve-v3.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 56.08,
+      "finished_at": "2026-11-06T00:13:13.982324+00:00",
+      "log_sha256": "19ef46bfa54864f1c868626055c262126c19e7258e444cd545fcc3ac0d20d0c6",
+      "directory": "qa9-08-resolve"
+    },
+    {
+      "schema_version": 1,
+      "name": "Verify superseded generated image before reclaiming build space",
+      "kind": "source",
+      "started_at": "2026-11-06T00:14:00.759271+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "766d809b54f1ce6fe570d7eb03d0494f4419427e8c7ee66bb19251d15bfd721f",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-space.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 17.97,
+      "finished_at": "2026-11-06T00:14:18.784315+00:00",
+      "log_sha256": "7bcc4144165b87144c99aae15c315258e1304b243f2a90e5a3fcb3b235c36295",
+      "directory": "qa9-09-space"
+    },
+    {
+      "schema_version": 1,
+      "name": "APT sandbox-owned partial downloads and immutable package promotion",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:14:49.014174+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "306ff208262e3214e08e9e1aede3a509118f16ca635ace00e1a829289c68638e",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-resolve-v4.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 60.31,
+      "finished_at": "2026-11-06T00:15:49.395009+00:00",
+      "log_sha256": "859ecb0414b0e1f493c7cbad7a90088c4073286e03080f0dfac9b06674c6ccd9",
+      "directory": "qa9-10-resolve"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual base extraction into isolated additive-layer staging",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:17:29.495833+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "cc89164d683641721b1a9676b12e6f59a90a6517a7154a1e370815f011776083",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-stage.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 19.66,
+      "finished_at": "2026-11-06T00:17:49.211007+00:00",
+      "log_sha256": "063ddb6ef900c68437bfb35e296aa0d43bb5c71eeb0ec5480e0692d1510edf47",
+      "directory": "qa9-11-stage"
+    },
+    {
+      "schema_version": 1,
+      "name": "Corrected additive-root extraction excludes virtual runtime trees",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:18:52.928141+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "ea4efa1cad267c7f7dc30c49c09f1796363d693e15e2bae2f8571aef95aa2bb8",
+      "working_tree": "?? build/image_packages.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-stage-v2.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 91.06,
+      "finished_at": "2026-11-06T00:20:24.019222+00:00",
+      "log_sha256": "e860d336ff12a12beab83ca09afd05f138cde26bd33f5b743313579748c6a7e1",
+      "directory": "qa9-12-stage"
+    },
+    {
+      "schema_version": 1,
+      "name": "Offline signed app installation into actual Kubuntu base staging",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:22:53.048189+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "f9a0ae802f85c7e00d6fb65f0f6106641272d05cf4ce7bdeed2646f3542d8e0e",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-install.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 79.33,
+      "finished_at": "2026-11-06T00:24:12.452888+00:00",
+      "log_sha256": "6f956b273981608d810390e7c6a2565acfe86fb58944fb0da93d847e5d3dcdee",
+      "directory": "qa9-13-install"
+    },
+    {
+      "schema_version": 1,
+      "name": "Additive layer policy and package regression",
+      "kind": "source",
+      "started_at": "2026-11-06T00:22:54.437065+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "f9a0ae802f85c7e00d6fb65f0f6106641272d05cf4ce7bdeed2646f3542d8e0e",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.37,
+      "finished_at": "2026-11-06T00:22:55.839623+00:00",
+      "log_sha256": "8d02f14ae3a740862a58e1b28f5ad5f772ebd34a08b35515b329e5a7df557e59",
+      "directory": "qa9-14-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Exact offline dpkg transaction after unchanged-baseline verification",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:25:57.410295+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "f7c8cd496b3c67ffd1e757a883e81537f3709a88afc02e3643d906ba65a4765e",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-install-v2.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.06,
+      "finished_at": "2026-11-06T00:25:57.547977+00:00",
+      "log_sha256": "ad427612c8e5858455c55dcce662c7edd92ecc5d287ad2845bd2c0263bda6f51",
+      "directory": "qa9-15-install"
+    },
+    {
+      "schema_version": 1,
+      "name": "Offline exact package installation through existing writable staging mount",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:27:44.783865+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "f7c8cd496b3c67ffd1e757a883e81537f3709a88afc02e3643d906ba65a4765e",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-install-v3.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 197.53,
+      "finished_at": "2026-11-06T00:31:02.370935+00:00",
+      "log_sha256": "727fe95becbc3f86236d7b8d685dff630e4f3984f5c619d9dee338558b07850b",
+      "directory": "qa9-16-install"
+    },
+    {
+      "schema_version": 1,
+      "name": "Original SquashFS extended-attribute audit",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:33:25.716716+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "f7c8cd496b3c67ffd1e757a883e81537f3709a88afc02e3643d906ba65a4765e",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "docker",
+        "exec",
+        "orez-image-lab-20261106",
+        "python3",
+        "/work/audit-xattrs.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.45,
+      "finished_at": "2026-11-06T00:33:27.306204+00:00",
+      "log_sha256": "6a47a9eb14a3f96c7a5680ac49c887c0bda8e53750e1273f4157102fb01128f1",
+      "directory": "qa9-17-xattrs"
+    },
+    {
+      "schema_version": 1,
+      "name": "Application SquashFS original-metadata and roundtrip audit",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:35:14.570296+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "d985c6c9124dd5641915402a2e12493914f9c2853eb2cc6cacffc414f3d75677",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-pack.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 171.48,
+      "finished_at": "2026-11-06T00:38:07.668009+00:00",
+      "log_sha256": "eea6f2fee541fad9a8f92f1c1bd10d2d9c50d3f9aa62295ad316dbc69d2b4a52",
+      "directory": "qa9-18-pack"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native app startup and Qt components in actual ISO base",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:36:03.595558+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "292a128376127a5829e92fc5e3f0d5c3a883736323ff72f68ce3b6a4c7616084",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/integration/staged-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-staged-ui.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 2.6,
+      "finished_at": "2026-11-06T00:36:06.372479+00:00",
+      "log_sha256": "584a77236b4571f808d91d6434c578e460c030edad4422d3326050174753c583",
+      "directory": "qa9-19-staged-ui"
+    },
+    {
+      "schema_version": 1,
+      "name": "Native app versions and Qt components with explicit game data path",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:36:56.542958+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "4bab92cdbada40a96370fa48fcfea4dcb14b4f2ce9dd5b3fce7bbfcae799c23c",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/integration/staged-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-staged-ui.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.45,
+      "finished_at": "2026-11-06T00:37:01.087728+00:00",
+      "log_sha256": "899fe812d036c2cdfd422e10c3c94e1aca1c9e67e80b3fccc30b0890cbbf19bc",
+      "directory": "qa9-20-staged-ui"
+    },
+    {
+      "schema_version": 1,
+      "name": "Strict native version records and installed-Qt component scenarios",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:37:41.845447+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "cabaf12333903ca3ffcd4b7ef561ea47df4a04dca25ff747fa177e445072e411",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/integration/staged-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-staged-ui.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 5.72,
+      "finished_at": "2026-11-06T00:37:47.789013+00:00",
+      "log_sha256": "5f107e2e3092c00ae439ce84e1f435a9cfd8a49118a7dacede7a100288d02813",
+      "directory": "qa9-21-staged-ui"
+    },
+    {
+      "schema_version": 1,
+      "name": "Image package and filesystem policy regression",
+      "kind": "source",
+      "started_at": "2026-11-06T00:39:10.141810+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "c84719c53295473a504a56e417f3da9718bb7bbb72b7c79110c66de94af4fdac",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/integration/staged-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.39,
+      "finished_at": "2026-11-06T00:39:11.585124+00:00",
+      "log_sha256": "a52e4439fa5251e4be6df69c8276bd8ca7fcdcbba54c1abab333b2e166cfd66b",
+      "directory": "qa9-22-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "Installed application policy and vendor-management audit",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:39:11.562013+00:00",
+      "commit": "05f17879649f226bef8f24816dedfd32816fec60",
+      "source_digest": "c84719c53295473a504a56e417f3da9718bb7bbb72b7c79110c66de94af4fdac",
+      "working_tree": "?? build/app_layer.py\n?? build/image_packages.py\n?? build/install-image-apps.py\n?? build/integration/staged-apps.py\n?? build/pack-app-layer.py\n?? build/resolve-image-apps.py\n?? build/stage-image-root.py\n?? environment/orez-image-tools.Dockerfile\n?? image/desktop-packages.json\n?? tests/test_app_layer.py\n?? tests/test_image_packages.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-audit-final.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.95,
+      "finished_at": "2026-11-06T00:39:16.542609+00:00",
+      "log_sha256": "4dce3b228078b6682ed7b27d9851b1a53b5a20faabe2eeff3a2da195bb3f4b73",
+      "directory": "qa9-23-security"
+    },
+    {
+      "schema_version": 1,
+      "name": "Artifact retention and disposable filesystem cleanup",
+      "kind": "package-container",
+      "started_at": "2026-11-06T00:44:32.544761+00:00",
+      "commit": "28320e7b478e054cad740759139a37a8ba6df948",
+      "source_digest": "fcfbfaf533021cc7e8f0d5c2c1788cc6b2cb7f6403f5c6d83783c8930dcdd02b",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-qa9-retain.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 142.56,
+      "finished_at": "2026-11-06T00:46:55.149729+00:00",
+      "log_sha256": "21a85b1b730949d6abf11f3d736fba75f64eee67441d7e5a4e14dada67f3b43b",
+      "directory": "qa9-24-retention"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual package source identities and copyright inventory",
+      "kind": "source",
+      "started_at": "2026-11-06T00:49:34.805445+00:00",
+      "commit": "28320e7b478e054cad740759139a37a8ba6df948",
+      "source_digest": "470d831f1f7f55624657f8a6486c2ed5a265798a218a0df718acbdd0706203e5",
+      "working_tree": "?? docs/evidence/2026-11-06-image-apps/retention.json\n?? docs/evidence/2026-11-06-image-apps/run-ledger.json",
+      "command": [
+        "python3",
+        "/tmp/orez-qa9-sources.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.62,
+      "finished_at": "2026-11-06T00:49:36.495191+00:00",
+      "log_sha256": "48c21ad3fd9dc72389445dc912004ce70a549628b9602958a1c0b8882bd75555",
+      "directory": "qa9-25-source-inventory"
+    }
+  ],
+  "implementation_commit": "28320e7b478e054cad740759139a37a8ba6df948",
+  "interpretation": {
+    "Scope": "Actual native app layer built from retained ISO base; not a new full ISO, installed desktop or hardware certification.",
+    "Packages": "17 authenticated additions, 2283 to 2300 installed packages, no existing upgrade/removal. Final resolution 10 retains APT sandbox; 05/08 warnings are superseded.",
+    "Layer": "383488000-byte SquashFS; 5624 paths independently extracted and verified. Original base xattrs untouched. Full ISO integration and current owner-initrd boot remain open.",
+    "Qt captures": "Actual Calendar/Reuz offscreen widget images using real installed image dependencies. OREZ source/palettes copied under /run for fixture; not a Plasma session, physical input or GPU test.",
+    "Version checks": "Final 21 checks exact native executable version strings only. Brave shell wrapper/sandbox, YouTube, VLC playback and gameplay are not qualified by this check. SuperTux uses its documented explicit data path.",
+    "Failed and limited attempts": "All six failures retained: 02, 04, 11, 13, 15, 19. Run 20 UI passed but recorded Brave wrapper warning as version; final 21 corrects that parser. Probe 07 captures denied mknod, not device capability.",
+    "Owner control": "No account/boot/auth/service-policy changes in app transaction, no Brave management configured. Official Chromium setuid sandbox helper retained and disclosed. Actual AppArmor/browser enforcement unqualified.",
+    "Reports": "Report PNGs show test output. They are not pictures of a running OS. This is a screenshot archive, not an installer."
+  }
+}
