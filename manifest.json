@@ -1,0 +1,3215 @@
+{
+  "scope": "All saved PNG files for the selected run prefix, including failed attempts.",
+  "prefix": "qa12-",
+  "unique_images": 301,
+  "capture_references": 512,
+  "references": [
+    {
+      "source": "qa12-01-graphics-preflight/report-001.png",
+      "sha256": "5fa5229044dfefb54f2ee4cee40e319e23b94145273c56cfdc6077d90e8e0391",
+      "bytes": 88286
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0005.png",
+      "sha256": "2d5bddc6ae8a050d182b33354b5c6b005bee6b8f77c29eefd1ee1730d508080c",
+      "bytes": 14633
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0035.png",
+      "sha256": "19932c6783fc53f1fdfdefe52448ff5a676ce4691c7463b06321ac33891f1066",
+      "bytes": 8356
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0065.png",
+      "sha256": "9a103a9f46c581de81239c10ecf56207ed62320ac2898df34bf9ca7359c052af",
+      "bytes": 9009
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0095.png",
+      "sha256": "983843347a5883de3061de6d587afe0606f90c0d28417a59cb9fe7ebda9c208b",
+      "bytes": 3425
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0125.png",
+      "sha256": "5a90bc5a0063f45221b53000a3617370ae3baef5b2e453babc51f29fd3f2a03e",
+      "bytes": 21029
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0155.png",
+      "sha256": "5a90bc5a0063f45221b53000a3617370ae3baef5b2e453babc51f29fd3f2a03e",
+      "bytes": 21029
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0185.png",
+      "sha256": "8e1fe93f66d04415949a8376a375af83b73cd3e0090e94f11599672e9de350d8",
+      "bytes": 22294
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0215.png",
+      "sha256": "9e5101d67fdaf5b01b1b61f5f0169d1f9b2ad495e6434313fdc3b27e5d85ce12",
+      "bytes": 24797
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0245.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0275.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0305.png",
+      "sha256": "d466800ccb5a245b6ca5e710608da28409193db1dcc26833359da011cdf674a8",
+      "bytes": 111378
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0335.png",
+      "sha256": "abc6c92c67295c676cda28b64a063c2bdbca67e5ee67c127181d351233125b34",
+      "bytes": 128831
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0365.png",
+      "sha256": "c90194c6ad0efec36aaffcf8507da5e50e876b021ecf44f2426efa3208d280d2",
+      "bytes": 136568
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0395.png",
+      "sha256": "37f0964e7bd4933ba39a719d60b0ff79191a1def0dc49959227f7c25e7206263",
+      "bytes": 136658
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0425.png",
+      "sha256": "412b2dfd131f61d5e5b6151e3f8a341295b701b537854ff3a52f433b6e03785d",
+      "bytes": 136395
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0455.png",
+      "sha256": "5fa01af443fc5288c729221fbd4bd88a7243b9251a1a1839be9372c48269668d",
+      "bytes": 136618
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0485.png",
+      "sha256": "fdb8ff54765ec46b05b03b944b61e85c9980b2f7687589b4b18349bd52adc1e3",
+      "bytes": 136635
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0515.png",
+      "sha256": "7b9e4f41e2e2779a78ad50274f94f247ce0a5db60ecdb4a6d026247408858830",
+      "bytes": 136602
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0545.png",
+      "sha256": "ccb6d74e21e85ae40e36426203ba3a3bf0037da1e76ec0372f7246d4bf362030",
+      "bytes": 140987
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0575.png",
+      "sha256": "eb60123565457eb4069be732276119d8490d4521114618753cfaf5b8d3f0936d",
+      "bytes": 141082
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0605.png",
+      "sha256": "4387b55c84ba414cc257c4540f0326dfa19a3e4558ec802a8c87de8b96e0ad9f",
+      "bytes": 144265
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0635.png",
+      "sha256": "0a1667d342acc93de1e9485f7f49a29672c63339ed64ac8735361aac5ff67973",
+      "bytes": 169309
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0665.png",
+      "sha256": "942b21486e9d841124d6208e418bf8fb6f899d2bb0def3644a9ce3931fa9f5f2",
+      "bytes": 168082
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0695.png",
+      "sha256": "735716336139130b2fb67af5edcab0fc28fac43b6d4433da26eb23611c51146a",
+      "bytes": 170427
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0725.png",
+      "sha256": "805715997a76426167f64489b9ad4d68ec6579a9825ca8946d1e00c806f0a15d",
+      "bytes": 6555
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0755.png",
+      "sha256": "805715997a76426167f64489b9ad4d68ec6579a9825ca8946d1e00c806f0a15d",
+      "bytes": 6555
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0785.png",
+      "sha256": "6ab7b8201ce2060814b9ea19db8aebede5e926289a5b89380142b23b420c6971",
+      "bytes": 6538
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/guest-0815.png",
+      "sha256": "6ab7b8201ce2060814b9ea19db8aebede5e926289a5b89380142b23b420c6971",
+      "bytes": 6538
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-boot-messages.png",
+      "sha256": "1640f6cb03eade1996937ad1c75bc91d6bf18e350bbed9f3ec141b2fe4008d51",
+      "bytes": 15347
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-boot-parameter.png",
+      "sha256": "5ed5519946537f538d6a88e6356acf53e8a3a46c42ae5fea17f1fa74b31ade56",
+      "bytes": 9158
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-boot-progress.png",
+      "sha256": "d755bc1f602db2c8c959c1b305c388ce4d5b58b864855f315f737de0a6b562d5",
+      "bytes": 121963
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-console-progress.png",
+      "sha256": "40efbdf4dd212ae3530755ea121e83a3bf30ae6d8f430c9ebc86c18ae7bd2e08",
+      "bytes": 147456
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-current-startup.png",
+      "sha256": "aece35a5c781f21887b8c9ada3e6123a360cd456cc6b29ef4df8f9e056969f5d",
+      "bytes": 17323
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-enrollment-check.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-failure-console.png",
+      "sha256": "805715997a76426167f64489b9ad4d68ec6579a9825ca8946d1e00c806f0a15d",
+      "bytes": 6555
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-grub-editor-settled.png",
+      "sha256": "bf15b0b7dda32e3f3bebc5ebbd8bc0c12fb9cc642e6714bf89660a403f36e939",
+      "bytes": 9001
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-grub-editor.png",
+      "sha256": "39b4cbee49c9353abf8374f1772c611ec0a1941178b65a4b7a92c041b92f1849",
+      "bytes": 7642
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-menu.png",
+      "sha256": "0e9f8df2fc47da354cb6134cb828f936f5dab3a64d8bc2df47b7de129ac1efc3",
+      "bytes": 9033
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-owner-stage.png",
+      "sha256": "231e2105b3fddaab9a3234b05b6db535e6260913ad652e18c064bb6179d38d2c",
+      "bytes": 136548
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-owner-wait.png",
+      "sha256": "0934268c2d4d5d85fb76e4f75600138a7c0e9627a02f1a62a0daba202678d26e",
+      "bytes": 169258
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-service-progress.png",
+      "sha256": "862c35d744a829fe1794d61285679a8676e0136a0c0f67c7e3ff606f1abdd196",
+      "bytes": 136667
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/actual-vm/manual-startup-status.png",
+      "sha256": "095bf3f997bc0ecec67bb6b04c5ecac003053a7010070a70ac19c8be523bda87",
+      "bytes": 24930
+    },
+    {
+      "source": "qa12-02-qpaint-uefi/report-001.png",
+      "sha256": "049233377a001c2890e41e815e3070f2c145be061b60674050a91a93be74b23f",
+      "bytes": 143544
+    },
+    {
+      "source": "qa12-03-actual-installer-source/report-001.png",
+      "sha256": "1de1f897b961ee6045b75025d43424c2702bf41988dc57b8514a4e05a3281fa3",
+      "bytes": 194820
+    },
+    {
+      "source": "qa12-03-actual-installer-source/report-002.png",
+      "sha256": "6469152f4c80dee5a56728c7134377b4594d43f1337f8281e9d57b90718669d0",
+      "bytes": 60277
+    },
+    {
+      "source": "qa12-04-source-regression/report-001.png",
+      "sha256": "257da4879ff96544a9724f7b301a423a4f266b191cdfa861f0bef309a2ec545a",
+      "bytes": 225699
+    },
+    {
+      "source": "qa12-04-source-regression/report-002.png",
+      "sha256": "957b5a0d5ed31569d6d49776a5380cc01c4c31ea05f6ab62eaa0768fc2da3618",
+      "bytes": 217618
+    },
+    {
+      "source": "qa12-04-source-regression/report-003.png",
+      "sha256": "f6a139ba79ac3cc7044c4fa2b48abaa87bb8ca7f5d96d0a54e6a8ef1dfca5a75",
+      "bytes": 236453
+    },
+    {
+      "source": "qa12-04-source-regression/report-004.png",
+      "sha256": "b0f398cb5a2c20eaa2bbbef113fc911454a1ab1cc4ed83a8fbdecc12e00be180",
+      "bytes": 229696
+    },
+    {
+      "source": "qa12-04-source-regression/report-005.png",
+      "sha256": "659a4a50899abf01dc306379a5ec62a1a97bce4c6729c2c0c02420b3b241ab43",
+      "bytes": 227975
+    },
+    {
+      "source": "qa12-04-source-regression/report-006.png",
+      "sha256": "b3f401d3c0dca5e35e68326cdaeec89ab7602af17d7a3817f67cc87b4ecd04ff",
+      "bytes": 235147
+    },
+    {
+      "source": "qa12-04-source-regression/report-007.png",
+      "sha256": "9b4e3a247cd8a0bf10d8791ade15818717d73eb8048743ea5d540206817da4ac",
+      "bytes": 222300
+    },
+    {
+      "source": "qa12-04-source-regression/report-008.png",
+      "sha256": "b43afa947037b423672ca51c765d59d264d6d9c086cfa8f97585a27132106d13",
+      "bytes": 226449
+    },
+    {
+      "source": "qa12-04-source-regression/report-009.png",
+      "sha256": "a8ac061862c0ae26060932e7365f3644ff45aa9f31bdbdf7d4654781ec9051f5",
+      "bytes": 209897
+    },
+    {
+      "source": "qa12-04-source-regression/report-010.png",
+      "sha256": "b455668f7c2478b155ea4aa93ff8bb3adc188d9b49b24527ef2219bdbba00833",
+      "bytes": 197555
+    },
+    {
+      "source": "qa12-04-source-regression/report-011.png",
+      "sha256": "1ffb3048d1b74437f63e3f3753ad516967821bff869a6e12b25e394ff454bc33",
+      "bytes": 121892
+    },
+    {
+      "source": "qa12-05-complete-installer-source/report-001.png",
+      "sha256": "1c76dcad99bf01a19549b5442878d4f48a687a154a55f73efd3f7d17757c433c",
+      "bytes": 208533
+    },
+    {
+      "source": "qa12-05-complete-installer-source/report-002.png",
+      "sha256": "06c2bc9252a9591a05f05bcb20cb7b448fb6de2bde93a38d1f2d03f59ba6e189",
+      "bytes": 239246
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-001.png",
+      "sha256": "8a871547ff78dcdc509abdea3d38422710708bdef67d6647a97124dbb74b9fbd",
+      "bytes": 226785
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-002.png",
+      "sha256": "93ee497f0dd32fbdc6a6ef4a7b007b0702d10a4ce61de92a50ce38ef3eb95045",
+      "bytes": 218700
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-003.png",
+      "sha256": "ec3c26035446484c1e9d0643da37eeb9562850e698739b2250600c4e981adf06",
+      "bytes": 237537
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-004.png",
+      "sha256": "867d81815c6ede6fad4a79d3b9e4dc1137b38a24e9081f1cf7a4a139f9090061",
+      "bytes": 232966
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-005.png",
+      "sha256": "6de15688886966a9eb625addde615613c22337f3f66170643af5afcdec4986db",
+      "bytes": 232151
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-006.png",
+      "sha256": "591abbdd523c45509fbf8543de76858d28f6c1cdbbf8b6429f93f99992749b64",
+      "bytes": 228799
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-007.png",
+      "sha256": "3f2f498fc23bff28449c70029012a8e34e82cf2f0b18ec2aa2adf683f823226b",
+      "bytes": 230843
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-008.png",
+      "sha256": "745c066f899f12bb793d7b433578723f7eaedea35da96739786dcda400ae2e48",
+      "bytes": 224922
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-009.png",
+      "sha256": "570ea156037e645ec9e357c3b58aba3e04cf4e2f7b8a46280bd1ba3842291deb",
+      "bytes": 209692
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-010.png",
+      "sha256": "4fe8697186c2325b07ce8eebbad1ee06cc264c91175bbd3cd1e07b649f3e8148",
+      "bytes": 202591
+    },
+    {
+      "source": "qa12-06-owner-installer-regressions/report-011.png",
+      "sha256": "db42101642781559de9afbca3d7b012d9cd354d10c55cdb4dcfdcd862c1a115d",
+      "bytes": 178204
+    },
+    {
+      "source": "qa12-07-slow-splash-iso/report-001.png",
+      "sha256": "baabaf39e3f002ae0fc8798a577289825cb4e91b77261b74f4370b4ee36c7bf4",
+      "bytes": 195941
+    },
+    {
+      "source": "qa12-07-slow-splash-iso/report-002.png",
+      "sha256": "956ecf5bb24af0c66bedfd68eb0579c02bdfa2b21730a82669887313f1e0babb",
+      "bytes": 186305
+    },
+    {
+      "source": "qa12-07-slow-splash-iso/report-003.png",
+      "sha256": "666b38c8b8cae6db4bbfb40527f11c8fcc8b18b4a2bb52dcf47320a6b189b197",
+      "bytes": 93890
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0005.png",
+      "sha256": "2d5bddc6ae8a050d182b33354b5c6b005bee6b8f77c29eefd1ee1730d508080c",
+      "bytes": 14633
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0035.png",
+      "sha256": "bf15b0b7dda32e3f3bebc5ebbd8bc0c12fb9cc642e6714bf89660a403f36e939",
+      "bytes": 9001
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0065.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0095.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0125.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0155.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0185.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0215.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0245.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0275.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0305.png",
+      "sha256": "983843347a5883de3061de6d587afe0606f90c0d28417a59cb9fe7ebda9c208b",
+      "bytes": 3425
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0335.png",
+      "sha256": "56571259029d8fb500bd53504b9c4a23fec4dd47313e8fe134fcdde0511d10e3",
+      "bytes": 40536
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0365.png",
+      "sha256": "ef1f80ede3c23e6b1a174ac779ad6925677a2a89f07b8ba852c4b9cbba017278",
+      "bytes": 35721
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0395.png",
+      "sha256": "bbfc58a58242c248bc52f9586c3912abcdee4b2fdf65bcc2f9e91377d5d394f6",
+      "bytes": 37293
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0425.png",
+      "sha256": "550eb598746958f83db5de59dd0fcf34cc85759c7fd8921b5b1a216860836dc7",
+      "bytes": 34707
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0455.png",
+      "sha256": "3c086396545cc38b9a384767f69ab3f92899867ec87ec3077b4e7b114231e37f",
+      "bytes": 34724
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0485.png",
+      "sha256": "e56536835cad82d830501c0d6697ceef93ae53a357da4a3d43b884aa69a9f96b",
+      "bytes": 35545
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0515.png",
+      "sha256": "6105ec8f1027bf297e7cdf2a1273ec827571109d840655ba598b07acf3d541a6",
+      "bytes": 35021
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0545.png",
+      "sha256": "b7a3df20af176b4a36963a901115823f4c597da6bbebade7630774425515b0ee",
+      "bytes": 52643
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0575.png",
+      "sha256": "10085f1aeb4cd6cb10c7f56f54853d5cadc466441b2f2babec2260f288c2e14f",
+      "bytes": 47914
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0605.png",
+      "sha256": "59bd0bfb27e6f682d77bf64fc1a5984244f7306f8a5326b901e0e9660b042cfd",
+      "bytes": 47404
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0635.png",
+      "sha256": "ddff8a4dd6f6e357fbf8a7270d652f043b80b2501027b5742f97270071655df7",
+      "bytes": 47409
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0665.png",
+      "sha256": "fa108b871b98322c31a24a967cd22f630879c324900c085cb21724135222baec",
+      "bytes": 47701
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0695.png",
+      "sha256": "99cc5e7c5e7b54ce08d4ddb129799c9ac97d100801dcd6657fd2a8dff04207b3",
+      "bytes": 47490
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0725.png",
+      "sha256": "749a5ff2ba9a8b5f1d5fb74107e955257fe293cc92f5e3c7b11cab9c3bb1a724",
+      "bytes": 47503
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0755.png",
+      "sha256": "63293cdf2d83b48608ada5ffb7fe99fdc5de4031ce5caf9544db2220983c3b6d",
+      "bytes": 47477
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0785.png",
+      "sha256": "b882c1a7e8b9438a30968b59b78a456ffd7345d87e6aaccb795f009755020aab",
+      "bytes": 47480
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0815.png",
+      "sha256": "032ec2d1004bad68b3c32550b6fe57e339bcd16dfa2fa0d8550923e5953d9203",
+      "bytes": 44559
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0845.png",
+      "sha256": "032ec2d1004bad68b3c32550b6fe57e339bcd16dfa2fa0d8550923e5953d9203",
+      "bytes": 44559
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0875.png",
+      "sha256": "05ac4d69d8157d75a2940f7e15cfe058ba4cf5ccb59f20abd75b568420df2cd6",
+      "bytes": 41032
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0905.png",
+      "sha256": "e01f853b58e6c1deed611e7487779037f1a314af16c7dbe11f8b34880fb2413a",
+      "bytes": 41052
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0935.png",
+      "sha256": "5afaac9d61d92b740ccb7ee2399cd4401102938bbea6fd974da04819d147eab1",
+      "bytes": 41183
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0965.png",
+      "sha256": "27f6c0a67000c77abdc3f0dbf4780446b91b7b562b59575820955d58105e533f",
+      "bytes": 39082
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-0995.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1025.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1055.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1087.png",
+      "sha256": "5156659797cfb07dec0a6367cdc6fd538f3d80e037bfb3e7dcd3d6dd8a065b24",
+      "bytes": 5433
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1117.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1147.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1177.png",
+      "sha256": "2d9e13b1992978432e85fa388e64283116ae8273c2d10cbe8083c83188c05e4f",
+      "bytes": 6349
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1207.png",
+      "sha256": "49a6fe069c134d65335d28563f13da67fd7f3b11c5ebfbbd5292880147b62d85",
+      "bytes": 6287
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1237.png",
+      "sha256": "d832cf48d9a846b170a5640ab877ad7b87106cbc63e7501d2f106b47ad4b44a2",
+      "bytes": 7319
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1267.png",
+      "sha256": "4a62d43ee4686b5cf7ac8ae1f8809cc75023a23087e5dbf2d9577182f66c5779",
+      "bytes": 7418
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1297.png",
+      "sha256": "ddc1641a7e3d2eec460e5292a31aaa277372a84cc37c074e971f17f7d722b61d",
+      "bytes": 7598
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1327.png",
+      "sha256": "3db27a08430b3ee7882e8460aabb72045505fbbfe751fe7a003d707e86457532",
+      "bytes": 8112
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1357.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1387.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1417.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1447.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1477.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1507.png",
+      "sha256": "17bb1cda6856aaf3b412cc8394051a0c0fc1c28de14874ce8a1367a298869569",
+      "bytes": 5471
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1537.png",
+      "sha256": "2394d8e95e937dd234e6a2bf82621c9607f7bbde297d360de793d348763e9798",
+      "bytes": 11500
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1567.png",
+      "sha256": "518842ee6e265581ca7134ad979951b3035c32ad0871af104e0fae35f1b242e4",
+      "bytes": 11698
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1597.png",
+      "sha256": "bd862d7b443aa31db17138f2da3324a1aba33f90ec8b63ae640a7727a3728732",
+      "bytes": 12150
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1627.png",
+      "sha256": "780af575aaa8664d87c1f6160503c73f2ce1f5d4e93aae39adce5b09496164ae",
+      "bytes": 14361
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1657.png",
+      "sha256": "52d054135b9c9dc72b298d858c9e035474ebe71b1305a18d249e9b15967fd13d",
+      "bytes": 14355
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1687.png",
+      "sha256": "d37e9500d86d246534dc54e9a4fc8ace89798f59f1459146a54794a245d3b09a",
+      "bytes": 15392
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1717.png",
+      "sha256": "e78a060eefd1eb11d40177ff9a408eebd2f9a858de2cda0a81379b033eef5897",
+      "bytes": 30326
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1747.png",
+      "sha256": "a49d7a983273ddd183b1788cac61d9f2e60702ba0ae0bf3843eabc3ec065733b",
+      "bytes": 911735
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1777.png",
+      "sha256": "a49d7a983273ddd183b1788cac61d9f2e60702ba0ae0bf3843eabc3ec065733b",
+      "bytes": 911735
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1807.png",
+      "sha256": "0da97bd818adb42ebf262ba1d5eecb04fe2ab3ffebc03d51ec183ad92c69a78f",
+      "bytes": 906528
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1837.png",
+      "sha256": "ea4dea7824a6a44b18500351502162307e3f18ab6e83c75917274effe0e77fbd",
+      "bytes": 910302
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1867.png",
+      "sha256": "8493f476dfb5eb9da3d69ab20fbbdde52cd515368861e8c63606338ab1a6a9dc",
+      "bytes": 910515
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1897.png",
+      "sha256": "4c2c88cb4e8db13a61a3c5e6db22372b8b30b25f01888f2645e3b529353be83d",
+      "bytes": 913365
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1927.png",
+      "sha256": "bbc1012bace0000924bee53a52b05bd362b178301f8f5ca5dfb6139bfe4a6bbe",
+      "bytes": 912803
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1957.png",
+      "sha256": "bbc1012bace0000924bee53a52b05bd362b178301f8f5ca5dfb6139bfe4a6bbe",
+      "bytes": 912803
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-1987.png",
+      "sha256": "07f9abd5ff1a9f9de15af4a412efbda05c68102a93690a25d568c4d411b46d93",
+      "bytes": 913240
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2017.png",
+      "sha256": "596e340789e5e0582ec9616351e8130a822a10b7f1e705131d4fe4ef845f0020",
+      "bytes": 913261
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2047.png",
+      "sha256": "1af0ac7c322e6aeff07b7bce2dc9b9f3abc2c35692fc896703eb51761b406ba2",
+      "bytes": 913086
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2077.png",
+      "sha256": "4f43e2a7f35cf06c6c03497b50cfd201dc26b2e40e9afbb75b4633a8ff30068f",
+      "bytes": 913316
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2107.png",
+      "sha256": "a35f6b43e868b98cd5e68d4df89c9544d280ca14ec68c9deb388fea2b1b5c409",
+      "bytes": 906634
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2137.png",
+      "sha256": "b18c7214c9cce35c195116a610ac5d1917d74a9fa8094dc72523238d8b7badb9",
+      "bytes": 30320
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2167.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2197.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2227.png",
+      "sha256": "0a7870a8cd256d85c8aec1584b3b12cefdeb25a54c857107c824f2cd19b12db8",
+      "bytes": 30573
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2257.png",
+      "sha256": "9ecc9a87bf68021b2001313ab54aa5bb25f744e93019d799926cb618cc45c176",
+      "bytes": 32226
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2287.png",
+      "sha256": "9ecc9a87bf68021b2001313ab54aa5bb25f744e93019d799926cb618cc45c176",
+      "bytes": 32226
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2317.png",
+      "sha256": "5105d47749c46515cd57e932129601b56dacb55c02f002e9ee7d1639b288cffa",
+      "bytes": 32232
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2347.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2377.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2407.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2437.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2467.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2497.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2527.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2557.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2587.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2617.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2647.png",
+      "sha256": "5105d47749c46515cd57e932129601b56dacb55c02f002e9ee7d1639b288cffa",
+      "bytes": 32232
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2677.png",
+      "sha256": "a2f9c23b223cf41ad98ca054937f3d919f132b016f1ebb82ebea05805df3b128",
+      "bytes": 33404
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2707.png",
+      "sha256": "3cd7d1b0e52bd826f79e26896cc01cc6158abcb6fd45fc2673d5009532bed57f",
+      "bytes": 33410
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2737.png",
+      "sha256": "3cd7d1b0e52bd826f79e26896cc01cc6158abcb6fd45fc2673d5009532bed57f",
+      "bytes": 33410
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2767.png",
+      "sha256": "4e10e08ec0c1ae37bc374a177d8f2e0f88d7701056801d845d95fb9b281f85a9",
+      "bytes": 33245
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2797.png",
+      "sha256": "55e5988c272e6f2989ae3730e6d8736deaa81f3351521b872dca437bd5e85a2c",
+      "bytes": 5850
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2827.png",
+      "sha256": "f2c95c53f2a82ed6a589d57af0b4275509913f05572552f5d96c27db92b250b0",
+      "bytes": 5832
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2857.png",
+      "sha256": "55e5988c272e6f2989ae3730e6d8736deaa81f3351521b872dca437bd5e85a2c",
+      "bytes": 5850
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2887.png",
+      "sha256": "55e5988c272e6f2989ae3730e6d8736deaa81f3351521b872dca437bd5e85a2c",
+      "bytes": 5850
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2917.png",
+      "sha256": "3040fe5717e7efc48ccff3ddf775ae2016f644a715d5ed868038e16a697a9192",
+      "bytes": 33543
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2947.png",
+      "sha256": "1566b1fede25aa18a5617e91a8b7110ac117e6802ca542571145d91181585daa",
+      "bytes": 40383
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-2977.png",
+      "sha256": "1d871351c5bde7c49995648cf7a06c3ecebb6d382bf204e22e9187fbbb50a7ea",
+      "bytes": 40389
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-3007.png",
+      "sha256": "1566b1fede25aa18a5617e91a8b7110ac117e6802ca542571145d91181585daa",
+      "bytes": 40383
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-3037.png",
+      "sha256": "1d871351c5bde7c49995648cf7a06c3ecebb6d382bf204e22e9187fbbb50a7ea",
+      "bytes": 40389
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/guest-3067.png",
+      "sha256": "1d871351c5bde7c49995648cf7a06c3ecebb6d382bf204e22e9187fbbb50a7ea",
+      "bytes": 40389
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-after-graphical-login.png",
+      "sha256": "a35f6b43e868b98cd5e68d4df89c9544d280ca14ec68c9deb388fea2b1b5c409",
+      "bytes": 906634
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-authenticated-session-tty4.png",
+      "sha256": "640d9b0a15d425648d751749d57f4a6ab55cdf491969ba66a0479387dea718cc",
+      "bytes": 100889
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-concealed-confirmation.png",
+      "sha256": "d974983a89c593c70f645459db0f8a08febb169d94e7b2748cfd93c598b76ca6",
+      "bytes": 41177
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-concealed-first-entry.png",
+      "sha256": "05ac4d69d8157d75a2940f7e15cfe058ba4cf5ccb59f20abd75b568420df2cd6",
+      "bytes": 41032
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-confirmation-full-redraw.png",
+      "sha256": "5afaac9d61d92b740ccb7ee2399cd4401102938bbea6fd974da04819d147eab1",
+      "bytes": 41183
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-confirmation-prompt.png",
+      "sha256": "484bd215ff9de5948a4e42d875941c0094bdfe51f0e4f0c32ee362bf695e16d9",
+      "bytes": 47249
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-confirmation-redraw.png",
+      "sha256": "d974983a89c593c70f645459db0f8a08febb169d94e7b2748cfd93c598b76ca6",
+      "bytes": 41177
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-confirmed-password-prompt.png",
+      "sha256": "ddc1641a7e3d2eec460e5292a31aaa277372a84cc37c074e971f17f7d722b61d",
+      "bytes": 7598
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-console-auth-redraw.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-correct-password-masked.png",
+      "sha256": "ad580c87f156a866338a9af07a53c866282c5177f338a8b0aad4e1894374e5d3",
+      "bytes": 908305
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-diagnostic-parameters.png",
+      "sha256": "87a4634c8e07276cb3d9de0383ade0fd631d948f5b9e5fd8b975a085648eff90",
+      "bytes": 9191
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-enrollment-submit.png",
+      "sha256": "3f52b721e2068cdd1dba62b2c3d31264141fbab7a3d67fdc1d58c3fce4ae4a7d",
+      "bytes": 40209
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-greeter-after-wrapper-exit.png",
+      "sha256": "55e5988c272e6f2989ae3730e6d8736deaa81f3351521b872dca437bd5e85a2c",
+      "bytes": 5850
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-grub-editor-settled.png",
+      "sha256": "bf15b0b7dda32e3f3bebc5ebbd8bc0c12fb9cc642e6714bf89660a403f36e939",
+      "bytes": 9001
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-grub-editor.png",
+      "sha256": "b90c2f94cc1096eecf38666bdaf1a60ecea89f46eb75ed904c5c8ece0d8b3547",
+      "bytes": 8983
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-journal-auth-prompt.png",
+      "sha256": "d37e9500d86d246534dc54e9a4fc8ace89798f59f1459146a54794a245d3b09a",
+      "bytes": 15392
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-journal-exported.png",
+      "sha256": "e78a060eefd1eb11d40177ff9a408eebd2f9a858de2cda0a81379b033eef5897",
+      "bytes": 30326
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-kernel-start.png",
+      "sha256": "983843347a5883de3061de6d587afe0606f90c0d28417a59cb9fe7ebda9c208b",
+      "bytes": 3425
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-late-greeter-before-change.png",
+      "sha256": "a49d7a983273ddd183b1788cac61d9f2e60702ba0ae0bf3843eabc3ec065733b",
+      "bytes": 911735
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-owner-boundary.png",
+      "sha256": "52d054135b9c9dc72b298d858c9e035474ebe71b1305a18d249e9b15967fd13d",
+      "bytes": 14355
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-owner-setup-progress.png",
+      "sha256": "05ac4d69d8157d75a2940f7e15cfe058ba4cf5ccb59f20abd75b568420df2cd6",
+      "bytes": 41032
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-password-after-settling.png",
+      "sha256": "1af0ac7c322e6aeff07b7bce2dc9b9f3abc2c35692fc896703eb51761b406ba2",
+      "bytes": 913086
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-post-try-processes.png",
+      "sha256": "a2f9c23b223cf41ad98ca054937f3d919f132b016f1ebb82ebea05805df3b128",
+      "bytes": 33404
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-primary-settled.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-restarted-greeter-settled.png",
+      "sha256": "f2c95c53f2a82ed6a589d57af0b4275509913f05572552f5d96c27db92b250b0",
+      "bytes": 5832
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-retry-console-password.png",
+      "sha256": "0e5a3a825ebc93faf7d9d6af8b5faeb5b276a2c17cfe007734dba2b4ac110e3c",
+      "bytes": 6354
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-return-primary-console.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-session-inventory.png",
+      "sha256": "9ecc9a87bf68021b2001313ab54aa5bb25f744e93019d799926cb618cc45c176",
+      "bytes": 32226
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-session-return-status.png",
+      "sha256": "1d871351c5bde7c49995648cf7a06c3ecebb6d382bf204e22e9187fbbb50a7ea",
+      "bytes": 40389
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-slow-auth-result.png",
+      "sha256": "283a095bc0e25eff8e21bd4b8899d02af61e7cf51feb086085d08d35e1b2f11c",
+      "bytes": 5550
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty-auth-submitted.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty-login-prompt.png",
+      "sha256": "5156659797cfb07dec0a6367cdc6fd538f3d80e037bfb3e7dcd3d6dd8a065b24",
+      "bytes": 5433
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty-password-prompt.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty3-auth-result.png",
+      "sha256": "2394d8e95e937dd234e6a2bf82621c9607f7bbde297d360de793d348763e9798",
+      "bytes": 11500
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty3-password.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty3-prompt.png",
+      "sha256": "53eb5eef53c60a042d90db40043b6f80f270c611fe98d6e274090f176922c49f",
+      "bytes": 4806
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty3-settled.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-tty3-username.png",
+      "sha256": "17bb1cda6856aaf3b412cc8394051a0c0fc1c28de14874ce8a1367a298869569",
+      "bytes": 5471
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-username-slow-input.png",
+      "sha256": "1e8001a02d0bf88559b433a8d5c7520b433d9ecd7768382e36734cc2c88d1e49",
+      "bytes": 7426
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-wrong-greeter-password.png",
+      "sha256": "a49d7a983273ddd183b1788cac61d9f2e60702ba0ae0bf3843eabc3ec065733b",
+      "bytes": 911735
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/actual-vm/manual-wrong-password-masked.png",
+      "sha256": "8493f476dfb5eb9da3d69ab20fbbdde52cd515368861e8c63606338ab1a6a9dc",
+      "bytes": 910515
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/report-001.png",
+      "sha256": "721ea4dbced0edefa940329413a4ab18be18a6e4b684813ac300d9c161d26ebb",
+      "bytes": 180383
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/report-002.png",
+      "sha256": "27bb3e56b93bc5977954965d56d529c5fc52ee11fc63676b7ee43ff47560ff92",
+      "bytes": 181669
+    },
+    {
+      "source": "qa12-08-nosplash-qpaint-uefi/report-003.png",
+      "sha256": "f19f11deafe84b3be1d13af67df778c33bcdacc39a87b9e5681c7af3afbe8956",
+      "bytes": 119183
+    },
+    {
+      "source": "qa12-09-prepare-installer-profile/report-001.png",
+      "sha256": "8f2669d58f2532a9aa09ef258e4b5d466851ddd732bb3eed4e2546901da27db2",
+      "bytes": 230195
+    },
+    {
+      "source": "qa12-09-prepare-installer-profile/report-002.png",
+      "sha256": "5cecaecf5bf7b5aece3d9fcb80854b43b2a5adabdf4d758845187843d6f2fa0f",
+      "bytes": 82150
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-001.png",
+      "sha256": "8fbc8c36a098eeb4f3e3ed3320dae2e357961484a2277e6b34ee5da2a86bccb5",
+      "bytes": 226596
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-002.png",
+      "sha256": "5b8de641bca378eb1016884b78cf46f73a2e5f0e9bcb237196fd0d5ab2c8cbae",
+      "bytes": 218510
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-003.png",
+      "sha256": "84770ab17c4ffa8314a0c7ba9d778defc095c795f0e9c518b9859d5b78ec80ac",
+      "bytes": 237350
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-004.png",
+      "sha256": "9d3e60de4bd2844868ca97c0057fabb5eb41a063fa233ea4b0481870a3a09c5c",
+      "bytes": 232767
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-005.png",
+      "sha256": "50dffec85675a6bc6c11f60a46045ef0e170198b0348ed6890e2fde577e190e5",
+      "bytes": 233742
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-006.png",
+      "sha256": "a6a6a9dbe9e131541c21221cac4c03a09870427a608c07e74a458819d16603a0",
+      "bytes": 225993
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-007.png",
+      "sha256": "6ebcc540d7f80eae11b77026b545bd0a78a85632bb9efcfd143bba6e63d501f0",
+      "bytes": 231151
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-008.png",
+      "sha256": "cf1862d96d0bb8f2d712a45afbc4b75ec8aa96ff5f91093b5cc9194c5d51ff9e",
+      "bytes": 226829
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-009.png",
+      "sha256": "03c82dd9df8ea983ac32d9d59b1de3137257604c04b98854af31d4d3eafe22b3",
+      "bytes": 223233
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-010.png",
+      "sha256": "dd50b76bfe9f4e9f01e3a6c5266f58a2b5da7cc8d1655d135425b5669df93c7b",
+      "bytes": 192788
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-011.png",
+      "sha256": "2ac7fca217fc758ad8bbc578b94d94a6aabe0624e4faea841d69baadfb554aed",
+      "bytes": 205686
+    },
+    {
+      "source": "qa12-10-installer-profile-regressions/report-012.png",
+      "sha256": "7c8dba3cfa45a29833bc7715037061ce424029f8280b58929d8dbc1a46ccb514",
+      "bytes": 79602
+    },
+    {
+      "source": "qa12-11-offline-removal-plan/report-001.png",
+      "sha256": "06b16ac3c81eb8f75a98fb65872bf7f4f4a1207c7aff4d60655b5d71e70a025c",
+      "bytes": 152101
+    },
+    {
+      "source": "qa12-11-offline-removal-plan/report-002.png",
+      "sha256": "36f9827e4ea1abff4e2779ce6361d5c499a852d0a1698e53388da630e73ee2e0",
+      "bytes": 128564
+    },
+    {
+      "source": "qa12-12-offline-installer-final/report-001.png",
+      "sha256": "d2ec2257cc90c4466da6ba57ea882768291f6d7b2b1c1ee00fb99f4d479b4aa8",
+      "bytes": 54920
+    },
+    {
+      "source": "qa12-13-offline-installer-final-retry/report-001.png",
+      "sha256": "7e4f1300800136dd7969e97f35f2204a22208a1af551730dcc9d2c83409f1790",
+      "bytes": 226575
+    },
+    {
+      "source": "qa12-13-offline-installer-final-retry/report-002.png",
+      "sha256": "41f8cd2dfd1746eab729632a5feef3302c6b54fc4b28202058d781ac2d426f3e",
+      "bytes": 144295
+    },
+    {
+      "source": "qa12-13-offline-installer-final-retry/report-003.png",
+      "sha256": "f9c9ccf98befb2a3e3a4f7ecafb56f0f681dbffaaee5f7d78147bda7e68defbc",
+      "bytes": 105417
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-001.png",
+      "sha256": "d3f5b3fe9335d44ba24b3ee944b6173de8889d34348ab7b1c5cc6b9ba2eeca6e",
+      "bytes": 227205
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-002.png",
+      "sha256": "064e1aaf3902eaeea43f9e0bcb77e8539b249f64846d209a69287a8c6c045c44",
+      "bytes": 219196
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-003.png",
+      "sha256": "dc1dd41cff3ccdbf44cc3c758de6453a8aef7ff39ca9b00d13006934e9f2db16",
+      "bytes": 238047
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-004.png",
+      "sha256": "830ba9f365f3847a018ea0d04611afd4d29cd9e4fbf0dfe9886a407bb8a60c08",
+      "bytes": 233512
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-005.png",
+      "sha256": "866700b5aec73fe59246cade3321fb283eaf50f63491bdec81f1f67ba501a379",
+      "bytes": 233507
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-006.png",
+      "sha256": "99d5a4ba7ab139343f3273a782c8d5ccb23780d2ab0a111e1a05e19c0e185589",
+      "bytes": 227297
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-007.png",
+      "sha256": "18a42c6aaa9dd0d8106a9f397566dd57d875b9c528c008d072471ca5fa6a9c7a",
+      "bytes": 235658
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-008.png",
+      "sha256": "b86cb9405cae8e37fd9ea018dd26bc81256fa4b2be60aaef5228972f34915f98",
+      "bytes": 227365
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-009.png",
+      "sha256": "4f6bf63fd9d2a1f799c3a2d8f4c0e03ddf0480d4c690b02aa6c62aa0e34f9602",
+      "bytes": 222159
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-010.png",
+      "sha256": "23a1f10afc97bb10a6eac4881b74020cf6af79935b70a23752301c2599a72092",
+      "bytes": 191227
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-011.png",
+      "sha256": "9c4c3bffa19a8ae88a1940833f62843f182cbe044ee6dfe38e42a6f4be6d7eb9",
+      "bytes": 210064
+    },
+    {
+      "source": "qa12-14-final-source-regressions/report-012.png",
+      "sha256": "f27d8831bb89e1f6be07e11dfe2aaf46cfa4710c0bae1d74e45290bfb532a2f5",
+      "bytes": 92212
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-001.png",
+      "sha256": "42d0a0b291dbc644ae8fb0554f47f2b93b521985c2abfbebd3d7aa423fa6869e",
+      "bytes": 227277
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-002.png",
+      "sha256": "8f935cecaf0bd2858a3b7212437aca4ee8f893a0a43de01e1f875845c9fbfc70",
+      "bytes": 219277
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-003.png",
+      "sha256": "a65255778f1f952e5656e91acbb1af71885755853c7e4eeb55b61da718e97197",
+      "bytes": 238132
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-004.png",
+      "sha256": "6ccce568a7948deaae9c85565f2bb85001fb34fed5d499419c23af4a42cce80c",
+      "bytes": 233600
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-005.png",
+      "sha256": "7a7e846768763d74e631db9df4f230d5d2b926aba8544a1a3512029da4a924f2",
+      "bytes": 233594
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-006.png",
+      "sha256": "05f35a539e40f7cf6b85a0493fd3ab1afdccc676026c350f7c4755e8cb7f356e",
+      "bytes": 227375
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-007.png",
+      "sha256": "eb2299e91548c4cca6054c65b8bf6677afd6fd1b25f0ebc869106b211d2ac7ed",
+      "bytes": 233626
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-008.png",
+      "sha256": "bdc90f1a7fc6511fc157282de7979347920af19023ad44162d5969c322936eaa",
+      "bytes": 226388
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-009.png",
+      "sha256": "fb3bd5122ac7e35ce6ddbe032860df74f15298022c3c2533e5b5eb619abac2dd",
+      "bytes": 225300
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-010.png",
+      "sha256": "0d36377e221efebe8300a690a3e854c906c8922f7888611c0b65d9d317aa92e2",
+      "bytes": 201067
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-011.png",
+      "sha256": "69751f936719e5d88357b19f580f8ad31fa9855189bf83f8c80d04112e91df23",
+      "bytes": 205901
+    },
+    {
+      "source": "qa12-15-direct-session-regressions/report-012.png",
+      "sha256": "f28d2cac03e89de2ec5f8f4f9ccede8f0ca18fd5056624ea936f9807f516fc10",
+      "bytes": 103354
+    },
+    {
+      "source": "qa12-16-direct-session-iso/report-001.png",
+      "sha256": "9790af8264042a90153e0d9e3e6554e441586facfab7afc16ea4f9d2f328bde0",
+      "bytes": 202724
+    },
+    {
+      "source": "qa12-16-direct-session-iso/report-002.png",
+      "sha256": "015b83bf374ae0e69e07df62847b062119989e366f7a3da0f1f4cc0b0e1db47c",
+      "bytes": 185721
+    },
+    {
+      "source": "qa12-16-direct-session-iso/report-003.png",
+      "sha256": "09d46b636d11c1443e98dcc5b549a56f362da8f05387bf9e1c0a727300abbcd3",
+      "bytes": 104038
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-active-plasma-vt3.png",
+      "sha256": "f062680283e59f3537465663ea56e451677a5ac161e570fa8b9b2f345651cd60",
+      "bytes": 73206
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-after-console-switch.png",
+      "sha256": "c97dea750bc610ebf3721c920033cbee8d3c495f04bc02b3fa884b17f3d853e1",
+      "bytes": 5434
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-00.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-01.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-02.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-03.png",
+      "sha256": "a834af35d6a713198880c2670ae215bad4c73e183d58a91ffcca77a07992b5e6",
+      "bytes": 13745
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-retry-00.png",
+      "sha256": "c97dea750bc610ebf3721c920033cbee8d3c495f04bc02b3fa884b17f3d853e1",
+      "bytes": 5434
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-retry-01.png",
+      "sha256": "fb05b314931394d9a73c86fd015b020fd5e5200d253e626da348b61e32b49167",
+      "bytes": 5631
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-retry-02.png",
+      "sha256": "6e3c7364da5147dda1438a72d4fbfc592eddf569c74bcd6fd4da9b1b58013326",
+      "bytes": 5649
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-retry-03.png",
+      "sha256": "c326281b2544200bb57a6cd06c4fce56f1ccc6ae2ead31127f05a234caadf015",
+      "bytes": 11497
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-retry-04.png",
+      "sha256": "8cd3911704bd928e4a6b8dbb7d3c9003ab6967e72af969eeba8c75fe2e101ba4",
+      "bytes": 11694
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-console4-settled.png",
+      "sha256": "041ca66a9cb34d351958b8fcb69c93395d2bf28e8b977ea3fc88193d096228d7",
+      "bytes": 5429
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-direct-after-three-minutes.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-direct-launch-settled.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-direct-log-result.png",
+      "sha256": "9c03b0e0a32990c0735c9a6ad496b2a65797b025dc6e23a740b4fae8ef4f9be9",
+      "bytes": 28218
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-direct-log-sudo-prompt.png",
+      "sha256": "9a62a5a0937ea4587777124810346bb15adf35cde1b72b628d108295f9bd8dcb",
+      "bytes": 13148
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-native-runner.png",
+      "sha256": "88fb0d19f3a1acd13a0f4c445596ef08d00b09fa63d61590d7f3db2f03cd2eac",
+      "bytes": 708936
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-native-settings-open.png",
+      "sha256": "bb2d44f67d5b8eb520bf7d4f211b67d8c5ddc8ff3a69c6b72c3b3c8118550e49",
+      "bytes": 1005178
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-owner-direct-launch.png",
+      "sha256": "fb972d0db828272e6960ecfbde6c430a5c61f359065d7572038272b8dc914374",
+      "bytes": 32059
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-runner-after-welcome.png",
+      "sha256": "8952d20c5c1da9586db9b3dfccc1fa50e71ce26476ad832f6a8eb7791e552bc7",
+      "bytes": 1005052
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-settings-final.png",
+      "sha256": "b3c6055124859f7db8a576fb17f909546f188319d800fff19529c625d9ea24dd",
+      "bytes": 456033
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/diagnostic-welcome-skip.png",
+      "sha256": "d3f59c15e9f05f2871d1673b3167ef608bde8353cea0a2ff61320d27bccf9d0b",
+      "bytes": 1004703
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0005.png",
+      "sha256": "2d5bddc6ae8a050d182b33354b5c6b005bee6b8f77c29eefd1ee1730d508080c",
+      "bytes": 14633
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0035.png",
+      "sha256": "d34265140cc9650fb62219a4e066d6dbcb73f83cc080fda67b950a56d3356b93",
+      "bytes": 9066
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0065.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0095.png",
+      "sha256": "ed73d00e5c98dc6b5afa9589185207a6913c998c7c824d5e0eed12c9e89efb3c",
+      "bytes": 24820
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0125.png",
+      "sha256": "86c8a697bbead6a489beff160b296b001325939e7f9cad6e732b4bb9af11fbb8",
+      "bytes": 23956
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0155.png",
+      "sha256": "5a90bc5a0063f45221b53000a3617370ae3baef5b2e453babc51f29fd3f2a03e",
+      "bytes": 21029
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0185.png",
+      "sha256": "9e5101d67fdaf5b01b1b61f5f0169d1f9b2ad495e6434313fdc3b27e5d85ce12",
+      "bytes": 24797
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0215.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0245.png",
+      "sha256": "8e1fe93f66d04415949a8376a375af83b73cd3e0090e94f11599672e9de350d8",
+      "bytes": 22294
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0275.png",
+      "sha256": "cd1d5359d51039c4c8a5b47a71b5910c4193d4b877b91873ddaf0b7bc2627ae0",
+      "bytes": 19579
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0305.png",
+      "sha256": "9e5101d67fdaf5b01b1b61f5f0169d1f9b2ad495e6434313fdc3b27e5d85ce12",
+      "bytes": 24797
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0335.png",
+      "sha256": "095bf3f997bc0ecec67bb6b04c5ecac003053a7010070a70ac19c8be523bda87",
+      "bytes": 24930
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0365.png",
+      "sha256": "9e5101d67fdaf5b01b1b61f5f0169d1f9b2ad495e6434313fdc3b27e5d85ce12",
+      "bytes": 24797
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0395.png",
+      "sha256": "9e5101d67fdaf5b01b1b61f5f0169d1f9b2ad495e6434313fdc3b27e5d85ce12",
+      "bytes": 24797
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0425.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0455.png",
+      "sha256": "16ecb0b80e53a3b9453a2a2bfa038de4882cf60846cfdc414b38c2dbba138a79",
+      "bytes": 24626
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0485.png",
+      "sha256": "ed73d00e5c98dc6b5afa9589185207a6913c998c7c824d5e0eed12c9e89efb3c",
+      "bytes": 24820
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0515.png",
+      "sha256": "8e1fe93f66d04415949a8376a375af83b73cd3e0090e94f11599672e9de350d8",
+      "bytes": 22294
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0545.png",
+      "sha256": "cd1d5359d51039c4c8a5b47a71b5910c4193d4b877b91873ddaf0b7bc2627ae0",
+      "bytes": 19579
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0575.png",
+      "sha256": "095bf3f997bc0ecec67bb6b04c5ecac003053a7010070a70ac19c8be523bda87",
+      "bytes": 24930
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0605.png",
+      "sha256": "ed73d00e5c98dc6b5afa9589185207a6913c998c7c824d5e0eed12c9e89efb3c",
+      "bytes": 24820
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0635.png",
+      "sha256": "88bd13b38e47954a03e0757ac9d1d341e51ee12718d5a612ae08de4eeac927f2",
+      "bytes": 9283
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0665.png",
+      "sha256": "88bd13b38e47954a03e0757ac9d1d341e51ee12718d5a612ae08de4eeac927f2",
+      "bytes": 9283
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0695.png",
+      "sha256": "b63a984a6500b5b467d3a2d08a60dfc3a84d8d09154b6423d620961149a57f49",
+      "bytes": 9276
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0725.png",
+      "sha256": "b63a984a6500b5b467d3a2d08a60dfc3a84d8d09154b6423d620961149a57f49",
+      "bytes": 9276
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0755.png",
+      "sha256": "88bd13b38e47954a03e0757ac9d1d341e51ee12718d5a612ae08de4eeac927f2",
+      "bytes": 9283
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0785.png",
+      "sha256": "88bd13b38e47954a03e0757ac9d1d341e51ee12718d5a612ae08de4eeac927f2",
+      "bytes": 9283
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0815.png",
+      "sha256": "b63a984a6500b5b467d3a2d08a60dfc3a84d8d09154b6423d620961149a57f49",
+      "bytes": 9276
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0845.png",
+      "sha256": "704de826c98d14df8f7783315375de7ef73043de9e8bc5ae55eaff05f456ef2e",
+      "bytes": 9541
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0875.png",
+      "sha256": "86e1b1de997dcfcc137efce45dd0466cc8483fb5703d4bd8f8145c38f31f978e",
+      "bytes": 10197
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0905.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0935.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0965.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-0995.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1025.png",
+      "sha256": "16bbffa1947fa6d9582a3b0d64f5f001f1d2c8c184be94162b03e4c4aed05fa4",
+      "bytes": 909657
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1055.png",
+      "sha256": "1f51b89083db2cec38538de40cc12e0f834828e40e0ce384855e98bc97fa0530",
+      "bytes": 909829
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1085.png",
+      "sha256": "524fceeb25450c4a400652ebb51c47393c3168e5a66d0b71ab77e9929ec03a94",
+      "bytes": 910955
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1115.png",
+      "sha256": "76af0e749529f7e5e8b35a2e49e1dc613bcfc2257cc93ce2e13d7f986c6eb75b",
+      "bytes": 910940
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1145.png",
+      "sha256": "503e1513058a9302c8d969b1e6c00c621d7ddb84e3a3435aacfad5919c8cd423",
+      "bytes": 910740
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1175.png",
+      "sha256": "98e5eef346d85df91036471e7e86b38579fb619130da6278a6442dfdc08e8ac6",
+      "bytes": 909101
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1205.png",
+      "sha256": "32024d9082d2aa849f9e0f7f33aedbfc17e3143fce2f21fc2f11658929278d4f",
+      "bytes": 909553
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1235.png",
+      "sha256": "4769ac1eb7de73addc1ec38bc784862e0418452e86901563e570286a585dab21",
+      "bytes": 913053
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1265.png",
+      "sha256": "84bc8ab8e47ba802cbeca5c2d4ac351ca42e8e74ad501d6e56a7ad8365214f02",
+      "bytes": 912862
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1296.png",
+      "sha256": "84bc8ab8e47ba802cbeca5c2d4ac351ca42e8e74ad501d6e56a7ad8365214f02",
+      "bytes": 912862
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1326.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1356.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1386.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1416.png",
+      "sha256": "12394e00c28f718df5b1635a7761845adf55996776a143bcf256678f2c74c70c",
+      "bytes": 910528
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1446.png",
+      "sha256": "12394e00c28f718df5b1635a7761845adf55996776a143bcf256678f2c74c70c",
+      "bytes": 910528
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1476.png",
+      "sha256": "34c5e53fe2ac7a5f70d84a8306b007d135a83d43dd0cf8a03b7a877cf696df79",
+      "bytes": 909177
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1506.png",
+      "sha256": "ae2ba069a03984f1becaf8c74c0b0990f6800a78f96d00c2d979f112aca61c13",
+      "bytes": 909159
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1536.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1566.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1596.png",
+      "sha256": "0306cf40e0e83f18cba96a7b41e01ec72d2ca52bf19711ea9d3db4e601a07789",
+      "bytes": 5639
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1626.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1656.png",
+      "sha256": "3c4edf24ef76f71aaae791983416241906fa3b0e69e19c30f481263d8d389e1e",
+      "bytes": 5800
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1686.png",
+      "sha256": "3c4edf24ef76f71aaae791983416241906fa3b0e69e19c30f481263d8d389e1e",
+      "bytes": 5800
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1716.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1746.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1776.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1806.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1836.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1866.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1896.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1926.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1956.png",
+      "sha256": "ae1e49f4e3cf26a2a5ea0d1a1ab60163f00d4ff6d84114b23301f359e7d4b76c",
+      "bytes": 5650
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-1986.png",
+      "sha256": "4509462e18ddce20a0434e60add25a0546d902afdb4074278c5872dfe2f38c32",
+      "bytes": 14577
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2016.png",
+      "sha256": "579281cf793b16616afd419fb4c6b12819914b0cf0751991a588c3ee5907273c",
+      "bytes": 20175
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2046.png",
+      "sha256": "b9346435ad51a165437533087f3b30ad5247a86a5528cb81d0ded8a89b7fd7e1",
+      "bytes": 21194
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2076.png",
+      "sha256": "b9346435ad51a165437533087f3b30ad5247a86a5528cb81d0ded8a89b7fd7e1",
+      "bytes": 21194
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2106.png",
+      "sha256": "f6c64b3f4dec31038946dd3d461d5605cbf06e7a6acf97af18de8ab6d0798f19",
+      "bytes": 45928
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2136.png",
+      "sha256": "2792e4ca29861020515eb63feecfdc1526401060d8c6cf4283b93f2a84e5bb8d",
+      "bytes": 45872
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2166.png",
+      "sha256": "5e3486e2e9bcfa29ecb99b1a3d3efd59c39a02de98d501a9b3fbda22fa581e73",
+      "bytes": 45866
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2196.png",
+      "sha256": "143d27e8d94ddea1c374f7299985b5933487af0d0ef6a017d5214b12a1d5b208",
+      "bytes": 46414
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2226.png",
+      "sha256": "f7c7f4726d1a34664cbdd1a7ca643a7de61bae287aba05966c170896a733ea59",
+      "bytes": 48348
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2256.png",
+      "sha256": "6d6c1f440dfa71c3a004fc363440f4d8963b719925138e94b1947c38d0dc51c7",
+      "bytes": 48342
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2286.png",
+      "sha256": "6d6c1f440dfa71c3a004fc363440f4d8963b719925138e94b1947c38d0dc51c7",
+      "bytes": 48342
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2316.png",
+      "sha256": "6d6c1f440dfa71c3a004fc363440f4d8963b719925138e94b1947c38d0dc51c7",
+      "bytes": 48342
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2346.png",
+      "sha256": "6d6c1f440dfa71c3a004fc363440f4d8963b719925138e94b1947c38d0dc51c7",
+      "bytes": 48342
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2377.png",
+      "sha256": "f7c7f4726d1a34664cbdd1a7ca643a7de61bae287aba05966c170896a733ea59",
+      "bytes": 48348
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2407.png",
+      "sha256": "49d19dde2905292fdbbed379d54b64e60f755063dbcc96d3a1303785325387c5",
+      "bytes": 31913
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2437.png",
+      "sha256": "187794948645dc5d9c4fb4738e003d4997f63dba518f35d70c082b29cff0fb76",
+      "bytes": 31918
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2467.png",
+      "sha256": "fb972d0db828272e6960ecfbde6c430a5c61f359065d7572038272b8dc914374",
+      "bytes": 32059
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2497.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2527.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2557.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2587.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2617.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2647.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2677.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2707.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2737.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2767.png",
+      "sha256": "041ca66a9cb34d351958b8fcb69c93395d2bf28e8b977ea3fc88193d096228d7",
+      "bytes": 5429
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2797.png",
+      "sha256": "041ca66a9cb34d351958b8fcb69c93395d2bf28e8b977ea3fc88193d096228d7",
+      "bytes": 5429
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2827.png",
+      "sha256": "041ca66a9cb34d351958b8fcb69c93395d2bf28e8b977ea3fc88193d096228d7",
+      "bytes": 5429
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2857.png",
+      "sha256": "041ca66a9cb34d351958b8fcb69c93395d2bf28e8b977ea3fc88193d096228d7",
+      "bytes": 5429
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2887.png",
+      "sha256": "c326281b2544200bb57a6cd06c4fce56f1ccc6ae2ead31127f05a234caadf015",
+      "bytes": 11497
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2917.png",
+      "sha256": "835aa82fe105c428102f1677456ffbd68884392d4fc31962b07f1f691f009818",
+      "bytes": 11701
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2947.png",
+      "sha256": "c68f49b9f440319331ef7871660562a49ce772ed197c4f60f7f6eadc93930fac",
+      "bytes": 13137
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-2977.png",
+      "sha256": "c68f49b9f440319331ef7871660562a49ce772ed197c4f60f7f6eadc93930fac",
+      "bytes": 13137
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3007.png",
+      "sha256": "9c03b0e0a32990c0735c9a6ad496b2a65797b025dc6e23a740b4fae8ef4f9be9",
+      "bytes": 28218
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3037.png",
+      "sha256": "f062680283e59f3537465663ea56e451677a5ac161e570fa8b9b2f345651cd60",
+      "bytes": 73206
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3067.png",
+      "sha256": "2e9dfc3f94490d350196e6a21b0037a46bae85513e96a05577a139f2063a9671",
+      "bytes": 87119
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3097.png",
+      "sha256": "2e9dfc3f94490d350196e6a21b0037a46bae85513e96a05577a139f2063a9671",
+      "bytes": 87119
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3127.png",
+      "sha256": "88fb0d19f3a1acd13a0f4c445596ef08d00b09fa63d61590d7f3db2f03cd2eac",
+      "bytes": 708936
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3157.png",
+      "sha256": "d3f59c15e9f05f2871d1673b3167ef608bde8353cea0a2ff61320d27bccf9d0b",
+      "bytes": 1004703
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3187.png",
+      "sha256": "914b20b31465ef10545a3fbad8b2f71bb7ba8004dd9c50f6517231d5e5b7cbbc",
+      "bytes": 1004276
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3217.png",
+      "sha256": "8952d20c5c1da9586db9b3dfccc1fa50e71ce26476ad832f6a8eb7791e552bc7",
+      "bytes": 1005052
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3247.png",
+      "sha256": "8952d20c5c1da9586db9b3dfccc1fa50e71ce26476ad832f6a8eb7791e552bc7",
+      "bytes": 1005052
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3277.png",
+      "sha256": "cd1f810a13477a99ecca596e3420281028cfbe31e4dfd8fc189c293f05040b02",
+      "bytes": 1005116
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3307.png",
+      "sha256": "bb2d44f67d5b8eb520bf7d4f211b67d8c5ddc8ff3a69c6b72c3b3c8118550e49",
+      "bytes": 1005178
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3337.png",
+      "sha256": "f96e8b9f84720ffb267dc894aa862ba7877fea4b5b6fabdb32d543232578665b",
+      "bytes": 1006348
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3367.png",
+      "sha256": "cd1f810a13477a99ecca596e3420281028cfbe31e4dfd8fc189c293f05040b02",
+      "bytes": 1005116
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3397.png",
+      "sha256": "5efa467844fac3ddd30221f7845543f76fb1508f8ef797e32cda2a993e7ea281",
+      "bytes": 491866
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3427.png",
+      "sha256": "f11b2676051a0aa60154766b861d4be545e0dc4523df0e2ab37cd05d5d6e1f5c",
+      "bytes": 463532
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3457.png",
+      "sha256": "4d1c9285f7b65a4098c61f6d3e463c7d36b1c554fadb4bc82e28d87587423a35",
+      "bytes": 463805
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3487.png",
+      "sha256": "b318bde60fe4f0b73dc633b1a4ad51f457844936cc78e6808e16df252fb00a12",
+      "bytes": 454839
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3517.png",
+      "sha256": "807279fdca7c5a5bd12291751c96faf5f0ea037f8e8b99655086a951df9c1150",
+      "bytes": 454864
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3547.png",
+      "sha256": "682e5254cf646ecbb068d6371474b6b451e38b51898aaa8596b6772ff048f677",
+      "bytes": 456043
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/guest-3577.png",
+      "sha256": "6cb16e5dcf136522b744e0d9f1983f403172246f8390e73abd28c6f631b7a840",
+      "bytes": 456050
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/manual-default-boot-menu.png",
+      "sha256": "4e169750691f3725722ba22b1234ea603b1fbd5443fc10b7803b4eb34e50f918",
+      "bytes": 9066
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/manual-normal-boot-selected.png",
+      "sha256": "af0c5447549d89cb6fe82c90cf069c0955ec2bad73af1b31bd4ee21fb5f43d0c",
+      "bytes": 3082
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-after-console-settle.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-authentication-after-enter.png",
+      "sha256": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53",
+      "bytes": 3057
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-console-diagnostics-login.png",
+      "sha256": "49f5b3f40485959bf8d80a7252bd06956fd62ffc6db635e47db45affc521e4dc",
+      "bytes": 5427
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-console-password-prompt.png",
+      "sha256": "12394e00c28f718df5b1635a7761845adf55996776a143bcf256678f2c74c70c",
+      "bytes": 910528
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-console-retry-settled.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-console-timeout-reset.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-correct-password-masked.png",
+      "sha256": "4769ac1eb7de73addc1ec38bc784862e0418452e86901563e570286a585dab21",
+      "bytes": 913053
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-diagnostic-journal-export.png",
+      "sha256": "94a03660984f92cefc451db7814c5e4133b9f61adc3483431e8f04ddad3a49f8",
+      "bytes": 46859
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-diagnostic-sudo-prompt.png",
+      "sha256": "b9346435ad51a165437533087f3b30ad5247a86a5528cb81d0ded8a89b7fd7e1",
+      "bytes": 21194
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-full-journal-result.png",
+      "sha256": "f7c7f4726d1a34664cbdd1a7ca643a7de61bae287aba05966c170896a733ea59",
+      "bytes": 48348
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-full-journal-sudo-prompt.png",
+      "sha256": "a2b5ae62df53fc7ee57e0ba45a7eec46e2cba9477a953bc94ee75f05488c2aac",
+      "bytes": 46424
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-login-username.png",
+      "sha256": "61b9c22e34c473c85b86298bb27eec1dc73a8f7f9582888ba3f024ef8e90d0fe",
+      "bytes": 909842
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-00.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-01.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-02.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-03.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-04.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-05.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-06.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-07.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-08.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-09.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-10.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-11.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-12.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-13.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-14.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-15.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-16.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-17.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-18.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-19.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-20.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-21.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-22.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-23.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-24.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-25.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-26.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-27.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-28.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-29.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-30.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-31.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-32.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-33.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-34.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-observed-login-35.png",
+      "sha256": "9be170531a468eba93a9a4bfeaea3b11f887def8185cc27573a9ce94fd25a5f0",
+      "bytes": 5430
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-owner-and-session.png",
+      "sha256": "341bc78da1eaebed46d7dad08e34f1e3d5fcf1359dfcc4f67f30a00018b8b0d3",
+      "bytes": 20181
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-owner-confirmation-submitted.png",
+      "sha256": "e2b278d744aa4c4e424672b14221452da6da784fbe1578e62513b23b4cb0ef0e",
+      "bytes": 9534
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-owner-password-submitted.png",
+      "sha256": "704de826c98d14df8f7783315375de7ef73043de9e8bc5ae55eaff05f456ef2e",
+      "bytes": 9541
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-owner-tty3.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-00.png",
+      "sha256": "4db0548c303f1aaf512f9f2d9addab2835b13a67af222a3ae6c6c2758876d41c",
+      "bytes": 5437
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-01.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-02.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-03.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-04.png",
+      "sha256": "e14ed6ff8b53ab40dd2cd08527d164192ecb57ee6f8bcf09829fd732a83eadc9",
+      "bytes": 14370
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-prompt-retry-05.png",
+      "sha256": "4509462e18ddce20a0434e60add25a0546d902afdb4074278c5872dfe2f38c32",
+      "bytes": 14577
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-session-binary-profile.png",
+      "sha256": "49d19dde2905292fdbbed379d54b64e60f755063dbcc96d3a1303785325387c5",
+      "bytes": 31913
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-session-log-result.png",
+      "sha256": "5e3486e2e9bcfa29ecb99b1a3d3efd59c39a02de98d501a9b3fbda22fa581e73",
+      "bytes": 45866
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-session-log-sudo-prompt.png",
+      "sha256": "ecb7a71fa621083cc47c73ddb6407b15de2c8ac2ebde90816039bbfe23e4c9a5",
+      "bytes": 46279
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-tty3-authenticated.png",
+      "sha256": "d4722cc32ae8f20db6f1f2a026ba0d8753d6273470d472db8ad8751995ba1b5d",
+      "bytes": 5808
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-tty3-password-prompt.png",
+      "sha256": "bf4bc0ef33316fb0f19b28e56efd35c949e73122eb2051565088fb53b2e4ce20",
+      "bytes": 5483
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-tty3-password-ready.png",
+      "sha256": "4b590cc6e3d6af3946f974c469620826db5d20f1213c0e4fa7785fab11540a30",
+      "bytes": 5632
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-tty3-settled.png",
+      "sha256": "f0efb1fdd17e427f9d438b98bd4185fd84b3c7bb26e87b7d2a21b1bc661752f1",
+      "bytes": 4786
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-username-settled.png",
+      "sha256": "524fceeb25450c4a400652ebb51c47393c3168e5a66d0b71ab77e9929ec03a94",
+      "bytes": 910955
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-vt1-return.png",
+      "sha256": "078b6cd6c86fed1d4444c30e1573e40af34d215f743717f2bb1676800e2baf9e",
+      "bytes": 44302
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/actual-vm/normal-wrong-password-result.png",
+      "sha256": "98e5eef346d85df91036471e7e86b38579fb619130da6278a6442dfdc08e8ac6",
+      "bytes": 909101
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/report-001.png",
+      "sha256": "cf14097f48c562986c2107ba91a57d9f0eadd2c96523a6b1072a73903ac79b04",
+      "bytes": 183045
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/report-002.png",
+      "sha256": "b1154535cf05f8d0343e229acf3b2453b465e4a1415ccd8a6f30ec0512ca5522",
+      "bytes": 186104
+    },
+    {
+      "source": "qa12-17-direct-session-default-uefi/report-003.png",
+      "sha256": "fc2b261c64f81da6c53fc2fbe8a22c15159594f9716f212135f22c6083c772c0",
+      "bytes": 174029
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-001.png",
+      "sha256": "5713ed9ec466601873063ec5c10fe4e78de6c339b8bf23626d4caf3688fb401c",
+      "bytes": 234040
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-002.png",
+      "sha256": "7f83d9366d9932ab86cb75918169d468de7beff62b860f32ae31af706a0277a6",
+      "bytes": 226311
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-003.png",
+      "sha256": "784ffe73dd700d73365272432c4b1f1ad5f43ce051d7c542ce2f91956df46014",
+      "bytes": 245379
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-004.png",
+      "sha256": "6cb0bef24927dbee639054a45e791a362cf5510996e2193d2a8c719a1beb40d4",
+      "bytes": 244044
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-005.png",
+      "sha256": "3915fa4760dafc50699f1fe30112ad1a1b49454ec88d6ecbc68c072c665a3e30",
+      "bytes": 241196
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-006.png",
+      "sha256": "47a6173ec4ccba5bfc7799435c51c1c2b7a9c85b4d2ca02ef55568340ac05230",
+      "bytes": 237404
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-007.png",
+      "sha256": "8c131cbb236ee1b6ebed1525ee17c980041a8a023630beeb55d011cfb3fff7aa",
+      "bytes": 242892
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-008.png",
+      "sha256": "db2be8e84ad96427dddb97d7f42a713d49492756729151c0adeb1fd939f28a9a",
+      "bytes": 231988
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-009.png",
+      "sha256": "6c2d7bbcbf95e005033b84c98ea6e31d997c1528ae07412f0746352e4549ea13",
+      "bytes": 231559
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-010.png",
+      "sha256": "8b03c47ffcbacab7e4bf4df72798899abd53bf396a7d087c87168818b44b3b4a",
+      "bytes": 222335
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-011.png",
+      "sha256": "e278eff957964cc1d895e3bce00b185e6d7a11777a868986c091c6ba6f2d1e2a",
+      "bytes": 202200
+    },
+    {
+      "source": "qa12-18-shadow-policy-regressions/report-012.png",
+      "sha256": "60325685473ca9e08fcece7c9a0e45a58d54d2be4aa00163d059a7bffab2bb06",
+      "bytes": 140498
+    },
+    {
+      "source": "qa12-19-session-source-inspection/report-001.png",
+      "sha256": "476c78e5a3378e850a77a0529b1cf5d85b69b9c558c02bdf0df30ff55f5f06a2",
+      "bytes": 156832
+    },
+    {
+      "source": "qa12-19-session-source-inspection/report-002.png",
+      "sha256": "c07f11fc37e5bb5baec5dbc2f8d958a18263004f96972313dba1acdef2a8c453",
+      "bytes": 166832
+    },
+    {
+      "source": "qa12-19-session-source-inspection/report-003.png",
+      "sha256": "05d562b82dfbfa59da52c2b8220db35b8da572322f9e3df00919b0360f2e1918",
+      "bytes": 159664
+    },
+    {
+      "source": "qa12-19-session-source-inspection/report-004.png",
+      "sha256": "6296186919940cfccf569bd3bed83011c0d537743cc52cfec57d94362a66be83",
+      "bytes": 164192
+    },
+    {
+      "source": "qa12-19-session-source-inspection/report-005.png",
+      "sha256": "e00b0dc802a782f0dd59338e63700b52fac53439d895d4b2971d0649c25f6d6a",
+      "bytes": 122534
+    },
+    {
+      "source": "qa12-20-login-profiles/report-001.png",
+      "sha256": "d10d3647699e46adde22685770c9ff9d1645951250d309e8b7cfd031431a11de",
+      "bytes": 154149
+    },
+    {
+      "source": "qa12-20-login-profiles/report-002.png",
+      "sha256": "0343cce4dda923726356b432172f34041c1f5352b81961224e075a0aac640491",
+      "bytes": 130223
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-001.png",
+      "sha256": "6d42a3ae2c8e4dedb877a1760327048ddbb90de3e77179d06cfbffeead6e4e47",
+      "bytes": 200024
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-002.png",
+      "sha256": "7fa18a02d90b7a9f9a85787540ffc3cb7d47dcc604f10fb4a26c5ee2eaf0949c",
+      "bytes": 155494
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-003.png",
+      "sha256": "1f2677e8f5bec95afd7012dee41d08db9fb66fcea2316c4a36ef764723638fc3",
+      "bytes": 175386
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-004.png",
+      "sha256": "8971d1814c9f7279b82331f65eaf81527e82ddd341315b4b653db7c02694d736",
+      "bytes": 176633
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-005.png",
+      "sha256": "439a40d029894487d710a6ae73d43da2e0bb93f869149c46bc891eca5a583a68",
+      "bytes": 188932
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-006.png",
+      "sha256": "19c7fb2a4ab47513d99902cca3be0abc899315724ea33fcc3fc48d1224491327",
+      "bytes": 184242
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-007.png",
+      "sha256": "59172fb9c55dccfa0500e061c46b50d0f7a2429e6158c900d7e7ae40a55556f6",
+      "bytes": 187837
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-008.png",
+      "sha256": "bb67c50db11dd0f97427487ca0e77e964e6be19ad65825fe7f3c3ad43327bd8d",
+      "bytes": 158141
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-009.png",
+      "sha256": "3e83171b70362158f3f6c424493c2bd6a45d5b8ebf6466c075821a821807f94d",
+      "bytes": 138831
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-010.png",
+      "sha256": "b295393771a0ae790bf052514c3062ed87d481b77dbf1a3678a3e31bc79317f7",
+      "bytes": 181779
+    },
+    {
+      "source": "qa12-21-login-profiles-retry/report-011.png",
+      "sha256": "45d024f026292ebee93e90fccf8e87d143d9a5bbc596dc580b1322911c3ecb54",
+      "bytes": 121538
+    }
+  ],
+  "runs": [
+    {
+      "schema_version": 1,
+      "name": "qa12-01-graphics-preflight",
+      "kind": "source",
+      "started_at": "2026-11-06T05:05:37.192488+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "4cd9a4cf020a10e205854c6b12997c7a144dd074141b78301aad508e88786489",
+      "working_tree": "",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-preflight.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 22.28,
+      "finished_at": "2026-11-06T05:05:59.560594+00:00",
+      "log_sha256": "02c975f003c7dc34d633f8d3564677803c9a54dd3728c44f99cdbb3a0f8fc956",
+      "directory": "qa12-01-graphics-preflight"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-02-qpaint-uefi",
+      "kind": "vm",
+      "started_at": "2026-11-06T05:06:05.108060+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "4cd9a4cf020a10e205854c6b12997c7a144dd074141b78301aad508e88786489",
+      "working_tree": "",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-qpaint.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 860.61,
+      "finished_at": "2026-11-06T05:20:25.850335+00:00",
+      "log_sha256": "b1fd142a3307c61834ee3478ee5485fd4b4750676b9bf58d6ff41ed403a4c8b5",
+      "directory": "qa12-02-qpaint-uefi",
+      "vm_diagnostic": {
+        "scope": "Actual offline diskless 6-GiB TCG UEFI boot of unchanged e9d423a ISO; orez.verify=1 added interactively in GRUB to request existing test-only QPainter mode",
+        "status": "blocked",
+        "installation_approved": false,
+        "usable_desktop": false,
+        "owner_setup": "Failed closed before reading a password: original splash process did not exit within the 20-second release deadline. Actual error visible in manual-failure-console.png.",
+        "compositor_test": "Not reached; no QPainter result inferred",
+        "credential_scope": "No password was generated or entered in this run",
+        "actual_pngs": 42,
+        "stop_reason": "Operator stopped after owner setup failure; not a collector or kernel crash",
+        "boot_proof": "Actual serial reports CASPER_AND_OREZ_LAYER_PRESENT; this is not desktop acceptance"
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-03-actual-installer-source",
+      "kind": "source",
+      "started_at": "2026-11-06T05:09:35.528127+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "c8d3c75b9a74b986fefac71e30cb06fb4ff9b43871bd7f9af920e3837853414d",
+      "working_tree": "?? build/inspect-installer-source.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-inspect.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 41.12,
+      "finished_at": "2026-11-06T05:10:17.002274+00:00",
+      "log_sha256": "2743b3f375cbdf11399fad1a13b8d9d0bf472caba161ac14161e159acb326b0e",
+      "directory": "qa12-03-actual-installer-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-04-source-regression",
+      "kind": "source",
+      "started_at": "2026-11-06T05:10:51.592022+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "74054c4726e861310e2f1dc20abcb98fdf043d95319a0759bc7f8b161d019d59",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/check-installer-source.sh\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.38,
+      "finished_at": "2026-11-06T05:10:53.073191+00:00",
+      "log_sha256": "6d80f507db961e936cc99bf0e586edde26675f2c4e823e07a7088ad761067988",
+      "directory": "qa12-04-source-regression"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-05-complete-installer-source",
+      "kind": "source",
+      "started_at": "2026-11-06T05:15:33.959500+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "485dd5a25e401690e2ce2c5f6fb075f22f842c9b79901e1b087fa5ad9eedae68",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/check-installer-source.sh\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? tests/test_installer_source.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-inspect-complete.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 67.53,
+      "finished_at": "2026-11-06T05:16:41.608401+00:00",
+      "log_sha256": "6654b552db034684c4207c7aa129ec471f82bcf4cf9cb1ab6b1697ed219569a3",
+      "directory": "qa12-05-complete-installer-source"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-06-owner-installer-regressions",
+      "kind": "source",
+      "started_at": "2026-11-06T05:21:02.557826+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "f90411d1f72def3e8265e592a1db7514fde7edf7c25558b8788c7f60574774b0",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.52,
+      "finished_at": "2026-11-06T05:21:04.183619+00:00",
+      "log_sha256": "402af4d305a28d4f92fe92eeed6d093c2c8bece0aec4843ca69db763d51e1071",
+      "directory": "qa12-06-owner-installer-regressions"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-07-slow-splash-iso",
+      "kind": "source",
+      "started_at": "2026-11-06T05:21:29.709235+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "f90411d1f72def3e8265e592a1db7514fde7edf7c25558b8788c7f60574774b0",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? tests/test_installer_source.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-build.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 132.36,
+      "finished_at": "2026-11-06T05:23:42.136996+00:00",
+      "log_sha256": "c9b45d73bbe8a2da19ecebef0f9c5144d620360dd60f844ab1fda6d95436a484",
+      "directory": "qa12-07-slow-splash-iso"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-08-nosplash-qpaint-uefi",
+      "kind": "vm",
+      "started_at": "2026-11-06T05:24:33.227072+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "f90411d1f72def3e8265e592a1db7514fde7edf7c25558b8788c7f60574774b0",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? tests/test_installer_source.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-nosplash.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 3145.26,
+      "finished_at": "2026-11-06T06:16:58.790581+00:00",
+      "log_sha256": "43c32fb5914dca510d2a01479a55522121da5bf553519123f320e01fc31ad97a",
+      "directory": "qa12-08-nosplash-qpaint-uefi",
+      "vm_diagnostic": {
+        "scope": "Actual diskless/offline 6-GiB TCG UEFI boot, 1d68fccb ISO; manually disabled cosmetic Plymouth and added existing orez.verify flag. Not the new 6ca85 direct-session image.",
+        "status": "blocked",
+        "installation_approved": false,
+        "usable_desktop": false,
+        "verified": [
+          "Local enrollment inputs concealed in the observed full redraw",
+          "Ordinary owner tty3 authentication and UID1000",
+          "Passwordless sudo refused; password-authenticated serial diagnostics succeeded",
+          "Actual OREZ SDDM rendered; incorrect password rejected",
+          "Correct graphical authentication started owner session 7 on VT4",
+          "Native upstream Kubuntu live prompt rendered"
+        ],
+        "not_qualified": [
+          "No usable Plasma desktop or native application workload",
+          "Default boot and longer splash-exit wait not qualified by this no-splash run",
+          "Full effective security policy, installation, recovery, Secure Boot and hardware"
+        ],
+        "observations": [
+          "Some tty2 input/capture attempts were inconclusive; successful tty3 attempt retained separately",
+          "Greeter uses VT1; authenticated wrapper used VT4. Do not equate a wrong or inactive VT with a failed desktop",
+          "Try controls disappeared but both kubuntu-installer-prompt and its KWin wrapper remained running; no startplasma/plasmashell process was observed",
+          "Owner terminated only graphical session 7. SDDM reported helper exit and did not yield a new visible greeter during the remaining observation",
+          "No temporary Qt/KWin service override or sandbox/authentication relaxation was applied",
+          "The orez.verify QPainter flag only applies to the later Plasma session, so that compositor test was not reached"
+        ],
+        "stop_reason": "Operator stopped after preserving the wrapper-flow failure and rebuilding a corrected direct-session image; no kernel crash inferred",
+        "actual_pngs": 144,
+        "credential_scope": "Only a private random disposable VM credential; no real owner credential",
+        "credential_destroyed": true
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-09-prepare-installer-profile",
+      "kind": "source",
+      "started_at": "2026-11-06T05:27:09.936762+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "0ec2d3c79e8bb0c61239d579f80fdb6dc89694c7342d7422f54cc7f89045ba7e",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? image/installer/profile.json\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "build/prepare-installer-profile.py",
+        "--source",
+        "dist/qa12-installer/complete-source",
+        "--base-status",
+        "dist/assembly-lab/base-status",
+        "--output",
+        "dist/qa12-installer/candidate"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.22,
+      "finished_at": "2026-11-06T05:27:10.263169+00:00",
+      "log_sha256": "fda20e2b5f4e3c6ce0a75c237c4fcff3c590122daaa186168309406ee22741b2",
+      "directory": "qa12-09-prepare-installer-profile"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-10-installer-profile-regressions",
+      "kind": "source",
+      "started_at": "2026-11-06T05:31:33.152650+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "cc0a2cd1b78eb0bd65863cf984baf2856f5c5e06153dca34a21bacec8ee48cb4",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? image/installer/profile.json\n?? tests/test_installer_profile.py\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.54,
+      "finished_at": "2026-11-06T05:31:37.864019+00:00",
+      "log_sha256": "a1c225f7289855bd6f48c7768de5b1cb7b3111f4ff14d828366d1852ffd9e941",
+      "directory": "qa12-10-installer-profile-regressions"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-11-offline-removal-plan",
+      "kind": "package-container",
+      "started_at": "2026-11-06T05:33:10.627881+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "b0bdcd4f6b88bb52a4f1adb8f7cbb43a4b6742436e7cf73859e97ab60d66c569",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/check-installer-removals.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? image/installer/profile.json\n?? tests/test_installer_profile.py\n?? tests/test_installer_removals.py\n?? tests/test_installer_source.py",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=/workspace/OREZ-OS,target=/repo,readonly",
+        "--mount",
+        "type=bind,source=/workspace/OREZ-OS/dist/qa12-installer,target=/work",
+        "orez-image-tools:20261105",
+        "python3",
+        "/repo/build/check-installer-removals.py",
+        "--status",
+        "/repo/dist/assembly-lab/component-layer/layer/var/lib/dpkg/status",
+        "--sha256",
+        "286657fa64d3941509e96229cc0cd6fa13c0caa20f1bd081a923e4237bfde212",
+        "--packages-conf",
+        "/work/candidate/etc/calamares/modules/packages.conf",
+        "--output",
+        "/work/removal-simulation"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 8.31,
+      "finished_at": "2026-11-06T05:33:19.258307+00:00",
+      "log_sha256": "396d3c4af6cf2e0c7b4c47b67e89d290cf9575fb1461cef8e02f2bb7c93ee8fd",
+      "directory": "qa12-11-offline-removal-plan"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-12-offline-installer-final",
+      "kind": "package-container",
+      "started_at": "2026-11-06T05:34:02.447346+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "da0b59633a4706c86831f5bd5ddb7bf8ad0df55e55c620f665270a0c552350be",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/check-installer-removals.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? image/installer/profile.json\n?? tests/test_installer_profile.py\n?? tests/test_installer_removals.py\n?? tests/test_installer_source.py",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-profile-final.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 127,
+      "status": "failed",
+      "duration_seconds": 0.01,
+      "finished_at": "2026-11-06T05:34:02.806549+00:00",
+      "log_sha256": "4a743a27da528a0bcc6acdc463b9de9a35d1307d29561e4fb202c6505a1e4357",
+      "directory": "qa12-12-offline-installer-final"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-13-offline-installer-final-retry",
+      "kind": "package-container",
+      "started_at": "2026-11-06T05:34:18.847490+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "da0b59633a4706c86831f5bd5ddb7bf8ad0df55e55c620f665270a0c552350be",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/check-installer-removals.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? image/installer/profile.json\n?? tests/test_installer_profile.py\n?? tests/test_installer_removals.py\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-profile-final.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 19.33,
+      "finished_at": "2026-11-06T05:34:38.405021+00:00",
+      "log_sha256": "bbab2e4862f2f419693a91d36f023928a63fe604593cc6d7d50ad720c1274064",
+      "directory": "qa12-13-offline-installer-final-retry"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-14-final-source-regressions",
+      "kind": "source",
+      "started_at": "2026-11-06T05:36:52.885928+00:00",
+      "commit": "8fd868f4470c5e52db3175662601661c3868a9f0",
+      "source_digest": "e87c64a953079a85f6d4bb04d8f1e09d5c87eb96f4ea9d2f9eb51c6cd2c2266f",
+      "working_tree": "M .github/workflows/orez-live.yml\n M build/audit-installed-root.py\n M build/check-installer-source.sh\n M docs/INSTALL_AND_RECOVERY.md\n M image/live-owner/usr/lib/orez/owner_setup.py\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n M tests/test_owner_setup.py\n M tests/test_source.py\n?? build/check-installer-removals.py\n?? build/inspect-installer-source.py\n?? build/prepare-installer-profile.py\n?? docs/INSTALLER_PROFILE.md\n?? image/installer/profile.json\n?? tests/test_installer_profile.py\n?? tests/test_installer_removals.py\n?? tests/test_installer_source.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 4.17,
+      "finished_at": "2026-11-06T05:36:58.099648+00:00",
+      "log_sha256": "d7525419dc7219c16319cd3febd43887690a313930996134670c999807b0614d",
+      "directory": "qa12-14-final-source-regressions"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-15-direct-session-regressions",
+      "kind": "source",
+      "started_at": "2026-11-06T06:04:24.649309+00:00",
+      "commit": "2a419ae2dd901603c17b8e7400f3035e98e23ee0",
+      "source_digest": "d89e8f4997b8f3a261f4b324e3f7451dca1e16589577a9f7d2773553cc008de3",
+      "working_tree": "M image/initramfs/scripts/casper-bottom/15autologin\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n?? docs/evidence/2026-11-06-installer-graphics/\n?? image/live-owner/usr/share/orez/\n?? tests/test_live_session.py",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.73,
+      "finished_at": "2026-11-06T06:04:26.542704+00:00",
+      "log_sha256": "1472162116198bee70025b08b6dadea2d93ab379b9831c37bb463f15321aedf8",
+      "directory": "qa12-15-direct-session-regressions"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-16-direct-session-iso",
+      "kind": "package-container",
+      "started_at": "2026-11-06T06:08:34.463300+00:00",
+      "commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+      "source_digest": "661479c7858c20afa0c0dabffe936af4a16baa570151ba75e4ac622cb678602c",
+      "working_tree": "?? docs/evidence/2026-11-06-installer-graphics/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-direct-build.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 129.85,
+      "finished_at": "2026-11-06T06:10:44.422971+00:00",
+      "log_sha256": "4f36bbf5635e3b61935f056216c97069a2d375c888d09d5e17e6d62348772da8",
+      "directory": "qa12-16-direct-session-iso"
+    },
+    {
+      "schema_version": 1,
+      "name": "qa12-17-direct-session-default-uefi",
+      "kind": "vm",
+      "started_at": "2026-11-06T06:18:01.759636+00:00",
+      "commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+      "source_digest": "be9701a9544325e218baa0399033c9406e86017ee0e871c8eef928d75d113271",
+      "working_tree": "?? docs/evidence/2026-11-06-installer-graphics/",
+      "command": [
+        "bash",
+        "/tmp/orez-qa12-direct-default.sh"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 3644.66,
+      "finished_at": "2026-11-06T07:18:46.620705+00:00",
+      "log_sha256": "b42cb23c8e2fa1bfd059e9c3850380d44a2b9d9bfe7ace05829d0c54bf3b9d96",
+      "directory": "qa12-17-direct-session-default-uefi",
+      "vm_diagnostic": {
+        "scope": "Actual default-menu UEFI boot of image 6ca85cf, source 56af0a2. No kernel flags edited. Later manual owner-console Plasma launch is a separate diagnostic.",
+        "iso_sha256": "6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6",
+        "image_source_commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+        "environment": {
+          "guest_ram_mib": 6144,
+          "vcpus": 2,
+          "acceleration": "TCG",
+          "graphics": "virtio-vga 2D",
+          "network": "none",
+          "writable_disks": [],
+          "host_devices": []
+        },
+        "status": "blocked",
+        "installation_approved": false,
+        "normal_login_desktop_pass": false,
+        "verified": [
+          "Normal default UEFI boot reached completed local enrollment; both password entries concealed in the observed frame",
+          "Real themed SDDM selected OREZ Desktop; wrong password refused and correct password accepted",
+          "Owner console UID1000; passwordless sudo refused; normally authenticated diagnostic commands worked"
+        ],
+        "normal_login_failure": {
+          "accepted_at_utc": "2026-11-06T06:40:33Z",
+          "exited_at_utc": "2026-11-06T06:40:57Z",
+          "session_exit_code": 64,
+          "observation": "Correct authentication launched selected command on VT2, then it exited and SDDM restarted. Session log empty. Cause unqualified; exit64 is not a documented generic graphics error."
+        },
+        "separate_manual_diagnostic": {
+          "action": "Authenticated ordinary owner tty3 launched startplasma-wayland, with output redirected to volatile /tmp; no root, compositor override, auth or sandbox relaxation",
+          "observed": [
+            "startplasma, KWin, plasmashell and plasma-welcome processes",
+            "No remaining systemd jobs at the inspected instant",
+            "Real KDE Welcome window on active VT3",
+            "Approved wallpaper, desktop icons, panel, system tray and clock",
+            "Clicking Skip closed the Welcome window",
+            "Clicking native System Settings opened its actual Quick Settings window; search and Bluetooth/Wi-Fi/display/accessibility routes visible"
+          ],
+          "not_qualified": [
+            "Normal SDDM startup remains broken",
+            "No setting changed or functional radio/network test",
+            "No KRunner, file-manager, application workload, game, audio or video pass",
+            "No lock/unlock, logout/reboot, installed-system, recovery or performance pass"
+          ],
+          "evidence": [
+            "diagnostic-active-plasma-vt3.png",
+            "diagnostic-welcome-skip.png",
+            "diagnostic-runner-after-welcome.png",
+            "diagnostic-settings-final.png"
+          ]
+        },
+        "observations": [
+          "Inherited Kubuntu desktop/installer icons, Welcome and theme choices remain; installer never clicked and guard remains",
+          "Slow software-emulated rendering is not target-PC performance evidence",
+          "A tty input attempt raced getty timeout and part of the disposable password appeared as a new username; original failure frames retained",
+          "One OCR classification missed the prompt and sent no input; another OCR attempt timed out before credential input. Successful prompt-observed retries are separate. These are test-driver failures, not proved kernel crashes"
+        ],
+        "not_qualified": [
+          "Installed footprint and safe disk installation/recovery",
+          "Fresh authenticated security baseline, full effective policy and signed release/source redistribution",
+          "Target NVIDIA, Secure Boot, Wi-Fi, Bluetooth, USB and hardware performance",
+          "Autonomous OREZ AI and consumer Android emulation"
+        ],
+        "stop_reason": "Configured 3600-second observation completed; QEMU exited through harness cleanup, not a demonstrated guest crash",
+        "actual_pngs": 212,
+        "all_saved_pngs_decode": true,
+        "credential_scope": "Private random disposable VM-only credential; no real owner credential",
+        "credential_destroyed": true,
+        "containers_removed": [
+          "orez-qa12-direct-default",
+          "orez-qa12-assembly"
+        ],
+        "finalized_at": "2026-11-06T07:19:44.470116+00:00"
+      }
+    },
+    {
+      "schema_version": 1,
+      "name": "Installed password-file ownership and group-access regressions; complete source suite",
+      "kind": "source",
+      "started_at": "2026-11-06T06:47:16.562845+00:00",
+      "commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+      "source_digest": "273e70241505d196c4c5258da576b5c53d8c3c6238fd59b1ee505c4731d88729",
+      "working_tree": "M README.md\n M build/audit-installed-root.py\n M docs/AI_HANDOFF.md\n M docs/INSTALLER_PROFILE.md\n M docs/LIVE_ASSEMBLY.md\n M docs/UPDATES_AND_GUARD.md\n M environment/README.md\n M image/live-owner/usr/share/doc/orez/LIVE_OWNER_SETUP.md\n M tests/test_installed_audit.py\n?? docs/RELIABILITY_AND_CONTROL.md\n?? docs/evidence/2026-11-06-installer-graphics/\n?? docs/qa/",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 1.89,
+      "finished_at": "2026-11-06T06:47:18.686296+00:00",
+      "log_sha256": "1a1dff938b933cdf3e53394058c2e2b2a52234014d74b623a83dd59ea132a51c",
+      "directory": "qa12-18-shadow-policy-regressions"
+    },
+    {
+      "schema_version": 1,
+      "name": "Actual ISO session launcher and SDDM wrapper inspection",
+      "kind": "source",
+      "started_at": "2026-11-06T06:56:49.525568+00:00",
+      "commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+      "source_digest": "7dc30d2aa123b007e52942119c518e0aafa3f2286a992a0807d0e385b5e50809",
+      "working_tree": "?? docs/evidence/2026-11-06-installer-graphics/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-session-sources.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 0.57,
+      "finished_at": "2026-11-06T06:56:50.215501+00:00",
+      "log_sha256": "24d7d2fc36b541626ddd195d03cde35cdc4498cdc3f4969f6b78b43dc682e0a6",
+      "directory": "qa12-19-session-source-inspection"
+    },
+    {
+      "schema_version": 1,
+      "name": "Exact base login-profile inspection for session exit diagnostic",
+      "kind": "source",
+      "started_at": "2026-11-06T07:02:37.298048+00:00",
+      "commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+      "source_digest": "7dc30d2aa123b007e52942119c518e0aafa3f2286a992a0807d0e385b5e50809",
+      "working_tree": "?? docs/evidence/2026-11-06-installer-graphics/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-profile-inspection.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 1,
+      "status": "failed",
+      "duration_seconds": 0.85,
+      "finished_at": "2026-11-06T07:02:39.160137+00:00",
+      "log_sha256": "4408ffea207ead36e4fb1bb51a9e0e45e969e5845cfaa9412578859d70c4c259",
+      "directory": "qa12-20-login-profiles"
+    },
+    {
+      "schema_version": 1,
+      "name": "Exact base login profiles including inspected symlink targets",
+      "kind": "source",
+      "started_at": "2026-11-06T07:04:07.452840+00:00",
+      "commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+      "source_digest": "7dc30d2aa123b007e52942119c518e0aafa3f2286a992a0807d0e385b5e50809",
+      "working_tree": "?? docs/evidence/2026-11-06-installer-graphics/",
+      "command": [
+        "python3",
+        "/tmp/orez-qa12-profile-inspection-retry.py"
+      ],
+      "host": "Linux x86_64",
+      "installation_approved": false,
+      "run_url": null,
+      "exit_code": 0,
+      "status": "passed",
+      "duration_seconds": 2.28,
+      "finished_at": "2026-11-06T07:04:09.861606+00:00",
+      "log_sha256": "53c96facb3b0dfb997ff1b67411fec8a25927edd0c20909e798b74df26e54363",
+      "directory": "qa12-21-login-profiles-retry"
+    }
+  ],
+  "implementation_commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+  "image_source_commit": "56af0a24133985d225ac22c2e85a6f3cb050f483",
+  "evidence_checkpoint_commit": "02acdac3acbd64472d73c5d4ea4320c6afef9bd3",
+  "interpretation": {
+    "Build": "Real 5,455,347,712-byte development ISOs were assembled and checked. Latest source selects the native Plasma launcher through a dedicated OREZ live-session directory. No qualified installer release.",
+    "Evidence": "Report PNGs reproduce build/test output; VM PNGs are actual guest captures. Capture-command success does not mean desktop, installer, security or hardware acceptance.",
+    "First run": "qa12-02 failed closed before password input because the splash process did not exit within 20 seconds. No password was generated in that run. Its failures remain in the archive.",
+    "Diagnostic run": "qa12-08 disabled cosmetic splash and added the existing verification flag. Enrollment was concealed; ordinary tty3 login, passwordless-sudo refusal, authenticated diagnostics, real SDDM, incorrect-password refusal and a correct owner graphical session were observed. The inherited session entered the Kubuntu installer prompt, not Plasma. No usable desktop was qualified. The later Plasma-only QPainter setting was not reached.",
+    "Corrected-image run": "qa12-17 normal default UEFI boot concealed enrollment, rendered OREZ SDDM, rejected an incorrect password and accepted the owner. The selected graphical session then exited64 and the greeter restarted. In a separate ordinary authenticated console diagnostic, startplasma-wayland eventually rendered Welcome, the approved wallpaper, panel/system tray and native Quick Settings. Skip closed Welcome. Normal graphical login remains broken; no workload, performance or installed-system pass.",
+    "Installer": "Actual configuration inspection, inactive profile generation and offline dependency simulation are distinct from installation. Only the eight exact requested installer/live packages would be removed; no maintainer scripts or disk installer were executed.",
+    "Safety": "Only disposable offline VM credentials were used and destroyed with their containers after evidence collection. One tty test-driver attempt raced the login timeout and partly echoed the dummy password as a new username; failure frames are retained. No real owner credential, physical SSD, firmware or Windows recovery USB was touched.",
+    "Scope": "No installed footprint, recovery, target NVIDIA/radios/Secure Boot, gaming performance, consumer Android or autonomous OREZ AI qualification is claimed. This archive contains screenshots, not an operating-system download."
+  }
+}
