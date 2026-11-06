@@ -48,7 +48,7 @@ public final class LiveMonitorClient implements AutoCloseable {
         return sessionId.substring(0, 8);
     }
 
-    public synchronized void report(JSONObject status) throws IOException {
+    public synchronized void report(JSONObject status) throws Exception {
         if (token == null) throw new IOException("Live monitoring has been disconnected.");
         HttpURLConnection connection = (HttpURLConnection)
                 new URL(BASE + "/api/control/" + sessionId).openConnection();
