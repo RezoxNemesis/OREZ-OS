@@ -28,7 +28,7 @@ ALLOWED_ACTIONS = {
     "files": ["dolphin"],
     "apps": ["orez-store", "gui"],
     "connect": ["orezctl", "connect", "open"],
-    "help": ["xdg-open", "file:///usr/share/doc/orez/welcome.html"],
+    "help": ["orez-help"],
 }
 
 

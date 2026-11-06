@@ -7,6 +7,7 @@ usr/bin/orez-welcome
 usr/bin/orez-preflight
 usr/bin/orez-connect
 usr/bin/orez-settings
+usr/bin/orez-help
 usr/bin/orez-android
 usr/lib/orez/android_manager.py
 usr/share/applications/orez-android.desktop
@@ -19,9 +20,11 @@ usr/share/applications/orez-welcome.desktop
 usr/share/applications/orez-hardware.desktop
 usr/share/applications/orez-preflight.desktop
 usr/share/applications/orez-settings.desktop
+usr/share/applications/orez-help.desktop
 usr/share/applications/orez-connect.desktop
 usr/share/doc/orez/welcome.html
 usr/share/doc/orez/CONTROLS.md
+usr/share/doc/orez/HELP_AND_RECOVERY.md
 usr/bin/orez-store
 usr/lib/orez/store_manager.py
 usr/lib/orez/store_ui.py
@@ -39,3 +42,4 @@ usr/share/color-schemes/OREZPaper.colors
 usr/share/color-schemes/OREZInk.colors
 usr/lib/orez/settings_ui.py
 usr/share/orez/settings-catalog.json
+usr/lib/orez/help_recovery_ui.py
