@@ -22,6 +22,24 @@ helper = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(helper)
 
 
+def capture_sdl_frame(pid, environment, path, record, elapsed):
+    """Keep a failed collector from terminating the guest or claiming a frame."""
+    window = helper.own_window(pid, environment)
+    if window is None:
+        raise RuntimeError('No unique visible window owned by the QEMU process')
+    try:
+        subprocess.run(['scrot', '--window', window, str(path)],
+                       env=environment, check=True, timeout=15)
+    except (subprocess.SubprocessError, OSError) as error:
+        # A timed-out scrot can leave a truncated output. It is not evidence.
+        path.unlink(missing_ok=True)
+        record.setdefault('frame_errors', []).append(
+            {'seconds': elapsed, 'error': str(error), 'collector': 'scrot'})
+        return False
+    record['frames'].append(path.name)
+    return True
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--iso', type=Path, required=True)
@@ -111,15 +129,10 @@ def main():
                     qmp = None
                     try:
                         if a.graphics == 'virgl':
-                            window = helper.own_window(process.pid, environment)
-                            if window is None:
-                                raise RuntimeError('No unique visible window owned by the QEMU process')
                             # GL scanout need not have a QMP readback surface. Capture
                             # actual SDL pixels, without cropping/scaling/compositing.
-                            subprocess.run(['scrot', '--window', window, str(ppm.with_suffix('.png'))],
-                                           env=environment, check=True, timeout=15)
-                            record['frames'].append(ppm.with_suffix('.png').name)
-                            print('Captured actual UEFI SDL guest frame:', elapsed, flush=True)
+                            if capture_sdl_frame(process.pid, environment, ppm.with_suffix('.png'), record, elapsed):
+                                print('Captured actual UEFI SDL guest frame:', elapsed, flush=True)
                             continue
                         qmp = helper.QMP(runtime / 'qmp.sock')
                         qmp.call('screendump', {'filename': str(ppm)})

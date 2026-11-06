@@ -9,14 +9,20 @@ process exit and refuses visible-input fallback. Third boot: both entries hidden
 setup completes, tty2 owner authentication works and passwordless sudo is refused.
 185 source tests pass. One cold-boot observation does not certify all timings.
 
-The real OREZ SDDM interface is visible; wrong-password refusal and masking were
-observed in the second boot. Correct-password submission produced black frames
-for the remaining 100-second observation window, so desktop acceptance is still
-blocked, not a proven root cause. The third boot's journal records one greeter
-restart; further graphical authentication/desktop observation is in progress.
+Third-run SDDM/PAM graphical authentication succeeded and Plasma started, but
+the actual desktop remained black. Guest logs include a missing render node,
+software graphics errors and a splash timeout; root cause is unqualified.
+The fourth software-VirGL boot completed owner setup and tty2 authentication,
+but no usable desktop. QMP contention ended run three and scrot timeout ended
+run four through harness cleanup, not demonstrated kernel crashes. Both capture
+failures are retained; error handling was corrected with 187 local source tests.
+No further boot validates the last capture-only correction. Native applications
+are integrated but not workload-tested inside the booted current image.
 See [LIVE_ASSEMBLY.md](LIVE_ASSEMBLY.md) and the latest handoff/evidence ledger.
-No installer/release is approved. These results supersede older “not assembled”
-and “no visible login” entries below; historical failures remain for traceability.
+Installer, recovery, current security baseline, redistribution/signing and
+physical hardware qualification remain open. These results supersede older
+“not assembled” and “no visible login” entries; historical failures remain.
+
 
 
 ## Image applications checkpoint — 6 November 2026

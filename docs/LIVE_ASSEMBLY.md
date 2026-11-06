@@ -63,6 +63,17 @@ Plasma started but the observed desktop stayed black; logs show software graphic
 issues and a splash timeout. A later QMP capture conflict stopped the test
 harness, not a proved guest crash. No usable-desktop pass is inferred.
 
+Fourth boot of the same bytes used virtio-vga-gl with SDL on private Xvfb and
+host llvmpipe (software rendering, not hardware acceleration). Enrollment was
+concealed and the tty2 owner login reached a shell; no usable desktop was
+qualified. After 1,627 seconds a scrot timeout stopped the harness, which sent
+SIGTERM to QEMU. All 74 decodable guest PNGs are retained. One truncated capture
+is recorded and excluded from the PNG gallery. The final harness change handles
+this timeout and removes partial frames; 187 local source tests pass, but this
+capture-only change has not had another boot. All VM containers/credentials
+were destroyed after evidence collection. No current booted app/game/browser,
+installation, physical GPU/radio or performance pass follows from these results.
+
 ## What the image now includes
 
 The original kernel/base, native Brave 1.99.55, VLC 3.0.23, SuperTux 0.6.3,

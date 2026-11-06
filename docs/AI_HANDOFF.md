@@ -1,5 +1,48 @@
 # OREZ OS — Verified Development Handoff
 
+## Fourth UEFI run complete — 6 November 2026, latest
+
+Last confirmed source checkpoint `7d6b3237eb2f51c8fe4629d7c3b9c3109244ceab`;
+CI **42162321776 passes** 185 source tests, 38 package paths and 68 browser
+cases. Full ISO job skipped. Artifact 13477342862 (211,351,809 bytes), SHA256
+`20a236d4bd7203d1d205a7f75656278f12249487bd2c933c3a85ad11918417c7`.
+The following capture-only correction has 187 passing local source tests;
+its final commit/CI and screenshot archive are recorded in a follow-up entry.
+
+Fourth run qa11-25 used the same e9d423a... ISO with software-backed VirGL.
+Both enrollment entries were concealed in the observed full console redraw;
+setup completed and actual tty2 authentication reached the owner shell. Earlier
+partial/black captures were inconclusive, not proof of rejected credentials.
+No usable graphical desktop or native workload was qualified in this run.
+The independent third-run successful SDDM/PAM authentication remains valid.
+
+At 1,627 seconds, scrot timed out and the harness terminated QEMU in cleanup;
+qemu.log confirms SIGTERM from Python. This is a collector failure, not a proved
+kernel crash. All 74 decodable actual guest PNGs and logs are preserved; the
+truncated guest-1627.png remains in the raw run directory, with its failure in
+vm-result.json, and is excluded from the downloadable PNG gallery. The harness
+now records failed SDL captures, removes their partial output and continues;
+a timeout/retry regression and ambiguous-window refusal test pass. This final
+collector correction has not been exercised in another boot.
+
+All four diskless/offline test containers and their private random credentials
+have been destroyed. No actual owner credentials were used. The only remaining
+task container is the offline assembly helper. No target SSD, Windows recovery
+USB, physical device or firmware was touched. No VM remains active.
+
+Next: publish and verify the complete current PNG evidence archive; record final
+commit/CI and update draft PR #1. Then resume on a host with KVM and a supported
+render node to diagnose actual graphical startup, without relaxing AppArmor,
+SDDM/PAM, DRM permissions or Brave sandboxing. Once a usable desktop is verified,
+exercise native apps, lock/logout/reboot, effective permissions, then implement
+and test installation/reboot/recovery on a disposable virtual disk. Retain the
+recorded original base; prepare authenticated native layers in the full build
+pipeline. Fresh security updates, source/licensing, signing, update/recovery,
+owner access review and actual target hardware gates remain open. Recommended
+lab storage is at least 80 GiB; this workspace is 32 GiB without KVM or /dev/dri.
+Do not publish an installation ISO or infer 6-GiB performance from TCG captures.
+Repository remains public; consumer Android emulation remains deferred.
+
 ## Actual authentication and software-3D diagnostic — 6 November 2026
 
 Last confirmed implementation `baf7fc32e62181d31789adac903c32da75bd1b95`;
