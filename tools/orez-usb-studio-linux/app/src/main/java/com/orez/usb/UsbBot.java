@@ -130,14 +130,14 @@ public final class UsbBot implements AutoCloseable {
         cbw[12]=(byte)(read?0x80:0);
         cbw[14]=(byte)cdb.length;
         System.arraycopy(cdb,0,cbw,15,cdb.length);
-        int sent=connection.bulkTransfer(bulkOut,cbw,cbw.length,10000);
+        int sent=bulkFully(bulkOut,cbw,0,cbw.length,10000);
         if(sent!=31) throw transportFailure("USB command block returned "+sent+" of 31 bytes.");
         if(size>0) {
-            int actual=connection.bulkTransfer(read?bulkIn:bulkOut,data,size,30000);
+            int actual=bulkFully(read?bulkIn:bulkOut,data,0,size,30000);
             if(actual!=size) throw transportFailure((read?"USB read":"USB write")+" data stage returned "+actual+" of "+size+" bytes.");
         }
         byte[] csw=new byte[13];
-        int got=connection.bulkTransfer(bulkIn,csw,csw.length,10000);
+        int got=bulkFully(bulkIn,csw,0,csw.length,10000);
         if(got!=13) throw transportFailure("USB completion block returned "+got+" of 13 bytes.");
         if(le32(csw,0)!=0x53425355L || le32(csw,4)!=(current&0xffffffffL))
             throw transportFailure("USB completion signature or tag is invalid.");
@@ -145,6 +145,17 @@ public final class UsbBot implements AutoCloseable {
         int status=csw[12]&255;
         if(residue!=0) throw transportFailure("USB reports "+residue+" untransferred bytes.");
         if(status!=0) throw transportFailure(status==1?"The USB device rejected a SCSI command. No automatic retry was attempted.":"USB Mass Storage entered a phase error. No automatic retry was attempted.");
+    }
+
+    /** Android bulkTransfer may legally complete only part of a requested data stage. */
+    private int bulkFully(UsbEndpoint endpoint,byte[] buffer,int offset,int length,int timeout) {
+        int completed=0;
+        while(completed<length) {
+            int n=connection.bulkTransfer(endpoint,buffer,offset+completed,length-completed,timeout);
+            if(n<=0) return completed==0?n:completed;
+            completed+=n;
+        }
+        return completed;
     }
 
     private IOException transportFailure(String message) {
