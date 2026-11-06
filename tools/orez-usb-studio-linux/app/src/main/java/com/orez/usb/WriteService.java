@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
 import java.util.Locale;
+import org.json.JSONObject;
 
 public final class WriteService extends Service {
     public static final String ACTION_START="com.orez.usb.START";
@@ -28,6 +29,14 @@ public final class WriteService extends Service {
     public static volatile boolean running=false, cancelled=false, success=false;
     public static volatile String phase="Ready", detail="Choose a Linux ISO and a blank USB drive.";
     public static volatile long done=0,total=0;
+    public static volatile String monitorState="Disabled";
+    public static volatile boolean checksumMatched=false;
+    private volatile boolean monitorActive=false;
+    private Thread monitorThread;
+    private LiveMonitorClient monitorClient;
+    private String reportIsoSha256="", reportUsbProduct="USB mass storage";
+    private long reportIsoBytes=0, reportUsbBytes=0;
+    private int reportUsbVid=0, reportUsbPid=0;
     private static final String CHANNEL="orez_linux_writer";
     private static final int NOTIFICATION_ID=730;
     private PowerManager.WakeLock wakeLock;
@@ -49,12 +58,22 @@ public final class WriteService extends Service {
         Uri uri=intent.getParcelableExtra("isoUri");
         String expected=intent.getStringExtra("expectedSha256");
         long expectedBytes=intent.getLongExtra("isoBytes",-1);
+        String pairCode=intent.getStringExtra("liveMonitorPairCode");
+        if(pairCode!=null && !pairCode.trim().isEmpty() && !LiveMonitorClient.isValidCode(pairCode)) {
+            phase="Stopped before USB writing"; detail="The live-monitor pairing code is invalid. No write was started.";
+            stopSelf(startId); return START_NOT_STICKY;
+        }
         if(device==null || uri==null || expected==null || !expected.matches("(?i)[0-9a-f]{64}") || expectedBytes<=0) {
             phase="Stopped before USB writing"; detail="The reviewed ISO or USB details are missing. No write was started.";
             stopSelf(startId); return START_NOT_STICKY;
         }
 
         cancelled=false; success=false; running=true; done=0; total=expectedBytes;
+        reportIsoSha256=expected.toLowerCase(Locale.ROOT); reportIsoBytes=expectedBytes;
+        reportUsbProduct=device.getProductName()==null?"USB mass storage":device.getProductName();
+        reportUsbVid=device.getVendorId(); reportUsbPid=device.getProductId(); reportUsbBytes=0;
+        checksumMatched=false;
+        monitorState=(pairCode==null || pairCode.trim().isEmpty())?"Disabled":"Starting";
         phase="Starting"; detail="Checking the ISO and reviewed USB before writing.";
         createChannel();
         if(Build.VERSION.SDK_INT>=29) startForeground(NOTIFICATION_ID,notification(),ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE);
@@ -65,6 +84,15 @@ public final class WriteService extends Service {
             wakeLock.acquire(4L*60L*60L*1000L);
         } catch(Exception ignored) {}
 
+        if(pairCode!=null && !pairCode.trim().isEmpty()) {
+            try { startLiveMonitor(pairCode); }
+            catch(Exception e) {
+                running=false; phase="Stopped before USB writing";
+                detail="Live-monitor setup failed; no USB write was started. "+e.getMessage();
+                updateNotification(true); stopForeground(STOP_FOREGROUND_REMOVE); stopSelf(startId);
+                return START_NOT_STICKY;
+            }
+        }
         worker=new Thread(()->runWriter(device,uri,expected.toLowerCase(Locale.ROOT),expectedBytes),"orez-linux-image-writer");
         worker.start();
         return START_NOT_STICKY;
@@ -93,11 +121,13 @@ public final class WriteService extends Service {
             String initialHash=hashSource(uri,expectedBytes);
             if(!initialHash.equals(expected))
                 throw new IOException("SHA-256 does not match the official checksum you entered. The USB has not been written.");
+            checksumMatched=true;
 
             checkCancelled();
             setStatus("Opening reviewed USB","Checking the USB again; no formatting or write probe is used.",0,expectedBytes);
             bot=new UsbBot(manager,current);
             long paddedBytes=((expectedBytes+511L)/512L)*512L;
+            reportUsbBytes=bot.capacityBytes();
             if(bot.capacityBytes()<paddedBytes)
                 throw new IOException("The selected USB is too small. ISO needs "+paddedBytes+" bytes; USB has "+bot.capacityBytes()+" bytes.");
             bot.preflight();
@@ -174,10 +204,72 @@ public final class WriteService extends Service {
         } finally {
             if(bot!=null) bot.close();
             running=false;
+            stopLiveMonitor();
             if(wakeLock!=null && wakeLock.isHeld()) wakeLock.release();
             updateNotification(true);
             stopForeground(STOP_FOREGROUND_DETACH);
             stopSelf();
+        }
+    }
+
+    private void startLiveMonitor(String pairingCode) throws IOException {
+        monitorClient=new LiveMonitorClient(pairingCode);
+        monitorActive=true;
+        monitorState="Connecting…";
+        monitorThread=new Thread(()->{
+            LiveMonitorClient client=monitorClient;
+            while(monitorActive) {
+                try {
+                    client.report(buildMonitorStatus());
+                    monitorState="Connected · "+client.shortSessionId();
+                } catch(Exception e) {
+                    String reason=e.getMessage()==null?"Connection unavailable":e.getMessage();
+                    monitorState="Offline · "+reason;
+                }
+                if(!monitorActive) break;
+                try { Thread.sleep(10000); }
+                catch(InterruptedException e) { break; }
+            }
+            try {
+                client.report(buildMonitorStatus());
+                monitorState="Final status sent";
+            } catch(Exception e) {
+                monitorState="Final report unavailable · "+(e.getMessage()==null?"connection error":e.getMessage());
+            } finally {
+                client.close();
+                if(monitorClient==client) monitorClient=null;
+            }
+        },"orez-linux-live-monitor");
+        monitorThread.setDaemon(true);
+        monitorThread.start();
+    }
+
+    private JSONObject buildMonitorStatus() throws Exception {
+        return new JSONObject()
+            .put("version","0.3.1")
+            .put("phase",phase)
+            .put("detail",detail)
+            .put("running",running)
+            .put("success",success)
+            .put("isoSha256",reportIsoSha256)
+            .put("isoBytes",reportIsoBytes)
+            .put("targetArchitecture","x86_64")
+            .put("usbProduct",reportUsbProduct)
+            .put("usbVid",reportUsbVid)
+            .put("usbPid",reportUsbPid)
+            .put("usbBytes",reportUsbBytes)
+            .put("done",done)
+            .put("total",total)
+            .put("checksumMatch",checksumMatched)
+            .put("checksumSource",checksumMatched?"user-provided official SHA256SUMS":"");
+    }
+
+    private void stopLiveMonitor() {
+        monitorActive=false;
+        Thread t=monitorThread;
+        if(t!=null) {
+            t.interrupt();
+            try { t.join(2000); } catch(InterruptedException e) { Thread.currentThread().interrupt(); }
         }
     }
 
