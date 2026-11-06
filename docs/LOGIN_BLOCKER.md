@@ -1,72 +1,56 @@
 # OREZ graphical login blocker — investigation record
 
-Status: 6 November 2026. **Open blocker. No fix is claimed.**
+Status: 6 November 2026. **Open blocker. Diagnostic instrumentation is committed; no login fix is claimed.**
 
-## Facts established by the current default-menu UEFI run
+## Confirmed boot behaviour
 
 Image SHA-256: `6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6`.
 
-- Local owner enrollment completed; both password entries were concealed in the observed run.
+- The default-menu UEFI boot completed local owner enrollment with concealed password entries.
 - SDDM selected `/usr/share/orez/wayland-sessions/orez.desktop`.
-- PAM authentication succeeded and opened the owner session.
+- PAM authentication succeeded and opened the ordinary owner session.
 - SDDM logged `Session started true`, then `sddm-helper exited with 64`; the greeter restarted.
-- The session log was empty. The journal also reported `Failed to write utmpx: No such file or directory`.
-- A separate manual launch of `startplasma-wayland` from an authenticated ordinary-owner TTY rendered real Plasma Welcome, wallpaper, panel, tray and Settings. This was not the normal SDDM route.
+- A separate manual `startplasma-wayland` launch from an authenticated ordinary-owner TTY rendered Plasma Welcome, wallpaper, panel, tray and Settings. This is not a normal SDDM login pass.
 
-See `docs/evidence/2026-11-06-installer-graphics/qa12-17-vm-result.json`,
-`guest-journal-excerpt.json`, `startup-source-review.json` and
-`LIVE_ASSEMBLY.md`.
+Primary evidence: `docs/evidence/2026-11-06-installer-graphics/qa12-17-vm-result.json`, `guest-journal-excerpt.json`, `startup-source-review.json`, and `LIVE_ASSEMBLY.md`.
 
-## What the evidence does not establish
+## What exit status 64 means — and does not mean
 
-Exit status 64 is not, by itself, proof of a GPU failure. The reviewed upstream
-SDDM helper statuses do not make it a generic graphics error. The reviewed
-upstream Plasma launcher did not show an explicit 64 return path. This does not
-exclude downstream patches, an environment-dependent branch, a child process,
-a wrapper, or an early process termination.
+The pinned SDDM source reviewed for the image defines its own `HelperExitStatus` values as 0 through 5. For a Wayland user session, SDDM starts its configured `Wayland.SessionCommand` with the selected desktop file's Exec command. When that process finishes, `UserSession` forwards its numeric exit code to `HelperApp::sessionFinished(int status)`, which exits with that same value. Therefore the observed 64 is **the exit code returned by the configured Wayland session command chain**, not one of SDDM's ordinary helper-status enum values. It does not yet identify which inner command returned 64.
 
-The missing utmpx warning is correlated in time, but no evidence proves it
-caused the session to exit. Do not create an empty utmp file or suppress the
-warning as a speculative fix.
+Pinned source references:
+- [SDDM Auth helper status enum](https://github.com/sddm/sddm/blob/4fe234b/src/auth/Auth.h#L83-L89)
+- [SDDM connects session completion and forwards the status](https://github.com/sddm/sddm/blob/4fe234b/src/helper/HelperApp.cpp#L128-L130) and [exit forwarding](https://github.com/sddm/sddm/blob/4fe234b/src/helper/HelperApp.cpp#L196-L198)
+- [SDDM launches the configured Wayland session command](https://github.com/sddm/sddm/blob/4fe234b/src/helper/UserSession.cpp#L114-L127)
 
-The separate TTY launch proves that some native Plasma components can render
-under the VM's software graphics path. It does not prove that the SDDM-launched
-environment is equivalent.
+The reviewed KDE Plasma 6.6.6 `startplasma-wayland` main path explicitly returns 1 for D-Bus setup failures, 4 when Plasma session start fails, and 0 after normal shutdown. It does not show an explicit 64 return in that file. This narrows the next trace, but does not rule out a downstream script, a library, a child, or another process in the launched chain. [Pinned KDE source](https://github.com/KDE/plasma-workspace/blob/v6.6.6/startkde/startplasma-wayland.cpp).
 
-## Required next investigation
+## The utmpx warning is separate
 
-1. Rebuild or retrieve an ISO whose embedded source identity is recorded. Boot it
-   from the ordinary default UEFI menu with no changed kernel flags, no writable
-   guest disks, no network and disposable credentials.
-2. Capture the exact SDDM-selected desktop file, its resolved executable and
-   symlink target, `/etc/sddm/wayland-session`, the Plasma wrapper, package
-   versions and relevant systemd/PAM environment. Record hashes and modes.
-3. Capture the child process tree and exact exit origin around
-   `plasma-dbus-run-session-if-needed`, `dbus-run-session` and
-   `startplasma-wayland`. If using tracing, preserve an untraced control run
-   because tracing may change timing.
-4. Compare only non-secret environment variables between the SDDM session and
-   the successful ordinary-owner TTY diagnostic: HOME, PATH, locale,
-   XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS, WAYLAND_DISPLAY, session type,
-   systemd user-manager readiness and runtime directory ownership/mode.
-5. Investigate the utmpx warning independently: verify the expected runtime
-   directory and package-provided creation mechanism in the actual live root.
-   Do not add a guessed file or change ownership/modes without a proven package
-   requirement and a regression test.
-6. Change one variable at a time. Preserve PAM authentication, the local
-   password, root lock, owner privilege boundaries and SDDM session selection.
-   Never hide the failure by forcing a success exit, enabling automatic login,
-   removing authentication, or falling back silently to a different desktop.
-7. Require a new ordinary default-menu UEFI boot to show: successful
-   authentication, a usable Plasma desktop, keyboard/mouse input, launcher,
-   Settings, Dolphin, terminal, logout and a second successful login. Record
-   actual screenshots, journal, command exit chain and ISO hash.
-8. Only then update the blocker status. A source test, manually launched TTY
-   desktop, screenshot from a container, or successful ISO assembly is not a
-   graphical-login pass.
+The journal also contains `Failed to write utmpx: No such file or directory`. This is a known compatibility warning: Debian maintainers documented that systemd 256.7-2 disabled legacy utmp support, so `/run/utmp` is no longer created by systemd on those systems. The warning is not evidence that the login exited because of utmp. Do not create an empty utmp file, change permissions, or suppress the warning as a speculative login fix. [Debian bug 1087449](https://bugs.debian.org/1087449).
+
+## Diagnostic change committed
+
+Commit `b979c6b7505670d41cd6342d19e86ebe850e443e` adds a live-only session trace wrapper at `image/live-owner/usr/lib/orez/orez-session-trace`. The OREZ session entry now calls that wrapper, which then invokes the exact original native command:
+
+```sh
+/usr/lib/x86_64-linux-gnu/libexec/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
+```
+
+It records a start marker, a small allowlisted set of non-secret environment facts, and the exact child exit status through the system journal. It does not dump the environment, passwords, command-line credentials, personal files, or process memory. It returns the child's exact status. It does not bypass PAM, enable automatic login, change user privileges, relax AppArmor, change compositor settings, or choose another desktop. The instrumentation remains live-only and is excluded from the normal installed package allowlist.
+
+CI run [42211534711](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711) passed **225 source tests, the 38-path Debian package audit, and 68 desktop/mobile preview tests**. The full ISO job was skipped; this validates source and packaging checks, not a rebuilt or booted diagnostic ISO. Evidence artifact: `13499580862`, 211,801,054 bytes, expires 20 November 2026.
+
+## Next evidence required
+
+1. Build a new ISO from the reviewed base, native-app layer, dpkg-owned OREZ layer and updated live-owner layer. Record its exact source commit and SHA-256. The existing manual full-image workflow is not yet wired to prepare all three inputs, so do not re-trigger it expecting missing inputs to appear.
+2. Boot that exact ISO from the ordinary default UEFI menu in a disposable, offline, diskless VM with disposable credentials. Do not edit kernel flags.
+3. Inspect the journal for `orez-session-trace: wrapper_started`, `starting plasma-dbus-run-session-if-needed`, and `plasma_session_child_exit=N`. If the wrapper-start marker is absent, investigate SDDM's configured `SessionCommand` / `/etc/sddm/wayland-session` boundary. If present, the returned status narrows the failure to the native helper/startplasma chain; inspect its corresponding process tree and stderr log.
+4. Preserve a matched control boot and capture non-secret values only: HOME, PATH, locale, XDG_RUNTIME_DIR, whether DBUS_SESSION_BUS_ADDRESS is set, WAYLAND_DISPLAY, DISPLAY, XDG_SESSION_TYPE, XDG_CURRENT_DESKTOP, and user-manager readiness.
+5. Investigate the compositor's process lifetime and exact crash/exit evidence separately. A greeter compositor stopping after greeter shutdown is not proof that the user's compositor failed.
+6. Change one justified variable at a time. Preserve authentication, locked root, owner privilege boundaries and session selection. Do not turn errors into success or use automatic login.
+7. Require a new default-menu UEFI boot to show authentication, usable desktop, keyboard/mouse input, launcher, Settings, Dolphin, terminal, logout and a second successful login. Record ISO hash, journal, screenshots and command exit chain.
 
 ## Release gate
 
-Normal graphical login remains **BLOCKED** until the above default-boot test
-passes. Installer activation, ISO publication and real-PC installation remain
-prohibited independently of this login work.
+Normal graphical login remains **BLOCKED****. Installer activation, ISO publication and real-PC installation remain prohibited until the login passes and the independent installer, disk-safety, encryption, update/recovery, licensing and target-hardware gates are completed.

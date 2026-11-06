@@ -24,7 +24,7 @@ log "wrapper_started uid=$uid home=${HOME:-unset} runtime_dir=${XDG_RUNTIME_DIR:
 
 # Keep this exact helper and target visible in the journal for process tracing.
 log "starting plasma-dbus-run-session-if-needed -> startplasma-wayland"
- /usr/lib/x86_64-linux-gnu/libexec/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
+/usr/lib/x86_64-linux-gnu/libexec/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
 status=$?
 log "plasma_session_child_exit=$status"
 exit "$status"

@@ -2,6 +2,7 @@
 import configparser
 from pathlib import Path
 import shlex
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,3 +46,4 @@ class LiveSessionTests(unittest.TestCase):
         self.assertNotIn('printenv', wrapper)
         self.assertIn('DBUS_SESSION_BUS_ADDRESS', wrapper)
         self.assertNotIn('DBUS_SESSION_BUS_ADDRESS=', wrapper)
+        subprocess.run(['/bin/sh', '-n', str(ROOT / 'image/live-owner/usr/lib/orez/orez-session-trace')], check=True)

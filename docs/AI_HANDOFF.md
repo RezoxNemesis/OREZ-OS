@@ -1,6 +1,6 @@
 # OREZ OS — Verified Development Handoff
 
-## Final verified checkpoint — 6 November 2026, installer/graphics round
+## Latest verified checkpoint — 6 November 2026, login trace instrumentation
 
 **No approved installation download.** The actual normal-login session still
 fails after successful authentication. A separate ordinary-owner console
@@ -10,7 +10,7 @@ checkpoints below are historical; use this section and its linked final records.
 ### Repository and exact evidence
 
 - Branch: `feature/orez-live-foundation-20261104`; last confirmed implementation
-  commit: `02acdac3acbd64472d73c5d4ea4320c6afef9bd3`.
+  commit: `b979c6b7505670d41cd6342d19e86ebe850e443e` (login trace instrumentation and regression test).
   This final documentation/evidence follow-up uses `[skip ci]`; verify actual
   remote HEAD before editing rather than inventing a self-referential hash.
 - [PR #1](https://github.com/RezoxNemesis/OREZ-OS/pull/1) is open, draft and
