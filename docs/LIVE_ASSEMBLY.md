@@ -7,9 +7,9 @@ proves login, desktop usability, installation or target hardware support.
 
 | Artifact | Verified identity |
 | --- | --- |
-| Integrated ISO | `dist/assembly-lab/slow-splash/OREZ-OS-0.1-live-amd64.iso` |
+| Integrated ISO | `dist/assembly-lab/direct-session/OREZ-OS-0.1-live-amd64.iso` |
 | ISO size | 5,455,347,712 bytes; 5.46 decimal GB / 5.08 GiB |
-| ISO SHA-256 | `1d68fccb306750e33c9af9f95b1f0c543eb8cabeb312e5725381198235589752` |
+| ISO SHA-256 | `6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6` |
 | Parent development ISO | `8ec11599942f871759d7a2950b26430c8cb51a35d068283d09f348c2771e40e9` |
 | Unchanged original filesystem | 4,381,224,960 bytes; `a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7` |
 | Native application layer | 383,488,000 bytes; `22e04836b2e2d0570f248f42306e0a86654202fd5f37561b0d6a0e9d8fbdfd51` |

@@ -7,6 +7,7 @@ Run against a disposable VM's installed filesystem before approving installation
 import argparse
 import json
 import re
+import stat
 import sys
 from pathlib import Path
 
@@ -115,8 +116,31 @@ def inspect(root: Path, expect_encryption: bool = False, expect_btrfs: bool = Fa
             record('administrator_groups', 'pass' if admins - {'root'} == {owner} else 'fail',
                    'Known administrator groups must contain only the expected human owner; custom authorization still needs runtime review')
             shadow_path = (root / 'etc/shadow').resolve()
-            record('shadow_permissions', 'pass' if shadow_path.stat().st_mode & 0o027 == 0 else 'fail',
-                   'Shadow database must have no group-write or world access')
+            metadata = shadow_path.stat()
+            mode = stat.S_IMODE(metadata.st_mode)
+            # Interpret IDs using the selected installed root, never the
+            # builder's host group database. A copied tree must preserve its
+            # real installed metadata; an unprivileged extraction is not proof.
+            allowed_gids = {
+                int(fields[2]) for name, fields in groups.items()
+                if name == 'shadow' or (name == 'root' and int(fields[2]) == 0)
+            }
+            group_members = {
+                member for fields in groups.values() if int(fields[2]) == metadata.st_gid
+                for member in fields[3].split(',') if member
+            }
+            group_members.update(name for name, fields in users.items()
+                                 if int(fields[3]) == metadata.st_gid)
+            # Include every alias of a numeric GID, primary memberships and
+            # unresolved member names. Even the owner should authenticate to
+            # obtain privileged access rather than read hashes as an ordinary
+            # process. Unexpected service readers also need explicit review.
+            exposed_members = group_members - {'root'} if mode & 0o040 else set()
+            protected = (stat.S_ISREG(metadata.st_mode) and metadata.st_uid == 0
+                         and metadata.st_gid in allowed_gids and bool(mode & 0o400)
+                         and not mode & ~0o640 and not exposed_members)
+            record('shadow_permissions', 'pass' if protected else 'fail',
+                   'Shadow must be a root-owned regular file, readable by root, with only safe root/shadow-group access; group-readable hashes must not be exposed to non-root accounts. Verify metadata-preserving extraction and effective ACL/runtime policy separately')
         # A scoped static check, not a replacement for visudo and effective
         # sudo/Polkit/SSH authorization tests on the installed system.
         sudo_paths = ['etc/sudoers']

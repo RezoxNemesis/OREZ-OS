@@ -1,5 +1,83 @@
 # OREZ OS — Verified Development Handoff
 
+## Shadow audit review fix — 6 November 2026, 06:48 UTC
+
+The parallel reliability review found and corrected a static-audit false pass:
+root ownership and target-root group membership now matter in addition to shadow
+mode bits. Four additional test methods cover valid and adverse owner/group/mode
+cases without requiring host root. All 214 source tests pass in qa12-18 with 12
+report PNGs. No installed-system safety or complete ACL/runtime policy claim.
+The installer-inspector example now uses its actual positional ISO argument.
+Plymouth documentation distinguishes each 20-second control-call timeout from
+the separate 120-second process-disappearance wait; runtime code is unchanged.
+
+Current image remains source 56af0a2, SHA256 6ca85cf...0ac6, under qa12-17.
+Normal unmodified boot completed hidden owner enrollment and rendered OREZ SDDM
+with the dedicated OREZ Desktop choice; incorrect graphical password refused.
+After the correct-password attempt, the greeter returned before a usable desktop
+was qualified. Owner-console/session diagnostics are ongoing. A diagnostic tty
+login timed out while test-driver input arrived: part of the private dummy
+credential appeared in a new username field. Preserve this automation failure;
+do not generalize the enrollment/SDDM concealment observations to that attempt.
+No real credential is used. Destroy the disposable credential/container before
+publishing all actual frames. Prompt-observed console retry is ongoing.
+
+The new reliability contract and unexecuted acceptance cases are in
+RELIABILITY_AND_CONTROL.md and qa/RELIABILITY_TEST_CASES.md. Finish current run,
+collect exact journals and screenshots, publish/verify evidence, refresh CI/PR
+and replace this active checkpoint with final verified status. Installer remains
+blocked. No physical disk, firmware or Windows recovery USB touched.
+
+
+## Corrected-image default boot active — 6 November 2026, 06:38 UTC
+
+Last confirmed implementation: 56af0a24133985d225ac22c2e85a6f3cb050f483.
+CI 42172398708 passes 210 source tests, 38 package paths and 68 browser-preview
+cases; full ISO job skipped. Artifact 13481279320 (211,617,256 bytes), SHA256
+49c5c24a2647bdf4266e50d3e89d0c4edefddcf36c3cbe732925f06b92aa0d37.
+
+Corrected ISO: dist/assembly-lab/direct-session/OREZ-OS-0.1-live-amd64.iso,
+5,455,347,712 bytes; SHA256
+6ca85cf37d48beeb8ac0fd6ffa99e94cc9806949584a970916024ddf30d80ac6.
+It records source 56af0a2 and passes exact-base/app/dpkg/owner/media checks.
+Still a reconstruction from the recorded development parent, not fresh signed
+upstream release qualification. Installer remains disabled. Superseded e9d423a
+ISO was hash-verified and retired for space; reports and current artifacts kept.
+
+qa12-08 ended without a usable Plasma desktop. Ordinary tty3 login, sudo
+boundary, real greeter, wrong-password rejection and correct owner graphical
+authentication were observed. The authenticated session was VT4 (session 7),
+running the upstream live wrapper/prompt. After Try, those processes remained
+and no Plasma process was observed. Owner terminated only session 7; SDDM
+reported helper exits and no new visible greeter was established. No Qt/KWin
+service override, security relaxation or root bypass was applied. Its private
+dummy credential/container are destroyed; all complete PNGs are copied under
+dist/evidence/qa12-08-nosplash-qpaint-uefi/actual-vm, with vm-result.json.
+
+Current new run: orez-qa12-direct-default, evidence qa12-17-direct-session-default-uefi,
+output dist/integrated-vm/qa12-direct-default. 6 GiB, 2 vCPU, TCG, 2D, no network,
+no writable disk/host device. Normal default menu entry selected; NO edited
+boot flags, no orez.verify and no splash override. Started about 06:19 UTC;
+3600-second bounded observation. Normal boot reached enrollment with both entries hidden (guest-0875.png),
+completed setup and reached actual themed SDDM with OREZ Desktop selected.
+A private disposable password exists in the VM container only. Wrong-password
+check is active; correct graphical authentication and desktop still pending.
+Finish normal login/direct-session checks, preserve failure evidence and destroy
+the temporary container/credential. Assembly helper orez-qa12-assembly remains.
+
+User additionally requested parallel work on update failures, unwanted data
+collection, drivers, background resource use and hidden settings, prompted by
+the byallon screenshot. The delegated source review is complete in docs/RELIABILITY_AND_CONTROL.md
+and docs/qa/RELIABILITY_TEST_CASES.md. The parent reviewed and linked these
+contracts while continuing the boot test; all proposed cases remain unexecuted. No zero-bug/security/FPS promises.
+
+Next: finish actual default boot, publish/verify complete qa12 screenshot ZIP,
+record final run/commit/CI and update draft PR #1. Installation/reboot/recovery,
+effective policy, fresh security baseline, source/licensing/signing, owner-access
+audit and real hardware remain open. Test host still lacks KVM/render node,
+has 32 GiB storage (~2.5 GiB free) and unenforced Docker resource limits.
+No qualified OS download. Physical SSD, firmware and Windows USB untouched.
+
 ## Direct-session fix in progress — 6 November 2026, 06:06 UTC
 
 Last confirmed implementation 2a419ae2dd901603c17b8e7400f3035e98e23ee0.

@@ -18,10 +18,11 @@ the actual SDL window owned by its QEMU process. No cookie value is exported.
 This supplies a virtual 3D interface, not hardware-accelerated GPU performance.
 Both QMP and SDL capture failures are recorded without qualifying a frame. The
 latest SDL timeout correction removes partial PNGs and continues; source tests
-cover timeout/retry and refusal of an ambiguous window. It has not had another
-full boot. All four current VM containers and the assembly helper are stopped
-and removed after evidence collection; the two dependency image recipes/IDs and
-packed build inputs remain.
+cover timeout/retry and refusal of an ambiguous window. Consult the latest
+[handoff](../docs/AI_HANDOFF.md) for actual boot results and active containers;
+source regressions alone do not qualify this capture path. Test containers and
+private credentials must be removed after each completed evidence collection.
+Dependency image recipes/IDs and recorded build inputs are retained separately.
 QMP input should use immediate key down/up events; timed holds produced repeats
 under TCG. Never infer password validity from a failed automation attempt.
 

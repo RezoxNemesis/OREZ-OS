@@ -20,12 +20,16 @@ is not claimed. No owner password is used in automated test evidence.
 
 Controls and diagnostics:
 
-- Console readiness: after requesting splash shutdown, setup waits up to 120
-  seconds for the original process to exit and checks that the splash is
-  inactive before reading any password. During a slow shutdown it reports its
-  wait every ten seconds; Ctrl+C cancels. It never kills a reused PID or enables
-  visible password input. This limit is `CONSOLE_RELEASE_TIMEOUT` in the
-  documented live-only helper, not a hidden background timeout.
+- Console readiness: each `plymouth quit`, `plymouth --wait` and final
+  `plymouth --ping` control call has its own 20-second timeout. After the first
+  two calls return, setup allows a separate 120 seconds for the original
+  process to disappear, reporting that wait every ten seconds. `--wait` itself
+  waits for daemon exit, so a slow control call can stop setup before the
+  120-second process check begins. Any timeout fails closed before password
+  input; the final check must also confirm that the splash is inactive.
+  Ctrl+C cancels. Setup never kills a reused PID or enables visible password
+  input. `CONSOLE_RELEASE_TIMEOUT` names the process-disappearance limit in the
+  documented live-only helper; it is not a total timeout or a background service.
 - Login: the OREZ Paper SDDM theme uses the normal local SDDM/PAM backend.
 - Desktop session: live `/etc/sddm.conf` selects the dedicated
   `/usr/share/orez/wayland-sessions` directory. Its `OREZ Desktop` entry invokes

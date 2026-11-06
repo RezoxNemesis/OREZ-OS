@@ -17,6 +17,11 @@ Android configuration, and stable repeat installation. Ten synthetic APT failure
 and rollback cases also pass. These narrow results do not qualify signed remote
 updates, a compromised authorized package, or full-system recovery.
 
+The [reliability and control contract](RELIABILITY_AND_CONTROL.md) maps the
+owner's update, privacy, driver, background-load and settings concerns to actual
+implementation gaps. Its [acceptance cases](qa/RELIABILITY_TEST_CASES.md) require
+interrupted whole-system updates and recovery, beyond these package simulations.
+
 ## 1. Security policy persists through updates
 
 The durable rule is owner-only human administration, no AI elevation bypass,

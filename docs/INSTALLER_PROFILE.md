@@ -58,7 +58,7 @@ branding and installed OREZ login-theme packaging still need integration.
 Example, on an isolated builder with the recorded inputs:
 
 ```bash
-python3 build/inspect-installer-source.py --iso /path/candidate.iso \
+python3 build/inspect-installer-source.py /path/candidate.iso \
   --sha256 ACTUAL_RECORDED_SHA256 --output dist/installer-source-new
 python3 build/prepare-installer-profile.py --source dist/installer-source-new \
   --base-status /path/original-base-status --output dist/installer-profile-new

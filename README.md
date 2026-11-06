@@ -14,8 +14,8 @@ software graphics and startup remain unresolved. Installation stays disabled.
 package, image, actual boot, desktop, installation and physical-hardware results.
 [Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
 
-[CI on ccde111](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42164885745)
-passes **187 source tests, the 38-file package audit and 68 browser cases**.
+[CI on 56af0a2](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42172398708)
+passes **210 source tests, the 38-file package audit and 68 browser cases**.
 The full ISO job is skipped; these checks do not certify an installed OS.
 
 ## Scope and personality
@@ -36,6 +36,7 @@ shipped owner password or unattended installation is added.
 - [First PC release and remaining gates](docs/FIRST_PC_RELEASE.md)
 - [Boot, account creation and everyday experience](docs/FIRST_BOOT_AND_TOUR.md)
 - [Owner control](docs/OWNER_CONTROL.md) and [security architecture](docs/SECURITY.md)
+- [Reliability, privacy and performance contract](docs/RELIABILITY_AND_CONTROL.md)
 - [Installation and recovery hold](docs/INSTALL_AND_RECOVERY.md)
 - [Testing and screenshot rules](docs/TESTING_AND_SCREENSHOTS.md)
 
