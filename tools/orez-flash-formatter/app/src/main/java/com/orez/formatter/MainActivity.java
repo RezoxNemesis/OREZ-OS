@@ -109,13 +109,20 @@ public final class MainActivity extends Activity {
         busy=true;scan.setEnabled(false);format.setEnabled(false);progress.setIndeterminate(true);
         setStatus("Formatting USB","Writing MBR, FAT32 boot records, FSInfo and allocation tables. Keep OTG connected.");
         new Thread(()->{
+            final String[] currentPhase={"Opening USB mass storage"};
             try(UsbBot bot=new UsbBot(manager,device)){
-                UsbFat32Formatter.format(bot,(phase,done,total)->runOnUiThread(()->{
-                    progress.setIndeterminate(false);progress.setMax((int)Math.max(1,total));progress.setProgress((int)Math.min(done,total));
-                    detail.setText(phase+" · "+done+" / "+total+" sectors");
-                }));
-                runOnUiThread(()->setStatus("FAT32 format verified","The MBR, boot sector and FAT allocation table passed read-back checks. Safely disconnect and reconnect the USB, then check Google Files."));
-            }catch(Exception e){runOnUiThread(()->setStatus("Formatting failed — USB not verified",e.getMessage()==null?e.toString():e.getMessage()));}
+                UsbFat32Formatter.format(bot,(phase,done,total)->{
+                    currentPhase[0]=phase;
+                    runOnUiThread(()->{
+                        progress.setIndeterminate(false);progress.setMax((int)Math.max(1,total));progress.setProgress((int)Math.min(done,total));
+                        detail.setText(phase+" · "+done+" / "+total+" sectors");
+                    });
+                });
+                runOnUiThread(()->setStatus("FAT32 format verified","The MBR, primary and backup FAT32 boot sectors, and both FAT tables passed read-back checks. Safely disconnect and reconnect the USB, then check Google Files."));
+            }catch(Exception e){
+                String reason=e.getMessage()==null?e.toString():e.getMessage();
+                runOnUiThread(()->setStatus("Formatting failed — USB not verified","Failed during: "+currentPhase[0]+"\n"+reason+"\n\nDo not start another format until the drive is re-detected."));
+            }
             finally{runOnUiThread(()->{busy=false;scan.setEnabled(true);format.setEnabled(false);});}
         },"orez-usb-fat32-format").start();
     }
