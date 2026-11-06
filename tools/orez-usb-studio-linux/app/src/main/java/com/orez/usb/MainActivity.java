@@ -184,6 +184,13 @@ public final class MainActivity extends Activity {
         progress.setProgressTintList(android.content.res.ColorStateList.valueOf(MINT));
         page.addView(progress,new LinearLayout.LayoutParams(-1,dp(8)));
         detailLabel=label(WriteService.detail,13,MUTED);page.addView(detailLabel);
+        Button reportButton=button("Share diagnostic report",false);page.addView(reportButton);
+        reportButton.setOnClickListener(v->{
+            Intent share=new Intent(Intent.ACTION_SEND).setType("text/plain")
+                .putExtra(Intent.EXTRA_TEXT,WriteService.diagnosticReport());
+            try { startActivity(Intent.createChooser(share,"Share OREZ USB diagnostic report")); }
+            catch(Exception e) { toast("Could not open the sharing menu."); }
+        });
 
         page.addView(gap(14));
         page.addView(label("Important: this app supports USB Mass Storage BOT with 512-byte logical sectors. UAS-only or 4K-sector devices may not work. A failed write is never automatically retried. Always use a blank drive and keep the phone powered.",12,AMBER));
