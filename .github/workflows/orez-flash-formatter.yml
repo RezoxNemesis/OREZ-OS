@@ -54,9 +54,9 @@ jobs:
           test -s "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           mkdir -p dist
-          cp "$APK" dist/OREZ-Flash-Formatter-1.0.0.apk
-          sha256sum dist/OREZ-Flash-Formatter-1.0.0.apk | tee dist/SHA256SUMS.txt
-          echo "### OREZ Flash Formatter 1.0.0" >> "$GITHUB_STEP_SUMMARY"
+          cp "$APK" dist/OREZ-Flash-Formatter-1.0.1.apk
+          sha256sum dist/OREZ-Flash-Formatter-1.0.1.apk | tee dist/SHA256SUMS.txt
+          echo "### OREZ Flash Formatter 1.0.1" >> "$GITHUB_STEP_SUMMARY"
           echo "- Independent application ID: com.orez.flashformatter" >> "$GITHUB_STEP_SUMMARY"
           echo "- APK signature verified; JVM tests passed." >> "$GITHUB_STEP_SUMMARY"
           echo "- Physical USB OTG formatting test is still required." >> "$GITHUB_STEP_SUMMARY"
@@ -64,9 +64,9 @@ jobs:
       - name: Upload standalone APK and checksum
         uses: actions/upload-artifact@v4
         with:
-          name: OREZ-Flash-Formatter-1.0.0
+          name: OREZ-Flash-Formatter-1.0.1
           path: |
-            tools/orez-flash-formatter/dist/OREZ-Flash-Formatter-1.0.0.apk
+            tools/orez-flash-formatter/dist/OREZ-Flash-Formatter-1.0.1.apk
             tools/orez-flash-formatter/dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
