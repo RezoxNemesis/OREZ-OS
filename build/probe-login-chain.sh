@@ -30,6 +30,7 @@ mkdir -p "$WORK/tmpfs/upper" "$WORK/tmpfs/work"
 mount -t overlay overlay -o "lowerdir=$WORK/base,upperdir=$WORK/tmpfs/upper,workdir=$WORK/tmpfs/work" "$WORK/root"
 R=$WORK/root
 
+set +e  # inventory is best-effort; missing files are reported, not fatal
 # Inventory of the exact files SDDM and bash read during a Wayland login.
 {
   echo '### /etc/sddm/wayland-session (resolved)'; ls -l "$R/etc/sddm/wayland-session" || true
@@ -57,6 +58,7 @@ R=$WORK/root
   echo; echo '### firefox / welcome'; ls "$R/usr/share/applications" | grep -iE "firefox|welcome|kubuntu" ; ls "$R/etc/xdg/autostart" | head -60
 } > "$OUT/inventory.txt" 2>&1
 
+set -e
 # Apply OREZ's live payload exactly as the live layer would.
 cp -a "$REPO_ROOT/overlay/." "$R/"
 cp -a "$REPO_ROOT/image/live-owner/." "$R/"
