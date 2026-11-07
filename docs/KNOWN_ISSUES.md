@@ -1,5 +1,20 @@
 # OREZ OS — unresolved blockers
 
+## Current state — 8 November 2026
+
+Resolved in CI-built images: normal graphical login (exit 64 not reproduced),
+logout/second login, VM installation and installed boot. Open:
+
+- No physical-PC test of anything (boot, RTX 3050, Wi-Fi/Bluetooth, audio, suspend).
+- NVIDIA driver is not preinstalled for live kernel 7.0.0-30 (no signed DKMS-free
+  pair in the archive); OREZ Drivers installs it after login with internet.
+- Installer tested only with "Erase disk" on a blank virtual disk. Dual boot next to
+  Windows, encryption and manual partitioning are untested; back up first.
+- Leftover Kubuntu branding: KDE Welcome text (suppressed by default), partition
+  label `kubuntu_2604`, some icons. Console shows `[[1;1R^[[25;80R` above the setup
+  prompt (terminal size query echo; cosmetic).
+- Redistribution/trademark review of the remixed image not done.
+
 ## Current normal boot and reliability gaps — 6 November 2026
 
 Image 6ca85cf (source 56af0a2) passes the observed normal UEFI enrollment/SDDM

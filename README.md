@@ -1,26 +1,14 @@
-# OREZ OS — development live image
+# OREZ OS — development image (Kubuntu 26.04.1 base)
 
-**A real 5.46 GB integrated Linux ISO exists. It is not an approved installer or public OS release.**
+**CI-built OREZ ISOs pass a disposable KVM VM test: owner setup, login, logout and
+second login, and a full installation to a blank virtual disk followed by booting
+the installed system.** No physical-PC test exists yet. Back up before installing.
 
-The image contains the Kubuntu foundation, native Brave/VLC/SuperTux/Qt,
-dpkg-owned OREZ Calendar/Reuz/Store components, approved wallpapers and local
-owner enrollment. [Exact build inputs, hashes and scope](docs/LIVE_ASSEMBLY.md).
-Observed UEFI tests concealed both enrollment password entries,
-authenticated the new owner at the console and graphical login, and refused
-passwordless sudo. Normal graphical authentication succeeds, but its session
-exits before the desktop stays open. A separate ordinary-owner console launch
-rendered the real wallpaper, panel, system tray and native Settings window.
-That diagnostic does not qualify normal login or complete desktop usability.
-Installation stays disabled.
-
-[Start with the verified handoff](docs/AI_HANDOFF.md). It distinguishes source,
-package, image, actual boot, desktop, installation and physical-hardware results.
-[Draft development PR](https://github.com/RezoxNemesis/OREZ-OS/pull/1).
-
-[Latest CI on b979c6b](https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42211534711)
-passes **225 source tests, the 38-path package audit and 68 desktop/mobile preview cases**.
-The full ISO job was skipped; these checks do not certify a rebuilt/booted ISO or installed OS.
-The live-only session trace wrapper is committed; its instrumented ISO still needs a default-UEFI VM boot.
+Built by [`orez-ci-image.yml`](.github/workflows/orez-ci-image.yml) on GitHub-hosted
+runners from the signature-verified Kubuntu image. Installer-enabled images come
+from `build/image-install-*` branches; evidence frames and logs are on
+`downloads/ci-<run id>` branches. [Verified handoff](docs/AI_HANDOFF.md) ·
+[Known issues](docs/KNOWN_ISSUES.md) · [Decisions](docs/DECISIONS.md).
 
 ## Scope and personality
 

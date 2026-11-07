@@ -1,62 +1,68 @@
 # OREZ OS — Verified Development Handoff
 
-## Latest verified checkpoint — 7 November 2026, CI image builder, normal login, OREZ look
+## Latest verified checkpoint — 7–8 November 2026: CI builder, login, OREZ look, VM installation
 
-**Normal graphical login now works in CI-built images (KVM VM, default UEFI entry).**
-The installer is implemented as an opt-in build and is under VM qualification;
-default images still show the "installation disabled" guard. No physical-PC result.
+**A CI-built OREZ ISO now passes, in a disposable KVM VM: owner setup, normal
+graphical login, logout and second login, and a complete Calamares installation
+to a blank virtual disk followed by UEFI boot of the installed system and owner
+sign-in.** No physical-PC result exists. Installer is enabled only in images from
+`build/image-install-*` branches; `build/image-*` images keep the visible guard.
 
-### What runs where
+### Where things are
 
-- Branch with this work: `build/image-1` (login) and `build/image-install-1`
-  (installer test); both from the same source. PR to `main` not yet opened.
-- Workflow `.github/workflows/orez-ci-image.yml` on GitHub-hosted `ubuntu-24.04`
-  (86 GB free, KVM). Steps: signed Kubuntu fetch (`build/fetch-verified-base.sh`) →
-  `orez-shell` .deb → `build/ci-build-layer.sh` (overlay upper = `orez-apps.squashfs`)
-  → `build/ci-assemble.py` (base SquashFS byte-identical; owner initrd patch; live
-  layer) → `build/ci-vm-login.py` → optional `build/ci-vm-install.py`.
-- Evidence (every PNG frame, serial log, in-guest facts) is pushed to
-  `downloads/ci-<run id>` branches; the ISO is an Actions artifact (30 days).
+- Branches: `build/image-1` (login test), `build/image-install-1` (installer-enabled
+  image + installation test). Same source. Not yet merged to `main`.
+- Workflow `.github/workflows/orez-ci-image.yml`, GitHub-hosted `ubuntu-24.04`
+  (86 GB free, KVM). Pipeline: `fetch-verified-base.sh` (signed SHA256SUMS, pinned
+  CD key) → `package-shell.sh` → `ci-build-layer.sh` (overlay upper →
+  `orez-apps.squashfs`) → `ci-assemble.py [--enable-installer]` (base SquashFS
+  byte-identical) → `ci-vm-login.py` → `ci-vm-install.py`.
+- Evidence: every frame, serial logs and in-guest facts on `downloads/ci-<run id>`.
+  The ISO is an Actions artifact (30-day retention), visible to signed-in GitHub
+  users of this public repository.
 
-### Verified in run 42397850409 (KVM, diskless, offline, disposable password)
+### Verified (run ids)
 
-- Owner enrollment prompt, hidden entry; OREZ SDDM greeter; graphical login.
-- Owner session on seat0/tty2 with `kwin_wayland`, `plasmashell`, `ksmserver`.
-- OREZ look: `/etc/xdg/orez` first in the session's `XDG_CONFIG_DIRS`, OREZ-Rest
-  wallpaper, Brave/OREZ apps pinned, Kubuntu web shortcuts removed.
-- Real logout via `org.kde.Shutdown.logout` ended the first session; second login
-  produced new KWin/Plasma processes (PIDs 1889/2023 → 2975/3095).
-- The 6 Nov exit-64 failure does not occur in CI images; its cause in the old image
-  was not identified (the SDDM chain replay `build/probe-login-chain.sh` passes).
+- 42397850409 (live): enrollment, OREZ SDDM, KWin/Plasma on seat0, OREZ look
+  (`/etc/xdg/orez` in session `XDG_CONFIG_DIRS`, OREZ-Rest wallpaper, Brave pinned),
+  `org.kde.Shutdown.logout`, second login with new KWin/Plasma PIDs.
+- 42418920164 (install): all Calamares pages, Erase disk on `/dev/vda` only,
+  "All done" after ~6 min, installed disk boots via UEFI entry `OREZ`
+  (`\EFI\ubuntu\shimx64.efi`), GRUB "OREZ GNU/Linux", Btrfs `@` root, owner
+  sign-in, KWin/plasmashell running, Brave/VLC/gamemode/orez-shell installed,
+  live owner-setup service absent.
+- The 6 Nov exit-64 failure does not occur in CI images; its old cause is unknown.
 
-### Implemented this session (source + package audit + unit tests; GUI not VM-verified unless stated)
+### Implemented this session
 
-- OREZ Appearance (`orez-appearance`): layout/colours/wallpaper/effects/performance
-  with real previews and a 20-second try-then-revert.
-- OREZ Drivers (`orez-drivers`): consented `pkexec ubuntu-drivers install`; autostart
-  offer only when an NVIDIA GPU runs without the nvidia driver.
-- `org.orez.look` look-and-feel, `/etc/xdg/orez` defaults, KDE Welcome suppressed.
-- NVIDIA in the image only as an ISO-pool, Canonical-signed, DKMS-free pair; none
-  qualified for kernel 7.0.0-30 in the current archive, so the live image relies on
-  OREZ Drivers after login. Physical RTX 3050 untested.
-- gamemode, power-profiles-daemon, systemd-zram-generator in the image.
-- Opt-in installer (`--enable-installer`): polkit launcher, OREZ Calamares branding,
-  merged base+system unpack source, reviewed profile hashes still enforced.
+OREZ Appearance (previews, 20-second try/revert); OREZ Drivers (consented
+`pkexec ubuntu-drivers install`); `org.orez.look` + `/etc/xdg/orez` defaults; KDE
+Welcome suppressed; OREZ SDDM theme now installed (`/etc/sddm.conf.d/50-orez-theme.conf`);
+gamemode, power-profiles-daemon, zram; NVIDIA only as an ISO-pool signed DKMS-free
+pair (none qualified for kernel 7.0.0-30, so the RTX 3050 gets the driver through
+OREZ Drivers after first login with internet); opt-in installer with polkit launcher,
+OREZ branding and a merged base+system unpack source.
 
-### Test-harness corrections (recorded, not hidden)
+### Honest limits and incidents
 
-Two earlier "pass" verdicts were false and were corrected: a parser matched
-`plasmashell` inside a logged copy of its own command (run 42383687321), and a
-second-login check counted a surviving process (run 42388848696).
+- Earlier false passes corrected: parser matched its own command (42383687321);
+  surviving process counted as second login (42388848696).
+- In run 42416075359 the test mistook GRUB for the greeter and typed the disposable
+  VM password into GRUB; part of that random throwaway password is visible in a
+  published frame. It existed only in a destroyed VM and protects nothing.
+- Physical RTX 3050, Wi-Fi/Bluetooth, audio, Secure Boot on real firmware, dual
+  boot with Windows, encryption, rollback/backup restore: **untested**.
+- Kubuntu branding remains in places (KDE Welcome text, partition label
+  `kubuntu_2604`, some icons). Redistribution/trademark review is not done; treat the
+  ISO as the owner's personal build.
 
 ### Exact next work
 
-1. Finish the VM installation test (`build/image-install-*`): erase the blank
-   virtual disk, install, reboot from disk, sign in, collect facts.
-2. Only after it passes, make the installer default and publish the ISO artifact
-   link with its SHA-256. Physical PC boot, NVIDIA, Wi-Fi/Bluetooth, Secure Boot
-   and dual-boot preservation remain owner tests on real hardware.
-3. Verify OREZ Appearance and OREZ Drivers in a VM session with screenshots.
+1. Owner: write the ISO to the spare SanDisk (OREZ USB Studio, verify), boot it on
+   the PC with **Try**, then install only to empty space or a spare disk after backup.
+2. Report Wi-Fi, Bluetooth, audio, display and `orez-drivers` result from the PC.
+3. Then: dual-boot preservation test, encryption, snapshots/rollback, partition
+   label/branding clean-up, merge to `main` with a PR.
 
 ## Latest verified checkpoint — 6 November 2026, builder gate and source validation
 
