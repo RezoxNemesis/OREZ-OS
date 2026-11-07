@@ -88,8 +88,16 @@ NV=$(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modules-nvidia-[0-9]
      | grep -v server | tail -1 || true)
 NVPKGS=()
 if [[ -n $NV ]]; then
-  NVPKGS=("linux-modules-nvidia-${NV}-${KVER}" "nvidia-driver-${NV}")
-  echo "NVIDIA driver selected: ${NV} for ${KVER}" | tee -a "$OUT/layer-build.log"
+  MODPKG="linux-modules-nvidia-${NV}-${KVER}"
+  C apt-cache "${APTOPT[@]}" show "$MODPKG" | grep -E '^(Package|Version|Depends|Provides):' | tee -a "$OUT/layer-build.log"
+  # The signed module package pins the exact userspace driver version it was built
+  # for (via nvidia-kernel-common-N). Install that exact driver and refuse DKMS.
+  KCV=$(C apt-cache "${APTOPT[@]}" show "$MODPKG" | grep -m1 '^Depends:' | tr ',' '\n' \
+        | grep -oE "nvidia-kernel-common-${NV} \((=|>=|<=) [^)]+\)" | head -1 | sed -E 's/.*\((=|>=|<=) ([^)]+)\)/\2/')
+  [[ -n $KCV ]] || { echo "Cannot determine driver version bound to $MODPKG" >&2; exit 1; }
+  NVPKGS=("$MODPKG" "nvidia-driver-${NV}=${KCV}" "nvidia-kernel-common-${NV}=${KCV}" "nvidia-dkms-${NV}-")
+  echo "NVIDIA driver selected: ${NV} (${KCV}) with Canonical-signed modules for ${KVER}" | tee -a "$OUT/layer-build.log"
+  C apt-cache "${APTOPT[@]}" show "nvidia-driver-${NV}=${KCV}" | grep -E '^(Version|Depends|Recommends):' | tee -a "$OUT/layer-build.log" || true
 else
   echo 'WARNING: no signed NVIDIA modules for this kernel in the archive' | tee -a "$OUT/layer-build.log"
 fi
