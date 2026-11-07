@@ -84,7 +84,9 @@ public final class MainActivity extends Activity {
             if(isFinishing())return;
             statusLabel.setText(WriteService.phase);
             detailLabel.setText(WriteService.detail);
-            if(monitorStateLabel!=null) monitorStateLabel.setText(WriteService.monitorState);
+            if(monitorStateLabel!=null && (WriteService.running || !"Disabled".equals(WriteService.monitorState))) {
+                monitorStateLabel.setText(WriteService.monitorState);
+            }
             long maximum=WriteService.total,completed=WriteService.done;
             progress.setIndeterminate(WriteService.running && maximum<=0);
             progress.setProgress(maximum>0?(int)Math.min(100,completed*100/maximum):0);
@@ -125,7 +127,7 @@ public final class MainActivity extends Activity {
         hashState=label("ISO not checked yet.",13,MUTED);page.addView(hashState);
         checksumInput.addTextChangedListener(new TextWatcher(){
             public void beforeTextChanged(CharSequence s,int st,int c,int a){}
-            public void onTextChanged(CharSequence s,int st,int before,int count){refreshControls();}
+            public void onTextChanged(CharSequence s,int st,int before,int count){updateMonitorStatus();refreshControls();}
             public void afterTextChanged(Editable e){}
         });
 
@@ -154,7 +156,7 @@ public final class MainActivity extends Activity {
         monitorConsent.setOnCheckedChangeListener((button,checked)->{
             monitorPairCode.setEnabled(checked);
             if(!checked) monitorPairCode.setText("");
-            if(monitorStateLabel!=null) monitorStateLabel.setText(checked?"Consent enabled for the next USB-writing session only.":"Live monitoring is off. No data will be transmitted.");
+            updateMonitorStatus();
             refreshControls();
         });
         monitorPairCode.addTextChangedListener(new TextWatcher(){
@@ -163,6 +165,7 @@ public final class MainActivity extends Activity {
             public void afterTextChanged(Editable e){}
         });
         monitorStateLabel=label("Live monitoring is off. No data will be transmitted.",13,MUTED);
+        updateMonitorStatus();
         page.addView(monitorStateLabel);
 
         page.addView(sectionTitle("05  /  WRITE AND VERIFY"));
@@ -388,6 +391,22 @@ public final class MainActivity extends Activity {
             typed.equalsIgnoreCase(isoHash) && selectedUsbStillPresent() && usbBytes>=((isoBytes+511)/512)*512 &&
             (monitorConsent==null || !monitorConsent.isChecked() ||
              LiveMonitorClient.isValidCode(monitorPairCode==null?"":monitorPairCode.getText().toString()));
+    }
+
+    private void updateMonitorStatus() {
+        if(monitorStateLabel==null) return;
+        if(monitorConsent==null || !monitorConsent.isChecked()) {
+            monitorStateLabel.setText("Disabled · no data will be transmitted.");
+            return;
+        }
+        String code=monitorPairCode==null?"":monitorPairCode.getText().toString().trim();
+        if(code.isEmpty()) {
+            monitorStateLabel.setText("Enabled for this session. Paste a fresh private pairing code.");
+        } else if(!LiveMonitorClient.isValidCode(code)) {
+            monitorStateLabel.setText("Pairing code format is invalid. Paste the complete code, including the dot.");
+        } else {
+            monitorStateLabel.setText("Pairing code format looks valid. Server connection will be checked when writing starts.");
+        }
     }
 
     private boolean selectedUsbStillPresent() {
