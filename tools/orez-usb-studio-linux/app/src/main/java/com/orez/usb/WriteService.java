@@ -350,23 +350,30 @@ public final class WriteService extends Service {
     public static String diagnosticReport() {
         int percent=total>0?(int)Math.min(100,done*100/total):0;
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
+        String verifyTarget=verificationUsbProduct.isEmpty()?"not recorded":
+            verificationUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",verificationUsbVid,verificationUsbPid);
         String timeline;
         synchronized(REPORT_LOCK) { timeline=REPORT_HISTORY.toString(); }
-        return "OREZ USB Studio Linux 0.4.3 diagnostic report\n"+
-            "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\n"+
-            "Phase: "+phase+"\n"+
-            "Detail: "+sanitizeMonitorDetail(detail)+"\n"+
-            "Running: "+running+"\n"+
-            "Success: "+success+"\n"+
-            "Progress: "+done+" / "+total+" bytes ("+percent+"%)\n"+
-            "ISO size: "+reportIsoBytes+" bytes\n"+
-            "ISO SHA-256: "+reportIsoSha256+"\n"+
-            "Target architecture: x86_64\n"+
-            "USB: "+target+"\n"+
-            "USB capacity: "+reportUsbBytes+" bytes\n"+
-            "Source checksum matched entered reference: "+checksumMatched+"\n"+
-            "Live Monitor: "+monitorState+"\n"+
-            "Session timeline:\n"+timeline+
+        return "OREZ USB Studio Linux 0.4.4 diagnostic report\\n"+
+            "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\\n"+
+            "Phase: "+phase+"\\n"+
+            "Detail: "+sanitizeMonitorDetail(detail)+"\\n"+
+            "Running: "+running+"\\n"+
+            "Write success: "+success+"\\n"+
+            "Persistent USB verification: "+(persistentVerificationPassed?"PASSED":"NOT PASSED IN THIS SESSION")+"\\n"+
+            "Persistent verification SHA-256: "+persistentVerificationHash+"\\n"+
+            "Progress: "+done+" / "+total+" bytes ("+percent+"%)\\n"+
+            "ISO size: "+reportIsoBytes+" bytes\\n"+
+            "ISO SHA-256: "+reportIsoSha256+"\\n"+
+            "Target architecture: x86_64\\n"+
+            "USB: "+target+"\\n"+
+            "USB capacity: "+reportUsbBytes+" bytes\\n"+
+            "Source checksum matched entered reference: "+checksumMatched+"\\n"+
+            "Verification ISO size: "+verificationIsoBytes+" bytes\\n"+
+            "Verification USB: "+verifyTarget+"\\n"+
+            "Verification USB capacity: "+verificationUsbBytes+" bytes\\n"+
+            "Live Monitor: "+monitorState+"\\n"+
+            "Session timeline:\\n"+timeline+
             "USB serial number, Android file URI, ISO contents and pairing token are excluded.";
     }
 
