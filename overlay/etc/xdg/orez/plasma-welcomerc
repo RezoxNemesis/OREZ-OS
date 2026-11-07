@@ -1,0 +1,5 @@
+[General]
+# OREZ ships its own welcome; KDE's Welcome Center stays available in the menu.
+LiveEnvironment=false
+LastSeenVersion=6.99.0
+ShowUpdatePage=false

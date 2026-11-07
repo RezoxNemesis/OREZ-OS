@@ -171,17 +171,27 @@ def main(a):
         c['orez_defaults_in_session'] = '/etc/xdg/orez' in look
         c['orez_wallpaper'] = 'OREZ-Rest' in look
         (a.out / 'guest-facts.txt').write_text(block)
-        # Sign out by restarting the display manager, then sign in a second time.
-        vm.run_on_tty(pw, "sudo systemctl restart sddm", '__never__', 8)
+        # Sign out the way a person does (Plasma's own logout), then sign in again.
+        # Pass only if a NEW plasmashell process exists afterwards.
+        first_pids = {p[1] for p in owner if p[2] == 'plasmashell'}
+        vm.run_on_tty(pw, "sudo -u orez env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus "
+                          "qdbus6 org.kde.Shutdown /Shutdown org.kde.Shutdown.logout", '__never__', 10)
         vm.keys('ctrl', 'alt', 'f1'); time.sleep(3)
         c['greeter_after_signout'] = bool(vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2', 180))
         if c['greeter_after_signout']:
-            vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(1); vm.type(pw + '\n'); vm.note('second graphical login')
+            time.sleep(5)  # let the greeter settle before typing
+            vm.keys('ctrl', 'a'); vm.type('orez'); vm.keys('tab'); time.sleep(1); vm.type(pw); time.sleep(1)
+            vm.shot('credentials-2'); vm.keys('ret'); vm.note('second graphical login')
+            returned2 = False
             for i in range(9):
-                time.sleep(10); vm.shot('after-login-2')
+                time.sleep(10); _, txt = vm.shot('after-login-2')
+                if 'signinfailed' in re.sub('[^a-z]', '', txt.lower()): returned2 = True
+            c['second_login_failed_message'] = returned2
             vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.shot('tty3-again')
-            got2, block2, owner2, _ = collect('S2', full=False)
-            c['second_login_plasmashell'] = any(p[2] == 'plasmashell' for p in owner2)
+            got2, block2, owner2, _ = collect('S2', full=True)
+            new_pids = {p[1] for p in owner2 if p[2] == 'plasmashell'} - first_pids
+            c['first_session_ended'] = not ({p[1] for p in owner2} & first_pids)
+            c['second_login_plasmashell'] = bool(new_pids) and not returned2
             (a.out / 'guest-facts-second-login.txt').write_text(block2)
         vm.keys('ctrl', 'alt', 'f1'); time.sleep(3); vm.shot('back-to-vt1')
         vm.keys('ctrl', 'alt', 'f2'); time.sleep(3); vm.shot('vt2')

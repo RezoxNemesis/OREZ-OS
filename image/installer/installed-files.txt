@@ -60,3 +60,4 @@ usr/share/plasma/look-and-feel/org.orez.look/metadata.json
 usr/share/plasma/look-and-feel/org.orez.look/contents/defaults
 usr/share/plasma/look-and-feel/org.orez.look/contents/layouts/org.kde.plasma.desktop-layout.js
 usr/share/plasma/look-and-feel/org.orez.look/contents/previews/preview.png
+etc/xdg/orez/plasma-welcomerc

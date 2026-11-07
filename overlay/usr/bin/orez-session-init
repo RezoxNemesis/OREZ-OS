@@ -4,6 +4,9 @@ set -u
 state_dir="${XDG_CONFIG_HOME:-$HOME/.config}/orez"
 marker="$state_dir/wallpaper-v0.1-applied"
 wallpaper='/usr/share/wallpapers/OREZ-Rest/contents/images/1280x720.jpg'
+# Prefer the owner's larger original when present (same artwork).
+larger='/usr/share/wallpapers/OREZ-Rest/contents/images/1672x941.jpg'
+[[ -f "$larger" ]] && wallpaper="$larger"
 [[ -f "$marker" ]] && exit 0
 [[ -f "$wallpaper" ]] || exit 0
 command -v plasma-apply-wallpaperimage >/dev/null 2>&1 || exit 0

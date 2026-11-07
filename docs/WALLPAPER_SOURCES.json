@@ -17,5 +17,27 @@
       "modified": false
     }
   ],
-  "rights": "User supplied for OREZ inclusion. Do not assert third-party authorship or a blanket reuse licence; public release provenance review remains required."
+  "rights": "User supplied for OREZ inclusion. Do not assert third-party authorship or a blanket reuse licence; public release provenance review remains required.",
+  "larger_versions": {
+    "supplied_by": "Project owner, 7 November 2026 (chat attachments, PNG 1672x941)",
+    "assets": [
+      {
+        "name": "Rest",
+        "source_attachment": "ab714ce9-image.png",
+        "source_sha256": "9eebf280ae14eca3a942a6f35d1950223c64df68cb0c1fb526384f01d18e57dd",
+        "file": "1672x941.jpg",
+        "sha256": "643af300a3249430a3091cdc2f90966da18d614a41336f0f5d7ecb1c1b596030",
+        "modified": "PNG to JPEG (quality 93) only"
+      },
+      {
+        "name": "Horizon",
+        "source_attachment": "5987bbcb-image.png",
+        "source_sha256": "87314d23af8d73580de7817982e9ce18c072ba509d9c7c92af9d99fe74b92497",
+        "file": "1672x941.jpg",
+        "sha256": "af6ebb46aef09560fd31964a77b14247283b492d693bc09da9eb7419165735e7",
+        "modified": "PNG to JPEG (quality 93) only"
+      }
+    ],
+    "derived": "Installer logo (ensō crop) and welcome image in image/live-installer/etc/calamares/branding/orez are cut from the Rest PNG."
+  }
 }
