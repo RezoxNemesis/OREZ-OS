@@ -135,9 +135,10 @@ def main(a):
         if not c['confirm_dialog']:
             # "Continue with Installation?" dialog: Install Now is at a fixed spot when centred.
             p, txt = vm.shot('cal-confirm-check')
-            if 'continuewithinstallation' in re.sub('[^a-z]', '', txt.lower()) or 'undo these changes' in txt.lower():
-                vm.note('cal-confirm: using fixed Install Now position'); click(vm, 741, 418)
-                c['confirm_dialog'] = True
+            seen = 'continuewithinstallation' in re.sub('[^a-z]', '', txt.lower()) or 'undo these changes' in txt.lower()
+            vm.note(f'cal-confirm: fixed Install Now position (dialog text seen by OCR: {seen})')
+            click(vm, 741, 418)  # only a disposable virtual disk exists in this VM
+            c['confirm_dialog'] = seen
         r['stage'] = 'installing'
         c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2400, every=20))
         p, txt = vm.shot('cal-finished')
