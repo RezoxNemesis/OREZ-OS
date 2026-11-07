@@ -59,7 +59,7 @@ jobs:
         id: install
         if: env.INSTALLER == '1'
         continue-on-error: true
-        timeout-minutes: 75
+        timeout-minutes: 100
         run: python3 build/ci-vm-install.py --iso "$W/out/OREZ-OS-0.1-live-amd64.iso" --out dist/vm-login/install
       - name: Report
         if: always()
