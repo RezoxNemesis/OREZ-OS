@@ -30,6 +30,7 @@ ALLOWED_ACTIONS = {
     "connect": ["orezctl", "connect", "open"],
     "help": ["orez-help"],
     "appearance": ["orez-appearance"],
+    "drivers": ["orez-drivers"],
 }
 
 

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Drivers check
+Comment=Offers the NVIDIA driver only if an NVIDIA card is running without it. Disable in Settings → Autostart.
+Exec=/usr/bin/orez-drivers --at-login
+Terminal=false
+NoDisplay=true
+X-KDE-autostart-phase=2

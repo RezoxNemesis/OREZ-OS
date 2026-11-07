@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Drivers
+GenericName=Graphics driver setup
+Comment=Check and install the official NVIDIA graphics driver
+Exec=/usr/bin/orez-drivers
+Icon=preferences-desktop-display
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=nvidia;rtx;gpu;graphics;driver;

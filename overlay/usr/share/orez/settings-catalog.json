@@ -56,6 +56,20 @@
       "title": "Display and sound",
       "items": [
         {
+          "title": "Graphics driver (NVIDIA)",
+          "description": "Check whether your NVIDIA card uses the official driver and install it with one click. Secure Boot stays on.",
+          "keywords": [
+            "nvidia",
+            "rtx",
+            "3050",
+            "gpu",
+            "graphics",
+            "driver",
+            "gaming"
+          ],
+          "action": "drivers"
+        },
+        {
           "title": "Display and monitors",
           "description": "Arrange screens and adjust resolution, scaling and refresh options.",
           "keywords": [

@@ -49,3 +49,7 @@ usr/lib/orez/appearance_ui.py
 usr/share/applications/orez-appearance.desktop
 usr/share/wallpapers/OREZ-Rest/contents/images/1672x941.jpg
 usr/share/wallpapers/OREZ-Horizon/contents/images/1672x941.jpg
+usr/bin/orez-drivers
+usr/lib/orez/drivers.py
+usr/share/applications/orez-drivers.desktop
+etc/xdg/autostart/orez-drivers.desktop
