@@ -39,7 +39,8 @@ public final class MainActivity extends Activity {
     private EditText checksumInput,monitorPairCode;
     private CheckBox monitorConsent;
     private TextView monitorStateLabel;
-    private Button selectIsoButton,selectUsbButton,createButton,cancelButton;
+    private Button selectIsoButton,selectUsbButton,createButton,verifyButton,cancelButton;
+    private boolean verifyingReconnect=false;
     private ProgressBar progress;
     private Runnable poll;
 
@@ -102,7 +103,7 @@ public final class MainActivity extends Activity {
         LinearLayout page=new LinearLayout(this); page.setOrientation(LinearLayout.VERTICAL);
         page.setPadding(dp(20),dp(22),dp(20),dp(32)); scroll.addView(page); setContentView(scroll);
 
-        TextView brand=label("OREZ   /   USB STUDIO     0.4.1",12,MINT);
+        TextView brand=label("OREZ   /   USB STUDIO     0.4.3",12,MINT);
         brand.setLetterSpacing(.13f); page.addView(brand);
         TextView title=label("Linux installer.\nWritten the right way.",29,TEXT);
         title.setTypeface(Typeface.DEFAULT,Typeface.BOLD); page.addView(title);
@@ -169,10 +170,13 @@ public final class MainActivity extends Activity {
         page.addView(monitorStateLabel);
 
         page.addView(sectionTitle("05  /  WRITE AND VERIFY"));
-        TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO, checks the drive capacity, writes the original hybrid image, flushes it, then requests a cache flush when supported and reads back every byte to compare SHA-256.",13,MUTED);
+        TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO and capacity, writes the original hybrid image, requests a cache flush when supported, and verifies the complete image by reading it back. A separate read-only check below can verify persistence after unplugging and reconnecting.",13,MUTED);
         safety.setBackground(round(CARD,14));safety.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(safety);
         createButton=button("Review & create Linux USB",true);page.addView(createButton);
         createButton.setOnClickListener(v->confirmWrite());
+        verifyButton=button("Read-only verify USB after reconnect",false);page.addView(verifyButton);
+        verifyButton.setOnClickListener(v->confirmReconnectVerify());
+        page.addView(label("IMPORTANT: after writing a PC installer image, Android may say the USB is damaged because it cannot mount the hybrid Linux installer as ordinary phone storage. Do not accept Android's format prompt. Use the read-only reconnect verification below, then test booting on your PC.",12,AMBER));
         cancelButton=button("Cancel current write",false);page.addView(cancelButton);
         cancelButton.setVisibility(View.GONE);
         cancelButton.setOnClickListener(v->new AlertDialog.Builder(this)
@@ -227,7 +231,7 @@ public final class MainActivity extends Activity {
     private int dp(int n){return (int)(n*getResources().getDisplayMetrics().density+.5f);}
 
     private void chooseIso() {
-        if(WriteService.running || inspecting)return;
+        if(WriteService.running || inspecting || verifyingReconnect)return;
         Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT);
         i.addCategory(Intent.CATEGORY_OPENABLE);i.setType("*/*");
         i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
@@ -295,7 +299,7 @@ public final class MainActivity extends Activity {
     }
 
     private void scanUsb() {
-        if(WriteService.running || inspecting)return;
+        if(WriteService.running || inspecting || verifyingReconnect)return;
         ArrayList<UsbDevice> devices=new ArrayList<>();
         for(UsbDevice d:usbManager.getDeviceList().values()) if(UsbBot.supports(d)) devices.add(d);
         if(devices.isEmpty()) {
@@ -386,7 +390,7 @@ public final class MainActivity extends Activity {
 
     private boolean canWrite() {
         String typed=checksumInput==null?"":checksumInput.getText().toString().trim();
-        return !WriteService.running && !inspecting && isoUri!=null && isoBytes>0 &&
+        return !WriteService.running && !inspecting && !verifyingReconnect && isoUri!=null && isoBytes>0 &&
             isoHash.matches("[0-9a-f]{64}") && typed.matches("(?i)[0-9a-f]{64}") &&
             typed.equalsIgnoreCase(isoHash) && selectedUsbStillPresent() && usbBytes>=((isoBytes+511)/512)*512 &&
             (monitorConsent==null || !monitorConsent.isChecked() ||
@@ -409,6 +413,78 @@ public final class MainActivity extends Activity {
         }
     }
 
+    private boolean canVerifyReconnect() {
+        String typed=checksumInput==null?"":checksumInput.getText().toString().trim();
+        return !WriteService.running && !inspecting && !verifyingReconnect &&
+            isoUri!=null && isoBytes>0 && isoHash.matches("[0-9a-f]{64}") &&
+            typed.matches("(?i)[0-9a-f]{64}") && typed.equalsIgnoreCase(isoHash) &&
+            selectedUsbStillPresent() && usbBytes>=((isoBytes+511)/512)*512;
+    }
+
+    private void confirmReconnectVerify() {
+        if(!canVerifyReconnect()) {
+            toast("Select the Kubuntu ISO, confirm its official SHA-256, and select the SanDisk USB first.");
+            return;
+        }
+        new AlertDialog.Builder(this)
+            .setTitle("Verify the reconnected USB — read only")
+            .setMessage("USB: "+deviceName(selectedUsb)+"\nCapacity: "+formatBytes(usbBytes)+
+                "\nISO image: "+formatBytes(isoBytes)+"\nSHA-256: "+isoHash+
+                "\n\nThis checks whether the complete image remained on the flash drive after power was removed. It will not format or write anything. Only continue if you physically unplugged the USB after the previous write completed and have now reconnected it. Android may still call a hybrid Linux installer 'damaged'; this check determines whether the stored image actually matches Kubuntu.")
+            .setNegativeButton("Cancel",null)
+            .setPositiveButton("Start read-only check",(d,w)->runReconnectVerify(selectedUsb,isoBytes,isoHash))
+            .show();
+    }
+
+    private void runReconnectVerify(UsbDevice reviewed,long imageBytes,String expectedHash) {
+        if(!canVerifyReconnect() || reviewed==null) return;
+        verifyingReconnect=true;
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        createButton.setEnabled(false);
+        verifyButton.setEnabled(false);
+        selectIsoButton.setEnabled(false);
+        selectUsbButton.setEnabled(false);
+        progress.setIndeterminate(false);
+        progress.setMax(100);
+        progress.setProgress(0);
+        statusLabel.setText("Checking stored USB after reconnect");
+        detailLabel.setText("Read-only full-image SHA-256 check. Do not unplug the USB.");
+        new Thread(()->{
+            try(UsbBot bot=new UsbBot(usbManager,reviewed)) {
+                if(bot.capacityBytes()<((imageBytes+511L)/512L)*512L)
+                    throw new java.io.IOException("The selected USB is too small for the inspected ISO.");
+                String actual=UsbImageVerifier.verify(
+                    (lba,buffer,offset,length)->bot.read(lba,buffer,offset,length),
+                    bot.capacityBytes(),imageBytes,expectedHash,
+                    (done,total)->runOnUiThread(()->{
+                        progress.setProgress(total>0?(int)Math.min(100,done*100/total):0);
+                        detailLabel.setText("Verifying after physical reconnect: "+formatBytes(done)+" of "+formatBytes(total));
+                    })
+                );
+                runOnUiThread(()->{
+                    statusLabel.setText("Persistent USB verification passed");
+                    statusLabel.setTextColor(MINT);
+                    progress.setProgress(100);
+                    detailLabel.setText("The reconnected SanDisk contains the exact Kubuntu ISO. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual);
+                    toast("USB persistence verified. Do not format it.");
+                });
+            } catch(Exception e) {
+                String reason=e.getMessage()==null?e.toString():e.getMessage();
+                runOnUiThread(()->{
+                    statusLabel.setText("Persistent USB verification failed");
+                    statusLabel.setTextColor(AMBER);
+                    detailLabel.setText(reason+" Do not boot from this USB. The post-reconnect data does not match the ISO or the device could not be read.");
+                });
+            } finally {
+                runOnUiThread(()->{
+                    verifyingReconnect=false;
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                    refreshControls();
+                });
+            }
+        },"orez-usb-reconnect-verifier").start();
+    }
+
     private boolean selectedUsbStillPresent() {
         if(selectedUsb==null || usbManager==null || !usbManager.hasPermission(selectedUsb)) return false;
         UsbDevice current=usbManager.getDeviceList().get(selectedUsb.getDeviceName());
@@ -426,8 +502,12 @@ public final class MainActivity extends Activity {
             hashState.setText("Paste the official SHA-256 value to unlock USB writing.");
         createButton.setEnabled(canWrite());
         createButton.setAlpha(createButton.isEnabled()?1f:.42f);
-        selectIsoButton.setEnabled(!WriteService.running && !inspecting);
-        selectUsbButton.setEnabled(!WriteService.running && !inspecting);
+        if(verifyButton!=null) {
+            verifyButton.setEnabled(canVerifyReconnect());
+            verifyButton.setAlpha(verifyButton.isEnabled()?1f:.42f);
+        }
+        selectIsoButton.setEnabled(!WriteService.running && !inspecting && !verifyingReconnect);
+        selectUsbButton.setEnabled(!WriteService.running && !inspecting && !verifyingReconnect);
         if(monitorConsent!=null) monitorConsent.setEnabled(!WriteService.running);
         if(monitorPairCode!=null) monitorPairCode.setEnabled(!WriteService.running && monitorConsent!=null && monitorConsent.isChecked());
     }
