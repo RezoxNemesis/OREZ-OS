@@ -468,6 +468,20 @@ public final class MainActivity extends Activity {
                     })
                 );
                 runOnUiThread(()->{
+                    WriteService.persistentVerificationPassed=true;
+                    WriteService.persistentVerificationHash=actual;
+                    WriteService.verificationIsoBytes=imageBytes;
+                    WriteService.verificationUsbBytes=bot.capacityBytes();
+                    WriteService.verificationUsbVid=reviewed.getVendorId();
+                    WriteService.verificationUsbPid=reviewed.getProductId();
+                    WriteService.verificationUsbProduct=reviewed.getProductName()==null?"USB mass storage":reviewed.getProductName();
+                    WriteService.reportIsoBytes=imageBytes;
+                    WriteService.reportIsoSha256=expectedHash;
+                    WriteService.reportUsbBytes=bot.capacityBytes();
+                    WriteService.reportUsbVid=reviewed.getVendorId();
+                    WriteService.reportUsbPid=reviewed.getProductId();
+                    WriteService.reportUsbProduct=WriteService.verificationUsbProduct;
+                    WriteService.checksumMatched=true;
                     WriteService.phase="Persistent USB verification passed";
                     WriteService.detail="The reconnected SanDisk contains the exact Kubuntu ISO. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual;
                     WriteService.done=imageBytes;
@@ -481,6 +495,8 @@ public final class MainActivity extends Activity {
             } catch(Exception e) {
                 String reason=e.getMessage()==null?e.toString():e.getMessage();
                 runOnUiThread(()->{
+                    WriteService.persistentVerificationPassed=false;
+                    WriteService.persistentVerificationHash="";
                     WriteService.phase="Persistent USB verification failed";
                     WriteService.detail=reason+" Do not boot from this USB. The post-reconnect data does not match the ISO or the device could not be read.";
                     statusLabel.setText(WriteService.phase);
