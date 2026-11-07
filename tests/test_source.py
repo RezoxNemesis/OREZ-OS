@@ -16,6 +16,8 @@ class OrezSourceTests(unittest.TestCase):
 
     def test_desktop_files_have_registered_commands(self):
         for path in OVERLAY.rglob('*.desktop'):
+            if path.is_dir() or 'sddm/themes' in path.as_posix():
+                continue  # SDDM theme metadata.desktop is not an application entry
             txt = path.read_text()
             self.assertIn('[Desktop Entry]', txt)
             self.assertIn('Type=Application', txt)

@@ -61,3 +61,7 @@ usr/share/plasma/look-and-feel/org.orez.look/contents/defaults
 usr/share/plasma/look-and-feel/org.orez.look/contents/layouts/org.kde.plasma.desktop-layout.js
 usr/share/plasma/look-and-feel/org.orez.look/contents/previews/preview.png
 etc/xdg/orez/plasma-welcomerc
+usr/share/sddm/themes/orez/Main.qml
+usr/share/sddm/themes/orez/metadata.desktop
+usr/share/sddm/themes/orez/theme.conf
+etc/sddm.conf.d/50-orez-theme.conf

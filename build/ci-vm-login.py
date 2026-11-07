@@ -154,6 +154,10 @@ def main(a):
             time.sleep(10); _, txt = vm.shot('after-login')
             if 'welcome home' in txt.lower() and i >= 2: returned = True; vm.note('greeter returned'); break
         result['checks']['greeter_returned_after_login'] = returned
+        # Open OREZ Appearance the way a person would (KRunner) and record what it shows.
+        vm.keys('alt', 'spc'); time.sleep(3); vm.type('OREZ Appearance'); time.sleep(3); vm.keys('ret')
+        result['checks']['appearance_opened'] = bool(vm.wait_text(['Try it for 20 seconds', 'OREZ Appearance'], 'appearance', 60))
+        time.sleep(2); vm.shot('appearance-window'); vm.keys('alt', 'f4'); time.sleep(2)
         # Collect objective in-guest facts from an authenticated owner console.
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(4); vm.shot('tty3')
         vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5); vm.shot('tty3-login')
@@ -166,7 +170,7 @@ def main(a):
             parts = ["loginctl list-sessions --no-legend", mark(tag + 'PROCS'), "ps -eo user:20,pid,comm --no-headers",
                      mark(tag + 'LOOK'), "for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done",
                      "grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals",
-                     "ls /home/orez/Desktop"]
+                     "ls /home/orez/Desktop", "sudo -u orez /usr/bin/orez-drivers --check"]
             if full:
                 parts += [mark(tag + 'TRACE'), "journalctl -b --no-pager -o short-precise -t orez-session-trace",
                           mark(tag + 'SDDM'), "journalctl -b --no-pager -o short-precise -u sddm | tail -80",
