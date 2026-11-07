@@ -43,6 +43,18 @@ R=$WORK/root
   echo; echo '### plasma-workspace env scripts'; ls -l "$R/etc/xdg/plasma-workspace/env" 2>&1 || true
   echo; echo '### upstream wayland sessions'; ls -l "$R/usr/share/wayland-sessions" 2>&1 || true
   for f in "$R"/usr/share/wayland-sessions/*.desktop; do echo "-- $f"; grep -E '^(Exec|TryExec|Type)=' "$f"; done
+  echo; echo '### look-and-feel'; ls "$R/usr/share/plasma/look-and-feel"
+  for d in "$R"/usr/share/plasma/look-and-feel/*kubuntu* ; do echo "-- $d"; find "$d" -maxdepth 3 | head -30; cat "$d/contents/defaults" 2>&1; cat "$d/metadata.json" 2>&1 | head -30; done
+  echo; echo '### /etc/xdg/kdeglobals'; cat "$R/etc/xdg/kdeglobals" 2>&1
+  echo; echo '### /etc/xdg (kde files)'; ls "$R/etc/xdg"
+  echo; echo '### plasmarc etc'; cat "$R/etc/xdg/plasmarc" "$R/etc/xdg/kwinrc" "$R/etc/xdg/ksplashrc" 2>&1
+  echo; echo '### skel Desktop'; ls -la "$R/etc/skel/Desktop" "$R/etc/skel/.config" 2>&1
+  echo; echo '### kubuntu-default-settings'; find "$R/usr/share/kubuntu-default-settings" 2>&1 | head -40
+  echo; echo '### kubuntu layout.js'; cat "$R/usr/share/kubuntu-default-settings/layout.js" 2>&1
+  echo; echo '### plasma shell layout.js'; cat "$R/usr/share/plasma/shells/org.kde.plasma.desktop/contents/layout.js" 2>&1 | head -80
+  echo; echo '### calamares desktop'; cat "$R/usr/share/applications/kubuntu-calamares.desktop" 2>&1
+  echo; echo '### calamares settings + branding'; cat "$R/etc/calamares/settings.conf" 2>&1; ls -R "$R/etc/calamares/branding" 2>&1 | head -30
+  echo; echo '### firefox / welcome'; ls "$R/usr/share/applications" | grep -iE "firefox|welcome|kubuntu" ; ls "$R/etc/xdg/autostart" | head -60
 } > "$OUT/inventory.txt" 2>&1
 
 # Apply OREZ's live payload exactly as the live layer would.
