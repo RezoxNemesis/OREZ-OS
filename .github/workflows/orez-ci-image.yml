@@ -30,7 +30,7 @@ jobs:
         run: |
           df -h /
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools zstd qemu-system-x86 qemu-utils ovmf tesseract-ocr gpgv dpkg-dev >/dev/null
+          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools zstd qemu-system-x86 qemu-utils ovmf tesseract-ocr python3-pil gpgv dpkg-dev >/dev/null
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
           ls -l /dev/kvm

@@ -78,6 +78,18 @@ class VM:
     def ocr(p, psm='3'):
         return subprocess.run(['tesseract', str(p), '-', '--psm', psm], capture_output=True, text=True).stdout
 
+    @classmethod
+    def ocr_inverted(cls, p):
+        """Console text is light-on-black; OCR reads dark-on-light, enlarged, far better."""
+        from PIL import Image, ImageOps
+        q = p.with_suffix('.ocr.png')
+        img = ImageOps.invert(Image.open(p).convert('L'))
+        img.resize((img.width * 2, img.height * 2)).save(q)
+        try:
+            return cls.ocr(q, '6')
+        finally:
+            q.unlink(missing_ok=True)
+
     def wait_text(self, words, label, timeout, every=5):
         """OCR is noisy: compare letters only and retry a second page mode."""
         norm = lambda t: re.sub('[^a-z]', '', t.lower())
@@ -86,7 +98,7 @@ class VM:
         while time.time() < end:
             if self.proc.poll() is not None: raise RuntimeError('guest stopped')
             p, txt = self.shot(label)
-            for attempt in (txt, self.ocr(p, '6') if p else ''):
+            for attempt in (txt, self.ocr(p, '6') if p else '', self.ocr_inverted(p) if p else ''):
                 low = norm(attempt)
                 hit = [w for w, n in wanted if n in low]
                 if hit: self.note(f'{label}: saw {hit[0]!r}'); return hit[0]
