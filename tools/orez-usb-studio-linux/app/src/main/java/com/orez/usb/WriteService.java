@@ -210,9 +210,11 @@ public final class WriteService extends Service {
                 throw new IOException("The full USB read-back SHA-256 does not match the ISO. USB is not verified.");
 
             success=true;
-            setStatus("Complete","Raw ISO write and full USB read-back SHA-256 verification passed."+
-                (cacheFlushConfirmed?" Safely eject the USB before moving it to your PC.":
-                 " This controller did not confirm a cache flush. Safely eject, disconnect and reconnect the USB, then verify it is visible before booting from it."),expectedBytes,expectedBytes);
+            setStatus("Image written — same-session verification passed",
+                "The USB read-back matched the complete ISO SHA-256. "+
+                (cacheFlushConfirmed?"The controller confirmed its cache flush. ":"The controller did not confirm a cache flush. ")+
+                "Safely eject and physically disconnect/reconnect the USB. Then use 'Read-only verify USB after reconnect' in OREZ USB Studio 0.4.3 to confirm the image persisted after power removal. "+
+                "Android may call a hybrid Linux installer 'damaged' because it cannot mount it as ordinary phone storage. Do not reformat it.",expectedBytes,expectedBytes);
         } catch(Exception e) {
             success=false;
             String msg=e.getMessage()==null?e.toString():e.getMessage();
@@ -285,7 +287,7 @@ public final class WriteService extends Service {
 
     private JSONObject buildMonitorStatus() throws Exception {
         return new JSONObject()
-            .put("version","0.4.1")
+            .put("version","0.4.3")
             .put("phase",phase)
             .put("detail",sanitizeMonitorDetail(detail))
             .put("running",running)
@@ -343,7 +345,7 @@ public final class WriteService extends Service {
         String target=reportUsbProduct+" · "+String.format(Locale.ROOT,"%04X:%04X",reportUsbVid,reportUsbPid);
         String timeline;
         synchronized(REPORT_LOCK) { timeline=REPORT_HISTORY.toString(); }
-        return "OREZ USB Studio Linux 0.4.1 diagnostic report\n"+
+        return "OREZ USB Studio Linux 0.4.3 diagnostic report\n"+
             "Generated: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z",Locale.ROOT).format(new java.util.Date())+"\n"+
             "Phase: "+phase+"\n"+
             "Detail: "+sanitizeMonitorDetail(detail)+"\n"+
