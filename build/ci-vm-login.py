@@ -6,7 +6,7 @@ written to evidence. Default GRUB entry, no edited kernel flags. Every frame is
 kept (PNG). The verdict comes from in-guest facts written to the serial port
 (loginctl / process list / journal), not from "screen looks non-blank".
 """
-import argparse, json, os, random, socket, string, subprocess, sys, tempfile, time
+import argparse, json, os, random, re, socket, string, subprocess, sys, tempfile, time
 from pathlib import Path
 
 KEY = {c: c for c in string.ascii_lowercase + string.digits}
@@ -65,16 +65,24 @@ class VM:
         r = self.cmd('screendump', filename=str(p), format='png')
         if 'error' in r: self.note('screendump error ' + str(r)); return None, ''
         self.frames.append(p.name)
-        txt = subprocess.run(['tesseract', str(p), '-', '--psm', '3'], capture_output=True, text=True).stdout
-        return p, txt
+        return p, self.ocr(p)
+
+    @staticmethod
+    def ocr(p, psm='3'):
+        return subprocess.run(['tesseract', str(p), '-', '--psm', psm], capture_output=True, text=True).stdout
 
     def wait_text(self, words, label, timeout, every=5):
+        """OCR is noisy: compare letters only and retry a second page mode."""
+        norm = lambda t: re.sub('[^a-z]', '', t.lower())
+        wanted = [(w, norm(w)) for w in words]
         end = time.time() + timeout
         while time.time() < end:
             if self.proc.poll() is not None: raise RuntimeError('guest stopped')
-            _, txt = self.shot(label); low = txt.lower()
-            hit = [w for w in words if w.lower() in low]
-            if hit: self.note(f'{label}: saw {hit[0]!r}'); return hit[0]
+            p, txt = self.shot(label)
+            for attempt in (txt, self.ocr(p, '6') if p else ''):
+                low = norm(attempt)
+                hit = [w for w, n in wanted if n in low]
+                if hit: self.note(f'{label}: saw {hit[0]!r}'); return hit[0]
             time.sleep(every)
         self.note(f'{label}: timeout waiting for {words}'); return None
 
@@ -103,12 +111,14 @@ def main(a):
     pw = 'Orez' + ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(18))
     vm = VM(a.iso, a.out, a.ram, a.cpus); result = {'iso': str(a.iso), 'checks': {}}
     try:
-        seen = vm.wait_text(['New live-session password'], 'enroll', 900)
+        # Type only once the hidden-input prompt itself is visible (never earlier).
+        seen = vm.wait_text(['live-session password'], 'enroll', 900)
         result['checks']['enrollment_prompt'] = bool(seen)
         if not seen: raise RuntimeError('no enrollment prompt')
+        time.sleep(2)
         vm.type(pw + '\n'); time.sleep(2); vm.shot('after-first-entry')
         vm.type(pw + '\n'); time.sleep(2)
-        result['checks']['greeter'] = bool(vm.wait_text(['Welcome home', 'Your workspace'], 'greeter', 600))
+        result['checks']['greeter'] = bool(vm.wait_text(['Welcome home', 'Your workspace', 'Sign in uses your local'], 'greeter', 600))
         if not result['checks']['greeter']: raise RuntimeError('no greeter')
         vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(1); vm.type(pw); vm.shot('credentials-entered')
         vm.keys('ret'); vm.note('submitted graphical login')
