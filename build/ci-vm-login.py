@@ -120,20 +120,30 @@ def main(a):
         # Collect objective in-guest facts from an authenticated owner console.
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(4); vm.shot('tty3')
         vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5); vm.shot('tty3-login')
-        facts = ("sudo sh -c '{ echo ==OREZ-FACTS-BEGIN==; loginctl list-sessions --no-legend; "
-                 "echo ==PROCS; ps -eo user,pid,comm | grep -E \"kwin|plasmashell|startplasma|ksmserver|dbus-run\"; "
-                 "echo ==TRACE; journalctl -b --no-pager -o short-precise -t orez-session-trace; "
-                 "echo ==SDDM; journalctl -b --no-pager -o short-precise -u sddm | tail -80; "
-                 "echo ==SESSIONLOG; cat /home/orez/.local/share/sddm/wayland-session.log 2>&1 | tail -150; "
-                 "echo ==USERJOURNAL; journalctl -b --no-pager -o short-precise _UID=1000 | tail -300; "
-                 "echo ==COREDUMPS; coredumpctl list --no-pager 2>&1 | tail -20; "
-                 "echo ==OREZ-FACTS-END==; } > /dev/ttyS0 2>&1'")
-        got = vm.run_on_tty(pw, facts, '==OREZ-FACTS-END==', 90)
+        # Section markers are assembled at run time ("==O""REZ") so the typed command,
+        # or a journal line quoting it, can never be mistaken for real output.
+        def mark(name):
+            return 'printf "%s\\n" "==O""REZ-' + name + '=="'
+        facts = ("sudo sh -c '{ " + mark('BEGIN') + "; loginctl list-sessions --no-legend; " + mark('PROCS') + "; "
+                 "ps -eo user:20,pid,comm --no-headers; " + mark('TRACE') + "; "
+                 "journalctl -b --no-pager -o short-precise -t orez-session-trace; " + mark('SDDM') + "; "
+                 "journalctl -b --no-pager -o short-precise -u sddm | tail -80; " + mark('SESSIONLOG') + "; "
+                 "tail -200 /home/orez/.local/share/sddm/wayland-session.log; " + mark('USERJOURNAL') + "; "
+                 "journalctl -b --no-pager -o short-precise _UID=1000 | tail -400; " + mark('COREDUMPS') + "; "
+                 "coredumpctl list --no-pager | tail -20; " + mark('END') + "; } > /dev/ttyS0 2>&1'")
+        got = vm.run_on_tty(pw, facts, '==OREZ-END==', 120)
         result['checks']['facts_collected'] = got
-        ser = vm.serial(); block = ser.split('==OREZ-FACTS-BEGIN==')[-1].split('==OREZ-FACTS-END==')[0] if got else ''
-        procs = block.split('==PROCS')[-1].split('==TRACE')[0] if got else ''
-        result['checks']['plasmashell_running'] = 'plasmashell' in procs
-        result['checks']['kwin_running_for_owner'] = any(l.startswith('orez') and 'kwin' in l for l in procs.splitlines())
+        ser = vm.serial()
+        block = ser[ser.rfind('==OREZ-BEGIN=='):ser.rfind('==OREZ-END==')] if got else ''
+
+        def section(name, nxt):
+            return block.split('==OREZ-' + name + '==')[-1].split('==OREZ-' + nxt + '==')[0] if block else ''
+        procs = [l.split() for l in section('PROCS', 'TRACE').splitlines() if len(l.split()) == 3]
+        owner = [p for p in procs if p[0] == 'orez']
+        result['checks']['plasmashell_running'] = any(p[2] == 'plasmashell' for p in owner)
+        result['checks']['kwin_running_for_owner'] = any(p[2].startswith('kwin_wayland') for p in owner)
+        result['checks']['owner_graphical_session'] = any(
+            'orez' in l and 'seat0' in l for l in section('BEGIN', 'PROCS').splitlines())
         (a.out / 'guest-facts.txt').write_text(block)
         vm.keys('ctrl', 'alt', 'f1'); time.sleep(3); vm.shot('back-to-vt1')
         vm.keys('ctrl', 'alt', 'f2'); time.sleep(3); vm.shot('vt2')
@@ -142,7 +152,9 @@ def main(a):
     finally:
         vm.stop(); del pw
         result['frames'] = vm.frames; result['timeline'] = vm.log
-        result['desktop_pass'] = bool(result['checks'].get('plasmashell_running') and not result['checks'].get('greeter_returned_after_login'))
+        c = result['checks']
+        result['desktop_pass'] = bool(c.get('plasmashell_running') and c.get('kwin_running_for_owner')
+                                      and not c.get('greeter_returned_after_login'))
         (a.out / 'vm-result.json').write_text(json.dumps(result, indent=2) + '\n')
         print(json.dumps({k: v for k, v in result.items() if k != 'frames'}, indent=2))
     return 0 if result['desktop_pass'] else 1

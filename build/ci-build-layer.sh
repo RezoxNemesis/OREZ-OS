@@ -102,6 +102,9 @@ mapfile -t CANDS < <(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modu
 echo "Signed module series for ${KVER}: ${CANDS[*]:-none}" | tee -a "$OUT/layer-build.log"
 for NV in "${CANDS[@]}"; do
   try=("linux-modules-nvidia-${NV}-${KVER}" "nvidia-driver-${NV}")
+  # Where the driver offers DKMS as an alternative, explicitly exclude it so apt
+  # must use the prebuilt signed modules (exclusion needs the package to exist).
+  if C apt-cache "${APTOPT[@]}" show "nvidia-dkms-${NV}" >/dev/null 2>&1; then try+=("nvidia-dkms-${NV}-"); fi
   if C apt-get "${APTOPT[@]}" -s install --no-install-recommends "${try[@]}" > "$OUT/nvidia-sim-${NV}.txt" 2>&1 \
      && ! grep -q '^Inst nvidia-dkms' "$OUT/nvidia-sim-${NV}.txt"; then
     NVPKGS=("${try[@]}")
@@ -109,7 +112,8 @@ for NV in "${CANDS[@]}"; do
     grep -E '^Inst (nvidia-driver|linux-modules-nvidia|nvidia-kernel-common|libnvidia-gl)' "$OUT/nvidia-sim-${NV}.txt" | tee -a "$OUT/layer-build.log"
     break
   fi
-  echo "series ${NV}: no DKMS-free set ($(grep -m1 -E '^E:|unmet|not available' "$OUT/nvidia-sim-${NV}.txt"))" | tee -a "$OUT/layer-build.log"
+  echo "series ${NV}: no DKMS-free set:" | tee -a "$OUT/layer-build.log"
+  grep -E '^E:|^ .*Depends|^Inst nvidia-(dkms|driver|kernel)|^Inst linux-modules' "$OUT/nvidia-sim-${NV}.txt" | head -8 | tee -a "$OUT/layer-build.log"
 done
 [[ ${#NVPKGS[@]} -gt 0 ]] || echo 'WARNING: no DKMS-free signed NVIDIA set for the live kernel; first-boot driver setup will install it' | tee -a "$OUT/layer-build.log"
 
