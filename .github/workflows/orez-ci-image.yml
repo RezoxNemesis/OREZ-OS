@@ -1,0 +1,85 @@
+name: OREZ OS — CI image build and VM login test
+
+# One-shot branches only (build/image-*). Builds on a GitHub-hosted runner:
+# signed Kubuntu base -> OREZ system layer -> live ISO -> disposable KVM VM login.
+on:
+  push:
+    branches:
+      - 'build/image-*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orez-ci-image-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  image:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    env:
+      W: /mnt/orez
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Builder tools and KVM access
+        run: |
+          df -h /
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools zstd qemu-system-x86 ovmf tesseract-ocr gpgv dpkg-dev >/dev/null
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+          ls -l /dev/kvm
+          sudo mkdir -p "$W" && sudo chown "$USER" "$W"
+      - name: Fetch and verify signed Kubuntu base
+        run: bash build/fetch-verified-base.sh "$W/base" | tail -1 > "$W/iso-path"
+      - name: Build OREZ package
+        run: bash build/package-shell.sh
+      - name: Build OREZ system layer (apps, NVIDIA signed driver, performance, OREZ)
+        run: sudo bash build/ci-build-layer.sh "$(cat $W/iso-path)" "$(python3 build/package-info.py path)" "$W/layer"
+      - name: Assemble live ISO
+        env:
+          OREZ_SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          mkdir -p "$W/out"
+          python3 build/ci-assemble.py --iso "$(cat $W/iso-path)" --layer "$W/layer/orez-apps.squashfs" \
+            --manifest "$W/layer/filesystem.manifest" --output "$W/out/OREZ-OS-0.1-live-amd64.iso"
+          xorriso -indev "$W/out/OREZ-OS-0.1-live-amd64.iso" -report_el_torito plain 2>&1 | tail -15
+          rm -f "$(cat $W/iso-path)"
+          ls -l "$W/out"
+      - name: Disposable KVM VM — default UEFI boot, owner setup, graphical login
+        id: vm
+        continue-on-error: true
+        run: python3 build/ci-vm-login.py --iso "$W/out/OREZ-OS-0.1-live-amd64.iso" --out dist/vm-login
+      - name: Report
+        if: always()
+        run: |
+          {
+            echo '### OREZ CI image'
+            echo '```'; cat "$W/out/OREZ-OS-0.1-live-amd64.iso.sha256" 2>/dev/null; grep -E 'NVIDIA|kernel' "$W/layer/layer-build.log" 2>/dev/null; echo '```'
+            echo '### VM login result'
+            echo '```'; python3 -c "import json;d=json.load(open('dist/vm-login/vm-result.json'));print(json.dumps({k:v for k,v in d.items() if k!='frames'},indent=1))" 2>&1; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          cat dist/vm-login/guest-facts.txt 2>/dev/null | tail -400 || true
+          cp "$W"/layer/*.log "$W"/layer/filesystem.manifest "$W"/out/*.json "$W"/out/*.sha256 dist/vm-login/ 2>/dev/null || true
+      - name: Upload VM evidence (all frames, logs, failures)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-vm-evidence
+          path: dist/vm-login/
+          retention-days: 30
+      - name: Upload ISO
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: OREZ-OS-0.1-live-amd64
+          path: |
+            ${{ env.W }}/out/OREZ-OS-0.1-live-amd64.iso
+            ${{ env.W }}/out/OREZ-OS-0.1-live-amd64.iso.sha256
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: ignore
+      - name: Fail if the VM login did not pass
+        if: steps.vm.outcome != 'success'
+        run: exit 1
