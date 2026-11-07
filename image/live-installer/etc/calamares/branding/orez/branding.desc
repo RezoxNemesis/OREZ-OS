@@ -1,0 +1,36 @@
+---
+componentName:  orez
+welcomeStyleCalamares: false
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 960px,640px
+windowPlacement: center
+sidebar: widget
+navigation: widget
+
+strings:
+    productName:         "OREZ OS"
+    shortProductName:    "OREZ"
+    version:             "0.1"
+    shortVersion:        "0.1"
+    versionedName:       "OREZ OS 0.1"
+    shortVersionedName:  "OREZ 0.1"
+    bootloaderEntryName: "OREZ"
+    productUrl:          "https://github.com/RezoxNemesis/OREZ-OS"
+    supportUrl:          "https://github.com/RezoxNemesis/OREZ-OS/issues"
+    knownIssuesUrl:      "https://github.com/RezoxNemesis/OREZ-OS/blob/main/docs/KNOWN_ISSUES.md"
+    releaseNotesUrl:     "https://github.com/RezoxNemesis/OREZ-OS"
+
+images:
+    productLogo:    "logo.png"
+    productIcon:    "logo.png"
+    productWelcome: "welcome.png"
+
+slideshow: "show.qml"
+slideshowAPI: 2
+
+style:
+    SidebarBackground:        "#F6F4EF"
+    SidebarText:              "#161616"
+    SidebarTextCurrent:       "#000000"
+    SidebarBackgroundCurrent: "#E2DED4"

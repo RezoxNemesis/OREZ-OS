@@ -20,6 +20,8 @@ jobs:
     timeout-minutes: 150
     env:
       W: /mnt/orez
+      # build/image-install-* branches stage the installer and run the VM installation test.
+      INSTALLER: ${{ startsWith(github.ref_name, 'build/image-install') && '1' || '' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -45,7 +47,7 @@ jobs:
         run: |
           mkdir -p "$W/out"
           python3 build/ci-assemble.py --iso "$(cat $W/iso-path)" --layer "$W/layer/orez-apps.squashfs" \
-            --manifest "$W/layer/filesystem.manifest" --output "$W/out/OREZ-OS-0.1-live-amd64.iso"
+            --manifest "$W/layer/filesystem.manifest" --output "$W/out/OREZ-OS-0.1-live-amd64.iso" ${INSTALLER:+--enable-installer}
           xorriso -indev "$W/out/OREZ-OS-0.1-live-amd64.iso" -report_el_torito plain 2>&1 | tail -15
           rm -f "$(cat $W/iso-path)"
           ls -l "$W/out"
@@ -53,6 +55,12 @@ jobs:
         id: vm
         continue-on-error: true
         run: python3 build/ci-vm-login.py --iso "$W/out/OREZ-OS-0.1-live-amd64.iso" --out dist/vm-login
+      - name: Disposable KVM VM — install to a blank virtual disk, reboot, sign in
+        id: install
+        if: env.INSTALLER == '1'
+        continue-on-error: true
+        timeout-minutes: 75
+        run: python3 build/ci-vm-install.py --iso "$W/out/OREZ-OS-0.1-live-amd64.iso" --out dist/vm-login/install
       - name: Report
         if: always()
         run: |
@@ -65,6 +73,13 @@ jobs:
           echo '===== guest facts'; cat dist/vm-login/guest-facts.txt 2>/dev/null || true
           echo '===== serial log (tail)'; tail -c 60000 dist/vm-login/serial.log 2>/dev/null || true
           echo '===== layer log'; cat "$W/layer/layer-build.log" 2>/dev/null || true
+          if [ -f dist/vm-login/install/install-result.json ]; then
+            echo '===== install result'; cat dist/vm-login/install/install-result.json
+            echo '===== installed facts'; cat dist/vm-login/install/installed/installed-facts.txt 2>/dev/null || true
+            echo '===== live serial (installer log tail)'; tail -c 40000 dist/vm-login/install/serial-live.log || true
+            { echo '### VM installation result'; echo '```'; python3 -c "import json;d=json.load(open('dist/vm-login/install/install-result.json'));print(json.dumps({k:v for k,v in d.items() if not k.startswith('frames')},indent=1))"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          rm -f dist/vm-login/install/disposable-disk.qcow2
           cp "$W"/layer/*.log "$W"/layer/filesystem.manifest "$W"/out/*.json "$W"/out/*.sha256 dist/vm-login/ 2>/dev/null || true
       - name: Upload VM evidence (all frames, logs, failures)
         if: always()
@@ -97,6 +112,6 @@ jobs:
           git -c user.name='OREZ CI' -c user.email='ci@invalid.example' commit -qm "CI evidence for run $RUN [skip ci]"
           git push -q "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/downloads/ci-$RUN"
           echo "Evidence: https://github.com/${GITHUB_REPOSITORY}/tree/downloads/ci-$RUN/evidence" >> "$GITHUB_STEP_SUMMARY"
-      - name: Fail if the VM login did not pass
-        if: steps.vm.outcome != 'success'
+      - name: Fail if the VM login (or installation, when enabled) did not pass
+        if: steps.vm.outcome != 'success' || (env.INSTALLER == '1' && steps.install.outcome != 'success')
         run: exit 1

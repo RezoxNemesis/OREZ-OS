@@ -18,23 +18,30 @@ SHIFT = {'_': 'minus', '+': 'equal', '>': 'dot', '<': 'comma', '?': 'slash', ':'
 
 
 class VM:
-    def __init__(self, iso, out, ram, cpus):
+    def __init__(self, iso, out, ram, cpus, disk=None, vars_file=None, serial_name='serial.log'):
         self.out = out; self.frames = []; self.t0 = time.time(); self.log = []
         self.tmp = Path(tempfile.mkdtemp(prefix='orez-vm-'))
         code = next(p for p in ['/usr/share/OVMF/OVMF_CODE_4M.fd', '/usr/share/OVMF/OVMF_CODE.fd'] if os.path.exists(p))
-        vars_ = code.replace('CODE', 'VARS'); subprocess.run(['cp', vars_, self.tmp / 'vars.fd'], check=True)
+        vars_ = code.replace('CODE', 'VARS')
+        self.vars = Path(vars_file) if vars_file else self.tmp / 'vars.fd'
+        if not self.vars.exists():
+            subprocess.run(['cp', vars_, self.vars], check=True)
+        self.serial_path = out / serial_name
         accel = 'kvm' if os.access('/dev/kvm', os.W_OK) else 'tcg'
         self.note('accelerator=' + accel)
         self.proc = subprocess.Popen([
             'qemu-system-x86_64', '-machine', 'q35,accel=' + accel, '-cpu', 'host' if accel == 'kvm' else 'max',
             '-m', str(ram), '-smp', str(cpus),
             '-drive', f'if=pflash,format=raw,unit=0,readonly=on,file={code}',
-            '-drive', f'if=pflash,format=raw,unit=1,file={self.tmp}/vars.fd',
-            '-drive', f'if=none,id=cd,media=cdrom,format=raw,readonly=on,file={iso}',
-            '-device', 'ahci,id=ahci', '-device', 'ide-cd,drive=cd,bus=ahci.0', '-boot', 'order=d',
+            '-drive', f'if=pflash,format=raw,unit=1,file={self.vars}',
+            '-device', 'ahci,id=ahci',
+            *(['-drive', f'if=none,id=cd,media=cdrom,format=raw,readonly=on,file={iso}',
+               '-device', 'ide-cd,drive=cd,bus=ahci.0,bootindex=1'] if iso else []),
+            *(['-drive', f'if=none,id=hd,format=qcow2,file={disk}',
+               '-device', 'virtio-blk-pci,drive=hd,bootindex=2'] if disk else []),
             '-device', 'virtio-vga', '-display', 'none', '-usb', '-device', 'usb-tablet',
             '-qmp', f'unix:{self.tmp}/qmp.sock,server=on,wait=off',
-            '-serial', f'file:{out}/serial.log', '-nic', 'none', '-no-reboot'])
+            '-serial', f'file:{self.serial_path}', '-nic', 'none', '-no-reboot'])
         for _ in range(60):
             if (self.tmp / 'qmp.sock').exists(): break
             time.sleep(0.5)
@@ -87,7 +94,7 @@ class VM:
         self.note(f'{label}: timeout waiting for {words}'); return None
 
     def serial(self):
-        return (self.out / 'serial.log').read_text(errors='replace')
+        return self.serial_path.read_text(errors='replace')
 
     def run_on_tty(self, password, command, marker, timeout=60):
         self.type(command + '\n'); time.sleep(3)

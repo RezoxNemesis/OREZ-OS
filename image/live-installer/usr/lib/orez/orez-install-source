@@ -1,0 +1,19 @@
+#!/bin/sh
+# Build the exact system to install: the unmodified Kubuntu base with the OREZ
+# system layer on top, as one read-only merged tree. Overlay whiteouts (files the
+# OREZ layer removed) are honoured. The live-only layer (zz-orez) is NOT included.
+set -eu
+B=/run/orez-install
+case "${1:-}" in
+  mount)
+    mkdir -p "$B/base" "$B/system-layer" "$B/root"
+    mountpoint -q "$B/base" || mount -o loop,ro /cdrom/casper/filesystem.squashfs "$B/base"
+    mountpoint -q "$B/system-layer" || mount -o loop,ro /cdrom/casper/orez-apps.squashfs "$B/system-layer"
+    mountpoint -q "$B/root" || mount -t overlay -o ro,lowerdir="$B/system-layer:$B/base" orez-install "$B/root"
+    test -x "$B/root/usr/bin/plasmashell"
+    ;;
+  umount)
+    for m in "$B/root" "$B/system-layer" "$B/base"; do mountpoint -q "$m" && umount "$m"; done
+    ;;
+  *) echo "usage: orez-install-source mount|umount" >&2; exit 2 ;;
+esac

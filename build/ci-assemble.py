@@ -43,13 +43,21 @@ def main(a):
         patch.patch(w / 'initrd-original', w / 'initrd', w / 'orez-initrd.json', owner_setup=True)
         subprocess.run(['python3', str(ROOT / 'build/stage-overlay.py'), '--source', str(ROOT / 'overlay'),
                         '--output', str(w / 'live'), '--live-owner'], check=True)
+        installer_report = None
+        if a.enable_installer:
+            import ci_installer
+            installer_report = ci_installer.stage(w / 'live', a.iso, offset)
         subprocess.run(['mksquashfs', str(w / 'live'), str(w / 'zz-orez.squashfs'), '-noappend', '-no-progress',
                         '-comp', 'xz', '-all-root', '-all-time', '1793923200', '-mkfs-time', '1793923200'], check=True)
         subprocess.run(['python3', str(ROOT / 'build/verify-live-owner.py'), '--source', str(ROOT / 'image/live-owner'),
                         '--squashfs', str(w / 'zz-orez.squashfs')], check=True)
         extract(a.iso, '/boot/grub/grub.cfg', w / 'grub-original.cfg')
-        (w / 'grub.cfg').write_text(brand_grub((w / 'grub-original.cfg').read_text()))
-        (w / 'info').write_text('OREZ OS 0.1 development amd64 — Kubuntu 26.04.1 base — CI build ' +
+        grub = brand_grub((w / 'grub-original.cfg').read_text())
+        if a.enable_installer:
+            grub = grub.replace('Try OREZ OS (installation unavailable)', 'Try or Install OREZ OS')
+        (w / 'grub.cfg').write_text(grub)
+        (w / 'info').write_text('OREZ OS 0.1 development amd64 — Kubuntu 26.04.1 base — ' +
+                                ('installer enabled — ' if a.enable_installer else '') + 'CI build ' +
                                 os.environ.get('OREZ_SOURCE_COMMIT', 'working-tree')[:12] + '\n')
         shutil.copy2(a.manifest, w / 'filesystem.manifest')
         report = {'schema': 1, 'builder': 'ci-overlay', 'parent_sha256': profile()['official_iso_sha256'],
@@ -57,6 +65,7 @@ def main(a):
                   'system_layer_sha256': sha(a.layer), 'live_owner_layer_sha256': sha(w / 'zz-orez.squashfs'),
                   'layers_low_to_high': ['filesystem.squashfs', 'orez-apps.squashfs', 'zz-orez.squashfs'],
                   'source_commit': os.environ.get('OREZ_SOURCE_COMMIT', 'working-tree'),
+                  'installer_enabled': bool(a.enable_installer), 'installer_config_sha256': installer_report,
                   'boot_tested': False, 'installation_approved': False, 'release_approved': False}
         (w / 'orez-assembly.json').write_text(json.dumps(report, indent=2) + '\n')
         mapped = {'/casper/initrd': w / 'initrd', '/casper/orez-initrd.json': w / 'orez-initrd.json',
@@ -92,4 +101,6 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     for n in ['iso', 'layer', 'manifest', 'output']:
         p.add_argument('--' + n, type=Path, required=True)
+    p.add_argument('--enable-installer', action='store_true',
+                   help='Stage the OREZ installer (for the VM installation test until it is qualified)')
     main(p.parse_args())
