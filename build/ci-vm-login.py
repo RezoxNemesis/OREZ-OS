@@ -176,8 +176,13 @@ def main(a):
         first_pids = {p[1] for p in owner if p[2] == 'plasmashell'}
         vm.run_on_tty(pw, "sudo -u orez env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus "
                           "qdbus6 org.kde.Shutdown /Shutdown org.kde.Shutdown.logout", '__never__', 10)
-        vm.keys('ctrl', 'alt', 'f1'); time.sleep(3)
-        c['greeter_after_signout'] = bool(vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2', 180))
+        # SDDM brings its greeter to the front itself; only switch consoles if it doesn't.
+        seen2 = vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2', 60)
+        for vt in ['f1', 'f2', 'f4']:
+            if seen2: break
+            vm.keys('ctrl', 'alt', vt); time.sleep(3)
+            seen2 = vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2-' + vt, 30)
+        c['greeter_after_signout'] = bool(seen2)
         if c['greeter_after_signout']:
             time.sleep(5)  # let the greeter settle before typing
             vm.keys('ctrl', 'a'); vm.type('orez'); vm.keys('tab'); time.sleep(1); vm.type(pw); time.sleep(1)
