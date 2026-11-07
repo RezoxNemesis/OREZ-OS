@@ -3,10 +3,10 @@ ColorScheme=OREZPaper
 BrowserApplication=brave-browser.desktop
 
 [KDE]
-LookAndFeelPackage=org.orez.desktop
+LookAndFeelPackage=org.orez.look
 AutomaticLookAndFeel=false
-DefaultLightLookAndFeel=org.orez.desktop
-DefaultDarkLookAndFeel=org.orez.desktop
+DefaultLightLookAndFeel=org.orez.look
+DefaultDarkLookAndFeel=org.orez.look
 SingleClick=false
 
 [Icons]

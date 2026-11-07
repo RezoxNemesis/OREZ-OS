@@ -65,7 +65,7 @@ def inspect(contents, required, control_members, package_name, architecture):
         parts = line.split(maxsplit=5)
         mode, owner, name = parts[0], parts[1], parts[5].split(' -> ', 1)[0]
         relative = name.removeprefix('./').rstrip('/')
-        expected = 'drwxr-xr-x' if mode.startswith('d') else '-rwxr-xr-x' if relative.startswith('usr/bin/') else '-rw-r--r--'
+        expected = 'drwxr-xr-x' if mode.startswith('d') else '-rwxr-xr-x' if relative.startswith('usr/bin/') or (relative.startswith('etc/xdg/plasma-workspace/env/') and relative.endswith('.sh')) else '-rw-r--r--'  # same rule as stage-overlay.py
         if mode != expected or owner != 'root/root':
             bad_permissions.append({'path': name, 'mode': mode, 'owner': owner, 'expected': expected})
     blocked = bool(

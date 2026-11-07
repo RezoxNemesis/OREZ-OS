@@ -4,7 +4,7 @@
         "Authors": [{ "Name": "OREZ OS Project" }],
         "Category": "",
         "Description": "OREZ OS: calm paper and ink, a familiar bottom taskbar with Start menu",
-        "Id": "org.orez.desktop",
+        "Id": "org.orez.look",
         "License": "GPL-2.0-or-later",
         "Name": "OREZ",
         "Version": "0.1"
