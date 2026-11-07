@@ -28,54 +28,46 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
-
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
           packages: "platform-tools"
-
       - name: Install Android platform and build tools
         run: |
           yes | sdkmanager --licenses >/dev/null
           sdkmanager "platforms;android-35" "build-tools;35.0.0"
-
       - name: Set up Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
-
       - name: Run source tests
         run: gradle --no-daemon :app:testDebugUnitTest
-
       - name: Build installable debug-signed APK
         run: gradle --no-daemon :app:assembleDebug
-
       - name: Verify APK structure and calculate SHA-256
         run: |
           APK="app/build/outputs/apk/debug/app-debug.apk"
           test -s "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           mkdir -p dist
-          cp "$APK" dist/OREZ-USB-Studio-Linux-0.4.1.apk
-          sha256sum dist/OREZ-USB-Studio-Linux-0.4.1.apk | tee dist/SHA256SUMS.txt
-          echo "### OREZ USB Studio Linux 0.4.1" >> "$GITHUB_STEP_SUMMARY"
+          cp "$APK" dist/OREZ-USB-Studio-Linux-0.4.2.apk
+          sha256sum dist/OREZ-USB-Studio-Linux-0.4.2.apk | tee dist/SHA256SUMS.txt
+          echo "### OREZ USB Studio Linux 0.4.2" >> "$GITHUB_STEP_SUMMARY"
           echo "- Debug-signed APK: built and signature-verified." >> "$GITHUB_STEP_SUMMARY"
           echo "- JVM unit tests: passed." >> "$GITHUB_STEP_SUMMARY"
           echo "- Physical OTG/USB transfer and PC UEFI boot: **not tested by hosted CI**." >> "$GITHUB_STEP_SUMMARY"
           cat dist/SHA256SUMS.txt >> "$GITHUB_STEP_SUMMARY"
-
       - name: Upload APK and checksum
         uses: actions/upload-artifact@v4
         with:
-          name: OREZ-USB-Studio-Linux-0.4.1
+          name: OREZ-USB-Studio-Linux-0.4.2
           path: |
-            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.4.1.apk
+            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.4.2.apk
             tools/orez-usb-studio-linux/dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
