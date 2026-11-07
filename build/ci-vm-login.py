@@ -187,7 +187,8 @@ def main(a):
         c['greeter_after_signout'] = bool(seen2)
         if c['greeter_after_signout']:
             time.sleep(5)  # let the greeter settle before typing
-            vm.keys('ctrl', 'a'); vm.type('orez'); vm.keys('tab'); time.sleep(1); vm.type(pw); time.sleep(1)
+            # Same key sequence as the first, successful sign-in (Enter moves to the password field).
+            vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(2); vm.type(pw); time.sleep(1)
             vm.shot('credentials-2'); vm.keys('ret'); vm.note('second graphical login')
             returned2 = False
             for i in range(9):
