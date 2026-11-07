@@ -174,8 +174,10 @@ def main(a):
         # Sign out the way a person does (Plasma's own logout), then sign in again.
         # Pass only if a NEW plasmashell process exists afterwards.
         first_pids = {p[1] for p in owner if p[2] == 'plasmashell'}
-        vm.run_on_tty(pw, "sudo -u orez env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus "
-                          "qdbus6 org.kde.Shutdown /Shutdown org.kde.Shutdown.logout", '__never__', 10)
+        # The owner's own console session may call its own desktop's logout; no sudo, so no
+        # password prompt that could be confused with the greeter's password field.
+        vm.type("env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus "
+                "qdbus6 org.kde.Shutdown /Shutdown org.kde.Shutdown.logout\n"); time.sleep(3)
         # SDDM brings its greeter to the front itself; only switch consoles if it doesn't.
         seen2 = vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2', 60)
         for vt in ['f1', 'f2', 'f4']:
