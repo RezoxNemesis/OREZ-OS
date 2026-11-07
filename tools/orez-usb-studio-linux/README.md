@@ -1,4 +1,4 @@
-# OREZ USB Studio Linux 0.4.1
+# OREZ USB Studio Linux 0.4.3
 
 A phone-first Android USB recovery and writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
 
@@ -31,6 +31,12 @@ The Linux client is reporting-only. It discards the relay response and never pro
 - Target USB must be at least as large as the padded image.
 
 UAS-only devices, 4K logical-sector devices, non-hybrid images, ARM images and netboot archives are not supported by this release. Some Android kernels/adapters may not expose BOT endpoints even when a file manager can browse the drive.
+
+## Post-reconnect verification
+
+After a successful same-session read-back, safely eject and physically disconnect/reconnect the USB. Select the same ISO, enter its official SHA-256, select the reconnected USB and run **Read-only verify USB after reconnect**. This reads the complete ISO-sized region directly from the reconnected device and compares its SHA-256 with the inspected ISO. A pass confirms the data persisted across power removal. A failure means the USB must not be booted and may indicate a media/controller/OTG issue.
+
+Android may display a generic **Damaged USB storage** warning after a PC Linux hybrid ISO is written. That warning means Android could not mount the resulting partition/filesystem layout as ordinary phone storage; it is not, by itself, proof that the boot image is corrupt. Do not accept Android's format prompt after writing a PC installer. The post-reconnect full-image verification is the phone-side persistence check; final bootability must still be tested on the target PC.
 
 ## Safety
 
