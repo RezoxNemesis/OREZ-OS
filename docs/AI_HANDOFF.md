@@ -21,6 +21,17 @@ sign-in.** No physical-PC result exists. Installer is enabled only in images fro
   The ISO is an Actions artifact (30-day retention), visible to signed-in GitHub
   users of this public repository.
 
+### Download candidate (owner's personal build)
+
+- Run 42421422241 (source `36dd126`, installer enabled): live login, logout/second
+  login, OREZ look, OREZ Appearance opened, full VM installation, installed system
+  boots to the **OREZ greeter** and Plasma desktop. All checks passed.
+- ISO `OREZ-OS-0.1-live-amd64.iso`, SHA-256
+  `039756e087dbc87278b4ded968639eebb3740be01c825fb3d79bcc40310752cc`.
+- Actions artifact 13593704739 (5,490,999,853-byte ZIP, expires 7 Dec 2026):
+  https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42421422241/artifacts/13593704739
+- Evidence: https://github.com/RezoxNemesis/OREZ-OS/tree/downloads/ci-42421422241/evidence
+
 ### Verified (run ids)
 
 - 42397850409 (live): enrollment, OREZ SDDM, KWin/Plasma on seat0, OREZ look
