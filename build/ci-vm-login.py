@@ -120,31 +120,52 @@ def main(a):
         # Collect objective in-guest facts from an authenticated owner console.
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(4); vm.shot('tty3')
         vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5); vm.shot('tty3-login')
-        # Section markers are assembled at run time ("==O""REZ") so the typed command,
-        # or a journal line quoting it, can never be mistaken for real output.
         def mark(name):
+            # Assembled at run time ("==O""REZ") so the typed command, or a journal line
+            # quoting it, can never be mistaken for real output.
             return 'printf "%s\\n" "==O""REZ-' + name + '=="'
-        facts = ("sudo sh -c '{ " + mark('BEGIN') + "; loginctl list-sessions --no-legend; " + mark('PROCS') + "; "
-                 "ps -eo user:20,pid,comm --no-headers; " + mark('TRACE') + "; "
-                 "journalctl -b --no-pager -o short-precise -t orez-session-trace; " + mark('SDDM') + "; "
-                 "journalctl -b --no-pager -o short-precise -u sddm | tail -80; " + mark('SESSIONLOG') + "; "
-                 "tail -200 /home/orez/.local/share/sddm/wayland-session.log; " + mark('USERJOURNAL') + "; "
-                 "journalctl -b --no-pager -o short-precise _UID=1000 | tail -400; " + mark('COREDUMPS') + "; "
-                 "coredumpctl list --no-pager | tail -20; " + mark('END') + "; } > /dev/ttyS0 2>&1'")
-        got = vm.run_on_tty(pw, facts, '==OREZ-END==', 120)
-        result['checks']['facts_collected'] = got
-        ser = vm.serial()
-        block = ser[ser.rfind('==OREZ-BEGIN=='):ser.rfind('==OREZ-END==')] if got else ''
 
-        def section(name, nxt):
-            return block.split('==OREZ-' + name + '==')[-1].split('==OREZ-' + nxt + '==')[0] if block else ''
-        procs = [l.split() for l in section('PROCS', 'TRACE').splitlines() if len(l.split()) == 3]
-        owner = [p for p in procs if p[0] == 'orez']
-        result['checks']['plasmashell_running'] = any(p[2] == 'plasmashell' for p in owner)
-        result['checks']['kwin_running_for_owner'] = any(p[2].startswith('kwin_wayland') for p in owner)
-        result['checks']['owner_graphical_session'] = any(
-            'orez' in l and 'seat0' in l for l in section('BEGIN', 'PROCS').splitlines())
+        def collect(tag, full=True):
+            parts = ["loginctl list-sessions --no-legend", mark(tag + 'PROCS'), "ps -eo user:20,pid,comm --no-headers",
+                     mark(tag + 'LOOK'), "for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done",
+                     "grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals",
+                     "ls /home/orez/Desktop"]
+            if full:
+                parts += [mark(tag + 'TRACE'), "journalctl -b --no-pager -o short-precise -t orez-session-trace",
+                          mark(tag + 'SDDM'), "journalctl -b --no-pager -o short-precise -u sddm | tail -80",
+                          mark(tag + 'SESSIONLOG'), "tail -200 /home/orez/.local/share/sddm/wayland-session.log",
+                          mark(tag + 'USERJOURNAL'), "journalctl -b --no-pager -o short-precise _UID=1000 | tail -300",
+                          mark(tag + 'COREDUMPS'), "coredumpctl list --no-pager | tail -20"]
+            cmd = "sudo sh -c '{ " + mark(tag + 'BEGIN') + "; " + "; ".join(parts) + "; " + mark(tag + 'END') + "; } > /dev/ttyS0 2>&1'"
+            ok = vm.run_on_tty(pw, cmd, '==OREZ-' + tag + 'END==', 120)
+            ser = vm.serial()
+            blk = ser[ser.rfind('==OREZ-' + tag + 'BEGIN=='):ser.rfind('==OREZ-' + tag + 'END==')] if ok else ''
+            sec = blk.split('==OREZ-' + tag + 'PROCS==')[-1].split('==OREZ-' + tag + 'LOOK==')[0] if blk else ''
+            owner = [l.split() for l in sec.splitlines() if len(l.split()) == 3 and l.split()[0] == 'orez']
+            look = blk.split('==OREZ-' + tag + 'LOOK==')[-1].split('==OREZ-' + tag + 'TRACE==')[0] if blk else ''
+            return ok, blk, owner, look
+
+        got, block, owner, look = collect('')
+        c = result['checks']
+        c['facts_collected'] = got
+        c['plasmashell_running'] = any(p[2] == 'plasmashell' for p in owner)
+        c['kwin_running_for_owner'] = any(p[2].startswith('kwin_wayland') for p in owner)
+        c['owner_graphical_session'] = any('orez' in l and 'seat0' in l and 'tty2' in l for l in block.split('==OREZ-PROCS==')[0].splitlines())
+        c['orez_defaults_in_session'] = '/etc/xdg/orez' in look
+        c['orez_wallpaper'] = 'OREZ-Rest' in look
         (a.out / 'guest-facts.txt').write_text(block)
+        # Sign out by restarting the display manager, then sign in a second time.
+        vm.run_on_tty(pw, "sudo systemctl restart sddm", '__never__', 8)
+        vm.keys('ctrl', 'alt', 'f1'); time.sleep(3)
+        c['greeter_after_signout'] = bool(vm.wait_text(['Welcome home', 'Your workspace'], 'greeter-2', 180))
+        if c['greeter_after_signout']:
+            vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(1); vm.type(pw + '\n'); vm.note('second graphical login')
+            for i in range(9):
+                time.sleep(10); vm.shot('after-login-2')
+            vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.shot('tty3-again')
+            got2, block2, owner2, _ = collect('S2', full=False)
+            c['second_login_plasmashell'] = any(p[2] == 'plasmashell' for p in owner2)
+            (a.out / 'guest-facts-second-login.txt').write_text(block2)
         vm.keys('ctrl', 'alt', 'f1'); time.sleep(3); vm.shot('back-to-vt1')
         vm.keys('ctrl', 'alt', 'f2'); time.sleep(3); vm.shot('vt2')
     except Exception as e:
@@ -155,6 +176,8 @@ def main(a):
         c = result['checks']
         result['desktop_pass'] = bool(c.get('plasmashell_running') and c.get('kwin_running_for_owner')
                                       and not c.get('greeter_returned_after_login'))
+        result['second_login_pass'] = bool(c.get('second_login_plasmashell'))
+        result['orez_look_pass'] = bool(c.get('orez_defaults_in_session') and c.get('orez_wallpaper'))
         (a.out / 'vm-result.json').write_text(json.dumps(result, indent=2) + '\n')
         print(json.dumps({k: v for k, v in result.items() if k != 'frames'}, indent=2))
     return 0 if result['desktop_pass'] else 1

@@ -1,0 +1,13 @@
+[General]
+ColorScheme=OREZPaper
+BrowserApplication=brave-browser.desktop
+
+[KDE]
+LookAndFeelPackage=org.orez.desktop
+AutomaticLookAndFeel=false
+DefaultLightLookAndFeel=org.orez.desktop
+DefaultDarkLookAndFeel=org.orez.desktop
+SingleClick=false
+
+[Icons]
+Theme=breeze

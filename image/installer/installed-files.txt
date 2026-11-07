@@ -53,3 +53,10 @@ usr/bin/orez-drivers
 usr/lib/orez/drivers.py
 usr/share/applications/orez-drivers.desktop
 etc/xdg/autostart/orez-drivers.desktop
+etc/xdg/plasma-workspace/env/10-orez-defaults.sh
+etc/xdg/orez/kdeglobals
+etc/xdg/orez/kicker-extra-favoritesrc
+usr/share/plasma/look-and-feel/org.orez.desktop/metadata.json
+usr/share/plasma/look-and-feel/org.orez.desktop/contents/defaults
+usr/share/plasma/look-and-feel/org.orez.desktop/contents/layouts/org.kde.plasma.desktop-layout.js
+usr/share/plasma/look-and-feel/org.orez.desktop/contents/previews/preview.png

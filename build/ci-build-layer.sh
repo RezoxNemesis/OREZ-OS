@@ -132,6 +132,10 @@ if grep -qE '^(Setting up|Unpacking) (nvidia-dkms|linux-image)|Building initial 
   echo 'DKMS path detected; expected prebuilt signed modules only' >&2; exit 1
 fi
 
+# OREZ identity: drop Kubuntu website/how-to desktop shortcuts for new users
+# (overlay whiteouts; the files remain in the untouched base layer below).
+rm -f "$R/etc/skel/Desktop/org.kfocus.web.howtos.desktop" "$R/etc/skel/Desktop/org.kubuntu.web.home.desktop"
+
 # Record the exact package state, then strip build-only state.
 C dpkg-query -W -f='${Package} ${Version}\n' > "$OUT/filesystem.manifest"
 C dpkg --audit | tee "$OUT/dpkg-audit.txt"
