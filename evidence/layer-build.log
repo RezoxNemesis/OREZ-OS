@@ -1,0 +1,50 @@
+Live kernel: 7.0.0-30-generic
+brave-browser-release.sources
+Get:36 http://archive.ubuntu.com/ubuntu resolute-updates/universe Icons (128x128) [157 kB]
+Get:37 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [21.0 kB]
+Get:38 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse Translation-en [4168 B]
+Fetched 23.2 MB in 3s (7458 kB/s)
+Reading package lists...
+main
+restricted
+Hit:9 http://archive.ubuntu.com/ubuntu resolute-updates InRelease
+Reading package lists...
+W: OpenPGP signature verification failed: file:/tmp/iso resolute Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 0A0E127F63936AAE
+series 580: rejected plan:
+E: Unable to satisfy dependencies. Reached two conflicting assignments:
+WARNING: no DKMS-free signed NVIDIA set for the live kernel; first-boot driver setup will install it
+896M	/mnt/orez-layer.9ZTssa/upper
+Parallel mksquashfs: Using 4 processors
+Creating 4.0 filesystem on /mnt/orez/layer/orez-apps.squashfs, block size 131072.
+
+Exportable Squashfs 4.0 filesystem, xz compressed, data block size 131072
+	compressed data, compressed metadata, compressed fragments,
+	compressed xattrs, compressed ids
+	duplicates are removed
+Filesystem size 407994.84 Kbytes (398.43 Mbytes)
+	45.88% of uncompressed filesystem size (889299.16 Kbytes)
+Inode table size 93718 bytes (91.52 Kbytes)
+	22.70% of uncompressed inode table size (412872 bytes)
+Directory table size 134600 bytes (131.45 Kbytes)
+	37.76% of uncompressed directory table size (356434 bytes)
+Xattr table size 944 bytes (0.92 Kbytes)
+	6.03% of uncompressed xattr table size (15645 bytes)
+Number of duplicate files found 945
+Number of inodes 11891
+Number of files 11200
+Number of fragments 630
+Number of symbolic links 51
+Number of device nodes 1
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 639
+Number of hard-links 106
+Number of ids (unique uids + gids) 5
+Number of uids 3
+	root (0)
+	_apt (42)
+	man (6)
+Number of gids 3
+	root (0)
+	man (12)
+	messagebus (101)
