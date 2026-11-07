@@ -4,45 +4,239 @@
     {
       "title": "Personalisation",
       "items": [
-        {"title":"Wallpaper and appearance","description":"Open the native appearance controls to choose a background, colours and desktop style.","keywords":["wallpaper","background","theme","colours","colors","look"],"action":"system-settings"},
-        {"title":"Accessibility","description":"Find display, text, input and assistive-technology options in native Settings.","keywords":["screen reader","large text","contrast","keyboard","reduced motion","accessibility"],"action":"system-settings"}
+        {
+          "title": "OREZ Appearance",
+          "description": "Layout (taskbar or dock), Paper or Ink colours, wallpaper, effects and performance. Preview each choice and try it for 20 seconds before keeping it.",
+          "keywords": [
+            "appearance",
+            "theme",
+            "dark",
+            "light",
+            "dock",
+            "taskbar",
+            "wallpaper",
+            "blur",
+            "animation",
+            "performance",
+            "game",
+            "customise",
+            "customize"
+          ],
+          "action": "appearance"
+        },
+        {
+          "title": "Wallpaper and appearance",
+          "description": "Open the native appearance controls to choose a background, colours and desktop style.",
+          "keywords": [
+            "wallpaper",
+            "background",
+            "theme",
+            "colours",
+            "colors",
+            "look"
+          ],
+          "action": "system-settings"
+        },
+        {
+          "title": "Accessibility",
+          "description": "Find display, text, input and assistive-technology options in native Settings.",
+          "keywords": [
+            "screen reader",
+            "large text",
+            "contrast",
+            "keyboard",
+            "reduced motion",
+            "accessibility"
+          ],
+          "action": "system-settings"
+        }
       ]
     },
     {
       "title": "Display and sound",
       "items": [
-        {"title":"Display and monitors","description":"Arrange screens and adjust resolution, scaling and refresh options.","keywords":["monitor","hdmi","resolution","scale","scaling","refresh rate","screen"],"action":"system-settings"},
-        {"title":"Sound and volume","description":"Choose audio devices and adjust input, output and volume.","keywords":["speaker","microphone","headphones","audio","volume","sound"],"action":"system-settings"},
-        {"title":"Power and battery","description":"Choose screen, sleep and power behaviour using KDE's native controls.","keywords":["sleep","suspend","battery","energy","power"],"action":"power"}
+        {
+          "title": "Display and monitors",
+          "description": "Arrange screens and adjust resolution, scaling and refresh options.",
+          "keywords": [
+            "monitor",
+            "hdmi",
+            "resolution",
+            "scale",
+            "scaling",
+            "refresh rate",
+            "screen"
+          ],
+          "action": "system-settings"
+        },
+        {
+          "title": "Sound and volume",
+          "description": "Choose audio devices and adjust input, output and volume.",
+          "keywords": [
+            "speaker",
+            "microphone",
+            "headphones",
+            "audio",
+            "volume",
+            "sound"
+          ],
+          "action": "system-settings"
+        },
+        {
+          "title": "Power and battery",
+          "description": "Choose screen, sleep and power behaviour using KDE's native controls.",
+          "keywords": [
+            "sleep",
+            "suspend",
+            "battery",
+            "energy",
+            "power"
+          ],
+          "action": "power"
+        }
       ]
     },
     {
       "title": "Network and devices",
       "items": [
-        {"title":"Wi-Fi and internet","description":"Connect to Wi-Fi or wired networks and review connection status.","keywords":["wifi","wi-fi","wireless","ethernet","internet","hotspot","network","password"],"action":"network"},
-        {"title":"Bluetooth","description":"Pair and manage nearby Bluetooth devices.","keywords":["pair","earbuds","headphones","mouse","keyboard","bluetooth"],"action":"bluetooth"},
-        {"title":"Connect a phone","description":"Open KDE Connect to pair a phone after approving the request on both devices.","keywords":["android","phone","mobile","transfer","sharing","notifications","mirror"],"action":"connect"}
+        {
+          "title": "Wi-Fi and internet",
+          "description": "Connect to Wi-Fi or wired networks and review connection status.",
+          "keywords": [
+            "wifi",
+            "wi-fi",
+            "wireless",
+            "ethernet",
+            "internet",
+            "hotspot",
+            "network",
+            "password"
+          ],
+          "action": "network"
+        },
+        {
+          "title": "Bluetooth",
+          "description": "Pair and manage nearby Bluetooth devices.",
+          "keywords": [
+            "pair",
+            "earbuds",
+            "headphones",
+            "mouse",
+            "keyboard",
+            "bluetooth"
+          ],
+          "action": "bluetooth"
+        },
+        {
+          "title": "Connect a phone",
+          "description": "Open KDE Connect to pair a phone after approving the request on both devices.",
+          "keywords": [
+            "android",
+            "phone",
+            "mobile",
+            "transfer",
+            "sharing",
+            "notifications",
+            "mirror"
+          ],
+          "action": "connect"
+        }
       ]
     },
     {
       "title": "Apps and files",
       "items": [
-        {"title":"Find and manage apps","description":"Browse the OREZ app catalogue. Availability and installation support are shown separately.","keywords":["software","store","install","uninstall","applications","games"],"action":"apps"},
-        {"title":"Files and drives","description":"Open the file manager to browse folders and removable drives.","keywords":["file manager","folders","usb","drive","storage","documents","dolphin"],"action":"files"}
+        {
+          "title": "Find and manage apps",
+          "description": "Browse the OREZ app catalogue. Availability and installation support are shown separately.",
+          "keywords": [
+            "software",
+            "store",
+            "install",
+            "uninstall",
+            "applications",
+            "games"
+          ],
+          "action": "apps"
+        },
+        {
+          "title": "Files and drives",
+          "description": "Open the file manager to browse folders and removable drives.",
+          "keywords": [
+            "file manager",
+            "folders",
+            "usb",
+            "drive",
+            "storage",
+            "documents",
+            "dolphin"
+          ],
+          "action": "files"
+        }
       ]
     },
     {
       "title": "Updates and recovery",
       "items": [
-        {"title":"Updates","description":"Open native system settings. A signed OREZ update channel is not yet enabled in this development build.","keywords":["update","upgrade","patch","security update"],"action":"system-settings"},
-        {"title":"Help and recovery","description":"Read the current safety status and supported next steps. Installation and system restore are not enabled in this development image.","keywords":["help","stuck","lost","restore","backup","safe mode","recovery","undo"],"action":"help"}
+        {
+          "title": "Updates",
+          "description": "Open native system settings. A signed OREZ update channel is not yet enabled in this development build.",
+          "keywords": [
+            "update",
+            "upgrade",
+            "patch",
+            "security update"
+          ],
+          "action": "system-settings"
+        },
+        {
+          "title": "Help and recovery",
+          "description": "Read the current safety status and supported next steps. Installation and system restore are not enabled in this development image.",
+          "keywords": [
+            "help",
+            "stuck",
+            "lost",
+            "restore",
+            "backup",
+            "safe mode",
+            "recovery",
+            "undo"
+          ],
+          "action": "help"
+        }
       ]
     },
     {
       "title": "System and advanced tools",
       "items": [
-        {"title":"System information","description":"Open native system settings and inspect hardware or software details.","keywords":["about","version","cpu","gpu","graphics","ram","system information"],"action":"system-settings"},
-        {"title":"Advanced Linux tools","description":"Linux terminal, package tools and developer utilities remain available when you choose them.","keywords":["terminal","developer","programming","git","packages","linux","advanced"],"action":"system-settings"}
+        {
+          "title": "System information",
+          "description": "Open native system settings and inspect hardware or software details.",
+          "keywords": [
+            "about",
+            "version",
+            "cpu",
+            "gpu",
+            "graphics",
+            "ram",
+            "system information"
+          ],
+          "action": "system-settings"
+        },
+        {
+          "title": "Advanced Linux tools",
+          "description": "Linux terminal, package tools and developer utilities remain available when you choose them.",
+          "keywords": [
+            "terminal",
+            "developer",
+            "programming",
+            "git",
+            "packages",
+            "linux",
+            "advanced"
+          ],
+          "action": "system-settings"
+        }
       ]
     }
   ]

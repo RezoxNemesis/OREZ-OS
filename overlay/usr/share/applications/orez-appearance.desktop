@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Appearance
+GenericName=Personalise your desktop
+Comment=Layout, colours, wallpaper, effects and performance, with a preview of each choice
+Exec=/usr/bin/orez-appearance
+Icon=preferences-desktop-theme-global
+Terminal=false
+Categories=Settings;DesktopSettings;
+Keywords=theme;wallpaper;dock;taskbar;dark;light;blur;animation;performance;

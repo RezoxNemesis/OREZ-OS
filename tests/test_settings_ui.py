@@ -25,7 +25,7 @@ class SettingsUiTests(unittest.TestCase):
 
     def test_every_catalog_action_is_allowlisted_and_explained(self):
         allowed = {"system-settings", "network", "bluetooth", "power",
-                   "files", "apps", "connect", "help"}
+                   "files", "apps", "connect", "help", "appearance"}
         for category in self.catalog["categories"]:
             self.assertTrue(category["title"])
             for item in category["items"]:

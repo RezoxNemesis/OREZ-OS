@@ -43,3 +43,9 @@ usr/share/color-schemes/OREZInk.colors
 usr/lib/orez/settings_ui.py
 usr/share/orez/settings-catalog.json
 usr/lib/orez/help_recovery_ui.py
+usr/bin/orez-appearance
+usr/lib/orez/appearance_model.py
+usr/lib/orez/appearance_ui.py
+usr/share/applications/orez-appearance.desktop
+usr/share/wallpapers/OREZ-Rest/contents/images/1672x941.jpg
+usr/share/wallpapers/OREZ-Horizon/contents/images/1672x941.jpg

@@ -29,6 +29,7 @@ ALLOWED_ACTIONS = {
     "apps": ["orez-store", "gui"],
     "connect": ["orezctl", "connect", "open"],
     "help": ["orez-help"],
+    "appearance": ["orez-appearance"],
 }
 
 
