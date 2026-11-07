@@ -1,4 +1,4 @@
-# OREZ USB Studio Linux 0.4.3
+# OREZ USB Studio Linux 0.4.4
 
 A phone-first Android USB recovery and writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
 
@@ -45,3 +45,8 @@ The selected USB is overwritten from LBA 0 through the end of the ISO image. Ver
 ## Build
 
 Requires JDK 17, Android SDK platform 35, Android Gradle Plugin 8.7.3 and Gradle 8.9. The GitHub Actions workflow runs unit tests, builds the debug APK, verifies its signature, and uploads the APK artifact. Debug APKs use the CI debug signing key; uninstall a differently signed prior build before installing this APK.
+
+
+### 0.4.4 diagnostic accuracy
+
+Read-only post-reconnect verification records its own explicit pass/fail result, verified image size and SHA-256, and the reconnected USB's VID/PID/product/capacity. The report distinguishes write success from persistence verification.
