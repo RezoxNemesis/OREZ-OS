@@ -58,6 +58,11 @@ set +e  # inventory is best-effort; missing files are reported, not fatal
   echo; echo '### kf5 plasmarc'; cat "$R/usr/share/kubuntu-default-settings/kf5-settings/plasmarc"
   echo; echo '### who sets XDG_CONFIG_DIRS'; grep -rl "kf5-settings" "$R/etc" "$R/usr/lib/environment.d" "$R/usr/share/plasma" 2>/dev/null | head; grep -rh "kf5-settings" "$R/etc" "$R/usr/lib/environment.d" 2>/dev/null | head -5
   echo; echo '### kickoff favorites'; cat "$R/etc/xdg/kicker-extra-favoritesrc"
+  echo; echo '### CALAMARES FILES'
+  for f in settings.conf modules/unpackfs.conf modules/shellprocess_fix_oem_uid.conf modules/displaymanager.conf modules/packages.conf modules/bootloader.conf modules/users.conf; do
+    echo "===== FILE etc/calamares/$f"; base64 -w0 "$R/etc/calamares/$f"; echo; done
+  echo "===== FILE status-sha"; sha256sum "$R/var/lib/dpkg/status"
+  echo; echo '### calamares launchers'; ls -l "$R/usr/bin/" | grep -i calamares; cat "$R/usr/bin/calamares-launch"* 2>/dev/null | head -40
   echo; echo '### calamares desktop'; cat "$R/usr/share/applications/kubuntu-calamares.desktop" 2>&1
   echo; echo '### calamares settings + branding'; cat "$R/etc/calamares/settings.conf" 2>&1; ls -R "$R/etc/calamares/branding" 2>&1 | head -30
   echo; echo '### firefox / welcome'; ls "$R/usr/share/applications" | grep -iE "firefox|welcome|kubuntu" ; ls "$R/etc/xdg/autostart" | head -60
