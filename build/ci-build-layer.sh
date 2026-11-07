@@ -64,7 +64,17 @@ Architectures: amd64
 Signed-By: /usr/share/keyrings/brave-browser-archive-keyring.gpg
 EOF
 
-C apt-get update 2>&1 | tail -5 | tee -a "$OUT/layer-build.log"
+# The live base lists file:/cdrom as a package source. Use a filtered copy of
+# the sources in /tmp (tmpfs, not packed) so the image's own files stay as-is.
+mkdir -p "$R/tmp/apt-parts"
+for f in "$R"/etc/apt/sources.list.d/*; do
+  grep -qi 'cdrom' "$f" || cp "$f" "$R/tmp/apt-parts/"
+done
+grep -vi '^deb.*cdrom' "$R/etc/apt/sources.list" > "$R/tmp/apt-sources.list" 2>/dev/null || : > "$R/tmp/apt-sources.list"
+APTOPT=(-o Dir::Etc::SourceList=/tmp/apt-sources.list -o Dir::Etc::SourceParts=/tmp/apt-parts)
+ls "$R/tmp/apt-parts" | tee -a "$OUT/layer-build.log"
+C apt-get "${APTOPT[@]}" update 2>&1 | tail -5 | tee -a "$OUT/layer-build.log"
+[[ ${PIPESTATUS[0]} -eq 0 ]] || { echo 'apt-get update failed' >&2; exit 1; }
 
 mapfile -t PROFILE < <(python3 -c "import json;print('\n'.join(json.load(open('$REPO_ROOT/image/desktop-packages.json'))['packages']))")
 # OREZ performance profile: on-demand game tuning, power profiles, compressed RAM swap.
@@ -73,7 +83,7 @@ FEATURES=(gamemode power-profiles-daemon systemd-zram-generator ubuntu-drivers-c
 # NVIDIA: Canonical-built, Canonical-signed kernel modules for the exact live
 # kernel (works with Secure Boot; no DKMS, no .run installer). Prefer the open
 # kernel modules NVIDIA recommends for Turing/Ampere (RTX 3050 is Ampere).
-NV=$(C apt-cache search --names-only "^linux-modules-nvidia-[0-9]+(-open)?-${KVER//./\\.}\$" | awk '{print $1}' \
+NV=$(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modules-nvidia-[0-9]+(-open)?-${KVER//./\\.}\$" | awk '{print $1}' \
      | sed -E "s/^linux-modules-nvidia-([0-9]+)(-open)?-.*/\1 \2/" | sort -k1,1n -k2,2r | awk '{print $1 $2}' \
      | grep -v server | tail -1 || true)
 NVPKGS=()
@@ -86,7 +96,7 @@ fi
 
 cp "$DEB" "$R/tmp/orez-shell.deb"
 set +e
-C apt-get install -y --no-install-recommends "${PROFILE[@]}" "${FEATURES[@]}" "${NVPKGS[@]}" /tmp/orez-shell.deb 2>&1 | tee -a "$OUT/apt-install.log" | tail -40
+C apt-get "${APTOPT[@]}" install -y --no-install-recommends "${PROFILE[@]}" "${FEATURES[@]}" "${NVPKGS[@]}" /tmp/orez-shell.deb 2>&1 | tee -a "$OUT/apt-install.log" | tail -40
 rc=${PIPESTATUS[0]}
 set -e
 [[ $rc -eq 0 ]] || { echo "apt-get install failed ($rc)"; tail -80 "$OUT/apt-install.log"; exit 1; }
