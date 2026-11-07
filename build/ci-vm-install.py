@@ -155,9 +155,18 @@ def main(a):
         (a.out / 'installed').mkdir(exist_ok=True)
         vm2 = VM(None, a.out / 'installed', 6144, 4, disk=disk, vars_file=vars_file, serial_name='serial-installed.log')
         try:
-            c['installed_login_screen'] = bool(vm2.wait_text(['Orez Owner'], 'installed-greeter', 600))
-            if not c['installed_login_screen']: raise RuntimeError('installed login screen not seen')
-            time.sleep(5); vm2.type(pw + '\n'); time.sleep(90); vm2.shot('installed-desktop')
+            seen = vm2.wait_text(['Welcome home', 'Your workspace', 'Orez Owner'], 'installed-greeter', 600)
+            c['installed_login_screen'] = bool(seen)
+            c['installed_orez_greeter'] = seen in ('Welcome home', 'Your workspace')
+            if not seen: raise RuntimeError('installed login screen not seen')
+            time.sleep(5)
+            if c['installed_orez_greeter']:
+                # OREZ greeter: username field, then password field (fixed layout at 1280x800).
+                vm2.click(309, 355); vm2.keys('ctrl', 'a'); vm2.type('orez\n'); time.sleep(2)
+                vm2.type(pw); time.sleep(1); vm2.shot('installed-credentials'); vm2.keys('ret')
+            else:
+                vm2.type(pw + '\n')
+            time.sleep(90); vm2.shot('installed-desktop')
             vm2.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm2.type('orez\n'); time.sleep(2); vm2.type(pw + '\n'); time.sleep(5)
             blk = facts(vm2, pw, 'I')
             (a.out / 'installed-facts.txt').write_text(blk)
