@@ -447,8 +447,12 @@ public final class MainActivity extends Activity {
         progress.setIndeterminate(false);
         progress.setMax(100);
         progress.setProgress(0);
-        statusLabel.setText("Checking stored USB after reconnect");
-        detailLabel.setText("Read-only full-image SHA-256 check. Do not unplug the USB.");
+        WriteService.phase="Checking stored USB after reconnect";
+        WriteService.detail="Read-only full-image SHA-256 check. Do not unplug the USB.";
+        WriteService.done=0;
+        WriteService.total=imageBytes;
+        statusLabel.setText(WriteService.phase);
+        detailLabel.setText(WriteService.detail);
         new Thread(()->{
             try(UsbBot bot=new UsbBot(usbManager,reviewed)) {
                 if(bot.capacityBytes()<((imageBytes+511L)/512L)*512L)
@@ -457,23 +461,31 @@ public final class MainActivity extends Activity {
                     (lba,buffer,offset,length)->bot.read(lba,buffer,offset,length),
                     bot.capacityBytes(),imageBytes,expectedHash,
                     (done,total)->runOnUiThread(()->{
+                        WriteService.done=done;
+                        WriteService.total=total;
                         progress.setProgress(total>0?(int)Math.min(100,done*100/total):0);
                         detailLabel.setText("Verifying after physical reconnect: "+formatBytes(done)+" of "+formatBytes(total));
                     })
                 );
                 runOnUiThread(()->{
-                    statusLabel.setText("Persistent USB verification passed");
+                    WriteService.phase="Persistent USB verification passed";
+                    WriteService.detail="The reconnected SanDisk contains the exact Kubuntu ISO. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual;
+                    WriteService.done=imageBytes;
+                    WriteService.total=imageBytes;
+                    statusLabel.setText(WriteService.phase);
                     statusLabel.setTextColor(MINT);
                     progress.setProgress(100);
-                    detailLabel.setText("The reconnected SanDisk contains the exact Kubuntu ISO. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual);
+                    detailLabel.setText(WriteService.detail);
                     toast("USB persistence verified. Do not format it.");
                 });
             } catch(Exception e) {
                 String reason=e.getMessage()==null?e.toString():e.getMessage();
                 runOnUiThread(()->{
-                    statusLabel.setText("Persistent USB verification failed");
+                    WriteService.phase="Persistent USB verification failed";
+                    WriteService.detail=reason+" Do not boot from this USB. The post-reconnect data does not match the ISO or the device could not be read.";
+                    statusLabel.setText(WriteService.phase);
                     statusLabel.setTextColor(AMBER);
-                    detailLabel.setText(reason+" Do not boot from this USB. The post-reconnect data does not match the ISO or the device could not be read.");
+                    detailLabel.setText(WriteService.detail);
                 });
             } finally {
                 runOnUiThread(()->{
