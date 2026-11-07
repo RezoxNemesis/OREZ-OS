@@ -31,11 +31,12 @@ def words(png):
     return out
 
 
-def find(png, phrase):
-    """Centre of the first OCR match of a 1-2 word phrase (letters-only compare)."""
+def find(png, phrase, region=None):
+    """Centre of the first OCR match of a 1-2 word phrase (letters-only compare),
+    optionally restricted to region=(x0, y0, x1, y1)."""
     norm = lambda t: re.sub('[^a-z]', '', t.lower())
     target = phrase.split()
-    ws = words(png)
+    ws = [w for w in words(png) if not region or (region[0] <= w[1] <= region[2] and region[1] <= w[2] <= region[3])]
     for i, (t, x, y) in enumerate(ws):
         if norm(t) == norm(target[0]):
             if len(target) == 1:
@@ -52,11 +53,15 @@ def click(vm, x, y, w=1280, h=800):
     vm.cmd('input-send-event', events=[{'type': 'btn', 'data': {'down': False, 'button': 'left'}}]); time.sleep(0.5)
 
 
-def click_text(vm, phrase, label, timeout=120):
+BUTTONS = (780, 655, 1200, 720)   # Calamares bottom button row (Back / Next|Install / Cancel)
+CONTENT = (330, 60, 1150, 650)    # page content, excluding the sidebar step list
+
+
+def click_text(vm, phrase, label, timeout=120, region=None):
     end = time.time() + timeout
     while time.time() < end:
         p, _ = vm.shot(label)
-        pos = find(p, phrase) if p else None
+        pos = find(p, phrase, region) if p else None
         if pos:
             vm.note(f'click {phrase!r} at {pos}'); click(vm, *pos); return True
         time.sleep(4)
@@ -95,29 +100,35 @@ def main(a):
         vm.keys('ret'); time.sleep(8)
         c['polkit_prompt'] = bool(vm.wait_text(['Authentication', 'Password'], 'polkit', 60))
         vm.type(pw + '\n')
-        c['installer_welcome'] = bool(vm.wait_text(['Welcome to the OREZ', 'OREZ OS installer', 'Welcome'], 'cal-welcome', 240))
-        for page in ['location', 'keyboard']:
-            click_text(vm, 'Next', 'cal-next-' + page, 60); time.sleep(4)
-        c['partition_page'] = bool(vm.wait_text(['Erase disk', 'storage device'], 'cal-partition', 120))
-        click_text(vm, 'Erase disk', 'cal-erase', 60); time.sleep(3); vm.shot('cal-erase-selected')
-        click_text(vm, 'Next', 'cal-next-partition', 60); time.sleep(4)
-        c['users_page'] = bool(vm.wait_text(['What is your name', 'log in'], 'cal-users', 120))
+        c['installer_welcome'] = bool(vm.wait_text(['Welcome to the OREZ', 'OREZ OS 0.1 installer'], 'cal-welcome', 240))
+        if not c['installer_welcome']: raise RuntimeError('installer did not open')
+        def page(words_, label, timeout=120):
+            return bool(vm.wait_text(words_, label, timeout))
+
+        def next_to(words_, label):
+            click_text(vm, 'Next', 'next-to-' + label, 60, BUTTONS); time.sleep(3)
+            return page(words_, label)
+
+        c['location_page'] = next_to(['Region', 'Zone', 'timezone'], 'cal-location')
+        c['keyboard_page'] = next_to(['Keyboard model', 'test your keyboard'], 'cal-keyboard')
+        c['partition_page'] = next_to(['Select storage device', 'Erase disk'], 'cal-partition')
+        click_text(vm, 'Erase disk', 'cal-erase', 60, CONTENT); time.sleep(3); vm.shot('cal-erase-selected')
+        c['users_page'] = next_to(['What is your name', 'name of this computer'], 'cal-users')
         p, _ = vm.shot('cal-users-fields')
-        lab = find(p, 'your name?') or find(p, 'your name')
-        if lab: click(vm, lab[0], lab[1] + 32)
+        lab = find(p, 'your name?', CONTENT) or find(p, 'your name', CONTENT)
+        if lab: click(vm, lab[0], lab[1] + 30)
         vm.type('Orez Owner'); time.sleep(1)
         vm.keys('tab'); vm.keys('ctrl', 'a'); vm.type('orez')
         vm.keys('tab'); vm.keys('ctrl', 'a'); vm.type('orez-pc')
         vm.keys('tab'); vm.type(pw); vm.keys('tab'); vm.type(pw); time.sleep(2)
         vm.shot('cal-users-filled')
-        click_text(vm, 'Next', 'cal-next-users', 60); time.sleep(4)
-        c['summary_page'] = bool(vm.wait_text(['Summary', 'Install'], 'cal-summary', 60))
-        click_text(vm, 'Install', 'cal-install', 60); time.sleep(4)
-        click_text(vm, 'Install now', 'cal-confirm', 60)
+        c['summary_page'] = next_to(['overview', 'install procedure'], 'cal-summary')
+        click_text(vm, 'Install', 'cal-install', 60, BUTTONS); time.sleep(4)
+        c['confirm_dialog'] = click_text(vm, 'Install now', 'cal-confirm', 60)
         r['stage'] = 'installing'
-        c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed', 'Error'], 'cal-progress', 3000, every=20))
+        c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2400, every=20))
         p, txt = vm.shot('cal-finished')
-        c['install_failed_message'] = any(k in txt.lower() for k in ['installation failed', 'error'])
+        c['install_failed_message'] = 'installationfailed' in re.sub('[^a-z]', '', txt.lower())
         (a.out / 'live-calamares-log.txt').write_text('')
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(4)
         vm.run_on_tty(pw, "sudo sh -c 'tail -300 /root/.cache/calamares/session.log /var/log/installer/debug.log 2>/dev/null > /dev/ttyS0'", '__x__', 20)
