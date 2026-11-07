@@ -31,6 +31,11 @@ public final class WriteService extends Service {
     public static volatile long done=0,total=0;
     public static volatile String monitorState="Disabled";
     public static volatile boolean checksumMatched=false;
+    public static volatile boolean persistentVerificationPassed=false;
+    public static volatile String persistentVerificationHash="";
+    public static volatile long verificationIsoBytes=0, verificationUsbBytes=0;
+    public static volatile int verificationUsbVid=0, verificationUsbPid=0;
+    public static volatile String verificationUsbProduct="";
     private volatile boolean monitorActive=false;
     private Thread monitorThread;
     private LiveMonitorClient monitorClient;
@@ -302,6 +307,8 @@ public final class WriteService extends Service {
             .put("done",done)
             .put("total",total)
             .put("checksumMatch",checksumMatched)
+            .put("persistentVerificationPassed",persistentVerificationPassed)
+            .put("persistentVerificationHash",persistentVerificationHash)
             .put("checksumSource",checksumMatched?"user-entered reference checksum":"");
     }
 
