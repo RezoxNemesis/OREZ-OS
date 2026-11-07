@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "builder": "ci-overlay",
+  "parent_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "system_layer_sha256": "9c849a78ed18a6eceba8d71149cef5599a3cdc01da3aa8afb7b30f5d97f097c1",
+  "live_owner_layer_sha256": "58c15aaa787d0b073385ca90cd5febdf5f85d784d3966d06136543bd0de34022",
+  "layers_low_to_high": [
+    "filesystem.squashfs",
+    "orez-apps.squashfs",
+    "zz-orez.squashfs"
+  ],
+  "source_commit": "10225b1a93a8a16ef39c195cc38614449de93f51",
+  "installer_enabled": true,
+  "installer_config_sha256": {
+    "etc/calamares/settings.conf": "c46986a1d84bea5bbe81b97ee25011a4d12f8871a456a14cd9b4e293aece14ae",
+    "etc/calamares/modules/users.conf": "406a21a1a1fbf1d83947a8c8abb6aaad20ff18a3422b212e9cfd4f26dae9af7f",
+    "etc/calamares/modules/partition.conf": "aa77e34f72481199fa8bc856aba918e665d8942f987bed4789da7ceb2e5d8083",
+    "etc/calamares/modules/packages.conf": "da843739db01c5a5d3077670e98e3ebc8739308c1a2061b0e39906fe029beba1",
+    "etc/calamares/modules/welcome.conf": "20e0f98f87b2d43e2893cd9011ce6315131fea4b9b9c8b2075d994441b7ce824",
+    "etc/calamares/modules/locale.conf": "8cb83b0506f6350c680dc465ae5688ae92beda1d3b7c35f9ccfdbd0e77e4eccf",
+    "etc/calamares/modules/displaymanager.conf": "182da574fe18b5c4f1b24fd49ffffed06c4b90ab72dc8b7033c9695c225ccab1"
+  },
+  "boot_tested": false,
+  "installation_approved": false,
+  "release_approved": false,
+  "output_sha256": "d1d016f4ace54f7e1e4f801043d46feb8987272419b82146e75334666aac833c",
+  "output_bytes": 5490999296,
+  "base_filesystem_unchanged": true
+}
