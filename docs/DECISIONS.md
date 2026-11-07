@@ -1,5 +1,34 @@
 # OREZ OS architecture decisions
 
+## 2026-11-07 — GitHub-hosted image builder, single system layer, NVIDIA policy, installer path
+
+- **Builder.** Full images build on GitHub-hosted `ubuntu-24.04` runners (observed:
+  86 GB free, `/dev/kvm` usable) via one-shot `build/image-*` branches
+  (`.github/workflows/orez-ci-image.yml`). No self-hosted runner or paid compute.
+  The runner re-verifies Ubuntu's signed `SHA256SUMS` (pinned CD key) before use.
+- **Layer.** `build/ci-build-layer.sh` installs packages through overlayfs above the
+  untouched signed `filesystem.squashfs`; only the upper directory (with overlay
+  whiteouts) becomes `/casper/orez-apps.squashfs`. The base SquashFS stays
+  byte-identical (checked by `ci-assemble.py`). Package versions float with the
+  archive at build time; this is *repeatable*, not *reproducible*.
+- **NVIDIA.** Only Canonical-signed prebuilt modules for the exact live kernel,
+  paired with the driver version Ubuntu shipped with them in the ISO pool. Any plan
+  that installs DKMS or another kernel flavour is rejected (it happened twice in
+  testing: DKMS 615 and an AWS kernel). If no pair exists, `orez-drivers` offers
+  `pkexec ubuntu-drivers install` after login. Secure Boot is never disabled.
+- **Look.** `org.orez.look` look-and-feel and `/etc/xdg/orez` placed first in
+  `XDG_CONFIG_DIRS`; Kubuntu's tested bottom-panel template is reused. User
+  settings in `~/.config` always win.
+- **Installer (opt-in until qualified).** `ci-assemble.py --enable-installer` stages
+  a polkit-authenticated launcher, OREZ Calamares branding and the reviewed
+  profile. `unpackfs` copies one read-only *merged* tree (base + system layer)
+  so overlay whiteouts are honoured; the live-only layer is never installed.
+  Default images keep the visible "installation disabled" guard until a disposable
+  VM installation, reboot and sign-in pass.
+- **Login defect.** The 5–6 Nov image's exit-64 session failure does not occur in
+  CI-built images (normal SDDM login verified in KVM runs). Its exact cause in the
+  old image was not identified; this is recorded, not claimed as a fix.
+
 ## 2026-11-06 — inactive offline installer preparation
 
 Pin the actual Calamares source and existing UEFI bootloader versions. Generate

@@ -1,5 +1,63 @@
 # OREZ OS — Verified Development Handoff
 
+## Latest verified checkpoint — 7 November 2026, CI image builder, normal login, OREZ look
+
+**Normal graphical login now works in CI-built images (KVM VM, default UEFI entry).**
+The installer is implemented as an opt-in build and is under VM qualification;
+default images still show the "installation disabled" guard. No physical-PC result.
+
+### What runs where
+
+- Branch with this work: `build/image-1` (login) and `build/image-install-1`
+  (installer test); both from the same source. PR to `main` not yet opened.
+- Workflow `.github/workflows/orez-ci-image.yml` on GitHub-hosted `ubuntu-24.04`
+  (86 GB free, KVM). Steps: signed Kubuntu fetch (`build/fetch-verified-base.sh`) →
+  `orez-shell` .deb → `build/ci-build-layer.sh` (overlay upper = `orez-apps.squashfs`)
+  → `build/ci-assemble.py` (base SquashFS byte-identical; owner initrd patch; live
+  layer) → `build/ci-vm-login.py` → optional `build/ci-vm-install.py`.
+- Evidence (every PNG frame, serial log, in-guest facts) is pushed to
+  `downloads/ci-<run id>` branches; the ISO is an Actions artifact (30 days).
+
+### Verified in run 42397850409 (KVM, diskless, offline, disposable password)
+
+- Owner enrollment prompt, hidden entry; OREZ SDDM greeter; graphical login.
+- Owner session on seat0/tty2 with `kwin_wayland`, `plasmashell`, `ksmserver`.
+- OREZ look: `/etc/xdg/orez` first in the session's `XDG_CONFIG_DIRS`, OREZ-Rest
+  wallpaper, Brave/OREZ apps pinned, Kubuntu web shortcuts removed.
+- Real logout via `org.kde.Shutdown.logout` ended the first session; second login
+  produced new KWin/Plasma processes (PIDs 1889/2023 → 2975/3095).
+- The 6 Nov exit-64 failure does not occur in CI images; its cause in the old image
+  was not identified (the SDDM chain replay `build/probe-login-chain.sh` passes).
+
+### Implemented this session (source + package audit + unit tests; GUI not VM-verified unless stated)
+
+- OREZ Appearance (`orez-appearance`): layout/colours/wallpaper/effects/performance
+  with real previews and a 20-second try-then-revert.
+- OREZ Drivers (`orez-drivers`): consented `pkexec ubuntu-drivers install`; autostart
+  offer only when an NVIDIA GPU runs without the nvidia driver.
+- `org.orez.look` look-and-feel, `/etc/xdg/orez` defaults, KDE Welcome suppressed.
+- NVIDIA in the image only as an ISO-pool, Canonical-signed, DKMS-free pair; none
+  qualified for kernel 7.0.0-30 in the current archive, so the live image relies on
+  OREZ Drivers after login. Physical RTX 3050 untested.
+- gamemode, power-profiles-daemon, systemd-zram-generator in the image.
+- Opt-in installer (`--enable-installer`): polkit launcher, OREZ Calamares branding,
+  merged base+system unpack source, reviewed profile hashes still enforced.
+
+### Test-harness corrections (recorded, not hidden)
+
+Two earlier "pass" verdicts were false and were corrected: a parser matched
+`plasmashell` inside a logged copy of its own command (run 42383687321), and a
+second-login check counted a surviving process (run 42388848696).
+
+### Exact next work
+
+1. Finish the VM installation test (`build/image-install-*`): erase the blank
+   virtual disk, install, reboot from disk, sign in, collect facts.
+2. Only after it passes, make the installer default and publish the ISO artifact
+   link with its SHA-256. Physical PC boot, NVIDIA, Wi-Fi/Bluetooth, Secure Boot
+   and dual-boot preservation remain owner tests on real hardware.
+3. Verify OREZ Appearance and OREZ Drivers in a VM session with screenshots.
+
 ## Latest verified checkpoint — 6 November 2026, builder gate and source validation
 
 **No approved installation download.** Normal graphical login still fails after successful authentication. A separate ordinary-owner console diagnostic rendered the real Plasma desktop and native Settings, but that is not a normal login pass. A live-only trace wrapper is committed to identify where the session command exits. No root cause or login fix is claimed.

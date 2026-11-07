@@ -105,8 +105,15 @@ def main(a):
         def page(words_, label, timeout=120):
             return bool(vm.wait_text(words_, label, timeout))
 
+        def press(name, label):
+            # Calamares' primary button (Next / Install) has a fixed position in this
+            # 960x640 window; use it when OCR misses the label. Pages are still
+            # confirmed by their own content afterwards.
+            if not click_text(vm, name, label, 20, BUTTONS):
+                vm.note(f'{label}: using fixed {name} button position'); click(vm, 1007, 688)
+
         def next_to(words_, label):
-            click_text(vm, 'Next', 'next-to-' + label, 60, BUTTONS); time.sleep(3)
+            press('Next', 'next-to-' + label); time.sleep(3)
             return page(words_, label)
 
         c['location_page'] = next_to(['Region', 'Zone', 'timezone'], 'cal-location')
@@ -123,7 +130,7 @@ def main(a):
         vm.keys('tab'); vm.type(pw); vm.keys('tab'); vm.type(pw); time.sleep(2)
         vm.shot('cal-users-filled')
         c['summary_page'] = next_to(['overview', 'install procedure'], 'cal-summary')
-        click_text(vm, 'Install', 'cal-install', 60, BUTTONS); time.sleep(4)
+        press('Install', 'cal-install'); time.sleep(4)
         c['confirm_dialog'] = click_text(vm, 'Install now', 'cal-confirm', 60)
         r['stage'] = 'installing'
         c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2400, every=20))
