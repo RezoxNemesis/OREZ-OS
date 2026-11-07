@@ -90,13 +90,15 @@ class VM:
         finally:
             q.unlink(missing_ok=True)
 
-    def wait_text(self, words, label, timeout, every=5):
+    def wait_text(self, words, label, timeout, every=5, keepalive=False):
         """OCR is noisy: compare letters only and retry a second page mode."""
         norm = lambda t: re.sub('[^a-z]', '', t.lower())
         wanted = [(w, norm(w)) for w in words]
         end = time.time() + timeout
         while time.time() < end:
             if self.proc.poll() is not None: raise RuntimeError('guest stopped')
+            if keepalive:
+                self.keys('shift'); time.sleep(1)  # keep the idle display from switching off
             p, txt = self.shot(label)
             for attempt in (txt, self.ocr(p, '6') if p else '', self.ocr_inverted(p) if p else ''):
                 low = norm(attempt)

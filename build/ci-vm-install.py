@@ -140,7 +140,7 @@ def main(a):
             click(vm, 741, 418)  # only a disposable virtual disk exists in this VM
             c['confirm_dialog'] = seen
         r['stage'] = 'installing'
-        c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2400, every=20))
+        c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2700, every=20, keepalive=True))
         p, txt = vm.shot('cal-finished')
         c['install_failed_message'] = 'installationfailed' in re.sub('[^a-z]', '', txt.lower())
         (a.out / 'live-calamares-log.txt').write_text('')
@@ -155,7 +155,7 @@ def main(a):
         (a.out / 'installed').mkdir(exist_ok=True)
         vm2 = VM(None, a.out / 'installed', 6144, 4, disk=disk, vars_file=vars_file, serial_name='serial-installed.log')
         try:
-            c['installed_login_screen'] = bool(vm2.wait_text(['Orez Owner', 'Password', 'orez'], 'installed-greeter', 600))
+            c['installed_login_screen'] = bool(vm2.wait_text(['Orez Owner', 'Password', 'orez'], 'installed-greeter', 600, keepalive=True))
             vm2.type(pw + '\n'); time.sleep(90); vm2.shot('installed-desktop')
             vm2.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm2.type('orez\n'); time.sleep(2); vm2.type(pw + '\n'); time.sleep(5)
             blk = facts(vm2, pw, 'I')
