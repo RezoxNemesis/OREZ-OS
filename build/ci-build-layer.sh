@@ -81,26 +81,37 @@ mapfile -t PROFILE < <(python3 -c "import json;print('\n'.join(json.load(open('$
 FEATURES=(gamemode power-profiles-daemon systemd-zram-generator ubuntu-drivers-common)
 
 # NVIDIA: Canonical-built, Canonical-signed kernel modules for the exact live
-# kernel (works with Secure Boot; no DKMS, no .run installer). Prefer the open
-# kernel modules NVIDIA recommends for Turing/Ampere (RTX 3050 is Ampere).
-NV=$(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modules-nvidia-[0-9]+(-open)?-${KVER//./\\.}\$" | awk '{print $1}' \
-     | sed -E "s/^linux-modules-nvidia-([0-9]+)(-open)?-.*/\1 \2/" | sort -k1,1n -k2,2r | awk '{print $1 $2}' \
-     | grep -v server | tail -1 || true)
-NVPKGS=()
-if [[ -n $NV ]]; then
-  MODPKG="linux-modules-nvidia-${NV}-${KVER}"
-  C apt-cache "${APTOPT[@]}" show "$MODPKG" | grep -E '^(Package|Version|Depends|Provides):' | tee -a "$OUT/layer-build.log"
-  # The signed module package pins the exact userspace driver version it was built
-  # for (via nvidia-kernel-common-N). Install that exact driver and refuse DKMS.
-  KCV=$(C apt-cache "${APTOPT[@]}" show "$MODPKG" | grep -m1 '^Depends:' | tr ',' '\n' \
-        | grep -oE "nvidia-kernel-common-${NV} \((=|>=|<=) [^)]+\)" | head -1 | sed -E 's/.*\((=|>=|<=) ([^)]+)\)/\2/')
-  [[ -n $KCV ]] || { echo "Cannot determine driver version bound to $MODPKG" >&2; exit 1; }
-  NVPKGS=("$MODPKG" "nvidia-driver-${NV}=${KCV}" "nvidia-kernel-common-${NV}=${KCV}" "nvidia-dkms-${NV}-")
-  echo "NVIDIA driver selected: ${NV} (${KCV}) with Canonical-signed modules for ${KVER}" | tee -a "$OUT/layer-build.log"
-  C apt-cache "${APTOPT[@]}" show "nvidia-driver-${NV}=${KCV}" | grep -E '^(Version|Depends|Recommends):' | tee -a "$OUT/layer-build.log" || true
-else
-  echo 'WARNING: no signed NVIDIA modules for this kernel in the archive' | tee -a "$OUT/layer-build.log"
+# kernel (works with Secure Boot; no DKMS, no .run installer).
+# The archive moves driver series forward faster than an ISO's kernel, so also
+# offer the ISO's own package pool (covered by the signed SHA256SUMS check of
+# the whole ISO). apt must find a complete, DKMS-free set before we use it.
+mkdir -p "$R/tmp/iso"; mount --bind "$W/iso" "$R/tmp/iso"; mounts+=("$R/tmp/iso")
+ls "$W/iso/pool" 2>/dev/null | tee -a "$OUT/layer-build.log"
+find "$W/iso/pool" -name '*nvidia*' -printf '%f\n' 2>/dev/null | sort | tee "$OUT/iso-pool-nvidia.txt" | head -40
+SUITE=$(sed -n 's/^Suite: //p' "$W/iso/dists/"*/Release 2>/dev/null | head -1)
+COMPS=$(sed -n 's/^Components: //p' "$W/iso/dists/"*/Release 2>/dev/null | head -1)
+if [[ -n $SUITE && -n $COMPS ]]; then
+  # trusted=yes is justified only because the entire ISO, including this pool,
+  # was verified against Ubuntu's signed SHA256SUMS before this script ran.
+  printf 'Types: deb\nURIs: file:/tmp/iso\nSuites: %s\nComponents: %s\nTrusted: yes\n' "$SUITE" "$COMPS" > "$R/tmp/apt-parts/iso-pool.sources"
+  C apt-get "${APTOPT[@]}" update 2>&1 | tail -3 | tee -a "$OUT/layer-build.log"
 fi
+NVPKGS=()
+mapfile -t CANDS < <(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modules-nvidia-[0-9]+(-open)?-${KVER//./\\.}\$" \
+  | awk '{print $1}' | sed -E "s/^linux-modules-nvidia-(.*)-${KVER//./\\.}\$/\1/" | grep -v server | sort -t- -k1,1nr)
+echo "Signed module series for ${KVER}: ${CANDS[*]:-none}" | tee -a "$OUT/layer-build.log"
+for NV in "${CANDS[@]}"; do
+  try=("linux-modules-nvidia-${NV}-${KVER}" "nvidia-driver-${NV}")
+  if C apt-get "${APTOPT[@]}" -s install --no-install-recommends "${try[@]}" > "$OUT/nvidia-sim-${NV}.txt" 2>&1 \
+     && ! grep -q '^Inst nvidia-dkms' "$OUT/nvidia-sim-${NV}.txt"; then
+    NVPKGS=("${try[@]}")
+    echo "NVIDIA driver selected: ${NV} with Canonical-signed modules for ${KVER}" | tee -a "$OUT/layer-build.log"
+    grep -E '^Inst (nvidia-driver|linux-modules-nvidia|nvidia-kernel-common|libnvidia-gl)' "$OUT/nvidia-sim-${NV}.txt" | tee -a "$OUT/layer-build.log"
+    break
+  fi
+  echo "series ${NV}: no DKMS-free set ($(grep -m1 -E '^E:|unmet|not available' "$OUT/nvidia-sim-${NV}.txt"))" | tee -a "$OUT/layer-build.log"
+done
+[[ ${#NVPKGS[@]} -gt 0 ]] || echo 'WARNING: no DKMS-free signed NVIDIA set for the live kernel; first-boot driver setup will install it' | tee -a "$OUT/layer-build.log"
 
 cp "$DEB" "$R/tmp/orez-shell.deb"
 set +e
