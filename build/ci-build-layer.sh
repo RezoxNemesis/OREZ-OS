@@ -97,24 +97,29 @@ if [[ -n $SUITE && -n $COMPS ]]; then
   C apt-get "${APTOPT[@]}" update 2>&1 | tail -3 | tee -a "$OUT/layer-build.log"
 fi
 NVPKGS=()
-mapfile -t CANDS < <(C apt-cache "${APTOPT[@]}" search --names-only "^linux-modules-nvidia-[0-9]+(-open)?-${KVER//./\\.}\$" \
-  | awk '{print $1}' | sed -E "s/^linux-modules-nvidia-(.*)-${KVER//./\\.}\$/\1/" | grep -v server | sort -t- -k1,1nr)
-echo "Signed module series for ${KVER}: ${CANDS[*]:-none}" | tee -a "$OUT/layer-build.log"
-for NV in "${CANDS[@]}"; do
-  try=("linux-modules-nvidia-${NV}-${KVER}" "nvidia-driver-${NV}")
-  # Where the driver offers DKMS as an alternative, explicitly exclude it so apt
-  # must use the prebuilt signed modules (exclusion needs the package to exist).
+# Use only module/driver pairs that Ubuntu shipped together in this ISO's pool:
+# exact versions, Canonical-signed modules for the live kernel, no DKMS, and no
+# extra kernel flavours (a plan that installs any other linux-image/modules is rejected).
+while read -r moddeb; do
+  f=$(basename "$moddeb"); NV=$(sed -E "s/^linux-modules-nvidia-(.+)-${KVER//./\\.}_.*/\1/" <<<"$f")
+  modver=$(sed -E 's/^[^_]+_([^_]+)_.*/\1/; s/%3a/:/g' <<<"$f")
+  drvdeb=$(find "$W/iso/pool" -name "nvidia-driver-${NV}_*_amd64.deb" | head -1)
+  [[ -n $drvdeb ]] || { echo "series ${NV}: no matching driver in ISO pool" | tee -a "$OUT/layer-build.log"; continue; }
+  drvver=$(basename "$drvdeb" | sed -E 's/^[^_]+_([^_]+)_.*/\1/; s/%3a/:/g')
+  try=("linux-modules-nvidia-${NV}-${KVER}=${modver}" "nvidia-driver-${NV}=${drvver}")
   if C apt-cache "${APTOPT[@]}" show "nvidia-dkms-${NV}" >/dev/null 2>&1; then try+=("nvidia-dkms-${NV}-"); fi
-  if C apt-get "${APTOPT[@]}" -s install --no-install-recommends "${try[@]}" > "$OUT/nvidia-sim-${NV}.txt" 2>&1 \
-     && ! grep -q '^Inst nvidia-dkms' "$OUT/nvidia-sim-${NV}.txt"; then
+  sim="$OUT/nvidia-sim-${NV}.txt"
+  if C apt-get "${APTOPT[@]}" -s install --no-install-recommends "${try[@]}" > "$sim" 2>&1 \
+     && ! grep -q '^Inst nvidia-dkms' "$sim" && ! grep -q '^Inst linux-image' "$sim" \
+     && ! grep -E '^Inst linux-(modules|objects|signatures)' "$sim" | grep -qv -- "-${KVER} "; then
     NVPKGS=("${try[@]}")
-    echo "NVIDIA driver selected: ${NV} with Canonical-signed modules for ${KVER}" | tee -a "$OUT/layer-build.log"
-    grep -E '^Inst (nvidia-driver|linux-modules-nvidia|nvidia-kernel-common|libnvidia-gl)' "$OUT/nvidia-sim-${NV}.txt" | tee -a "$OUT/layer-build.log"
+    echo "NVIDIA driver selected: ${NV} ${drvver} with Canonical-signed modules ${modver} for ${KVER}" | tee -a "$OUT/layer-build.log"
+    grep -E '^Inst (nvidia-driver|linux-modules-nvidia|nvidia-kernel-common|libnvidia-gl)' "$sim" | tee -a "$OUT/layer-build.log"
     break
   fi
-  echo "series ${NV}: no DKMS-free set:" | tee -a "$OUT/layer-build.log"
-  grep -E '^E:|^ .*Depends|^Inst nvidia-(dkms|driver|kernel)|^Inst linux-modules' "$OUT/nvidia-sim-${NV}.txt" | head -8 | tee -a "$OUT/layer-build.log"
-done
+  echo "series ${NV}: rejected plan:" | tee -a "$OUT/layer-build.log"
+  grep -E '^E:|^Inst (nvidia-dkms|linux-image|linux-modules|nvidia-driver)' "$sim" | head -8 | tee -a "$OUT/layer-build.log"
+done < <(find "$W/iso/pool" -name "linux-modules-nvidia-*-${KVER}_*_amd64.deb" | sort -r)
 [[ ${#NVPKGS[@]} -gt 0 ]] || echo 'WARNING: no DKMS-free signed NVIDIA set for the live kernel; first-boot driver setup will install it' | tee -a "$OUT/layer-build.log"
 
 cp "$DEB" "$R/tmp/orez-shell.deb"
@@ -123,7 +128,7 @@ C apt-get "${APTOPT[@]}" install -y --no-install-recommends "${PROFILE[@]}" "${F
 rc=${PIPESTATUS[0]}
 set -e
 [[ $rc -eq 0 ]] || { echo "apt-get install failed ($rc)"; tail -80 "$OUT/apt-install.log"; exit 1; }
-if grep -q 'nvidia-dkms\|Building initial module' "$OUT/apt-install.log"; then
+if grep -qE '^(Setting up|Unpacking) (nvidia-dkms|linux-image)|Building initial module' "$OUT/apt-install.log"; then
   echo 'DKMS path detected; expected prebuilt signed modules only' >&2; exit 1
 fi
 
