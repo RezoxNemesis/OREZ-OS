@@ -131,7 +131,13 @@ def main(a):
         vm.shot('cal-users-filled')
         c['summary_page'] = next_to(['overview', 'install procedure'], 'cal-summary')
         press('Install', 'cal-install'); time.sleep(4)
-        c['confirm_dialog'] = click_text(vm, 'Install now', 'cal-confirm', 60)
+        c['confirm_dialog'] = click_text(vm, 'Install Now', 'cal-confirm', 30)
+        if not c['confirm_dialog']:
+            # "Continue with Installation?" dialog: Install Now is at a fixed spot when centred.
+            p, txt = vm.shot('cal-confirm-check')
+            if 'continuewithinstallation' in re.sub('[^a-z]', '', txt.lower()) or 'undo these changes' in txt.lower():
+                vm.note('cal-confirm: using fixed Install Now position'); click(vm, 741, 418)
+                c['confirm_dialog'] = True
         r['stage'] = 'installing'
         c['install_finished'] = bool(vm.wait_text(['All done', 'has been installed', 'Installation Failed'], 'cal-progress', 2400, every=20))
         p, txt = vm.shot('cal-finished')
