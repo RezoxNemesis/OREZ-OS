@@ -1,0 +1,1162 @@
+[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01HBdsDxe: loading Boot0001 "UEFI QEMU DVD-ROM QM00013 " from PciRoot(0x0)/Pci(0x1,0x0)/Sata(0x0,0xFFFF,0x0)
+BdsDxe: starting Boot0001 "UEFI QEMU DVD-ROM QM00013 " from PciRoot(0x0)/Pci(0x1,0x0)/Sata(0x0,0xFFFF,0x0)
+error: can't find command `grub_platform'.
+[0m[30m[40m[2J[01;01H[0m[37m[40m[02;40HGNU GRUB  version 2.14
+
+[1m[37m[40m[04;02H┌────────────────────────────────────────────────────────────────────────────────────────────────┐[05;02H││[06;02H││[07;02H││[08;02H││[09;02H││[10;02H││[11;02H││[12;02H││[13;02H││[14;02H││[15;02H││[16;02H││[17;02H││[18;02H││[19;02H││[20;02H││[21;02H││[22;02H││[23;02H││[24;02H└────────────────────────────────────────────────────────────────────────────────────────────────┘[25;02H[26;02H[0m[37m[40m     Use the ▲ and ▼ keys to select which entry is highlighted.                              
+      Press enter to boot the selected OS, `e' to edit the commands before booting or `c' for 
+      a command-line.                                                                          [0m[30m[47m[05;03H*Try OREZ OS (installation unavailable)                                                         [1m[37m[40m[0m[37m[40m[1m[37m[40m[06;03H OREZ OS (safe graphics)                                                                        [0m[37m[40m[1m[37m[40m[07;03H Boot from next volume                                                                          [0m[37m[40m[1m[37m[40m[08;03H UEFI Firmware Settings                                                                         [0m[37m[40m[1m[37m[40m[09;03H                                                                                                [0m[37m[40m[1m[37m[40m[10;03H                                                                                                [0m[37m[40m[1m[37m[40m[11;03H                                                                                                [0m[37m[40m[1m[37m[40m[12;03H                                                                                                [0m[37m[40m[1m[37m[40m[13;03H                                                                                                [0m[37m[40m[1m[37m[40m[14;03H                                                                                                [0m[37m[40m[1m[37m[40m[15;03H                                                                                                [0m[37m[40m[1m[37m[40m[16;03H                                                                                                [0m[37m[40m[1m[37m[40m[17;03H                                                                                                [0m[37m[40m[1m[37m[40m[18;03H                                                                                                [0m[37m[40m[1m[37m[40m[19;03H                                                                                                [0m[37m[40m[1m[37m[40m[20;03H                                                                                                [0m[37m[40m[1m[37m[40m[21;03H                                                                                                [0m[37m[40m[1m[37m[40m[22;03H                                                                                                [0m[37m[40m[1m[37m[40m[23;03H                                                                                                [0m[37m[40m [29;01H   The highlighted entry will be executed automatically in 30s.                                    [29;01H   The highlighted entry will be executed automatically in 29s.                                    [29;01H   The highlighted entry will be executed automatically in 28s.                                    [29;01H   The highlighted entry will be executed automatically in 27s.                                    [29;01H   The highlighted entry will be executed automatically in 26s.                                    [29;01H   The highlighted entry will be executed automatically in 25s.                                    [29;01H   The highlighted entry will be executed automatically in 24s.                                    [29;01H   The highlighted entry will be executed automatically in 23s.                                    [29;01H   The highlighted entry will be executed automatically in 22s.                                    [29;01H   The highlighted entry will be executed automatically in 21s.                                    [29;01H   The highlighted entry will be executed automatically in 20s.                                    [29;01H   The highlighted entry will be executed automatically in 19s.                                    [29;01H   The highlighted entry will be executed automatically in 18s.                                    [29;01H   The highlighted entry will be executed automatically in 17s.                                    [29;01H   The highlighted entry will be executed automatically in 16s.                                    [29;01H   The highlighted entry will be executed automatically in 15s.                                    [29;01H   The highlighted entry will be executed automatically in 14s.                                    [29;01H   The highlighted entry will be executed automatically in 13s.                                    [29;01H   The highlighted entry will be executed automatically in 12s.                                    [29;01H   The highlighted entry will be executed automatically in 11s.                                    [29;01H   The highlighted entry will be executed automatically in 10s.                                    [29;01H   The highlighted entry will be executed automatically in 9s.                                     [29;01H   The highlighted entry will be executed automatically in 8s.                                     [29;01H   The highlighted entry will be executed automatically in 7s.                                     [29;01H   The highlighted entry will be executed automatically in 6s.                                     [29;01H   The highlighted entry will be executed automatically in 5s.                                     [29;01H   The highlighted entry will be executed automatically in 4s.                                     [29;01H   The highlighted entry will be executed automatically in 3s.                                     [29;01H   The highlighted entry will be executed automatically in 2s.                                     [29;01H   The highlighted entry will be executed automatically in 1s.                                     [29;01H   The highlighted entry will be executed automatically in 0s.                                     [0m[30m[40m[2J[01;01H[0m[37m[40m==OREZ-BEGIN==
+4 1000 orez seat0 1720 user    tty2 no [0;38:5:245m-[0m[m
+5 1000 orez [0;38:5:245m-    [0m 1726 manager [0;38:5:245m-   [0m no [0;38:5:245m-[0m[m
+6 1000 orez seat0 2513 user    tty3 no [0;38:5:245m-[0m[m
+[K==OREZ-PROCS==
+root                       1 systemd
+root                       2 kthreadd
+root                       3 pool_workqueue_release
+root                       4 kworker/R-rcu_gp
+root                       5 kworker/R-sync_wq
+root                       6 kworker/R-kvfree_rcu_reclaim
+root                       7 kworker/R-slub_flushwq
+root                       8 kworker/R-netns
+root                       9 kworker/0:0-events
+root                      10 kworker/0:0H-kblockd
+root                      11 kworker/0:1-events
+root                      12 kworker/u16:0-events_power_efficient
+root                      13 kworker/R-mm_percpu_wq
+root                      14 ksoftirqd/0
+root                      15 rcu_preempt
+root                      16 rcu_exp_par_gp_kthread_worker/0
+root                      17 rcu_exp_gp_kthread_worker
+root                      18 migration/0
+root                      19 kprobe-optimizer
+root                      20 idle_inject/0
+root                      21 cpuhp/0
+root                      22 cpuhp/1
+root                      23 idle_inject/1
+root                      24 migration/1
+root                      25 ksoftirqd/1
+root                      26 kworker/1:0-events
+root                      27 kworker/1:0H-kblockd
+root                      28 cpuhp/2
+root                      29 idle_inject/2
+root                      30 migration/2
+root                      31 ksoftirqd/2
+root                      32 kworker/2:0-cgroup_free
+root                      33 kworker/2:0H-kblockd
+root                      34 cpuhp/3
+root                      35 idle_inject/3
+root                      36 migration/3
+root                      37 ksoftirqd/3
+root                      38 kworker/3:0-events
+root                      39 kworker/3:0H-kblockd
+root                      40 kdevtmpfs
+root                      41 kworker/R-inet_frag_wq
+root                      42 rcu_tasks_kthread
+root                      43 rcu_tasks_rude_kthread
+root                      44 kauditd
+root                      45 khungtaskd
+root                      46 oom_reaper
+root                      47 kworker/u16:1-async
+root                      48 kworker/u16:2-loop0
+root                      49 kworker/R-writeback
+root                      50 kworker/3:1-events
+root                      51 kcompactd0
+root                      52 ksmd
+root                      53 khugepaged
+root                      54 kworker/R-kblockd
+root                      55 kworker/R-blkcg_punt_bio
+root                      56 kworker/R-kintegrityd
+root                      57 irq/9-acpi
+root                      58 kworker/1:1-events
+root                      59 kworker/2:1-mm_percpu_wq
+root                      60 kworker/R-tpm_dev_wq
+root                      61 kworker/R-ata_sff
+root                      62 kworker/R-md_bitmap
+root                      63 kworker/R-md_llbitmap_io
+root                      64 kworker/R-md_llbitmap_unplug
+root                      65 kworker/R-edac-poller
+root                      66 kworker/R-devfreq_wq
+root                      67 watchdogd
+root                      68 kworker/R-quota_events_unbound
+root                      69 kswapd0
+root                      70 ecryptfs-kthread
+root                      71 kworker/R-kthrotld
+root                      72 kworker/R-acpi_thermal_pm
+root                      73 kworker/u16:3-loop0
+root                      74 kworker/u16:4-loop0
+root                      75 kworker/u16:5-loop0
+root                      76 kworker/R-mld
+root                      77 kworker/R-ipv6_addrconf
+root                      78 kworker/R-kstrp
+root                      80 kworker/u17:0
+root                      91 kworker/R-charger_manager
+root                      92 kworker/0:2-events
+root                     146 kworker/3:2-events
+root                     147 kworker/0:3
+root                     148 kworker/2:2-cgroup_free
+root                     149 scsi_eh_0
+root                     150 kworker/R-scsi_tmf_0
+root                     151 scsi_eh_1
+root                     152 kworker/R-scsi_tmf_1
+root                     153 scsi_eh_2
+root                     154 kworker/R-scsi_tmf_2
+root                     155 card1-crtc0
+root                     156 scsi_eh_3
+root                     157 kworker/R-scsi_tmf_3
+root                     158 scsi_eh_4
+root                     159 kworker/R-scsi_tmf_4
+root                     160 scsi_eh_5
+root                     161 kworker/R-scsi_tmf_5
+root                     162 kworker/u16:6-events_unbound
+root                     163 kworker/u16:7-events_power_efficient
+root                     164 scsi_eh_6
+root                     165 kworker/R-scsi_tmf_6
+root                     166 scsi_eh_7
+root                     167 kworker/R-scsi_tmf_7
+root                     168 scsi_eh_8
+root                     169 kworker/R-scsi_tmf_8
+root                     170 scsi_eh_9
+root                     171 kworker/R-scsi_tmf_9
+root                     172 scsi_eh_10
+root                     173 kworker/R-scsi_tmf_10
+root                     174 scsi_eh_11
+root                     175 kworker/R-scsi_tmf_11
+root                     176 kworker/u16:8-loop0
+root                     177 kworker/u16:9-events_unbound
+root                     178 kworker/u16:10-events_unbound
+root                     179 kworker/u16:11-loop0
+root                     180 kworker/u16:12-pm
+root                     181 kworker/u16:13-events_unbound
+root                     182 kworker/u16:14-events_freezable_pwr_efficient
+root                     183 kworker/1:1H-kblockd
+root                     184 kworker/1:2-mm_percpu_wq
+root                     301 kworker/0:1H-kblockd
+root                     303 kworker/2:1H-kblockd
+root                     320 kworker/3:1H-kblockd
+root                     779 systemd-journal
+root                     793 kworker/2:3-events
+root                     819 kworker/1:3-events
+root                     824 kworker/2:4
+systemd-resolve          833 systemd-resolve
+root                     836 systemd-udevd
+root                     838 psimon
+root                     998 accounts-daemon
+avahi                   1001 avahi-daemon
+root                    1002 chronyd-starter
+root                    1003 cron
+messagebus              1004 dbus-daemon
+root                    1012 networkd-dispat
+polkitd                 1019 polkitd
+root                    1025 snapd
+root                    1027 switcheroo-cont
+root                    1032 systemd-logind
+root                    1033 udisksd
+avahi                   1035 avahi-daemon
+_chrony                 1094 chronyd
+syslog                  1096 rsyslogd
+_chrony                 1098 chronyd
+root                    1123 NetworkManager
+root                    1124 wpa_supplicant
+root                    1156 ModemManager
+root                    1179 cupsd
+root                    1182 unattended-upgr
+cups-browsed            1270 cups-browsed
+root                    1495 psimon
+root                    1560 power-profiles-
+root                    1585 sddm
+rtkit                   1637 rtkit-daemon
+root                    1720 sddm-helper
+orez                    1726 systemd
+orez                    1728 (sd-pam)
+orez                    1752 dbus-daemon
+orez                    1753 pipewire
+orez                    1757 mpris-proxy
+orez                    1758 wireplumber
+orez                    1760 pipewire
+orez                    1761 pipewire-pulse
+orez                    1765 ksecretd
+orez                    1767 sh
+root                    1794 kworker/1:2H
+orez                    1866 startplasma-way
+orez                    1885 kwin_wayland_wr
+orez                    1886 ssh-agent
+orez                    1893 kwin_wayland
+orez                    1930 Xwayland
+orez                    1966 at-spi-bus-laun
+orez                    1979 dbus-daemon
+orez                    1988 ksmserver
+orez                    1990 kded6
+orez                    2028 plasmashell
+orez                    2030 at-spi2-registr
+orez                    2050 kactivitymanage
+orez                    2054 drkonqi-coredum
+orez                    2055 gmenudbusmenupr
+orez                    2056 kaccess
+orez                    2058 polkit-kde-auth
+orez                    2059 org_kde_powerde
+orez                    2067 xembedsniproxy
+root                    2082 upowerd
+orez                    2104 dconf-service
+orez                    2180 kdeconnectd
+orez                    2185 kunifiedpush-di
+orez                    2187 xdg-desktop-por
+orez                    2199 agent
+orez                    2238 xdg-permission-
+orez                    2256 xdg-document-po
+root                    2266 fusermount3
+orez                    2270 xdg-desktop-por
+orez                    2314 xdg-desktop-por
+orez                    2392 kioworker
+orez                    2421 xsettingsd
+orez                    2422 obexd
+root                    2511 kworker/3:3
+root                    2513 login
+orez                    2568 bash
+root                    2661 packagekitd
+root                    2682 sudo
+root                    2685 sudo
+root                    2686 sh
+root                    2689 ps
+==OREZ-LOOK==
+XDG_CONFIG_DIRS=/home/orez/.config/kdedefaults:/etc/xdg/orez:/etc/xdg
+Image=file:///usr/share/wallpapers/OREZ-Rest/
+kubuntu-calamares.desktop
+==OREZ-TRACE==
+Nov 07 20:30:25.154960 orez orez-session-trace[1864]: [0;1;39m[0;1;31m[0;1;39mwrapper_started uid=1000 home=/home/orez runtime_dir=/run/user/1000 dbus_address_set=yes wayland_display=unset display=unset session_type=wayland current_desktop=KDE lang=C.UTF-8[0m
+Nov 07 20:30:25.156601 orez orez-session-trace[1865]: [0;1;39m[0;1;31m[0;1;39mstarting plasma-dbus-run-session-if-needed -> startplasma-wayland[0m
+==OREZ-SDDM==
+Nov 07 20:30:06.096853 orez systemd[1]: Starting sddm.service - Simple Desktop Display Manager...
+Nov 07 20:30:06.115415 orez systemd[1]: Started sddm.service - Simple Desktop Display Manager.
+Nov 07 20:30:06.238052 orez sddm[1585]: Initializing...
+Nov 07 20:30:06.242231 orez sddm[1585]: Starting...
+Nov 07 20:30:06.242495 orez sddm[1585]: Logind interface found
+Nov 07 20:30:06.243677 orez sddm[1585]: Adding new display...
+Nov 07 20:30:06.243898 orez sddm[1585]: Loaded empty theme configuration
+Nov 07 20:30:06.244909 orez sddm[1585]: Using VT 1
+Nov 07 20:30:06.244931 orez sddm[1585]: Display server started.
+Nov 07 20:30:06.244990 orez sddm[1585]: Socket server starting...
+Nov 07 20:30:06.245093 orez sddm[1585]: Socket server started.
+Nov 07 20:30:06.246159 orez sddm[1585]: Loading theme configuration from "/usr/share/sddm/themes/orez/theme.conf"
+Nov 07 20:30:06.247448 orez sddm[1585]: Greeter starting...
+Nov 07 20:30:06.274545 orez sddm-helper[1587]: [PAM] Starting...
+Nov 07 20:30:06.274567 orez sddm-helper[1587]: [PAM] Authenticating...
+Nov 07 20:30:06.274635 orez sddm-helper[1587]: [PAM] returning.
+Nov 07 20:30:06.279463 orez sddm-helper[1587]: pam_unix(sddm-greeter:session): session opened for user sddm(uid=107) by sddm(uid=0)
+Nov 07 20:30:06.533874 orez sddm[1585]: Greeter session started successfully
+Nov 07 20:30:13.480382 orez sddm[1585]: Message received from greeter: Connect
+Nov 07 20:30:24.276914 orez sddm[1585]: Message received from greeter: Login
+Nov 07 20:30:24.276934 orez sddm[1585]: Reading from "/usr/share/orez/wayland-sessions/orez.desktop"
+Nov 07 20:30:24.279738 orez sddm[1585]: Session "/usr/share/orez/wayland-sessions/orez.desktop" selected, command: "/bin/sh /usr/lib/orez/orez-session-trace" for VT 2
+Nov 07 20:30:24.504288 orez sddm-helper[1720]: [PAM] Starting...
+Nov 07 20:30:24.504310 orez sddm-helper[1720]: [PAM] Authenticating...
+Nov 07 20:30:24.543914 orez sddm-helper[1720]: [PAM] Preparing to converse...
+Nov 07 20:30:24.543937 orez sddm-helper[1720]: [PAM] Conversation with 1 messages
+Nov 07 20:30:24.579914 orez sddm-helper[1720]: pam_kwallet5(sddm:auth): pam_kwallet5: pam_sm_authenticate
+Nov 07 20:30:24.580019 orez sddm-helper[1720]: [PAM] returning.
+Nov 07 20:30:24.582203 orez sddm[1585]: Authentication for user  "orez"  successful
+Nov 07 20:30:24.582941 orez sddm-helper[1720]: pam_kwallet5(sddm:setcred): pam_kwallet5: pam_sm_setcred
+Nov 07 20:30:24.587360 orez sddm-helper[1720]: pam_unix(sddm:session): session opened for user orez(uid=1000) by orez(uid=0)
+Nov 07 20:30:24.835972 orez sddm-helper[1720]: pam_kwallet5(sddm:session): pam_kwallet5: pam_sm_open_session
+Nov 07 20:30:24.879971 orez sddm-helper[1720]: Starting Wayland user session: "/etc/sddm/wayland-session" "/bin/sh /usr/lib/orez/orez-session-trace"
+Nov 07 20:30:24.887659 orez sddm[1585]: Auth: sddm-helper exited successfully
+Nov 07 20:30:24.887676 orez sddm[1585]: Greeter stopped. SDDM::Auth::HELPER_SUCCESS
+Nov 07 20:30:24.921598 orez sddm[1585]: Session started true
+Nov 07 20:30:24.921809 orez sddm-helper[1720]: Failed to write utmpx:  No such file or directory
+==OREZ-SESSIONLOG==
+QIODevice::readLineInto (QFile, "/home/orez/.config/kdedefaults/package"): device not open
+/usr/bin/xrdb: Can't open display ''
+xcb_connect() failed
+QPixmap: QGuiApplication must be created before calling defaultDepth().
+QPixmap: QGuiApplication must be created before calling defaultDepth().
+==OREZ-USERJOURNAL==
+Nov 07 20:30:24.780111 orez systemd[1726]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+Nov 07 20:30:24.780175 orez systemd[1726]: Listening on speech-dispatcher.socket - Speech Dispatcher Socket.
+Nov 07 20:30:24.786638 orez systemd[1726]: Starting ssh-agent.socket - OpenSSH Agent socket...
+Nov 07 20:30:24.787729 orez systemd[1726]: Listening on systemd-ask-password.socket - Query the User Interactively for a Password.
+Nov 07 20:30:24.792118 orez systemd[1726]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Nov 07 20:30:24.792798 orez systemd[1726]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+Nov 07 20:30:24.807757 orez systemd[1726]: Listening on ssh-agent.socket - OpenSSH Agent socket.
+Nov 07 20:30:24.825537 orez systemd[1726]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Nov 07 20:30:24.825685 orez systemd[1726]: Reached target sockets.target - Sockets.
+Nov 07 20:30:24.825745 orez systemd[1726]: Reached target basic.target - Basic System.
+Nov 07 20:30:24.826591 orez systemd[1726]: Starting dbus.service - D-Bus User Message Bus...
+Nov 07 20:30:24.826616 orez systemd[1726]: drkonqi-coredump-cleanup.service - Cleanup lingering KCrash metadata skipped, unmet condition check ConditionPathExistsGlob=/home/orez/.cache/kcrash-metadata/*.ini
+Nov 07 20:30:24.837257 orez systemd[1726]: Started pipewire.service - PipeWire Multimedia Service.
+Nov 07 20:30:24.850356 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] AppArmor D-Bus mediation is enabled
+Nov 07 20:30:24.850498 orez systemd[1726]: Started dbus.service - D-Bus User Message Bus.
+Nov 07 20:30:24.855633 orez systemd[1726]: Started mpris-proxy.service - Bluetooth mpris proxy.
+Nov 07 20:30:24.859603 orez systemd[1726]: Started wireplumber.service - Multimedia Service Session Manager.
+Nov 07 20:30:24.865369 orez systemd[1726]: Started filter-chain.service - PipeWire filter chain daemon.
+Nov 07 20:30:24.869365 orez systemd[1726]: Started pipewire-pulse.service - PipeWire PulseAudio.
+Nov 07 20:30:24.869397 orez systemd[1726]: Reached target default.target - Main User Target.
+Nov 07 20:30:24.869601 orez systemd[1726]: Startup finished in 230ms.
+Nov 07 20:30:24.872183 orez sddm-helper[1764]: pam_kwallet5: final socket path: /run/user/1000/kwallet5.socket
+Nov 07 20:30:25.125674 orez im-config[1856]: @ IM_CONFIG_ENTRY='profile' XDG_SESSION_TYPE ='wayland' UID=1000 PID=1767 PPID=1720
+Nov 07 20:30:25.131258 orez im-config[1857]:   GTK_IM_MODULE='' QT_IM_MODULE='' CLUTTER_IM_MODULE='' SDL_IM_MODULE='' XMODIFIERS=''
+Nov 07 20:30:25.136543 orez im-config[1859]:   Set IM_CONFIG_CURRENT_DESKTOP <- XDG_CURRENT_DESKTOP='KDE'
+Nov 07 20:30:25.154960 orez orez-session-trace[1864]: wrapper_started uid=1000 home=/home/orez runtime_dir=/run/user/1000 dbus_address_set=yes wayland_display=unset display=unset session_type=wayland current_desktop=KDE lang=C.UTF-8
+Nov 07 20:30:25.156601 orez orez-session-trace[1865]: starting plasma-dbus-run-session-if-needed -> startplasma-wayland
+Nov 07 20:30:25.310936 orez wireplumber[1758]: default: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+Nov 07 20:30:25.312548 orez wireplumber[1758]: spa.bluez5: BlueZ system service is not available
+Nov 07 20:30:25.316379 orez wireplumber[1758]: wp-device: SPA handle 'api.libcamera.enum.manager' could not be loaded; is it installed?
+Nov 07 20:30:25.316391 orez wireplumber[1758]: s-monitors-libcamera: PipeWire's libcamera SPA plugin is missing or broken. Some camera types may not be supported.
+Nov 07 20:30:25.675461 orez systemd[1726]: Reload requested from client PID 1866 ('startplasma-way')...
+Nov 07 20:30:25.675533 orez systemd[1726]: Reloading...
+Nov 07 20:30:25.689211 orez systemd-xdg-autostart-generator[1880]: Exec binary '/usr/bin/casper-a11y-enable' does not exist: No such file or directory
+Nov 07 20:30:25.689224 orez systemd-xdg-autostart-generator[1880]: /etc/xdg/autostart/screen-reader-profile.desktop: not generating unit, executable specified in Exec= does not exist.
+Nov 07 20:30:25.738871 orez systemd[1726]: /usr/lib/systemd/user/spice-vdagent.service:23: Unknown key 'StandardError' in section [Install], ignoring.
+Nov 07 20:30:25.750292 orez systemd[1726]: Reloading finished in 74 ms.
+Nov 07 20:30:25.757979 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating service name='org.kde.KSplash' requested by ':1.11' (uid=1000 pid=1866 comm="/usr/bin/startplasma-wayland" label="unconfined")
+Nov 07 20:30:25.773795 orez systemd[1726]: Created slice background.slice - User Background Tasks Slice.
+Nov 07 20:30:25.773836 orez systemd[1726]: drkonqi-sentry-postman.timer - Submitting pending crash events skipped, unmet condition check ConditionPathExistsGlob=/home/orez/.cache/drkonqi/sentry-envelopes/*
+Nov 07 20:30:25.774769 orez systemd[1726]: Starting plasma-kglobalaccel.service - KDE Global Shortcuts Server...
+Nov 07 20:30:25.775599 orez systemd[1726]: Starting plasma-kwin_wayland.service - KDE Wayland Compositor...
+Nov 07 20:30:25.776351 orez systemd[1726]: Started ssh-agent.service - OpenSSH Agent.
+Nov 07 20:30:25.778907 orez systemd[1726]: Starting user-session-migration.service - User Session Migration...
+Nov 07 20:30:25.783681 orez systemd[1726]: Starting xdg-desktop-portal-rewrite-launchers.service - Rewrite dynamic launcher portal entries...
+Nov 07 20:30:25.785147 orez systemd[1726]: Starting xdg-user-dirs.service - User folders update...
+Nov 07 20:30:25.786570 orez systemd[1726]: Starting kde-baloo.service - Baloo File Indexer Daemon...
+Nov 07 20:30:25.818913 orez systemd[1726]: Started plasma-kwin_wayland.service - KDE Wayland Compositor.
+Nov 07 20:30:25.820678 orez systemd[1726]: Starting plasma-kcminit.service - KDE Config Module Initialization...
+Nov 07 20:30:25.824634 orez systemd[1726]: Starting plasma-ksplash.service - Splash screen shown during boot...
+Nov 07 20:30:25.831009 orez systemd[1726]: Finished xdg-user-dirs.service - User folders update.
+Nov 07 20:30:25.831706 orez systemd[1726]: Finished xdg-desktop-portal-rewrite-launchers.service - Rewrite dynamic launcher portal entries.
+Nov 07 20:30:25.834805 orez systemd[1726]: Started plasma-kglobalaccel.service - KDE Global Shortcuts Server.
+Nov 07 20:30:25.871003 orez baloo_file[1892]: Baloo File Indexing has been disabled
+Nov 07 20:30:25.874702 orez systemd[1726]: Started kde-baloo.service - Baloo File Indexer Daemon.
+Nov 07 20:30:25.890387 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.14' (uid=1000 pid=1902 comm="/usr/bin/kcminit_startup" label="unconfined")
+Nov 07 20:30:26.103655 orez kwin_wayland_wrapper[1893]: No backend specified, automatically choosing drm
+Nov 07 20:30:26.113537 orez systemd[1726]: Finished user-session-migration.service - User Session Migration.
+Nov 07 20:30:26.113726 orez systemd[1726]: Reached target graphical-session-pre.target - Session services which should run early before the graphical session is brought up.
+Nov 07 20:30:26.267531 orez kwin_wayland_wrapper[1893]: kwin_core: Failed to open drm node: ""
+Nov 07 20:30:26.267531 orez kwin_wayland_wrapper[1893]: kwin_scene_opengl: couldn't find dev node for drm device
+Nov 07 20:30:26.511042 orez ksplashqml[1897]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:26.516160 orez ksplashqml[1897]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:26.550807 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.kde.KSplash'
+Nov 07 20:30:26.714480 orez kwin_wayland_wrapper[1930]: Refusing to try glamor on llvmpipe
+Nov 07 20:30:26.715384 orez kwin_wayland_wrapper[1930]: XWAYLAND: Disabling GLAMOR support
+Nov 07 20:30:26.715980 orez kwin_wayland_wrapper[1930]: EGL setup failed, disabling glamor
+Nov 07 20:30:26.715980 orez kwin_wayland_wrapper[1930]: Failed to initialize glamor, falling back to sw
+Nov 07 20:30:26.790969 orez kwin_wayland_wrapper[1963]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+Nov 07 20:30:26.790969 orez kwin_wayland_wrapper[1963]: > Warning:          Unsupported maximum keycode 708, clipping.
+Nov 07 20:30:26.790969 orez kwin_wayland_wrapper[1963]: >                   X11 cannot support keycodes above 255.
+Nov 07 20:30:26.792291 orez kwin_wayland_wrapper[1963]: > Warning:          Virtual modifier Hyper multiply defined
+Nov 07 20:30:26.792291 orez kwin_wayland_wrapper[1963]: >                   Using 0, ignoring 0
+Nov 07 20:30:26.792291 orez kwin_wayland_wrapper[1963]: > Warning:          Virtual modifier ScrollLock multiply defined
+Nov 07 20:30:26.792291 orez kwin_wayland_wrapper[1963]: >                   Using 0, ignoring 0
+Nov 07 20:30:26.792291 orez kwin_wayland_wrapper[1963]: Errors from xkbcomp are not fatal to the X server
+Nov 07 20:30:26.793658 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.a11y.Bus' unit='at-spi-dbus-bus.service' requested by ':1.17' (uid=1000 pid=1959 comm="busctl call --user org.a11y.Bus /org/a11y/bus org." label="unconfined")
+Nov 07 20:30:26.798628 orez systemd[1726]: Starting at-spi-dbus-bus.service - Accessibility services bus...
+Nov 07 20:30:26.846773 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.a11y.Bus'
+Nov 07 20:30:26.847186 orez systemd[1726]: Started at-spi-dbus-bus.service - Accessibility services bus.
+Nov 07 20:30:27.407616 orez systemd[1726]: Started plasma-kcminit.service - KDE Config Module Initialization.
+Nov 07 20:30:27.408606 orez systemd[1726]: Starting plasma-ksmserver.service - KDE Session Management Server...
+Nov 07 20:30:27.409596 orez systemd[1726]: Started plasma-kwallet-pam.service - Unlock kwallet from pam credentials.
+Nov 07 20:30:27.410386 orez systemd[1726]: Starting plasma-kded6.service - KDE Daemon 6...
+Nov 07 20:30:27.466300 orez pam_kwallet_init[1992]: 2026/11/07 20:30:27 socat[1992] W address is opened in read-write mode but only supports read-only
+Nov 07 20:30:27.548544 orez kded6[1990]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:27.555530 orez kded6[1990]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:27.678330 orez systemd[1726]: Started plasma-ksmserver.service - KDE Session Management Server.
+Nov 07 20:30:27.680587 orez systemd[1726]: Starting plasma-plasmashell.service - KDE Plasma Workspace...
+Nov 07 20:30:27.684343 orez at-spi-bus-launcher[1979]: dbus-daemon[1979]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1000 pid=1988 comm="/usr/bin/ksmserver" label="unconfined")
+Nov 07 20:30:27.764544 orez at-spi-bus-launcher[1979]: dbus-daemon[1979]: Successfully activated service 'org.a11y.atspi.Registry'
+Nov 07 20:30:27.764724 orez at-spi-bus-launcher[2030]: SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+Nov 07 20:30:27.794260 orez systemd[1726]: Started plasma-kded6.service - KDE Daemon 6.
+Nov 07 20:30:27.795982 orez systemd[1726]: Starting plasma-kcminit-phase1.service - KDE Configuration Module Initialization (Phase 1)...
+Nov 07 20:30:27.843299 orez systemd[1726]: Finished plasma-kcminit-phase1.service - KDE Configuration Module Initialization (Phase 1).
+Nov 07 20:30:27.897245 orez plasmashell[2028]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:27.900584 orez plasmashell[2028]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:27.970471 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.kde.ActivityManager' unit='plasma-kactivitymanagerd.service' requested by ':1.25' (uid=1000 pid=2028 comm="/usr/bin/plasmashell --no-respawn" label="unconfined")
+Nov 07 20:30:27.977822 orez systemd[1726]: Starting plasma-kactivitymanagerd.service - KActivityManager Activity manager Service...
+Nov 07 20:30:28.078550 orez systemd[1726]: Started plasma-plasmashell.service - KDE Plasma Workspace.
+Nov 07 20:30:28.078684 orez systemd[1726]: Reached target plasma-core.target - KDE Plasma Workspace Core.
+Nov 07 20:30:28.081134 orez systemd[1726]: Started drkonqi-coredump-pickup.service - Consume pending crashes using DrKonqi.
+Nov 07 20:30:28.085627 orez systemd[1726]: Started plasma-gmenudbusmenuproxy.service - Proxies GTK DBus menus to a Plasma readable format.
+Nov 07 20:30:28.093003 orez systemd[1726]: Started plasma-kaccess.service - KAccess.
+Nov 07 20:30:28.094264 orez systemd[1726]: Starting plasma-polkit-agent.service - KDE PolicyKit Authentication Agent...
+Nov 07 20:30:28.102861 orez systemd[1726]: Starting plasma-powerdevil.service - Powerdevil...
+Nov 07 20:30:28.103942 orez systemd[1726]: Started plasma-xembedsniproxy.service - Handle legacy xembed system tray icons.
+Nov 07 20:30:28.163423 orez kaccess[2056]: Xlib XKB extension major= 1  minor= 0
+Nov 07 20:30:28.413027 orez org_kde_powerdevil[2059]: Starting libddcutil. library built Feb  2 2026 at 21:27:42. stdout_stderr_redirected=true
+Nov 07 20:30:28.582441 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='ca.desrt.dconf' unit='dconf.service' requested by ':1.34' (uid=1000 pid=1990 comm="/usr/bin/kded6" label="unconfined")
+Nov 07 20:30:28.597856 orez kded6[1990]: org.kde.libkbolt: Failed to connect to Bolt manager DBus interface:
+Nov 07 20:30:28.597856 orez kded6[1990]: org.kde.bolt.kded: Couldn't connect to Bolt DBus daemon
+Nov 07 20:30:28.601605 orez systemd[1726]: Starting dconf.service - User preferences database...
+Nov 07 20:30:28.613554 orez polkit-kde-authentication-agent-1[2058]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:28.621581 orez org_kde_powerdevil[2059]: Initializing libddcutil.  ddcutil version: 2.2.5, shared library: /usr/lib/x86_64-linux-gnu/libddcutil.so.5.4.1
+Nov 07 20:30:28.621588 orez org_kde_powerdevil[2059]:                           library built Feb  2 2026 at 21:27:42. stdout_stderr_redirected=true
+Nov 07 20:30:28.621594 orez org_kde_powerdevil[2059]: [  2059] Options passed from client:
+Nov 07 20:30:28.623643 orez org_kde_powerdevil[2059]: [  2059] Applying combined libddcutil options:
+Nov 07 20:30:28.626058 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'ca.desrt.dconf'
+Nov 07 20:30:28.626270 orez systemd[1726]: Started dconf.service - User preferences database.
+Nov 07 20:30:28.628018 orez polkit-kde-authentication-agent-1[2058]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:28.634693 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.kde.ActivityManager'
+Nov 07 20:30:28.635819 orez systemd[1726]: Started plasma-kactivitymanagerd.service - KActivityManager Activity manager Service.
+Nov 07 20:30:28.648081 orez org_kde_powerdevil[2059]: Library initialization complete.
+Nov 07 20:30:28.648419 orez org_kde_powerdevil[2059]: Watching for DPMS state changes unimplemented
+Nov 07 20:30:28.648403 orez org_kde_powerdevil[2059]: [  2059] Watching for DPMS state changes unimplemented
+Nov 07 20:30:28.648412 orez org_kde_powerdevil[2059]: [  2059] Watching for display connection changes, resolved watch mode = Watch_Mode_Udev, poll loop interval = 500 millisec
+Nov 07 20:30:28.648414 orez org_kde_powerdevil[2059]: [  2059]                                          extra_stabilization_millisec: 0,  stabilization_poll_millisec: 100
+Nov 07 20:30:28.648465 orez org_kde_powerdevil[2059]: [  2059] libddcutil recheck thread 0x5ba23a4bc260 started
+Nov 07 20:30:28.648496 orez org_kde_powerdevil[2059]: [  2059] libddcutil watch thread 0x5ba23a4af210 started
+Nov 07 20:30:28.648547 orez org_kde_powerdevil[2059]: [  2124] (dw_recheck_displays_func) Recheck interval: Sleeping for 200 milliseconds
+Nov 07 20:30:28.708008 orez kaccess[2056]: X server XKB extension major= 1  minor= 0
+Nov 07 20:30:28.712818 orez systemd[1726]: Started plasma-polkit-agent.service - KDE PolicyKit Authentication Agent.
+Nov 07 20:30:28.724489 orez polkit-kde-authentication-agent-1[2058]: New PolkitAgentListener  0x63638418f400
+Nov 07 20:30:28.724731 orez polkit-kde-authentication-agent-1[2058]: Adding new listener  PolkitQt1::Agent::Listener(0x63638418f140) for  0x63638418f400
+Nov 07 20:30:28.726697 orez polkit-kde-authentication-agent-1[2058]: Listener online
+Nov 07 20:30:28.736028 orez polkit-kde-authentication-agent-1[2058]: Authentication agent result: true
+Nov 07 20:30:28.879391 orez org_kde_powerdevil[2059]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+Nov 07 20:30:28.909992 orez org_kde_powerdevil[2059]: org.kde.powerdevil: org.kde.powerdevil.backlighthelper.brightness failed
+Nov 07 20:30:29.100629 orez systemd[1726]: Started plasma-powerdevil.service - Powerdevil.
+Nov 07 20:30:29.100710 orez systemd[1726]: Reached target plasma-workspace.target - KDE Plasma Workspace.
+Nov 07 20:30:29.100778 orez systemd[1726]: Reached target graphical-session.target - Current graphical user session.
+Nov 07 20:30:29.100826 orez systemd[1726]: Reached target plasma-workspace-wayland.target.
+Nov 07 20:30:29.104632 orez systemd[1726]: Starting app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent...
+Nov 07 20:30:29.107599 orez systemd[1726]: Starting app-im\x2dlaunch@autostart.service - im-launch...
+Nov 07 20:30:29.109583 orez systemd[1726]: Starting app-kup\x2ddaemon@autostart.service - Kup...
+Nov 07 20:30:29.115782 orez systemd[1726]: Starting app-orez\x2ddrivers@autostart.service - OREZ Drivers check...
+Nov 07 20:30:29.117603 orez systemd[1726]: Starting app-orez\x2dinitialize@autostart.service - OREZ Wallpaper Setup (Can Be Disabled)...
+Nov 07 20:30:29.119852 orez systemd[1726]: Starting app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect...
+Nov 07 20:30:29.121588 orez systemd[1726]: Starting app-org.kde.plasma\x2dfallback\x2dsession\x2drestore@autostart.service - Plasma Session Restore...
+Nov 07 20:30:29.123846 orez systemd[1726]: Starting app-snap\x2duserd\x2dautostart@autostart.service - Snap user application autostart helper...
+Nov 07 20:30:29.125433 orez systemd[1726]: Starting app-xdg\x2duser\x2ddirs\x2dkde@autostart.service - User folders update...
+Nov 07 20:30:29.127667 orez systemd[1726]: Starting kunifiedpush-distributor.service - KUnifiedPush Distributor...
+Nov 07 20:30:29.129189 orez org_kde_powerdevil[2059]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+Nov 07 20:30:29.129685 orez systemd[1726]: Starting plasma-restoresession.service - KDE Session Restoration...
+Nov 07 20:30:29.129717 orez systemd[1726]: spice-vdagent.service - Spice guest session agent skipped, unmet condition check ConditionPathExists=/run/spice-vdagentd/spice-vdagent-sock
+Nov 07 20:30:29.131142 orez systemd[1726]: Starting xdg-desktop-portal.service - Portal service...
+Nov 07 20:30:29.137884 orez systemd[1726]: Started app-orez\x2ddrivers@autostart.service - OREZ Drivers check.
+Nov 07 20:30:29.138854 orez systemd[1726]: Started app-xdg\x2duser\x2ddirs\x2dkde@autostart.service - User folders update.
+Nov 07 20:30:29.139602 orez org_kde_powerdevil[2059]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getconservationmode failed "Battery conservation mode is not supported"
+Nov 07 20:30:29.139732 orez org_kde_powerdevil[2059]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getconservationmode failed "Battery conservation mode is not supported"
+Nov 07 20:30:29.154141 orez systemd[1726]: Started app-im\x2dlaunch@autostart.service - im-launch.
+Nov 07 20:30:29.159694 orez systemd[1726]: Started app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect.
+Nov 07 20:30:29.182364 orez systemd[1726]: Finished plasma-restoresession.service - KDE Session Restoration.
+Nov 07 20:30:29.202589 orez systemd[1726]: Started app-orez\x2dinitialize@autostart.service - OREZ Wallpaper Setup (Can Be Disabled).
+Nov 07 20:30:29.217590 orez systemd[1726]: Started app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent.
+Nov 07 20:30:29.221707 orez systemd[1726]: Started app-org.kde.plasma\x2dfallback\x2dsession\x2drestore@autostart.service - Plasma Session Restore.
+Nov 07 20:30:29.269947 orez systemd[1726]: Started kunifiedpush-distributor.service - KUnifiedPush Distributor.
+Nov 07 20:30:29.289643 orez systemd[1726]: Started app-kup\x2ddaemon@autostart.service - Kup.
+Nov 07 20:30:29.438601 orez systemd[1726]: Started app-snap\x2duserd\x2dautostart@autostart.service - Snap user application autostart helper.
+Nov 07 20:30:29.438695 orez systemd[1726]: Reached target xdg-desktop-autostart.target - Startup of XDG autostart applications.
+Nov 07 20:30:29.482908 orez plasma-fallback-session-restore[2200]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.503277 orez plasma-fallback-session-restore[2200]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.593025 orez kdeconnectd[2180]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.596637 orez kdeconnectd[2180]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.602762 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.PermissionStore' unit='xdg-permission-store.service' requested by ':1.43' (uid=1000 pid=2187 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:30:29.621631 orez systemd[1726]: Starting xdg-permission-store.service - sandboxed app permission store...
+Nov 07 20:30:29.629007 orez kup-daemon[2202]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.653230 orez kup-daemon[2202]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:29.714062 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+Nov 07 20:30:29.715164 orez systemd[1726]: Started xdg-permission-store.service - sandboxed app permission store.
+Nov 07 20:30:29.716339 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.portal.Documents' unit='xdg-document-portal.service' requested by ':1.43' (uid=1000 pid=2187 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:30:29.725635 orez systemd[1726]: Starting xdg-document-portal.service - flatpak document portal service...
+Nov 07 20:30:29.796589 orez kup-daemon[2202]: kup.daemon: "Kup is not enabled, enable it from the system settings module. You can do that by running kcmshell5 kup"
+Nov 07 20:30:29.807870 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.portal.Documents'
+Nov 07 20:30:29.808666 orez systemd[1726]: Started xdg-document-portal.service - flatpak document portal service.
+Nov 07 20:30:29.904368 orez /usr/libexec/xdg-desktop-portal[2187]: Choosing gtk.portal for org.freedesktop.impl.portal.Lockdown as a last-resort fallback
+Nov 07 20:30:29.905013 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.gtk' unit='xdg-desktop-portal-gtk.service' requested by ':1.43' (uid=1000 pid=2187 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:30:29.924617 orez systemd[1726]: Starting xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation)...
+Nov 07 20:30:30.329149 orez kdeconnectd[2180]: kdeconnect.core: Failed to open any MDNS client sockets
+Nov 07 20:30:30.329893 orez kdeconnectd[2180]: kdeconnect.core: Failed to open any MDNS server sockets
+Nov 07 20:30:30.329334 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating service name='org.freedesktop.Notifications' requested by ':1.41' (uid=1000 pid=2180 comm="/usr/bin/kdeconnectd" label="unconfined")
+Nov 07 20:30:30.650614 orez kded6[1990]: System timezone has been changed, new timezone is "Etc/UTC"
+Nov 07 20:30:30.906244 orez kded6[1990]: QDBusObjectPath: invalid path "/modules/oom-notifier"
+Nov 07 20:30:30.906244 orez kded6[1990]: kf.dbusaddons: The kded module name "oom-notifier" is invalid!
+Nov 07 20:30:30.942540 orez kded6[1990]: QDBusObjectPath: invalid path "/modules/plasma-session-shortcuts"
+Nov 07 20:30:30.942540 orez kded6[1990]: kf.dbusaddons: The kded module name "plasma-session-shortcuts" is invalid!
+Nov 07 20:30:31.054451 orez kded6[1990]: QDBusObjectPath: invalid path "/modules/wpad-detector"
+Nov 07 20:30:31.054451 orez kded6[1990]: kf.dbusaddons: The kded module name "wpad-detector" is invalid!
+Nov 07 20:30:31.213605 orez kded6[2297]: kf.config.kconf_update: /usr/share/kconf_update/filepicker.upd defined Version=5 but Version=6 was expected
+Nov 07 20:30:31.304728 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+Nov 07 20:30:31.304918 orez systemd[1726]: Started xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation).
+Nov 07 20:30:31.311421 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.kde' unit='plasma-xdg-desktop-portal-kde.service' requested by ':1.43' (uid=1000 pid=2187 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:30:31.318258 orez systemd[1726]: Starting plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE...
+Nov 07 20:30:31.908546 orez xdg-desktop-portal-kde[2314]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:31.919798 orez xdg-desktop-portal-kde[2314]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:30:31.976899 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.kde'
+Nov 07 20:30:31.977617 orez systemd[1726]: Started plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE.
+Nov 07 20:30:32.075351 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.portal.Desktop'
+Nov 07 20:30:32.078266 orez systemd[1726]: Started xdg-desktop-portal.service - Portal service.
+Nov 07 20:30:32.083277 orez kwin_wayland_wrapper[1893]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/1893/root")
+Nov 07 20:30:32.139830 orez ksmserver[1988]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ksmserver'")
+Nov 07 20:30:32.140686 orez xembedsniproxy[2067]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.xembedsniproxy'")
+Nov 07 20:30:32.141471 orez org_kde_powerdevil[2059]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2059/root")
+Nov 07 20:30:32.141811 orez gmenudbusmenuproxy[2055]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.gmenudbusmenuproxy'")
+Nov 07 20:30:32.143007 orez polkit-kde-authentication-agent-1[2058]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2058/root")
+Nov 07 20:30:32.145426 orez kactivitymanagerd[2050]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ActivityManager'")
+Nov 07 20:30:32.159208 orez xdg-desktop-portal-kde[2314]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:30:32.162325 orez gmenudbusmenuproxy[2055]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.gmenudbusmenuproxy'")
+Nov 07 20:30:32.162585 orez kdeconnectd[2180]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:30:32.163135 orez org_kde_powerdevil[2059]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2059/root")
+Nov 07 20:30:32.163233 orez kaccess[2056]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:30:32.163743 orez xembedsniproxy[2067]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.xembedsniproxy'")
+Nov 07 20:30:32.163881 orez polkit-kde-authentication-agent-1[2058]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2058/root")
+Nov 07 20:30:32.164163 orez kactivitymanagerd[2050]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ActivityManager'")
+Nov 07 20:30:32.164379 orez kwin_wayland_wrapper[1893]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/1893/root")
+Nov 07 20:30:32.165379 orez ksmserver[1988]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ksmserver'")
+Nov 07 20:30:32.177377 orez ksplashqml[1897]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for ''")
+Nov 07 20:30:32.861845 orez plasmashell[2028]: kde.plasmashell: requesting unexisting screen geometry -1
+Nov 07 20:30:32.871692 orez plasmashell[2028]: kf.package: Could not find required file "mainscript" for package "/usr/share/plasma/plasmoids/org.kde.plasma.icontasks/" should be QList("ui/main.qml")
+Nov 07 20:30:33.031060 orez plasmashell[2028]: kde.plasmashell: Activity added twice "98a40591-5444-421a-89c4-1ba1913a5361"
+Nov 07 20:30:33.193592 orez plasmashell[2028]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:30:33.360277 orez systemd[1726]: Finished plasma-ksplash.service - Splash screen shown during boot.
+Nov 07 20:30:33.360670 orez systemd[1726]: plasma-ksplash.service: Consumed 2.691s CPU time over 7.535s wall clock time, 113.2M memory peak.
+Nov 07 20:30:33.471017 orez kded6[1990]: qt.dbus.integration: QDBusConnection: name 'org.freedesktop.UPower' had owner '' but we thought it was ':1.53'
+Nov 07 20:30:33.486106 orez kded6[1990]: Known activities: QList("98a40591-5444-421a-89c4-1ba1913a5361")
+Nov 07 20:30:33.534386 orez kded6[1990]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.kded6'")
+Nov 07 20:30:33.534782 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.bluez.obex' unit='obex.service' requested by ':1.20' (uid=1000 pid=1990 comm="/usr/bin/kded6" label="unconfined")
+Nov 07 20:30:33.535732 orez kded6[2421]: xsettingsd: Loaded 16 settings from /home/orez/.config/xsettingsd/xsettingsd.conf
+Nov 07 20:30:33.538593 orez kded6[2421]: xsettingsd: Created window 0xe00001 on screen 0 with timestamp 83865
+Nov 07 20:30:33.538593 orez kded6[2421]: xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+Nov 07 20:30:33.538593 orez kded6[2421]: xsettingsd: Took ownership of selection _XSETTINGS_S0
+Nov 07 20:30:33.536933 orez systemd[1726]: Starting obex.service - Bluetooth OBEX service...
+Nov 07 20:30:33.539906 orez kded6[1990]: Known activities: QList("98a40591-5444-421a-89c4-1ba1913a5361")
+Nov 07 20:30:33.540714 orez kded6[1990]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.kded6'")
+Nov 07 20:30:33.546210 orez kded6[1990]: org.kde.pulseaudio: No object for name "auto_null.monitor"
+Nov 07 20:30:33.960470 orez obexd[2422]: OBEX daemon 5.85
+Nov 07 20:30:33.961222 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.bluez.obex'
+Nov 07 20:30:33.961374 orez systemd[1726]: Started obex.service - Bluetooth OBEX service.
+Nov 07 20:30:33.964846 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.gnome.evolution.dataserver.Sources5' unit='evolution-source-registry.service' requested by ':1.62' (uid=1000 pid=2422 comm="/usr/libexec/bluetooth/obexd" label="unconfined")
+Nov 07 20:30:33.965094 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activation via systemd failed for unit 'evolution-source-registry.service': Unit evolution-source-registry.service not found.
+Nov 07 20:30:33.965618 orez obexd[2422]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Nov 07 20:30:33.965916 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.gnome.evolution.dataserver.Sources5' unit='evolution-source-registry.service' requested by ':1.62' (uid=1000 pid=2422 comm="/usr/libexec/bluetooth/obexd" label="unconfined")
+Nov 07 20:30:33.966085 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activation via systemd failed for unit 'evolution-source-registry.service': Unit evolution-source-registry.service not found.
+Nov 07 20:30:33.966303 orez obexd[2422]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Nov 07 20:30:34.432170 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.Notifications'
+Nov 07 20:30:36.523103 orez plasmashell[2028]: org.kde.pulseaudio: No object for name "auto_null.monitor"
+Nov 07 20:30:55.361749 orez kdeconnectd[2180]: Cannot find a compatible running Bluez. Please check the Bluez installation. QtBluetooth requires at least BlueZ version 5.
+Nov 07 20:30:55.362089 orez kded6[1990]: kf.bluezqt: PendingCall Error: "Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)"
+Nov 07 20:31:20.378014 orez kdeconnectd[2180]: kdeconnect.core: No local bluetooth adapter found
+Nov 07 20:31:50.671880 orez kdeconnectd[2180]: qt.bluetooth.bluez: Missing CAP_NET_ADMIN permission. Cannot determine whether a found address is of random or public type.
+Nov 07 20:32:15.696415 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:32:45.674819 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:32:58.655872 orez kwin_wayland_wrapper[1893]: kwin_core: Failed to find a working output layer configuration! Enabled layers:
+Nov 07 20:32:58.655872 orez kwin_wayland_wrapper[1893]: kwin_core: src KWin::RectF(0,0 1280x800) -> dst KWin::Rect(0,0 1280x800)
+Nov 07 20:32:58.655872 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: drmModeListLessees() failed: Permission denied
+Nov 07 20:32:58.659570 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: atomic commit failed: Permission denied
+Nov 07 20:32:58.695976 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: Atomic modeset test failed! Permission denied
+Nov 07 20:32:58.695976 orez kwin_wayland_wrapper[1893]: kwin_core: Applying output configuration failed!
+Nov 07 20:32:58.701002 orez kwin_wayland_wrapper[1893]: kwin_core: Failed to find a working output layer configuration! Enabled layers:
+Nov 07 20:32:58.701002 orez kwin_wayland_wrapper[1893]: kwin_core: src KWin::RectF(0,0 1280x800) -> dst KWin::Rect(0,0 1280x800)
+Nov 07 20:32:58.701215 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: Atomic modeset test failed! Permission denied
+Nov 07 20:32:58.701215 orez kwin_wayland_wrapper[1893]: kwin_core: Applying output configuration failed!
+Nov 07 20:32:58.733733 orez org_kde_powerdevil[2059]: [  2125] Udev event detected
+Nov 07 20:32:58.737903 orez org_kde_powerdevil[2059]: [  2125] Udev event detected
+Nov 07 20:32:58.772449 orez kwin_wayland_wrapper[1893]: kwin_core: Failed to open /dev/dri/renderD128 device (No such device)
+Nov 07 20:32:58.772449 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: Failed to open drm device /dev/dri/renderD128
+Nov 07 20:33:07.157361 orez org_kde_powerdevil[2059]: [  2125] Udev event detected
+Nov 07 20:33:07.158638 orez kwin_wayland_wrapper[1893]: kwin_core: Failed to open /dev/dri/renderD128 device (No such device)
+Nov 07 20:33:07.158638 orez kwin_wayland_wrapper[1893]: kwin_wayland_drm: Failed to open drm device /dev/dri/renderD128
+Nov 07 20:33:07.162170 orez org_kde_powerdevil[2059]: [  2125] Udev event detected
+Nov 07 20:33:07.166686 orez wireplumber[1758]: spa.bluez5: BlueZ system service is not available
+Nov 07 20:33:07.282847 orez im-config[2645]: @ IM_CONFIG_ENTRY='profile' XDG_SESSION_TYPE ='tty' UID=1000 PID=2568 PPID=2513
+Nov 07 20:33:07.287426 orez im-config[2646]:   GTK_IM_MODULE='' QT_IM_MODULE='' CLUTTER_IM_MODULE='' SDL_IM_MODULE='' XMODIFIERS=''
+Nov 07 20:33:07.291940 orez im-config[2649]:   Set IM_CONFIG_CURRENT_DESKTOP <- 'UNDEFINED'
+Nov 07 20:33:15.678320 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:33:28.703309 orez kded6[1990]: ApportEvent :: hidden= false apport-kde= true apport-gtk= false
+Nov 07 20:33:28.703309 orez kded6[1990]: Using ApportEvent
+Nov 07 20:33:28.704391 orez kded6[1990]: ""
+Nov 07 20:33:28.704391 orez kded6[1990]: foundCrashFile false foundAutoUpload false
+Nov 07 20:33:28.705553 orez kded6[1990]: QDBusArgument& operator<<(QDBusArgument&, const DeviceList&) is noop
+Nov 07 20:33:28.708329 orez kded6[1990]: KDE Languages: QList()
+Nov 07 20:33:28.709248 orez kded6[1990]: got dbus error; abort
+Nov 07 20:33:28.879133 orez kded6[1990]: QList("C.UTF-8", "C", "", "", ".UTF-8", "UTF-8")
+Nov 07 20:33:28.879133 orez kded6[1990]: System Language Matchables: QList("C")
+Nov 07 20:33:45.675082 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:34:15.697002 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:34:37.808637 orez sudo[2682]: pam_unix(sudo:session): session opened for user root(uid=0) by orez(uid=1000)
+Nov 07 20:34:37.808729 orez sudo[2682]: orez : TTY=/dev/tty3 ; PWD=/home/orez ; USER=root ; COMMAND=/usr/bin/sh -c { printf \"%s\\n\" \"==O\"\"REZ-BEGIN==\"; loginctl list-sessions --no-legend; printf \"%s\\n\" \"==O\"\"REZ-PROCS==\"; ps -eo user:20,pid,comm --no-headers; printf \"%s\\n\" \"==O\"\"REZ-LOOK==\"; for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done; grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals; ls /home/orez/Desktop; printf \"%s\\n\" \"==O\"\"REZ-TRACE==\"; journalctl -b --no-pager -o short-precise -t orez-session-trace; printf \"%s\\n\" \"==O\"\"REZ-SDDM==\"; journalctl -b --no-pager -o short-precise -u sddm | tail -80; printf \"%s\\n\" \"==O\"\"REZ-SESSIONLOG==\"; tail -200 /home/orez/.local/share/sddm/wayland-session.log; printf \"%s\\n\" \"==O\"\"REZ-USERJOURNAL==\"; journalctl -b --no-pager -o short-precise [...]
+Nov 07 20:34:37.808731 orez sudo[2682]: [...]  _UID=1000 | tail -300; printf \"%s\\n\" \"==O\"\"REZ-COREDUMPS==\"; coredumpctl list --no-pager | tail -20; printf \"%s\\n\" \"==O\"\"REZ-END==\"; } > /dev/ttyS0 2>&1
+==OREZ-COREDUMPS==
+No coredumps found.
+==OREZ-END==
+==OREZ-S2BEGIN==
+5 1000 orez [0;38:5:245m-    [0m 1726 manager [0;38:5:245m-   [0m no [0;38:5:245m-[0m[m
+6 1000 orez seat0 2513 user    tty3 no [0;38:5:245m-[0m[m
+9 1000 orez seat0 2870 user    tty2 no [0;38:5:245m-[0m[m
+[K==OREZ-S2PROCS==
+root                       1 systemd
+root                       2 kthreadd
+root                       3 pool_workqueue_release
+root                       4 kworker/R-rcu_gp
+root                       5 kworker/R-sync_wq
+root                       6 kworker/R-kvfree_rcu_reclaim
+root                       7 kworker/R-slub_flushwq
+root                       8 kworker/R-netns
+root                      10 kworker/0:0H-kblockd
+root                      11 kworker/0:1-cgroup_bpf_destroy
+root                      13 kworker/R-mm_percpu_wq
+root                      14 ksoftirqd/0
+root                      15 rcu_preempt
+root                      16 rcu_exp_par_gp_kthread_worker/0
+root                      17 rcu_exp_gp_kthread_worker
+root                      18 migration/0
+root                      19 kprobe-optimizer
+root                      20 idle_inject/0
+root                      21 cpuhp/0
+root                      22 cpuhp/1
+root                      23 idle_inject/1
+root                      24 migration/1
+root                      25 ksoftirqd/1
+root                      27 kworker/1:0H-kblockd
+root                      28 cpuhp/2
+root                      29 idle_inject/2
+root                      30 migration/2
+root                      31 ksoftirqd/2
+root                      33 kworker/2:0H-kblockd
+root                      34 cpuhp/3
+root                      35 idle_inject/3
+root                      36 migration/3
+root                      37 ksoftirqd/3
+root                      39 kworker/3:0H-kblockd
+root                      40 kdevtmpfs
+root                      41 kworker/R-inet_frag_wq
+root                      42 rcu_tasks_kthread
+root                      43 rcu_tasks_rude_kthread
+root                      44 kauditd
+root                      45 khungtaskd
+root                      46 oom_reaper
+root                      48 kworker/u16:2-loop0
+root                      49 kworker/R-writeback
+root                      50 kworker/3:1-events
+root                      51 kcompactd0
+root                      52 ksmd
+root                      53 khugepaged
+root                      54 kworker/R-kblockd
+root                      55 kworker/R-blkcg_punt_bio
+root                      56 kworker/R-kintegrityd
+root                      57 irq/9-acpi
+root                      59 kworker/2:1-events
+root                      60 kworker/R-tpm_dev_wq
+root                      61 kworker/R-ata_sff
+root                      62 kworker/R-md_bitmap
+root                      63 kworker/R-md_llbitmap_io
+root                      64 kworker/R-md_llbitmap_unplug
+root                      65 kworker/R-edac-poller
+root                      66 kworker/R-devfreq_wq
+root                      67 watchdogd
+root                      68 kworker/R-quota_events_unbound
+root                      69 kswapd0
+root                      70 ecryptfs-kthread
+root                      71 kworker/R-kthrotld
+root                      72 kworker/R-acpi_thermal_pm
+root                      75 kworker/u16:5-events_power_efficient
+root                      76 kworker/R-mld
+root                      77 kworker/R-ipv6_addrconf
+root                      78 kworker/R-kstrp
+root                      80 kworker/u17:0
+root                      91 kworker/R-charger_manager
+root                      92 kworker/0:2-rcu_gp
+root                     146 kworker/3:2-events
+root                     149 scsi_eh_0
+root                     150 kworker/R-scsi_tmf_0
+root                     151 scsi_eh_1
+root                     152 kworker/R-scsi_tmf_1
+root                     153 scsi_eh_2
+root                     154 kworker/R-scsi_tmf_2
+root                     155 card1-crtc0
+root                     156 scsi_eh_3
+root                     157 kworker/R-scsi_tmf_3
+root                     158 scsi_eh_4
+root                     159 kworker/R-scsi_tmf_4
+root                     160 scsi_eh_5
+root                     161 kworker/R-scsi_tmf_5
+root                     162 kworker/u16:6-loop0
+root                     163 kworker/u16:7-events_power_efficient
+root                     164 scsi_eh_6
+root                     165 kworker/R-scsi_tmf_6
+root                     166 scsi_eh_7
+root                     167 kworker/R-scsi_tmf_7
+root                     168 scsi_eh_8
+root                     169 kworker/R-scsi_tmf_8
+root                     170 scsi_eh_9
+root                     171 kworker/R-scsi_tmf_9
+root                     172 scsi_eh_10
+root                     173 kworker/R-scsi_tmf_10
+root                     174 scsi_eh_11
+root                     175 kworker/R-scsi_tmf_11
+root                     178 kworker/u16:10-pm
+root                     184 kworker/1:2-mm_percpu_wq
+root                     301 kworker/0:1H-kblockd
+root                     303 kworker/2:1H-kblockd
+root                     320 kworker/3:1H-kblockd
+root                     779 systemd-journal
+root                     793 kworker/2:3-events
+root                     819 kworker/1:3-events
+systemd-resolve          833 systemd-resolve
+root                     836 systemd-udevd
+root                     838 psimon
+root                     998 accounts-daemon
+avahi                   1001 avahi-daemon
+root                    1002 chronyd-starter
+root                    1003 cron
+messagebus              1004 dbus-daemon
+root                    1012 networkd-dispat
+polkitd                 1019 polkitd
+root                    1025 snapd
+root                    1027 switcheroo-cont
+root                    1032 systemd-logind
+root                    1033 udisksd
+avahi                   1035 avahi-daemon
+_chrony                 1094 chronyd
+syslog                  1096 rsyslogd
+_chrony                 1098 chronyd
+root                    1123 NetworkManager
+root                    1124 wpa_supplicant
+root                    1156 ModemManager
+root                    1179 cupsd
+root                    1182 unattended-upgr
+cups-browsed            1270 cups-browsed
+root                    1495 psimon
+root                    1560 power-profiles-
+root                    1585 sddm
+rtkit                   1637 rtkit-daemon
+orez                    1726 systemd
+orez                    1728 (sd-pam)
+orez                    1752 dbus-daemon
+orez                    1753 pipewire
+orez                    1757 mpris-proxy
+orez                    1758 wireplumber
+orez                    1760 pipewire
+orez                    1761 pipewire-pulse
+root                    1794 kworker/1:2H
+orez                    1886 ssh-agent
+root                    2082 upowerd
+orez                    2104 dconf-service
+orez                    2422 obexd
+root                    2513 login
+orez                    2568 bash
+root                    2661 packagekitd
+root                    2707 kworker/0:0-events
+root                    2708 kworker/2:0-events
+root                    2776 kworker/2:2-cgroup_free
+root                    2870 sddm-helper
+orez                    2877 ksecretd
+orez                    2879 sh
+orez                    2970 startplasma-way
+orez                    2984 kwin_wayland_wr
+orez                    2992 kwin_wayland
+orez                    3023 Xwayland
+orez                    3055 at-spi-bus-laun
+orez                    3066 dbus-daemon
+orez                    3079 ksmserver
+orez                    3081 kded6
+orez                    3110 plasmashell
+orez                    3112 at-spi2-registr
+orez                    3158 kactivitymanage
+orez                    3162 drkonqi-coredum
+orez                    3164 gmenudbusmenupr
+orez                    3165 kaccess
+orez                    3168 polkit-kde-auth
+orez                    3169 org_kde_powerde
+orez                    3170 xembedsniproxy
+orez                    3185 xsettingsd
+orez                    3274 kdeconnectd
+orez                    3283 kunifiedpush-di
+orez                    3286 xdg-desktop-por
+orez                    3289 agent
+root                    3310 kworker/0:3-events
+orez                    3312 xdg-permission-
+orez                    3328 xdg-document-po
+root                    3335 fusermount3
+orez                    3341 xdg-desktop-por
+orez                    3378 xdg-desktop-por
+orez                    3413 kioworker
+orez                    3422 kioworker
+root                    3491 kworker/1:0-events
+root                    3502 sudo
+root                    3503 kworker/3:0-events
+root                    3512 sudo
+root                    3513 sh
+root                    3516 ps
+==OREZ-S2LOOK==
+XDG_CONFIG_DIRS=/home/orez/.config/kdedefaults:/etc/xdg/orez:/etc/xdg
+Image=file:///usr/share/wallpapers/OREZ-Rest/
+kubuntu-calamares.desktop
+==OREZ-S2TRACE==
+Nov 07 20:30:25.154960 orez orez-session-trace[1864]: [0;1;39m[0;1;31m[0;1;39mwrapper_started uid=1000 home=/home/orez runtime_dir=/run/user/1000 dbus_address_set=yes wayland_display=unset display=unset session_type=wayland current_desktop=KDE lang=C.UTF-8[0m
+Nov 07 20:30:25.156601 orez orez-session-trace[1865]: [0;1;39m[0;1;31m[0;1;39mstarting plasma-dbus-run-session-if-needed -> startplasma-wayland[0m
+Nov 07 20:34:49.578677 orez orez-session-trace[2769]: [0;1;39m[0;1;31m[0;1;39mplasma_session_child_exit=0[0m
+Nov 07 20:35:03.029821 orez orez-session-trace[2968]: [0;1;39m[0;1;31m[0;1;39mwrapper_started uid=1000 home=/home/orez runtime_dir=/run/user/1000 dbus_address_set=yes wayland_display=unset display=unset session_type=wayland current_desktop=KDE lang=C.UTF-8[0m
+Nov 07 20:35:03.031047 orez orez-session-trace[2969]: [0;1;39m[0;1;31m[0;1;39mstarting plasma-dbus-run-session-if-needed -> startplasma-wayland[0m
+==OREZ-S2SDDM==
+Nov 07 20:30:06.096853 orez systemd[1]: Starting sddm.service - Simple Desktop Display Manager...
+Nov 07 20:30:06.115415 orez systemd[1]: Started sddm.service - Simple Desktop Display Manager.
+Nov 07 20:30:06.238052 orez sddm[1585]: Initializing...
+Nov 07 20:30:06.242231 orez sddm[1585]: Starting...
+Nov 07 20:30:06.242495 orez sddm[1585]: Logind interface found
+Nov 07 20:30:06.243677 orez sddm[1585]: Adding new display...
+Nov 07 20:30:06.243898 orez sddm[1585]: Loaded empty theme configuration
+Nov 07 20:30:06.244909 orez sddm[1585]: Using VT 1
+Nov 07 20:30:06.244931 orez sddm[1585]: Display server started.
+Nov 07 20:30:06.244990 orez sddm[1585]: Socket server starting...
+Nov 07 20:30:06.245093 orez sddm[1585]: Socket server started.
+Nov 07 20:30:06.246159 orez sddm[1585]: Loading theme configuration from "/usr/share/sddm/themes/orez/theme.conf"
+Nov 07 20:30:06.247448 orez sddm[1585]: Greeter starting...
+Nov 07 20:30:06.274545 orez sddm-helper[1587]: [PAM] Starting...
+Nov 07 20:30:06.274567 orez sddm-helper[1587]: [PAM] Authenticating...
+Nov 07 20:30:06.274635 orez sddm-helper[1587]: [PAM] returning.
+Nov 07 20:30:06.279463 orez sddm-helper[1587]: pam_unix(sddm-greeter:session): session opened for user sddm(uid=107) by sddm(uid=0)
+Nov 07 20:30:06.533874 orez sddm[1585]: Greeter session started successfully
+Nov 07 20:30:13.480382 orez sddm[1585]: Message received from greeter: Connect
+Nov 07 20:30:24.276914 orez sddm[1585]: Message received from greeter: Login
+Nov 07 20:30:24.276934 orez sddm[1585]: Reading from "/usr/share/orez/wayland-sessions/orez.desktop"
+Nov 07 20:30:24.279738 orez sddm[1585]: Session "/usr/share/orez/wayland-sessions/orez.desktop" selected, command: "/bin/sh /usr/lib/orez/orez-session-trace" for VT 2
+Nov 07 20:30:24.504288 orez sddm-helper[1720]: [PAM] Starting...
+Nov 07 20:30:24.504310 orez sddm-helper[1720]: [PAM] Authenticating...
+Nov 07 20:30:24.543914 orez sddm-helper[1720]: [PAM] Preparing to converse...
+Nov 07 20:30:24.543937 orez sddm-helper[1720]: [PAM] Conversation with 1 messages
+Nov 07 20:30:24.579914 orez sddm-helper[1720]: pam_kwallet5(sddm:auth): pam_kwallet5: pam_sm_authenticate
+Nov 07 20:30:24.580019 orez sddm-helper[1720]: [PAM] returning.
+Nov 07 20:30:24.582203 orez sddm[1585]: Authentication for user  "orez"  successful
+Nov 07 20:30:24.582941 orez sddm-helper[1720]: pam_kwallet5(sddm:setcred): pam_kwallet5: pam_sm_setcred
+Nov 07 20:30:24.587360 orez sddm-helper[1720]: pam_unix(sddm:session): session opened for user orez(uid=1000) by orez(uid=0)
+Nov 07 20:30:24.835972 orez sddm-helper[1720]: pam_kwallet5(sddm:session): pam_kwallet5: pam_sm_open_session
+Nov 07 20:30:24.879971 orez sddm-helper[1720]: Starting Wayland user session: "/etc/sddm/wayland-session" "/bin/sh /usr/lib/orez/orez-session-trace"
+Nov 07 20:30:24.887659 orez sddm[1585]: Auth: sddm-helper exited successfully
+Nov 07 20:30:24.887676 orez sddm[1585]: Greeter stopped. SDDM::Auth::HELPER_SUCCESS
+Nov 07 20:30:24.921598 orez sddm[1585]: Session started true
+Nov 07 20:30:24.921809 orez sddm-helper[1720]: Failed to write utmpx:  No such file or directory
+Nov 07 20:34:49.581905 orez sddm[1585]: Auth: sddm-helper exited successfully
+Nov 07 20:34:49.581924 orez sddm[1585]: Socket server stopping...
+Nov 07 20:34:49.581931 orez sddm[1585]: Socket server stopped.
+Nov 07 20:34:49.581946 orez sddm[1585]: Removing display SDDM::Display(0x5fd13ae324b0) ...
+Nov 07 20:34:49.582500 orez sddm[1585]: Adding new display...
+Nov 07 20:34:49.582624 orez sddm[1585]: Loaded empty theme configuration
+Nov 07 20:34:49.586567 orez sddm[1585]: Using VT 1
+Nov 07 20:34:49.586588 orez sddm[1585]: Display server started.
+Nov 07 20:34:49.586621 orez sddm[1585]: Socket server starting...
+Nov 07 20:34:49.586720 orez sddm[1585]: Socket server started.
+Nov 07 20:34:49.586798 orez sddm[1585]: Loading theme configuration from "/usr/share/sddm/themes/orez/theme.conf"
+Nov 07 20:34:49.586919 orez sddm[1585]: Greeter starting...
+Nov 07 20:34:49.602932 orez sddm-helper[2771]: [PAM] Starting...
+Nov 07 20:34:49.602954 orez sddm-helper[2771]: [PAM] Authenticating...
+Nov 07 20:34:49.603008 orez sddm-helper[2771]: [PAM] returning.
+Nov 07 20:34:49.606958 orez sddm-helper[2771]: pam_unix(sddm-greeter:session): session opened for user sddm(uid=107) by sddm(uid=0)
+Nov 07 20:34:49.803840 orez sddm[1585]: Greeter session started successfully
+Nov 07 20:34:50.389109 orez sddm[1585]: Message received from greeter: Connect
+Nov 07 20:35:02.774600 orez sddm[1585]: Message received from greeter: Login
+Nov 07 20:35:02.774619 orez sddm[1585]: Reading from "/usr/share/orez/wayland-sessions/orez.desktop"
+Nov 07 20:35:02.778601 orez sddm[1585]: Session "/usr/share/orez/wayland-sessions/orez.desktop" selected, command: "/bin/sh /usr/lib/orez/orez-session-trace" for VT 2
+Nov 07 20:35:02.792334 orez sddm-helper[2870]: [PAM] Starting...
+Nov 07 20:35:02.792354 orez sddm-helper[2870]: [PAM] Authenticating...
+Nov 07 20:35:02.825708 orez sddm-helper[2870]: [PAM] Preparing to converse...
+Nov 07 20:35:02.825731 orez sddm-helper[2870]: [PAM] Conversation with 1 messages
+Nov 07 20:35:02.859673 orez sddm-helper[2870]: pam_kwallet5(sddm:auth): pam_kwallet5: pam_sm_authenticate
+Nov 07 20:35:02.859780 orez sddm-helper[2870]: [PAM] returning.
+Nov 07 20:35:02.862057 orez sddm[1585]: Authentication for user  "orez"  successful
+Nov 07 20:35:02.862789 orez sddm-helper[2870]: pam_kwallet5(sddm:setcred): pam_kwallet5: pam_sm_setcred
+Nov 07 20:35:02.864445 orez sddm-helper[2870]: pam_unix(sddm:session): session opened for user orez(uid=1000) by orez(uid=0)
+Nov 07 20:35:02.873996 orez sddm-helper[2870]: pam_kwallet5(sddm:session): pam_kwallet5: pam_sm_open_session
+Nov 07 20:35:02.903574 orez sddm-helper[2870]: Starting Wayland user session: "/etc/sddm/wayland-session" "/bin/sh /usr/lib/orez/orez-session-trace"
+Nov 07 20:35:02.914470 orez sddm[1585]: Session started true
+Nov 07 20:35:02.914616 orez sddm-helper[2870]: Failed to write utmpx:  No such file or directory
+Nov 07 20:35:02.947696 orez sddm[1585]: Auth: sddm-helper exited successfully
+Nov 07 20:35:02.947794 orez sddm[1585]: Greeter stopped. SDDM::Auth::HELPER_SUCCESS
+==OREZ-S2SESSIONLOG==
+==OREZ-S2USERJOURNAL==
+Nov 07 20:33:28.708329 orez kded6[1990]: KDE Languages: QList()
+Nov 07 20:33:28.709248 orez kded6[1990]: got dbus error; abort
+Nov 07 20:33:28.879133 orez kded6[1990]: QList("C.UTF-8", "C", "", "", ".UTF-8", "UTF-8")
+Nov 07 20:33:28.879133 orez kded6[1990]: System Language Matchables: QList("C")
+Nov 07 20:33:45.675082 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:34:15.697002 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:34:37.808637 orez sudo[2682]: pam_unix(sudo:session): session opened for user root(uid=0) by orez(uid=1000)
+Nov 07 20:34:37.808729 orez sudo[2682]: orez : TTY=/dev/tty3 ; PWD=/home/orez ; USER=root ; COMMAND=/usr/bin/sh -c { printf \"%s\\n\" \"==O\"\"REZ-BEGIN==\"; loginctl list-sessions --no-legend; printf \"%s\\n\" \"==O\"\"REZ-PROCS==\"; ps -eo user:20,pid,comm --no-headers; printf \"%s\\n\" \"==O\"\"REZ-LOOK==\"; for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done; grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals; ls /home/orez/Desktop; printf \"%s\\n\" \"==O\"\"REZ-TRACE==\"; journalctl -b --no-pager -o short-precise -t orez-session-trace; printf \"%s\\n\" \"==O\"\"REZ-SDDM==\"; journalctl -b --no-pager -o short-precise -u sddm | tail -80; printf \"%s\\n\" \"==O\"\"REZ-SESSIONLOG==\"; tail -200 /home/orez/.local/share/sddm/wayland-session.log; printf \"%s\\n\" \"==O\"\"REZ-USERJOURNAL==\"; journalctl -b --no-pager -o short-precise [...]
+Nov 07 20:34:37.808731 orez sudo[2682]: [...]  _UID=1000 | tail -300; printf \"%s\\n\" \"==O\"\"REZ-COREDUMPS==\"; coredumpctl list --no-pager | tail -20; printf \"%s\\n\" \"==O\"\"REZ-END==\"; } > /dev/ttyS0 2>&1
+Nov 07 20:34:38.666424 orez sudo[2682]: pam_unix(sudo:session): session closed for user root
+Nov 07 20:34:45.675046 orez kdeconnectd[2180]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:34:49.138829 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating service name='org.kde.Shutdown' requested by ':1.65' (uid=1000 pid=2714 comm="qdbus6 org.kde.Shutdown /Shutdown org.kde.Shutdown" label="unconfined")
+Nov 07 20:34:49.165418 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.kde.Shutdown'
+Nov 07 20:34:49.257719 orez org.kde.Shutdown[2724]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:34:49.259902 orez org.kde.Shutdown[2724]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:34:49.304095 orez systemd[1726]: Stopped target plasma-workspace-wayland.target.
+Nov 07 20:34:49.304406 orez systemd[1726]: Stopping app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent...
+Nov 07 20:34:49.309648 orez systemd[1726]: Stopping app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect...
+Nov 07 20:34:49.309834 orez systemd[1726]: Stopping at-spi-dbus-bus.service - Accessibility services bus...
+Nov 07 20:34:49.310731 orez systemd[1726]: Stopping drkonqi-coredump-pickup.service - Consume pending crashes using DrKonqi...
+Nov 07 20:34:49.310825 orez systemd[1726]: Stopping kunifiedpush-distributor.service - KUnifiedPush Distributor...
+Nov 07 20:34:49.310957 orez systemd[1726]: Stopping plasma-kded6.service - KDE Daemon 6...
+Nov 07 20:34:49.311073 orez systemd[1726]: Stopping plasma-plasmashell.service - KDE Plasma Workspace...
+Nov 07 20:34:49.311189 orez systemd[1726]: Stopping plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE...
+Nov 07 20:34:49.313208 orez systemd[1726]: Stopping xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation)...
+Nov 07 20:34:49.313287 orez systemd[1726]: Stopping xdg-desktop-portal.service - Portal service...
+Nov 07 20:34:49.313396 orez systemd[1726]: Stopping xdg-document-portal.service - flatpak document portal service...
+Nov 07 20:34:49.313465 orez systemd[1726]: Stopping xdg-permission-store.service - sandboxed app permission store...
+Nov 07 20:34:49.313968 orez systemd[1726]: Stopped at-spi-dbus-bus.service - Accessibility services bus.
+Nov 07 20:34:49.317102 orez systemd[1726]: Stopped app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent.
+Nov 07 20:34:49.317689 orez systemd[1726]: Stopped app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect.
+Nov 07 20:34:49.318295 orez systemd[1726]: Stopped xdg-permission-store.service - sandboxed app permission store.
+Nov 07 20:34:49.319358 orez systemd[1726]: Stopped drkonqi-coredump-pickup.service - Consume pending crashes using DrKonqi.
+Nov 07 20:34:49.323951 orez systemd[1726]: Stopped kunifiedpush-distributor.service - KUnifiedPush Distributor.
+Nov 07 20:34:49.324447 orez systemd[1726]: Stopped xdg-desktop-portal.service - Portal service.
+Nov 07 20:34:49.326493 orez systemd[1726]: Stopped xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation).
+Nov 07 20:34:49.326794 orez systemd[1726]: Stopped target graphical-session.target - Current graphical user session.
+Nov 07 20:34:49.326832 orez systemd[1726]: Stopped target plasma-workspace.target - KDE Plasma Workspace.
+Nov 07 20:34:49.326971 orez systemd[1726]: Stopping plasma-gmenudbusmenuproxy.service - Proxies GTK DBus menus to a Plasma readable format...
+Nov 07 20:34:49.327089 orez systemd[1726]: Stopping plasma-kaccess.service - KAccess...
+Nov 07 20:34:49.328921 orez systemd[1726]: Stopping plasma-kactivitymanagerd.service - KActivityManager Activity manager Service...
+Nov 07 20:34:49.329031 orez systemd[1726]: Stopping plasma-polkit-agent.service - KDE PolicyKit Authentication Agent...
+Nov 07 20:34:49.329109 orez systemd[1726]: Stopping plasma-powerdevil.service - Powerdevil...
+Nov 07 20:34:49.329195 orez systemd[1726]: Stopping plasma-xembedsniproxy.service - Handle legacy xembed system tray icons...
+Nov 07 20:34:49.329492 orez systemd[1726]: Stopped target xdg-desktop-autostart.target - Startup of XDG autostart applications.
+Nov 07 20:34:49.345041 orez systemd[1726]: Stopped plasma-xembedsniproxy.service - Handle legacy xembed system tray icons.
+Nov 07 20:34:49.345905 orez systemd[1726]: Stopped xdg-document-portal.service - flatpak document portal service.
+Nov 07 20:34:49.346493 orez systemd[1726]: Stopped plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE.
+Nov 07 20:34:49.348989 orez systemd[1726]: Stopped plasma-gmenudbusmenuproxy.service - Proxies GTK DBus menus to a Plasma readable format.
+Nov 07 20:34:49.354595 orez systemd[1726]: Stopped plasma-kaccess.service - KAccess.
+Nov 07 20:34:49.355275 orez systemd[1726]: Stopped plasma-powerdevil.service - Powerdevil.
+Nov 07 20:34:49.355818 orez systemd[1726]: Stopped plasma-kactivitymanagerd.service - KActivityManager Activity manager Service.
+Nov 07 20:34:49.361268 orez systemd[1726]: Stopped plasma-polkit-agent.service - KDE PolicyKit Authentication Agent.
+Nov 07 20:34:49.361556 orez systemd[1726]: Stopped target plasma-core.target - KDE Plasma Workspace Core.
+Nov 07 20:34:49.361640 orez systemd[1726]: Stopped target graphical-session-pre.target - Session services which should run early before the graphical session is brought up.
+Nov 07 20:34:49.390745 orez systemd[1726]: Stopped plasma-kded6.service - KDE Daemon 6.
+Nov 07 20:34:49.390904 orez systemd[1726]: plasma-kded6.service: Consumed 3.384s CPU time over 4min 21.980s wall clock time, 105.7M memory peak.
+Nov 07 20:34:49.484350 orez systemd[1726]: Stopped plasma-plasmashell.service - KDE Plasma Workspace.
+Nov 07 20:34:49.484390 orez systemd[1726]: plasma-plasmashell.service: Consumed 7.019s CPU time over 4min 21.803s wall clock time, 398.5M memory peak.
+Nov 07 20:34:49.484688 orez systemd[1726]: Stopping plasma-ksmserver.service - KDE Session Management Server...
+Nov 07 20:34:49.503995 orez systemd[1726]: Stopped plasma-ksmserver.service - KDE Session Management Server.
+Nov 07 20:34:49.504340 orez systemd[1726]: Stopping plasma-kwin_wayland.service - KDE Wayland Compositor...
+Nov 07 20:34:49.571542 orez systemd[1726]: Stopped plasma-kwin_wayland.service - KDE Wayland Compositor.
+Nov 07 20:34:49.571572 orez systemd[1726]: plasma-kwin_wayland.service: Consumed 6.571s CPU time over 4min 23.795s wall clock time, 138.8M memory peak.
+Nov 07 20:34:49.578677 orez orez-session-trace[2769]: plasma_session_child_exit=0
+Nov 07 20:35:02.899979 orez sddm-helper[2876]: pam_kwallet5: final socket path: /run/user/1000/kwallet5.socket
+Nov 07 20:35:02.984401 orez wireplumber[1758]: spa.bluez5: BlueZ system service is not available
+Nov 07 20:35:03.015571 orez im-config[2960]: @ IM_CONFIG_ENTRY='profile' XDG_SESSION_TYPE ='wayland' UID=1000 PID=2879 PPID=2870
+Nov 07 20:35:03.020145 orez im-config[2961]:   GTK_IM_MODULE='' QT_IM_MODULE='' CLUTTER_IM_MODULE='' SDL_IM_MODULE='' XMODIFIERS=''
+Nov 07 20:35:03.024592 orez im-config[2963]:   Set IM_CONFIG_CURRENT_DESKTOP <- XDG_CURRENT_DESKTOP='KDE'
+Nov 07 20:35:03.029821 orez orez-session-trace[2968]: wrapper_started uid=1000 home=/home/orez runtime_dir=/run/user/1000 dbus_address_set=yes wayland_display=unset display=unset session_type=wayland current_desktop=KDE lang=C.UTF-8
+Nov 07 20:35:03.031047 orez orez-session-trace[2969]: starting plasma-dbus-run-session-if-needed -> startplasma-wayland
+Nov 07 20:35:03.087781 orez systemd[1726]: Reload requested from client PID 2970 ('startplasma-way')...
+Nov 07 20:35:03.087827 orez systemd[1726]: Reloading...
+Nov 07 20:35:03.102708 orez systemd-xdg-autostart-generator[2979]: Exec binary '/usr/bin/casper-a11y-enable' does not exist: No such file or directory
+Nov 07 20:35:03.102721 orez systemd-xdg-autostart-generator[2979]: /etc/xdg/autostart/screen-reader-profile.desktop: not generating unit, executable specified in Exec= does not exist.
+Nov 07 20:35:03.155299 orez systemd[1726]: /usr/lib/systemd/user/spice-vdagent.service:23: Unknown key 'StandardError' in section [Install], ignoring.
+Nov 07 20:35:03.168144 orez systemd[1726]: Reloading finished in 79 ms.
+Nov 07 20:35:03.176736 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating service name='org.kde.KSplash' requested by ':1.69' (uid=1000 pid=2970 comm="/usr/bin/startplasma-wayland" label="unconfined")
+Nov 07 20:35:03.186843 orez systemd[1726]: drkonqi-sentry-postman.timer - Submitting pending crash events skipped, unmet condition check ConditionPathExistsGlob=/home/orez/.cache/drkonqi/sentry-envelopes/*
+Nov 07 20:35:03.187634 orez systemd[1726]: Starting plasma-kglobalaccel.service - KDE Global Shortcuts Server...
+Nov 07 20:35:03.188296 orez systemd[1726]: Starting plasma-kwin_wayland.service - KDE Wayland Compositor...
+Nov 07 20:35:03.189171 orez systemd[1726]: Starting user-session-migration.service - User Session Migration...
+Nov 07 20:35:03.189961 orez systemd[1726]: Starting xdg-desktop-portal-rewrite-launchers.service - Rewrite dynamic launcher portal entries...
+Nov 07 20:35:03.190948 orez systemd[1726]: Starting xdg-user-dirs.service - User folders update...
+Nov 07 20:35:03.198583 orez systemd[1726]: Starting kde-baloo.service - Baloo File Indexer Daemon...
+Nov 07 20:35:03.205030 orez systemd[1726]: Finished user-session-migration.service - User Session Migration.
+Nov 07 20:35:03.210700 orez systemd[1726]: Finished xdg-user-dirs.service - User folders update.
+Nov 07 20:35:03.214634 orez systemd[1726]: Finished xdg-desktop-portal-rewrite-launchers.service - Rewrite dynamic launcher portal entries.
+Nov 07 20:35:03.214731 orez systemd[1726]: Reached target graphical-session-pre.target - Session services which should run early before the graphical session is brought up.
+Nov 07 20:35:03.219409 orez systemd[1726]: Started plasma-kwin_wayland.service - KDE Wayland Compositor.
+Nov 07 20:35:03.220350 orez systemd[1726]: Starting plasma-kcminit.service - KDE Config Module Initialization...
+Nov 07 20:35:03.222606 orez systemd[1726]: Starting plasma-ksplash.service - Splash screen shown during boot...
+Nov 07 20:35:03.223173 orez systemd[1726]: Started plasma-kglobalaccel.service - KDE Global Shortcuts Server.
+Nov 07 20:35:03.252898 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.portal.Desktop' unit='xdg-desktop-portal.service' requested by ':1.72' (uid=1000 pid=2999 comm="/usr/bin/kcminit_startup" label="unconfined")
+Nov 07 20:35:03.256289 orez baloo_file[2998]: Baloo File Indexing has been disabled
+Nov 07 20:35:03.258217 orez systemd[1726]: Started kde-baloo.service - Baloo File Indexer Daemon.
+Nov 07 20:35:03.279622 orez kwin_wayland_wrapper[2992]: No backend specified, automatically choosing drm
+Nov 07 20:35:03.442979 orez kwin_wayland_wrapper[2992]: kwin_core: Failed to open drm node: ""
+Nov 07 20:35:03.442979 orez kwin_wayland_wrapper[2992]: kwin_scene_opengl: couldn't find dev node for drm device
+Nov 07 20:35:03.613627 orez ksplashqml[2996]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:03.615737 orez ksplashqml[2996]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:03.642391 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.kde.KSplash'
+Nov 07 20:35:03.663753 orez kwin_wayland_wrapper[3023]: Refusing to try glamor on llvmpipe
+Nov 07 20:35:03.665087 orez kwin_wayland_wrapper[3023]: XWAYLAND: Disabling GLAMOR support
+Nov 07 20:35:03.668746 orez kwin_wayland_wrapper[3023]: EGL setup failed, disabling glamor
+Nov 07 20:35:03.668813 orez kwin_wayland_wrapper[3023]: Failed to initialize glamor, falling back to sw
+Nov 07 20:35:03.760975 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.a11y.Bus' unit='at-spi-dbus-bus.service' requested by ':1.75' (uid=1000 pid=3052 comm="busctl call --user org.a11y.Bus /org/a11y/bus org." label="unconfined")
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: > Warning:          Unsupported maximum keycode 708, clipping.
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: >                   X11 cannot support keycodes above 255.
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: > Warning:          Virtual modifier Hyper multiply defined
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: >                   Using 0, ignoring 0
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: > Warning:          Virtual modifier ScrollLock multiply defined
+Nov 07 20:35:03.763539 orez kwin_wayland_wrapper[3054]: >                   Using 0, ignoring 0
+Nov 07 20:35:03.765806 orez kwin_wayland_wrapper[3054]: Errors from xkbcomp are not fatal to the X server
+Nov 07 20:35:03.768480 orez systemd[1726]: Starting at-spi-dbus-bus.service - Accessibility services bus...
+Nov 07 20:35:03.791371 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.a11y.Bus'
+Nov 07 20:35:03.791597 orez systemd[1726]: Started at-spi-dbus-bus.service - Accessibility services bus.
+Nov 07 20:35:04.153367 orez systemd[1726]: Started plasma-kcminit.service - KDE Config Module Initialization.
+Nov 07 20:35:04.154693 orez systemd[1726]: Starting plasma-ksmserver.service - KDE Session Management Server...
+Nov 07 20:35:04.158630 orez systemd[1726]: Started plasma-kwallet-pam.service - Unlock kwallet from pam credentials.
+Nov 07 20:35:04.165606 orez systemd[1726]: Starting plasma-kded6.service - KDE Daemon 6...
+Nov 07 20:35:04.221355 orez pam_kwallet_init[3083]: 2026/11/07 20:35:04 socat[3083] W address is opened in read-write mode but only supports read-only
+Nov 07 20:35:04.282543 orez kded6[3081]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.288697 orez kded6[3081]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.313284 orez systemd[1726]: Started plasma-ksmserver.service - KDE Session Management Server.
+Nov 07 20:35:04.314585 orez systemd[1726]: Starting plasma-plasmashell.service - KDE Plasma Workspace...
+Nov 07 20:35:04.317048 orez at-spi-bus-launcher[3066]: dbus-daemon[3066]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1000 pid=3079 comm="/usr/bin/ksmserver" label="unconfined")
+Nov 07 20:35:04.324248 orez at-spi-bus-launcher[3066]: dbus-daemon[3066]: Successfully activated service 'org.a11y.atspi.Registry'
+Nov 07 20:35:04.324334 orez at-spi-bus-launcher[3112]: SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+Nov 07 20:35:04.346229 orez systemd[1726]: Started plasma-kded6.service - KDE Daemon 6.
+Nov 07 20:35:04.349619 orez systemd[1726]: Starting plasma-kcminit-phase1.service - KDE Configuration Module Initialization (Phase 1)...
+Nov 07 20:35:04.376606 orez systemd[1726]: Finished plasma-kcminit-phase1.service - KDE Configuration Module Initialization (Phase 1).
+Nov 07 20:35:04.439594 orez plasmashell[3110]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.441373 orez plasmashell[3110]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.462771 orez kded6[3081]: org.kde.libkbolt: Failed to connect to Bolt manager DBus interface:
+Nov 07 20:35:04.462982 orez kded6[3081]: org.kde.bolt.kded: Couldn't connect to Bolt DBus daemon
+Nov 07 20:35:04.493986 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.kde.ActivityManager' unit='plasma-kactivitymanagerd.service' requested by ':1.84' (uid=1000 pid=3110 comm="/usr/bin/plasmashell --no-respawn" label="unconfined")
+Nov 07 20:35:04.496453 orez systemd[1726]: Starting plasma-kactivitymanagerd.service - KActivityManager Activity manager Service...
+Nov 07 20:35:04.503307 orez kded6[3081]: QDBusObjectPath: invalid path "/modules/oom-notifier"
+Nov 07 20:35:04.503421 orez kded6[3081]: kf.dbusaddons: The kded module name "oom-notifier" is invalid!
+Nov 07 20:35:04.521420 orez systemd[1726]: Started plasma-plasmashell.service - KDE Plasma Workspace.
+Nov 07 20:35:04.521620 orez systemd[1726]: Reached target plasma-core.target - KDE Plasma Workspace Core.
+Nov 07 20:35:04.526646 orez systemd[1726]: Started drkonqi-coredump-pickup.service - Consume pending crashes using DrKonqi.
+Nov 07 20:35:04.528047 orez systemd[1726]: Started plasma-gmenudbusmenuproxy.service - Proxies GTK DBus menus to a Plasma readable format.
+Nov 07 20:35:04.530172 orez kded6[3081]: QDBusObjectPath: invalid path "/modules/plasma-session-shortcuts"
+Nov 07 20:35:04.530172 orez kded6[3081]: kf.dbusaddons: The kded module name "plasma-session-shortcuts" is invalid!
+Nov 07 20:35:04.532969 orez systemd[1726]: Started plasma-kaccess.service - KAccess.
+Nov 07 20:35:04.536592 orez systemd[1726]: Starting plasma-polkit-agent.service - KDE PolicyKit Authentication Agent...
+Nov 07 20:35:04.539583 orez systemd[1726]: Starting plasma-powerdevil.service - Powerdevil...
+Nov 07 20:35:04.541607 orez systemd[1726]: Started plasma-xembedsniproxy.service - Handle legacy xembed system tray icons.
+Nov 07 20:35:04.582675 orez kded6[3081]: QDBusObjectPath: invalid path "/modules/wpad-detector"
+Nov 07 20:35:04.582912 orez kded6[3081]: kf.dbusaddons: The kded module name "wpad-detector" is invalid!
+Nov 07 20:35:04.595643 orez kded6[3180]: kf.config.kconf_update: /usr/share/kconf_update/filepicker.upd defined Version=5 but Version=6 was expected
+Nov 07 20:35:04.629491 orez kded6[3185]: xsettingsd: Loaded 16 settings from /home/orez/.config/xsettingsd/xsettingsd.conf
+Nov 07 20:35:04.630431 orez kded6[3185]: xsettingsd: Created window 0xc00001 on screen 0 with timestamp 354959
+Nov 07 20:35:04.630571 orez kded6[3185]: xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+Nov 07 20:35:04.630613 orez kded6[3185]: xsettingsd: Took ownership of selection _XSETTINGS_S0
+Nov 07 20:35:04.636293 orez kded6[3081]: org.kde.pulseaudio: No object for name "auto_null.monitor"
+Nov 07 20:35:04.637498 orez kaccess[3165]: Xlib XKB extension major= 1  minor= 0
+Nov 07 20:35:04.645221 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.kde.ActivityManager'
+Nov 07 20:35:04.645378 orez systemd[1726]: Started plasma-kactivitymanagerd.service - KActivityManager Activity manager Service.
+Nov 07 20:35:04.649642 orez kded6[3081]: Known activities: QList("98a40591-5444-421a-89c4-1ba1913a5361")
+Nov 07 20:35:04.652846 orez kded6[3081]: Known activities: QList("98a40591-5444-421a-89c4-1ba1913a5361")
+Nov 07 20:35:04.671886 orez org_kde_powerdevil[3169]: Starting libddcutil. library built Feb  2 2026 at 21:27:42. stdout_stderr_redirected=true
+Nov 07 20:35:04.682202 orez plasmashell[3110]: kf.package: Could not find required file "mainscript" for package "/usr/share/plasma/plasmoids/org.kde.plasma.icontasks/" should be QList("ui/main.qml")
+Nov 07 20:35:04.738937 orez polkit-kde-authentication-agent-1[3168]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.762855 orez polkit-kde-authentication-agent-1[3168]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:04.770897 orez kaccess[3165]: X server XKB extension major= 1  minor= 0
+Nov 07 20:35:04.775844 orez org_kde_powerdevil[3169]: Initializing libddcutil.  ddcutil version: 2.2.5, shared library: /usr/lib/x86_64-linux-gnu/libddcutil.so.5.4.1
+Nov 07 20:35:04.775854 orez org_kde_powerdevil[3169]:                           library built Feb  2 2026 at 21:27:42. stdout_stderr_redirected=true
+Nov 07 20:35:04.775861 orez org_kde_powerdevil[3169]: [  3169] Options passed from client:
+Nov 07 20:35:04.775879 orez org_kde_powerdevil[3169]: [  3169] Applying combined libddcutil options:
+Nov 07 20:35:04.782097 orez org_kde_powerdevil[3169]: Library initialization complete.
+Nov 07 20:35:04.782477 orez org_kde_powerdevil[3169]: Watching for DPMS state changes unimplemented
+Nov 07 20:35:04.782462 orez org_kde_powerdevil[3169]: [  3169] Watching for DPMS state changes unimplemented
+Nov 07 20:35:04.782474 orez org_kde_powerdevil[3169]: [  3169] Watching for display connection changes, resolved watch mode = Watch_Mode_Udev, poll loop interval = 500 millisec
+Nov 07 20:35:04.782477 orez org_kde_powerdevil[3169]: [  3169]                                          extra_stabilization_millisec: 0,  stabilization_poll_millisec: 100
+Nov 07 20:35:04.782553 orez org_kde_powerdevil[3169]: [  3169] libddcutil recheck thread 0x5cfd71c8d070 started
+Nov 07 20:35:04.782585 orez org_kde_powerdevil[3169]: [  3169] libddcutil watch thread 0x5cfd71cbbc30 started
+Nov 07 20:35:04.782751 orez org_kde_powerdevil[3169]: [  3219] (dw_recheck_displays_func) Recheck interval: Sleeping for 200 milliseconds
+Nov 07 20:35:04.864953 orez polkit-kde-authentication-agent-1[3168]: New PolkitAgentListener  0x56855f16b270
+Nov 07 20:35:04.865094 orez polkit-kde-authentication-agent-1[3168]: Adding new listener  PolkitQt1::Agent::Listener(0x56855f2630d0) for  0x56855f16b270
+Nov 07 20:35:04.865212 orez polkit-kde-authentication-agent-1[3168]: Listener online
+Nov 07 20:35:04.865324 orez systemd[1726]: Started plasma-polkit-agent.service - KDE PolicyKit Authentication Agent.
+Nov 07 20:35:04.866070 orez org_kde_powerdevil[3169]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+Nov 07 20:35:04.872316 orez org_kde_powerdevil[3169]: org.kde.powerdevil: org.kde.powerdevil.backlighthelper.brightness failed
+Nov 07 20:35:04.876464 orez polkit-kde-authentication-agent-1[3168]: Authentication agent result: true
+Nov 07 20:35:04.927749 orez systemd[1726]: Started plasma-powerdevil.service - Powerdevil.
+Nov 07 20:35:04.927882 orez systemd[1726]: Reached target plasma-workspace.target - KDE Plasma Workspace.
+Nov 07 20:35:04.927955 orez systemd[1726]: Reached target graphical-session.target - Current graphical user session.
+Nov 07 20:35:04.928005 orez systemd[1726]: Reached target plasma-workspace-wayland.target.
+Nov 07 20:35:04.929344 orez systemd[1726]: Starting app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent...
+Nov 07 20:35:04.930938 orez systemd[1726]: Starting app-im\x2dlaunch@autostart.service - im-launch...
+Nov 07 20:35:04.934616 orez systemd[1726]: Starting app-kup\x2ddaemon@autostart.service - Kup...
+Nov 07 20:35:04.939909 orez systemd[1726]: Starting app-orez\x2ddrivers@autostart.service - OREZ Drivers check...
+Nov 07 20:35:04.943062 orez systemd[1726]: Starting app-orez\x2dinitialize@autostart.service - OREZ Wallpaper Setup (Can Be Disabled)...
+Nov 07 20:35:04.944705 orez systemd[1726]: Starting app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect...
+Nov 07 20:35:04.950791 orez systemd[1726]: Starting app-org.kde.plasma\x2dfallback\x2dsession\x2drestore@autostart.service - Plasma Session Restore...
+Nov 07 20:35:04.953168 orez systemd[1726]: Starting app-snap\x2duserd\x2dautostart@autostart.service - Snap user application autostart helper...
+Nov 07 20:35:04.954302 orez systemd[1726]: Starting app-xdg\x2duser\x2ddirs\x2dkde@autostart.service - User folders update...
+Nov 07 20:35:04.957502 orez systemd[1726]: Starting kunifiedpush-distributor.service - KUnifiedPush Distributor...
+Nov 07 20:35:04.962118 orez systemd[1726]: Starting plasma-restoresession.service - KDE Session Restoration...
+Nov 07 20:35:04.962152 orez systemd[1726]: spice-vdagent.service - Spice guest session agent skipped, unmet condition check ConditionPathExists=/run/spice-vdagentd/spice-vdagent-sock
+Nov 07 20:35:04.965724 orez systemd[1726]: Starting xdg-desktop-portal.service - Portal service...
+Nov 07 20:35:04.966914 orez systemd[1726]: Started app-org.kde.kdeconnect.daemon@autostart.service - KDE Connect.
+Nov 07 20:35:04.967022 orez systemd[1726]: Started app-xdg\x2duser\x2ddirs\x2dkde@autostart.service - User folders update.
+Nov 07 20:35:04.967095 orez systemd[1726]: Started app-im\x2dlaunch@autostart.service - im-launch.
+Nov 07 20:35:04.972433 orez org_kde_powerdevil[3169]: org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+Nov 07 20:35:04.996007 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.PermissionStore' unit='xdg-permission-store.service' requested by ':1.95' (uid=1000 pid=3286 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:35:05.025760 orez systemd[1726]: Started app-snap\x2duserd\x2dautostart@autostart.service - Snap user application autostart helper.
+Nov 07 20:35:05.026042 orez systemd[1726]: Started kunifiedpush-distributor.service - KUnifiedPush Distributor.
+Nov 07 20:35:05.026152 orez systemd[1726]: Started app-orez\x2ddrivers@autostart.service - OREZ Drivers check.
+Nov 07 20:35:05.041301 orez systemd[1726]: Finished plasma-restoresession.service - KDE Session Restoration.
+Nov 07 20:35:05.044694 orez systemd[1726]: Starting xdg-permission-store.service - sandboxed app permission store...
+Nov 07 20:35:05.047451 orez systemd[1726]: Started app-geoclue\x2ddemo\x2dagent@autostart.service - Geoclue Demo agent.
+Nov 07 20:35:05.052686 orez systemd[1726]: Started app-orez\x2dinitialize@autostart.service - OREZ Wallpaper Setup (Can Be Disabled).
+Nov 07 20:35:05.054669 orez systemd[1726]: Started app-org.kde.plasma\x2dfallback\x2dsession\x2drestore@autostart.service - Plasma Session Restore.
+Nov 07 20:35:05.067365 orez systemd[1726]: Started app-kup\x2ddaemon@autostart.service - Kup.
+Nov 07 20:35:05.067609 orez systemd[1726]: Reached target xdg-desktop-autostart.target - Startup of XDG autostart applications.
+Nov 07 20:35:05.088703 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+Nov 07 20:35:05.089180 orez systemd[1726]: Started xdg-permission-store.service - sandboxed app permission store.
+Nov 07 20:35:05.092674 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.portal.Documents' unit='xdg-document-portal.service' requested by ':1.95' (uid=1000 pid=3286 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:35:05.095407 orez systemd[1726]: Starting xdg-document-portal.service - flatpak document portal service...
+Nov 07 20:35:05.119943 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.portal.Documents'
+Nov 07 20:35:05.120249 orez systemd[1726]: Started xdg-document-portal.service - flatpak document portal service.
+Nov 07 20:35:05.127387 orez kdeconnectd[3274]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.143318 orez kdeconnectd[3274]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.147627 orez /usr/libexec/xdg-desktop-portal[3286]: Choosing gtk.portal for org.freedesktop.impl.portal.Lockdown as a last-resort fallback
+Nov 07 20:35:05.151117 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.gtk' unit='xdg-desktop-portal-gtk.service' requested by ':1.95' (uid=1000 pid=3286 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:35:05.158191 orez systemd[1726]: Starting xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation)...
+Nov 07 20:35:05.181937 orez plasma-fallback-session-restore[3309]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.206603 orez plasma-fallback-session-restore[3309]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.229545 orez kup-daemon[3314]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.233720 orez systemd[1726]: Finished plasma-ksplash.service - Splash screen shown during boot.
+Nov 07 20:35:05.233965 orez systemd[1726]: plasma-ksplash.service: Consumed 745ms CPU time over 2.010s wall clock time, 104.1M memory peak.
+Nov 07 20:35:05.236190 orez kup-daemon[3314]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.261671 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+Nov 07 20:35:05.262075 orez systemd[1726]: Started xdg-desktop-portal-gtk.service - Portal service (GTK/GNOME implementation).
+Nov 07 20:35:05.268637 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating via systemd: service name='org.freedesktop.impl.portal.desktop.kde' unit='plasma-xdg-desktop-portal-kde.service' requested by ':1.95' (uid=1000 pid=3286 comm="/usr/libexec/xdg-desktop-portal" label="unconfined")
+Nov 07 20:35:05.271141 orez systemd[1726]: Starting plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE...
+Nov 07 20:35:05.278271 orez kup-daemon[3314]: kup.daemon: "Kup is not enabled, enable it from the system settings module. You can do that by running kcmshell5 kup"
+Nov 07 20:35:05.330263 orez kdeconnectd[3274]: kdeconnect.core: Failed to open any MDNS client sockets
+Nov 07 20:35:05.330343 orez kdeconnectd[3274]: kdeconnect.core: Failed to open any MDNS server sockets
+Nov 07 20:35:05.330482 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Activating service name='org.freedesktop.Notifications' requested by ':1.96' (uid=1000 pid=3274 comm="/usr/bin/kdeconnectd" label="unconfined")
+Nov 07 20:35:05.356968 orez xdg-desktop-portal-kde[3378]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.359142 orez xdg-desktop-portal-kde[3378]: libEGL warning: egl: failed to create dri2 screen
+Nov 07 20:35:05.386569 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.impl.portal.desktop.kde'
+Nov 07 20:35:05.386742 orez systemd[1726]: Started plasma-xdg-desktop-portal-kde.service - Xdg Desktop Portal For KDE.
+Nov 07 20:35:05.427943 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.portal.Desktop'
+Nov 07 20:35:05.429607 orez systemd[1726]: Started xdg-desktop-portal.service - Portal service.
+Nov 07 20:35:05.430213 orez kwin_wayland_wrapper[2992]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2992/root")
+Nov 07 20:35:05.433210 orez ksmserver[3079]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ksmserver'")
+Nov 07 20:35:05.434561 orez gmenudbusmenuproxy[3164]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.gmenudbusmenuproxy'")
+Nov 07 20:35:05.435994 orez kded6[3081]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.kded6'")
+Nov 07 20:35:05.436820 orez xembedsniproxy[3170]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.xembedsniproxy'")
+Nov 07 20:35:05.437306 orez kactivitymanagerd[3158]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ActivityManager'")
+Nov 07 20:35:05.437822 orez org_kde_powerdevil[3169]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/3169/root")
+Nov 07 20:35:05.440616 orez polkit-kde-authentication-agent-1[3168]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/3168/root")
+Nov 07 20:35:05.442617 orez kdeconnectd[3274]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:35:05.442729 orez org_kde_powerdevil[3169]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/3169/root")
+Nov 07 20:35:05.443070 orez polkit-kde-authentication-agent-1[3168]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/3168/root")
+Nov 07 20:35:05.443652 orez gmenudbusmenuproxy[3164]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.gmenudbusmenuproxy'")
+Nov 07 20:35:05.443778 orez xdg-desktop-portal-kde[3378]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:35:05.443842 orez kaccess[3165]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:35:05.444303 orez xembedsniproxy[3170]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.xembedsniproxy'")
+Nov 07 20:35:05.444724 orez kactivitymanagerd[3158]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ActivityManager'")
+Nov 07 20:35:05.445348 orez kded6[3081]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.kded6'")
+Nov 07 20:35:05.445601 orez kwin_wayland_wrapper[2992]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Unable to open /proc/2992/root")
+Nov 07 20:35:05.446109 orez ksmserver[3079]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'org.kde.ksmserver'")
+Nov 07 20:35:05.675086 orez dbus-daemon[1752]: [session uid=1000 pid=1752 pidfd=5] Successfully activated service 'org.freedesktop.Notifications'
+Nov 07 20:35:05.824645 orez plasmashell[3110]: qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Nov 07 20:35:06.036102 orez plasmashell[3110]: org.kde.pulseaudio: No object for name "auto_null.monitor"
+Nov 07 20:35:14.787471 orez kdeconnectd[3274]: Cannot find a compatible running Bluez. Please check the Bluez installation. QtBluetooth requires at least BlueZ version 5.
+Nov 07 20:35:14.787817 orez kded6[3081]: kf.bluezqt: PendingCall Error: "Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)"
+Nov 07 20:35:39.696699 orez kdeconnectd[3274]: kdeconnect.core: No local bluetooth adapter found
+Nov 07 20:36:09.671681 orez kdeconnectd[3274]: qt.bluetooth.bluez: Missing CAP_NET_ADMIN permission. Cannot determine whether a found address is of random or public type.
+Nov 07 20:36:19.965663 orez systemd[1726]: launchpadlib-cache-clean.service - Clean up old files in the Launchpadlib cache skipped, unmet condition check ConditionPathExists=/home/orez/.launchpadlib/api.launchpad.net/cache
+Nov 07 20:36:34.696167 orez kdeconnectd[3274]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:36:35.403023 orez kwin_wayland_wrapper[2992]: kwin_wayland_drm: atomic commit failed: Permission denied
+Nov 07 20:36:35.457015 orez org_kde_powerdevil[3169]: [  3220] Udev event detected
+Nov 07 20:36:35.459243 orez org_kde_powerdevil[3169]: [  3220] Udev event detected
+Nov 07 20:36:35.490821 orez kwin_wayland_wrapper[2992]: kwin_core: Failed to open /dev/dri/renderD128 device (No such device)
+Nov 07 20:36:35.490821 orez kwin_wayland_wrapper[2992]: kwin_wayland_drm: Failed to open drm device /dev/dri/renderD128
+Nov 07 20:37:04.675062 orez kdeconnectd[3274]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:37:34.696468 orez kdeconnectd[3274]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:38:04.676993 orez kded6[3081]: ApportEvent :: hidden= false apport-kde= true apport-gtk= false
+Nov 07 20:38:04.676993 orez kded6[3081]: Using ApportEvent
+Nov 07 20:38:04.676993 orez kded6[3081]: ""
+Nov 07 20:38:04.676993 orez kded6[3081]: foundCrashFile false foundAutoUpload false
+Nov 07 20:38:04.678491 orez kded6[3081]: QDBusArgument& operator<<(QDBusArgument&, const DeviceList&) is noop
+Nov 07 20:38:04.680352 orez kded6[3081]: KDE Languages: QList()
+Nov 07 20:38:04.681352 orez kdeconnectd[3274]: qt.bluetooth.bluez: Cannot find Bluez 5 adapter for device search false
+Nov 07 20:38:04.683553 orez kded6[3081]: got dbus error; abort
+Nov 07 20:38:04.732583 orez kded6[3081]: QList("C.UTF-8", "C", "", "", ".UTF-8", "UTF-8")
+Nov 07 20:38:04.732583 orez kded6[3081]: System Language Matchables: QList("C")
+Nov 07 20:38:06.798204 orez sudo[3502]: pam_unix(sudo:session): session opened for user root(uid=0) by orez(uid=1000)
+Nov 07 20:38:06.798310 orez sudo[3502]: orez : TTY=/dev/tty3 ; PWD=/home/orez ; USER=root ; COMMAND=/usr/bin/sh -c { printf \"%s\\n\" \"==O\"\"REZ-S2BEGIN==\"; loginctl list-sessions --no-legend; printf \"%s\\n\" \"==O\"\"REZ-S2PROCS==\"; ps -eo user:20,pid,comm --no-headers; printf \"%s\\n\" \"==O\"\"REZ-S2LOOK==\"; for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done; grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals; ls /home/orez/Desktop; printf \"%s\\n\" \"==O\"\"REZ-S2TRACE==\"; journalctl -b --no-pager -o short-precise -t orez-session-trace; printf \"%s\\n\" \"==O\"\"REZ-S2SDDM==\"; journalctl -b --no-pager -o short-precise -u sddm | tail -80; printf \"%s\\n\" \"==O\"\"REZ-S2SESSIONLOG==\"; tail -200 /home/orez/.local/share/sddm/wayland-session.log; printf \"%s\\n\" \"==O\"\"REZ-S2USERJOURNAL==\"; journalctl -b --no-pager -o [...]
+Nov 07 20:38:06.798313 orez sudo[3502]: [...]  short-precise _UID=1000 | tail -300; printf \"%s\\n\" \"==O\"\"REZ-S2COREDUMPS==\"; coredumpctl list --no-pager | tail -20; printf \"%s\\n\" \"==O\"\"REZ-S2END==\"; } > /dev/ttyS0 2>&1
+==OREZ-S2COREDUMPS==
+No coredumps found.
+==OREZ-S2END==
