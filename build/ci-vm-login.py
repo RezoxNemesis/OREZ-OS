@@ -93,6 +93,12 @@ class VM:
             time.sleep(every)
         self.note(f'{label}: timeout waiting for {words}'); return None
 
+    def click(self, x, y, w=1280, h=800):
+        ev = lambda axis, v: {'type': 'abs', 'data': {'axis': axis, 'value': int(v * 32767 / (w if axis == 'x' else h))}}
+        self.cmd('input-send-event', events=[ev('x', x), ev('y', y)]); time.sleep(0.2)
+        for down in (True, False):
+            self.cmd('input-send-event', events=[{'type': 'btn', 'data': {'down': down, 'button': 'left'}}]); time.sleep(0.1)
+
     def serial(self):
         return self.serial_path.read_text(errors='replace')
 
@@ -187,8 +193,11 @@ def main(a):
         c['greeter_after_signout'] = bool(seen2)
         if c['greeter_after_signout']:
             time.sleep(5)  # let the greeter settle before typing
-            # Same key sequence as the first, successful sign-in (Enter moves to the password field).
-            vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(2); vm.type(pw); time.sleep(1)
+            # A returning greeter remembers the user and focuses the password field.
+            # Click that field (absolute pointer) and type only the password.
+            p2, _ = vm.shot('greeter-2-ready')
+            vm.click(309, 449)  # OREZ greeter password field at 1280x800
+            vm.keys('ctrl', 'a'); vm.type(pw); time.sleep(1)
             vm.shot('credentials-2'); vm.keys('ret'); vm.note('second graphical login')
             returned2 = False
             for i in range(9):
