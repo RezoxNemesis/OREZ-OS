@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "builder": "ci-overlay",
+  "parent_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "system_layer_sha256": "7c9fe4fc73c57198a3a0aa139b0728496a8a23ad3c24133c2d039e62a9c05bb8",
+  "live_owner_layer_sha256": "5912f9d792c3dd4d3b98fac20fd978f7662cf50498098651d3cbcc1aaea83e3b",
+  "layers_low_to_high": [
+    "filesystem.squashfs",
+    "orez-apps.squashfs",
+    "zz-orez.squashfs"
+  ],
+  "source_commit": "d87a135d43ca47b86d3ffb8bdab1ea82db50a7ce",
+  "boot_tested": false,
+  "installation_approved": false,
+  "release_approved": false,
+  "output_sha256": "2d75a18ae532c8c37343b0e9b0dd3ac5d7ac5b88c3fa88d3263e5ed8f0a89782",
+  "output_bytes": 5488967680,
+  "base_filesystem_unchanged": true
+}
