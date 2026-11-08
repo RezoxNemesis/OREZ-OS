@@ -54,6 +54,17 @@ sign-in.** No physical-PC result exists. Installer is enabled only in images fro
 - Evidence: https://github.com/RezoxNemesis/OREZ-OS/tree/downloads/ci-42455290923/evidence
 - Superseded: run 42421422241 (no identity pass).
 
+### OREZ OS 0.2 update USB (games, NVIDIA, Claude, OREZ Update)
+
+- Branch `build/update-1` (workflow `.github/workflows/orez-update.yml`), passing run 42517939214.
+  Image artifact 13633419554 `OREZ-OS-0.2-update.iso`, SHA-256 `4d7e47d23c735d4735314ce0b2d1c3facc3a1c1e533b98faaa5865aa0962b58e`, 1,450,186,752 bytes, expires 2026-12-08.
+- Content: offline mirror with Ubuntu's signed InRelease/Packages (resolute, -updates, -security; amd64+i386) plus only the 483 planned .debs; Anthropic's signed claude-desktop repo (key fingerprint pinned 31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE); orez-shell 0.2.0-1; `update_apply.py` (root, via pkexec) and `update_ui.py` (OREZ Update window, also installed as /usr/bin/orez-update).
+- Installs: Steam (steam-installer), Wine 10 + wine32:i386, winetricks, Lutris, MangoHud, GameMode 32-bit, Vulkan i386, NVIDIA 595-open (ubuntu-drivers recommendation for 10de:2582) with Canonical-signed modules for kernel 7.0.0-43 (new kernel), Claude desktop 4.23118.0. Adds i386 architecture. Sets OREZ OS 0.2 identity.
+- Apply flow: copy USB → root-only cache, verify SHA256SUMS, gpgv Ubuntu InRelease, private APT_CONFIG (apt.conf.d ignored), USB-only sources; falls back to adding the online Ubuntu sources only if packages are missing and the network works.
+- VM evidence (offline QEMU, run 42517939214, branch downloads/ci-42517939214): Calamares install of 0.1 → login → USB stick → OREZ Update window → polkit → installed in ~3 min with online_used=false → restart → OREZ OS 0.2, kernel 7.0.0-43-generic, nvidia module 595.99.02 signed "Canonical Ltd. Kernel Module Signing", `wine cmd /c ver` = Microsoft Windows 10.0.19043, Notepad window via Wine, Claude app launched, dpkg audit clean.
+- Not verified: real RTX 3050 (driver load, display on NVIDIA), Steam first-run (needs internet), any actual game, Secure Boot on hardware. PUBG and GTA Online do not run on Linux (publisher anti-cheat choice); RDR2 and GTA V story are expected to work via Proton.
+- Bootstrap on 0.1: open the USB in Dolphin, then `python3 /run/media/$USER/OREZ_UPDATE/orez-update/update_ui.py` (mounts are under /run/media on OREZ). On 0.2+ use the OREZ Update app.
+
 ### OREZ USB Studio 0.5.0 (Android writer, separate project)
 
 - Branch `feature/orez-usb-studio-0.5.0` (commit 8c52340, based on 0.4.4 at 5eb73c9), CI run 42462439910: unit tests passed, debug-signed APK built and verified.
