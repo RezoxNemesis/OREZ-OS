@@ -27,8 +27,15 @@ public final class HybridIsoValidator {
         }
     }
 
-    public static Info inspect(FileChannel channel) throws IOException {
-        long length=channel.size();
+    public static Info inspect(FileChannel file) throws IOException {
+        return inspect(file,0,file.size());
+    }
+
+    /** Validates an ISO stored at {@code base} inside a larger file (for example a stored ZIP entry). */
+    public static Info inspect(FileChannel file,long base,long size) throws IOException {
+        if(base<0 || size<0 || base>file.size()-size) throw new EOFException("The image region is outside the selected file.");
+        Region channel=new Region(file,base,size);
+        long length=size;
         if(length<20L*BLOCK || length%512!=0) throw new IOException("The selected file is not a complete sector-aligned installation image.");
         byte[] pvd=read(channel,16L*BLOCK,BLOCK);
         if((pvd[0]&255)!=1 || !ascii(pvd,1,"CD001") || (pvd[6]&255)!=1)
@@ -67,7 +74,7 @@ public final class HybridIsoValidator {
         Entry kernel=find(channel,root,"casper/vmlinuz");
         if(kernel==null) kernel=find(channel,root,"casper/vmlinuz.efi");
         if(squashfs==null || squashfs.directory || kernel==null || kernel.directory)
-            throw new IOException("This does not look like a standard Ubuntu/Kubuntu desktop installer (missing casper filesystem or kernel).");
+            throw new IOException("This does not look like a standard OREZ OS / Ubuntu-family desktop installer (missing casper filesystem or kernel).");
         Entry efi=find(channel,root,"EFI/BOOT/BOOTX64.EFI");
         boolean efiBoot=efi!=null && !efi.directory && efi.size>=2;
         if(efiBoot) {
@@ -75,7 +82,7 @@ public final class HybridIsoValidator {
             efiBoot=mz[0]=='M' && mz[1]=='Z';
         }
         if(!efiBoot)
-            throw new IOException("The ISO does not contain the expected x86_64 EFI bootloader. Choose the amd64/x86_64 Kubuntu image.");
+            throw new IOException("The ISO does not contain the expected x86_64 EFI bootloader. Choose the amd64/x86_64 OREZ OS image.");
         return new Info(length,volumeBlocks,"ISO9660",hybridMbr,gpt,true);
     }
 
@@ -111,7 +118,7 @@ public final class HybridIsoValidator {
         }
     }
 
-    private static Entry find(FileChannel c,Entry root,String path) throws IOException {
+    private static Entry find(Region c,Entry root,String path) throws IOException {
         Entry current=root;
         for(String part:path.split("/")) {
             if(part.isEmpty()) continue;
@@ -124,7 +131,7 @@ public final class HybridIsoValidator {
         return current;
     }
 
-    private static Entry[] children(FileChannel c,Entry dir) throws IOException {
+    private static Entry[] children(Region c,Entry dir) throws IOException {
         if(dir.size<=0 || dir.size>MAX_DIRECTORY || dir.extent<0)
             throw new IOException("An ISO directory has an unsupported size.");
         byte[] data=read(c,dir.extent*BLOCK,(int)dir.size);
@@ -149,13 +156,18 @@ public final class HybridIsoValidator {
         return s.toUpperCase(Locale.ROOT);
     }
 
-    private static byte[] read(FileChannel c,long position,int length) throws IOException {
-        if(position<0 || length<0 || position>c.size()-length) throw new EOFException("ISO is truncated.");
+    private static final class Region {
+        final FileChannel file; final long base,size;
+        Region(FileChannel file,long base,long size){this.file=file;this.base=base;this.size=size;}
+    }
+
+    private static byte[] read(Region c,long position,int length) throws IOException {
+        if(position<0 || length<0 || position>c.size-length) throw new EOFException("ISO is truncated.");
         byte[] out=new byte[length];
         ByteBuffer b=ByteBuffer.wrap(out);
         long at=position;
         while(b.hasRemaining()) {
-            int n=c.read(b,at);
+            int n=c.file.read(b,c.base+at);
             if(n<=0) throw new EOFException("Unable to read the selected ISO.");
             at+=n;
         }

@@ -32,8 +32,9 @@ public final class MainActivity extends Activity {
     private UsbManager usbManager;
     private Uri isoUri;
     private UsbDevice selectedUsb;
-    private long isoBytes,usbBytes;
-    private String isoName="No Linux ISO selected",isoHash="",isoSummary="";
+    private long isoBytes,usbBytes,isoOffset;
+    private String officialLabel=null;
+    private String isoName="No OREZ OS image selected",isoHash="",isoSummary="";
     private boolean inspecting=false,receiverRegistered=false;
     private TextView isoLabel,usbLabel,statusLabel,detailLabel,hashState;
     private EditText checksumInput,monitorPairCode;
@@ -103,25 +104,30 @@ public final class MainActivity extends Activity {
         LinearLayout page=new LinearLayout(this); page.setOrientation(LinearLayout.VERTICAL);
         page.setPadding(dp(20),dp(22),dp(20),dp(32)); scroll.addView(page); setContentView(scroll);
 
-        TextView brand=label("OREZ   /   USB STUDIO     0.4.3",12,MINT);
+        TextView brand=label("OREZ   /   USB STUDIO     "+BuildConfig.VERSION_NAME,12,MINT);
         brand.setLetterSpacing(.13f); page.addView(brand);
-        TextView title=label("Linux installer.\nWritten the right way.",29,TEXT);
+        TextView title=label("OREZ OS installer.\nWritten the right way.",29,TEXT);
         title.setTypeface(Typeface.DEFAULT,Typeface.BOLD); page.addView(title);
-        page.addView(label("Prepare a bootable Kubuntu / Ubuntu x86_64 USB directly from Android. The original hybrid ISO is cloned byte-for-byte; no extraction or FAT32 reformatting.",14,MUTED));
+        page.addView(label("Make a bootable OREZ OS USB for your PC directly from Android. Pick the downloaded OREZ ZIP or ISO; the original hybrid image is cloned byte-for-byte — no extraction, no FAT32 reformatting. Other Ubuntu-family x86_64 ISOs also work with a pasted checksum.",14,MUTED));
         page.addView(gap(16));
-        TextView notice=label("LINUX ONLY  ·  AMD64 / x86_64  ·  UEFI HYBRID ISO\nThis release does not create Windows installation media.",13,AMBER);
+        TextView notice=label("OREZ OS / LINUX  ·  AMD64 / x86_64  ·  UEFI HYBRID ISO\nThis screen does not create Windows installation media.",13,AMBER);
         notice.setBackground(round(CARD,14));notice.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(notice);
 
-        page.addView(sectionTitle("01  /  LINUX ISO"));
+        page.addView(sectionTitle("01  /  OREZ OS IMAGE"));
         isoLabel=label(isoName,14,TEXT); isoLabel.setBackground(round(CARD,14));isoLabel.setPadding(dp(14),dp(14),dp(14),dp(14));page.addView(isoLabel);
-        selectIsoButton=button("Choose ISO from phone storage",false);page.addView(selectIsoButton);
+        selectIsoButton=button("Choose OREZ ZIP or ISO from phone storage",false);page.addView(selectIsoButton);
         selectIsoButton.setOnClickListener(v->chooseIso());
-        page.addView(label("Download the official amd64 desktop ISO and its SHA256SUMS file. Select the ISO here, then paste the exact SHA-256 value for that filename below.",13,MUTED));
+        Button download=button("Download OREZ OS",false);page.addView(download);
+        download.setOnClickListener(v->{
+            try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(OrezReleases.DOWNLOAD_PAGE)));}
+            catch(Exception e){toast("Could not open the browser.");}
+        });
+        page.addView(label("Download opens the OREZ OS build page on GitHub (sign in there; the file is about 5.5 GB, so use Wi-Fi and keep 6 GB free). Select the downloaded .zip as-is — no need to unzip. Known OREZ builds are recognised by their built-in SHA-256 automatically.",13,MUTED));
 
-        page.addView(sectionTitle("02  /  OFFICIAL SHA-256"));
+        page.addView(sectionTitle("02  /  SHA-256 CHECK"));
         checksumInput=new EditText(this);
         checksumInput.setSingleLine(true);checksumInput.setTextColor(TEXT);checksumInput.setHintTextColor(MUTED);
-        checksumInput.setHint("64-character SHA-256 from official SHA256SUMS");
+        checksumInput.setHint("Filled in automatically for official OREZ builds");
         checksumInput.setTextSize(13);checksumInput.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         checksumInput.setPadding(dp(13),dp(11),dp(13),dp(11));checksumInput.setBackground(round(CARD,12));
         page.addView(checksumInput,new LinearLayout.LayoutParams(-1,dp(54)));
@@ -172,7 +178,7 @@ public final class MainActivity extends Activity {
         page.addView(sectionTitle("05  /  WRITE AND VERIFY"));
         TextView safety=label("The selected USB will be overwritten from sector zero. The app checks the ISO and capacity, writes the original hybrid image, requests a cache flush when supported, and verifies the complete image by reading it back. A separate read-only check below can verify persistence after unplugging and reconnecting.",13,MUTED);
         safety.setBackground(round(CARD,14));safety.setPadding(dp(14),dp(13),dp(14),dp(13));page.addView(safety);
-        createButton=button("Review & create Linux USB",true);page.addView(createButton);
+        createButton=button("Review & create OREZ OS USB",true);page.addView(createButton);
         createButton.setOnClickListener(v->confirmWrite());
         verifyButton=button("Read-only verify USB after reconnect",false);page.addView(verifyButton);
         verifyButton.setOnClickListener(v->confirmReconnectVerify());
@@ -201,11 +207,6 @@ public final class MainActivity extends Activity {
 
         page.addView(gap(14));
         page.addView(label("Important: this app supports USB Mass Storage BOT with 512-byte logical sectors. UAS-only or 4K-sector devices may not work. A failed write is never automatically retried. Always use a blank drive and keep the phone powered.",12,AMBER));
-        Button official=button("Open official Kubuntu downloads",false);page.addView(official);
-        official.setOnClickListener(v->{
-            try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://kubuntu.org/getkubuntu/")));}
-            catch(Exception e){toast("Could not open the browser.");}
-        });
         page.addView(label("Live monitoring is optional and off by default. A fresh private pairing code is required for each session. The connection is reporting-only from this Linux app: it never accepts remote USB-write, cancel or checksum commands. If the network fails, local writing continues.",12,MUTED));
         refreshControls();
     }
@@ -243,26 +244,37 @@ public final class MainActivity extends Activity {
         if(request!=10 || result!=RESULT_OK || data==null || data.getData()==null)return;
         Uri uri=data.getData();
         try { getContentResolver().takePersistableUriPermission(uri,Intent.FLAG_GRANT_READ_URI_PERMISSION); } catch(Exception ignored){}
-        isoUri=uri;isoHash="";isoBytes=0;isoSummary="";
+        isoUri=uri;isoHash="";isoBytes=0;isoOffset=0;isoSummary="";officialLabel=null;
         isoName=displayName(uri);
         isoLabel.setText("Inspecting "+isoName+"…");
         hashState.setText("Checking ISO structure and complete SHA-256. USB remains untouched.");
         inspecting=true;refreshControls();
         new Thread(()->{
             try {
-                long size;
+                IsoImage image;
                 HybridIsoValidator.Info info;
+                String hash;
                 try(ParcelFileDescriptor pfd=getContentResolver().openFileDescriptor(uri,"r");
                     FileInputStream f=new FileInputStream(pfd.getFileDescriptor())) {
-                    size=f.getChannel().size();
-                    info=HybridIsoValidator.inspect(f.getChannel());
+                    image=IsoImage.locate(f.getChannel());
+                    info=HybridIsoValidator.inspect(f.getChannel(),image.offset,image.length);
+                    hash=hash(image.open(f.getChannel()),image.length);
                 }
-                String hash=hash(uri,size);
-                final long bytes=size;
+                final String label=OrezReleases.label(hash);
                 runOnUiThread(()->{
-                    isoBytes=bytes;isoHash=hash;isoSummary=info.summary();inspecting=false;
-                    isoLabel.setText(isoName+"\n"+formatBytes(bytes)+"\n"+isoSummary+"\nSHA-256: "+hash);
-                    hashState.setText("Structure check passed. Compare this SHA-256 with the official checksum file, then paste it above.");
+                    isoBytes=image.length;isoOffset=image.offset;isoHash=hash;isoSummary=info.summary();inspecting=false;
+                    officialLabel=label;
+                    String shown=image.fromZip()?isoName+"  →  "+image.entryName:isoName;
+                    isoLabel.setText(shown+"\n"+formatBytes(image.length)+"\n"+isoSummary+"\nSHA-256: "+hash+
+                        (label!=null?"\n✓ "+label:""));
+                    if(label!=null) {
+                        checksumInput.setText(hash);
+                        hashState.setText("Official OREZ OS image recognised — built-in checksum matches. Now select the USB drive.");
+                    } else if(image.bundledSha256!=null && image.bundledSha256.equals(hash)) {
+                        hashState.setText("Matches the checksum file inside the ZIP, but this is not a known OREZ build. Paste the SHA-256 from a source you trust to unlock writing.");
+                    } else {
+                        hashState.setText("Structure check passed. This is not a known OREZ build: compare its SHA-256 with the publisher's checksum and paste it above.");
+                    }
                     refreshControls();
                 });
             } catch(Exception e) {
@@ -285,10 +297,9 @@ public final class MainActivity extends Activity {
         return name;
     }
 
-    private String hash(Uri uri,long expectedBytes) throws Exception {
+    private String hash(InputStream source,long expectedBytes) throws Exception {
         java.security.MessageDigest digest=java.security.MessageDigest.getInstance("SHA-256");
-        try(InputStream in=getContentResolver().openInputStream(uri)) {
-            if(in==null)throw new java.io.IOException("Cannot read the selected file.");
+        try(InputStream in=source) {
             byte[] b=new byte[256*1024];long n=0;int k;
             while((k=in.read(b))!=-1){digest.update(b,0,k);n+=k;if(n>expectedBytes)throw new java.io.IOException("File size changed during checksum.");}
             if(n!=expectedBytes)throw new java.io.IOException("Selected ISO was truncated.");
@@ -356,10 +367,10 @@ public final class MainActivity extends Activity {
         EditText erase=new EditText(this);erase.setSingleLine(true);erase.setHint("Type ERASE to confirm");
         erase.setTextColor(TEXT);erase.setHintTextColor(MUTED);
         AlertDialog dialog=new AlertDialog.Builder(this)
-            .setTitle("Review Linux USB creation")
+            .setTitle("Review OREZ OS USB creation")
             .setMessage("USB: "+deviceName(selectedUsb)+"\nCapacity: "+formatBytes(usbBytes)+
                 "\n\nISO: "+isoName+"\nSize: "+formatBytes(isoBytes)+
-                "\nSHA-256: "+isoHash+
+                "\nSHA-256: "+isoHash+(officialLabel!=null?"\n✓ "+officialLabel:"")+
                 "\n\nThis overwrites the selected USB from sector zero and destroys its existing contents. The writer clones the original hybrid ISO, flushes it and compares a full read-back. Use only a blank drive.")
             .setView(erase).setNegativeButton("Cancel",null).setPositiveButton("Erase & write",null).create();
         dialog.setOnShowListener(v->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(btn->{
@@ -375,6 +386,7 @@ public final class MainActivity extends Activity {
                 .putExtra("usbDevice",selectedUsb)
                 .putExtra("isoUri",isoUri)
                 .putExtra("isoBytes",isoBytes)
+                .putExtra("isoOffset",isoOffset)
                 .putExtra("expectedSha256",isoHash);
             if(monitorConsent!=null && monitorConsent.isChecked())
                 job.putExtra("liveMonitorPairCode",monitorPairCode.getText().toString().trim());
@@ -423,14 +435,14 @@ public final class MainActivity extends Activity {
 
     private void confirmReconnectVerify() {
         if(!canVerifyReconnect()) {
-            toast("Select the Kubuntu ISO, confirm its official SHA-256, and select the SanDisk USB first.");
+            toast("Select the OREZ ZIP or ISO, confirm its SHA-256, and select the USB drive first.");
             return;
         }
         new AlertDialog.Builder(this)
             .setTitle("Verify the reconnected USB — read only")
             .setMessage("USB: "+deviceName(selectedUsb)+"\nCapacity: "+formatBytes(usbBytes)+
                 "\nISO image: "+formatBytes(isoBytes)+"\nSHA-256: "+isoHash+
-                "\n\nThis checks whether the complete image remained on the flash drive after power was removed. It will not format or write anything. Only continue if you physically unplugged the USB after the previous write completed and have now reconnected it. Android may still call a hybrid Linux installer 'damaged'; this check determines whether the stored image actually matches Kubuntu.")
+                "\n\nThis checks whether the complete image remained on the flash drive after power was removed. It will not format or write anything. Only continue if you physically unplugged the USB after the previous write completed and have now reconnected it. Android may still call a hybrid Linux installer 'damaged'; this check determines whether the stored image actually matches the selected image.")
             .setNegativeButton("Cancel",null)
             .setPositiveButton("Start read-only check",(d,w)->runReconnectVerify(selectedUsb,isoBytes,isoHash))
             .show();
@@ -483,7 +495,7 @@ public final class MainActivity extends Activity {
                     WriteService.reportUsbProduct=WriteService.verificationUsbProduct;
                     WriteService.checksumMatched=true;
                     WriteService.phase="Persistent USB verification passed";
-                    WriteService.detail="The reconnected SanDisk contains the exact Kubuntu ISO. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual;
+                    WriteService.detail="The reconnected USB contains the exact selected image. Android's 'Damaged USB storage' warning is a mountability warning, not evidence of a failed write. Do not format it. Safely eject it and test booting it on your PC. SHA-256: "+actual;
                     WriteService.done=imageBytes;
                     WriteService.total=imageBytes;
                     statusLabel.setText(WriteService.phase);
@@ -525,9 +537,9 @@ public final class MainActivity extends Activity {
         boolean validIso=isoHash.matches("[0-9a-f]{64}");
         String typed=checksumInput==null?"":checksumInput.getText().toString().trim();
         if(validIso && typed.length()==64)
-            hashState.setText(typed.equalsIgnoreCase(isoHash)?"Official checksum matches the inspected ISO.":"Checksum mismatch — USB writing is locked.");
+            hashState.setText(typed.equalsIgnoreCase(isoHash)?(officialLabel!=null?"Official OREZ OS image — built-in checksum matches.":"Checksum matches the inspected ISO."):"Checksum mismatch — USB writing is locked.");
         else if(validIso)
-            hashState.setText("Paste the official SHA-256 value to unlock USB writing.");
+            hashState.setText("Paste the publisher's SHA-256 value to unlock USB writing.");
         createButton.setEnabled(canWrite());
         createButton.setAlpha(createButton.isEnabled()?1f:.42f);
         if(verifyButton!=null) {

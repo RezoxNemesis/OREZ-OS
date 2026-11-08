@@ -5,6 +5,7 @@ on:
     branches:
       - "feature/orez-usb-studio-linux-0.3.0"
       - "feature/orez-usb-studio-recovery-0.4.0"
+      - "feature/orez-usb-studio-0.5.0"
     paths:
       - "tools/orez-usb-studio-linux/**"
       - ".github/workflows/orez-usb-studio-linux.yml"
@@ -12,6 +13,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: orez-usb-studio-linux-${{ github.ref }}
@@ -55,24 +57,95 @@ jobs:
           test -s "$APK"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           mkdir -p dist
-          cp "$APK" dist/OREZ-USB-Studio-Linux-0.4.4.apk
-          sha256sum dist/OREZ-USB-Studio-Linux-0.4.4.apk | tee dist/SHA256SUMS.txt
-          echo "### OREZ USB Studio Linux 0.4.4" >> "$GITHUB_STEP_SUMMARY"
+          cp "$APK" dist/OREZ-USB-Studio-Linux-0.5.0.apk
+          sha256sum dist/OREZ-USB-Studio-Linux-0.5.0.apk | tee dist/SHA256SUMS.txt
+          echo "### OREZ USB Studio Linux 0.5.0" >> "$GITHUB_STEP_SUMMARY"
           echo "- Debug-signed APK: built and signature-verified." >> "$GITHUB_STEP_SUMMARY"
           echo "- JVM unit tests: passed." >> "$GITHUB_STEP_SUMMARY"
           echo "- Physical OTG/USB transfer and PC UEFI boot: **not tested by hosted CI**." >> "$GITHUB_STEP_SUMMARY"
           cat dist/SHA256SUMS.txt >> "$GITHUB_STEP_SUMMARY"
       - name: Verify release files exist
         run: |
-          test -s dist/OREZ-USB-Studio-Linux-0.4.4.apk
+          test -s dist/OREZ-USB-Studio-Linux-0.5.0.apk
           test -s dist/SHA256SUMS.txt
 
       - name: Upload APK and checksum
         uses: actions/upload-artifact@v4
         with:
-          name: OREZ-USB-Studio-Linux-0.4.4
+          name: OREZ-USB-Studio-Linux-0.5.0
           path: |
-            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.4.4.apk
+            tools/orez-usb-studio-linux/dist/OREZ-USB-Studio-Linux-0.5.0.apk
             tools/orez-usb-studio-linux/dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
+
+  real-orez-zip:
+    name: Check the app's ZIP reader on the real OREZ OS download
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: tools/orez-usb-studio-linux
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools"
+      - name: Install Android platform
+        run: |
+          yes | sdkmanager --licenses >/dev/null
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+      - name: Download the OREZ OS artifact ZIP exactly as a phone would
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          df -h "$RUNNER_TEMP"
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -o "$RUNNER_TEMP/orez.zip" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/13608167739/zip"
+          ls -l "$RUNNER_TEMP/orez.zip"
+      - name: Run the ZIP reader, ISO validator and pinned checksum on it
+        env:
+          OREZ_ARTIFACT_ZIP: ${{ runner.temp }}/orez.zip
+        run: |
+          gradle --no-daemon :app:testDebugUnitTest --tests 'com.orez.usb.IsoImageTest' -i | grep -E "OREZ artifact:|IsoImageTest|FAILED|PASSED" || true
+          R=app/build/test-results/testDebugUnitTest/TEST-com.orez.usb.IsoImageTest.xml
+          grep -q 'name="realOrezArtifactZip"' "$R"
+          ! grep -q '<skipped' "$R"
+          ! grep -q '<failure' "$R"
+          grep -o "OREZ artifact:[^<]*" "$R" | tee -a "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    name: Publish APK to a direct-download branch
+    needs: [android, real-orez-zip]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: OREZ-USB-Studio-Linux-0.5.0
+          path: apk
+      - name: Push APK and checksum to downloads/usb-studio-0.5.0
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          cd apk
+          sha256sum -c SHA256SUMS.txt
+          git init -q -b downloads/usb-studio-0.5.0
+          git config user.name "orez-ci"; git config user.email "orez-ci@users.noreply.github.com"
+          printf '# OREZ USB Studio 0.5.0\n\nAPK built by run ${{ github.run_id }} from commit ${{ github.sha }}.\n' > README.md
+          git add -A && git commit -qm "OREZ USB Studio 0.5.0 APK (run ${{ github.run_id }})"
+          git push -f "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" HEAD:refs/heads/downloads/usb-studio-0.5.0

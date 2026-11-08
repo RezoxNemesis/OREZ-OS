@@ -156,8 +156,18 @@ public final class UsbBot implements AutoCloseable {
             if(actual!=size) throw transportFailure((read?"USB read":"USB write")+" data stage returned "+actual+" of "+size+" bytes for "+describe(cdb)+".");
         }
         byte[] csw=new byte[13];
-        int got=bulkFully(bulkIn,csw,0,csw.length,10000);
-        if(got!=13) throw transportFailure("USB completion block returned "+got+" of 13 bytes for "+describe(cdb)+".");
+        int got=bulkFully(bulkIn,csw,0,csw.length,30000);
+        if(got!=13) {
+            // USB Mass Storage BOT 6.7.2/6.7.3: when the status stage stalls the host clears
+            // the bulk-in halt and reads the status block once more. This re-reads the
+            // drive's verdict on the same command; it never re-sends the data, and the
+            // full read-back still compares every byte afterwards.
+            int first=got;
+            if(clearHalt(bulkIn)) got=bulkFully(bulkIn,csw,0,csw.length,30000);
+            if(got!=13) throw transportFailure("USB completion block returned "+first+" of 13 bytes for "+describe(cdb)+
+                (got==first?"":", and "+got+" after clearing the endpoint stall")+".");
+            statusRecoveries++;
+        }
         if(le32(csw,0)!=0x53425355L || le32(csw,4)!=(current&0xffffffffL))
             throw transportFailure("USB completion signature or tag is invalid for "+describe(cdb)+".");
         long residue=le32(csw,8);
@@ -214,6 +224,15 @@ public final class UsbBot implements AutoCloseable {
             completed+=n;
         }
         return completed;
+    }
+
+    private int statusRecoveries;
+    /** Number of commands whose status block was recovered after an endpoint stall. */
+    public int statusRecoveries(){return statusRecoveries;}
+
+    /** Standard CLEAR_FEATURE(ENDPOINT_HALT) request to one endpoint. */
+    private boolean clearHalt(UsbEndpoint endpoint) {
+        return connection.controlTransfer(0x02,0x01,0,endpoint.getAddress(),null,0,5000)>=0;
     }
 
     private IOException transportFailure(String message) {

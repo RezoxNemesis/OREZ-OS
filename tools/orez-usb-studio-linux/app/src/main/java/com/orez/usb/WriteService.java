@@ -67,13 +67,14 @@ public final class WriteService extends Service {
         Uri uri=intent.getParcelableExtra("isoUri");
         String expected=intent.getStringExtra("expectedSha256");
         long expectedBytes=intent.getLongExtra("isoBytes",-1);
+        long isoOffset=intent.getLongExtra("isoOffset",0);
         String pairCode=intent.getStringExtra("liveMonitorPairCode");
         intent.removeExtra("liveMonitorPairCode");
         if(pairCode!=null && !pairCode.trim().isEmpty() && !LiveMonitorClient.isValidCode(pairCode)) {
             phase="Stopped before USB writing"; detail="The live-monitor pairing code is invalid. No write was started.";
             stopSelf(startId); return START_NOT_STICKY;
         }
-        if(device==null || uri==null || expected==null || !expected.matches("(?i)[0-9a-f]{64}") || expectedBytes<=0) {
+        if(device==null || uri==null || expected==null || !expected.matches("(?i)[0-9a-f]{64}") || expectedBytes<=0 || isoOffset<0) {
             phase="Stopped before USB writing"; detail="The reviewed ISO or USB details are missing. No write was started.";
             stopSelf(startId); return START_NOT_STICKY;
         }
@@ -98,7 +99,7 @@ public final class WriteService extends Service {
         } catch(Exception ignored) {}
 
         Runnable startWriter=()->{
-            worker=new Thread(()->runWriter(device,uri,expected.toLowerCase(Locale.ROOT),expectedBytes),"orez-linux-image-writer");
+            worker=new Thread(()->runWriter(device,uri,expected.toLowerCase(Locale.ROOT),expectedBytes,isoOffset),"orez-linux-image-writer");
             worker.start();
         };
         if(pairCode!=null && !pairCode.trim().isEmpty()) {
@@ -115,7 +116,7 @@ public final class WriteService extends Service {
         return START_NOT_STICKY;
     }
 
-    private void runWriter(UsbDevice reviewed,Uri uri,String expected,long expectedBytes) {
+    private void runWriter(UsbDevice reviewed,Uri uri,String expected,long expectedBytes,long isoOffset) {
         UsbBot bot=null;
         try {
             checkCancelled();
@@ -129,13 +130,14 @@ public final class WriteService extends Service {
             setStatus("Validating Linux ISO","Checking ISO9660, El Torito, hybrid partition map and x86_64 EFI loader.",0,expectedBytes);
             try(ParcelFileDescriptor pfd=getContentResolver().openFileDescriptor(uri,"r");
                 FileInputStream file=new FileInputStream(pfd.getFileDescriptor())) {
-                if(file.getChannel().size()!=expectedBytes) throw new IOException("The ISO size changed after review.");
-                HybridIsoValidator.Info info=HybridIsoValidator.inspect(file.getChannel());
+                IsoImage image=IsoImage.locate(file.getChannel());
+                if(image.offset!=isoOffset || image.length!=expectedBytes) throw new IOException("The ISO size or position changed after review.");
+                HybridIsoValidator.Info info=HybridIsoValidator.inspect(file.getChannel(),image.offset,image.length);
                 if(info.bytes!=expectedBytes) throw new IOException("The ISO size changed during inspection.");
             }
 
             setStatus("Checking SHA-256","Hashing the complete ISO before allowing any USB write.",0,expectedBytes);
-            String initialHash=hashSource(uri,expectedBytes);
+            String initialHash=hashSource(uri,isoOffset,expectedBytes);
             if(!initialHash.equals(expected))
                 throw new IOException("SHA-256 does not match the official checksum you entered. The USB has not been written.");
             checksumMatched=true;
@@ -151,8 +153,9 @@ public final class WriteService extends Service {
 
             setStatus("Writing raw Linux image","Writing the original hybrid ISO from USB sector zero. Do not disconnect the OTG adapter.",0,expectedBytes);
             MessageDigest sourceDigest=sha256();
-            try(InputStream in=getContentResolver().openInputStream(uri)) {
-                if(in==null) throw new IOException("Cannot reopen the selected ISO.");
+            try(ParcelFileDescriptor pfd=getContentResolver().openFileDescriptor(uri,"r");
+                FileInputStream file=new FileInputStream(pfd.getFileDescriptor());
+                InputStream in=new IsoImage.Range(file.getChannel(),isoOffset,expectedBytes)) {
                 byte[] buffer=new byte[UsbBot.MAX_TRANSFER];
                 long remaining=expectedBytes,lba=0,offset=0;
                 while(remaining>0) {
@@ -182,8 +185,9 @@ public final class WriteService extends Service {
 
             setStatus("Reading back USB","Comparing every written byte against the original ISO.",0,expectedBytes);
             MessageDigest sourceVerify=sha256(),deviceVerify=sha256();
-            try(InputStream in=getContentResolver().openInputStream(uri)) {
-                if(in==null) throw new IOException("Cannot reopen the ISO for read-back comparison.");
+            try(ParcelFileDescriptor pfd=getContentResolver().openFileDescriptor(uri,"r");
+                FileInputStream file=new FileInputStream(pfd.getFileDescriptor());
+                InputStream in=new IsoImage.Range(file.getChannel(),isoOffset,expectedBytes)) {
                 byte[] expectedBuffer=new byte[UsbBot.MAX_TRANSFER];
                 byte[] deviceBuffer=new byte[UsbBot.MAX_TRANSFER];
                 long remaining=expectedBytes,lba=0,offset=0;
@@ -214,11 +218,13 @@ public final class WriteService extends Service {
             if(!sourceHash.equals(expected) || !usbHash.equals(expected) || !sourceHash.equals(usbHash))
                 throw new IOException("The full USB read-back SHA-256 does not match the ISO. USB is not verified.");
 
+            if(bot.statusRecoveries()>0)
+                recordStatusEvent("USB status stalls recovered",bot.statusRecoveries()+" command status block(s) were re-read after clearing an endpoint stall; the full read-back above still matched.",expectedBytes,expectedBytes);
             success=true;
             setStatus("Image written — same-session verification passed",
                 "The USB read-back matched the complete ISO SHA-256. "+
                 (cacheFlushConfirmed?"The controller confirmed its cache flush. ":"The controller did not confirm a cache flush. ")+
-                "Safely eject and physically disconnect/reconnect the USB. Then use 'Read-only verify USB after reconnect' in OREZ USB Studio 0.4.3 to confirm the image persisted after power removal. "+
+                "Safely eject and physically disconnect/reconnect the USB. Then use 'Read-only verify USB after reconnect' in OREZ USB Studio to confirm the image persisted after power removal. "+
                 "Android may call a hybrid Linux installer 'damaged' because it cannot mount it as ordinary phone storage. Do not reformat it.",expectedBytes,expectedBytes);
         } catch(Exception e) {
             success=false;
@@ -292,7 +298,7 @@ public final class WriteService extends Service {
 
     private JSONObject buildMonitorStatus() throws Exception {
         return new JSONObject()
-            .put("version","0.4.3")
+            .put("version",BuildConfig.VERSION_NAME)
             .put("phase",phase)
             .put("detail",sanitizeMonitorDetail(detail))
             .put("running",running)
@@ -396,10 +402,11 @@ public final class WriteService extends Service {
             throw new IOException("The selected USB was disconnected or changed.");
     }
 
-    private String hashSource(Uri uri,long size) throws Exception {
+    private String hashSource(Uri uri,long offset,long size) throws Exception {
         MessageDigest digest=sha256();
-        try(InputStream in=getContentResolver().openInputStream(uri)) {
-            if(in==null) throw new IOException("Cannot read the selected ISO.");
+        try(ParcelFileDescriptor pfd=getContentResolver().openFileDescriptor(uri,"r");
+            FileInputStream file=new FileInputStream(pfd.getFileDescriptor());
+            InputStream in=new IsoImage.Range(file.getChannel(),offset,size)) {
             byte[] b=new byte[256*1024]; long count=0; int n;
             while((n=in.read(b))!=-1) {
                 checkCancelled(); digest.update(b,0,n); count+=n;

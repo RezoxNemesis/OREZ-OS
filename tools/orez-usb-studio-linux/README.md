@@ -1,4 +1,21 @@
-# OREZ USB Studio Linux 0.4.4
+# OREZ USB Studio Linux 0.5.0
+
+### 0.5.0 — OREZ OS edition
+
+- **Direct ZIP input.** Select the GitHub `OREZ-OS-0.1-live-amd64` artifact ZIP as downloaded; the
+  stored (uncompressed, ZIP64) ISO entry is located and read in place — no extraction, no extra
+  5 GB copy. Compressed or encrypted entries are refused with a clear message.
+- **Built-in OREZ checksum.** SHA-256 values of VM-tested OREZ builds are pinned in
+  `OrezReleases.java`; a match fills the checksum and marks the image official. Any other image still
+  needs the checksum pasted by hand. A `.sha256` inside the ZIP is shown but never trusted alone.
+- **Download OREZ OS** button opens the build's artifact page (GitHub sign-in required).
+- **USB status-stage stall recovery.** When the 13-byte status block after a command fails (the
+  6 Nov "completion block returned -1 of 13 bytes" failure), the app clears the bulk-in endpoint
+  halt and re-reads the status once (USB Mass Storage BOT 6.7). It never re-sends data; the full
+  read-back still compares every byte. Status timeout raised from 10 s to 30 s for slow flash.
+- Version shown in the app and monitor now comes from the build (previously hard-coded 0.4.3).
+- Generic USB wording replaces SanDisk/Kubuntu-specific text; Recovery (FAT32) is unchanged otherwise.
+
 
 A phone-first Android USB recovery and writer for x86_64 Ubuntu-family hybrid installation ISOs, including Kubuntu desktop images. This build is Linux-only; the old Windows extraction/FAT32/WIM workflow is not included.
 

@@ -43,13 +43,13 @@ public final class RecoveryActivity extends Activity {
         detail=new TextView(this);detail.setTextColor(0xffebf2f9);detail.setTextSize(14);root.addView(detail);
         progress=new ProgressBar(this,null,android.R.attr.progressBarStyleHorizontal);root.addView(progress,new LinearLayout.LayoutParams(-1,18));
         scan=new Button(this);scan.setText("Detect connected USB");root.addView(scan);scan.setOnClickListener(v->scanUsb());
-        format=new Button(this);format.setText("Format SanDisk as FAT32");root.addView(format);format.setEnabled(false);format.setOnClickListener(v->confirmFormat());
-        TextView warning=new TextView(this);warning.setText("WARNING: Formatting permanently erases the selected USB. Use only the SanDisk flash drive. This does not repair a physically failing drive. After recovery, select the Kubuntu ISO again and restart the complete write.");warning.setTextColor(0xffffc67d);warning.setTextSize(13);warning.setPadding(0,24,0,0);root.addView(warning);
+        format=new Button(this);format.setText("Format USB drive as FAT32");root.addView(format);format.setEnabled(false);format.setOnClickListener(v->confirmFormat());
+        TextView warning=new TextView(this);warning.setText("WARNING: Formatting permanently erases the selected USB. Use only the flash drive you mean to erase. This does not repair a physically failing drive. After recovery, select the OREZ image again and restart the complete write.");warning.setTextColor(0xffffc67d);warning.setTextSize(13);warning.setPadding(0,24,0,0);root.addView(warning);
         setContentView(root);
         IntentFilter f=new IntentFilter(PERMISSION);
         if(Build.VERSION.SDK_INT>=33)registerReceiver(receiver,f,Context.RECEIVER_NOT_EXPORTED);else registerReceiver(receiver,f);
         receiverRegistered=true;
-        setStatus("Ready","Connect the SanDisk using your USB-C OTG adapter.");
+        setStatus("Ready","Connect the USB drive using your USB-C OTG adapter.");
     }
 
     private void scanUsb(){
@@ -59,7 +59,7 @@ public final class RecoveryActivity extends Activity {
         if(found.isEmpty()){selected=null;format.setEnabled(false);setStatus("No compatible USB detected","Reconnect the OTG adapter. The drive must expose USB Mass Storage BOT / SCSI.");return;}
         String[] labels=new String[found.size()];
         for(int i=0;i<found.size();i++){UsbDevice d=found.get(i);labels[i]=(d.getProductName()==null?"USB mass storage":d.getProductName())+String.format(Locale.ROOT," · %04X:%04X",d.getVendorId(),d.getProductId());}
-        new AlertDialog.Builder(this).setTitle("Select the SanDisk USB").setItems(labels,(x,n)->{
+        new AlertDialog.Builder(this).setTitle("Select the USB drive").setItems(labels,(x,n)->{
             selected=found.get(n);format.setEnabled(false);
             setStatus("Checking "+labels[n],"Opening a read-only capacity check. No sectors have been changed.");
             if(manager.hasPermission(selected))inspect(selected);
