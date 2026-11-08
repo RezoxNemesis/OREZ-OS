@@ -132,6 +132,34 @@ if grep -qE '^(Setting up|Unpacking) (nvidia-dkms|linux-image)|Building initial 
   echo 'DKMS path detected; expected prebuilt signed modules only' >&2; exit 1
 fi
 
+# OREZ identity: system name, boot splash. Files owned by base-files are diverted
+# (dpkg-divert) so Ubuntu updates install their copies beside ours instead of
+# silently replacing them. ID=ubuntu and the codenames stay, so apt,
+# ubuntu-drivers and update tools keep recognising the base.
+C dpkg-divert --local --rename --divert /usr/lib/os-release.ubuntu --add /usr/lib/os-release
+python3 - "$R/usr/lib/os-release.ubuntu" "$R/usr/lib/os-release" <<'PY'
+import re, sys
+src = open(sys.argv[1]).read()
+keep = {k: v for k, v in re.findall(r'^([A-Z_]+)=(.*)$', src, re.M)}
+out = {'PRETTY_NAME': '"OREZ OS 0.1"', 'NAME': '"OREZ OS"', 'VERSION_ID': keep.get('VERSION_ID', '""'),
+       'VERSION': '"0.1 (Kubuntu 26.04.1 base)"', 'VERSION_CODENAME': keep.get('VERSION_CODENAME', ''),
+       'ID': 'ubuntu', 'ID_LIKE': 'debian', 'HOME_URL': '"https://github.com/RezoxNemesis/OREZ-OS"',
+       'SUPPORT_URL': '"https://github.com/RezoxNemesis/OREZ-OS/issues"',
+       'BUG_REPORT_URL': '"https://github.com/RezoxNemesis/OREZ-OS/issues"',
+       'UBUNTU_CODENAME': keep.get('UBUNTU_CODENAME', ''), 'LOGO': 'orez-logo'}
+open(sys.argv[2], 'w').write(''.join(f'{k}={v}\n' for k, v in out.items()))
+PY
+C dpkg-divert --local --rename --divert /etc/lsb-release.ubuntu --add /etc/lsb-release
+sed 's/^DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION="OREZ OS 0.1"/' "$R/etc/lsb-release.ubuntu" > "$R/etc/lsb-release"
+for f in /etc/issue /etc/issue.net; do
+  C dpkg-divert --local --rename --divert "$f.ubuntu" --add "$f"
+done
+printf 'OREZ OS 0.1 \\n \\l\n\n' > "$R/etc/issue"; printf 'OREZ OS 0.1\n' > "$R/etc/issue.net"
+C update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
+  /usr/share/plymouth/themes/orez/orez.plymouth 300
+C update-alternatives --set default.plymouth /usr/share/plymouth/themes/orez/orez.plymouth
+{ echo '--- identity'; cat "$R/usr/lib/os-release"; grep DISTRIB_DESCRIPTION "$R/etc/lsb-release"; readlink "$R/etc/alternatives/default.plymouth"; } | tee -a "$OUT/layer-build.log"
+
 # OREZ identity: drop Kubuntu website/how-to desktop shortcuts for new users
 # (overlay whiteouts; the files remain in the untouched base layer below).
 rm -f "$R/etc/skel/Desktop/org.kfocus.web.howtos.desktop" "$R/etc/skel/Desktop/org.kubuntu.web.home.desktop"

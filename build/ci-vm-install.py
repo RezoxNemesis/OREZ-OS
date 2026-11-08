@@ -74,7 +74,8 @@ def facts(vm, pw, tag):
            "findmnt /; cat /proc/cmdline; efibootmgr; loginctl list-sessions --no-legend; " + m('PROCS') +
            "; ps -eo user:20,pid,comm --no-headers; " + m('MORE') +
            "; dpkg -l orez-shell brave-browser vlc gamemode | tail -4; systemctl is-enabled orez-owner-setup.service; "
-           "ls /usr/lib/orez; journalctl -b -p err --no-pager | tail -60; " + m('END') + "; } > /dev/ttyS0 2>&1'")
+           "ls /usr/lib/orez; grep PRETTY_NAME /etc/os-release; readlink /etc/alternatives/default.plymouth; "
+           "cat /proc/cmdline; journalctl -b -p err --no-pager | tail -60; " + m('END') + "; } > /dev/ttyS0 2>&1'")
     ok = vm.run_on_tty(pw, cmd, '==OREZ-' + tag + 'END==', 120)
     s = vm.serial()
     return s[s.rfind('==OREZ-' + tag + 'BEGIN=='):s.rfind('==OREZ-' + tag + 'END==')] if ok else ''
@@ -155,6 +156,11 @@ def main(a):
         (a.out / 'installed').mkdir(exist_ok=True)
         vm2 = VM(None, a.out / 'installed', 6144, 4, disk=disk, vars_file=vars_file, serial_name='serial-installed.log')
         try:
+            # Boot straight from the menu, then capture the boot splash frame by frame.
+            if vm2.wait_text(['GNU GRUB', 'OREZ GNU'], 'installed-grub', 120):
+                vm2.keys('ret')
+                for _ in range(25):
+                    time.sleep(1); vm2.shot('installed-splash')
             seen = vm2.wait_text(['Welcome home', 'Your workspace', 'Orez Owner'], 'installed-greeter', 600)
             c['installed_login_screen'] = bool(seen)
             c['installed_orez_greeter'] = seen in ('Welcome home', 'Your workspace')
@@ -167,6 +173,7 @@ def main(a):
             else:
                 vm2.type(pw + '\n')
             time.sleep(90); vm2.shot('installed-desktop')
+            vml.tour(vm2)
             vm2.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm2.type('orez\n'); time.sleep(2); vm2.type(pw + '\n'); time.sleep(5)
             blk = facts(vm2, pw, 'I')
             (a.out / 'installed-facts.txt').write_text(blk)

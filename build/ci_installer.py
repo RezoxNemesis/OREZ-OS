@@ -5,7 +5,7 @@ reviewed OREZ profile (image/installer/profile.json, source and output hashes
 still enforced), then the install-time additions: merged-source unpack, OREZ
 branding, and the source mount/unmount steps around unpackfs.
 """
-import hashlib, importlib.util, json, shutil, subprocess
+import hashlib, importlib.util, json, re, shutil, subprocess
 from pathlib import Path
 
 from image_packages import installed
@@ -49,6 +49,9 @@ def generate(iso, offset):
             raise ValueError('Installer settings addition is ambiguous: ' + before.strip())
         settings = settings.replace(before, after)
     out['etc/calamares/settings.conf'] = settings
+    # Partition/filesystem labels: OREZ instead of the upstream flavour name.
+    part = out['etc/calamares/modules/partition.conf']
+    out['etc/calamares/modules/partition.conf'] = re.sub(r'kubuntu_\d+', 'OREZ', part)
     return out
 
 

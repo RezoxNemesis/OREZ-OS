@@ -4,6 +4,6 @@ Name=OREZ Hardware Preflight
 GenericName=Read-Only PC Compatibility Checks
 Comment=Inspect boot mode, CPU, RAM, graphics and storage without modifying your computer
 Exec=/usr/bin/orez-preflight
-Icon=computer
+Icon=orez-preflight
 Terminal=true
 Categories=System;Utility;

@@ -3,6 +3,6 @@ Type=Application
 Name=OREZ Calendar
 Comment=Private local all-day events and notes
 Exec=/usr/bin/orez-calendar
-Icon=view-calendar
+Icon=orez-calendar
 Terminal=false
 Categories=Office;Calendar;

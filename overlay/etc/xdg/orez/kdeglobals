@@ -11,3 +11,6 @@ SingleClick=false
 
 [Icons]
 Theme=breeze
+
+[Sounds]
+Theme=orez

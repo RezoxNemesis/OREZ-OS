@@ -1,0 +1,8 @@
+[Sound Theme]
+Name=OREZ
+Comment=Soft ink-and-paper chimes for OREZ OS
+Inherits=ocean,freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

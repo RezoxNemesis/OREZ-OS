@@ -133,6 +133,13 @@ class VM:
         except Exception: self.proc.kill()
 
 
+def tour(vm):
+    """Evidence of the OREZ look: Start menu open, then a normal app window frame."""
+    vm.click(30, 772); time.sleep(3); vm.shot('start-menu'); vm.keys('esc'); time.sleep(2)
+    vm.keys('alt', 'spc'); time.sleep(3); vm.type('Dolphin'); time.sleep(3); vm.keys('ret')
+    time.sleep(8); vm.shot('window-frame'); vm.keys('alt', 'f4'); time.sleep(2)
+
+
 def main(a):
     a.out.mkdir(parents=True, exist_ok=True)
     pw = 'Orez' + ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(18))
@@ -158,6 +165,7 @@ def main(a):
         vm.keys('alt', 'spc'); time.sleep(3); vm.type('OREZ Appearance'); time.sleep(3); vm.keys('ret')
         result['checks']['appearance_opened'] = bool(vm.wait_text(['Try it for 20 seconds', 'OREZ Appearance'], 'appearance', 60))
         time.sleep(2); vm.shot('appearance-window'); vm.keys('alt', 'f4'); time.sleep(2)
+        tour(vm)
         # Collect objective in-guest facts from an authenticated owner console.
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(4); vm.shot('tty3')
         vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5); vm.shot('tty3-login')
@@ -170,7 +178,8 @@ def main(a):
             parts = ["loginctl list-sessions --no-legend", mark(tag + 'PROCS'), "ps -eo user:20,pid,comm --no-headers",
                      mark(tag + 'LOOK'), "for p in $(pgrep -u orez -x plasmashell); do tr \\\\0 \\\\n < /proc/$p/environ | grep ^XDG_CONFIG_DIRS; done",
                      "grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals",
-                     "ls /home/orez/Desktop", "sudo -u orez /usr/bin/orez-drivers --check"]
+                     "ls /home/orez/Desktop", "sudo -u orez /usr/bin/orez-drivers --check",
+                     "grep -E ^PRETTY_NAME /etc/os-release", "readlink /etc/alternatives/default.plymouth"]
             if full:
                 parts += [mark(tag + 'TRACE'), "journalctl -b --no-pager -o short-precise -t orez-session-trace",
                           mark(tag + 'SDDM'), "journalctl -b --no-pager -o short-precise -u sddm | tail -80",

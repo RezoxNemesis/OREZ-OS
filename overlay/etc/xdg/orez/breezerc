@@ -1,0 +1,12 @@
+# OREZ window frames: Breeze engine, paper title bars (from the OREZ colour
+# scheme), centred titles, soft large shadows, no hard outline.
+[Common]
+OutlineIntensity=OutlineOff
+ShadowSize=ShadowLarge
+ShadowStrength=90
+
+[Windows]
+TitleAlignment=AlignCenterFullWidth
+ButtonSize=ButtonDefault
+DrawBorderOnMaximizedWindows=false
+DrawTitleBarSeparator=false

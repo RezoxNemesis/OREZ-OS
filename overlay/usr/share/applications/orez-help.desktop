@@ -4,6 +4,6 @@ Name=OREZ Help & Recovery
 GenericName=Help, Recovery Status and Diagnostics
 Comment=Find safe next steps and inspect read-only system diagnostics
 Exec=/usr/bin/orez-help
-Icon=help-browser
+Icon=orez-help
 Terminal=false
 Categories=System;Utility;

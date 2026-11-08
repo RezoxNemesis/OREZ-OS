@@ -1,0 +1,7 @@
+[General]
+Name=OREZ OS
+LogoPath=/usr/share/pixmaps/orez-logo.png
+Website=https://github.com/RezoxNemesis/OREZ-OS
+Variant=0.1 (Kubuntu 26.04.1 base)
+UseOSReleaseVersion=false
+Version=0.1

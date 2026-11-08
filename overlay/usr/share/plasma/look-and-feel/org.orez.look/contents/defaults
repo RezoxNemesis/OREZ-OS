@@ -28,3 +28,6 @@ theme=Breeze
 
 [KSplash]
 Theme=org.kde.Breeze
+
+[kdeglobals][Sounds]
+Theme=orez

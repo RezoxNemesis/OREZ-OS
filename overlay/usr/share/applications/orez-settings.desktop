@@ -4,6 +4,6 @@ Name=OREZ Settings
 GenericName=System Preferences
 Comment=Full system settings using native KDE
 Exec=/usr/bin/orez-settings
-Icon=preferences-system
+Icon=orez-settings
 Terminal=false
 Categories=Settings;System;

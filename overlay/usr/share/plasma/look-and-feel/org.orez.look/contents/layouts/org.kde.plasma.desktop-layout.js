@@ -20,3 +20,13 @@ panels().forEach(function (p) {
     }
   });
 });
+
+// Start menu button: the OREZ ensō.
+panels().forEach(function (p) {
+  p.widgets().forEach(function (w) {
+    if (w.type === 'org.kde.plasma.kickoff' || w.type === 'org.kde.plasma.kicker' || w.type === 'org.kde.plasma.kickerdash') {
+      w.currentConfigGroup = ['General'];
+      w.writeConfig('icon', 'orez-start');
+    }
+  });
+});
