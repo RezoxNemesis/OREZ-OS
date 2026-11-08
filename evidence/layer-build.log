@@ -1,0 +1,65 @@
+Live kernel: 7.0.0-30-generic
+brave-browser-release.sources
+Get:36 http://security.ubuntu.com/ubuntu resolute-security/multiverse Translation-en [3728 B]
+Get:37 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [21.0 kB]
+Get:38 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse Translation-en [4168 B]
+Fetched 23.2 MB in 3s (7585 kB/s)
+Reading package lists...
+main
+restricted
+Hit:9 http://archive.ubuntu.com/ubuntu resolute-updates InRelease
+Reading package lists...
+W: OpenPGP signature verification failed: file:/tmp/iso resolute Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 0A0E127F63936AAE
+series 580: rejected plan:
+E: Unable to satisfy dependencies. Reached two conflicting assignments:
+WARNING: no DKMS-free signed NVIDIA set for the live kernel; first-boot driver setup will install it
+--- identity
+PRETTY_NAME="OREZ OS 0.1"
+NAME="OREZ OS"
+VERSION_ID="26.04"
+VERSION="0.1 (Kubuntu 26.04.1 base)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://github.com/RezoxNemesis/OREZ-OS"
+SUPPORT_URL="https://github.com/RezoxNemesis/OREZ-OS/issues"
+BUG_REPORT_URL="https://github.com/RezoxNemesis/OREZ-OS/issues"
+UBUNTU_CODENAME=resolute
+LOGO=orez-logo
+DISTRIB_DESCRIPTION="OREZ OS 0.1"
+/usr/share/plymouth/themes/orez/orez.plymouth
+898M	/mnt/orez-layer.DEXnk4/upper
+Parallel mksquashfs: Using 4 processors
+Creating 4.0 filesystem on /mnt/orez/layer/orez-apps.squashfs, block size 131072.
+
+Exportable Squashfs 4.0 filesystem, xz compressed, data block size 131072
+	compressed data, compressed metadata, compressed fragments,
+	compressed xattrs, compressed ids
+	duplicates are removed
+Filesystem size 409355.74 Kbytes (399.76 Mbytes)
+	45.95% of uncompressed filesystem size (890861.41 Kbytes)
+Inode table size 94844 bytes (92.62 Kbytes)
+	22.68% of uncompressed inode table size (418250 bytes)
+Directory table size 135832 bytes (132.65 Kbytes)
+	37.70% of uncompressed directory table size (360282 bytes)
+Xattr table size 988 bytes (0.96 Kbytes)
+	6.07% of uncompressed xattr table size (16265 bytes)
+Number of duplicate files found 950
+Number of inodes 12052
+Number of files 11347
+Number of fragments 643
+Number of symbolic links 52
+Number of device nodes 1
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 652
+Number of hard-links 108
+Number of ids (unique uids + gids) 5
+Number of uids 3
+	root (0)
+	_apt (42)
+	man (6)
+Number of gids 3
+	root (0)
+	man (12)
+	messagebus (101)
