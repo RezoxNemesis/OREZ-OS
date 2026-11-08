@@ -125,8 +125,11 @@ def update_stage(a, disk, vars_file, pw, r):
         c['update_window'] = bool(vm.wait_text(['is ready to install', 'Install update'], 'u-window', 120))
         if not c['update_window']: raise RuntimeError('OREZ Update window did not show the update')
         time.sleep(2); vm.shot('u-options')  # Steam, Claude (and NVIDIA on NVIDIA PCs) are ticked by default
-        c['install_clicked'] = click_text(vm, 'Install update', 'u-install', 30)
-        c['polkit'] = bool(vm.wait_text(['Authentication', 'Password'], 'u-polkit', 90))
+        c['install_clicked'] = click_text(vm, 'Install update', 'u-install', 20)
+        if not c['install_clicked']:
+            # Light-on-dark button text defeats OCR; the 760x640 window opens centred, button bottom-right.
+            vm.note('u-install: using fixed Install update position'); click(vm, 938, 675)
+        c['polkit'] = bool(vm.wait_text(['Authentication Required', 'Authenticate'], 'u-polkit', 90))
         vm.type(pw + '\n')
         res = vm.wait_text(['Update installed', 'was not completed'], 'u-progress', 3600, every=30, keepalive=True)
         vm.shot('u-finished')

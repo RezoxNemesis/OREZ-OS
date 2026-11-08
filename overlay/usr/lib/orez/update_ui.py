@@ -18,7 +18,7 @@ sys.path.insert(0, str(HERE))
 import update_apply as core  # noqa: E402
 
 from PySide6.QtCore import QProcess, Qt  # noqa: E402
-from PySide6.QtGui import QFont, QPixmap  # noqa: E402
+from PySide6.QtGui import QFont, QIcon, QPixmap  # noqa: E402
 from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel, QMessageBox,  # noqa: E402
                                QPlainTextEdit, QProgressBar, QPushButton, QVBoxLayout, QWidget)
 
@@ -49,6 +49,9 @@ class Window(QWidget):
     def __init__(self, media_arg: Path | None):
         super().__init__()
         self.setWindowTitle('OREZ Update')
+        for icon in ('/usr/share/icons/hicolor/scalable/apps/orez-update.svg', '/usr/share/pixmaps/orez-logo.png'):
+            if Path(icon).is_file():
+                self.setWindowIcon(QIcon(icon)); break
         self.resize(760, 640)
         self.setStyleSheet(f'QWidget{{background:{PAPER};color:{INK};font-size:11pt}}'
                            f'QPushButton{{padding:10px 22px;border:1px solid {INK};border-radius:6px}}'
