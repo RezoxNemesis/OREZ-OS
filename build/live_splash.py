@@ -1,9 +1,10 @@
 """Append the OREZ boot splash to a live initrd as an extra newc archive.
 
-Linux unpacks concatenated initramfs archives in order; later entries win.
-The patched upstream initrd bytes are kept unchanged and followed by one small,
-uncompressed, deterministic archive containing only the OREZ Plymouth theme
-(two-step, a plugin the live initrd already ships) and plymouthd.conf.
+Linux unpacks concatenated initramfs archives in order. The archive is
+inserted between the uncompressed early (microcode) archives and the main
+compressed archive: the position the kernel reliably parses (an archive
+appended after the zstd stream was ignored in run 42445644967). The main
+archive has no plymouthd.conf, so Theme=orez survives; upstream bytes are kept.
 """
 import hashlib
 from pathlib import Path
@@ -34,10 +35,12 @@ def archive(theme_dir):
     return data + b'\0' * ((512 - len(data) % 512) % 512)
 
 
-def append(initrd, theme_dir):
+def insert(initrd, theme_dir, prefix_bytes):
     initrd = Path(initrd)
     extra = archive(theme_dir)
     before = initrd.read_bytes()
-    initrd.write_bytes(before + extra)
-    return {'base_initrd_sha256': hashlib.sha256(before).hexdigest(),
+    if before[prefix_bytes:prefix_bytes + 4] != b'\x28\xb5\x2f\xfd':
+        raise ValueError('main zstd archive not found at the reviewed early-prefix offset')
+    initrd.write_bytes(before[:prefix_bytes] + extra + before[prefix_bytes:])
+    return {'base_initrd_sha256': hashlib.sha256(before).hexdigest(), 'inserted_at': prefix_bytes,
             'splash_archive_sha256': hashlib.sha256(extra).hexdigest(), 'splash_archive_bytes': len(extra)}

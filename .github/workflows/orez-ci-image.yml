@@ -52,8 +52,8 @@ jobs:
           # Live splash: the appended archive must extract with the system cpio.
           xorriso -osirrox on -indev "$W/out/OREZ-OS-0.1-live-amd64.iso" -extract /casper/initrd "$W/initrd-check" >/dev/null 2>&1
           python3 -c "import json;r=json.load(open('$W/out/OREZ-OS-0.1-live-amd64.json'))['live_splash'];print(r)"
-          N=$(python3 -c "import json;print(json.load(open('$W/out/OREZ-OS-0.1-live-amd64.json'))['live_splash']['splash_archive_bytes'])")
-          mkdir -p "$W/splash-check" && tail -c "$N" "$W/initrd-check" | (cd "$W/splash-check" && cpio -id --quiet)
+          read OFF N < <(python3 -c "import json;r=json.load(open('$W/out/OREZ-OS-0.1-live-amd64.json'))['live_splash'];print(r['inserted_at'],r['splash_archive_bytes'])")
+          mkdir -p "$W/splash-check" && tail -c +$((OFF+1)) "$W/initrd-check" | head -c "$N" | (cd "$W/splash-check" && cpio -id --quiet)
           cat "$W/splash-check/etc/plymouth/plymouthd.conf"; ls "$W/splash-check/usr/share/plymouth/themes/orez" | wc -l
           rm -rf "$W/initrd-check" "$W/splash-check"
           rm -f "$(cat $W/iso-path)"
