@@ -1,0 +1,119 @@
+name: OREZ OS — update USB build and VM update test
+
+# One-shot branches only (build/update-*). Builds the OREZ 0.2 update USB image
+# from the exact OREZ 0.1 release image, then tests it end to end in a disposable
+# offline KVM VM: install OREZ 0.1 to a blank virtual disk, plug the update in as
+# a USB stick, apply it through the OREZ Update window, restart, verify.
+on:
+  push:
+    branches:
+      - 'build/update-*'   # build/update-payload-* = payload only, no VM test
+
+permissions:
+  contents: write  # only the final evidence-publish step uses the token
+  actions: read    # download the OREZ 0.1 release image artifact
+
+concurrency:
+  group: orez-update-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  BASE_ARTIFACT: '13608167739'
+  BASE_SHA256: cbd1435e4422a1e6c2300c2839aaae46943bf3cb606fe97d6c216e7d875769bb
+  W: /mnt/orez
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Builder tools and KVM access
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools qemu-system-x86 qemu-utils ovmf tesseract-ocr python3-pil gpgv dpkg-dev unzip >/dev/null
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+          sudo mkdir -p "$W" && sudo chown "$USER" "$W"; df -h / /mnt
+      - name: Fetch the OREZ 0.1 release image and check its pinned SHA-256
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -o "$W/base.zip" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$BASE_ARTIFACT/zip"
+          unzip -q "$W/base.zip" -d "$W/base" && rm "$W/base.zip"
+          echo "$BASE_SHA256  $W/base/OREZ-OS-0.1-live-amd64.iso" | sha256sum -c -
+      - name: Unit tests for the updater
+        run: python3 -m unittest tests/test_update.py -v
+      - name: Build OREZ 0.2 package
+        run: bash build/package-shell.sh && ls -l dist
+      - name: Build the update payload (Ubuntu-signed offline mirror + OREZ)
+        env:
+          OREZ_SOURCE_COMMIT: ${{ github.sha }}
+        run: sudo -E bash build/ci-build-update.sh "$W/base/OREZ-OS-0.1-live-amd64.iso" "$(python3 build/package-info.py path)" "$W/update"
+      - name: Make the update USB image
+        run: |
+          sudo cp "$W/update/payload/orez-update/README.txt" "$W/update/payload/README.txt"
+          sudo xorriso -as mkisofs -iso-level 3 -R -V OREZ_UPDATE -o "$W/OREZ-OS-0.2-update.iso" "$W/update/payload"
+          sudo chown "$USER" "$W/OREZ-OS-0.2-update.iso"
+          (cd "$W" && sha256sum OREZ-OS-0.2-update.iso | tee OREZ-OS-0.2-update.iso.sha256)
+          ls -l "$W/OREZ-OS-0.2-update.iso"
+      - name: Disposable offline VM — install OREZ 0.1, apply the update from a USB stick, restart, verify
+        id: vm
+        if: ${{ !startsWith(github.ref_name, 'build/update-payload') }}
+        continue-on-error: true
+        timeout-minutes: 230
+        run: python3 build/ci-vm-install.py --iso "$W/base/OREZ-OS-0.1-live-amd64.iso" --update-iso "$W/OREZ-OS-0.2-update.iso" --out dist/vm-update
+      - name: Report
+        if: always()
+        run: |
+          mkdir -p dist/vm-update
+          sudo cp "$W"/update/*.log "$W"/update/plan.txt "$W/update/payload/orez-update/update.json" dist/vm-update/ 2>/dev/null || true
+          cp "$W/OREZ-OS-0.2-update.iso.sha256" dist/vm-update/ 2>/dev/null || true
+          sudo chown -R "$USER" dist/vm-update
+          {
+            echo '### OREZ update image'; echo '```'; cat "$W/OREZ-OS-0.2-update.iso.sha256" 2>/dev/null; ls -l "$W/OREZ-OS-0.2-update.iso" 2>/dev/null; echo '```'
+            echo '### VM result'; echo '```'
+            python3 -c "import json;d=json.load(open('dist/vm-update/install-result.json'));print(json.dumps({k:v for k,v in d.items() if not k.startswith(('frames','timeline'))},indent=1))" 2>&1
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo '===== build log'; cat dist/vm-update/update-build.log 2>/dev/null || true
+          echo '===== after-update facts'; cat dist/vm-update/update/after-update-facts.txt 2>/dev/null || true
+          echo '===== update serial tail'; tail -c 30000 dist/vm-update/update/serial-update.log 2>/dev/null || true
+          rm -f dist/vm-update/disposable-disk.qcow2
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orez-update-vm-evidence
+          path: dist/vm-update/
+          retention-days: 30
+      - name: Upload the update USB image
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: OREZ-OS-0.2-update
+          path: |
+            ${{ env.W }}/OREZ-OS-0.2-update.iso
+            ${{ env.W }}/OREZ-OS-0.2-update.iso.sha256
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: ignore
+      - name: Publish evidence screenshots and logs to a downloads branch (never the image)
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+          RUN: ${{ github.run_id }}
+        run: |
+          set -e
+          [ -d dist/vm-update ] || exit 0
+          E=$(mktemp -d); cp -r dist/vm-update "$E/evidence"
+          cd "$E" && git init -q -b "downloads/ci-$RUN" && git add evidence
+          git -c user.name='OREZ CI' -c user.email='ci@invalid.example' commit -qm "Update CI evidence for run $RUN [skip ci]"
+          git push -q "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/downloads/ci-$RUN"
+          echo "Evidence: https://github.com/${GITHUB_REPOSITORY}/tree/downloads/ci-$RUN/evidence" >> "$GITHUB_STEP_SUMMARY"
+      - name: Fail if the VM update test did not pass
+        if: ${{ !startsWith(github.ref_name, 'build/update-payload') && steps.vm.outcome != 'success' }}
+        run: exit 1

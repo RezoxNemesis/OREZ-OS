@@ -18,7 +18,7 @@ SHIFT = {'_': 'minus', '+': 'equal', '>': 'dot', '<': 'comma', '?': 'slash', ':'
 
 
 class VM:
-    def __init__(self, iso, out, ram, cpus, disk=None, vars_file=None, serial_name='serial.log'):
+    def __init__(self, iso, out, ram, cpus, disk=None, vars_file=None, serial_name='serial.log', usb=None):
         self.out = out; self.frames = []; self.t0 = time.time(); self.log = []
         self.tmp = Path(tempfile.mkdtemp(prefix='orez-vm-'))
         code = next(p for p in ['/usr/share/OVMF/OVMF_CODE_4M.fd', '/usr/share/OVMF/OVMF_CODE.fd'] if os.path.exists(p))
@@ -39,6 +39,8 @@ class VM:
                '-device', 'ide-cd,drive=cd,bus=ahci.0,bootindex=1'] if iso else []),
             *(['-drive', f'if=none,id=hd,format=qcow2,file={disk}',
                '-device', 'virtio-blk-pci,drive=hd,bootindex=2'] if disk else []),
+            *(['-device', 'qemu-xhci,id=xhci', '-drive', f'if=none,id=stick,format=raw,readonly=on,file={usb}',
+               '-device', 'usb-storage,bus=xhci.0,drive=stick,removable=on'] if usb else []),
             '-device', 'virtio-vga', '-display', 'none', '-usb', '-device', 'usb-tablet',
             '-qmp', f'unix:{self.tmp}/qmp.sock,server=on,wait=off',
             '-serial', f'file:{self.serial_path}', '-nic', 'none', '-no-reboot'])

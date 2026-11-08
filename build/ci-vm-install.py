@@ -81,6 +81,98 @@ def facts(vm, pw, tag):
     return s[s.rfind('==OREZ-' + tag + 'BEGIN=='):s.rfind('==OREZ-' + tag + 'END==')] if ok else ''
 
 
+def login_desktop(vm, pw, label):
+    seen = vm.wait_text(['Welcome home', 'Your workspace', 'Orez Owner'], label + '-greeter', 600)
+    if not seen: raise RuntimeError(label + ': login screen not seen')
+    time.sleep(5)
+    if seen in ('Welcome home', 'Your workspace'):
+        vm.click(309, 355); vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(2)
+        vm.type(pw); time.sleep(1); vm.keys('ret')
+    else:
+        vm.type(pw + '\n')
+    time.sleep(90); vm.shot(label + '-desktop')
+
+
+def konsole(vm, command, label):
+    vm.keys('alt', 'spc'); time.sleep(3); vm.type('Konsole'); time.sleep(3); vm.keys('ret'); time.sleep(8)
+    vm.shot(label + '-konsole'); vm.type(command + '\n'); time.sleep(3)
+
+
+def update_facts(vm, pw, tag):
+    m = lambda n: 'printf "%s\\n" "==O""REZ-' + tag + n + '=="'
+    wine = ('sudo -u orez env HOME=/home/orez WINEPREFIX=/tmp/orez-winetest WINEDEBUG=-all '
+            'WINEDLLOVERRIDES=mscoree,mshtml= timeout 240 wine cmd /c ver')
+    cmd = ("sudo sh -c '{ " + m('BEGIN') + "; grep -E \"PRETTY_NAME|^VERSION=\" /etc/os-release; cat /etc/orez-release; uname -r; "
+           "dpkg --print-foreign-architectures; dpkg-query -W -f=\"\\${Package} \\${Version} \\${db:Status-Status}\\n\" "
+           "orez-shell steam-installer wine wine32:i386 lutris mangohud winetricks \"nvidia-driver-*\" \"linux-modules-nvidia-*\" \"libnvidia-gl-*\" 2>/dev/null | grep installed; "
+           "modinfo -F signer nvidia; modinfo -F version nvidia; ls /usr/games; command -v orez-update; " + m('AUD') + "; dpkg --audit; " + m('AUDE') + "; "
+           "cat /var/lib/orez/updates.json; " + m('WINE') + "; " + wine + "; echo wine-exit=$?; " + m('LOG') +
+           "; tail -40 /var/log/orez-update.log; " + m('END') + "; } > /dev/ttyS0 2>&1'")
+    ok = vm.run_on_tty(pw, cmd, '==OREZ-' + tag + 'END==', 420)
+    s = vm.serial()
+    return s[s.rfind('==OREZ-' + tag + 'BEGIN=='):s.rfind('==OREZ-' + tag + 'END==')] if ok else ''
+
+
+def update_stage(a, disk, vars_file, pw, r):
+    """Installed OREZ 0.1 + OREZ update USB (offline VM) -> OREZ Update window -> restart -> checks."""
+    c = r['checks']; out = a.out / 'update'; out.mkdir(exist_ok=True)
+    vm = VM(None, out, 6144, 4, disk=disk, vars_file=vars_file, serial_name='serial-update.log', usb=a.update_iso)
+    try:
+        if vm.wait_text(['GNU GRUB', 'OREZ GNU'], 'u-grub', 120): vm.keys('ret')
+        login_desktop(vm, pw, 'u-before')
+        # The owner opens the USB once (Dolphin does the same udisks mount), then starts the window.
+        konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /media/orez/OREZ_UPDATE/orez-update/update_ui.py', 'u')
+        c['update_window'] = bool(vm.wait_text(['is ready to install', 'Install update'], 'u-window', 120))
+        if not c['update_window']: raise RuntimeError('OREZ Update window did not show the update')
+        c['steam_ticked'] = click_text(vm, 'Install Steam', 'u-steam', 30)
+        time.sleep(2); vm.shot('u-options')
+        c['install_clicked'] = click_text(vm, 'Install update', 'u-install', 30)
+        c['polkit'] = bool(vm.wait_text(['Authentication', 'Password'], 'u-polkit', 90))
+        vm.type(pw + '\n')
+        res = vm.wait_text(['Update installed', 'was not completed'], 'u-progress', 3600, every=30, keepalive=True)
+        vm.shot('u-finished')
+        c['update_installed'] = res == 'Update installed'
+        if not c['update_installed']: raise RuntimeError('update reported failure')
+        c['restart_clicked'] = click_text(vm, 'Restart now', 'u-restart', 30)
+        try: vm.proc.wait(240)
+        except Exception: vm.note('guest did not power off after restart request')
+    except Exception as e:
+        r['error_update'] = str(e); vm.note('ERROR ' + str(e))
+        try:
+            vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(4)
+            vm.run_on_tty(pw, "sudo sh -c 'tail -150 /var/log/orez-update.log > /dev/ttyS0'", '__x__', 20)
+        except Exception: pass
+    finally:
+        vm.stop(); r['frames_update'] = vm.frames; r['timeline_update'] = vm.log
+    if not c.get('update_installed'):
+        return
+    vm = VM(None, out, 6144, 4, disk=disk, vars_file=vars_file, serial_name='serial-after.log')
+    try:
+        if vm.wait_text(['GNU GRUB', 'OREZ GNU'], 'a-grub', 120):
+            vm.keys('ret')
+            for _ in range(15): time.sleep(1); vm.shot('a-splash')
+        login_desktop(vm, pw, 'a-after')
+        c['after_desktop'] = True
+        konsole(vm, 'WINEDEBUG=-all WINEDLLOVERRIDES=mscoree,mshtml= wine notepad', 'a')
+        time.sleep(100); vm.shot('a-wine-notepad')
+        vm.keys('alt', 'spc'); time.sleep(3); vm.type('Steam'); time.sleep(4); vm.shot('a-krunner-steam'); vm.keys('esc')
+        vm.keys('alt', 'spc'); time.sleep(3); vm.type('Lutris'); time.sleep(4); vm.shot('a-krunner-lutris'); vm.keys('esc')
+        vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5)
+        blk = update_facts(vm, pw, 'U')
+        (out / 'after-update-facts.txt').write_text(blk)
+        c['after_os_0_2'] = 'OREZ OS 0.2' in blk
+        c['after_i386'] = '\ni386' in blk
+        for pk in ('steam-installer', 'wine ', 'lutris', 'orez-shell 0.2'):
+            c['after_' + pk.split()[0].replace('-', '_')] = pk in blk
+        c['after_nvidia_driver_pkg'] = 'nvidia-driver-' in blk
+        c['after_wine_reports_windows'] = 'Microsoft Windows' in blk
+        c['after_dpkg_clean'] = not blk.split('==OREZ-UAUD==')[-1].split('==OREZ-UAUDE==')[0].strip()
+    except Exception as e:
+        r['error_after'] = str(e); vm.note('ERROR ' + str(e))
+    finally:
+        vm.stop(); r['frames_after'] = vm.frames; r['timeline_after'] = vm.log
+
+
 def main(a):
     a.out.mkdir(parents=True, exist_ok=True)
     disk = a.out / 'disposable-disk.qcow2'
@@ -187,6 +279,12 @@ def main(a):
         finally:
             vm2.stop()
             r['frames_installed'] = vm2.frames
+    if a.update_iso and c.get('installed_plasmashell'):
+        r['stage'] = 'update'
+        update_stage(a, disk, vars_file, pw, r)
+        r['update_pass'] = all(c.get(k) for k in ('update_installed', 'after_desktop', 'after_os_0_2', 'after_i386',
+                                                   'after_steam_installer', 'after_wine', 'after_lutris',
+                                                   'after_orez_shell', 'after_wine_reports_windows'))
     del pw
     r['frames_live'] = vm.frames; r['timeline'] = vm.log
     r['install_pass'] = bool(c.get('install_finished') and not c.get('install_failed_message')
@@ -194,10 +292,13 @@ def main(a):
     (a.out / 'install-result.json').write_text(json.dumps(r, indent=2) + '\n')
     print(json.dumps({k: v for k, v in r.items() if not k.startswith('frames')}, indent=2))
     disk.unlink(missing_ok=True)
+    if a.update_iso:
+        return 0 if r.get('update_pass') else 1
     return 0 if r['install_pass'] else 1
 
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--iso', type=Path, required=True); p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--update-iso', type=Path, help='after installing, apply this OREZ update USB image and verify')
     sys.exit(main(p.parse_args()))

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=OREZ Update
+GenericName=System update from USB
+Comment=Install an OREZ OS update from an update USB drive
+Exec=/usr/bin/orez-update
+Icon=orez-update
+Terminal=false
+Categories=Settings;System;
+Keywords=update;upgrade;usb;orez;

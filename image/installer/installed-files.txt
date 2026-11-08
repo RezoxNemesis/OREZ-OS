@@ -53,6 +53,10 @@ usr/bin/orez-drivers
 usr/lib/orez/drivers.py
 usr/share/applications/orez-drivers.desktop
 etc/xdg/autostart/orez-drivers.desktop
+usr/bin/orez-update
+usr/lib/orez/update_apply.py
+usr/lib/orez/update_ui.py
+usr/share/applications/orez-update.desktop
 etc/xdg/plasma-workspace/env/10-orez-defaults.sh
 etc/xdg/orez/kdeglobals
 etc/xdg/orez/kicker-extra-favoritesrc
@@ -72,6 +76,7 @@ usr/share/icons/hicolor/scalable/apps/orez-appearance.svg
 usr/share/icons/hicolor/scalable/apps/orez-calendar.svg
 usr/share/icons/hicolor/scalable/apps/orez-connect.svg
 usr/share/icons/hicolor/scalable/apps/orez-drivers.svg
+usr/share/icons/hicolor/scalable/apps/orez-update.svg
 usr/share/icons/hicolor/scalable/apps/orez-hardware.svg
 usr/share/icons/hicolor/scalable/apps/orez-help.svg
 usr/share/icons/hicolor/scalable/apps/orez-logo.svg
