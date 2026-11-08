@@ -142,6 +142,23 @@ public class IsoImageTest {
         }
     }
 
+    /** The real OREZ update artifact ZIP, when CI provides it (env OREZ_UPDATE_ZIP). */
+    @Test public void realOrezUpdateZip() throws Exception {
+        String path=System.getenv("OREZ_UPDATE_ZIP");
+        Assume.assumeTrue(path!=null && new File(path).isFile());
+        try(FileChannel c=open(Paths.get(path))) {
+            IsoImage img=IsoImage.locate(c);
+            assertTrue(img.fromZip());
+            HybridIsoValidator.Info info=HybridIsoValidator.inspect(c,img.offset,img.length);
+            assertTrue(info.updateImage);
+            MessageDigest d=MessageDigest.getInstance("SHA-256");
+            try(InputStream in=img.open(c)) { byte[] b=new byte[1<<20]; int n; while((n=in.read(b))!=-1) d.update(b,0,n); }
+            String h=hex(d.digest());
+            System.out.println("OREZ update: entry="+img.entryName+" length="+img.length+" sha256="+h+" label="+OrezReleases.label(h));
+            assertNotNull("update image must match a pinned OREZ build",OrezReleases.label(h));
+        }
+    }
+
     private static String hex(byte[] b){StringBuilder s=new StringBuilder();for(byte x:b)s.append(String.format("%02x",x&255));return s.toString();}
     private static void le16(OutputStream o,int v) throws IOException {o.write(v);o.write(v>>>8);}
     private static void le32(OutputStream o,long v) throws IOException {for(int i=0;i<4;i++)o.write((int)(v>>>(8*i)));}

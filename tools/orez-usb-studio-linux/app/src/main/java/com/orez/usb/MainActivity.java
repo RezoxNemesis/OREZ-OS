@@ -122,7 +122,12 @@ public final class MainActivity extends Activity {
             try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(OrezReleases.DOWNLOAD_PAGE)));}
             catch(Exception e){toast("Could not open the browser.");}
         });
-        page.addView(label("Download opens the OREZ OS build page on GitHub (sign in there; the file is about 5.5 GB, so use Wi-Fi and keep 6 GB free). Select the downloaded .zip as-is — no need to unzip. Known OREZ builds are recognised by their built-in SHA-256 automatically.",13,MUTED));
+        Button update=button("Download OREZ update (for a PC already running OREZ)",false);page.addView(update);
+        update.setOnClickListener(v->{
+            try{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(OrezReleases.UPDATE_PAGE)));}
+            catch(Exception e){toast("Could not open the browser.");}
+        });
+        page.addView(label("Download opens the OREZ build page on GitHub (sign in there). OREZ OS is about 5.5 GB; the update is about 1.5 GB. Use Wi-Fi. Select the downloaded .zip as-is — no need to unzip. Known OREZ builds and updates are recognised by their built-in SHA-256 automatically.",13,MUTED));
 
         page.addView(sectionTitle("02  /  SHA-256 CHECK"));
         checksumInput=new EditText(this);
@@ -269,7 +274,9 @@ public final class MainActivity extends Activity {
                         (label!=null?"\n✓ "+label:""));
                     if(label!=null) {
                         checksumInput.setText(hash);
-                        hashState.setText("Official OREZ OS image recognised — built-in checksum matches. Now select the USB drive.");
+                        hashState.setText(info.updateImage
+                            ? "Official OREZ update recognised — built-in checksum matches. Now select the USB drive. Afterwards, plug it into your OREZ PC and open it."
+                            : "Official OREZ OS image recognised — built-in checksum matches. Now select the USB drive.");
                     } else if(image.bundledSha256!=null && image.bundledSha256.equals(hash)) {
                         hashState.setText("Matches the checksum file inside the ZIP, but this is not a known OREZ build. Paste the SHA-256 from a source you trust to unlock writing.");
                     } else {
@@ -367,11 +374,11 @@ public final class MainActivity extends Activity {
         EditText erase=new EditText(this);erase.setSingleLine(true);erase.setHint("Type ERASE to confirm");
         erase.setTextColor(TEXT);erase.setHintTextColor(MUTED);
         AlertDialog dialog=new AlertDialog.Builder(this)
-            .setTitle("Review OREZ OS USB creation")
+            .setTitle(isoSummary.contains("update USB")?"Review OREZ update USB creation":"Review OREZ OS USB creation")
             .setMessage("USB: "+deviceName(selectedUsb)+"\nCapacity: "+formatBytes(usbBytes)+
                 "\n\nISO: "+isoName+"\nSize: "+formatBytes(isoBytes)+
                 "\nSHA-256: "+isoHash+(officialLabel!=null?"\n✓ "+officialLabel:"")+
-                "\n\nThis overwrites the selected USB from sector zero and destroys its existing contents. The writer clones the original hybrid ISO, flushes it and compares a full read-back. Use only a blank drive.")
+                "\n\nThis overwrites the selected USB from sector zero and destroys its existing contents. The writer clones the original image, flushes it and compares a full read-back. Use only a blank drive.")
             .setView(erase).setNegativeButton("Cancel",null).setPositiveButton("Erase & write",null).create();
         dialog.setOnShowListener(v->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(btn->{
             if(!"ERASE".equals(erase.getText().toString().trim())) {

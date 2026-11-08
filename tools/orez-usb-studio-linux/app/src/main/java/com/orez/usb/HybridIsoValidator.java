@@ -17,12 +17,16 @@ public final class HybridIsoValidator {
         public final long bytes;
         public final long volumeBlocks;
         public final String filesystem;
-        public final boolean hybridMbr, gpt, efiBoot;
+        public final boolean hybridMbr, gpt, efiBoot, updateImage;
         Info(long bytes, long blocks, String fs, boolean mbr, boolean gpt, boolean efi) {
+            this(bytes,blocks,fs,mbr,gpt,efi,false);
+        }
+        Info(long bytes, long blocks, String fs, boolean mbr, boolean gpt, boolean efi, boolean update) {
             this.bytes=bytes; this.volumeBlocks=blocks; this.filesystem=fs;
-            this.hybridMbr=mbr; this.gpt=gpt; this.efiBoot=efi;
+            this.hybridMbr=mbr; this.gpt=gpt; this.efiBoot=efi; this.updateImage=update;
         }
         public String summary() {
+            if(updateImage) return filesystem + " · OREZ OS update USB (not bootable — plug it into your running OREZ PC)";
             return filesystem + " · hybrid USB image · " + (efiBoot ? "x86_64 UEFI loader found" : "UEFI loader not confirmed");
         }
     }
@@ -47,6 +51,18 @@ public final class HybridIsoValidator {
         byte[] mbr=read(channel,0,512), lba1=read(channel,512,512);
         boolean gpt=ascii(lba1,0,"EFI PART");
         boolean hybridMbr=hasMbrPartition(mbr);
+        if(!hybridMbr && !gpt && ascii(pvd,40,"OREZ_UPDATE ")) {
+            // OREZ update USB: a plain ISO9660 volume that the running OREZ PC mounts and reads.
+            Entry root=Entry.from(Arrays.copyOfRange(pvd,156,190));
+            Entry manifest=find(channel,root,"orez_update/update.json");
+            Entry sums=find(channel,root,"orez_update/SHA256SUMS");
+            if(manifest==null || manifest.directory || sums==null || sums.directory || manifest.size<16 || manifest.size>1<<20)
+                throw new IOException("This OREZ update image is incomplete (update description or checksums missing).");
+            byte[] json=read(channel,manifest.extent*BLOCK,(int)manifest.size);
+            if(!new String(json,StandardCharsets.UTF_8).contains("\"schema\": 1"))
+                throw new IOException("This OREZ update image uses a format this app does not know.");
+            return new Info(length,volumeBlocks,"ISO9660",false,false,false,true);
+        }
         if(!hybridMbr && !gpt)
             throw new IOException("This ISO has no recognised hybrid MBR/GPT USB layout. Use the official desktop hybrid ISO, not a netboot or live filesystem archive.");
 
@@ -124,7 +140,7 @@ public final class HybridIsoValidator {
             if(part.isEmpty()) continue;
             if(!current.directory) return null;
             Entry found=null;
-            for(Entry e:children(c,current)) if(e.name.equalsIgnoreCase(part)){found=e;break;}
+            for(Entry e:children(c,current)) if(e.name.equalsIgnoreCase(part.replace('-','_'))){found=e;break;}
             if(found==null) return null;
             current=found;
         }

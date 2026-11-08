@@ -1,4 +1,14 @@
-# OREZ USB Studio Linux 0.5.0
+# OREZ USB Studio Linux 0.5.1
+
+### 0.5.1 — OREZ update USB
+
+- Recognises the **OREZ OS update USB** image (plain ISO9660 volume `OREZ_UPDATE` with
+  `orez-update/update.json` and `SHA256SUMS`, not bootable) and writes it with the same
+  ERASE confirmation, full read-back and reconnect verification.
+- Built-in checksum for the VM-tested OREZ 0.2 update (build 42517939214) and a
+  **Download OREZ update** button.
+
+# (previous) OREZ USB Studio Linux 0.5.0
 
 ### 0.5.0 — OREZ OS edition
 

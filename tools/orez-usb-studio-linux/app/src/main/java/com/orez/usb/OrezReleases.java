@@ -14,7 +14,12 @@ public final class OrezReleases {
     public static final String DOWNLOAD_PAGE =
         "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42455290923/artifacts/13608167739";
 
+    public static final String UPDATE_PAGE =
+        "https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42517939214/artifacts/13633419554";
+
     private static final String[][] KNOWN = {
+        {"4d7e47d23c735d4735314ce0b2d1c3facc3a1c1e533b98faaa5865aa0962b58e",
+         "OREZ OS 0.2 update USB · build 42517939214 (VM-tested: 0.1 → 0.2 offline)"},
         {"cbd1435e4422a1e6c2300c2839aaae46943bf3cb606fe97d6c216e7d875769bb",
          "OREZ OS 0.1 · build 42455290923 (VM-tested live + install)"},
     };
