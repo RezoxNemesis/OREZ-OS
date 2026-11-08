@@ -1,0 +1,50 @@
+Start: PRETTY_NAME="OREZ OS 0.1" kernel 7.0.0-30-generic
+Installer removes: ^live-* calamares calamares-data calamares-settings-kubuntu calamares-settings-ubuntu-common calamares-settings-ubuntu-common-data cifs-utils kubuntu-installer-prompt libcalamaresui3.3
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Solving dependencies...
+The following packages were automatically installed and are no longer required:
+  finalrd localechooser-data user-setup
+Use 'apt autoremove' to remove them.
+The following packages will be REMOVED:
+  calamares* calamares-data* calamares-settings-kubuntu*
+  calamares-settings-ubuntu-common* calamares-settings-ubuntu-common-data*
+  casper* cifs-utils* kubuntu-installer-prompt* libcalamaresui3.3*
+0 upgraded, 0 newly installed, 9 to remove and 0 not upgraded.
+After this operation, 40.6 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227196 files and directories currently installed.)
+Removing kubuntu-installer-prompt (26.04.3) ...
+Removing calamares-settings-kubuntu (1:26.04.12) ...
+Removing calamares-settings-ubuntu-common (1:26.04.12) ...
+Removing calamares (3.3.14-0ubuntu25) ...
+Removing calamares-data (3.3.14-0ubuntu25) ...
+Removing calamares-settings-ubuntu-common-data (1:26.04.12) ...
+Removing casper (26.04.2) ...
+Removing cifs-utils (2:7.4-1ubuntu0.26.04.3) ...
+Removing libcalamaresui3.3 (3.3.14-0ubuntu25) ...
+Processing triggers for hicolor-icon-theme (0.18-2build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.3) ...
+Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for desktop-file-utils (0.28-1build1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 226744 files and directories currently installed.)
+Purging configuration files for calamares-settings-ubuntu-common-data (1:26.04.12) ...
+Purging configuration files for cifs-utils (2:7.4-1ubuntu0.26.04.3) ...
+Purging configuration files for casper (26.04.2) ...
+Purging configuration files for calamares-settings-kubuntu (1:26.04.12) ...
+gpgv: Signature made Thu Apr 23 17:07:30 2026 UTC
+gpgv:                using RSA key F6ECB3762474EDA9D21B7022871920D1991BC93C
+gpgv: Good signature from "Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>"
+Indexes for resolute verified (Date: Thu, 23 Apr 2026 17:07:15 UTC)
+gpgv: Signature made Sun Nov  8 00:30:30 2026 UTC
+gpgv:                using RSA key F6ECB3762474EDA9D21B7022871920D1991BC93C
+gpgv: Good signature from "Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>"
+Indexes for resolute-updates verified (Date: Sun, 08 Nov 2026  0:30:00 UTC)
+gpgv: Signature made Sun Nov  8 00:29:54 2026 UTC
+gpgv:                using RSA key F6ECB3762474EDA9D21B7022871920D1991BC93C
+gpgv: Good signature from "Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>"
+Indexes for resolute-security verified (Date: Sun, 08 Nov 2026  0:29:29 UTC)
+E: Failed to fetch file:/tmp/mirror/dists/resolute/main/dep11/icons-48x48.tar  File not found - /tmp/mirror/dists/resolute/main/dep11/icons-48x48.tar (2: No such file or directory)
+E: Failed to fetch file:/tmp/mirror/dists/resolute-updates/main/dep11/icons-48x48.tar  File not found - /tmp/mirror/dists/resolute-updates/main/dep11/icons-48x48.tar (2: No such file or directory)
+E: Failed to fetch file:/tmp/mirror/dists/resolute-security/main/dep11/icons-48x48.tar  File not found - /tmp/mirror/dists/resolute-security/main/dep11/icons-48x48.tar (2: No such file or directory)
+E: Some index files failed to download. They have been ignored, or old ones used instead.
