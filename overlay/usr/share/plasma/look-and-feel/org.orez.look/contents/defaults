@@ -27,7 +27,7 @@ library=org.kde.breeze
 theme=Breeze
 
 [KSplash]
-Theme=org.kde.Breeze
+Theme=org.orez.look
 
 [kdeglobals][Sounds]
 Theme=orez

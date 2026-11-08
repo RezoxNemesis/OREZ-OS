@@ -145,6 +145,9 @@ def main(a):
     pw = 'Orez' + ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(18))
     vm = VM(a.iso, a.out, a.ram, a.cpus); result = {'iso': str(a.iso), 'checks': {}}
     try:
+        # Capture the boot (GRUB, splash) frame by frame before waiting for the prompt.
+        for _ in range(40):
+            time.sleep(1); vm.shot('boot')
         # Type only once the hidden-input prompt itself is visible (never earlier).
         seen = vm.wait_text(['live-session password'], 'enroll', 900)
         result['checks']['enrollment_prompt'] = bool(seen)
@@ -156,6 +159,8 @@ def main(a):
         if not result['checks']['greeter']: raise RuntimeError('no greeter')
         vm.keys('ctrl', 'a'); vm.type('orez\n'); time.sleep(1); vm.type(pw); vm.shot('credentials-entered')
         vm.keys('ret'); vm.note('submitted graphical login')
+        for _ in range(8):
+            time.sleep(1); vm.shot('signin-splash')
         returned = False
         for i in range(a.desktop_wait // 10):
             time.sleep(10); _, txt = vm.shot('after-login')
