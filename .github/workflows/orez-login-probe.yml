@@ -19,6 +19,7 @@ jobs:
         run: |
           df -h /mnt .
           sudo mkdir -p /mnt/orez && sudo chown "$USER" /mnt/orez
+          sudo apt-get install -y -qq initramfs-tools-core zstd >/dev/null
           bash build/fetch-verified-base.sh /mnt/orez/base | tee iso-path.txt
       - name: Replay SDDM Wayland session chain
         run: sudo bash build/probe-login-chain.sh "$(tail -1 iso-path.txt)" dist/login-probe

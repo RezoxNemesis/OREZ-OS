@@ -63,6 +63,10 @@ set +e  # inventory is best-effort; missing files are reported, not fatal
     echo "===== FILE etc/calamares/$f"; base64 -w0 "$R/etc/calamares/$f"; echo; done
   echo "===== FILE status-sha"; sha256sum "$R/var/lib/dpkg/status"
   echo; echo '### calamares launchers'; ls -l "$R/usr/bin/" | grep -i calamares; cat "$R/usr/bin/calamares-launch"* 2>/dev/null | head -40
+  echo; echo '### LIVE INITRD PLYMOUTH'
+  mkdir -p /tmp/ird && (cd /tmp/ird && unmkinitramfs "$WORK/iso/casper/initrd" . 2>&1 | tail -2)
+  find /tmp/ird -path '*plymouth*' | sed 's#/tmp/ird/##' | head -60
+  for d in /tmp/ird/main /tmp/ird; do [ -e "$d/usr/share/plymouth/themes/default.plymouth" ] && { ls -l "$d/usr/share/plymouth/themes/default.plymouth"; cat "$d/usr/share/plymouth/themes/default.plymouth"; cat "$d/etc/plymouth/plymouthd.conf" 2>/dev/null; }; done
   echo; echo '### calamares desktop'; cat "$R/usr/share/applications/kubuntu-calamares.desktop" 2>&1
   echo; echo '### calamares settings + branding'; cat "$R/etc/calamares/settings.conf" 2>&1; ls -R "$R/etc/calamares/branding" 2>&1 | head -30
   echo; echo '### firefox / welcome'; ls "$R/usr/share/applications" | grep -iE "firefox|welcome|kubuntu" ; ls "$R/etc/xdg/autostart" | head -60
