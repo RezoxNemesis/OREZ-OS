@@ -41,6 +41,8 @@ def main(a):
         w = Path(t)
         extract(a.iso, '/casper/initrd', w / 'initrd-original')
         patch.patch(w / 'initrd-original', w / 'initrd', w / 'orez-initrd.json', owner_setup=True)
+        import live_splash
+        splash_report = live_splash.append(w / 'initrd', ROOT / 'overlay/usr/share/plymouth/themes/orez')
         subprocess.run(['python3', str(ROOT / 'build/stage-overlay.py'), '--source', str(ROOT / 'overlay'),
                         '--output', str(w / 'live'), '--live-owner'], check=True)
         installer_report = None
@@ -65,6 +67,7 @@ def main(a):
                   'system_layer_sha256': sha(a.layer), 'live_owner_layer_sha256': sha(w / 'zz-orez.squashfs'),
                   'layers_low_to_high': ['filesystem.squashfs', 'orez-apps.squashfs', 'zz-orez.squashfs'],
                   'source_commit': os.environ.get('OREZ_SOURCE_COMMIT', 'working-tree'),
+                  'live_splash': splash_report,
                   'installer_enabled': bool(a.enable_installer), 'installer_config_sha256': installer_report,
                   'boot_tested': False, 'installation_approved': False, 'release_approved': False}
         (w / 'orez-assembly.json').write_text(json.dumps(report, indent=2) + '\n')

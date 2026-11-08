@@ -30,7 +30,7 @@ jobs:
         run: |
           df -h /
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools zstd qemu-system-x86 qemu-utils ovmf tesseract-ocr python3-pil gpgv dpkg-dev >/dev/null
+          sudo apt-get install -y -qq --no-install-recommends xorriso squashfs-tools zstd qemu-system-x86 qemu-utils ovmf tesseract-ocr python3-pil gpgv dpkg-dev cpio >/dev/null
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
           ls -l /dev/kvm
@@ -49,6 +49,13 @@ jobs:
           python3 build/ci-assemble.py --iso "$(cat $W/iso-path)" --layer "$W/layer/orez-apps.squashfs" \
             --manifest "$W/layer/filesystem.manifest" --output "$W/out/OREZ-OS-0.1-live-amd64.iso" ${INSTALLER:+--enable-installer}
           xorriso -indev "$W/out/OREZ-OS-0.1-live-amd64.iso" -report_el_torito plain 2>&1 | tail -15
+          # Live splash: the appended archive must extract with the system cpio.
+          xorriso -osirrox on -indev "$W/out/OREZ-OS-0.1-live-amd64.iso" -extract /casper/initrd "$W/initrd-check" >/dev/null 2>&1
+          python3 -c "import json;r=json.load(open('$W/out/OREZ-OS-0.1-live-amd64.json'))['live_splash'];print(r)"
+          N=$(python3 -c "import json;print(json.load(open('$W/out/OREZ-OS-0.1-live-amd64.json'))['live_splash']['splash_archive_bytes'])")
+          mkdir -p "$W/splash-check" && tail -c "$N" "$W/initrd-check" | (cd "$W/splash-check" && cpio -id --quiet)
+          cat "$W/splash-check/etc/plymouth/plymouthd.conf"; ls "$W/splash-check/usr/share/plymouth/themes/orez" | wc -l
+          rm -rf "$W/initrd-check" "$W/splash-check"
           rm -f "$(cat $W/iso-path)"
           ls -l "$W/out"
       - name: Disposable KVM VM — default UEFI boot, owner setup, graphical login
