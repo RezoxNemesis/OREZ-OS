@@ -89,16 +89,51 @@ mkdir -p "$R/tmp/apt/empty.d" "$R/tmp/apt/lists/partial" "$R/tmp/apt/archives/pa
 for s in "${SUITES[@]}"; do
   echo "deb [signed-by=/usr/share/keyrings/ubuntu-archive-keyring.gpg arch=amd64,i386] file:/tmp/mirror $s ${COMPS[*]}"
 done > "$R/tmp/apt/sources.list"
-APTOPT=(-o Dir::Etc::SourceList=/tmp/apt/sources.list -o Dir::Etc::SourceParts=/tmp/apt/empty.d
-        -o Dir::Etc::Parts=/tmp/apt/empty.d -o Dir::State::Lists=/tmp/apt/lists
-        -o Dir::Cache::Archives=/tmp/apt/archives -o Dir::Cache=/tmp/apt
-        -o Acquire::Languages=none -o Acquire::By-Hash=no -o APT::Sandbox::User=root)
+echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc arch=amd64] file:/tmp/claude stable main" >> "$R/tmp/apt/sources.list"
+# Same private configuration file the PC-side updater writes (via APT_CONFIG, so
+# /etc/apt/apt.conf.d is not read and only Packages indexes are fetched).
+: > "$R/tmp/apt/empty.conf"
+cat > "$R/tmp/apt/apt.conf" <<'EOF'
+Dir::Etc::Main "/tmp/apt/empty.conf";
+Dir::Etc::Parts "/tmp/apt/empty.d";
+Dir::Etc::SourceList "/tmp/apt/sources.list";
+Dir::Etc::SourceParts "/tmp/apt/empty.d";
+Dir::State::Lists "/tmp/apt/lists";
+Dir::Cache "/tmp/apt";
+Dir::Cache::Archives "/tmp/apt/archives";
+Acquire::Languages "none";
+Acquire::By-Hash "no";
+APT::Sandbox::User "root";
+EOF
+APTOPT=()
+C() { chroot "$R" env -i PATH=/usr/sbin:/usr/bin:/sbin:/bin LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive APT_CONFIG=/tmp/apt/apt.conf "$@"; }
+
+# Claude desktop app: Anthropic's signed apt repository, mirrored the same way.
+CM=$P/claude; CLAUDE_REPO=https://downloads.claude.ai/claude-desktop/apt/stable
+CLAUDE_FPR=31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE
+mkdir -p "$CM/dists/stable"
+curl -fsS --retry 3 -o "$CM/key.asc" https://downloads.claude.ai/claude-desktop/key.asc
+fpr=$(gpg --batch --no-default-keyring --with-colons --show-keys "$CM/key.asc" | awk -F: '/^pub/{p=1;next} p&&/^fpr/{print $10;p=0}')
+[[ $fpr == "$CLAUDE_FPR" ]] || { echo "Unexpected Claude signing key: $fpr" >&2; exit 1; }
+gpg --batch --yes --no-default-keyring --dearmor -o "$W/claude.gpg" "$CM/key.asc"
+curl -fsS --retry 3 -o "$CM/dists/stable/InRelease" "$CLAUDE_REPO/dists/stable/InRelease"
+gpgv --keyring "$W/claude.gpg" "$CM/dists/stable/InRelease" 2>>"$LOGF" || { echo 'Claude index signature invalid' >&2; exit 1; }
+for f in main/binary-amd64/Packages.xz main/binary-amd64/Packages.gz main/binary-amd64/Packages; do
+  line=$(awk -v f="$f" '/^SHA256:/{s=1;next} /^[A-Za-z]/{s=0} s && $3==f {print $1}' "$CM/dists/stable/InRelease")
+  [[ -n $line ]] || continue
+  mkdir -p "$CM/dists/stable/main/binary-amd64"
+  curl -fsS --retry 3 -o "$CM/dists/stable/$f" "$CLAUDE_REPO/dists/stable/$f"
+  [[ $(sha256sum < "$CM/dists/stable/$f" | cut -d' ' -f1) == "$line" ]] || { echo "Claude index hash mismatch $f" >&2; exit 1; }
+done
+ls "$CM/dists/stable/main/binary-amd64" | tee -a "$LOGF"
+install -D -m 0644 "$CM/key.asc" "$R/usr/share/keyrings/claude-desktop-archive-keyring.asc"
+mkdir -p "$R/tmp/claude"; domount --bind "$CM" "$R/tmp/claude"
+log "Claude desktop repository verified (key $CLAUDE_FPR)"
 C dpkg --add-architecture i386
-C apt-get "${APTOPT[@]}" update 2>&1 | tail -4 | tee -a "$LOGF"
+C apt-get update 2>&1 | tail -4 | tee -a "$LOGF"
 [[ ${PIPESTATUS[0]} -eq 0 ]] || { echo 'apt update against the mirror failed' >&2; exit 1; }
 
 # NVIDIA: ask Ubuntu's own tool what it recommends for an RTX 3050 (GA107, 10de:2582).
-printf 'Dir::Etc::SourceList "/tmp/apt/sources.list";\nDir::Etc::SourceParts "/tmp/apt/empty.d";\nDir::State::Lists "/tmp/apt/lists";\nDir::Cache "/tmp/apt";\n' > "$R/tmp/apt/apt.conf"
 mkdir -p "$R/tmp/fakesys/devices/pci0000:00/0000:01:00.0"
 echo 'pci:v000010DEd00002582sv00001458sd00004139bc03sc00i00' > "$R/tmp/fakesys/devices/pci0000:00/0000:01:00.0/modalias"
 echo 0x10de > "$R/tmp/fakesys/devices/pci0000:00/0000:01:00.0/vendor"
@@ -107,7 +142,7 @@ NV=$(chroot "$R" env -i PATH=/usr/sbin:/usr/bin:/sbin:/bin LANG=C.UTF-8 APT_CONF
      UBUNTU_DRIVERS_SYS_DIR=/tmp/fakesys ubuntu-drivers devices 2>>"$LOGF" | tee -a "$LOGF" \
      | sed -nE 's/^driver *: nvidia-driver-([0-9]+(-open)?) .*recommended.*/\1/p' | head -1)
 if [[ -z $NV ]]; then
-  NV=$(C apt-cache "${APTOPT[@]}" pkgnames linux-modules-nvidia- | sed -nE 's/^linux-modules-nvidia-([0-9]+-open)-generic$/\1/p' | sort -V | tail -1)
+  NV=$(C apt-cache pkgnames linux-modules-nvidia- | sed -nE 's/^linux-modules-nvidia-([0-9]+-open)-generic$/\1/p' | sort -V | tail -1)
   log "ubuntu-drivers gave no recommendation; newest open series with signed generic modules: $NV"
 else
   log "ubuntu-drivers recommends: nvidia-driver-$NV"
@@ -116,36 +151,40 @@ fi
 NVPKGS=("nvidia-driver-$NV" "linux-modules-nvidia-$NV-generic" "libnvidia-gl-${NV%-open}:i386")
 BASE=(wine wine64 wine32:i386 winetricks lutris mangohud vulkan-tools libvulkan1:i386 mesa-vulkan-drivers:i386 libgamemode0:i386 gamemode)
 STEAM=(steam-installer)
+CLAUDE=(claude-desktop)
 cp "$DEB" "$R/tmp/orez-shell.deb"
-ALL=("${BASE[@]}" "${NVPKGS[@]}" "${STEAM[@]}" /tmp/orez-shell.deb)
+ALL=("${BASE[@]}" "${NVPKGS[@]}" "${STEAM[@]}" "${CLAUDE[@]}" /tmp/orez-shell.deb)
 
-C apt-get "${APTOPT[@]}" -s install -y "${ALL[@]}" > "$OUT/plan.txt" 2>&1 || { tail -40 "$OUT/plan.txt"; echo 'Plan failed' >&2; exit 1; }
+C apt-get -s install -y "${ALL[@]}" > "$OUT/plan.txt" 2>&1 || { tail -40 "$OUT/plan.txt"; echo 'Plan failed' >&2; exit 1; }
 grep -E '^Inst (nvidia-dkms|dkms )' "$OUT/plan.txt" && { echo 'DKMS in plan' >&2; exit 1; }
 grep -E '^Remv ' "$OUT/plan.txt" | tee -a "$LOGF" || true
 log "Plan: $(grep -c '^Inst ' "$OUT/plan.txt") packages"
-grep -E '^Inst (linux-image|linux-modules-nvidia|nvidia-driver|steam|wine|lutris)' "$OUT/plan.txt" | tee -a "$LOGF"
+grep -E '^Inst (linux-image|linux-modules-nvidia|nvidia-driver|steam|wine|lutris|claude)' "$OUT/plan.txt" | tee -a "$LOGF"
 
 # 4. Fetch exactly the planned .debs from Ubuntu into the mirror's pool, hash-checked.
-C apt-get "${APTOPT[@]}" install -y --print-uris -qq "${ALL[@]}" > "$OUT/uris.txt"
+C apt-get install -y --print-uris -qq "${ALL[@]}" > "$OUT/uris.txt"
 total=0
 while read -r uri name size hash; do
-  uri=${uri//\'/}; rel=${uri#file:/tmp/mirror/}
-  [[ $uri == file:/tmp/mirror/pool/* ]] || continue
-  mkdir -p "$M/$(dirname "$rel")"
-  curl -fsS --retry 3 -o "$M/$rel" "$ARCHIVE/$rel"
-  [[ $(sha256sum < "$M/$rel" | cut -d' ' -f1) == "${hash#SHA256:}" ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
+  uri=${uri//\'/}
+  if [[ $uri == file:/tmp/mirror/pool/* ]]; then rel=${uri#file:/tmp/mirror/}; dst=$M/$rel; src=$ARCHIVE/$rel
+  elif [[ $uri == file:/tmp/claude/pool/* ]]; then rel=${uri#file:/tmp/claude/}; dst=$CM/$rel; src=$CLAUDE_REPO/$rel
+  else continue; fi
+  mkdir -p "$(dirname "$dst")"
+  curl -fsS --retry 3 -o "$dst" "$src"
+  [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "${hash#SHA256:}" ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
   total=$((total+size))
 done < "$OUT/uris.txt"
 log "Fetched $(grep -c pool/ "$OUT/uris.txt") packages, $((total/1048576)) MiB"
 
 # 5. The finished mirror must satisfy every option the owner can choose, offline.
 rm -rf "$R/tmp/apt/lists" && mkdir -p "$R/tmp/apt/lists/partial"
-C apt-get "${APTOPT[@]}" update > /dev/null
-for set in "base" "base+nvidia" "base+steam" "base+nvidia+steam"; do
+C apt-get update > /dev/null
+for set in "base" "base+nvidia" "base+steam" "base+claude" "base+nvidia+steam+claude"; do
   pk=("${BASE[@]}" /tmp/orez-shell.deb)
   [[ $set == *nvidia* ]] && pk+=("${NVPKGS[@]}")
   [[ $set == *steam* ]] && pk+=("${STEAM[@]}")
-  C apt-get "${APTOPT[@]}" install -y --download-only "${pk[@]}" > "$OUT/check-$set.txt" 2>&1 \
+  [[ $set == *claude* ]] && pk+=("${CLAUDE[@]}")
+  C apt-get install -y --download-only "${pk[@]}" > "$OUT/check-$set.txt" 2>&1 \
     || { tail -20 "$OUT/check-$set.txt"; echo "Offline mirror incomplete for $set" >&2; exit 1; }
   log "Offline check passed: $set"
   rm -f "$R"/tmp/apt/archives/*.deb
@@ -180,20 +219,21 @@ log "Steam debconf answers: $DEBCONF"
 cp "$DEB" "$P/"
 install -m 0644 "$REPO_ROOT/overlay/usr/lib/orez/update_apply.py" "$REPO_ROOT/overlay/usr/lib/orez/update_ui.py" "$P/"
 KNEW=$(grep -oE '^Inst linux-image-[0-9][^ ]*' "$OUT/plan.txt" | sed 's/^Inst linux-image-//' | head -1)
-python3 - "$P/update.json" "$NV" "$(basename "$DEB")" "$DEBCONF" "${KNEW:-unchanged}" "${BASE[*]}" "${NVPKGS[*]}" "${STEAM[*]}" "${OREZ_SOURCE_COMMIT:-unknown}" <<'PY'
+python3 - "$P/update.json" "$NV" "$(basename "$DEB")" "$DEBCONF" "${KNEW:-unchanged}" "${BASE[*]}" "${NVPKGS[*]}" "${STEAM[*]}" "${OREZ_SOURCE_COMMIT:-unknown}" "${CLAUDE[*]}" <<'PY'
 import json, sys
-path, nv, deb, debconf, kernel, base, nvp, steam, commit = sys.argv[1:]
+path, nv, deb, debconf, kernel, base, nvp, steam, commit, claude = sys.argv[1:]
 m = {
  'schema': 1, 'version': '0.2', 'from_versions': ['0.1'],
  'suites': ['resolute', 'resolute-updates', 'resolute-security'],
  'components': ['main', 'restricted', 'universe', 'multiverse'],
  'packages': base.split(), 'nvidia_packages': nvp.split(), 'nvidia_series': nv,
- 'steam_packages': steam.split(), 'steam_debconf': json.loads(debconf), 'orez_shell': deb,
+ 'steam_packages': steam.split(), 'claude_packages': claude.split(), 'steam_debconf': json.loads(debconf), 'orez_shell': deb,
  'kernel_after_update': kernel, 'source_commit': commit,
  'summary': [
   'Windows games and apps: Steam with Proton, Wine (double-click .exe files) and Lutris for Epic, EA, Ubisoft and Rockstar launchers',
   f'NVIDIA RTX graphics driver {nv} (Canonical-signed, works with Secure Boot), plus 32-bit game libraries',
   'Game tools: GameMode performance mode and the MangoHud FPS overlay',
+  'Claude desktop app (official from Anthropic: chat, Cowork and Claude Code; later versions arrive with normal system updates)',
   'OREZ Update: install future OREZ updates from a USB in one window',
   'Latest Ubuntu security fixes for the updated components' + (f' and Linux kernel {kernel}' if kernel != 'unchanged' else ''),
  ]}

@@ -104,7 +104,7 @@ def update_facts(vm, pw, tag):
             'WINEDLLOVERRIDES=mscoree,mshtml= timeout 240 wine cmd /c ver')
     cmd = ("sudo sh -c '{ " + m('BEGIN') + "; grep -E \"PRETTY_NAME|^VERSION=\" /etc/os-release; cat /etc/orez-release; uname -r; "
            "dpkg --print-foreign-architectures; dpkg-query -W -f=\"\\${Package} \\${Version} \\${db:Status-Status}\\n\" "
-           "orez-shell steam-installer wine wine32:i386 lutris mangohud winetricks \"nvidia-driver-*\" \"linux-modules-nvidia-*\" \"libnvidia-gl-*\" 2>/dev/null | grep installed; "
+           "orez-shell steam-installer claude-desktop wine wine32:i386 lutris mangohud winetricks \"nvidia-driver-*\" \"linux-modules-nvidia-*\" \"libnvidia-gl-*\" 2>/dev/null | grep installed; "
            "modinfo -F signer nvidia; modinfo -F version nvidia; ls /usr/games; command -v orez-update; " + m('AUD') + "; dpkg --audit; " + m('AUDE') + "; "
            "cat /var/lib/orez/updates.json; " + m('WINE') + "; " + wine + "; echo wine-exit=$?; " + m('LOG') +
            "; tail -40 /var/log/orez-update.log; " + m('END') + "; } > /dev/ttyS0 2>&1'")
@@ -157,12 +157,14 @@ def update_stage(a, disk, vars_file, pw, r):
         time.sleep(100); vm.shot('a-wine-notepad')
         vm.keys('alt', 'spc'); time.sleep(3); vm.type('Steam'); time.sleep(4); vm.shot('a-krunner-steam'); vm.keys('esc')
         vm.keys('alt', 'spc'); time.sleep(3); vm.type('Lutris'); time.sleep(4); vm.shot('a-krunner-lutris'); vm.keys('esc')
+        vm.keys('alt', 'spc'); time.sleep(3); vm.type('Claude'); time.sleep(4); vm.shot('a-krunner-claude'); vm.keys('ret')
+        time.sleep(40); vm.shot('a-claude-app'); vm.keys('alt', 'f4'); time.sleep(3)
         vm.keys('ctrl', 'alt', 'f3'); time.sleep(3); vm.type('orez\n'); time.sleep(2); vm.type(pw + '\n'); time.sleep(5)
         blk = update_facts(vm, pw, 'U')
         (out / 'after-update-facts.txt').write_text(blk)
         c['after_os_0_2'] = 'OREZ OS 0.2' in blk
         c['after_i386'] = '\ni386' in blk
-        for pk in ('steam-installer', 'wine ', 'lutris', 'orez-shell 0.2'):
+        for pk in ('steam-installer', 'wine ', 'lutris', 'orez-shell 0.2', 'claude-desktop'):
             c['after_' + pk.split()[0].replace('-', '_')] = pk in blk
         c['after_nvidia_driver_pkg'] = 'nvidia-driver-' in blk
         c['after_wine_reports_windows'] = 'Microsoft Windows' in blk
@@ -284,7 +286,7 @@ def main(a):
         update_stage(a, disk, vars_file, pw, r)
         r['update_pass'] = all(c.get(k) for k in ('update_installed', 'after_desktop', 'after_os_0_2', 'after_i386',
                                                    'after_steam_installer', 'after_wine', 'after_lutris',
-                                                   'after_orez_shell', 'after_wine_reports_windows'))
+                                                   'after_orez_shell', 'after_claude_desktop', 'after_wine_reports_windows'))
     del pw
     r['frames_live'] = vm.frames; r['timeline'] = vm.log
     r['install_pass'] = bool(c.get('install_finished') and not c.get('install_failed_message')

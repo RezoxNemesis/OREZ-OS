@@ -75,6 +75,9 @@ class Window(QWidget):
         lay.addWidget(self.info)
         self.nvidia = QCheckBox('Install the NVIDIA graphics driver (Canonical-signed, Secure Boot stays on)')
         lay.addWidget(self.nvidia)
+        self.claude = QCheckBox('Install the Claude desktop app (official, from Anthropic)')
+        self.claude.setChecked(True)
+        lay.addWidget(self.claude)
         self.steam = QCheckBox('Install Steam — I accept the Steam Subscriber Agreement')
         lay.addWidget(self.steam)
         link = QLabel(f'<a href="{core.STEAM_AGREEMENT}">Read the Steam Subscriber Agreement</a>')
@@ -107,6 +110,7 @@ class Window(QWidget):
                 break
             except (OSError, ValueError, core.UpdateError):
                 continue
+        self.claude.setVisible(bool(self.manifest_claude()))
         gpu = core.nvidia_gpu()
         self.nvidia.setChecked(gpu); self.nvidia.setVisible(gpu)
         if not self.manifest:
@@ -125,6 +129,9 @@ class Window(QWidget):
         self.go.setEnabled(True)
         self.log.setPlainText(f'Update found at {self.media}')
 
+    def manifest_claude(self):
+        return (self.manifest or {}).get('claude_packages') if self.manifest else True
+
     def start(self):
         if not self.media:
             return
@@ -133,9 +140,11 @@ class Window(QWidget):
         args = ['/usr/bin/python3', '-I', str(applier()), '--media', str(self.media)]
         if self.steam.isChecked():
             args.append('--accept-steam-license')
+        if not self.claude.isChecked() or not self.manifest.get('claude_packages'):
+            args.append('--no-claude')
         if self.nvidia.isVisible():
             args.append('--nvidia' if self.nvidia.isChecked() else '--no-nvidia')
-        self.go.setEnabled(False); self.rescan.setEnabled(False); self.steam.setEnabled(False); self.nvidia.setEnabled(False)
+        for w in (self.go, self.rescan, self.steam, self.nvidia, self.claude): w.setEnabled(False)
         self.log.appendPlainText('Starting… enter your password when asked.')
         self.proc = QProcess(self)
         self.proc.setProcessChannelMode(QProcess.MergedChannels)
@@ -166,7 +175,7 @@ class Window(QWidget):
             self.title.setText('The update was not completed')
             if code in (126, 127):
                 self.log.appendPlainText('Administrator password was not given; nothing was changed.')
-            self.go.setEnabled(True); self.rescan.setEnabled(True); self.steam.setEnabled(True); self.nvidia.setEnabled(True)
+            for w in (self.go, self.rescan, self.steam, self.nvidia, self.claude): w.setEnabled(True)
 
     def reboot(self):
         if subprocess.run(['qdbus6', 'org.kde.Shutdown', '/Shutdown', 'logoutAndReboot']).returncode != 0:

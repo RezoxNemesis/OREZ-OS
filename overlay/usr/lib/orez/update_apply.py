@@ -34,6 +34,11 @@ CACHE = Path('/var/cache/orez-update')
 LOG = Path('/var/log/orez-update.log')
 UBUNTU_KEYRING = Path('/usr/share/keyrings/ubuntu-archive-keyring.gpg')
 STEAM_AGREEMENT = 'https://store.steampowered.com/subscriber_agreement/'
+# Anthropic's published signing-key fingerprint for the Claude desktop app repository
+# (https://code.claude.com/docs/en/desktop-linux). The key on the USB must match it.
+CLAUDE_FINGERPRINT = '31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE'
+CLAUDE_KEYRING = Path('/usr/share/keyrings/claude-desktop-archive-keyring.asc')
+CLAUDE_REPO = 'https://downloads.claude.ai/claude-desktop/apt/stable'
 SAFE = re.compile(r'[A-Za-z0-9._+~%/-]+')
 PKG = re.compile(r'[a-z0-9][a-z0-9+.-]*(:i386|:amd64)?')
 ENV = {'PATH': '/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'C.UTF-8', 'DEBIAN_FRONTEND': 'noninteractive',
@@ -117,7 +122,7 @@ def load_manifest(text: str) -> dict:
         raise UpdateError('This is not an OREZ update this version understands.')
     if not re.fullmatch(r'[0-9]+(\.[0-9]+)+', str(m['version'])):
         raise UpdateError('Invalid update version.')
-    for key in ('packages', 'steam_packages', 'nvidia_packages'):
+    for key in ('packages', 'steam_packages', 'nvidia_packages', 'claude_packages'):
         for p in m.get(key, []):
             if not PKG.fullmatch(p):
                 raise UpdateError(f'Invalid package name in update: {p!r}')
@@ -216,27 +221,60 @@ def installed_nvidia_series() -> str | None:
 
 # ---------- apt ----------
 
-def apt_options(work: Path, sources: Path) -> list[str]:
-    empty = work / 'apt' / 'empty.d'
+def apt_config(work: Path, sources: Path) -> Path:
+    """A private apt configuration, passed through APT_CONFIG so it is read before (and
+    replaces) /etc/apt/apt.conf.d: only Packages indexes are fetched, only from our sources."""
+    a = work / 'apt'
+    empty = a / 'empty.d'
     empty.mkdir(parents=True, exist_ok=True)
     for d in ('lists/partial', 'archives/partial'):
-        (work / 'apt' / d).mkdir(parents=True, exist_ok=True)
-    return ['-o', f'Dir::Etc::SourceList={sources}', '-o', f'Dir::Etc::SourceParts={empty}',
-            '-o', f'Dir::Etc::Parts={empty}', '-o', f'Dir::State::Lists={work}/apt/lists',
-            '-o', f'Dir::Cache::Archives={work}/apt/archives', '-o', f'Dir::Cache={work}/apt',
-            '-o', 'Acquire::Languages=none', '-o', 'Acquire::By-Hash=no',
-            '-o', 'APT::Sandbox::User=root', '-o', 'Dpkg::Options::=--force-confdef',
-            '-o', 'Dpkg::Options::=--force-confold']
+        (a / d).mkdir(parents=True, exist_ok=True)
+    (a / 'empty.conf').write_text('')
+    conf = a / 'apt.conf'
+    conf.write_text('\n'.join([
+        f'Dir::Etc::Main "{a}/empty.conf";', f'Dir::Etc::Parts "{empty}";',
+        f'Dir::Etc::SourceList "{sources}";', f'Dir::Etc::SourceParts "{empty}";',
+        f'Dir::State::Lists "{a}/lists";', f'Dir::Cache "{a}";', f'Dir::Cache::Archives "{a}/archives";',
+        'Acquire::Languages "none";', 'Acquire::By-Hash "no";', 'APT::Sandbox::User "root";',
+        'Dpkg::Options { "--force-confdef"; "--force-confold"; };', '']))
+    return conf
 
 
-def write_sources(path: Path, mirror: Path, manifest: dict, online: bool) -> None:
+def write_sources(path: Path, mirror: Path, manifest: dict, online: bool, claude: Path | None = None) -> None:
     comps = ' '.join(manifest['components'])
     lines = [f'deb [signed-by={UBUNTU_KEYRING} arch=amd64,i386] file:{mirror} {s} {comps}' for s in manifest['suites']]
+    if claude:
+        lines.append(f'deb [signed-by={CLAUDE_KEYRING} arch=amd64] file:{claude} stable main')
     if online:
         for s in manifest['suites']:
             uri = 'http://security.ubuntu.com/ubuntu' if s.endswith('-security') else 'http://archive.ubuntu.com/ubuntu'
             lines.append(f'deb [signed-by={UBUNTU_KEYRING} arch=amd64,i386] {uri} {s} {comps}')
+        if claude:
+            lines.append(f'deb [signed-by={CLAUDE_KEYRING} arch=amd64] {CLAUDE_REPO} stable main')
     path.write_text('\n'.join(lines) + '\n')
+
+
+def key_fingerprints(key: Path) -> list[str]:
+    r = run(['gpg', '--batch', '--no-default-keyring', '--with-colons', '--show-keys', str(key)], capture=True)
+    lines = r.stdout.splitlines()
+    return [lines[i + 1].split(':')[9] for i, l in enumerate(lines[:-1])
+            if l.startswith('pub:') and lines[i + 1].startswith('fpr:')]
+
+
+def trust_claude_key(payload: Path, work: Path) -> None:
+    """Install Anthropic's key only if it is exactly the published one, then check the USB's index with it."""
+    key = payload / 'claude' / 'key.asc'
+    fprs = key_fingerprints(key)
+    if fprs != [CLAUDE_FINGERPRINT]:
+        raise UpdateError('The Claude app signing key on the USB is not Anthropic\'s published key. Nothing was installed.')
+    binkey = work / 'claude-key.gpg'
+    run(['gpg', '--batch', '--yes', '--no-default-keyring', '--dearmor', '-o', str(binkey), str(key)])
+    r = run(['gpgv', '--keyring', str(binkey), str(payload / 'claude' / 'dists' / 'stable' / 'InRelease')], check=False, capture=True)
+    if r.returncode != 0:
+        raise UpdateError('The Claude app package index is not signed by Anthropic. Nothing was installed.')
+    CLAUDE_KEYRING.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(key, CLAUDE_KEYRING); os.chmod(CLAUDE_KEYRING, 0o644)
+    say('Anthropic signing key verified (' + CLAUDE_FINGERPRINT[-16:] + ').')
 
 
 def verify_release_signatures(mirror: Path, manifest: dict) -> None:
@@ -261,8 +299,12 @@ def plan_is_safe(sim: str) -> None:
         raise UpdateError('The plan would remove essential packages: ' + ', '.join(protected))
 
 
-def apt(opts: list[str], *args: str, capture: bool = False) -> subprocess.CompletedProcess:
-    return run(['apt-get', *opts, *args], capture=capture, check=not capture)
+def apt(conf: Path, *args: str, capture: bool = False) -> subprocess.CompletedProcess:
+    r = subprocess.run(['apt-get', *args], env={**ENV, 'APT_CONFIG': str(conf)}, text=True, stdin=subprocess.DEVNULL,
+                       stdout=subprocess.PIPE if capture else None, stderr=subprocess.STDOUT if capture else None)
+    if not capture and r.returncode != 0:
+        raise UpdateError(f'apt-get {args[0]} failed ({r.returncode}).')
+    return r
 
 
 # ---------- identity ----------
@@ -292,7 +334,7 @@ def record(entry: dict) -> None:
 
 # ---------- main ----------
 
-def apply(media: Path, accept_steam: bool, want_nvidia: bool | None, dry_run: bool) -> int:
+def apply(media: Path, accept_steam: bool, want_nvidia: bool | None, dry_run: bool, want_claude: bool = True) -> int:
     total = 7
     step(1, total, 'Checking the update USB')
     manifest_on_usb = load_manifest((media / 'update.json').read_text())
@@ -338,19 +380,26 @@ def apply(media: Path, accept_steam: bool, want_nvidia: bool | None, dry_run: bo
     else:
         say('Steam not selected (agreement not accepted). Wine and Lutris are still installed.')
     shell = payload / manifest['orez_shell'] if manifest.get('orez_shell') else None
+    claude = None
+    if want_claude and manifest.get('claude_packages') and (payload / 'claude' / 'key.asc').is_file():
+        if not dry_run:
+            trust_claude_key(payload, work)
+        claude = payload / 'claude'
+        packages += manifest['claude_packages']
+        say('Claude desktop app (official, signed by Anthropic) will be installed.')
 
     online = False
     for attempt in ('usb', 'usb+online'):
         online = attempt == 'usb+online'
-        write_sources(sources, mirror, manifest, online)
-        opts = apt_options(work, sources)
-        r = apt(opts, 'update', capture=True)
+        write_sources(sources, mirror, manifest, online, claude)
+        conf = apt_config(work, sources)
+        r = apt(conf, 'update', capture=True)
         if r.returncode != 0:
             if online:
                 raise UpdateError('Reading the package lists failed. ' + (r.stdout or '')[-800:])
             continue
         targets = packages + ([str(shell)] if shell else [])
-        sim = apt(opts, '-s', 'install', '-y', *targets, capture=True)
+        sim = apt(conf, '-s', 'install', '-y', *targets, capture=True)
         if sim.returncode == 0:
             break
         say('The USB alone is not enough for this PC: ' + (sim.stdout or '').strip().splitlines()[-1][:300])
@@ -368,7 +417,7 @@ def apply(media: Path, accept_steam: bool, want_nvidia: bool | None, dry_run: bo
         return 0
 
     step(5, total, f'Installing {n_inst} packages (Steam, Wine, drivers, game tools)')
-    proc = subprocess.Popen(['apt-get', *opts, 'install', '-y', *targets], env=ENV, text=True,
+    proc = subprocess.Popen(['apt-get', 'install', '-y', *targets], env={**ENV, 'APT_CONFIG': str(conf)}, text=True,
                             stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     out_lines = []
     set_up = 0
@@ -391,7 +440,7 @@ def apply(media: Path, accept_steam: bool, want_nvidia: bool | None, dry_run: bo
     if audit:
         raise UpdateError('The package database is not clean after the update: ' + audit[:600])
     record({'version': version, 'from': manifest['from_versions'], 'time': time.strftime('%Y-%m-%dT%H:%M:%S%z'),
-            'steam': accept_steam, 'nvidia': bool(gpu), 'online_used': online, 'packages': n_inst})
+            'steam': accept_steam, 'nvidia': bool(gpu), 'claude': bool(claude), 'online_used': online, 'packages': n_inst})
 
     step(7, total, 'Cleaning up')
     shutil.rmtree(work / 'apt' / 'archives', ignore_errors=True)
@@ -408,6 +457,7 @@ def main(argv: list[str]) -> int:
     g = p.add_mutually_exclusive_group()
     g.add_argument('--nvidia', dest='nvidia', action='store_true', default=None)
     g.add_argument('--no-nvidia', dest='nvidia', action='store_false')
+    p.add_argument('--no-claude', action='store_true', help='skip the Claude desktop app')
     p.add_argument('--dry-run', action='store_true')
     a = p.parse_args(argv)
     try:
@@ -421,7 +471,7 @@ def main(argv: list[str]) -> int:
             media = media / 'orez-update'
         LOG.parent.mkdir(parents=True, exist_ok=True)
         say(f'Update source: {media}')
-        return apply(media.resolve(), a.accept_steam_license, a.nvidia, a.dry_run)
+        return apply(media.resolve(), a.accept_steam_license, a.nvidia, a.dry_run, not a.no_claude)
     except (UpdateError, OSError, ValueError, KeyError, subprocess.SubprocessError) as e:
         say('FAILED ' + str(e))
         say('Your system was not changed beyond the steps already shown. Fix the problem and run OREZ Update again.')
