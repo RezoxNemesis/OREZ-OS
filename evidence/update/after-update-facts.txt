@@ -1,0 +1,99 @@
+==OREZ-UBEGIN==
+PRETTY_NAME="OREZ OS 0.2"
+VERSION="0.2 (Kubuntu 26.04 base)"
+OREZ_OS_VERSION=0.2.0
+OREZ_OS_STAGE=UNVERIFIED_LIVE_ALPHA
+OREZ_OS_BASE=kubuntu-26.04.1-desktop-amd64.iso
+OREZ_OS_SUPPORTED_INSTALLATION=no
+OREZ_OS_AI_AUTOMATION=disabled
+7.0.0-43-generic
+i386
+claude-desktop 4.23118.0 installed
+libnvidia-gl-390  not-installed
+libnvidia-gl-410  not-installed
+libnvidia-gl-595 595.99.02-0ubuntu0.26.04.1 installed
+libnvidia-gl-595 595.99.02-0ubuntu0.26.04.1 installed
+linux-modules-nvidia-595-open-7.0.0-43-generic 7.0.0-43.43 installed
+linux-modules-nvidia-595-open-generic 7.0.0-43.43 installed
+lutris 0.5.22-1 installed
+mangohud 0.8.2~rc2-1 installed
+nvidia-driver-595  not-installed
+nvidia-driver-595-open 595.99.02-0ubuntu0.26.04.1 installed
+nvidia-driver-binary  not-installed
+nvidia-driver-libs  not-installed
+orez-shell 0.2.0-1 installed
+steam-installer 1:1.0.0.85~ds-2build1 installed
+wine 10.0~repack-12ubuntu1 installed
+wine32 10.0~repack-12ubuntu1 installed
+winetricks 20250102-1build1 installed
+Canonical Ltd. Kernel Module Signing
+595.99.02
+gamemode-simulate-game	gamemoderun  gamescope-type  gamescopereaper  kmahjongg	 kpat	  lutris  supertux2
+gamemodelist		gamescope    gamescopectl    gamescopestream  kmines	 ksudoku  steam
+/usr/bin/orez-update
+==OREZ-UAUD==
+==OREZ-UAUDE==
+[
+ {
+  "version": "0.2",
+  "from": [
+   "0.1"
+  ],
+  "time": "2026-11-08T15:42:21-0500",
+  "steam": true,
+  "nvidia": true,
+  "claude": true,
+  "online_used": false,
+  "packages": 484
+ }
+]
+==OREZ-UWINE==
+wine: created the configuration directory '/home/orez/.wine-orez-test'
+error: XDG_RUNTIME_DIR is invalid or not set in the environment.
+error: XDG_RUNTIME_DIR is invalid or not set in the environment.
+
+
+[?25lMicrosoft Windows 10.0.19043
+
+[?25hwine-exit=0
+==OREZ-ULOG==
+Setting up libgphoto2-6t64:i386 (2.5.33-1ubuntu1.1) ...
+Setting up libwine:i386 (10.0~repack-12ubuntu1) ...
+Setting up nvidia-driver-595-open (595.99.02-0ubuntu0.26.04.1) ...
+Setting up wine32:i386 (10.0~repack-12ubuntu1) ...
+Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for libselinux1:amd64 (3.9-4build1) ...
+Processing triggers for dbus (1.16.2-2ubuntu4) ...
+Processing triggers for shared-mime-info (2.4-5build3) ...
+Processing triggers for procps (2:4.0.4-9ubuntu1) ...
+Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.44.5+dfsg-4ubuntu1) ...
+Processing triggers for desktop-file-utils (0.28-1build1) ...
+Processing triggers for initramfs-tools (0.151ubuntu1) ...
+update-initramfs: Generating /boot/initrd.img-7.0.0-30-generic
+Processing triggers for hicolor-icon-theme (0.18-2build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.3) ...
+Processing triggers for libwine:amd64 (10.0~repack-12ubuntu1) ...
+Processing triggers for libgdk-pixbuf-2.0-0:i386 (2.44.5+dfsg-4ubuntu1) ...
+Processing triggers for linux-image-7.0.0-43-generic (7.0.0-43.43) ...
+/etc/kernel/postinst.d/initramfs-tools:
+update-initramfs: Generating /boot/initrd.img-7.0.0-43-generic
+/etc/kernel/postinst.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-7.0.0-43-generic
+Found initrd image: /boot/initrd.img-7.0.0-43-generic
+Found linux image: /boot/vmlinuz-7.0.0-30-generic
+Found initrd image: /boot/initrd.img-7.0.0-30-generic
+Found memtest86+ 64bit EFI image: /boot/mt86+x64
+Found memtest86+ 32bit EFI image: /boot/mt86+ia32
+Found memtest86+ 64bit image: /boot/mt86+x64
+Found memtest86+ 32bit image: /boot/mt86+ia32
+Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Processing triggers for libwine:i386 (10.0~repack-12ubuntu1) ...
+15:42:21 STEP 6/7 Finishing: OREZ identity and gaming defaults
+15:42:21 STEP 7/7 Cleaning up
+15:42:21 DONE OREZ OS 0.2 is installed. Restart the computer to finish.

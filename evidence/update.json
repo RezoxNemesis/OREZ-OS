@@ -1,0 +1,55 @@
+{
+ "schema": 1,
+ "version": "0.2",
+ "from_versions": [
+  "0.1"
+ ],
+ "suites": [
+  "resolute",
+  "resolute-updates",
+  "resolute-security"
+ ],
+ "components": [
+  "main",
+  "restricted",
+  "universe",
+  "multiverse"
+ ],
+ "packages": [
+  "wine",
+  "wine64",
+  "wine32:i386",
+  "winetricks",
+  "lutris",
+  "mangohud",
+  "vulkan-tools",
+  "libvulkan1:i386",
+  "mesa-vulkan-drivers:i386",
+  "libgamemode0:i386",
+  "gamemode"
+ ],
+ "nvidia_packages": [
+  "nvidia-driver-595-open",
+  "linux-modules-nvidia-595-open-generic",
+  "libnvidia-gl-595:i386"
+ ],
+ "nvidia_series": "595-open",
+ "steam_packages": [
+  "steam-installer"
+ ],
+ "claude_packages": [
+  "claude-desktop"
+ ],
+ "steam_debconf": [],
+ "orez_shell": "orez-shell_0.2.0-1_all.deb",
+ "kernel_after_update": "7.0.0-43-generic",
+ "source_commit": "4ce2d3986a2d0b7459ece556bc1433b072b02420",
+ "summary": [
+  "Windows games and apps: Steam with Proton, Wine (double-click .exe files) and Lutris for Epic, EA, Ubisoft and Rockstar launchers",
+  "NVIDIA RTX graphics driver 595-open (Canonical-signed, works with Secure Boot), plus 32-bit game libraries",
+  "Game tools: GameMode performance mode and the MangoHud FPS overlay",
+  "Claude desktop app (official from Anthropic: chat, Cowork and Claude Code; later versions arrive with normal system updates)",
+  "OREZ Update: install future OREZ updates from a USB in one window",
+  "Latest Ubuntu security fixes for the updated components and Linux kernel 7.0.0-43-generic"
+ ]
+}
