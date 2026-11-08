@@ -164,6 +164,23 @@ grep -E '^Inst (linux-image|linux-modules-nvidia|nvidia-driver|steam|wine|lutris
 # 4. Fetch exactly the planned .debs from Ubuntu into the mirror's pool, hash-checked.
 C apt-get install -y --print-uris -qq "${ALL[@]}" > "$OUT/uris.txt"
 head -3 "$OUT/uris.txt" | tee -a "$LOGF"
+# apt prints only MD5 here; take each file's SHA256 from the signed Packages indexes instead.
+python3 - "$M" "$CM" > "$OUT/sha256-map.txt" <<'PY'
+import glob, lzma, gzip, sys
+for root in sys.argv[1:]:
+    for f in glob.glob(root + '/dists/*/*/binary-*/Packages*'):
+        op = lzma.open if f.endswith('.xz') else gzip.open if f.endswith('.gz') else open
+        with op(f, 'rt', encoding='utf-8', errors='replace') as h:
+            name = sha = None
+            for line in h:
+                if line.startswith('Filename: '): name = line[10:].strip()
+                elif line.startswith('SHA256: '): sha = line[8:].strip()
+                elif not line.strip():
+                    if name and sha: print(sha, name)
+                    name = sha = None
+            if name and sha: print(sha, name)
+PY
+log "SHA256 map: $(wc -l < "$OUT/sha256-map.txt") files"
 total=0
 while read -r uri name size hash; do
   uri=${uri//\'/}
@@ -175,12 +192,9 @@ while read -r uri name size hash; do
   # archive.ubuntu.com is a pool of mirrors that can lag; security.ubuntu.com serves the same pool.
   for try in "$src" "${src/archive.ubuntu.com/security.ubuntu.com}" "$src"; do
     curl -fsS --retry 3 -o "$dst" "$try" || continue
-    case $hash in
-      SHA512:*) got=$(sha512sum < "$dst" | cut -d' ' -f1) ;;
-      SHA256:*) got=$(sha256sum < "$dst" | cut -d' ' -f1) ;;
-      *) echo "Unsupported hash type for $rel: ${hash%%:*}" >&2; exit 1 ;;
-    esac
-    if [[ $got == "${hash#*:}" ]]; then ok=1; break; fi
+    want=$(grep -m1 -F " $rel" "$OUT/sha256-map.txt" | cut -d' ' -f1)
+    [[ -n $want ]] || { echo "No SHA256 in the signed index for $rel" >&2; exit 1; }
+    if [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "$want" ]]; then ok=1; break; fi
     log "hash mismatch from $try, retrying"; sleep 5
   done
   [[ -n $ok ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
