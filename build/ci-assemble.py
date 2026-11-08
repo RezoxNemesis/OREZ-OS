@@ -42,7 +42,8 @@ def main(a):
         extract(a.iso, '/casper/initrd', w / 'initrd-original')
         patch.patch(w / 'initrd-original', w / 'initrd', w / 'orez-initrd.json', owner_setup=True)
         import live_splash
-        splash_report = live_splash.insert(w / 'initrd', ROOT / 'overlay/usr/share/plymouth/themes/orez', patch.PREFIX_BYTES)
+        splash_report = live_splash.embed(w / 'initrd', ROOT / 'overlay/usr/share/plymouth/themes/orez', patch.PREFIX_BYTES,
+                                          patch.unpack, patch.pack)
         subprocess.run(['python3', str(ROOT / 'build/stage-overlay.py'), '--source', str(ROOT / 'overlay'),
                         '--output', str(w / 'live'), '--live-owner'], check=True)
         installer_report = None

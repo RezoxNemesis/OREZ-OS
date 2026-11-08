@@ -44,3 +44,26 @@ def insert(initrd, theme_dir, prefix_bytes):
     initrd.write_bytes(before[:prefix_bytes] + extra + before[prefix_bytes:])
     return {'base_initrd_sha256': hashlib.sha256(before).hexdigest(), 'inserted_at': prefix_bytes,
             'splash_archive_sha256': hashlib.sha256(extra).hexdigest(), 'splash_archive_bytes': len(extra)}
+
+
+def embed(initrd, theme_dir, prefix_bytes, unpack, pack):
+    """Add the OREZ splash inside the main compressed archive: decompress it,
+    append the theme archive after its trailer (the kernel continues with the
+    next cpio header in the same stream; later entries win) and recompress.
+    Archives placed outside the main stream were not applied (runs 42445644967,
+    42447901558, 42450416159)."""
+    initrd = Path(initrd)
+    data = initrd.read_bytes()
+    if data[prefix_bytes:prefix_bytes + 4] != b'\x28\xb5\x2f\xfd':
+        raise ValueError('main zstd archive not found at the reviewed early-prefix offset')
+    main = unpack(data[prefix_bytes:])
+    extra = archive(theme_dir)
+    if not main.rstrip(b'\0').endswith(b'TRAILER!!!'):
+        raise ValueError('main archive does not end with a cpio trailer')
+    pad = b'\0' * ((4 - len(main) % 4) % 4)
+    rebuilt = data[:prefix_bytes] + pack(main + pad + extra)
+    initrd.write_bytes(rebuilt)
+    return {'base_initrd_sha256': hashlib.sha256(data).hexdigest(), 'method': 'embedded-in-main-archive',
+            'main_archive_sha256': hashlib.sha256(main).hexdigest(),
+            'splash_archive_sha256': hashlib.sha256(extra).hexdigest(), 'splash_archive_bytes': len(extra),
+            'output_initrd_sha256': hashlib.sha256(rebuilt).hexdigest()}
