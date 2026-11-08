@@ -69,6 +69,7 @@ jobs:
       - name: Report
         if: always()
         run: |
+          set +e
           mkdir -p dist/vm-update
           sudo cp "$W"/update/*.log "$W"/update/plan.txt "$W/update/payload/orez-update/update.json" dist/vm-update/ 2>/dev/null || true
           cp "$W/OREZ-OS-0.2-update.iso.sha256" dist/vm-update/ 2>/dev/null || true

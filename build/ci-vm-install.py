@@ -124,8 +124,7 @@ def update_stage(a, disk, vars_file, pw, r):
         konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /media/orez/OREZ_UPDATE/orez-update/update_ui.py', 'u')
         c['update_window'] = bool(vm.wait_text(['is ready to install', 'Install update'], 'u-window', 120))
         if not c['update_window']: raise RuntimeError('OREZ Update window did not show the update')
-        c['steam_ticked'] = click_text(vm, 'Install Steam', 'u-steam', 30)
-        time.sleep(2); vm.shot('u-options')
+        time.sleep(2); vm.shot('u-options')  # Steam, Claude (and NVIDIA on NVIDIA PCs) are ticked by default
         c['install_clicked'] = click_text(vm, 'Install update', 'u-install', 30)
         c['polkit'] = bool(vm.wait_text(['Authentication', 'Password'], 'u-polkit', 90))
         vm.type(pw + '\n')
