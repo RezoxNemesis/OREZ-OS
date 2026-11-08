@@ -1,0 +1,281 @@
+==OREZ-IBEGIN==
+OREZ_OS_VERSION=0.1.0-dev
+OREZ_OS_STAGE=UNVERIFIED_LIVE_ALPHA
+OREZ_OS_BASE=kubuntu-26.04.1-desktop-amd64.iso
+OREZ_OS_SUPPORTED_INSTALLATION=no
+OREZ_OS_AI_AUTOMATION=disabled
+NAME   FSTYPE     SIZE MOUNTPOINTS
+loop0  squashfs     4K /snap/bare/5
+loop1  squashfs  66.8M /snap/core24/1643
+loop2  squashfs 260.3M /snap/firefox/8763
+loop3  squashfs 614.5M /snap/gnome-46-2404/164
+loop4  squashfs  91.7M /snap/gtk-common-themes/1535
+loop5  squashfs   402M /snap/mesa-2404/1839
+loop6  squashfs  50.1M /snap/snapd/27710
+loop7  squashfs   264K /snap/gtk-theme-breeze/8
+loop8  squashfs 221.1M /snap/thunderbird/1228
+loop9  squashfs  13.2M /snap/icon-theme-breeze/5
+sr0              1024M 
+zram0  swap       2.9G [SWAP]
+vda                40G 
+├─vda1 vfat       300M /boot/efi
+└─vda2 btrfs     39.7G /swap
+                       /home
+                       /
+TARGET SOURCE     FSTYPE OPTIONS
+/      /dev/vda2[/@]
+                  btrfs  rw,noatime,discard=async,space_cache=v2,autodefrag,subv
+BOOT_IMAGE=/@/boot/vmlinuz-7.0.0-30-generic root=UUID=39e90ea6-1c0b-4a62-b4f7-fedb7195b26a ro rootflags=subvol=@ quiet splash
+BootCurrent: 0004
+Timeout: 0 seconds
+BootOrder: 0004,0002,0000,0003
+Boot0000* UiApp	FvVol(7cb8bdc9-f8eb-4f34-aaea-3ee4af6516a1)/FvFile(462caa21-7614-4503-836e-8ab6f4662331)
+Boot0002* UEFI Misc Device	PciRoot(0x0)/Pci(0x2,0x0){auto_created_boot_option}
+Boot0003* EFI Internal Shell	FvVol(7cb8bdc9-f8eb-4f34-aaea-3ee4af6516a1)/FvFile(7c04a583-9e3e-4f1c-ad65-e05268d0b4d1)
+Boot0004* OREZ	HD(1,GPT,9735c5ec-b14c-4dc4-b274-33c1ea52a33c,0x1000,0x96000)/\EFI\ubuntu\shimx64.efi
+
+3 1000 orez seat0 1461 user    tty2 no [0;38:5:245m-[0m[m
+4 1000 orez [0;38:5:245m-    [0m 1467 manager [0;38:5:245m-   [0m no [0;38:5:245m-[0m[m
+5 1000 orez seat0 2484 user    tty3 no [0;38:5:245m-[0m[m
+
+[K==OREZ-IPROCS==
+root                       1 systemd
+root                       2 kthreadd
+root                       3 pool_workqueue_release
+root                       4 kworker/R-rcu_gp
+root                       5 kworker/R-sync_wq
+root                       6 kworker/R-kvfree_rcu_reclaim
+root                       7 kworker/R-slub_flushwq
+root                       8 kworker/R-netns
+root                       9 kworker/0:0-events
+root                      10 kworker/0:0H-kblockd
+root                      11 kworker/0:1-events
+root                      12 kworker/u16:0-async
+root                      13 kworker/R-mm_percpu_wq
+root                      14 ksoftirqd/0
+root                      15 rcu_preempt
+root                      16 rcu_exp_par_gp_kthread_worker/0
+root                      17 rcu_exp_gp_kthread_worker
+root                      18 migration/0
+root                      19 kprobe-optimizer
+root                      20 idle_inject/0
+root                      21 cpuhp/0
+root                      22 cpuhp/1
+root                      23 idle_inject/1
+root                      24 migration/1
+root                      25 ksoftirqd/1
+root                      26 kworker/1:0-events
+root                      27 kworker/1:0H-kblockd
+root                      28 cpuhp/2
+root                      29 idle_inject/2
+root                      30 migration/2
+root                      31 ksoftirqd/2
+root                      32 kworker/2:0-cgroup_free
+root                      33 kworker/2:0H-kblockd
+root                      34 cpuhp/3
+root                      35 idle_inject/3
+root                      36 migration/3
+root                      37 ksoftirqd/3
+root                      38 kworker/3:0-slub_flushwq
+root                      39 kworker/3:0H-kblockd
+root                      40 kdevtmpfs
+root                      41 kworker/R-inet_frag_wq
+root                      42 rcu_tasks_kthread
+root                      43 rcu_tasks_rude_kthread
+root                      44 kauditd
+root                      45 khungtaskd
+root                      46 oom_reaper
+root                      47 kworker/u16:1-btrfs-endio
+root                      48 kworker/u16:2-btrfs-endio
+root                      49 kworker/R-writeback
+root                      50 kcompactd0
+root                      51 ksmd
+root                      52 khugepaged
+root                      53 kworker/R-kblockd
+root                      54 kworker/R-blkcg_punt_bio
+root                      55 kworker/R-kintegrityd
+root                      56 irq/9-acpi
+root                      57 kworker/1:1-events
+root                      58 kworker/2:1-events
+root                      59 kworker/3:1-mm_percpu_wq
+root                      60 kworker/R-tpm_dev_wq
+root                      61 kworker/R-ata_sff
+root                      62 kworker/R-md_bitmap
+root                      63 kworker/R-md_llbitmap_io
+root                      64 kworker/R-md_llbitmap_unplug
+root                      65 kworker/R-edac-poller
+root                      66 kworker/R-devfreq_wq
+root                      67 watchdogd
+root                      68 kworker/R-quota_events_unbound
+root                      69 kswapd0
+root                      70 ecryptfs-kthread
+root                      71 kworker/R-kthrotld
+root                      72 kworker/R-acpi_thermal_pm
+root                      73 kworker/u16:3-btrfs-endio
+root                      74 kworker/u16:4-btrfs-endio-write
+root                      75 kworker/u16:5-btrfs-endio
+root                      76 kworker/R-mld
+root                      77 kworker/R-ipv6_addrconf
+root                      78 kworker/R-kstrp
+root                      80 kworker/u17:0
+root                      91 kworker/R-charger_manager
+root                      92 kworker/3:2-events
+root                     146 kworker/0:2-events
+root                     147 card1-crtc0
+root                     148 scsi_eh_0
+root                     149 kworker/R-scsi_tmf_0
+root                     150 scsi_eh_1
+root                     151 kworker/R-scsi_tmf_1
+root                     152 scsi_eh_2
+root                     153 kworker/R-scsi_tmf_2
+root                     154 scsi_eh_3
+root                     155 kworker/R-scsi_tmf_3
+root                     156 scsi_eh_4
+root                     157 kworker/R-scsi_tmf_4
+root                     158 scsi_eh_5
+root                     159 kworker/R-scsi_tmf_5
+root                     160 kworker/u16:6-btrfs-endio-write
+root                     161 kworker/u16:7-btrfs-endio
+root                     162 scsi_eh_6
+root                     163 kworker/R-scsi_tmf_6
+root                     164 scsi_eh_7
+root                     165 kworker/R-scsi_tmf_7
+root                     166 scsi_eh_8
+root                     167 kworker/R-scsi_tmf_8
+root                     168 scsi_eh_9
+root                     169 kworker/R-scsi_tmf_9
+root                     170 scsi_eh_10
+root                     171 kworker/R-scsi_tmf_10
+root                     172 scsi_eh_11
+root                     173 kworker/R-scsi_tmf_11
+root                     174 kworker/u16:8-events_power_efficient
+root                     175 kworker/u16:9-btrfs-endio-write
+root                     176 kworker/u16:10-btrfs-endio-write
+root                     177 kworker/u16:11-btrfs-endio-write
+root                     178 kworker/u16:12-events_unbound
+root                     179 kworker/u16:13-pm
+root                     180 kworker/u16:14
+root                     181 kworker/2:1H-kblockd
+root                     182 kworker/1:2-events
+root                     185 kworker/3:1H-kblockd
+root                     235 kworker/R-btrfs-worker
+root                     236 kworker/R-btrfs-delalloc
+root                     237 kworker/R-btrfs-flush_delalloc
+root                     238 kworker/R-btrfs-cache
+root                     239 kworker/R-btrfs-fixup
+root                     240 kworker/R-btrfs-endio
+root                     241 kworker/R-btrfs-endio-meta
+root                     242 kworker/R-btrfs-rmw
+root                     243 kworker/R-btrfs-endio-write
+root                     244 kworker/R-btrfs-freespace-write
+root                     245 kworker/R-btrfs-delayed-meta
+root                     246 kworker/R-btrfs-qgroup-rescan
+root                     247 btrfs-cleaner
+root                     248 btrfs-transaction
+root                     275 kworker/1:1H-kblockd
+root                     302 kworker/0:1H-kblockd
+root                     311 systemd-journal
+root                     326 kworker/2:2-events
+root                     338 kworker/0:3-inode_switch_wbs
+root                     368 kworker/2:3-events
+root                     369 kworker/3:3-cgroup_free
+systemd-resolve          371 systemd-resolve
+root                     375 systemd-udevd
+root                     376 psimon
+root                     421 kworker/2:2H
+root                     741 accounts-daemon
+root                     742 anacron
+avahi                    743 avahi-daemon
+root                     744 chronyd-starter
+root                     745 cron
+messagebus               747 dbus-daemon
+root                     754 networkd-dispat
+polkitd                  757 polkitd
+root                     764 snapd
+root                     766 switcheroo-cont
+root                     772 systemd-logind
+root                     775 udisksd
+avahi                    779 avahi-daemon
+root                     810 NetworkManager
+root                     812 wpa_supplicant
+syslog                   823 rsyslogd
+root                     847 kworker/1:3
+_chrony                  853 chronyd
+_chrony                  860 chronyd
+root                     919 ModemManager
+root                     941 cupsd
+root                     944 unattended-upgr
+root                     968 kworker/2:4-events
+root                     977 kworker/2:5
+cups-browsed             987 cups-browsed
+root                    1006 sddm
+rtkit                   1114 rtkit-daemon
+root                    1373 psimon
+root                    1438 power-profiles-
+root                    1461 sddm-helper
+orez                    1467 systemd
+orez                    1475 (sd-pam)
+orez                    1511 dbus-daemon
+orez                    1512 pipewire
+orez                    1516 mpris-proxy
+orez                    1517 wireplumber
+orez                    1520 pipewire
+orez                    1521 pipewire-pulse
+orez                    1530 ksecretd
+orez                    1533 startplasma-way
+orez                    1629 kwin_wayland_wr
+orez                    1630 ssh-agent
+orez                    1636 kwin_wayland
+orez                    1674 Xwayland
+orez                    1706 at-spi-bus-laun
+orez                    1717 dbus-daemon
+orez                    1732 ksmserver
+orez                    1734 kded6
+orez                    1772 plasmashell
+orez                    1774 at-spi2-registr
+root                    1794 upowerd
+orez                    1810 kactivitymanage
+orez                    1811 drkonqi-coredum
+orez                    1812 gmenudbusmenupr
+orez                    1813 kaccess
+orez                    1814 polkit-kde-auth
+orez                    1817 org_kde_powerde
+orez                    1818 xembedsniproxy
+orez                    1833 dconf-service
+orez                    1941 kdeconnectd
+orez                    1948 kunifiedpush-di
+orez                    1951 xdg-desktop-por
+orez                    1954 agent
+orez                    1957 DiscoverNotifie
+orez                    1968 xdg-permission-
+orez                    1992 xdg-document-po
+root                    2002 fusermount3
+orez                    2009 xdg-desktop-por
+orez                    2065 xdg-desktop-por
+root                    2076 packagekitd
+orez                    2141 kioworker
+orez                    2196 xsettingsd
+orez                    2199 obexd
+orez                    2225 kioworker
+orez                    2292 krunner
+orez                    2336 kioworker
+orez                    2340 baloorunner
+root                    2484 login
+orez                    2539 bash
+root                    2642 sudo
+root                    2645 sudo
+root                    2646 sh
+root                    2654 ps
+==OREZ-IMORE==
+ii  brave-browser  1.99.55       amd64        The web browser from Brave
+ii  gamemode       1.8.2-2build1 amd64        Optimise Linux system performance on demand
+ii  orez-shell     0.1.0-4       all          OREZ desktop assets, diagnostics, Store and optional Android development manager
+ii  vlc            3.0.23-1      amd64        multimedia player and streamer
+not-found
+android_manager.py   appearance_ui.py  daily_ui.py  help_recovery_ui.py	 store_manager.py
+appearance_model.py  daily_models.py   drivers.py   settings_ui.py	 store_ui.py
+PRETTY_NAME="OREZ OS 0.1"
+/usr/share/plymouth/themes/orez/orez.plymouth
+BOOT_IMAGE=/@/boot/vmlinuz-7.0.0-30-generic root=UUID=39e90ea6-1c0b-4a62-b4f7-fedb7195b26a ro rootflags=subvol=@ quiet splash
+Nov 07 22:43:01 orez-pc obexd[2199]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Nov 07 22:43:01 orez-pc obexd[2199]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
