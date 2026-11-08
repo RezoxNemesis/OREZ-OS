@@ -58,7 +58,7 @@ jobs:
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
           mkdir -p dist
           cp "$APK" dist/OREZ-USB-Studio-Linux-0.5.0.apk
-          sha256sum dist/OREZ-USB-Studio-Linux-0.5.0.apk | tee dist/SHA256SUMS.txt
+          (cd dist && sha256sum OREZ-USB-Studio-Linux-0.5.0.apk) | tee dist/SHA256SUMS.txt
           echo "### OREZ USB Studio Linux 0.5.0" >> "$GITHUB_STEP_SUMMARY"
           echo "- Debug-signed APK: built and signature-verified." >> "$GITHUB_STEP_SUMMARY"
           echo "- JVM unit tests: passed." >> "$GITHUB_STEP_SUMMARY"
