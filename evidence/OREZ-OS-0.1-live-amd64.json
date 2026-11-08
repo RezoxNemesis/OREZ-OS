@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "builder": "ci-overlay",
+  "parent_sha256": "831e4d4bb85098339ba43d3502cd6619b27e76daf37246a084cd68a6413090b8",
+  "base_filesystem_sha256": "a03245935d78ef2fe755d504e6a4000d14100193dd4724150d8bdf340d0d05f7",
+  "system_layer_sha256": "17eb67e7e8daf219b68440b0aa41d89862a7222759a51112b1312deadaa977b7",
+  "live_owner_layer_sha256": "a4b0479b7a445a51951c4581aa2125c895be40bbe38d0e5649ea1b1f73ddb414",
+  "layers_low_to_high": [
+    "filesystem.squashfs",
+    "orez-apps.squashfs",
+    "zz-orez.squashfs"
+  ],
+  "source_commit": "1c79acef4675d0c370d4555cdbac698ba5c1ad8b",
+  "live_splash": {
+    "base_initrd_sha256": "113f25e43756a5cdf28174b6ab1d24371e1761673535e06d0b9f4717f6d9f256",
+    "method": "embedded-in-main-archive",
+    "main_archive_sha256": "f931254be2732f1ec404bc6f6767fa205b9a53276c91c9bf49f35d769ba7bdc5",
+    "splash_archive_sha256": "9e95c3de7f4367981393b1f36c4a1851b232355c50206b6ca00eb2e7eb1b6d60",
+    "splash_archive_bytes": 1115136,
+    "output_initrd_sha256": "6699f1c170e8572884527e31aa1eadf4926dedf3b73df3ccc5254602709e6a41"
+  },
+  "installer_enabled": true,
+  "installer_config_sha256": {
+    "etc/calamares/settings.conf": "c46986a1d84bea5bbe81b97ee25011a4d12f8871a456a14cd9b4e293aece14ae",
+    "etc/calamares/modules/users.conf": "406a21a1a1fbf1d83947a8c8abb6aaad20ff18a3422b212e9cfd4f26dae9af7f",
+    "etc/calamares/modules/partition.conf": "3d42a6d74d6a428505de978f292ac8479e101e45af706b224592aecda5c8ceb8",
+    "etc/calamares/modules/packages.conf": "da843739db01c5a5d3077670e98e3ebc8739308c1a2061b0e39906fe029beba1",
+    "etc/calamares/modules/welcome.conf": "20e0f98f87b2d43e2893cd9011ce6315131fea4b9b9c8b2075d994441b7ce824",
+    "etc/calamares/modules/locale.conf": "8cb83b0506f6350c680dc465ae5688ae92beda1d3b7c35f9ccfdbd0e77e4eccf",
+    "etc/calamares/modules/displaymanager.conf": "182da574fe18b5c4f1b24fd49ffffed06c4b90ab72dc8b7033c9695c225ccab1"
+  },
+  "boot_tested": false,
+  "installation_approved": false,
+  "release_approved": false,
+  "output_sha256": "cbd1435e4422a1e6c2300c2839aaae46943bf3cb606fe97d6c216e7d875769bb",
+  "output_bytes": 5494865920,
+  "base_filesystem_unchanged": true
+}
