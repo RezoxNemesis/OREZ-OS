@@ -187,12 +187,14 @@ while read -r uri name size hash; do
   if [[ $uri == file:/tmp/mirror/pool/* ]]; then rel=${uri#file:/tmp/mirror/}; dst=$M/$rel; src=$ARCHIVE/$rel
   elif [[ $uri == file:/tmp/claude/pool/* ]]; then rel=${uri#file:/tmp/claude/}; dst=$CM/$rel; src=$CLAUDE_REPO/$rel
   else continue; fi
+  # apt prints URL-encoded paths (~ as %7e, : as %3a); the index and the pool use the plain names.
+  rel=$(printf '%b' "${rel//%/\\x}"); dst=$(printf '%b' "${dst//%/\\x}")
   mkdir -p "$(dirname "$dst")"
   ok=
   # archive.ubuntu.com is a pool of mirrors that can lag; security.ubuntu.com serves the same pool.
   for try in "$src" "${src/archive.ubuntu.com/security.ubuntu.com}" "$src"; do
     curl -fsS --retry 3 -o "$dst" "$try" || continue
-    want=$(grep -m1 -F " $rel" "$OUT/sha256-map.txt" | cut -d' ' -f1)
+    want=$(grep -m1 -F " $rel" "$OUT/sha256-map.txt" | cut -d' ' -f1 || true)
     [[ -n $want ]] || { echo "No SHA256 in the signed index for $rel" >&2; exit 1; }
     if [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "$want" ]]; then ok=1; break; fi
     log "hash mismatch from $try, retrying"; sleep 5
