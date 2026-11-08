@@ -44,14 +44,15 @@ sign-in.** No physical-PC result exists. Installer is enabled only in images fro
 
 ### Download candidate (owner's personal build)
 
-- Run 42421422241 (source `36dd126`, installer enabled): live login, logout/second
-  login, OREZ look, OREZ Appearance opened, full VM installation, installed system
-  boots to the **OREZ greeter** and Plasma desktop. All checks passed.
+- Run 42455290923 (installer enabled, OREZ identity pass): live login, logout/second
+  login, OREZ look, OREZ Appearance, live OREZ splash, full VM installation, installed
+  OREZ splash, OREZ greeter and desktop. All checks passed.
 - ISO `OREZ-OS-0.1-live-amd64.iso`, SHA-256
-  `039756e087dbc87278b4ded968639eebb3740be01c825fb3d79bcc40310752cc`.
-- Actions artifact 13593704739 (5,490,999,853-byte ZIP, expires 7 Dec 2026):
-  https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42421422241/artifacts/13593704739
-- Evidence: https://github.com/RezoxNemesis/OREZ-OS/tree/downloads/ci-42421422241/evidence
+  `cbd1435e4422a1e6c2300c2839aaae46943bf3cb606fe97d6c216e7d875769bb`.
+- Actions artifact 13608167739 (5,494,866,477-byte ZIP, expires 8 Dec 2026):
+  https://github.com/RezoxNemesis/OREZ-OS/actions/runs/42455290923/artifacts/13608167739
+- Evidence: https://github.com/RezoxNemesis/OREZ-OS/tree/downloads/ci-42455290923/evidence
+- Superseded: run 42421422241 (no identity pass).
 
 ### Verified (run ids)
 
