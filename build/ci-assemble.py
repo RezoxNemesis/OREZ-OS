@@ -57,6 +57,12 @@ def main(a):
         grub = brand_grub((w / 'grub-original.cfg').read_text())
         if a.enable_installer:
             grub = grub.replace('Try OREZ OS (installation unavailable)', 'Try or Install OREZ OS')
+        # Select the OREZ splash (shipped in the inserted initrd archive) explicitly: the
+        # main initrd archive is unpacked later and keeps Kubuntu's plymouth setting.
+        n = grub.count(' quiet splash')
+        if n == 0:
+            raise SystemExit('No splash boot entries found in the live GRUB menu')
+        grub = grub.replace(' quiet splash', ' quiet splash plymouth.theme=orez')
         (w / 'grub.cfg').write_text(grub)
         (w / 'info').write_text('OREZ OS 0.1 development amd64 — Kubuntu 26.04.1 base — ' +
                                 ('installer enabled — ' if a.enable_installer else '') + 'CI build ' +
