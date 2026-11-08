@@ -54,6 +54,15 @@ sign-in.** No physical-PC result exists. Installer is enabled only in images fro
 - Evidence: https://github.com/RezoxNemesis/OREZ-OS/tree/downloads/ci-42455290923/evidence
 - Superseded: run 42421422241 (no identity pass).
 
+### OREZ USB Studio 0.5.0 (Android writer, separate project)
+
+- Branch `feature/orez-usb-studio-0.5.0` (commit 8c52340, based on 0.4.4 at 5eb73c9), CI run 42462439910: unit tests passed, debug-signed APK built and verified.
+- APK: https://github.com/RezoxNemesis/OREZ-OS/raw/downloads/usb-studio-0.5.0/OREZ-USB-Studio-Linux-0.5.0.apk
+  SHA-256 `3226ac090d9123e54e617343996c745b4460ec954033ec5d25c02d8330a07422` (re-downloaded and checked).
+- New: direct artifact-ZIP input (stored ZIP64 entry read in place), pinned OREZ build checksum (`OrezReleases.java`), Download OREZ OS button, BOT status-stage stall recovery (clear bulk-in halt and re-read the CSW once; data never re-sent), build-derived version string, generic wording.
+- CI evidence on the real 5,494,866,477-byte artifact: entry `OREZ-OS-0.1-live-amd64.iso` at offset 56, length 5,494,865,920, hybrid validator passed, SHA-256 `cbd1435e…69bb` matched the pin.
+- Not verified: physical OTG write, the stall recovery on real hardware, PC boot from the written USB. The debug key differs from older builds, so the old app must be uninstalled first.
+
 ### Verified (run ids)
 
 - 42397850409 (live): enrollment, OREZ SDDM, KWin/Plasma on seat0, OREZ look
