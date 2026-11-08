@@ -163,6 +163,7 @@ grep -E '^Inst (linux-image|linux-modules-nvidia|nvidia-driver|steam|wine|lutris
 
 # 4. Fetch exactly the planned .debs from Ubuntu into the mirror's pool, hash-checked.
 C apt-get install -y --print-uris -qq "${ALL[@]}" > "$OUT/uris.txt"
+head -3 "$OUT/uris.txt" | tee -a "$LOGF"
 total=0
 while read -r uri name size hash; do
   uri=${uri//\'/}
@@ -174,7 +175,12 @@ while read -r uri name size hash; do
   # archive.ubuntu.com is a pool of mirrors that can lag; security.ubuntu.com serves the same pool.
   for try in "$src" "${src/archive.ubuntu.com/security.ubuntu.com}" "$src"; do
     curl -fsS --retry 3 -o "$dst" "$try" || continue
-    if [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "${hash#SHA256:}" ]]; then ok=1; break; fi
+    case $hash in
+      SHA512:*) got=$(sha512sum < "$dst" | cut -d' ' -f1) ;;
+      SHA256:*) got=$(sha256sum < "$dst" | cut -d' ' -f1) ;;
+      *) echo "Unsupported hash type for $rel: ${hash%%:*}" >&2; exit 1 ;;
+    esac
+    if [[ $got == "${hash#*:}" ]]; then ok=1; break; fi
     log "hash mismatch from $try, retrying"; sleep 5
   done
   [[ -n $ok ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
