@@ -190,7 +190,7 @@ usr/share/plymouth/themes/orez/throbber-0088.png
 usr/share/plymouth/themes/orez/throbber-0089.png
 usr/share/plymouth/themes/orez/throbber-0090.png
 usr/share/plymouth/themes/orez/watermark.png
-etc/skel/.face
+usr/share/orez/faces/orez-enso.png
 usr/share/plasma/look-and-feel/org.orez.look/contents/splash/Splash.qml
 usr/share/plasma/look-and-feel/org.orez.look/contents/splash/images/enso.svg
 usr/share/plasma/look-and-feel/org.orez.look/contents/splash/images/wordmark.png

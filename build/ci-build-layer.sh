@@ -155,6 +155,9 @@ for f in /etc/issue /etc/issue.net; do
   C dpkg-divert --local --rename --divert "$f.ubuntu" --add "$f"
 done
 printf 'OREZ OS 0.1 \\n \\l\n\n' > "$R/etc/issue"; printf 'OREZ OS 0.1\n' > "$R/etc/issue.net"
+# Default account picture for new users (Kubuntu ships /etc/skel/.face).
+C dpkg-divert --local --rename --divert /etc/skel/.face.kubuntu --add /etc/skel/.face
+cp "$R/usr/share/orez/faces/orez-enso.png" "$R/etc/skel/.face"
 C update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth \
   /usr/share/plymouth/themes/orez/orez.plymouth 300
 C update-alternatives --set default.plymouth /usr/share/plymouth/themes/orez/orez.plymouth
