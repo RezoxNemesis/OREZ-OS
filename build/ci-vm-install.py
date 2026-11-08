@@ -121,7 +121,7 @@ def update_stage(a, disk, vars_file, pw, r):
         if vm.wait_text(['GNU GRUB', 'OREZ GNU'], 'u-grub', 120): vm.keys('ret')
         login_desktop(vm, pw, 'u-before')
         # The owner opens the USB once (Dolphin does the same udisks mount), then starts the window.
-        konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /media/orez/OREZ_UPDATE/orez-update/update_ui.py', 'u')
+        konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /run/media/orez/OREZ_UPDATE/orez-update/update_ui.py', 'u')
         c['update_window'] = bool(vm.wait_text(['is ready to install', 'Install update'], 'u-window', 120))
         if not c['update_window']: raise RuntimeError('OREZ Update window did not show the update')
         time.sleep(2); vm.shot('u-options')  # Steam, Claude (and NVIDIA on NVIDIA PCs) are ticked by default

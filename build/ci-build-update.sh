@@ -272,7 +272,7 @@ OREZ OS 0.2 update
 ==================
 1. On your installed OREZ OS 0.1 PC, plug in this USB and open it once in Dolphin.
 2. Open Konsole and run:
-       python3 /media/$USER/OREZ_UPDATE/orez-update/update_ui.py
+       python3 /run/media/$USER/OREZ_UPDATE/orez-update/update_ui.py
 3. Choose the options, press "Install update", enter your password, then restart.
 After this update, future updates open from the menu: OREZ Update.
 EOF
