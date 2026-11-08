@@ -1,5 +1,26 @@
 # OREZ OS — Verified Development Handoff
 
+## OREZ identity pass — 8 November 2026
+
+Goal from the owner: the system must feel like OREZ OS, not Kubuntu. Implemented and
+seen in VM frames (`downloads/ci-<run>` evidence):
+
+| Area | Implementation | Evidence |
+|---|---|---|
+| Boot splash (installed) | Plymouth `orez` (two-step): 90-frame turning, breathing brush ensō, owner wordmark, ink password field; `default.plymouth` alternative | installed-splash frames, run 42441538790 |
+| Boot splash (live USB) | theme archive **embedded in the initrd main archive** + `plymouth.theme=orez` on live splash entries; checked with `unmkinitramfs` in CI | boot frames 009–027, run 42452644410 |
+| Sign-in splash | `org.orez.look/contents/splash` + `/etc/xdg/orez/ksplashrc` | signin-splash frames, run 42445644967 |
+| Start menu / icons | ensō Start button (`orez-start`), paper-and-ink icons for every OREZ app, ensō default avatar (dpkg-divert of Kubuntu's `/etc/skel/.face`) | start-menu frames |
+| Window frames | Breeze engine tuned by `/etc/xdg/orez/breezerc`: centred titles, soft large shadows, no outline, paper title bars | window-frame frames |
+| Sounds | `/usr/share/sounds/orez` (synthesised pentatonic chimes), `[Sounds] Theme=orez` | files only; audio not verified in VM |
+| Names | `os-release`/`lsb-release`/`issue` diverted to "OREZ OS 0.1" (`ID=ubuntu` kept), Info Center logo/name, installer partition label regex | facts: `PRETTY_NAME="OREZ OS 0.1"` live and installed |
+
+Still upstream-looking: Breeze icon set for non-OREZ apps and folders, KDE System
+Settings, the live hostname and "Live session user" name (set by casper in the
+initrd), firmware logo before GRUB, GRUB menu colours. Approaches that failed for the
+live splash (archive appended after, or inserted before, the zstd stream) are
+recorded in `build/live_splash.py`.
+
 ## Latest verified checkpoint — 7–8 November 2026: CI builder, login, OREZ look, VM installation
 
 **A CI-built OREZ ISO now passes, in a disposable KVM VM: owner setup, normal
