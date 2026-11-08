@@ -185,7 +185,7 @@ def main(a):
                      "grep -h -E \"^(Image|LookAndFeelPackage|ColorScheme)=\" /home/orez/.config/plasma-org.kde.plasma.desktop-appletsrc /home/orez/.config/kdeglobals",
                      "ls /home/orez/Desktop", "sudo -u orez /usr/bin/orez-drivers --check",
                      "grep -E ^PRETTY_NAME /etc/os-release", "readlink /etc/alternatives/default.plymouth",
-                     "cat /proc/cmdline", "journalctl -k -b --no-pager | grep -iE 'initramfs|unpack' | head"]
+                     "cat /proc/cmdline", "journalctl -k -b --no-pager | grep -iE \"initramfs|unpack\" | head"]
             if full:
                 parts += [mark(tag + 'TRACE'), "journalctl -b --no-pager -o short-precise -t orez-session-trace",
                           mark(tag + 'SDDM'), "journalctl -b --no-pager -o short-precise -u sddm | tail -80",
