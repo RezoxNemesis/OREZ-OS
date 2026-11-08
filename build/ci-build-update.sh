@@ -170,8 +170,14 @@ while read -r uri name size hash; do
   elif [[ $uri == file:/tmp/claude/pool/* ]]; then rel=${uri#file:/tmp/claude/}; dst=$CM/$rel; src=$CLAUDE_REPO/$rel
   else continue; fi
   mkdir -p "$(dirname "$dst")"
-  curl -fsS --retry 3 -o "$dst" "$src"
-  [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "${hash#SHA256:}" ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
+  ok=
+  # archive.ubuntu.com is a pool of mirrors that can lag; security.ubuntu.com serves the same pool.
+  for try in "$src" "${src/archive.ubuntu.com/security.ubuntu.com}" "$src"; do
+    curl -fsS --retry 3 -o "$dst" "$try" || continue
+    if [[ $(sha256sum < "$dst" | cut -d' ' -f1) == "${hash#SHA256:}" ]]; then ok=1; break; fi
+    log "hash mismatch from $try, retrying"; sleep 5
+  done
+  [[ -n $ok ]] || { echo "Hash mismatch for $rel" >&2; exit 1; }
   total=$((total+size))
 done < "$OUT/uris.txt"
 log "Fetched $(grep -c pool/ "$OUT/uris.txt") packages, $((total/1048576)) MiB"
