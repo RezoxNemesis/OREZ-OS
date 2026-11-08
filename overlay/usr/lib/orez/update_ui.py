@@ -46,7 +46,7 @@ def overall(line: str, cur: int) -> int:
 
 
 class Window(QWidget):
-    def __init__(self, media_arg: Path | None):
+    def __init__(self, media_arg: Path | None, force_nvidia: bool = False):
         super().__init__()
         self.setWindowTitle('OREZ Update')
         for icon in ('/usr/share/icons/hicolor/scalable/apps/orez-update.svg', '/usr/share/pixmaps/orez-logo.png'):
@@ -59,6 +59,7 @@ class Window(QWidget):
                            'QPushButton:disabled{color:#999;border-color:#bbb;background:#e6e2d9}'
                            'QPlainTextEdit{background:#fbfaf6;font-family:monospace;font-size:9pt}')
         self.media_arg = media_arg
+        self.force_nvidia = force_nvidia  # --nvidia: offer the driver even if the card was not detected
         self.media: Path | None = None
         self.manifest: dict | None = None
         self.proc: QProcess | None = None
@@ -115,7 +116,7 @@ class Window(QWidget):
             except (OSError, ValueError, core.UpdateError):
                 continue
         self.claude.setVisible(bool(self.manifest_claude()))
-        gpu = core.nvidia_gpu()
+        gpu = core.nvidia_gpu() or self.force_nvidia
         self.nvidia.setChecked(gpu); self.nvidia.setVisible(gpu)
         if not self.manifest:
             self.title.setText('OREZ Update')
@@ -188,11 +189,11 @@ class Window(QWidget):
 
 def main(argv):
     media = None
-    if len(argv) > 2 and argv[1] == '--media':
-        media = Path(argv[2])
+    if '--media' in argv[1:-1]:
+        media = Path(argv[argv.index('--media') + 1])
     app = QApplication(argv)
     app.setApplicationName('OREZ Update'); app.setDesktopFileName('orez-update')
-    w = Window(media); w.show()
+    w = Window(media, '--nvidia' in argv); w.show()
     return app.exec()
 
 

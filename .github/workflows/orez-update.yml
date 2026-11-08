@@ -59,6 +59,7 @@ jobs:
           sudo xorriso -as mkisofs -iso-level 3 -R -V OREZ_UPDATE -o "$W/OREZ-OS-0.2-update.iso" "$W/update/payload"
           sudo chown "$USER" "$W/OREZ-OS-0.2-update.iso"
           (cd "$W" && sha256sum OREZ-OS-0.2-update.iso | tee OREZ-OS-0.2-update.iso.sha256)
+          sudo cp "$W/update/payload/orez-update/update.json" "$W/update.json" && sudo chown "$USER" "$W/update.json"
           ls -l "$W/OREZ-OS-0.2-update.iso"
       - name: Disposable offline VM — install OREZ 0.1, apply the update from a USB stick, restart, verify
         id: vm

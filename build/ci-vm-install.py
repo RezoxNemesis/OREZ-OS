@@ -100,7 +100,7 @@ def konsole(vm, command, label):
 
 def update_facts(vm, pw, tag):
     m = lambda n: 'printf "%s\\n" "==O""REZ-' + tag + n + '=="'
-    wine = ('sudo -u orez env HOME=/home/orez WINEPREFIX=/tmp/orez-winetest WINEDEBUG=-all '
+    wine = ('sudo -u orez env HOME=/home/orez WINEPREFIX=/home/orez/.wine-orez-test WINEDEBUG=-all '
             'WINEDLLOVERRIDES=mscoree,mshtml= timeout 240 wine cmd /c ver')
     cmd = ("sudo sh -c '{ " + m('BEGIN') + "; grep -E \"PRETTY_NAME|^VERSION=\" /etc/os-release; cat /etc/orez-release; uname -r; "
            "dpkg --print-foreign-architectures; dpkg-query -W -f=\"\\${Package} \\${Version} \\${db:Status-Status}\\n\" "
@@ -121,7 +121,7 @@ def update_stage(a, disk, vars_file, pw, r):
         if vm.wait_text(['GNU GRUB', 'OREZ GNU'], 'u-grub', 120): vm.keys('ret')
         login_desktop(vm, pw, 'u-before')
         # The owner opens the USB once (Dolphin does the same udisks mount), then starts the window.
-        konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /run/media/orez/OREZ_UPDATE/orez-update/update_ui.py', 'u')
+        konsole(vm, 'udisksctl mount -b /dev/disk/by-label/OREZ_UPDATE && python3 /run/media/orez/OREZ_UPDATE/orez-update/update_ui.py --nvidia', 'u')
         c['update_window'] = bool(vm.wait_text(['is ready to install', 'Install update'], 'u-window', 120))
         if not c['update_window']: raise RuntimeError('OREZ Update window did not show the update')
         time.sleep(2); vm.shot('u-options')  # Steam, Claude (and NVIDIA on NVIDIA PCs) are ticked by default
@@ -135,7 +135,9 @@ def update_stage(a, disk, vars_file, pw, r):
         vm.shot('u-finished')
         c['update_installed'] = res == 'Update installed'
         if not c['update_installed']: raise RuntimeError('update reported failure')
-        c['restart_clicked'] = click_text(vm, 'Restart now', 'u-restart', 30)
+        c['restart_clicked'] = click_text(vm, 'Restart now', 'u-restart', 20)
+        if not c['restart_clicked']:
+            vm.note('u-restart: using fixed Restart now position'); click(vm, 938, 675); c['restart_clicked'] = True
         try: vm.proc.wait(240)
         except Exception: vm.note('guest did not power off after restart request')
     except Exception as e:
@@ -170,6 +172,9 @@ def update_stage(a, disk, vars_file, pw, r):
             c['after_' + pk.split()[0].replace('-', '_')] = pk in blk
         c['after_nvidia_driver_pkg'] = 'nvidia-driver-' in blk
         c['after_wine_reports_windows'] = 'Microsoft Windows' in blk
+        want_k = json.loads((a.update_iso.parent / 'update.json').read_text()).get('kernel_after_update', '') if (a.update_iso.parent / 'update.json').is_file() else ''
+        c['after_new_kernel'] = bool(want_k) and want_k in blk
+        c['after_nvidia_module_signed'] = 'Canonical' in blk.split('==OREZ-UAUD==')[0]
         c['after_dpkg_clean'] = not blk.split('==OREZ-UAUD==')[-1].split('==OREZ-UAUDE==')[0].strip()
     except Exception as e:
         r['error_after'] = str(e); vm.note('ERROR ' + str(e))
@@ -288,7 +293,8 @@ def main(a):
         update_stage(a, disk, vars_file, pw, r)
         r['update_pass'] = all(c.get(k) for k in ('update_installed', 'after_desktop', 'after_os_0_2', 'after_i386',
                                                    'after_steam_installer', 'after_wine', 'after_lutris',
-                                                   'after_orez_shell', 'after_claude_desktop', 'after_wine_reports_windows'))
+                                                   'after_orez_shell', 'after_claude_desktop', 'after_wine_reports_windows',
+                                                   'after_new_kernel', 'after_nvidia_module_signed'))
     del pw
     r['frames_live'] = vm.frames; r['timeline'] = vm.log
     r['install_pass'] = bool(c.get('install_finished') and not c.get('install_failed_message')
